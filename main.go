@@ -47,6 +47,7 @@ func main() {
 		IdleTimeout:  15 * time.Second,
 	}
 
+	done := make(chan bool)
 	quit := make(chan os.Signal, 1)
 	signal.Notify(quit, os.Interrupt)
 
@@ -55,21 +56,23 @@ func main() {
 		logger.Println("Server is shutting down...")
 		atomic.StoreInt32(&healthy, 0)
 
-		ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
+		ctx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
 		defer cancel()
 
 		server.SetKeepAlivesEnabled(false)
 		if err := server.Shutdown(ctx); err != nil {
 			logger.Fatalf("Could not gracefully shutdown the server: %v\n", err)
 		}
+		close(done)
 	}()
 
 	logger.Println("Server is ready to handle requests at", listenAddr)
 	atomic.StoreInt32(&healthy, 1)
-	if err := server.ListenAndServe(); err != http.ErrServerClosed {
+	if err := server.ListenAndServe(); err != nil && err != http.ErrServerClosed {
 		logger.Fatalf("Could not listen on %s: %v\n", listenAddr, err)
 	}
 
+	<-done
 	logger.Println("Server stopped")
 }
 
