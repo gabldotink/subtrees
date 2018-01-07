@@ -52,7 +52,7 @@ func main() {
 
 	go func() {
 		<-quit
-		logger.Println("Server is shoutting down...")
+		logger.Println("Server is shutting down...")
 		atomic.StoreInt32(&healthy, 0)
 
 		ctx, cancel := context.WithTimeout(context.Background(), 5*time.Second)
@@ -60,7 +60,7 @@ func main() {
 
 		server.SetKeepAlivesEnabled(false)
 		if err := server.Shutdown(ctx); err != nil {
-			logger.Fatalf("Could not gracefully shoutdown the server: %v\n", err)
+			logger.Fatalf("Could not gracefully shutdown the server: %v\n", err)
 		}
 	}()
 
