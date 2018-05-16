@@ -54,4 +54,4 @@ CYGCONF_ARGS="
 
 DOCS="README.i18n"
 CFLAGS+=" -O0"
-DEPEND="gnome-common libbabl-devel libgegl0.4-devel python-gtk2.0-devel libjasper-devel libpoppler-glib-devel poppler-data-devel aalib-devel python2-cairo-devel libwebkitgtk3.0-devel libwmf-devel libmng-devel libopenjp2-devel shared-mime-info-devel"
+DEPEND="gnome-common libbabl-devel libgegl0.4-devel python-gtk2.0-devel libjasper-devel libpoppler-glib-devel poppler-data-devel aalib-devel python2-cairo-devel libwebkitgtk1.0-devel libwebkitgtk3.0-devel libwmf-devel libmng-devel libopenjp2-devel shared-mime-info-devel"

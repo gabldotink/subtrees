@@ -1,0 +1,12 @@
+--- origsrc/gimp-2.10.0/configure.ac	2018-05-16 13:12:02.331408700 -0400
++++ src/gimp-2.10.0/configure.ac	2018-05-16 13:24:11.267054900 -0400
+@@ -2197,7 +2197,8 @@ if test "x$enable_vector_icons" != "xno"
+       # So let's test files the shell way.
+       if (test "x$platform_win32" = "xyes" &&
+           test -f "$gdk_pixbuf_moduledir/libpixbufloader-svg.dll") ||
+-         test -f "$gdk_pixbuf_moduledir/libpixbufloader-svg.so"; then
++         test -f "$gdk_pixbuf_moduledir/libpixbufloader-svg.so" ||
++	 test -f "$gdk_pixbuf_moduledir/cygpixbufloader-svg.dll"; then
+         # We must not use $PKG_CONFIG nor PKG_CHECK_* macros because we need
+         # to make sure we use the native pkg-config (in case we cross-compile).
+         if pkg-config --atleast-version=glib_required_version glib-2.0 &&
