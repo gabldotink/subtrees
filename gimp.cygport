@@ -25,7 +25,7 @@ PKG_NAMES="${NAME} ${NAME}-devel ${NAME}-doc ${NAME}-python"
 gimp_CONTENTS="--exclude=python --exclude=*.py* --exclude=pygimp.*
                 --exclude=gimptool-* --exclude=aclocal
                 --exclude=gtk-doc --exclude=gimp20-python.mo
-                etc/ usr/bin/ usr/lib/gimp/ usr/share/"
+                etc/ usr/bin/ usr/lib/gimp/ usr/libexec/ usr/share/"
 gimp_devel_SUMMARY="${SUMMARY} (plugin development)"
 gimp_devel_CONTENTS="usr/bin/gimptool-2.0.exe usr/include/ usr/lib/lib*
                       usr/lib/pkgconfig/ usr/share/aclocal/
@@ -35,7 +35,7 @@ gimp_doc_CONTENTS="usr/share/gtk-doc/"
 gimp_python_SUMMARY="${SUMMARY} (Python support and plugins)"
 gimp_python_CONTENTS="${gimpdir#/}/environ/pygimp.env
                        ${gimpdir#/}/interpreters/pygimp.interp
-                       ${gimpdir#/}/plug-ins/*.py* ${gimpdir#/}/python/
+                       ${gimpdir#/}/plug-ins/*.py* ${gimpdir#/}/plug-ins/py*/*.py* ${gimpdir#/}/python/
                        usr/share/locale/*/*/gimp20-python.mo"
 
 DIFF_EXCLUDES="devel-docs"
