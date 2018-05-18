@@ -1,5 +1,14 @@
---- origsrc/gimp-2.10.0/configure.ac	2018-05-16 13:12:02.331408700 -0400
-+++ src/gimp-2.10.0/configure.ac	2018-05-16 13:24:11.267054900 -0400
+--- origsrc/gimp-2.10.0/configure.ac	2018-05-17 18:25:23.030819000 -0400
++++ src/gimp-2.10.0/configure.ac	2018-05-17 21:40:43.446752500 -0400
+@@ -2041,7 +2041,7 @@ if test "x$enable_python" != xno; then
+   # This might be able to be figured out from distutils, but it's
+   # not documented so we won't rely on internal implementation
+   PYLINK_LIBS=
+-  case "$target_or_host" in
++  case "$host" in
+   *-*-cygwin*)
+     PYBIN_PATH="$PYTHON"
+     PYLINK_LIBS="-L${py_exec_prefix}/lib/python${PYTHON_VERSION}/config -lpython${PYTHON_VERSION}"
 @@ -2197,7 +2197,8 @@ if test "x$enable_vector_icons" != "xno"
        # So let's test files the shell way.
        if (test "x$platform_win32" = "xyes" &&
@@ -10,3 +19,15 @@
          # We must not use $PKG_CONFIG nor PKG_CHECK_* macros because we need
          # to make sure we use the native pkg-config (in case we cross-compile).
          if pkg-config --atleast-version=glib_required_version glib-2.0 &&
+--- origsrc/gimp-2.10.0/libgimpbase/gimputils.c	2018-04-26 09:26:42.000000000 -0400
++++ src/gimp-2.10.0/libgimpbase/gimputils.c	2018-05-17 18:27:21.144929700 -0400
+@@ -56,7 +56,9 @@
+ 
+ /* For thread IDs. */
+ #include <sys/types.h>
++#ifndef G_WITH_CYGWIN
+ #include <sys/syscall.h>
++#endif
+ 
+ #ifdef HAVE_SYS_PRCTL_H
+ #include <sys/prctl.h>

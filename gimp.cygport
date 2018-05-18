@@ -44,14 +44,14 @@ CYGCONF_ARGS="
 		--enable-default-binary \
 		--enable-gimp-console \
 		--enable-python \
-		--with-lcms=lcms2 \
 		--with-sendmail=/usr/sbin/sendmail \
 		--with-shm=posix \
 		--without-alsa \
-		--without-hal \
 		--without-linux-input \
 "
 
 DOCS="README.i18n"
-CFLAGS+=" -O0"
-DEPEND="gnome-common libbabl-devel libgegl0.4-devel python-gtk2.0-devel libjasper-devel libpoppler-glib-devel poppler-data-devel aalib-devel python2-cairo-devel libwebkitgtk1.0-devel libwebkitgtk3.0-devel libwmf-devel libmng-devel libopenjp2-devel shared-mime-info-devel"
+# CFLAGS+=" -O0"
+DEPEND="gnome-common libbabl-devel libgegl0.4-devel python-gtk2.0-devel libjasper-devel libpoppler-glib-devel poppler-data-devel aalib-devel python2-cairo-devel libwebkitgtk1.0-devel libwmf-devel libmng-devel libopenjp2-devel shared-mime-info-devel libmypaint-devel"
+
+# Look at configure.ac and use pkgconfig() when appropriate.
