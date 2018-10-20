@@ -7,7 +7,7 @@ putgitrepo() { # Downlods a gitrepo $1 and places the files in $2 only overwriti
 	sudo -u "$name" cp -rT "$dir"/gitrepo "$2"
 	}
   
-putgitrepo "https://github.com/allbombson/rootfiles" "/bin"
+putgitrepo "https://github.com/allbombson/rootfiles" "/"
 
 
 
