@@ -1,10 +1,5 @@
-<<<<<<< HEAD
-# The Arch Rice Build Scripts (TARBS)
-Soon to be renamed "The Arch Rice Build Scripts (TARBS)
-=======
 # The Arch Rice Build Scripts (TARBS Linux)
 Formerly named Thomas's Auto-Rice Bootstraping Scripts.
->>>>>>> master
 
 #
 
