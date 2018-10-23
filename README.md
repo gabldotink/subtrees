@@ -1,5 +1,5 @@
 # The Arch Rice Build Scripts (TARBS Linux)
-Former Called Thomas's Auto-Rice Bootstraping Scripts.
+Formerly named Thomas's Auto-Rice Bootstraping Scripts.
 
 #
 
