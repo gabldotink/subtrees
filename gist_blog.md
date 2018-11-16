@@ -2,7 +2,7 @@
 
 Using Gist's for blogging can be liberating.
 
-✅ Free, simple, fast, reliable, secure, accessible
+[✅] Free, simple, fast, reliable, secure, accessible
 
 ✅ Hassle-free
 
