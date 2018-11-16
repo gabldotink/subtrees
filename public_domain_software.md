@@ -49,7 +49,7 @@ In general, open-source advocates [do not sympathise](https://opensource.org/faq
 
 ## Popular "Public Domain like" licenses
 
-* [The Unlicense](http://unlicense.org/) - Is a template for disclaiming copyright monopoly interest in software you've written; in other words, it is a template for dedicating your software to the public domain. It is not a license, per se, but rather the most accepted method of expressing that a project is in Public Domain. Specially in GitHub.
+* [The Unlicense](http://unlicense.org/) - Is a template for disclaiming copyright monopoly interest in software you've written; in other words, it is a template for dedicating your software to the Public Domain. It is not a license, per se, but rather the most accepted method of expressing that a project was dedicated to the Public Domain.
 
 * [CC0](https://creativecommons.org/publicdomain/zero/1.0/legalcode) - According to [Stanford University definition of Public Domain](https://fairuse.stanford.edu/overview/public-domain/welcome/) this is not a true Public Domain because it reserves rights of patents to the author.
 
