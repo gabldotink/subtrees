@@ -13,7 +13,7 @@ You can | You cannot
 --- | ---
 ✅ Without consent | ❌ Patent someone else's Public Domain work
 ✅ Copy | ❌ Use as basis for legal action against the author [1]
-✅ Rename | ❌ Revoke Public Domain status of someone else's copy of a version of your work that was released under Public Domain [2][3]
+✅ Rename | ❌ Revoke Public Domain status of someone else's copy of your work [2][3]
 ✅ Redistribute | ❌ Relicense someone else's non-Public Domain work as Public Domain
 ✅ Modify | ❌ Release code you write to an employer as Public Domain
 ✅ Study |
