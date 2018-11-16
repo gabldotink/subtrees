@@ -7,8 +7,8 @@ You can | You cannot
 ✅ Without consent |
 ✅ Copy | ❌ Use as basis for legal action against the author [1]
 ✅ Rename | ❌ Revoke Public Domain status of the original work [2]
-✅ Redistribute | ❌ Relicense someone else's non Public Domain work as Public Domain without explicity consent
-✅ Modify | ❌ Release code you write to an employer as Public Domain without explicity consent
+✅ Redistribute | ❌ Relicense someone else's non-Public Domain work as Public Domain
+✅ Modify | ❌ Release code you write to an employer as Public Domain
 ✅ Study | ❌ Patent someone else's Public Domain work
 ✅ Sell |
 ✅ Use as inspiration |
