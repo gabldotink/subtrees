@@ -12,8 +12,8 @@ You can | You cannot
 ✅ Study |
 ✅ Sell |
 ✅ Use as inspiration |
-✅ Relicense |
 ✅ Omit author |
+✅ Relicense |
 ✅ Relicense your own work as Public Domain regardless of previous license |
 ✅ Relicense your own Public Domain work as any other license [4] |
 ✅ Hold patents of your own Public Domain works [5] |
