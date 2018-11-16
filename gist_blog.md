@@ -52,7 +52,7 @@ Supports image upload via CTRL+V. You can delete other's comments from your gist
 [Stackedit - online markdown editor](https://stackedit.io)|Feature rich with live preview. Publishes to Github (haven't tested).
 [Minimalist Online Markdown Editor](http://markdown.pioul.fr/)|Fast with live preview.
 
-## Gist arkdown reference
+## Gist Markdown Reference
 
 Not comprehensive. I'll update as I learn.
 
@@ -69,3 +69,17 @@ Result:
 - [x] Task 1
 - [ ] Task 2
 - [ ] Task 3
+
+### Collapsible content/spoilers
+
+<details><summaryClick me to expand</summary>
+<p>
+
+#### You can even hide code blocks:
+
+```python
+print("hello world!")
+```
+
+</p>
+</details>
