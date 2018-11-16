@@ -44,7 +44,11 @@ extension:go|Gist with .go files
 
 ## Comments
 
-Supports image upload via CTRL+V. You can delete other's comments from your gists.
+Users can upload images in comments simply copying and pasting the image using CTRL+V. You can delete any comment from your gists.
+
+## Tips
+
+- Post with multiple files list them in alphabetical order. Start file name with space to have it appear first or `~` for last. Numbers also work.
 
 ## Tools
 
