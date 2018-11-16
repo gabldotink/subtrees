@@ -8,7 +8,7 @@ Using Gist for blogging can be liberating.
 ✅ Tagging|❌ No post pinning
 ✅ Search|❌ Doesn't look like a blog
 ✅ Revisions|❌ Cannot disable comments
-✅ Comments|❌ URLs not friendly
+✅ Comments|❌ Unfriendly URLs
 ✅ Delete comments|
 ✅ Markdown|
 ✅ Syntax highlighting|
