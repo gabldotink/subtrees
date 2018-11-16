@@ -29,7 +29,7 @@ You can | You cannot
 
 [2] Unless proven that it was unrightfully released as Public Domain.
 
-[3] In practice, you can effectively revoke status of your own Public Domain work if you manage to relicense it before anyone else obtains a copy. That includes, for example, deleting relevant commits from a public git repo to prevent someone from fork the project from that commit and relicense it from there.
+[3] In practice, you can effectively revoke status of your own Public Domain work if you manage to relicense it before anyone else obtains a copy. That includes, for example, deleting relevant commits from a public git repo to prevent someone from forking the project from that commit.
 
 [4] Whoever obtained a copy of your work that was licensed under Public Domain can still use that specific version however pleases. Github forks for example.
 
