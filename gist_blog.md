@@ -10,7 +10,7 @@ Using Gist for blogging can be liberating.
 ✅ Search|❌ Cannot disable comments
 ✅ Revisions|
 ✅ Comments|
-✅ Can delete comments|
+✅ Delete other's comments|
 ✅ Markdown|
 ✅ Syntax highlighting|
 ✅ One click copy (Fork)|
