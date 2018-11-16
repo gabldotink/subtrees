@@ -73,6 +73,7 @@ Result:
 ### Collapsible content/spoilers
 
 <details><summaryClick me to expand</summary>
+
 #### Content between  &lt;details&gt; and &lt;/details&gt; is hidden
   
 ```python
