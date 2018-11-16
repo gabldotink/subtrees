@@ -1,6 +1,6 @@
 # Blogging with Gist
 
-Gists as a blogging plaform can be a liberating experience.
+Gist simplicity can turn blogging into a liberating experience.
 
 **Pros**|**Cons**
 :-----|:-----
@@ -49,7 +49,9 @@ size:>4000|having a file larger than 4000kb
 
 ## Comments
 
-Users can upload images in comments simply copying and pasting the image using CTRL+V. You can delete any comment from your gists.
+Users can upload images in comments simply copying and pasting the image using CTRL+V. Drag-n-Drop works as well. I guess this wont work on mobile phones.
+
+You can delete any comment from your gists.
 
 ## Tips
 
