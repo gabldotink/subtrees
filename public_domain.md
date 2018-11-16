@@ -45,7 +45,7 @@ You can | You cannot
 
 ## Controversy
 
-In general, open-source advocates [do not sympathise](https://opensource.org/faq#public-domain) with Public Domain arguing that it [allows for open-source software to be copyrighted](https://opensource.org/faq#cc-zero) and relicensed under closed-source licenses, which is true. They prefer copyleft licenses such as [GNU GPL](https://en.wikipedia.org/wiki/GNU_General_Public_License) which enforces that any derivative work remains open-source.
+In general, open-source advocates [do not sympathise](https://opensource.org/faq#public-domain) with Public Domain licenses arguing that they [allow for open-source software to be copyrighted](https://opensource.org/faq#cc-zero) and relicensed under closed-source licenses, which is true. They prefer copyleft licenses such as [GNU GPL](https://en.wikipedia.org/wiki/GNU_General_Public_License) which enforces that any derivative work remains open-source.
 
 ## Profitable Public Domain Software
 
