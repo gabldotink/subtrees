@@ -11,7 +11,7 @@ There are [four common ways](https://fairuse.stanford.edu/overview/public-domain
 
 You can | You cannot
 --- | ---
-✅ Without consent | ❌ Patent **inventions** found in someone else's Public Domain work
+✅ Without consent | ❌ Patent **inventions** found in someone else's Public Domain work [3][4]
 ✅ Copy | ❌ Use as basis for legal action against the author [5]
 ✅ Rename | ❌ Revoke Public Domain status of someone else's copy of your work [6]
 ✅ Redistribute | ❌ Relicense someone else's non-Public Domain work as Public Domain
