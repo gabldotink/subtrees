@@ -19,7 +19,7 @@ Using Gist for blogging can be liberating.
 
 ## Tagging
 
-Tag blog posts by adding `#blog` to title. Searching for `#blog user:ww9` lists only blog posts among your gists.
+Tag blog posts by adding `#blog` to title. Searching for `#blog user:myuername` lists only blog posts among your gists.
 
 Not sure if results are always listed in chronological order.
 
