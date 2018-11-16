@@ -11,6 +11,7 @@ This and all public gists in https://gist.github.com/ww9 are [Public Domain](htt
   - https://gist.github.com/jonschlinkert/5854601
   - https://gist.github.com/ringmatthew/9f7bbfd102003963f9be7dbcf7d40e51
   - https://gist.github.com/DavidWells/7d2e0e1bc78f4ac59a123ddf8b74932d
+  - https://gist.github.com/haydenk/958b433ee107537bb166b98b59262b2a
   - https://gist.github.com/asabaylus/3071099
   - https://gist.github.com/t-nissie/9580883 (Add images, secret gists, anti-spam protection)
   - https://guides.github.com/features/mastering-markdown/
