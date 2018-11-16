@@ -7,9 +7,10 @@ Using Gist for blogging can be liberating.
 ✅ Free, simple, fast, reliable, secure, accessible, hassle-free|❌ No fancy theme
 ✅ Image upload (CTRL+V, in comments only)|❌ No post pinning
 ✅ Tagging|❌ Doesn't look like a blog
-✅ Search|
+✅ Search|❌ Cannot disable comments
 ✅ Revisions|
 ✅ Comments|
+✅ Can delete comments|
 ✅ Markdown|
 ✅ Syntax highlighting|
 ✅ One click copy (Fork)|
