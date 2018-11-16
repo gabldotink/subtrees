@@ -21,7 +21,7 @@ Gists as a blogging plaform can be a liberating experience.
 
 ## How it works
 
-A Gist is a collection of one or more files that are ordered by alphabetical order. To use it as a blog, simply create a markdown (.md) file for each post and you're set.
+A Gist post is a collection of one or more files. To use it as a blog, simply create a markdown (.md) file for each post and you're set.
 
 If you, like me, also use Gist for non non-blogging content, simply add `#blog` the the end of blog Gist title. Doing so allows us to search blog posts: [`user:ww9 #blog`](https://gist.github.com/search?utf8=%E2%9C%93&q=user%3Aww9+%23blog)
 
