@@ -40,7 +40,7 @@ In general, open-source advocates do not sympathise with Public Domain arguing t
 
 ## Patents
 
-Patent disputes are always detail-driven murky waters and I wouldn't risk significant financial damages based solely on a license, Public Domain included. A lawyer specialized on the jurisdiction of your interest really is the only reliable source of information. Having said that, in general it seems that one can retain Patent rights even after licensing their work as Public Domain:
+Patents apply to inventions, not creative works. Having said that, in general it seems that one can retain Patent rights even after licensing their work as Public Domain:
 
 * [CC0 1.0 Universal - Public Domain Dedication] license contains:
 
