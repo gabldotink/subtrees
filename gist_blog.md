@@ -24,12 +24,6 @@ A post is a collection of one or more files that are ordered by alphabetical ord
 
 If you, like me, post non-blogging stuff to Gist, simply add #blog the the end of posts title. This way a simple search can list only your blog posts: [`user:ww9 #blog`](https://gist.github.com/search?utf8=%E2%9C%93&q=user%3Aww9+%23blog)
 
-## Tagging
-
-Tag blog posts by adding `#blog` to title. Searching for `#blog user:myuername` lists only blog posts among your gists.
-
-Not sure if results are always listed in chronological order.
-
 ## Search
 
 **Search**|**Result**
