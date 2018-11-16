@@ -34,7 +34,7 @@ Filters that work in Gist search.
 stars:>100|with more than 100 stars
 user:ww9|from user `ww9`
 #blog|with `#blog` in title or content
-NOT #misc|not containing #misc in title or content
+NOT #misc|not containing `#misc` in title or content
 extension:go|with `.go` files
 forks:<200|with less than 200 forks
 size:1000..4000|having a file between 1000kb and 4000kb
