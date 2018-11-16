@@ -73,11 +73,9 @@ Result:
 ### Collapsible content/spoilers
 
 <details><summaryClick me to expand</summary>
-<p>
-#### Content between `<p>` and `</p>` is hidden
+#### Content between `<``details>` and `<``/details>` is hidden
   
 ```python
 print("hello world!")
 ```
-</p>
 </details>
