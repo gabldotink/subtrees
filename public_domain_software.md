@@ -1,6 +1,6 @@
 # Public Domain Software
 
-The term “public domain” refers to creative materials that are not protected by intellectual property laws such as copyright, trademark, **or patent laws**. The public owns these works, not an individual author or artist. Anyone can use a public domain work without obtaining permission, but no one can ever own it. - [Stanford University definition](https://fairuse.stanford.edu/overview/public-domain/welcome/)
+The term “public domain” refers to creative materials that are not protected by intellectual property laws such as copyright, trademark, or patent laws. The public owns these works, not an individual author or artist. Anyone can use a public domain work without obtaining permission, but no one can ever own it. - [Stanford University definition](https://fairuse.stanford.edu/overview/public-domain/welcome/)
 
 Public Domain implies waiving all copyright and thus **Public Domain is not a license**. That's not to say that all software requires a license as software dedicated to Public Domain is perfectly fine for use without a license.
 
