@@ -9,14 +9,14 @@ Using Gist for blogging can be liberating.
 ✅ Search|❌ Doesn't look like a blog
 ✅ Revisions|❌ Cannot disable comments
 ✅ Comments|
-✅ Moderate comments|
+✅ Delete comments|
 ✅ Markdown|
 ✅ Syntax highlighting|
 ✅ One click copy (Fork)|
 ✅ `git clone` gist URL|
 ✅ Not wordpress or Medium|
-✅ Free, simple, fast, hassle-free
-✅ Reliable, secure, accessible
+✅ Free, simple, fast, hassle-free|
+✅ Reliable, secure, accessible|
 
 ## Tagging
 
