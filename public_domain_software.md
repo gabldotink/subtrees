@@ -23,7 +23,7 @@ By definition, a software license assert some form of copyright and therefore an
 ✅ Dedicate your work to Public Domain regardless of current license [1]|
 ✅ License Public Domain work under any license [2]|
 
--**[1]** All copyright holders must agree. Dedicating to Public Domain requires waiving of copyright causing any license to become null and void. This action is not retroactive in the sense that copies of previous versions retain original licenses.
+**[1]** All copyright holders must agree. Dedicating to Public Domain requires waiving of copyright causing any license to become null and void. This action is not retroactive in the sense that copies of previous versions retain original licenses.
 
 **[2]** This invariably revokes Public Domain status of that copy going forward, regardless of license chosen. Other copies of previous versions of the work remain in Public Domain. i.e Forks of commits before license changes.
 
