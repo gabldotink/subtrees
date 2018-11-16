@@ -3,7 +3,11 @@
 
 Markdown that works in Gist.
 
-todo: better formatting. See: https://gist.github.com/jonschlinkert/5854601
+### Todo
+
+- Better formatting. See:
+  - https://gist.github.com/jonschlinkert/5854601
+  - https://gist.github.com/ringmatthew/9f7bbfd102003963f9be7dbcf7d40e51
 
 ##### Table of Contents  
 [Headers](#headers)
