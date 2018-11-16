@@ -41,7 +41,7 @@ You can | You cannot
  
  > "The term “public domain” refers to creative materials that are not protected by intellectual property laws such as copyright, trademark, or **patent laws**. The public owns these works, not an individual author or artist. Anyone can use a public domain work without obtaining permission, but no one can ever own it."
  
- Perhaps both are right and CC0 license is a specialization of the term Public Domain. Or perhaps CC0 is not a real Public Domain license if it reserves some rights to the author of a work lincesed under it.
+ Perhaps both are right and CC0 license is a specialization of the term Public Domain. Perhaps Stanford's article do not apply in its entirety to software since it mentions "software" only once. Or perhaps CC0 is not a real Public Domain license when it reserves some rights to work authors.
 
 ## Controversy
 
