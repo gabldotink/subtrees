@@ -4,12 +4,12 @@ Any creation published as Public Domain belongs to everyone and can be used in a
 
 You can | You cannot
 --- | ---
-✅ Without consent |
+✅ Without consent | ❌ Patent someone else's Public Domain work
 ✅ Copy | ❌ Use as basis for legal action against the author [1]
 ✅ Rename | ❌ Revoke Public Domain status of the original work [2]
 ✅ Redistribute | ❌ Relicense someone else's non-Public Domain work as Public Domain
 ✅ Modify | ❌ Release code you write to an employer as Public Domain
-✅ Study | ❌ Patent someone else's Public Domain work
+✅ Study |
 ✅ Sell |
 ✅ Use as inspiration |
 ✅ Relicense |
