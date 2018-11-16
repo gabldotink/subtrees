@@ -1,4 +1,4 @@
-### Gist as a blog
+# Gist as a blog
 
 Using Gist's for blogging can be liberating.
 
@@ -32,13 +32,13 @@ Using Gist's for blogging can be liberating.
 
 ❔ Any pros or cons missing? Comment bellow
 
-### Tagging
+## Tagging
 
 Tag blog posts by adding `#blog` to title. Searching for `#blog user:ww9` lists only blog posts among your gists.
 
 Not sure if results are always listed in chronologic order.
 
-### Search
+## Search
 
 **Search**|**Result**
 :-----:|:-----:
