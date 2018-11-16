@@ -21,7 +21,7 @@ You can | You cannot
 
 [2] Unless proven that it was unrightfully released as Public Domain
 
-[3] At least if licensed under [CC0 1.0 Universal - Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/legalcode) [1] which contains:
+[3] At least when licensed under [CC0 1.0 Universal - Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/legalcode) [1] which contains:
 
  > "No trademark or patent rights held by Affirmer are waived, abandoned, surrendered, licensed or otherwise affected by this document."
 
