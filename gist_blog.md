@@ -7,8 +7,8 @@ Gists as a blogging plaform can be a liberating experience.
 ✅ Images|❌ No fancy theme
 ✅ Tagging|❌ No post pinning
 ✅ Search|❌ Doesn't look like a blog
-✅ Revisions|❌ Cannot disable comments
-✅ Comments|❌ Unfriendly URLs
+✅ Revisions|❌ Unfriendly URLs
+✅ Comments|❌ Cannot disable comments
 ✅ Delete comments|❌ Date only shown in Revisions
 ✅ Markdown|❌ Not WYSIWYG
 ✅ Syntax highlighting|
