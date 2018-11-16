@@ -41,7 +41,7 @@ Not sure if results are always listed in chronologic order.
 ## Search
 
 **Search**|**Result**
-:-----:|:-----:
+:-----|:-----
 stars:>100|Gists with more than 100 stars
 user:ww9|Gists from user `ww9`
 #blog|Gists with `#blog` in title or content
@@ -58,4 +58,5 @@ stars:>100 extension:go|.go gists with more than 100 stars
 ### Todo
 
 [ ] Find interesting gist searches
+
 [ ] Find if `#blog user:ww9` search results are in chronological order
