@@ -15,15 +15,18 @@ You can | You cannot
 ✅ Relicense |
 ✅ Omit author |
 ✅ Relicense your own work as Public Domain regardless of previous license |
-✅ Hold patents of your own Public Domain works [4]|
+✅ Relicense your own Public Domain work as any other license [4] |
+✅ Hold patents of your own Public Domain works [5] |
 
 [1] Subject to local laws
 
 [2] Unless proven that it was unrightfully released as Public Domain.
 
-[3] In practice, you can effectively revoke status of your own Public Domain work by relicensing it before anyone else obtains a copy. That includes deleting relevant commits from a public git repo, for example, otherwise anyone can fork the project from that commit and do whatever pleases with it.
+[3] In practice, you can effectively revoke status of your own Public Domain work if you manage to relicense it before anyone else obtains a copy. That includes, for example, deleting relevant commits from a public git repo to prevent someone from fork the project from that commit and relicense it from there.
 
-[4] At least when licensed under [CC0 1.0 Universal - Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/legalcode) [1] which contains:
+[4] Whoever obtained a copy of it while under Public Domain can still use that specific version however pleases. Github forks for example.
+
+[5] At least when licensed under [CC0 1.0 Universal - Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/legalcode) [1] which contains:
 
  > "No trademark or patent rights held by Affirmer are waived, abandoned, surrendered, licensed or otherwise affected by this document."
 
