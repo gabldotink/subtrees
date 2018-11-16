@@ -20,7 +20,7 @@ Using Gist for blogging can be liberating.
 
 Tag blog posts by adding `#blog` to title. Searching for `#blog user:ww9` lists only blog posts among your gists.
 
-Not sure if results are always listed in chronologic order.
+Not sure if results are always listed in chronological order.
 
 ## Search
 
@@ -38,6 +38,10 @@ extension:go|Gist with .go files
 :-----|:-----
 #blog user:ww9|My blog posts
 stars:>100 extension:go|.go gists with more than 100 stars
+
+## Comments
+
+Supports image upload via CTRL+V. You can delete other's comments from your gists.
 
 ### Todo
 
