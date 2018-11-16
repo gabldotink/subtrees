@@ -4,7 +4,7 @@ The term “public domain” refers to creative materials that are not protected
 
 Public Domain implies waiving all copyright and thus **Public Domain is not a license**. That's not to say that all software requires a license as software dedicated to Public Domain is perfectly fine for use without a license.
 
-By definition, a software license assert some form of copyright and therefore **no licensed is Public Domain**.
+By definition, a software license assert some form of copyright and therefore **no license is Public Domain**.
 
 
 **Can** | **Cannot**
