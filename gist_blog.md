@@ -74,7 +74,7 @@ Result:
 
 <details><summaryClick me to expand</summary>
 <p>
-#### You can even hide code blocks:
+#### Content between `<p>` and `</p>` is hidden
   
 ```python
 print("hello world!")
