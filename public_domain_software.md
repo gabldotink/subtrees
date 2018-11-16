@@ -43,7 +43,7 @@ In general, open-source advocates [do not sympathise](https://opensource.org/faq
 
 ## Profitable Public Domain software
 
-* SQLite - A free, reliable, portable and [most widely deployed](https://www.sqlite.org/mostdeployed.html) database engine in the world. While its engine code is open-source and Public Domain, the automated test code isn't. Tests are paramount in ensuring reliability and performance of database engines. Since SQLite [has 700 times as much test code than engine code](https://www.sqlite.org/testing.html), competition is strongly discouraged to copying the engine code since it would require writting similar volume of tests to be competitive.
+* SQLite - A free, reliable, portable and [most widely deployed](https://www.sqlite.org/mostdeployed.html) database engine in the world. While the database engine is in Public Domain, its automated test suit which is paramount to ensure reliability and performance [has 700 times as much code than the engine](https://www.sqlite.org/testing.html) is closed source. This strongly discourages any competition from copying the engine code when faced with that daunting task of writing all tests from scratch.
 
 ## Popular "Public Domain like" licenses
 
