@@ -48,17 +48,24 @@ Supports image upload via CTRL+V. You can delete other's comments from your gist
 
 **Tool**|**Notes**
 :-----|:-----
-[Github Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet)|
-[Stackedit - Online markdown editor](https://stackedit.io)|Live preview. Comprehensive github markdown example. Publishes to Github (haven't tested)
-[Minimalist Online Markdown Editor](http://markdown.pioul.fr/)|Fast with lvie preview
+[Github Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet)|Concesi list
+[Stackedit - online markdown editor](https://stackedit.io)|Feature rich with live preview. Publishes to Github (haven't tested).
+[Minimalist Online Markdown Editor](http://markdown.pioul.fr/)|Fast with live preview.
 
+## Gist arkdown reference
 
-# Test
+Not comprehensive. I'll update as I learn.
 
-```mermaid
-graph LR
-A[Square Rect] -- Link text --> B((Circle))
-A --> C(Round Rect)
-B --> D{Rhombus}
-C --> D
+### Task lists
+
+```markdown
+- [x] Task 1
+- [ ] Task 2
+- [ ] Task 3
 ```
+
+Result:
+
+- [x] Task 1
+- [ ] Task 2
+- [ ] Task 3
