@@ -4,10 +4,10 @@ Any creation published as Public Domain belongs to everyone and can be used in a
 
 There are [four common ways](https://fairuse.stanford.edu/overview/public-domain/welcome/) that works arrive in the Public Domain:
 
-* The copyright has expired
-* The copyright owner failed to follow copyright renewal rules
-* The copyright owner deliberately places it in the public domain, known as “dedication,”
-* Copyright law does not protect this type of work.
+1. The copyright has expired
+1. The copyright owner failed to follow copyright renewal rules
+1. The copyright owner deliberately places it in the public domain, known as “dedication,”
+1. Copyright law does not protect this type of work.
 
 You can | You cannot
 --- | ---
