@@ -9,7 +9,7 @@ Using Gist for blogging can be liberating.
 ✅ Search|❌ Doesn't look like a blog
 ✅ Revisions|❌ Cannot disable comments
 ✅ Comments|❌ Unfriendly URLs
-✅ Delete comments|❌ Post date only shown in revisions
+✅ Delete comments|❌ Date only shown in revisions
 ✅ Markdown|
 ✅ Syntax highlighting|
 ✅ One click copy (Fork)|
