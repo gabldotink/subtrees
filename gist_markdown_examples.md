@@ -3,6 +3,8 @@
 
 Markdown that works in Gist.
 
+todo: better formatting. See: https://gist.github.com/jonschlinkert/5854601
+
 ##### Table of Contents  
 [Headers](#headers)
 [Emphasis](#emphasis)
