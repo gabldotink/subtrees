@@ -47,9 +47,9 @@ In general, open-source advocates [do not sympathise](https://opensource.org/faq
 
 ## Popular "Public Domain like" licenses
 
-* [CC0](https://creativecommons.org/publicdomain/zero/1.0/legalcode) - According to [Stanford University definition of Public Domain](https://fairuse.stanford.edu/overview/public-domain/welcome/) this is not a true Public Domain because it reserves rights of Patents to the author.
+* [CC0](https://creativecommons.org/publicdomain/zero/1.0/legalcode) - According to [Stanford University definition of Public Domain](https://fairuse.stanford.edu/overview/public-domain/welcome/) this is not a true Public Domain because it reserves rights of patents to the author.
 
-* [WTFPL (Do What the Fuck You Want To Public License)](https://en.wikipedia.org/wiki/WTFPL#Version_2) - Informal license that implies total freedom of use. Cannot be considered Public Domain compatible as it contains copyright.
+* [WTFPL (Do What the Fuck You Want To Public License)](https://en.wikipedia.org/wiki/WTFPL#Version_2) - Informal license that implies total freedom of use. Also cannot be considered Public Domain compatible as it includes copyright ownership.
 
 ## License
 
