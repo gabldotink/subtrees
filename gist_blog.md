@@ -45,7 +45,7 @@ Not sure if results are always listed in chronologic order.
 stars:>100|Gists with more than 100 stars
 user:ww9|Gists from user `ww9`
 #blog|Gists with `#blog` in title or content
-NOT #misc|Excludes gists containing #misc either in title or content
+NOT #misc|Excludes gists containing #misc in title or content
 extension:go|Gist with .go files
 
 #### Search examples
