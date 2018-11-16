@@ -10,7 +10,7 @@ Gists as a blogging plaform can be a liberating experience.
 ✅ Revisions|❌ Cannot disable comments
 ✅ Comments|❌ Unfriendly URLs
 ✅ Delete comments|❌ Date only shown in Revisions
-✅ Markdown|❌ *Markdown*
+✅ Markdown|❌ Not WYSIWYG
 ✅ Syntax highlighting|
 ✅ One click copy (Fork)|
 ✅ `git clone` gist URL|
