@@ -54,6 +54,6 @@ Users can upload images in comments simply copying and pasting the image using C
 
 **Tool**|**Notes**
 :-----|:-----
-[Github Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet)|Concesi list
+[GitHub Flavored Markdown Spec](https://github.github.com/gfm/)|Comprehensive
 [Stackedit - online markdown editor](https://stackedit.io)|Feature rich with live preview. Publishes to Github (haven't tested).
 [Minimalist Online Markdown Editor](http://markdown.pioul.fr/)|Fast with live preview.
