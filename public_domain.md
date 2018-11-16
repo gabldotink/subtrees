@@ -1,6 +1,6 @@
 # Public Domain
 
-Any creation that is published as Public Domain belongs to everyone and can be used in any way without conditions, not even crediting the author.
+Any creation published as Public Domain belongs to everyone and can be used in any way without conditions, not even crediting the author.
 
 You can | You cannot
 --- | ---
