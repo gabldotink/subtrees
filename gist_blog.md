@@ -65,8 +65,8 @@ You can delete any comment from your gists.
 [Stackedit - online markdown editor](https://stackedit.io)|Feature rich with live preview. Publishes to Github (haven't tested).
 [Minimalist Online Markdown Editor](http://markdown.pioul.fr/)|Fast with live preview.
 
-## Formatting posts using Markdown
+## Formatting with Markdown
 
-Please visit my other gist called [Gist Markdown Examples](https://gist.github.com/ww9/44f08d44327a40d2ab309a349bebec57) for ways to format posts.
+See my other gist called [Gist Markdown Examples](https://gist.github.com/ww9/44f08d44327a40d2ab309a349bebec57) for ways to format posts in Gist.
 
 **Happy blogging!**
