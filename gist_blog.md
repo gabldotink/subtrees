@@ -74,12 +74,9 @@ Result:
 
 <details><summaryClick me to expand</summary>
 <p>
-
 #### You can even hide code blocks:
-
 ```python
 print("hello world!")
 ```
-
 </p>
 </details>
