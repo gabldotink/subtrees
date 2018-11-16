@@ -55,7 +55,7 @@ You can delete any comment from your gists.
 
 ## Tips
 
-- Post with multiple files list them in alphabetical order. Start file name with space to have it appear first or `~` for last. Numbers also work.
+- Multiple files in a post are listed in alphabetical order. To make a file appear first on the list, prepend its name with a space. To make it appear last, prepend filename with `~`. Numbers also work.
 
 ## Tools
 
@@ -64,3 +64,9 @@ You can delete any comment from your gists.
 [GitHub Flavored Markdown Spec](https://github.github.com/gfm/)|Comprehensive
 [Stackedit - online markdown editor](https://stackedit.io)|Feature rich with live preview. Publishes to Github (haven't tested).
 [Minimalist Online Markdown Editor](http://markdown.pioul.fr/)|Fast with live preview.
+
+## Formatting posts using Markdown
+
+Please visit my other gist called [Gist Markdown Examples](https://gist.github.com/ww9/44f08d44327a40d2ab309a349bebec57) for ways to format posts.
+
+**Happy blogging!**
