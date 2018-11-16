@@ -14,8 +14,8 @@ Using Gist for blogging can be liberating.
 ✅ Syntax highlighting|
 ✅ One click copy (Fork)|
 ✅ Not wordpress or Medium|
-✅ Free, simple, fast, hassle-free|❌ No fancy theme
-✅ Reliable, secure, accessible|❌ No post pinning
+✅ Free, simple, fast, hassle-free
+✅ Reliable, secure, accessible
 
 ## Tagging
 
