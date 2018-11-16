@@ -1,34 +1,20 @@
-# Gist as a blog
+# Blogging with Gist
 
 Using Gist for blogging can be liberating.
 
-✅ Free, simple, fast, reliable, secure, accessible, hassle-free
-
-✅ Image upload (CTRL+V, in comments only)
-
-✅ Tagging
-
-✅ Search
-
-✅ Revisions
-
-✅ Comments
-
-✅ Markdown
-
-✅ One click copy (Fork)
-
-✅ Not wordpress
-
-✅ Not Medium
-
-❌ No fancy theme
-
-❌ No post pinning
-
-❌ Doesn't look like a blog
-
-❔ Any pros or cons missing? Comment bellow
+**Pros**|**Cons**
+:-----|:-----
+✅ Free, simple, fast, reliable, secure, accessible, hassle-free|❌ No fancy theme
+✅ Image upload (CTRL+V, in comments only)|❌ No post pinning
+✅ Tagging|❌ Doesn't look like a blog
+✅ Search|
+✅ Revisions|
+✅ Comments|
+✅ Markdown|
+✅ Syntax highlighting|
+✅ One click copy (Fork)|
+✅ Not wordpress|
+✅ Not Medium|
 
 ## Tagging
 
