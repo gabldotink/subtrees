@@ -9,13 +9,13 @@ You can | You cannot
 ✅ Rename | ❌ Revoke Public Domain status of the original work [2][3]
 ✅ Redistribute | ❌ Relicense someone else's non-Public Domain work as Public Domain
 ✅ Modify | ❌ Release code you write to an employer as Public Domain
-✅ Study |
+✅ Study | ❌ Copyright Public Domain work
 ✅ Sell |
 ✅ Use as inspiration |
 ✅ Omit author |
-✅ Relicense |
+✅ Relicense under any other license |
 ✅ Relicense your own work as Public Domain regardless of previous license |
-✅ Relicense your own Public Domain work as any other license [4] |
+✅ Relicense your own Public Domain work under any other license [4] |
 ✅ Hold patents of your own Public Domain works [5][6] |
 
 [1] Subject to local laws
