@@ -6,7 +6,7 @@ You can | You cannot
 --- | ---
 ✅ Without consent | ❌ Patent someone else's Public Domain work
 ✅ Copy | ❌ Use as basis for legal action against the author [1]
-✅ Rename | ❌ Revoke Public Domain status of the original work [2]
+✅ Rename | ❌ Revoke Public Domain status of the original work [2][3]
 ✅ Redistribute | ❌ Relicense someone else's non-Public Domain work as Public Domain
 ✅ Modify | ❌ Release code you write to an employer as Public Domain
 ✅ Study |
@@ -15,7 +15,7 @@ You can | You cannot
 ✅ Relicense |
 ✅ Omit author |
 ✅ Relicense your own work as Public Domain regardless of previous license |
-✅ Hold patents of your own Public Domain works [3]|
+✅ Hold patents of your own Public Domain works [4]|
 
 [1] Subject to local laws
 
