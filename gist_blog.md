@@ -3,19 +3,31 @@
 Using Gist's for blogging can be liberating.
 
 ✅ Free, simple, fast, reliable, secure, accessible
+
 ✅ Hassle-free
+
 ✅ Image upload (CTRL+V, in comments only)
+
 ✅ Tagging
+
 ✅ Search
+
 ✅ Revisions
+
 ✅ Comments
+
 ✅ Markdown
+
 ✅ One click copy (Fork)
+
 ✅ Not wordpress
+
 ✅ Not medium
 
 ❌ No fancy theme
+
 ❌ No post pinning
+
 ❌ Doesn't look like a blog
 
 ❔ Any pros or cons missing? Comment bellow
@@ -36,7 +48,7 @@ user:ww9|Gists from user `ww9`
 NOT #misc|Excludes gists containing #misc either in title or content
 extension:go|Gist with .go files
 
-#### Eaxmples
+#### Search examples
 
 **Search**|**Result**
 :-----:|:-----:
