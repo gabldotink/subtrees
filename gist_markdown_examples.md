@@ -8,6 +8,11 @@ Markdown that works in Gist.
 - Better formatting. See:
   - https://gist.github.com/jonschlinkert/5854601
   - https://gist.github.com/ringmatthew/9f7bbfd102003963f9be7dbcf7d40e51
+  - https://gist.github.com/DavidWells/7d2e0e1bc78f4ac59a123ddf8b74932d
+  - https://gist.github.com/asabaylus/3071099
+  - https://gist.github.com/t-nissie/9580883 (Add images, secret gists, anti-spam protection)
+  - https://guides.github.com/features/mastering-markdown/
+  - https://gist.github.com/cyhsutw/d5983d166fb70ff651f027b2aa56ee4e#file-mathjax-ipynb (Python notebook, Math syntax)
 
 ##### Table of Contents  
 [Headers](#headers)

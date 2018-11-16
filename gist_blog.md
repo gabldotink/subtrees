@@ -4,7 +4,7 @@ Using Gist for blogging can be liberating.
 
 **Pros**|**Cons**
 :-----|:-----
-✅ Image upload (CTRL+V, in comments only)|❌ No fancy theme
+✅ Images|❌ No fancy theme
 ✅ Tagging|❌ No post pinning
 ✅ Search|❌ Doesn't look like a blog
 ✅ Revisions|❌ Cannot disable comments
@@ -27,13 +27,15 @@ If you, like me, post non-blogging stuff to Gist, simply add #blog the the end o
 
 ## Search
 
-**Search**|**Result**
+**Search**|**Gists**
 :-----|:-----
-stars:>100|Gists with more than 100 stars
-user:ww9|Gists from user `ww9`
-#blog|Gists with `#blog` in title or content
-NOT #misc|Excludes gists containing #misc in title or content
-extension:go|Gist with .go files
+stars:>100|with more than 100 stars
+user:ww9|from user `ww9`
+#blog|with `#blog` in title or content
+NOT #misc|not containing #misc in title or content
+extension:go|with .go files
+forks:<200|with less than 200 forks
+size:1024..4089|with size between 1024kb and 4089kb
 
 ## Search examples
 
