@@ -9,7 +9,7 @@ You can | You cannot
 ✅ Rename | ❌ Revoke Public Domain status of the original work [2][3]
 ✅ Redistribute | ❌ Relicense someone else's non-Public Domain work as Public Domain
 ✅ Modify | ❌ Release code you write to an employer as Public Domain
-✅ Study | ❌ Copyright Public Domain work
+✅ Study |
 ✅ Sell |
 ✅ Use as inspiration |
 ✅ Omit author |
