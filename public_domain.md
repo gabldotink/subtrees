@@ -19,7 +19,9 @@ You can | You cannot
 
 [1] Subject to local laws
 
-[2] Unless proven that it was unrightfully released as Public Domain. You can effectively remoke status of your own Public Domain work by deleting it if no one else has a copy.
+[2] Unless proven that it was unrightfully released as Public Domain.
+
+[3] In practice, you can effectively revoke status of your own Public Domain work by relicensing it before anyone else obtains a copy. That includes deleting relevant commits from a public git repo for example.
 
 [3] At least when licensed under [CC0 1.0 Universal - Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/legalcode) [1] which contains:
 
