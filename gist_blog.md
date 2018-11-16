@@ -44,8 +44,10 @@ extension:go|Gist with .go files
 
 Supports image upload via CTRL+V. You can delete other's comments from your gists.
 
-### Todo
+## Tools
 
-[ ] Find interesting gist searches
-
-[ ] Find if `#blog user:ww9` search results are in chronological order
+**Tool**|**Notes**
+:-----|:-----
+[Github Markdown Cheatsheet](https://github.com/adam-p/markdown-here/wiki/Markdown-Here-Cheatsheet)|
+[Stackedit - Online markdown editor](https://stackedit.io)|Live preview. Comprehensive github markdown example. Publishes to Github (haven't tested)
+[Minimalist Online Markdown Editor](http://markdown.pioul.fr/)|Fast with lvie preview
