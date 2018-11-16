@@ -23,11 +23,7 @@ You can | You cannot
 ✅ Relicense under any other license |
 ✅ Relicense your own work as Public Domain regardless of previous license [1] |
 ✅ Relicense your own Public Domain work under any other license [2] |
-✅ Hold patents of your own Public Domain works [4][5] |
-
-[5] Subject to local laws
-
-[6] Unless proven that it was unrightfully released as Public Domain.
+✅ Patent your **inventions** in work released under Public Domain  [3][4] |
 
 [1] In practice, you can effectively revoke Public Domain status of your own work if you manage to relicense it before anyone else obtains a copy. That includes, for example, deleting relevant commits from a public git repo to prevent someone from forking the project from that commit.
 
@@ -42,6 +38,10 @@ You can | You cannot
  > "The term “public domain” refers to creative materials that are not protected by intellectual property laws such as copyright, trademark, or **patent laws**. The public owns these works, not an individual author or artist. Anyone can use a public domain work without obtaining permission, but no one can ever own it."
  
  Perhaps both are right and CC0 license is a specialization of the term Public Domain. Perhaps Stanford's article do not apply in its entirety to software since it mentions "software" only once. Or perhaps CC0 is not a real Public Domain license when it reserves some rights to work authors.
+
+[5] Subject to local laws.
+
+[6] Unless proven that it was unrightfully released as Public Domain.
 
 ## Controversy
 
