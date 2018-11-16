@@ -4,10 +4,11 @@ Using Gist for blogging can be liberating.
 
 **Pros**|**Cons**
 :-----|:-----
-✅ Free, simple, fast, reliable, secure, accessible, hassle-free|❌ No fancy theme
-✅ Image upload (CTRL+V, in comments only)|❌ No post pinning
-✅ Tagging|❌ Doesn't look like a blog
-✅ Search|❌ Cannot disable comments
+✅ Free, simple, fast, hassle-free|❌ No fancy theme
+✅ Reliable, secure, accessible|❌ No post pinning
+✅ Image upload (CTRL+V, in comments only)|❌ Doesn't look like a blog
+✅ Tagging|❌ Cannot disable comments
+✅ Search|
 ✅ Revisions|
 ✅ Comments|
 ✅ Moderate comments|
