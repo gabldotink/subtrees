@@ -51,7 +51,7 @@ extension:go|Gist with .go files
 #### Search examples
 
 **Search**|**Result**
-:-----:|:-----:
+:-----|:-----
 #blog user:ww9|My blog posts
 stars:>100 extension:go|.go gists with more than 100 stars
 
