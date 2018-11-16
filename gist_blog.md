@@ -27,6 +27,8 @@ If you, like me, post non-blogging stuff to Gist, simply add #blog the the end o
 
 ## Search
 
+Filters that work in Gist search.
+
 **Search**|**Gists**
 :-----|:-----
 stars:>100|with more than 100 stars
