@@ -1,10 +1,8 @@
 # Gist as a blog
 
-Using Gist's for blogging can be liberating.
+Using Gist for blogging can be liberating.
 
-✅ Free, simple, fast, reliable, secure, accessible
-
-✅ Hassle-free
+✅ Free, simple, fast, reliable, secure, accessible, hassle-free
 
 ✅ Image upload (CTRL+V, in comments only)
 
@@ -22,7 +20,7 @@ Using Gist's for blogging can be liberating.
 
 ✅ Not wordpress
 
-✅ Not medium
+✅ Not Medium
 
 ❌ No fancy theme
 
