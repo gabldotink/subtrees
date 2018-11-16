@@ -10,12 +10,11 @@ Using Gist for blogging can be liberating.
 ✅ Search|❌ Cannot disable comments
 ✅ Revisions|
 ✅ Comments|
-✅ Delete other's comments|
+✅ Moderate comments|
 ✅ Markdown|
 ✅ Syntax highlighting|
 ✅ One click copy (Fork)|
-✅ Not wordpress|
-✅ Not Medium|
+✅ Not wordpress or Medium|
 
 ## Tagging
 
@@ -33,12 +32,12 @@ user:ww9|Gists from user `ww9`
 NOT #misc|Excludes gists containing #misc in title or content
 extension:go|Gist with .go files
 
-#### Search examples
+## Search examples
 
 **Search**|**Result**
 :-----|:-----
-#blog user:ww9|My blog posts
-stars:>100 extension:go|.go gists with more than 100 stars
+[#blog user:ww9](https://gist.github.com/search?utf8=%E2%9C%93&q=%23blog+user%3Aww9)|My blog posts
+[stars:>100 extension:go](https://gist.github.com/search?utf8=%E2%9C%93&q=stars%3A%3E100+extension%3Ago&ref=searchresults)|.go gists with more than 100 stars
 
 ## Comments
 
