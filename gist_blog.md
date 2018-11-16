@@ -13,6 +13,7 @@ Using Gist for blogging can be liberating.
 ✅ Markdown|
 ✅ Syntax highlighting|
 ✅ One click copy (Fork)|
+✅ `git clone` gist URL|
 ✅ Not wordpress or Medium|
 ✅ Free, simple, fast, hassle-free
 ✅ Reliable, secure, accessible
