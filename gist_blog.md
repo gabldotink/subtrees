@@ -21,9 +21,9 @@ Using Gist for blogging can be liberating.
 
 ## How it works
 
-A post is a collection of one or more files that are ordered by alphabetical order. Simply create a markdown file for each post and you're set.
+A Gist is a collection of one or more files that are ordered by alphabetical order. To use it as a blog, simply create a markdown (.md) file for each post and you're set.
 
-If you, like me, post non-blogging stuff to Gist, simply add #blog the the end of posts title. This way a simple search can list only your blog posts: [`user:ww9 #blog`](https://gist.github.com/search?utf8=%E2%9C%93&q=user%3Aww9+%23blog)
+If you, like me, also use Gist for non non-blogging content, simply add `#blog` the the end of blog Gist title. Doing so allows us to search blog posts: [`user:ww9 #blog`](https://gist.github.com/search?utf8=%E2%9C%93&q=user%3Aww9+%23blog)
 
 ## Search
 
@@ -35,9 +35,10 @@ stars:>100|with more than 100 stars
 user:ww9|from user `ww9`
 #blog|with `#blog` in title or content
 NOT #misc|not containing #misc in title or content
-extension:go|with .go files
+extension:go|with `.go` files
 forks:<200|with less than 200 forks
-size:1024..4089|with size between 1024kb and 4089kb
+size:1000..4000|having a file between 1000kb and 4000kb
+size:>4000|having a file larger than 4000kb
 
 ## Search examples
 
