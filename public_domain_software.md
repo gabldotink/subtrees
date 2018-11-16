@@ -7,7 +7,7 @@ Public Domain implies waiving all copyright and thus **Public Domain is not a li
 By definition, a software license assert some form of copyright and therefore **no license is Public Domain**.
 
 
-**Can** | **Can't**
+**Can** | **Cannot**
 --- | ---
 ✅ Sell| ❌ Copyright
 ✅ Copy| ❌ Patent **inventions** found in Public Domain work [3]
