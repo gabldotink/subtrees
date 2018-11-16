@@ -18,6 +18,12 @@ Using Gist for blogging can be liberating.
 ✅ Free, simple, fast, hassle-free|
 ✅ Reliable, secure, accessible|
 
+## How it works
+
+A post is a collection of one or more files that are ordered by alphabetical order. Simply create a markdown file for each post and you're set.
+
+If you, like me, post non-blogging stuff to Gist, simply add #blog the the end of posts title. This way a simple search can list only your blog posts: [`user:ww9 #blog`](https://gist.github.com/search?utf8=%E2%9C%93&q=user%3Aww9+%23blog)
+
 ## Tagging
 
 Tag blog posts by adding `#blog` to title. Searching for `#blog user:myuername` lists only blog posts among your gists.
