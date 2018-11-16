@@ -70,11 +70,11 @@ Result:
 - [ ] Task 2
 - [ ] Task 3
 
-### Collapsible content/spoilers
+### Collapsible content (spoilers)
 
 <details><summaryClick me to expand</summary>
 
-#### Content between  &lt;details&gt; and &lt;/details&gt; is hidden
+Content between &lt;details&gt; and &lt;/details&gt; is hidden. You need to [escape HTML](https://www.freeformatter.com/html-escape.html) tags them.
   
 ```python
 print("hello world!")
