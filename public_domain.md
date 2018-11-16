@@ -20,7 +20,7 @@ You can | You cannot
 ✅ Sell |
 ✅ Use as inspiration |
 ✅ Omit author |
-✅ Relicense under any other license |
+✅ Relicense a copy under any other license |
 ✅ Relicense your own work as Public Domain regardless of previous license [1] |
 ✅ Relicense your own Public Domain work under any other license [2] |
 ✅ Patent your **inventions** used in work released under Public Domain [3][4][5] |
