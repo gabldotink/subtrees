@@ -6,7 +6,7 @@ There are [four common ways](https://fairuse.stanford.edu/overview/public-domain
 
 1. The copyright has expired
 1. The copyright owner failed to follow copyright renewal rules
-1. The copyright owner deliberately places it in the public domain, known as “dedication,”
+1. The copyright owner deliberately places it in the public domain, known as “dedication”
 1. Copyright law does not protect this type of work.
 
 You can | You cannot
