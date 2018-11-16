@@ -23,7 +23,7 @@ You can | You cannot
 ✅ Relicense under any other license |
 ✅ Relicense your own work as Public Domain regardless of previous license [1] |
 ✅ Relicense your own Public Domain work under any other license [2] |
-✅ Patent your **inventions** in your work released under Public Domain  [3][4] |
+✅ Patent your **inventions** used in work released under Public Domain  [3][4] |
 
 [1] In practice, you can effectively revoke Public Domain status of your own work if you manage to relicense it before anyone else obtains a copy. That includes, for example, deleting relevant commits from a public git repo to prevent someone from forking the project from that commit.
 
