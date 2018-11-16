@@ -47,7 +47,7 @@ You can | You cannot
 
 In general, open-source advocates [do not sympathise](https://opensource.org/faq#public-domain) with Public Domain licenses arguing that they [allow for open-source software to be copyrighted](https://opensource.org/faq#cc-zero) and relicensed under closed-source licenses, which is true. They prefer copyleft licenses such as [GNU GPL](https://en.wikipedia.org/wiki/GNU_General_Public_License) which enforces that any derivative work remains open-source.
 
-## Profitable Public Domain Software
+## Profitable Public Domain software
 
 * SQLite - A free, reliable, portable and [most widely deployed](https://www.sqlite.org/mostdeployed.html) database engine in the world. While its engine code is open-source and Public Domain, the automated test code isn't. Tests are paramount in ensuring reliability and performance of database engines. Since SQLite [has 711 times as much test code than engine code](https://www.sqlite.org/testing.html), competition is strongly discouraged in face of the daunting task.
 
