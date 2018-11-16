@@ -41,6 +41,10 @@ Patent disputes are always detail-driven murky waters and I wouldn't risk signif
 
 > "No trademark or patent rights held by Affirmer are waived, abandoned, surrendered, licensed or otherwise affected by this document."
 
-## Popular Public Domain licenses
+## Popular Public Domain equivalent licenses
 
 * CC0 - https://creativecommons.org/publicdomain/zero/1.0/legalcode
+
+## License
+
+This Gist is licensed as Public Domain.
