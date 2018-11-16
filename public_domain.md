@@ -15,7 +15,7 @@ You can | You cannot
 ✅ Relicense |
 ✅ Omit author |
 ✅ Relicense your own work as Public Domain regardless of previous license |
-✅ Patent your own Public Domain work [3]|
+✅ Hold patents of your own Public Domain works [3]|
 
 [1] Subject to local laws
 
