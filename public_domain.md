@@ -12,8 +12,8 @@ There are [four common ways](https://fairuse.stanford.edu/overview/public-domain
 You can | You cannot
 --- | ---
 ✅ Without consent | ❌ Patent someone else's Public Domain work
-✅ Copy | ❌ Use as basis for legal action against the author [1]
-✅ Rename | ❌ Revoke Public Domain status of someone else's copy of your work [2]
+✅ Copy | ❌ Use as basis for legal action against the author [5]
+✅ Rename | ❌ Revoke Public Domain status of someone else's copy of your work [6]
 ✅ Redistribute | ❌ Relicense someone else's non-Public Domain work as Public Domain
 ✅ Modify | ❌ Release code you write to an employer as Public Domain
 ✅ Study |
@@ -21,23 +21,23 @@ You can | You cannot
 ✅ Use as inspiration |
 ✅ Omit author |
 ✅ Relicense under any other license |
-✅ Relicense your own work as Public Domain regardless of previous license [3] |
-✅ Relicense your own Public Domain work under any other license [4] |
-✅ Hold patents of your own Public Domain works [5][6] |
+✅ Relicense your own work as Public Domain regardless of previous license [1] |
+✅ Relicense your own Public Domain work under any other license [2] |
+✅ Hold patents of your own Public Domain works [4][5] |
 
-[1] Subject to local laws
+[5] Subject to local laws
 
-[2] Unless proven that it was unrightfully released as Public Domain.
+[6] Unless proven that it was unrightfully released as Public Domain.
 
-[3] In practice, you can effectively revoke Public Domain status of your own work if you manage to relicense it before anyone else obtains a copy. That includes, for example, deleting relevant commits from a public git repo to prevent someone from forking the project from that commit.
+[1] In practice, you can effectively revoke Public Domain status of your own work if you manage to relicense it before anyone else obtains a copy. That includes, for example, deleting relevant commits from a public git repo to prevent someone from forking the project from that commit.
 
-[4] Whoever obtained a copy of your work that was licensed under Public Domain can still use that specific version however pleases. Github forks for example.
+[2] Whoever obtained a copy of your work that was licensed under Public Domain can still use that specific version however pleases. Github forks for example.
 
-[5] Patents apply to inventions, not creative works. It seems you can hold patents of your own Public Domain works at least when licensed under [CC0 1.0 Universal - Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/legalcode) [1] which contains:
+[3] Patents apply to inventions, not creative works. It seems you can hold patents of your own Public Domain works at least when licensed under [CC0 1.0 Universal - Public Domain Dedication](https://creativecommons.org/publicdomain/zero/1.0/legalcode) [1] which contains:
 
  > "No trademark or patent rights held by Affirmer are waived, abandoned, surrendered, licensed or otherwise affected by this document."
  
-[6] However, that CC0 license clause conflicts with [Stanford University definition of Public Domain](https://fairuse.stanford.edu/overview/public-domain/welcome/) which starts with:
+[4] However, that CC0 license clause conflicts with [Stanford University definition of Public Domain](https://fairuse.stanford.edu/overview/public-domain/welcome/) which starts with:
  
  > "The term “public domain” refers to creative materials that are not protected by intellectual property laws such as copyright, trademark, or **patent laws**. The public owns these works, not an individual author or artist. Anyone can use a public domain work without obtaining permission, but no one can ever own it."
  
