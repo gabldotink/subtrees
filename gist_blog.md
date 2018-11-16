@@ -1,6 +1,6 @@
 # Blogging with Gist
 
-Using Gist for blogging can be liberating.
+Using Gist for blogging can be liberating due to the simplicity.
 
 **Pros**|**Cons**
 :-----|:-----
