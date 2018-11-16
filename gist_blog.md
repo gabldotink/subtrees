@@ -10,7 +10,7 @@ Using Gist for blogging can be liberating due to the simplicity.
 ✅ Revisions|❌ Cannot disable comments
 ✅ Comments|❌ Unfriendly URLs
 ✅ Delete comments|❌ Date only shown in Revisions
-✅ Markdown|
+✅ Markdown|❌ Markdown
 ✅ Syntax highlighting|
 ✅ One click copy (Fork)|
 ✅ `git clone` gist URL|
