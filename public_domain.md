@@ -13,7 +13,7 @@ You can | You cannot
 --- | ---
 ✅ Without consent | ❌ Patent someone else's Public Domain work
 ✅ Copy | ❌ Use as basis for legal action against the author [1]
-✅ Rename | ❌ Revoke Public Domain status of someone else's copy of your work [2][3]
+✅ Rename | ❌ Revoke Public Domain status of someone else's copy of your work [2]
 ✅ Redistribute | ❌ Relicense someone else's non-Public Domain work as Public Domain
 ✅ Modify | ❌ Release code you write to an employer as Public Domain
 ✅ Study |
@@ -21,7 +21,7 @@ You can | You cannot
 ✅ Use as inspiration |
 ✅ Omit author |
 ✅ Relicense under any other license |
-✅ Relicense your own work as Public Domain regardless of previous license |
+✅ Relicense your own work as Public Domain regardless of previous license [3] |
 ✅ Relicense your own Public Domain work under any other license [4] |
 ✅ Hold patents of your own Public Domain works [5][6] |
 
@@ -29,7 +29,7 @@ You can | You cannot
 
 [2] Unless proven that it was unrightfully released as Public Domain.
 
-[3] In practice, you can effectively revoke status of your own Public Domain work if you manage to relicense it before anyone else obtains a copy. That includes, for example, deleting relevant commits from a public git repo to prevent someone from forking the project from that commit.
+[3] In practice, you can effectively revoke Public Domain status of your own work if you manage to relicense it before anyone else obtains a copy. That includes, for example, deleting relevant commits from a public git repo to prevent someone from forking the project from that commit.
 
 [4] Whoever obtained a copy of your work that was licensed under Public Domain can still use that specific version however pleases. Github forks for example.
 
