@@ -39,7 +39,7 @@ In practice, Public Domain status can be completely revoked from a work provided
 
 ## Controversy
 
-In general, open-source advocates [do not sympathise](https://opensource.org/faq#public-domain) with Public Domain arguing that it [voids any copyright in open-source software](https://opensource.org/faq#cc-zero) allowing it to be licensed under closed-source licenses, which is true. They prefer copyleft licenses such as [GNU GPL](https://en.wikipedia.org/wiki/GNU_General_Public_License) which enforces that any derivative work remains open-source and with unaltered license.
+In general, open-source advocates [do not sympathise](https://opensource.org/faq#public-domain) with Public Domain arguing that it [revokes all copyright rights in open-source software](https://opensource.org/faq#cc-zero) allowing it to be licensed under closed-source licenses, which is true. They prefer copyleft licenses such as [GNU GPL](https://en.wikipedia.org/wiki/GNU_General_Public_License) which enforces that any derivative work remains open-source and with unaltered license.
 
 ## Profitable Public Domain software
 
