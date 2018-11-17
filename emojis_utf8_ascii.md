@@ -1,3 +1,5 @@
+# Emojis, UTF8 and one line ASCII
+
 ©️ Copyright Sign
 ®️ Registered Sign
 ‼️ Double Exclamation Mark
@@ -1100,7 +1102,7 @@
 °Д°
 °‿‿°
 °ﺑ°
-´ ▽ ` )ﾉ
+    ´ ▽ ` )ﾉ
 ¿ⓧ_ⓧﮌ
 Ò,ó
 ó‿ó
