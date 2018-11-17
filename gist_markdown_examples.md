@@ -1,5 +1,5 @@
 
-# Gist markdown reference
+# Gist markdown examples
 
 A collection of Markdown code and tricks that were tested to work in Gist.
 
