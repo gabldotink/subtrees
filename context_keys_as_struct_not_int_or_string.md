@@ -1,4 +1,4 @@
-# Why use empty struct{} and not int or string for context.Value() key types
+# Why use struct{} and not int/string for context.Value() keys in Go
 
 A small piece of code that details why we should use `struct{}` as context.Value() keys and not `int` or `string`. TLDR:
 ```Go
