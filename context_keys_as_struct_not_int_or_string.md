@@ -4,7 +4,7 @@ In the other file of this gist I detail why we should use `struct{}` as context.
 
 ```Go
 	type key struct{}
-	return context.WithValue(ctx, key{}, "my value") // Set value
+	ctx = context.WithValue(ctx, key{}, "my value") // Set value
 	myValue, ok := ctx.Value(key{}).(string) // Get value
 
 ```
