@@ -15,7 +15,8 @@ Gist simplicity can turn blogging into a liberating experience.
 ✅ One click copy (Fork)|
 ✅ `git clone` gist URL|
 ✅ Not Wordpress, not Medium|
-✅ No ads, no facebook/google tracking|
+✅ No ads|
+✅ No facebook/google tracking|
 ✅ Free, simple, fast, hassle-free|
 ✅ Reliable, secure, accessible|
 
