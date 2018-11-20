@@ -4,7 +4,7 @@ Gist simplicity can turn blogging into a liberating experience.
 
 **Pros**|**Cons**
 :-----|:-----
-✅ Free, simple, fast, hassle-free|❌ Image upload in comments only*
+✅ Free, simple, fast, hassle-free|❌ Image upload in comments only
 ✅ Tagging|❌ No post pinning
 ✅ Search|❌ Doesn't look like a blog
 ✅ Revisions|❌ Unfriendly URLs
