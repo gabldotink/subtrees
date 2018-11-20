@@ -81,6 +81,8 @@ if beautiful.wallpaper then
         gears.wallpaper.maximized(beautiful.wallpaper, s, false)
     end
 end
+
+beautiful.font = "DejaVu Sans 8"
 -- }}}
 
 -- {{{ Tags
