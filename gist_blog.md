@@ -4,20 +4,19 @@ Gist simplicity can turn blogging into a liberating experience.
 
 **Pros**|**Cons**
 :-----|:-----
-✅ Images|❌ No fancy theme
+✅ Free, simple, fast, hassle-free|❌ Image upload in comments only*
 ✅ Tagging|❌ No post pinning
 ✅ Search|❌ Doesn't look like a blog
 ✅ Revisions|❌ Unfriendly URLs
 ✅ Comments|❌ Cannot disable comments
 ✅ Delete comments|❌ Date only shown in Revisions
 ✅ Markdown|❌ Not WYSIWYG
-✅ Syntax highlighting|
+✅ Syntax highlighting|❌ No fancy theme
 ✅ One click copy (Fork)|
 ✅ `git clone` gist URL|
 ✅ Not Wordpress, not Medium|
 ✅ No ads|
 ✅ No facebook/google tracking|
-✅ Free, simple, fast, hassle-free|
 ✅ Reliable, secure, accessible|
 
 ## How it works
