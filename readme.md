@@ -1,7 +1,7 @@
 # HRX.py
 A lightweight implementation of the HRX ([google/hrx](https://github.com/google/hrx)) spec in Python.
 
-This implementation is incredibly hacky and relies very heavily on regexes. The upside to this is that it's treating the input as pure text, as opposed to trying to interpret the contents of files. This greatly improves speed over a parser that tries to parse the file contents
+This implementation is incredibly hacky and relies very heavily on regexes. The upside to this is that it's treating the input as pure text, as opposed to trying to interpret the contents of files. This greatly improves speed over a parser that tries to parse the file contents. Designing a parser that tries to make sense of sub-files may result in poor performance if the subfiles look or behave like the file being operated on.
 
 ## Behavior re: Test Files
 ### comment-only.hrx
@@ -98,6 +98,3 @@ This implementation is incredibly hacky and relies very heavily on regexes. The 
   'file.hrx': {'isDirectory': False, 'fileContents': 'The contents of a file.'}
 }
 ```
-
-## Broken Files
-I personally don't believe that the archive should necessarily be sanity-checked by the parser, so validating if a subfile is valid is out of the scope of the design. Take for example the restriction on a comment following another comment: The parser does support this, however it merely doesn't produce any output. I will be adding cases to handle these, but I don't feel like validating sub-archives is necessarily part of this, Sure, it'll throw an error if you try to operate on the sub-archive, however, validating everything within the file seems like it'd lead to feature creep. And further, dealing with invalid paths is expected to be handled by a further stage of the archive processor, all the current thing does is it reads in a file then produces a descriptor. 
