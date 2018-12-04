@@ -1,6 +1,6 @@
 import glob
 import errno
-from hrx import parse_hrx
+from parse_lib import parse_hrx
 import pprint
 
 pp = pprint.PrettyPrinter(depth=6)

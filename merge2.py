@@ -1,7 +1,7 @@
 import glob
 import os
-from combinearc import merge_hrx
+import hrx2
 
 path = 'test/*.hrx'
 files = [fn for fn in glob.glob(path) if not os.path.isdir(fn)]
-print(merge_hrx(files))
+print(hrx2.merge(files))
