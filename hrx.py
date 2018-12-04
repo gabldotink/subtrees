@@ -13,11 +13,11 @@ if len(lines) > 0:
     p = re.compile('<=+>')
     sentinel = p.match(firstLine).group()
     #Alright, let's strip comments.
-    commentRegex = re.compile(sentinel + '\n[\s\S]*?(?=' + sentinel + ')')
+    commentRegex = re.compile("(^|\n)" + sentinel + '\n[\s\S]*?((?=' + sentinel + ')|$)')
     input_expr = re.sub(commentRegex, "", input_expr)
     print(input_expr)
     #Now, build a regex that matches **all** first lines.
-    headerLine = re.compile(sentinel + " +[^\u0000-\u001F\u007F\u003A\u005C\u000A]+")
+    headerLine = re.compile("(^|\n)" + sentinel + " +[^\u0000-\u001F\u007F\u003A\u005C\u000A]+")
     #Neat. Check it out. This'll tell me the boundaries of the objects.
     matches = list(re.finditer(headerLine,input_expr))
     results = {}
