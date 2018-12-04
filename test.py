@@ -1,4 +1,3 @@
-import sys
 import glob
 import errno
 from hrx import parse_hrx
