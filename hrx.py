@@ -17,6 +17,11 @@ def parse_hrx(input_expr):
         sentinel = p.match(firstLine).group()
         #Alright, let's strip comments.
         commentRegex = re.compile(sentinel + '\n[\s\S]*?\n')
+        tooManyComments = re.compile('(' + sentinel + '\n[\s\S]*?){2,}')
+        lotsacomments = list(re.finditer(tooManyComments,input_expr))
+        if len(lotsacomments) > 0:
+            print("ERR: Consecutive comments.")
+            exit(6)
         input_expr = re.sub(commentRegex, "", input_expr)
         #Now, build a regex that matches **all** first lines.
         headerLine = re.compile("(^|\n)" + sentinel + " +[^\u0000-\u001F\u007F\u003A\u005C\u000A]+")
