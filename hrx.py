@@ -17,10 +17,10 @@ def parse_hrx(input_expr):
         sentinel = p.match(firstLine).group()
         #Alright, let's strip comments.
         commentRegex = re.compile(sentinel + '\n[\s\S]*?\n')
-        tooManyComments = re.compile('(' + sentinel + '\n[\s\S]*?){2,}')
+        tooManyComments = re.compile('(' + sentinel + '\n[^<]*?){2,}')
         lotsacomments = list(re.finditer(tooManyComments,input_expr))
         if len(lotsacomments) > 0:
-            print("ERR: Consecutive comments.")
+            print("ERR: Consecutive comments near " + lotsacomments[0].group())
             exit(6)
         input_expr = re.sub(commentRegex, "", input_expr)
         #Now, build a regex that matches **all** first lines.
@@ -35,17 +35,17 @@ def parse_hrx(input_expr):
             fname = matches[i].group().replace(sentinel, "").strip()
             fcont = input_expr[start:end].strip('\n')
             if fname.endswith("/") and fcont is not '':
-                print("ERR: Directories cannot have content: " + key)
+                print("ERR: A directory cannot have content. (At definition of " + fname + ")")
                 exit(5)
 
             if invalidPaths.search(fname) is not None:
                 #Invalid path.
-                print("ERR: Invalid path: " + key)
+                print("ERR: A path cannot start with or contain './' or '../'. (At definition of " + fname + ")")
                 exit(4)
 
             content = {"isDirectory": fname.endswith("/"), "fileContents": fcont}
             if fname in results or fname.strip('"') in results:
-                print("ERR: Duplicate File.")
+                print("ERR: Duplicate File. (At definition of " + fname + ")")
                 exit(2)
             else:
                 results[matches[i].group().replace(sentinel, "").strip()] = content
