@@ -13,7 +13,7 @@ def parse_hrx(input_expr):
         p = re.compile('<=+>')
         if p.match(firstLine) is None:
             print("ERR: Valid boundary not found on first line.")
-            exit(1)
+            return 1
         sentinel = p.match(firstLine).group()
         #Alright, let's strip comments.
         commentRegex = re.compile(sentinel + '\n[\s\S]*?\n')
@@ -21,7 +21,7 @@ def parse_hrx(input_expr):
         lotsacomments = list(re.finditer(tooManyComments,input_expr))
         if len(lotsacomments) > 0:
             print("ERR: Consecutive comments near " + lotsacomments[0].group())
-            exit(6)
+            return 6
         input_expr = re.sub(commentRegex, "", input_expr)
         #Now, build a regex that matches **all** first lines.
         headerLine = re.compile("(^|\n)" + sentinel + " +[^\u0000-\u001F\u007F\u003A\u005C\u000A]+")
@@ -36,32 +36,33 @@ def parse_hrx(input_expr):
             fcont = input_expr[start:end].strip('\n')
             if fname.endswith("/") and fcont is not '':
                 print("ERR: A directory cannot have content. (At definition of " + fname + ")")
-                exit(5)
+                return 5
 
             if invalidPaths.search(fname) is not None:
                 #Invalid path.
                 print("ERR: A path cannot start with or contain './' or '../'. (At definition of " + fname + ")")
-                exit(4)
+                return 4
 
             content = {"isDirectory": fname.endswith("/"), "fileContents": fcont}
             if fname in results or fname.strip('"') in results:
                 print("ERR: Duplicate File. (At definition of " + fname + ")")
-                exit(2)
+                return 2
             else:
                 results[matches[i].group().replace(sentinel, "").strip()] = content
     else:
         print('ERR: No Input.')
-        exit(3)
+        return 3
 
     return results
 
 
 # ==== Test Case ====
 
-fname = sys.argv[1]
-file = open(fname, "r")
+if __name__ == "__main__":
+    fname = sys.argv[1]
+    file = open(fname, "r")
 
-result = parse_hrx(file.read())
+    result = parse_hrx(file.read())
 
-pp = pprint.PrettyPrinter(depth=6)
-pp.pprint(result)
+    pp = pprint.PrettyPrinter(depth=6)
+    pp.pprint(result)
