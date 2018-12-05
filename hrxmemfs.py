@@ -1,14 +1,14 @@
 from fs.memoryfs import MemoryFS
 import pprint
 import sys
-import hrx2
+import hrx
 
 
 mem_fs = MemoryFS()
 fname = "test/simple.hrx"
 file = open(fname, "r")
 
-result = hrx2.parse(file.read())
+result = hrx.parse(file.read())
 for key,val in result.items():
     if not mem_fs.exists(key):
         if val["isDirectory"]:

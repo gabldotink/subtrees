@@ -4,12 +4,12 @@ A lightweight implementation of the HRX ([google/hrx](https://github.com/google/
 This implementation is incredibly hacky and relies very heavily on regexes. The upside to this is that it's treating the input as pure text, as opposed to trying to interpret the contents of files. This greatly improves speed over a parser that tries to parse the file contents. Designing a parser that tries to make sense of sub-files may result in poor performance if the subfiles look or behave like the file being operated on.
 
 ## Usage
-There exist three parts, `parse`, `pack`, and `merge`. Import `hrx2` and use all of them, or import one from `hrx2`. 
+There exist three parts, `parse`, `pack`, and `merge`. Import `hrx` and use all of them, or import one from `hrx`.
 
 ### Parse
 Parse will parse a file in this format, throwing errors as necessary. It's a bit more involved than the other two parts.
 
-`hrx2.parse(file_contents)`
+`hrx.parse(file_contents)`
 Returns
 `dict - A representation of the constituent files where their filenames are used as keys.`
 ```
@@ -21,14 +21,14 @@ Returns
 ### Pack
 Pack will take a list of files that are in this format, and pack them into an archive. In theory this will work with any arbitrary file.
 
-`hrx2.pack(file_paths)`
+`hrx.pack(file_paths)`
 Returns
 `string - A packed representation of the input files`
 
 ### Merge
 Merge is similar to Pack, but it merges a bunch of files into one single file, as opposed to retaining their filenames independently. Pass it a list of file paths.
 
-`hrx2.merge(file_paths)`
+`hrx.merge(file_paths)`
 Returns
 `string - A merged representation of the input files`
 
