@@ -88,7 +88,6 @@ Comment the Second! This is not valid!
 A file entry or path has illegal characters in its name. A file cannot contain the following characters or sequences.
 ```
 [\u0000-\u001F\u007F]
-/
 :
 \
 ^..
