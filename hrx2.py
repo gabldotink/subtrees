@@ -8,7 +8,8 @@ class ParseError(Enum):
     ERR_BAD_FILE_ENTRY = 3
     ERR_DIRECTORY_HAS_CONTENTS = 4
     ERR_DUPLICATE_FILE = 5
-    ERR_TYPE_MISMATCH = 6
+    ERR_FILE_IS_NOT_DIR = 6
+    ERR_DIR_IS_NOT_FILE = 7
 
 def parse(input_expr):
     error_list = []
@@ -52,10 +53,21 @@ def parse(input_expr):
             #the content is invalid for a directory. Chuck an error.
             error_list.append({'type': ParseError.ERR_DIRECTORY_HAS_CONTENTS, 'match':entry})
         else:
+            #Iterate through each constituent path on the way to the final file.
+            gen_dir_list = path_str.split("/")
+            for i in range(len(gen_dir_list)-1):
+                intermediate_dir_str = "/".join(gen_dir_list[0:i+1])
+                if intermediate_dir_str in result_dict and not result_dict[intermediate_dir_str]['is_directory']:
+                    error_list.append({'type': ParseError.ERR_FILE_IS_NOT_DIR, 'match':entry})
+                elif intermediate_dir_str not in result_dict:
+                    result_dict[intermediate_dir_str] = {'path' : intermediate_dir_str, 'is_directory': True, 'content' : '', 'is_autogen': True}
             if path_str in result_dict:
-                error_list.append({'type': ParseError.ERR_DUPLICATE_FILE, 'match':entry})
+                if result_dict[path_str]['is_directory']:
+                    error_list.append({'type': ParseError.ERR_DIR_IS_NOT_FILE, 'match':entry})
+                else:
+                    error_list.append({'type': ParseError.ERR_DUPLICATE_FILE, 'match':entry})
             else:
-                result_dict[path_str] = {'path' : path_str, 'is_directory': isdir_bool, 'content' : content_str.strip()}
+                result_dict[path_str] = {'path' : path_str, 'is_directory': isdir_bool, 'content' : content_str.strip(), 'is_autogen': False}
 
     #clean up the error list
     error_list = [i for i in error_list if i != []]
