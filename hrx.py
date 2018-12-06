@@ -1,5 +1,4 @@
 import re
-import sys
 from enum import Enum
 
 class ParseError(Enum):
