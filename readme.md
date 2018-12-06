@@ -34,6 +34,7 @@ The parser is supposed to attempt the file through to the end, reporting all err
 ```
 
 The field `type` will contain a value from the `ParseError` enum. It indicates what's gone wrong. See the section on ParseError below.
+
 The field `match` will contain a hint near the entry that is causing problems.
 
 ### Result Format
@@ -47,8 +48,11 @@ file_path_str : {
 ```
 
 The field `content` will contain the contents of the file. It will be blank if this is a directory entry.
+
 The field `is_autogen` will indicate if the entry was automatically generated when implicitly creating directories. This happens if you specify a path of a file in a directory that does not exist. The parser will generate directories as needed.
+
 The field `is_directory` will indicate if the entry is a directory.
+
 The field `path` contains the same contents as the key used to access the entry in the dictionary.
 
 
