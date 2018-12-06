@@ -4,127 +4,146 @@ A lightweight implementation of the HRX ([google/hrx](https://github.com/google/
 This implementation is incredibly hacky and relies very heavily on regexes. The upside to this is that it's treating the input as pure text, as opposed to trying to interpret the contents of files. This greatly improves speed over a parser that tries to parse the file contents. Designing a parser that tries to make sense of sub-files may result in poor performance if the subfiles look or behave like the file being operated on.
 
 ## Usage
-### Careful! The following docs are for `hrx.py` not `hrx2.py`.
-There exist three parts, `parse`, `pack`, and `merge`. Import `hrx` and use all of them, or import one from `hrx`.
-
 ### Parse
-Parse will parse a file in this format, throwing errors as necessary. It's a bit more involved than the other two parts.
+Parse will parse a file in this format, and return a tuple that contains the parser's attempt, as well as a list of errors encountered.
 
-`hrx.parse(file_contents)`
-Returns
-`dict - A representation of the constituent files where their filenames are used as keys.`
 ```
-'filename' : {
-  'isDirectory' : bool,
-  'fileContents' : string
-}
-```
-### Pack
-Pack will take a list of files that are in this format, and pack them into an archive. In theory this will work with any arbitrary file.
-
-`hrx.pack(file_paths)`
-Returns
-`string - A packed representation of the input files`
-
-### Merge
-Merge is similar to Pack, but it merges a bunch of files into one single file, as opposed to retaining their filenames independently. Pass it a list of file paths.
-
-`hrx.merge(file_paths)`
-Returns
-`string - A merged representation of the input files`
-
-## Behavior re: Test Files
-### comment-only.hrx
-```
-{}
+# file_contents_str - A string representing the entire document to process.
+(result_dict, error_list) = hrx.parse(file_contents_str)
+# result_dict - A dictionary with entries at their path locations as keys.
+# error_list - A list of errors generated during parsing.
 ```
 
-### comments.hrx
+### Printing Errors
+```
+# error_list - A list of errors generated during parsing.
+hrx.print_errors(error_list)
+# Prints any errors encountered during parsing.
+```
+
+The parser is supposed to attempt the file through to the end, reporting all errors encountered in a error list.
+
+
+## Documentation on Types and Formats
+### Error Format
 ```
 {
-  'file1': {'isDirectory': False, 'fileContents': 'This is the contents of the file.'},
-  'file2': {'isDirectory': False, 'fileContents': 'This is the contents of another file.'}
+  'type': parse_error,
+  'match': match_hint_str
 }
 ```
 
-### complex-filenames.hrx
+The field `type` will contain a value from the `ParseError` enum. It indicates what's gone wrong. See the section on ParseError below.
+The field `match` will contain a hint near the entry that is causing problems.
+
+### Result Format
 ```
-{
-  '.dir/.../.file': {'isDirectory': False, 'fileContents': 'Filenames may contain dots, as long as they\'re not "." or "..".'},
-  '~`!@#$%^&*()_-+= {}[]|;"\'<,>.?': {'isDirectory': False, 'fileContents': 'Filenames can contain all kinds of weird characters.'},
-  '☃': {'isDirectory': False, 'fileContents': 'Non-ASCII Unicode names are allowed.'}
+file_path_str : {
+  'content': file_contents_str,
+  'is_autogen': is_autogen_bool,
+  'is_directory': is_directory_bool,
+  'path': file_path_str
 }
 ```
 
-### directory.hrx
+The field `content` will contain the contents of the file. It will be blank if this is a directory entry.
+The field `is_autogen` will indicate if the entry was automatically generated when implicitly creating directories. This happens if you specify a path of a file in a directory that does not exist. The parser will generate directories as needed.
+The field `is_directory` will indicate if the entry is a directory.
+The field `path` contains the same contents as the key used to access the entry in the dictionary.
+
+
+### ParseError Types
 ```
-{
-  'dir/': {'isDirectory': True, 'fileContents': ''},
-  'dir/subdir/': {'isDirectory': True, 'fileContents': ''},
-  'other/subdir/': {'isDirectory': True, 'fileContents': ''}
-}
+ERR_MALFORMED_INPUT = 1
+ERR_SEQUENTIAL_COMMENTS = 2
+ERR_BAD_FILE_ENTRY = 3
+ERR_DIRECTORY_HAS_CONTENTS = 4
+ERR_DUPLICATE_FILE = 5
+ERR_FILE_IS_NOT_DIR = 6
+ERR_DIR_IS_NOT_FILE = 7
 ```
 
-### empty-file.hrx
+#### ERR_MALFORMED_INPUT
+A parse error was encountered with malformed input. An entry could not be parsed for one reason or another, potentially due to an incorrect format for the header of the entry.
+
+Example
 ```
-{
-  'file1': {'isDirectory': False, 'fileContents': ''},
-  'file2': {'isDirectory': False, 'fileContents': ''}
-}
+===> some/invalid/header
+Invalid entry header.
 ```
 
-### files-in-directories.hrx
+#### ERR_SEQUENTIAL_COMMENTS
+Sequential comments are not permitted and will throw an error. Try to coalesce comments into one block as needed.
+
+Example
 ```
-{
-  'dir/file1': {'isDirectory': False, 'fileContents': 'This file is in a directory. Directories implicitly exist once there are any\nfiles in them.'},
-  'path/to/file2': {'isDirectory': False, 'fileContents': 'This file is in a deeper directory.'}
-}
+<===>
+Comment the First!
+
+<===>
+Comment the Second! This is not valid!
 ```
 
-### inline-boundary.hrx
+#### ERR_BAD_FILE_ENTRY
+A file entry or path has illegal characters in its name. A file cannot contain the following characters or sequences.
 ```
-{
-  'file': {'isDirectory': False, 'fileContents': "This <===> doesn't count as a boundary because it's not on its own line."}
-}
-```
-
-### nested.hrx
-```
-{
-  'file1.hrx': {'isDirectory': False, 'fileContents': "<=====> nested-file1.hrx\nThis is a HRX file nested within a HRX file.\n\n<=====> nested-file2.hrx\nYou can tell it's not part of the outer file because the boundaries are longer."},
-  'file2.hrx': {'isDirectory': False, 'fileContents': "<=> nested-file1.hrx\nInner files can also contain shorter boundaries...\n\n<=> nested-file2.hrx\n...as long as they don't contain the outer file's boundary."}
-}
-```
-
-### no-trailing-newlines.hrx
-```
-{
-  'file1': {'isDirectory': False, 'fileContents': "This file doesn't have a trailng newline."},
-  'file2': {'isDirectory': False, 'fileContents': 'Neither does this one.'}
-}
+[\u0000-\u001F\u007F]
+/
+:
+\
+^..
+^.
+/../
+/./
+^/
 ```
 
-### quoted-filename.hrx
+Example
 ```
-{
-  '"path to/my file"': {'isDirectory': False, 'fileContents': "Filenames may contain spaces as long as they're quoted."},
-  '"file"name"': {'isDirectory': False, 'fileContents': "Filenames may contain quotes as long as they're escaped."},
-  'file"name': {'isDirectory': False, 'fileContents': 'Even unquoted filenames may contain escaped quotes.'}
-}
+<===> an/invalid/../path
+this path is invalid since it contains /../
 ```
 
-### simple.hrx
+#### ERR_DIRECTORY_HAS_CONTENTS
+A directory entry cannot contain contents in the definition file. Its body must be blank.
+
+Example
 ```
-{
-  'input.scss': {'isDirectory': False, 'fileContents': 'ul {\n  margin-left: 1em;\n  li {\n    list-style-type: none;\n
-}\n}'},
-  'output.css': {'isDirectory': False, 'fileContents': 'ul {\n  margin-left: 1em;\n}\nul li {\n  list-style-type: none;\n}'}
-}
+<===> some/directory/
+a directory cannot have contents
 ```
 
-### trailing-comment.hrx
+#### ERR_DUPLICATE_FILE
+The file specified exists already and the attempt was not written. The first entry to appear has been written and any further were ignored.
+
+Example
 ```
-{
-  'file.hrx': {'isDirectory': False, 'fileContents': 'The contents of a file.'}
-}
+<===> some/file
+some file contents that will show in the result.
+
+<===> some/file
+this will not be included in the result.
+```
+
+#### ERR_FILE_IS_NOT_DIR
+A file is not a directory. An entry already exists along the path that is designated as a file, and thus cannot have files inside it.
+
+Example
+```
+<===> some/file
+some file contents
+
+<===> some/file/again
+this file is invalid since some/file is a file not a directory.
+```
+
+#### ERR_DIR_IS_NOT_FILE
+A directory is not a file. An entry already exists at this same path that is a directory and cannot be converted to a file.
+
+Example
+```
+<===> dir/something/
+
+<===> dir/something
+this path is a directory and cannot be a file.
 ```

@@ -1,107 +1,79 @@
 import re
 import sys
+from enum import Enum
 
-def parse(input_expr):
-    lines = input_expr.splitlines()
-    #We kinda have to assume the first line is a header.
-    results = {}
-    invalidPaths = re.compile('(\/\.\.\/|^\/|^\.\.\/|\/\/)')
-    if len(lines) > 0:
-        firstLine = lines[0]
-        #A little thing is that the first header sentinel is **the** header sentinel.
-        p = re.compile('<=+>')
-        if p.match(firstLine) is None:
-            print("ERR: Valid boundary not found on first line.")
-            return 1
-        sentinel = p.match(firstLine).group()
-        #Alright, let's strip comments.
-        commentRegex = re.compile(sentinel + '\n[\s\S]*?\n')
-        tooManyComments = re.compile('(' + sentinel + '\n[^<]*?){2,}')
-        lotsacomments = list(re.finditer(tooManyComments,input_expr))
-        if len(lotsacomments) > 0:
-            print("ERR: Consecutive comments near " + lotsacomments[0].group())
-            return 6
-        input_expr = re.sub(commentRegex, "", input_expr)
-        #Now, build a regex that matches **all** first lines.
-        headerLine = re.compile("(^|\n)" + sentinel + " +[^\u0000-\u001F\u007F\u003A\u005C\u000A]+")
-        #Neat. Check it out. This'll tell me the boundaries of the objects.
-        matches = list(re.finditer(headerLine,input_expr))
-        for i in range(len(matches)):
-            start = matches[i].end()
-            end = len(input_expr)
-            if(i+1 <= len(matches)-1):
-                end = matches[i+1].start()
-            fname = matches[i].group().replace(sentinel, "").strip()
-            fcont = input_expr[start:end].strip('\n')
-            if fname.endswith("/") and fcont is not '':
-                print("ERR: A directory cannot have content. (At definition of " + fname + ")")
-                return 5
+class ParseError(Enum):
+    ERR_MALFORMED_INPUT = 1
+    ERR_SEQUENTIAL_COMMENTS = 2
+    ERR_BAD_FILE_ENTRY = 3
+    ERR_DIRECTORY_HAS_CONTENTS = 4
+    ERR_DUPLICATE_FILE = 5
+    ERR_FILE_IS_NOT_DIR = 6
+    ERR_DIR_IS_NOT_FILE = 7
 
-            if invalidPaths.search(fname) is not None:
-                #Invalid path.
-                print("ERR: A path cannot start with or contain './' or '../'. (At definition of " + fname + ")")
-                return 4
-
-            content = {"isDirectory": fname.endswith("/"), "fileContents": fcont}
-            if fname in results or fname.strip('"') in results:
-                print("ERR: Duplicate File. (At definition of " + fname + ")")
-                return 2
+def parse(file_contents_str):
+    error_list = []
+    #Split into blocks (Comments, Files, etc.)
+    blocks_re = re.compile(r'((<=+>)(( |\n)(("(?:[^"\\]|\\[^\u0000-\u001F\u007F\u003A\u005C\u000A])*")|[^\u0000-\u001F\u007F\u003A\u005C\u000A]*)(?=\n)?[\S\s]+?(?=\2|$)))')
+    blocks_lst = list(blocks_re.finditer(file_contents_str))
+    #Try to clean this up.
+    error_list += [{'type': ParseError.ERR_MALFORMED_INPUT, 'match': i} for i in "\n".join(blocks_re.sub("\u0001", file_contents_str).split("\u0001")).strip().split("\n") if i]
+    #Split comments into their own list away from files.
+    comment_re = re.compile(r'^<=+>\n')
+    comment_lst = [i for i in blocks_lst if comment_re.match(i.group())]
+    file_lst = [i for i in blocks_lst if not comment_re.match(i.group())]
+    #Verify comments aren't sequential.
+    seq_comments_re = re.compile(r'^(<=+>\n.*\n+){2,}')
+    seq_comments_lst = list(seq_comments_re.finditer(file_contents_str))
+    #seq_comments_lst will have any matches where there's two or more comments. If it's > 0 it should throw an error.
+    #print(len(seq_comments_lst))
+    error_list += [{'type': ParseError.ERR_SEQUENTIAL_COMMENTS, 'match':i.group().split('\n',1)[0]} for i in seq_comments_lst]
+    #Validate filenames
+    filename_re = re.compile(r'^<=+> "?(\.?[^\u0000-\u001F\u007F\u003A\u005C\u000A\u002F\u002E])((?!\/\/|\/\.{1,2}\/)[^\u0000-\u001F\u007F\u003A\u005C\u000A"]|\\")*"?\n')
+    valid_files_lst = [fl for fl in file_lst if filename_re.match(fl.group())]
+    invalid_files_lst = [fl for fl in file_lst if not filename_re.match(fl.group())]
+    #invalid_files_lst will have any matches where there's an invalid file entry. If it's > 0 it should throw an error.
+    #print(len(invalid_files_lst))
+    error_list += [{'type': ParseError.ERR_BAD_FILE_ENTRY, 'match':i.group().split('\n',1)[0]} for i in invalid_files_lst]
+    #Generate a result list.
+    header_re = re.compile(r'^<=+> ')
+    dequote_re = re.compile(r'(^"|"$)')
+    unescape_re = re.compile(r'\\(?=")')
+    result_dict = {}
+    for entry in valid_files_lst:
+        #Strip the first line off, it has information we need.
+        #Also remove the header character, and de-escape quotes, remove surrounding quotes as well.
+        entry_str = entry.group()
+        entry_list = entry_str.split('\n', 1)
+        path_str = unescape_re.sub("", dequote_re.sub("", header_re.sub("", entry_list[0]))).strip()
+        isdir_bool = path_str.endswith("/")
+        path_str = path_str.rstrip('/')
+        content_str = entry_list[1]
+        if isdir_bool and not (content_str.isspace() or not content_str):
+            #the content is invalid for a directory. Chuck an error.
+            error_list.append({'type': ParseError.ERR_DIRECTORY_HAS_CONTENTS, 'match':entry.group().split('\n',1)[0]})
+        else:
+            #Iterate through each constituent path on the way to the final file.
+            gen_dir_list = path_str.split("/")
+            for i in range(len(gen_dir_list)-1):
+                intermediate_dir_str = "/".join(gen_dir_list[0:i+1])
+                if intermediate_dir_str in result_dict and not result_dict[intermediate_dir_str]['is_directory']:
+                    error_list.append({'type': ParseError.ERR_FILE_IS_NOT_DIR, 'match':entry.group().split('\n',1)[0]})
+                elif intermediate_dir_str not in result_dict:
+                    result_dict[intermediate_dir_str] = {'path' : intermediate_dir_str, 'is_directory': True, 'content' : '', 'is_autogen': True}
+            if path_str in result_dict:
+                if result_dict[path_str]['is_directory']:
+                    error_list.append({'type': ParseError.ERR_DIR_IS_NOT_FILE, 'match':entry.group().split('\n',1)[0]})
+                else:
+                    error_list.append({'type': ParseError.ERR_DUPLICATE_FILE, 'match':entry.group().split('\n',1)[0]})
             else:
-                results[matches[i].group().replace(sentinel, "").strip()] = content
-    else:
-        print('ERR: No Input.')
-        return 3
+                result_dict[path_str] = {'path' : path_str, 'is_directory': isdir_bool, 'content' : content_str.strip(), 'is_autogen': False}
 
-    return results
+    #clean up the error list
+    error_list = [i for i in error_list if i != []]
+    return (result_dict, error_list)
 
 
-def pack(input_files):
-    p = re.compile('<=+>')
-    output = ""
-    new_sent_len = 1
-    # Compute sentinel length.
-    for i in range(len(input_files)):
-        file = open(input_files[i], "r")
-        fcont = file.read()
-        for match in p.finditer(fcont):
-            sentinelLen = match.group().count('=')
-            if sentinelLen > new_sent_len:
-                new_sent_len = sentinelLen + 1
-
-    for i in range(len(input_files)):
-        sentinel = '<' + '='*new_sent_len + '> ' + input_files[i].replace('\\', '/') + "\n" #This makes windows happy.
-        output += sentinel
-        file = open(input_files[i], "r")
-        output += file.read()
-        output += "\n"
-
-    return output.strip()
-
-def merge(input_files):
-    p = re.compile('<=+>')
-    output = ""
-    new_sent_len = 1
-    # Compute sentinel length.
-    for i in range(len(input_files)):
-        file = open(input_files[i], "r")
-        fcont = file.read()
-        for match in p.finditer(fcont):
-            sentinelLen = match.group().count('=')
-            if sentinelLen > new_sent_len:
-                new_sent_len = sentinelLen + 1
-
-    newSentinel = '<' + '='*new_sent_len + '> '
-
-    for i in range(len(input_files)):
-        file = open(input_files[i], "r")
-        fcont = file.read()
-        fcont_fline = fcont.splitlines()[0]
-        if p.match(fcont_fline) is None:
-            print("ERR: Valid boundary not found on first line.")
-            return 1
-        sentinel = p.match(fcont_fline).group()
-        fcont = fcont.replace(sentinel, newSentinel)
-
-        output += fcont + "\n"
-
-    return output.strip()
+def print_errors(error_list):
+    for error_dict in error_list:
+        print(str(error_dict['type']) + " near \"" + error_dict['match'] + "\".")
