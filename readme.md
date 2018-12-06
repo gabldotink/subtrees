@@ -4,6 +4,7 @@ A lightweight implementation of the HRX ([google/hrx](https://github.com/google/
 This implementation is incredibly hacky and relies very heavily on regexes. The upside to this is that it's treating the input as pure text, as opposed to trying to interpret the contents of files. This greatly improves speed over a parser that tries to parse the file contents. Designing a parser that tries to make sense of sub-files may result in poor performance if the subfiles look or behave like the file being operated on.
 
 ## Usage
+### Careful! The following docs are for `hrx.py` not `hrx2.py`.
 There exist three parts, `parse`, `pack`, and `merge`. Import `hrx` and use all of them, or import one from `hrx`.
 
 ### Parse
