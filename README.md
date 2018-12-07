@@ -1,5 +1,5 @@
 # HRX.js
-An implementation of the HRX standard in JavaScript for NodeJS.
+An implementation of the [HRX spec](https://github.com/google/hrx) in JavaScript for NodeJS.
 
 ## Compatibility Notes
 This uses negative lookbehinds in regular expressions so you have to use a relatively recent version of NodeJS.
