@@ -12,7 +12,7 @@ const parse_hrx = require('./hrx.js');
 ```
 
 ### `parse_hrx(contents)`
-This takes in a string defining the appropriate file, and returns an array.
+This takes in a string containing the contents of an appropriate file, and returns an array.
 
 ```
 const [hrx_parsed, errs] = parse_hrx(contents);
