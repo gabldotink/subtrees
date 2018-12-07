@@ -1,0 +1,20 @@
+{
+  "name": "hrxjs",
+  "version": "0.0.1",
+  "description": "Implementation of the HRX archive spec.",
+  "main": "app.js",
+  "dependencies": {
+    "memfs": "^2.14.1"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rebeccajae/hrx.js.git"
+  },
+  "author": "",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/rebeccajae/hrx.js/issues"
+  },
+  "homepage": "https://github.com/rebeccajae/hrx.js#readme"
+}
