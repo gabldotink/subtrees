@@ -4,6 +4,7 @@
   "description": "Implementation of the HRX archive spec.",
   "main": "app.js",
   "dependencies": {
+    "fs-monkey": "^0.3.3",
     "memfs": "^2.14.1"
   },
   "devDependencies": {},
