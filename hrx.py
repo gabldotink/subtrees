@@ -32,7 +32,7 @@ class ParseError(Enum):
 def parse(file_contents_str):
     error_list = []
     #Split into blocks (Comments, Files, etc.)
-    blocks_re = re.compile(r'((<=+>)(( |\n)(("(?:[^"\\]|\\[^\u0000-\u001F\u007F\u003A\u005C\u000A])*")|[^\u0000-\u001F\u007F\u003A\u005C\u000A]*)(?=\n)?[\S\s]+?(?=\2|$)))')
+    blocks_re = re.compile(r'((<=+>)(( |\n)([^\u0000-\u001F\u007F\u003A\u005C\u000A]*)(?=\n)?[\S\s]+?(?=\2|$)))')
     blocks_lst = list(blocks_re.finditer(file_contents_str))
     #Try to clean this up.
     error_list += [{'type': ParseError.ERR_MALFORMED_INPUT, 'match': i} for i in "\n".join(blocks_re.sub("\u0001", file_contents_str).split("\u0001")).strip().split("\n") if i]
@@ -47,7 +47,7 @@ def parse(file_contents_str):
     #print(len(seq_comments_lst))
     error_list += [{'type': ParseError.ERR_SEQUENTIAL_COMMENTS, 'match':i.group().split('\n',1)[0]} for i in seq_comments_lst]
     #Validate filenames
-    filename_re = re.compile(r'^<=+> "?(\.?[^\u0000-\u001F\u007F\u003A\u005C\u000A\u002F\u002E])((?!\/\/|\/\.{1,2}\/)[^\u0000-\u001F\u007F\u003A\u005C\u000A"]|\\")*"?\n')
+    filename_re = re.compile(r'^<=+> (\.?[^\u0000-\u001F\u007F\u003A\u005C\u000A\u002F\u002E])((?!\/\/|\/\.{1,2}\/)[^\u0000-\u001F\u007F\u003A\u005C\u000A])*\n')
     valid_files_lst = [fl for fl in file_lst if filename_re.match(fl.group())]
     invalid_files_lst = [fl for fl in file_lst if not filename_re.match(fl.group())]
     #invalid_files_lst will have any matches where there's an invalid file entry. If it's > 0 it should throw an error.
@@ -55,15 +55,13 @@ def parse(file_contents_str):
     error_list += [{'type': ParseError.ERR_BAD_FILE_ENTRY, 'match':i.group().split('\n',1)[0]} for i in invalid_files_lst]
     #Generate a result list.
     header_re = re.compile(r'^<=+> ')
-    dequote_re = re.compile(r'(^"|"$)')
-    unescape_re = re.compile(r'\\(?=")')
     result_dict = {}
     for entry in valid_files_lst:
         #Strip the first line off, it has information we need.
         #Also remove the header character, and de-escape quotes, remove surrounding quotes as well.
         entry_str = entry.group()
         entry_list = entry_str.split('\n', 1)
-        path_str = unescape_re.sub("", dequote_re.sub("", header_re.sub("", entry_list[0]))).strip()
+        path_str = header_re.sub("", entry_list[0]).strip()
         isdir_bool = path_str.endswith("/")
         path_str = path_str.rstrip('/')
         content_str = entry_list[1]
