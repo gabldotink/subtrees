@@ -1,12 +1,10 @@
 function parse_hrx(contents){
   var errlist = [];
-  const block_re = /((<=+>)(( |\n)(("(?:[^"\\]|\\[^\u0000-\u001F\u007F\u003A\u005C\u000A])*")|[^\u0000-\u001F\u007F\u003A\u005C\u000A]*)(?=\n)?[\S\s]+?(?=\2|$)))/g;
+  const block_re = /((<=+>)(( |\n)([^\u0000-\u001F\u007F\u003A\u005C\u000A]*)(?=\n)?[\S\s]+?(?=\2|$)))/g;
   const comment_re = /^<=+>\n/;
   const seq_comments_re = /^(<=+>\n.*\n+){2,}/g;
-  const filename_validator_re = /^<=+> "?(\.?[^\u0000-\u001F\u007F\u003A\u005C\u000A\u002F\u002E])((?!\/\/|\/\.{1,2}\/)[^\u0000-\u001F\u007F\u003A\u005C\u000A"]|\\")*"?\n/;
+  const filename_validator_re = /^<=+> (\.?[^\u0000-\u001F\u007F\u003A\u005C\u000A\u002F\u002E])((?!\/\/|\/\.{1,2}\/)[^\u0000-\u001F\u007F\u003A\u005C\u000A])*\n/;
   const header_re = /^<=+> /
-  const dequote_re = /(^"|"$)/;
-  const unescape_re = /\\(?=")/g;
   const blocks = contents.match(block_re);
   const nonblocks_arr = contents.replace(block_re, "\u0001").split("\u0001").filter(Boolean); //This should be empty.
   if(Array.isArray(nonblocks_arr) && nonblocks_arr.length){
@@ -27,7 +25,7 @@ function parse_hrx(contents){
   var badEntries = [];
   for (var idx = 0; idx < files_arr.length; ++idx) {
       var parts = files_arr[idx].split(/\n([\s\S]+)/);
-      var path = parts[0].replace(header_re, "").replace(dequote_re, "").replace(unescape_re, "").trim();
+      var path = parts[0].replace(header_re, "").trim();
       var body = parts[1];
       var isdir_bool = path[path.length -1] == "/";
       path = path.replace(/\/^/, "");
