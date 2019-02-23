@@ -4,7 +4,7 @@ Public Domain is not a license and isn't legally accepted in some countries. So 
 
 # Public Domain Software
 
-The term “public domain” refers to creative materials that are not protected by intellectual property laws such as copyright, trademark, or patent laws. The public owns these works, not an individual author or artist. Anyone can use a public domain work without obtaining permission, but no one can ever own it. - [Stanford University definition](https://fairuse.stanford.edu/overview/public-domain/welcome/)
+The term “public domain” refers to creative materials that are not protected by intellectual property laws such as copyright, trademark, or patent laws. The public owns these works, not an individual author or artist. Anyone can use a public domain work without obtaining permission, but no one can ever own it. - [Stanford University definition](https://web.archive.org/web/20190219214032/https://fairuse.stanford.edu/overview/public-domain/welcome/)
 
 **Can** | **Cannot**
 --- | ---
