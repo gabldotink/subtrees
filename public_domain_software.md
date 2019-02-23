@@ -1,3 +1,7 @@
+## TLDR
+
+Public Domain is not a license and isn't legally accepted in some countries. So if you want to give stuff for free, it's better to just license it under MIT or BSD.
+
 # Public Domain Software
 
 The term “public domain” refers to creative materials that are not protected by intellectual property laws such as copyright, trademark, or patent laws. The public owns these works, not an individual author or artist. Anyone can use a public domain work without obtaining permission, but no one can ever own it. - [Stanford University definition](https://fairuse.stanford.edu/overview/public-domain/welcome/)
@@ -42,7 +46,7 @@ In general, open-source advocates [do not sympathise](https://opensource.org/faq
 
 ## Licenses
 
-Public Domain implies waiving all copyright and thus **Public Domain is not a license**. That's not to say that all software require a license. They perfectly fine without a license while dedicated to Public Domain.
+Public Domain implies waiving all copyright and thus **Public Domain is not a license**.
 
 By definition, a software license assert some form of copyright and therefore **no license is Public Domain**.
 
@@ -53,7 +57,3 @@ By definition, a software license assert some form of copyright and therefore **
 * [CC0](https://creativecommons.org/publicdomain/zero/1.0/legalcode) - According to [Stanford University definition of Public Domain](https://fairuse.stanford.edu/overview/public-domain/welcome/) this is not a true Public Domain because it reserves rights of patents to the author.
 
 * [WTFPL (Do What the Fuck You Want To Public License)](https://en.wikipedia.org/wiki/WTFPL#Version_2) - Informal license that implies total freedom of use. Also cannot be considered Public Domain compatible as it includes copyright ownership.
-
-## License
-
-This Gist is dedicated to Public Domain.
