@@ -1,6 +1,0 @@
-<===> mymodule.js
-function testFunction(name){
-  return "Hello, " + name + "!";
-}
-
-module.exports = testFunction;

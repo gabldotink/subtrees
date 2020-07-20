@@ -1,13 +1,8 @@
 {
   "name": "hrxjs",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Implementation of the HRX archive spec.",
   "main": "app.js",
-  "dependencies": {
-    "express": "^4.16.4",
-    "intercept-require": "^1.1.0",
-    "memfs": "^2.14.1"
-  },
   "devDependencies": {},
   "repository": {
     "type": "git",
