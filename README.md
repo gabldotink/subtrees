@@ -1,1 +1,1 @@
-#### Install gentoo
+# Install gentoo
