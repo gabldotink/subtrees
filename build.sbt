@@ -4,7 +4,7 @@ ThisBuild / organizationName := "Sho Kohara"
 ThisBuild / scalafixDependencies += "com.github.liancheng" %% "organize-imports" % "0.4.3"
 ThisBuild / sources in (Compile, doc) := Seq.empty
 ThisBuild / publishArtifact in (Compile, packageDoc) := false
-ThisBuild / scalaVersion := "2.13.3"
+ThisBuild / scalaVersion := "2.13.4"
 val circeVersion = "0.13.0"
 val refinedVersion = "0.9.17"
 val doobieVersion = "0.9.2"
@@ -199,4 +199,27 @@ val lolWindows = (project in file("modules/leagueoflegends/windows"))
     addCommandAlias("build", "fullOptJS::webpack")
   ).enablePlugins(ScalaJSBundlerPlugin)
 
-val root = (project in file(".")).aggregate(lolApi, lolClient, lolWindows, lolProtos.jvm, lolProtos.js)
+val zshMergeScala3 = (project in file("modules/zsh/mergeScala3"))
+  .settings(
+    scalaVersion := "3.0.0-M1",
+    semanticdbEnabled := true,
+    semanticdbVersion := scalafixSemanticdb.revision,
+    scalacOptions ++= Seq(
+      "-deprecation",
+      "-Wunused"
+    )
+  )
+
+val zshMerge = (project in file("modules/zsh/merge"))
+  .settings(
+    semanticdbEnabled := true,
+    semanticdbVersion := scalafixSemanticdb.revision,
+    scalacOptions ++= Seq(
+      "-deprecation",
+      "-Wunused",
+      "-Ytasty-reader"
+    ),
+    libraryDependencies ++= Seq("com.github.pathikrit" %% "better-files" % "3.9.1")
+  ).dependsOn(zshMergeScala3)
+
+val root = (project in file(".")).aggregate(lolApi, lolClient, lolWindows, lolProtos.jvm, lolProtos.js, zshMerge)
