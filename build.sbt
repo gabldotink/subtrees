@@ -1,7 +1,7 @@
 Global / onChangedBuildSource := ReloadOnSourceChanges
 ThisBuild / organization := "com.github.shokohara"
 ThisBuild / organizationName := "Sho Kohara"
-ThisBuild / scalafixDependencies += "com.github.liancheng" %% "organize-imports" % "0.4.3"
+//ThisBuild / scalafixDependencies += "com.github.liancheng" %% "organize-imports" % "0.4.3"
 ThisBuild / sources in (Compile, doc) := Seq.empty
 ThisBuild / publishArtifact in (Compile, packageDoc) := false
 ThisBuild / scalaVersion := "2.13.4"
@@ -18,8 +18,8 @@ val lolProtos = crossProject(JSPlatform, JVMPlatform)
   .crossType(CrossType.Pure)
   .in(file("modules/leagueoflegends/protos"))
   .settings(
-    semanticdbEnabled := true,
-    semanticdbVersion := scalafixSemanticdb.revision,
+//    semanticdbEnabled := true,
+//    semanticdbVersion := scalafixSemanticdb.revision,
     scalacOptions ++= Seq(
       "-deprecation",
       "-Wunused"
@@ -48,8 +48,8 @@ val lolApi = (project in file("modules/leagueoflegends/api"))
   .dependsOn(lolProtos.jvm)
   .settings(
     Compile / run / fork := true,
-    semanticdbEnabled := true,
-    semanticdbVersion := scalafixSemanticdb.revision,
+//    semanticdbEnabled := true,
+//    semanticdbVersion := scalafixSemanticdb.revision,
     scalacOptions ++= Seq(
       "-deprecation",
       "-feature",
@@ -58,7 +58,7 @@ val lolApi = (project in file("modules/leagueoflegends/api"))
       s"-Wconf:src=${target.value}/.*:s"
     ),
     scalacOptions in (Compile, console) --= Seq("-Ywarn-unused:imports", "-Xfatal-warnings"),
-    addCompilerPlugin("org.typelevel" %% "kind-projector" % "0.11.0" cross CrossVersion.full),
+    addCompilerPlugin("org.typelevel" %% "kind-projector" % "0.11.1" cross CrossVersion.full),
     libraryDependencies ++= Seq(
       "com.merakianalytics.orianna" % "orianna" % "4.0.0-rc7",
       "org.slf4j" % "slf4j-api" % "1.7.30",
@@ -130,8 +130,8 @@ val v = new {
 
 val lolClient = (project in file("modules/leagueoflegends/client"))
   .settings(
-    semanticdbEnabled := true,
-    semanticdbVersion := scalafixSemanticdb.revision,
+//    semanticdbEnabled := true,
+//    semanticdbVersion := scalafixSemanticdb.revision,
     scalacOptions ++= Seq(
       "-deprecation",
       "-Wunused"
@@ -167,8 +167,8 @@ val lolClient = (project in file("modules/leagueoflegends/client"))
 val lolWindows = (project in file("modules/leagueoflegends/windows"))
   .settings(
     name := "windows",
-    semanticdbEnabled := true,
-    semanticdbVersion := scalafixSemanticdb.revision,
+//    semanticdbEnabled := true,
+//    semanticdbVersion := scalafixSemanticdb.revision,
     scalacOptions ++= Seq(
       "-deprecation",
       "-Wunused"
@@ -202,8 +202,8 @@ val lolWindows = (project in file("modules/leagueoflegends/windows"))
 val zshMergeScala3 = (project in file("modules/zsh/mergeScala3"))
   .settings(
     scalaVersion := "3.0.0-M1",
-    semanticdbEnabled := true,
-    semanticdbVersion := scalafixSemanticdb.revision,
+//    semanticdbEnabled := true,
+//    semanticdbVersion := scalafixSemanticdb.revision,
     scalacOptions ++= Seq(
       "-deprecation",
       "-Wunused"
@@ -212,8 +212,8 @@ val zshMergeScala3 = (project in file("modules/zsh/mergeScala3"))
 
 val zshMerge = (project in file("modules/zsh/merge"))
   .settings(
-    semanticdbEnabled := true,
-    semanticdbVersion := scalafixSemanticdb.revision,
+//    semanticdbEnabled := true,
+//    semanticdbVersion := scalafixSemanticdb.revision,
     scalacOptions ++= Seq(
       "-deprecation",
       "-Wunused",
@@ -223,3 +223,7 @@ val zshMerge = (project in file("modules/zsh/merge"))
   ).dependsOn(zshMergeScala3)
 
 val root = (project in file(".")).aggregate(lolApi, lolClient, lolWindows, lolProtos.jvm, lolProtos.js, zshMerge)
+addCommandAlias(
+  "ci",
+  ";test:compile;scalafixAll --check;undeclaredCompileDependenciesTest;unusedCompileDependenciesTest"
+)
