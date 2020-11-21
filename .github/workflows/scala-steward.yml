@@ -1,0 +1,18 @@
+name: scala-steward
+on:
+  schedule:
+  - cron: '0 0 * * *'
+  workflow_dispatch:
+jobs:
+  scala-steward:
+    runs-on: ubuntu-latest
+    name: Launch Scala Steward
+    steps:
+    - uses: olafurpg/setup-scala@v10
+    - uses: laughedelic/coursier-setup@v1
+    - uses: coursier/cache-action@v5
+    - name: Launch Scala Steward
+      uses: scala-steward-org/scala-steward-action@v2
+      with:
+        github-token: ${{ secrets.ADMIN_GITHUB_TOKEN }}
+
