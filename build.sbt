@@ -208,6 +208,7 @@ val zshMergeScala3 = (project in file("modules/zsh/mergeScala3"))
       "-deprecation",
       "-Wunused"
     )
+//    libraryDependencies ++= Seq("org.typelevel" %% "cats-core" % "2.3.0-M2")
   )
 
 val zshMerge = (project in file("modules/zsh/merge"))
@@ -219,11 +220,19 @@ val zshMerge = (project in file("modules/zsh/merge"))
       "-Wunused",
       "-Ytasty-reader"
     ),
-    libraryDependencies ++= Seq("com.github.pathikrit" %% "better-files" % "3.9.1")
-  ).dependsOn(zshMergeScala3)
+    libraryDependencies ++= Seq(
+      "com.github.pathikrit" %% "better-files" % "3.9.1",
+//      "org.typelevel" %% "cats-core" % "2.3.0-M2",
+      "eu.timepit" %% "refined" % "0.9.18",
+      "com.monovore" %% "decline" % "1.3.0",
+      "co.fs2" %% "fs2-io" % "2.4.6",
+      "org.scalameta" %% "munit" % "0.7.15" % Test
+    ),
+    testFrameworks += new TestFramework("munit.Framework")
+  )
 
 val root = (project in file(".")).aggregate(lolApi, lolClient, lolWindows, lolProtos.jvm, lolProtos.js, zshMerge)
 addCommandAlias(
   "ci",
-  ";test:compile;scalafixAll --check;undeclaredCompileDependenciesTest;unusedCompileDependenciesTest"
+  ";test:compile"
 )
