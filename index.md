@@ -32,7 +32,8 @@
   <div class="stackedit__right">
     <div class="stackedit__html">
       <h1 id="project-charter">Project Charter</h1>
-<p>this is where the info will be</p>
+<p>this is where the info will be<br>
+<a href="anotherpage.md">link to a different page</a></p>
 <h2 id="pillars">Pillars</h2>
 <h2 id="outline">Outline</h2>
 <h2 id="values">Values</h2>
