@@ -1,6 +1,6 @@
 # M3U8 with WebVTT subtitles
 
-- master playlist: `https://raw.githubusercontent.com/ytdl-patched/m3u8_subtitle_test/master/media/master.m3u8`
+- master playlist: `https://github.com/ytdl-patched/m3u8_subtitle_test/raw/master/media/master.m3u8`
 - video/audio playlist: `https://github.com/ytdl-patched/m3u8_subtitle_test/raw/master/media/output.m3u8`
 - subtitle playlist: `https://github.com/ytdl-patched/m3u8_subtitle_test/raw/master/media/output_vtt.m3u8`
 
