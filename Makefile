@@ -1,3 +1,5 @@
+SHELL := /bin/bash
+
 # This file is used to spin up a basic dockerized mediawiki instance on your local machine.
 # Comments above the make commands below explain their usage.
 # 
