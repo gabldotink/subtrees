@@ -22,9 +22,10 @@ XDEBUG_CONFIG=''
 endef
 export MW_ENV
 
-# "make installandstart" fetches, installs and runs a basic mediawiki container. Mediawiki gets saved in a "mediawiki" directory in the parent directory of the Makefile.
-.PHONY: installandstart
-installandstart:
+# "make freshinstall" (or just "make") fetches, installs and runs a basic mediawiki container. Mediawiki gets saved in a "mediawiki" directory in the parent directory of the Makefile.
+.DEFAULT: freshinstall
+.PHONY: freshinstall
+freshinstall:
 	mkdir $(mediawiki_dir); \
 	cd $(mediawiki_dir); \
 	git clone https://github.com/wikimedia/mediawiki.git . --depth=1; \
@@ -36,10 +37,10 @@ installandstart:
 	docker compose exec --user="root" mediawiki /bin/bash /docker/install.sh; \
 	open "http://localhost:8080/wiki/Special:Version"
 
-# "make stopandremove" stops and removes mediawiki containers.
-.PHONY: stopandremove
-stopandremove:
-	-read -p "Are you sure you want to delete mediawiki containers and EVERYTHING in \"$(mediawiki_dir)\" (y/n)? " -n 1 -r; \
+# "make remove" stops and removes mediawiki containers and files.
+.PHONY: remove
+remove:
+	-@read -p "Are you sure you want to delete mediawiki containers and EVERYTHING in \"$(mediawiki_dir)\" (y/n)? " -n 1 -r; \
 	echo ; \
 	if [ "$$REPLY" = "y" ]; then \
 		make stop; \
