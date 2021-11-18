@@ -46,6 +46,9 @@ remove:
 		docker container rm mediawiki-mediawiki-web-1; \
 		docker container rm mediawiki-mediawiki-1; \
 		docker container rm mediawiki-mediawiki-jobrunner-1; \
+		docker image rm mediawiki-mediawiki-web-1; \
+		docker image rm mediawiki-mediawiki-1; \
+		docker image rm mediawiki-mediawiki-jobrunner-1; \
 		rm -rf $(mediawiki_dir); \
 	fi
 
