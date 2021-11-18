@@ -32,7 +32,6 @@ freshinstall:
 	git clone https://github.com/wikimedia/mediawiki-skins-Vector.git ./skins/Vector --depth=1; \
 	echo "$$MW_ENV" > .env; \
 	docker compose up -d; \
-	docker compose exec --user="root" mediawiki composer self-update --2; \
 	docker compose exec --user="root" mediawiki composer update; \
 	docker compose exec --user="root" mediawiki /bin/bash /docker/install.sh; \
 	open "http://localhost:8080/wiki/Special:Version"
