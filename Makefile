@@ -108,6 +108,10 @@ vectorskin:
 darkskin:
 	make skin skinDirectory=DarkVector skinRepoURL=https://github.com/jdlrobson/DarkVector.git skinBranch=24 wfLoadSkin=DarkVector wgDefaultSkin=darkvector;
 
+.PHONY: minervaneueskin
+minervaneueskin:
+	make skin skinDirectory=MinervaNeue skinRepoURL=https://github.com/wikimedia/mediawiki-skins-MinervaNeue.git wfLoadSkin=MinervaNeue wgDefaultSkin=minerva;
+
 .PHONY: openspecialversionpage
 openspecialversionpage:
 	open "http://localhost:8080/wiki/Special:Version";
