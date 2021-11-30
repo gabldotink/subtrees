@@ -29,12 +29,12 @@ freshinstall:
 	mkdir $(mediawiki_dir); \
 	cd $(mediawiki_dir); \
 	git clone https://github.com/wikimedia/mediawiki.git . --depth=1; \
-	git clone https://github.com/wikimedia/mediawiki-skins-Vector.git ./skins/Vector --depth=1; \
 	echo "$$MW_ENV" > .env; \
 	docker compose up -d; \
 	docker compose exec --user="root" mediawiki composer update; \
 	docker compose exec --user="root" mediawiki /bin/bash /docker/install.sh; \
-	open "http://localhost:8080/wiki/Special:Version"
+	cd $(makefile_dir); \
+	make vectorskin;
 
 # "make remove" stops and removes mediawiki containers and files.
 .PHONY: remove
@@ -60,7 +60,7 @@ stop:
 start:
 	cd $(mediawiki_dir); \
 	docker compose up -d; \
-	open "http://localhost:8080/wiki/Special:Version"
+	make openspecialversionpage;
 
 # "make restart" restarts mediawiki containers.
 .PHONY: restart
@@ -82,3 +82,32 @@ bashjr:
 .PHONY: bashwb
 bashwb:
 	docker exec -it mediawiki-mediawiki-web-1 /bin/bash
+
+.PHONY: skin
+skin:
+	@cd $(mediawiki_dir); \
+	rm -rf "skins/$(skinDirectory)"; \
+	git clone $(if $(skinBranch), --branch $(skinBranch),) $(skinRepoURL) "./skins/$(skinDirectory)" --depth=1; \
+	cd $(makefile_dir); \
+	sleep 1; \
+	make skinsettings; \
+	make openspecialversionpage;
+
+.PHONY: skinsettings
+skinsettings:
+	@cd $(mediawiki_dir); \
+	grep -qx '^wfLoadSkin.*$$' LocalSettings.php || echo 'wfLoadSkin("");' >> LocalSettings.php; \
+	sed -i -E "s/^wfLoadSkin[[:blank:]]*\(([[:blank:]]*.*[[:blank:]]*)\)[[:blank:]]*;[[:blank:]]*$$/wfLoadSkin(\"$(wfLoadSkin)\");/g" LocalSettings.php; \
+	sed -i -E "s/\\\$$wgDefaultSkin.*;[[:blank:]]*$$/\\\$$wgDefaultSkin = \"$(wgDefaultSkin)\";/g" LocalSettings.php;
+
+.PHONY: vectorskin
+vectorskin:
+	make skin skinDirectory=Vector skinRepoURL=https://github.com/wikimedia/mediawiki-skins-Vector.git wfLoadSkin=Vector wgDefaultSkin=vector;
+
+.PHONY: darkskin
+darkskin:
+	make skin skinDirectory=DarkVector skinRepoURL=https://github.com/jdlrobson/DarkVector.git skinBranch=24 wfLoadSkin=DarkVector wgDefaultSkin=darkvector;
+
+.PHONY: openspecialversionpage
+openspecialversionpage:
+	open "http://localhost:8080/wiki/Special:Version";
