@@ -104,8 +104,8 @@ skinsettings:
 vectorskin:
 	make skin skinDirectory=Vector skinRepoURL=https://github.com/wikimedia/mediawiki-skins-Vector.git wfLoadSkin=Vector wgDefaultSkin=vector;
 
-.PHONY: darkskin
-darkskin:
+.PHONY: darkvectorskin
+darkvectorskin:
 	make skin skinDirectory=DarkVector skinRepoURL=https://github.com/jdlrobson/DarkVector.git skinBranch=24 wfLoadSkin=DarkVector wgDefaultSkin=darkvector;
 
 .PHONY: minervaneueskin
