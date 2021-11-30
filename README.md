@@ -39,7 +39,7 @@ You can stop, start, restart or remove the containers with these commands:
      ```
     Stops and removes mediawiki containers and files
 
-Get quick shell access to running containers with these commands:
+Get quick Bash shell access to running containers with these commands:
 -   ```
     make bashmw
      ```
