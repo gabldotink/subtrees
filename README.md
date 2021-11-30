@@ -18,11 +18,7 @@ Now you can spin up the MediaWiki with the *make* command:
      ```
     Fetches the latest MediaWiki (into `~/mediawiki-docker-make/mediawiki/`) and spins up a Docker container using it
 
-You stop, start, restart etc the containers with these commands:
--   ```
-    make remove
-     ```
-    Stops and removes mediawiki containers and files
+You can stop, start, restart or remove the containers with these commands:
 -   ```
     make stop
      ```
@@ -35,6 +31,10 @@ You stop, start, restart etc the containers with these commands:
     make restart
      ```
     Restarts mediawiki containers
+-   ```
+    make remove
+     ```
+    Stops and removes mediawiki containers and files
 
 Get quick shell access to running containers with these commands:
 -   ```
