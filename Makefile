@@ -100,20 +100,20 @@ applyskinsettings:
 	sed -i -E "s/^wfLoadSkin[[:blank:]]*\(([[:blank:]]*.*[[:blank:]]*)\)[[:blank:]]*;[[:blank:]]*$$/wfLoadSkin(\"$(wfLoadSkin)\");/g" LocalSettings.php; \
 	sed -i -E "s/\\\$$wgDefaultSkin.*;[[:blank:]]*$$/\\\$$wgDefaultSkin = \"$(wgDefaultSkin)\";/g" LocalSettings.php;
 
-.PHONY: vectorskin
-vectorskin:
+.PHONY: usevectorskin
+usevectorskin:
 	make applyskin skinDirectory=Vector skinRepoURL=https://github.com/wikimedia/mediawiki-skins-Vector.git wfLoadSkin=Vector wgDefaultSkin=vector;
 
-.PHONY: darkvectorskin
-darkvectorskin:
+.PHONY: usedarkvectorskin
+usedarkvectorskin:
 	make applyskin skinDirectory=DarkVector skinRepoURL=https://github.com/jdlrobson/DarkVector.git skinBranch=24 wfLoadSkin=DarkVector wgDefaultSkin=darkvector;
 
-.PHONY: minervaneueskin
-minervaneueskin:
+.PHONY: useminervaneueskin
+useminervaneueskin:
 	make applyskin skinDirectory=MinervaNeue skinRepoURL=https://github.com/wikimedia/mediawiki-skins-MinervaNeue.git wfLoadSkin=MinervaNeue wgDefaultSkin=minerva;
 
-.PHONY: timelessskin
-timelessskin:
+.PHONY: usetimelessskin
+usetimelessskin:
 	make applyskin skinDirectory=Timeless skinRepoURL=https://github.com/wikimedia/mediawiki-skins-Timeless.git wfLoadSkin=Timeless wgDefaultSkin=timeless;
 
 .PHONY: openspecialversionpage
