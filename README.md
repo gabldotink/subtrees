@@ -23,14 +23,17 @@ You can stop, start, restart or remove the containers with these commands:
     make stop
      ```
     Stops mediawiki containers
+
 -   ```
     make start
      ```
     Start mediawiki containers
+
 -   ```
     make restart
      ```
     Restarts mediawiki containers
+
 -   ```
     make remove
      ```
@@ -41,10 +44,12 @@ Get quick shell access to running containers with these commands:
     make bashmw
      ```
     Bash access to the mediawiki container
+
 -   ```
     make bashjr
      ```
     Bash access to the job runner container
+
 -   ```
     make bashwb
      ```
@@ -56,14 +61,17 @@ You can run these skin-related *make* commands **after** spinning up MediaWiki w
     make usevectorskin
      ```
     Fetch and switch to the Vector skin
+
 -   ```
     make usedarkvectorskin
      ```
     Fetch and switch to the dark Vector skin
+
 -   ```
     make useminervaneueskin
      ```
     Fetch and switch to the Minerva Neue skin
+    
 -   ```
     make usetimelessskin
      ```
