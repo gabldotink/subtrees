@@ -112,6 +112,10 @@ darkskin:
 minervaneueskin:
 	make skin skinDirectory=MinervaNeue skinRepoURL=https://github.com/wikimedia/mediawiki-skins-MinervaNeue.git wfLoadSkin=MinervaNeue wgDefaultSkin=minerva;
 
+.PHONY: timelessskin
+timelessskin:
+	make skin skinDirectory=Timeless skinRepoURL=https://github.com/wikimedia/mediawiki-skins-Timeless.git wfLoadSkin=Timeless wgDefaultSkin=timeless;
+
 .PHONY: openspecialversionpage
 openspecialversionpage:
 	open "http://localhost:8080/wiki/Special:Version";
