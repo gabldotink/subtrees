@@ -55,7 +55,7 @@ Get quick shell access to running containers with these commands:
      ```
     Bash access to the web container
 
-You can run these skin-related *make* commands **after** spinning up MediaWiki with one of the other *make* commands (more are added easily):
+Quickly switch skins with these commands (easy to add more if needed):
 
 -   ```
     make usevectorskin
