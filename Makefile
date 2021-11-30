@@ -34,7 +34,7 @@ freshinstall:
 	docker compose exec --user="root" mediawiki composer update; \
 	docker compose exec --user="root" mediawiki /bin/bash /docker/install.sh; \
 	cd $(makefile_dir); \
-	make vectorskin;
+	make usevectorskin;
 
 # "make remove" stops and removes mediawiki containers and files.
 .PHONY: remove
@@ -60,6 +60,7 @@ stop:
 start:
 	cd $(mediawiki_dir); \
 	docker compose up -d; \
+	cd $(makefile_dir); \
 	make openspecialversionpage;
 
 # "make restart" restarts mediawiki containers.
