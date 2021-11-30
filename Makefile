@@ -39,14 +39,16 @@ freshinstall:
 # "make remove" stops and removes mediawiki containers and files.
 .PHONY: remove
 remove:
-	-@read -p "Are you sure you want to delete mediawiki containers and EVERYTHING in \"$(mediawiki_dir)\" (y/n)? " -n 1 -r; \
-	echo ; \
-	if [ "$$REPLY" = "y" ]; then \
-		make stop; \
-		docker container rm mediawiki-mediawiki-web-1; \
-		docker container rm mediawiki-mediawiki-1; \
-		docker container rm mediawiki-mediawiki-jobrunner-1; \
-		rm -rf $(mediawiki_dir); \
+	-@if [ -d "$(mediawiki_dir)" ]; then \
+		read -p "Are you sure you want to delete mediawiki containers and EVERYTHING in \"$(mediawiki_dir)\" (y/n)? " -n 1 -r; \
+		echo ; \
+		if [ "$$REPLY" = "y" ]; then \
+			make stop; \
+			docker container rm mediawiki-mediawiki-web-1; \
+			docker container rm mediawiki-mediawiki-1; \
+			docker container rm mediawiki-mediawiki-jobrunner-1; \
+			rm -rf $(mediawiki_dir); \
+		fi \
 	fi
 
 # "make stop" stops mediawiki containers.
