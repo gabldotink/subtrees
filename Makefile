@@ -90,11 +90,11 @@ applyskin:
 	git clone $(if $(skinBranch), --branch $(skinBranch),) $(skinRepoURL) "./skins/$(skinDirectory)" --depth=1; \
 	cd $(makefile_dir); \
 	sleep 1; \
-	make skinsettings; \
+	make applyskinsettings; \
 	make openspecialversionpage;
 
-.PHONY: skinsettings
-skinsettings:
+.PHONY: applyskinsettings
+applyskinsettings:
 	@cd $(mediawiki_dir); \
 	grep -qx '^wfLoadSkin.*$$' LocalSettings.php || echo 'wfLoadSkin("");' >> LocalSettings.php; \
 	sed -i -E "s/^wfLoadSkin[[:blank:]]*\(([[:blank:]]*.*[[:blank:]]*)\)[[:blank:]]*;[[:blank:]]*$$/wfLoadSkin(\"$(wfLoadSkin)\");/g" LocalSettings.php; \
