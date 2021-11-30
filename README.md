@@ -12,12 +12,13 @@ Switch to the `mediawiki-docker-make` directory:
 
     cd ~/mediawiki-docker-make
 
-Now you can spin up the MediaWiki with any of the following commands:
-
+Now you can spin up the MediaWiki with the *make* command:
 -   ```
     make
      ```
     Fetches the latest MediaWiki (into `~/mediawiki-docker-make/mediawiki/`) and spins up a Docker container using it
+
+You stop, start, restart etc the containers with these commands:
 -   ```
     make remove
      ```
@@ -34,6 +35,8 @@ Now you can spin up the MediaWiki with any of the following commands:
     make restart
      ```
     Restarts mediawiki containers
+
+Get quick shell access to running containers with these commands:
 -   ```
     make bashmw
      ```
