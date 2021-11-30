@@ -83,8 +83,8 @@ bashjr:
 bashwb:
 	docker exec -it mediawiki-mediawiki-web-1 /bin/bash
 
-.PHONY: skin
-skin:
+.PHONY: applyskin
+applyskin:
 	@cd $(mediawiki_dir); \
 	rm -rf "skins/$(skinDirectory)"; \
 	git clone $(if $(skinBranch), --branch $(skinBranch),) $(skinRepoURL) "./skins/$(skinDirectory)" --depth=1; \
@@ -102,19 +102,19 @@ skinsettings:
 
 .PHONY: vectorskin
 vectorskin:
-	make skin skinDirectory=Vector skinRepoURL=https://github.com/wikimedia/mediawiki-skins-Vector.git wfLoadSkin=Vector wgDefaultSkin=vector;
+	make applyskin skinDirectory=Vector skinRepoURL=https://github.com/wikimedia/mediawiki-skins-Vector.git wfLoadSkin=Vector wgDefaultSkin=vector;
 
 .PHONY: darkvectorskin
 darkvectorskin:
-	make skin skinDirectory=DarkVector skinRepoURL=https://github.com/jdlrobson/DarkVector.git skinBranch=24 wfLoadSkin=DarkVector wgDefaultSkin=darkvector;
+	make applyskin skinDirectory=DarkVector skinRepoURL=https://github.com/jdlrobson/DarkVector.git skinBranch=24 wfLoadSkin=DarkVector wgDefaultSkin=darkvector;
 
 .PHONY: minervaneueskin
 minervaneueskin:
-	make skin skinDirectory=MinervaNeue skinRepoURL=https://github.com/wikimedia/mediawiki-skins-MinervaNeue.git wfLoadSkin=MinervaNeue wgDefaultSkin=minerva;
+	make applyskin skinDirectory=MinervaNeue skinRepoURL=https://github.com/wikimedia/mediawiki-skins-MinervaNeue.git wfLoadSkin=MinervaNeue wgDefaultSkin=minerva;
 
 .PHONY: timelessskin
 timelessskin:
-	make skin skinDirectory=Timeless skinRepoURL=https://github.com/wikimedia/mediawiki-skins-Timeless.git wfLoadSkin=Timeless wgDefaultSkin=timeless;
+	make applyskin skinDirectory=Timeless skinRepoURL=https://github.com/wikimedia/mediawiki-skins-Timeless.git wfLoadSkin=Timeless wgDefaultSkin=timeless;
 
 .PHONY: openspecialversionpage
 openspecialversionpage:
