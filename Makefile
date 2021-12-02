@@ -31,8 +31,8 @@ freshinstall:
 	git clone https://github.com/wikimedia/mediawiki.git . --depth=1; \
 	echo "$$MW_ENV" > .env; \
 	docker compose up -d; \
-	docker compose exec --user="root" mediawiki composer update; \
-	docker compose exec --user="root" mediawiki /bin/bash /docker/install.sh; \
+	docker compose exec mediawiki composer update; \
+	docker compose exec mediawiki bash /docker/install.sh; \
 	cd $(makefile_dir); \
 	make usevectorskin;
 
@@ -74,17 +74,20 @@ restart:
 # "make bashmw" for bash access to the mediawiki container.
 .PHONY: bashmw
 bashmw:
-	docker exec -it mediawiki-mediawiki-1 /bin/bash
+	cd $(mediawiki_dir); \
+	docker compose exec mediawiki bash
 
 # "make bashjr" for bash access to the job runner container.
 .PHONY: bashjr
 bashjr:
-	docker exec -it mediawiki-mediawiki-jobrunner-1 /bin/bash
+	cd $(mediawiki_dir); \
+	docker compose exec mediawiki-jobrunner bash
 
 # "make bashwb" for bash access to the web container.
 .PHONY: bashwb
 bashwb:
-	docker exec -it mediawiki-mediawiki-web-1 /bin/bash
+	cd $(mediawiki_dir); \
+	docker compose exec mediawiki-web bash
 
 .PHONY: applyskin
 applyskin:
