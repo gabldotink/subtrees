@@ -76,3 +76,21 @@ Quickly switch skins with these commands (easy to add more if needed):
     make usetimelessskin
      ```
     Fetch and switch to the Timeless skin
+
+Run tests with these commands:
+
+-   ```
+    make runparsertests
+     ```
+    Run parser tests
+
+-   ```
+    make runphpunittests
+     ```
+    ```
+    make runphpunittests testgroup=Cache
+     ```
+    ```
+    make runphpunittests testpath=unit/includes/resourceloader/
+     ```
+    Run PHP unit tests

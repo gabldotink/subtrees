@@ -125,3 +125,13 @@ usetimelessskin:
 .PHONY: openspecialversionpage
 openspecialversionpage:
 	open "http://localhost:8080/wiki/Special:Version";
+
+.PHONY: runparsertests
+runparsertests:
+	@cd $(mediawiki_dir); \
+	docker compose exec mediawiki php tests/parser/parserTests.php;
+
+.PHONY: runphpunittests
+runphpunittests:
+	cd $(mediawiki_dir); \
+	docker compose exec --workdir /var/www/html/w/tests/phpunit mediawiki php phpunit.php $(if $(testpath), $(testpath),) $(if $(testgroup), --group $(testgroup),) --testdox;
