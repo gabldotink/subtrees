@@ -135,3 +135,7 @@ runparsertests:
 runphpunittests:
 	cd $(mediawiki_dir); \
 	docker compose exec --workdir /var/www/html/w/tests/phpunit mediawiki php phpunit.php $(if $(testpath), $(testpath),) $(if $(testgroup), --group $(testgroup),) --testdox;
+
+installnode:
+	cd $(mediawiki_dir); \
+	docker compose exec mediawiki /bin/bash -c "curl -s https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash && source ~/.profile && nvm install node;"
