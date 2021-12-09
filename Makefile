@@ -26,15 +26,17 @@ export MW_ENV
 .DEFAULT: freshinstall
 .PHONY: freshinstall
 freshinstall:
-	mkdir $(mediawiki_dir); \
+	make stop
+	make remove
+	make prepare
+	make start
+
+.PHONY: prepare
+prepare:
+	@mkdir $(mediawiki_dir); \
 	cd $(mediawiki_dir); \
 	git clone https://github.com/wikimedia/mediawiki.git . --depth=1; \
-	echo "$$MW_ENV" > .env; \
-	docker compose up -d; \
-	docker compose exec mediawiki composer update; \
-	docker compose exec mediawiki bash /docker/install.sh; \
-	cd $(makefile_dir); \
-	make usevectorskin;
+	echo "$$MW_ENV" > .env;
 
 # "make remove" stops and removes mediawiki containers and files.
 .PHONY: remove
@@ -48,22 +50,34 @@ remove:
 			docker container rm mediawiki-mediawiki-1; \
 			docker container rm mediawiki-mediawiki-jobrunner-1; \
 			rm -rf $(mediawiki_dir); \
-		fi \
+			rm $(makefile_dir)/runonce; \
+		fi; \
 	fi
 
 # "make stop" stops mediawiki containers.
 .PHONY: stop
 stop:
-	-cd $(mediawiki_dir); \
+	-@cd $(mediawiki_dir); \
 	docker compose down
 
 # "make start" start mediawiki containers.
 .PHONY: start
-start:
-	cd $(mediawiki_dir); \
+start: runonce
+	@cd $(mediawiki_dir); \
 	docker compose up -d; \
+	sleep 1; \
 	cd $(makefile_dir); \
 	make openspecialversionpage;
+
+runonce:
+	-@cd $(mediawiki_dir); \
+	docker compose up -d; \
+	docker compose exec mediawiki composer update; \
+	docker compose exec mediawiki bash /docker/install.sh; \
+	docker compose down; \
+	cd $(makefile_dir); \
+	touch runonce; \
+	make usevectorskin skipopenspecialversionpage=true;
 
 # "make restart" restarts mediawiki containers.
 .PHONY: restart
@@ -97,7 +111,9 @@ applyskin:
 	cd $(makefile_dir); \
 	sleep 1; \
 	make applyskinsettings; \
-	make openspecialversionpage;
+	if [ "$$skipopenspecialversionpage" != "true" ]; then \
+		make openspecialversionpage; \
+	fi
 
 .PHONY: applyskinsettings
 applyskinsettings:
