@@ -155,3 +155,19 @@ runphpunittests:
 installnode:
 	cd $(mediawiki_dir); \
 	docker compose exec mediawiki /bin/bash -c "curl -s https://raw.githubusercontent.com/creationix/nvm/master/install.sh | bash && source ~/.profile && nvm install node;"
+
+
+.PHONY: applyextension
+applyextension:
+	@cd $(mediawiki_dir); \
+	rm -rf "extensions/$(extensionDirectory)"; \
+	git clone $(if $(extensionBranch), --branch $(extensionBranch),) $(extensionRepoURL) "./extensions/$(extensionDirectory)" --depth=1; \
+	cd $(makefile_dir); \
+	sleep 1; \
+	make applyextensionsettings;
+
+.PHONY: applyextensionsettings
+applyextensionsettings:
+	@cd $(mediawiki_dir); \
+	grep -qx '^wfLoadExtension.*$$' LocalSettings.php || echo 'wfLoadExtension("");' >> LocalSettings.php; \
+	sed -i -E "s/^wfLoadExtension[[:blank:]]*\(([[:blank:]]*.*[[:blank:]]*)\)[[:blank:]]*;[[:blank:]]*$$/wfLoadExtension(\"$(wfLoadExtension)\");/g" LocalSettings.php;
