@@ -111,9 +111,7 @@ applyskin:
 	cd $(makefile_dir); \
 	sleep 1; \
 	make applyskinsettings; \
-	if [ "$$skipopenspecialversionpage" != "true" ]; then \
-		make openspecialversionpage; \
-	fi
+	make openspecialversionpage;
 
 .PHONY: applyskinsettings
 applyskinsettings:
@@ -140,7 +138,9 @@ usetimelessskin:
 
 .PHONY: openspecialversionpage
 openspecialversionpage:
-	open "http://localhost:8080/wiki/Special:Version";
+	@if [ "$$skipopenspecialversionpage" != "true" ]; then \
+		open "http://localhost:8080/wiki/Special:Version"; \
+	fi
 
 .PHONY: runparsertests
 runparsertests:
