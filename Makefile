@@ -169,5 +169,4 @@ applyextension:
 .PHONY: applyextensionsettings
 applyextensionsettings:
 	@cd $(mediawiki_dir); \
-	grep -qx '^wfLoadExtension.*$$' LocalSettings.php || echo 'wfLoadExtension("");' >> LocalSettings.php; \
-	sed -i -E "s/^wfLoadExtension[[:blank:]]*\(([[:blank:]]*.*[[:blank:]]*)\)[[:blank:]]*;[[:blank:]]*$$/wfLoadExtension(\"$(wfLoadExtension)\");/g" LocalSettings.php;
+	grep -qx "^[[:blank:]]*wfLoadExtension[[:blank:]]*([[:blank:]]*[\"']$(wfLoadExtension)[\"'][[:blank:]]*)[[:blank:]]*;[[:blank:]]*$$" LocalSettings.php || echo 'wfLoadExtension("$(wfLoadExtension)");' >> LocalSettings.php;
