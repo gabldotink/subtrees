@@ -46,6 +46,7 @@ remove:
 		echo ; \
 		if [ "$$REPLY" = "y" ]; then \
 			make stop; \
+			docker container rm mediawiki-elasticsearch-1; \
 			docker container rm mediawiki-mediawiki-web-1; \
 			docker container rm mediawiki-mediawiki-1; \
 			docker container rm mediawiki-mediawiki-jobrunner-1; \
@@ -170,3 +171,34 @@ applyextension:
 applyextensionsettings:
 	@cd $(mediawiki_dir); \
 	grep -qx "^[[:blank:]]*wfLoadExtension[[:blank:]]*([[:blank:]]*[\"']$(wfLoadExtension)[\"'][[:blank:]]*)[[:blank:]]*;[[:blank:]]*$$" LocalSettings.php || echo 'wfLoadExtension("$(wfLoadExtension)");' >> LocalSettings.php;
+
+.PHONY: cirrussetup
+cirrussetup:
+	@cd $(mediawiki_dir); \
+	echo "\$$wgDisableSearchUpdate = true;" >> ./LocalSettings.php; \
+	echo "\$$wgCirrusSearchServers = [ 'elasticsearch' ];" >> ./LocalSettings.php; \
+	docker compose exec mediawiki php maintenance/update.php; \
+	docker compose exec mediawiki composer --working-dir=/var/www/html/w/extensions/Elastica install; \
+	docker compose exec mediawiki php extensions/CirrusSearch/maintenance/UpdateSearchIndexConfig.php; \
+	sed -i '' '/\$wgDisableSearchUpdate = true;/d' ./LocalSettings.php; \
+	docker compose exec mediawiki php extensions/CirrusSearch/maintenance/ForceSearchIndex.php --skipLinks --indexOnSkip; \
+	docker compose exec mediawiki php extensions/CirrusSearch/maintenance/ForceSearchIndex.php --skipParse; \
+	echo "\$$wgSearchType = 'CirrusSearch';" >> ./LocalSettings.php; \
+	docker compose exec mediawiki php maintenance/runJobs.php
+
+.PHONY: freshinstallwithcirrussearch
+freshinstallwithcirrussearch:
+	make stop;
+	make remove;
+	make prepare;
+	cp ./docker-compose.override.yml $(mediawiki_dir)/docker-compose.override.yml;
+	make start skipopenspecialversionpage=true;
+	make applyextension extensionDirectory=Elastica extensionRepoURL=https://github.com/wikimedia/mediawiki-extensions-Elastica.git wfLoadExtension=Elastica;
+	make applyextension extensionDirectory=CirrusSearch extensionRepoURL=https://github.com/wikimedia/mediawiki-extensions-CirrusSearch.git wfLoadExtension=CirrusSearch;
+	make cirrussetup;
+	sleep 5;
+	make openspecialversionpage;
+#	Open a url appending '&cirrusDumpQuery' to the Special:Search URL - should dump json containing the elasticsearch query if CirrusSearch is being used ( from https://www.mediawiki.org/wiki/Topic:Vspistlf132kafvm )
+	open "http://localhost:8080/w/index.php?search=main+hastemplate%3Afoo&title=Special%3ASearch&go=Go&ns0=1&cirrusDumpQuery";
+# 	Open a url searching for "main" - should show one result
+	open "http://localhost:8080/w/index.php?search=main&title=Special%3ASearch&profile=default&fulltext=1";

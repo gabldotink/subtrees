@@ -1,96 +1,26 @@
-Quickly spin up a MediaWiki instance.
+Quickly spin up a MediaWiki instance with the [VueTest](https://gitlab.wikimedia.org/egardner/mediawiki-extensions-vuetest) extension.
 
 ## Installation 
 
-Clone the repo:
+Clone this repo:
 
-    git clone https://gitlab.wikimedia.org/mhurd/mediawiki-docker-make.git
+    git clone https://gitlab.wikimedia.org/mhurd/mediawiki-cirrus-docker.git
 
 ## Usage
 
-Switch to the `mediawiki-docker-make` directory:
+Switch to the `mediawiki-cirrus-docker` directory:
 
-    cd ~/mediawiki-docker-make
+    cd ~/mediawiki-cirrus-docker
 
-Now you can spin up the MediaWiki with the *make* command:
+Use this command to spin up MediaWiki with the CirrusSearch:
 -   ```
-    make
+    make freshinstallwithvuetestextension
      ```
-    Fetches the latest MediaWiki (into `~/mediawiki-docker-make/mediawiki/`) and spins up a Docker container using it
+    - Fetches the latest MediaWiki into `~/mediawiki-cirrus-docker/mediawiki/`
+    - Fetches the latest Elastica extension into `~/mediawiki-cirrus-docker/mediawiki/extensions/Elastica`
+    - Fetches the latest CirrusSearch extension into `~/mediawiki-cirrus-docker/mediawiki/extensions/CirrusSearch`
+    - Configures MediaWiki to use the Elastica and CirrusSearch extensions
+    - Spins up Docker containment to serve MediaWiki pages
+    - Opens pages showing search results including a `Special:Search` url with '&cirrusDumpQuery' - which should display json containing the elasticsearch query if CirrusSearch is being used ( from https://www.mediawiki.org/wiki/Topic:Vspistlf132kafvm )
 
-You can stop, start, restart or remove the containers with these commands:
--   ```
-    make stop
-     ```
-    Stops mediawiki containers
-
--   ```
-    make start
-     ```
-    Start mediawiki containers
-
--   ```
-    make restart
-     ```
-    Restarts mediawiki containers
-
--   ```
-    make remove
-     ```
-    Stops and removes mediawiki containers and files
-
-Get quick Bash shell access to running containers with these commands:
--   ```
-    make bashmw
-     ```
-    Bash access to the mediawiki container
-
--   ```
-    make bashjr
-     ```
-    Bash access to the job runner container
-
--   ```
-    make bashwb
-     ```
-    Bash access to the web container
-
-Quickly switch skins with these commands (easy to add more if needed):
-
--   ```
-    make usevectorskin
-     ```
-    Fetch and switch to the Vector skin
-
--   ```
-    make usedarkvectorskin
-     ```
-    Fetch and switch to the dark Vector skin
-
--   ```
-    make useminervaneueskin
-     ```
-    Fetch and switch to the Minerva Neue skin
-    
--   ```
-    make usetimelessskin
-     ```
-    Fetch and switch to the Timeless skin
-
-Run tests with these commands:
-
--   ```
-    make runparsertests
-     ```
-    Run parser tests
-
--   ```
-    make runphpunittests
-     ```
-    ```
-    make runphpunittests testgroup=Cache
-     ```
-    ```
-    make runphpunittests testpath=unit/includes/resourceloader/
-     ```
-    Run PHP unit tests
+See the [Makefile](https://gitlab.wikimedia.org/mhurd/mediawiki-cirrus-docker/-/blob/main/Makefile) for other supported make commands. They're documentation [here](https://gitlab.wikimedia.org/mhurd/mediawiki-docker-make).
