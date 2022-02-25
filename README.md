@@ -1,4 +1,4 @@
-Quickly spin up a MediaWiki instance with the [VueTest](https://gitlab.wikimedia.org/egardner/mediawiki-extensions-vuetest) extension.
+Quickly spin up a MediaWiki instance with the CirrusSearch and Elastica extensions.
 
 ## Installation 
 
