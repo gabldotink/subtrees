@@ -14,7 +14,7 @@ Switch to the `mediawiki-cirrus-docker` directory:
 
 Use this command to spin up MediaWiki with the CirrusSearch:
 -   ```
-    make freshinstallwithvuetestextension
+    make freshinstallwithcirrussearch
      ```
     - Fetches the latest MediaWiki into `~/mediawiki-cirrus-docker/mediawiki/`
     - Fetches the latest Elastica extension into `~/mediawiki-cirrus-docker/mediawiki/extensions/Elastica`
