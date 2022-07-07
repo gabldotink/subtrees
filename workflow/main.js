@@ -1,5 +1,5 @@
 module.exports = (app) => {
-    // app.on("issues.opened", async (context) => {
+    app.on("pull_request", async (context) => {
 
-    // });
+    });
 };
