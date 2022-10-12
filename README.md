@@ -6,6 +6,25 @@ For a customer, take all the transactions in a given week and round them up to t
 For example with spending of £4.35, £5.20 and £0.87, the round-up would be £1.58.
 This amount should then be transferred into a savings goal, helping the customer save for future adventures.
 
+## Content
+* [Usage](#usage)
+  * [Usage - Logging](#usage---logging)
+* [Development](#development)
+  * [Setup](#setup)
+  * [Commands](#commands)
+    * [Check Formatting](#check-formatting)
+    * [Fix Formatting](#fix-formatting)
+    * [Linting](#linting)
+    * [Linting](#linting)
+    * [Check Module Tidying](#check-module-tidying)
+    * [Fix Module Tidying](#fix-module-tidying)
+    * [Compiling](#compiling)
+
+## Usage
+
+### Usage - Logging
+The log level defaults to `info`, but you can set level via the command line argument `--log-level` or the environment variable `LOG_LEVEL` can be used to set the logging level. If both are set the command line value takes precedence.
+
 ## Development
 [🌍 Earthly](https://earthly.dev) is used as the build tool, it is a CI/CD framework that allows you to develop pipelines locally and run them anywhere.
 Earthly leverages containers for the execution of pipelines.
