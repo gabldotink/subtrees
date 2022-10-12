@@ -1,16 +1,22 @@
 VERSION 0.6
 
+INSTALL_DEPENDENCIES:
+    COMMAND
+    COPY "go.mod" "go.mod"
+    COPY "go.sum" "go.sum"
+    RUN go mod download
+
 
 COPY_SOURCECODE:
     COMMAND
     COPY "./ci" "./ci"
-    COPY "./go.mod" "./go.mod"
     COPY "./src" "./src"
 
 
 SAVE_OUTPUT:
     COMMAND
     SAVE ARTIFACT "starling-bank-technical-challenge" AS LOCAL "starling-bank-technical-challenge"
+    SAVE ARTIFACT "go.sum" AS LOCAL "go.sum"
 
 
 golang-base:
@@ -24,12 +30,14 @@ golang-base:
 
 check-formatting:
     FROM +golang-base
+    DO +INSTALL_DEPENDENCIES
     DO +COPY_SOURCECODE
     RUN ./ci/check-formatting.sh
 
 
 fix-formatting:
     FROM +golang-base
+    DO +INSTALL_DEPENDENCIES
     DO +COPY_SOURCECODE
     RUN ./ci/fix-formatting.sh
     SAVE ARTIFACT "./src" AS LOCAL "./src"
@@ -38,12 +46,29 @@ fix-formatting:
 linting:
     FROM +golang-base
     RUN go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.50.0
+    DO +INSTALL_DEPENDENCIES
     DO +COPY_SOURCECODE
     RUN ./ci/linting.sh
 
 
+check-module-tidying:
+    FROM +golang-base
+    DO +INSTALL_DEPENDENCIES
+    DO +COPY_SOURCECODE
+    RUN ./ci/check-module-tidying.sh
+
+
+fix-module-tidying:
+    FROM +golang-base
+    DO +INSTALL_DEPENDENCIES
+    DO +COPY_SOURCECODE
+    RUN ./ci/fix-module-tidying.sh
+    SAVE ARTIFACT "go.mod" AS LOCAL "go.mod"
+
+
 compiling-linux-amd64:
     FROM +golang-base
+    DO +INSTALL_DEPENDENCIES
     DO +COPY_SOURCECODE
     RUN ./ci/compiling.sh
     DO +SAVE_OUTPUT
@@ -52,6 +77,7 @@ compiling-linux-amd64:
 compiling-darwin-amd64:
     FROM +golang-base
     ENV GOOS=darwin
+    DO +INSTALL_DEPENDENCIES
     DO +COPY_SOURCECODE
     RUN ./ci/compiling.sh
     DO +SAVE_OUTPUT

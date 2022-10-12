@@ -39,6 +39,20 @@ You can lint the source code by running the command.
 earthly +linting
 ```
 
+#### Check Module Tidying
+You can check there are no missing or redundant module requirements by running the command.
+
+```
+earthly +check-module-tidying
+```
+
+#### Fix Module Tidying
+You can fix missing or redundant module requirements by running the command.
+
+```
+earthly +fix-module-tidying
+```
+
 #### Compiling
 You can compile the source code into a binary by running the command.
 

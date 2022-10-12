@@ -1,17 +1,18 @@
 package main
 
 import (
-	"io/ioutil"
-	"log"
+	"io"
 	"net/http"
 	"os"
+
+	log "github.com/sirupsen/logrus"
 )
 
 func main() {
 	accessToken := os.Getenv("ACCESS_TOKEN")
 
 	if accessToken == "" {
-		log.Fatalln("ACCESS_TOKEN is not set.")
+		log.Fatal("The environment variable 'ACCESS_TOKEN' is not set.")
 	}
 
 	baseUrl := "https://api-sandbox.starlingbank.com/api/v2"
@@ -20,7 +21,7 @@ func main() {
 	request, err := http.NewRequest("GET", baseUrl+"/accounts", nil)
 
 	if err != nil {
-		log.Fatalln(err)
+		log.WithError(err).Fatal("Failed to create a HTTP request.")
 	}
 
 	request.Header = http.Header{
@@ -31,14 +32,14 @@ func main() {
 	response, err := client.Do(request)
 
 	if err != nil {
-		log.Fatalln(err)
+		log.WithError(err).Fatal("Failed to perform the HTTP request.")
 	}
 
-	body, err := ioutil.ReadAll(response.Body)
+	body, err := io.ReadAll(response.Body)
 
 	if err != nil {
-		log.Fatalln(err)
+		log.WithError(err).Fatal("Failed to read the HTTP response's body.")
 	}
 
-	log.Printf(string(body))
+	log.Info(string(body))
 }
