@@ -1,0 +1,41 @@
+# .github/workflows/ci.yml
+
+name: Continuous Integration (CI)
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  formatting:
+    runs-on: ubuntu-latest
+    env:
+      FORCE_COLOR: 1
+    steps:
+    - uses: actions/checkout@v3
+    - name: Download Earthly v0.6.25
+      run: "sudo /bin/sh -c 'wget https://github.com/earthly/earthly/releases/download/v0.6.25/earthly-linux-amd64 -O /usr/local/bin/earthly && chmod +x /usr/local/bin/earthly'"
+    - name: Check formatting.
+      run: earthly --ci +check-formatting
+  linting:
+    runs-on: ubuntu-latest
+    env:
+      FORCE_COLOR: 1
+    steps:
+    - uses: actions/checkout@v3
+    - name: Download Earthly v0.6.25
+      run: "sudo /bin/sh -c 'wget https://github.com/earthly/earthly/releases/download/v0.6.25/earthly-linux-amd64 -O /usr/local/bin/earthly && chmod +x /usr/local/bin/earthly'"
+    - name: Check linting.
+      run: earthly --ci +linting
+  compiling:
+    runs-on: ubuntu-latest
+    env:
+      FORCE_COLOR: 1
+    steps:
+    - uses: actions/checkout@v3
+    - name: Download Earthly v0.6.25
+      run: "sudo /bin/sh -c 'wget https://github.com/earthly/earthly/releases/download/v0.6.25/earthly-linux-amd64 -O /usr/local/bin/earthly && chmod +x /usr/local/bin/earthly'"
+    - name: Check compiling.
+      run: earthly --ci +compiling-linux-amd64
