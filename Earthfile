@@ -11,6 +11,7 @@ COPY_SOURCECODE:
     COMMAND
     COPY "./ci" "./ci"
     COPY "./cmd" "./cmd"
+    COPY "./api" "./api"
 
 
 SAVE_OUTPUT:
