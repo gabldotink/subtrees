@@ -10,7 +10,7 @@ INSTALL_DEPENDENCIES:
 COPY_SOURCECODE:
     COMMAND
     COPY "./ci" "./ci"
-    COPY "./src" "./src"
+    COPY "./cmd" "./cmd"
 
 
 SAVE_OUTPUT:

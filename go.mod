@@ -1,4 +1,4 @@
-module starling-bank-technical-challenge
+module github.com/DeveloperC286/starlingbanktechnicalchallenge
 
 go 1.19
 

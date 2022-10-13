@@ -3,4 +3,4 @@
 set -o errexit
 set -o xtrace
 
-go build -o starling-bank-technical-challenge "./src/"
+go build "./cmd/starling-bank-technical-challenge"
