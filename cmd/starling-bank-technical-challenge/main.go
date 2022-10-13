@@ -45,5 +45,6 @@ func main() {
 		log.Fatal("The environment variable 'ACCESS_TOKEN' is not set.")
 	}
 
-	accounts.GetAccounts(accessToken)
+	accountUid, _ := accounts.GetAccountUid(accessToken)
+	log.Info(accountUid)
 }

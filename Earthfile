@@ -82,3 +82,10 @@ compiling-darwin-amd64:
     DO +COPY_SOURCECODE
     RUN ./ci/compiling.sh
     DO +SAVE_OUTPUT
+
+
+unit-testing:
+    FROM +golang-base
+    DO +INSTALL_DEPENDENCIES
+    DO +COPY_SOURCECODE
+    RUN ./ci/unit-testing.sh

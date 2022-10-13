@@ -9,6 +9,8 @@ This amount should then be transferred into a savings goal, helping the customer
 ## Content
 * [Usage](#usage)
   * [Usage - Logging](#usage---logging)
+* [Technical Decisions](#technical-decisions)
+  * [Support Multiple Accounts](#support-multiple-accounts)
 * [Development](#development)
   * [Setup](#setup)
   * [Commands](#commands)
@@ -19,11 +21,18 @@ This amount should then be transferred into a savings goal, helping the customer
     * [Check Module Tidying](#check-module-tidying)
     * [Fix Module Tidying](#fix-module-tidying)
     * [Compiling](#compiling)
+    * [Unit Testing](#unit-testing)
 
 ## Usage
 
 ### Usage - Logging
 The log level defaults to `info`, but you can set level via the command line argument `--log-level` or the environment variable `LOG_LEVEL` can be used to set the logging level. If both are set the command line value takes precedence.
+
+## Technical Decisions
+### Support Multiple Accounts
+To make it simpler currently only a singular account is supported.
+If multiple are returned by the Starling API, then it only actions upon the first account.
+You could support multiple accounts by having `GetAccountUid()` in `api/accounts/accounts.go` return an array of UIDs.
 
 ## Development
 [🌍 Earthly](https://earthly.dev) is used as the build tool, it is a CI/CD framework that allows you to develop pipelines locally and run them anywhere.
@@ -83,4 +92,11 @@ or
 
 ```
 earthly +compiling-darwin-amd64
+```
+
+#### Unit Testing
+You can run all the unit tests by running the command.
+
+```
+earthly +unit-testing
 ```

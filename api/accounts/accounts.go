@@ -1,6 +1,8 @@
 package accounts
 
 import (
+	"encoding/json"
+	"errors"
 	"io"
 	"net/http"
 
@@ -9,12 +11,23 @@ import (
 	log "github.com/sirupsen/logrus"
 )
 
-func GetAccounts(accessToken string) {
+func GetAccountUid(accessToken string) (string, error) {
+	accountsJson, err := getAccounts(accessToken)
+
+	if err != nil {
+		return "", err
+	}
+
+	return getFirstAccountUid(accountsJson)
+}
+
+func getAccounts(accessToken string) (string, error) {
 	client := http.Client{}
 	request, err := http.NewRequest("GET", api.BaseUrl+"/accounts", nil)
 
 	if err != nil {
-		log.WithError(err).Fatal("Failed to create a HTTP request.")
+		log.WithError(err).Error("Failed to create a HTTP request.")
+		return "", err
 	}
 
 	request.Header = http.Header{
@@ -25,14 +38,50 @@ func GetAccounts(accessToken string) {
 	response, err := client.Do(request)
 
 	if err != nil {
-		log.WithError(err).Fatal("Failed to perform the HTTP request.")
+		log.WithError(err).Error("Failed to perform the HTTP request.")
+		return "", err
 	}
 
 	body, err := io.ReadAll(response.Body)
 
 	if err != nil {
-		log.WithError(err).Fatal("Failed to read the HTTP response's body.")
+		log.WithError(err).Error("Failed to read the HTTP response's body.")
+		return "", err
 	}
 
-	log.Info(string(body))
+	return string(body), nil
+}
+
+type accountsAPIResponse struct {
+	Accounts []account `json:"accounts"`
+}
+
+type account struct {
+	Uid       string `json:"accountUid"`
+	Type      string `json:"accountType"`
+	Category  string `json:"defaultCategory"`
+	Currency  string `json:"currency"`
+	CreatedAt string `json:"createdAt"`
+	Name      string `json:"name"`
+}
+
+func getFirstAccountUid(accountsJson string) (string, error) {
+	var accountsAPIResponse accountsAPIResponse
+	err := json.Unmarshal([]byte(accountsJson), &accountsAPIResponse)
+
+	if err != nil {
+		log.WithError(err).Error("Failed to parse the APIs response from JSON.")
+		return "", err
+	}
+
+	accounts := accountsAPIResponse.Accounts
+
+	// See Technical Decisions in the README.md.
+	if len(accounts) == 0 {
+		err = errors.New("accounts array was empty")
+		log.WithError(err).Error("Failed to have a single account in the APIs response.")
+		return "", err
+	}
+
+	return accounts[0].Uid, nil
 }
