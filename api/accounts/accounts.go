@@ -23,7 +23,7 @@ func GetAccountUid(accessToken string) (string, error) {
 }
 
 func getAccounts(accessToken string) (string, error) {
-	client := http.Client{}
+	// We use the more verbose NewRequest so we can add headers/query parameters.
 	request, err := http.NewRequest("GET", api.BaseUrl+"/accounts", nil)
 
 	if err != nil {
@@ -31,11 +31,13 @@ func getAccounts(accessToken string) (string, error) {
 		return "", err
 	}
 
+	// Adding the headers used for authentication.
 	request.Header = http.Header{
 		"Content-Type":  {"application/json"},
 		"Authorization": {"Bearer " + accessToken},
 	}
 
+	client := http.Client{}
 	response, err := client.Do(request)
 
 	if err != nil {
@@ -52,7 +54,10 @@ func getAccounts(accessToken string) (string, error) {
 
 	if response.StatusCode != 200 {
 		err = errors.New("the HTTP status code was '" + response.Status + "' not 200")
-		log.WithError(err).Error("Failed to successfully query the Accounts API.")
+		log.WithFields(log.Fields{
+			"err":  err,
+			"body": string(body),
+		}).Error("Failed to successfully query the Accounts API.")
 		return "", err
 	}
 

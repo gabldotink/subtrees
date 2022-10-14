@@ -5,6 +5,7 @@ import (
 	"os"
 
 	"github.com/DeveloperC286/starlingbanktechnicalchallenge/api/accounts"
+	"github.com/DeveloperC286/starlingbanktechnicalchallenge/api/transactions"
 
 	log "github.com/sirupsen/logrus"
 )
@@ -45,6 +46,11 @@ func main() {
 		log.Fatal("The environment variable 'ACCESS_TOKEN' is not set.")
 	}
 
-	accountUid, _ := accounts.GetAccountUid(accessToken)
-	log.Info(accountUid)
+	accountUid, err := accounts.GetAccountUid(accessToken)
+
+	if err != nil {
+		os.Exit(1)
+	}
+
+	transactions.GetTransactions(accessToken, accountUid)
 }
