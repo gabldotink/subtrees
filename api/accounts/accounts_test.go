@@ -15,6 +15,7 @@ func TestGetFirstAccountUidWithNoAccounts(t *testing.T) {
 
 	// Then
 	assert.Error(t, err)
+	assert.EqualError(t, err, "accounts array was empty")
 }
 
 func TestGetFirstAccountUidWithSingleAccount(t *testing.T) {
@@ -41,4 +42,16 @@ func TestGetFirstAccountUidWithMultipleAccounts(t *testing.T) {
 	// Then
 	assert.NoError(t, err)
 	assert.Equal(t, expectedAccountUid, returnedAccountUid)
+}
+
+func TestGetFirstAccountUidErrorsWithUnexpectedFormat(t *testing.T) {
+	// Given
+	response := `{"error":"invalid_token","error_description":"Could not validate provided access token"}`
+
+	// When
+	_, err := getFirstAccountUid(response)
+
+	// Then
+	assert.Error(t, err)
+	assert.Contains(t, err.Error(), "json: unknown field")
 }

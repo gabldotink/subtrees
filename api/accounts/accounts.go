@@ -1,6 +1,7 @@
 package accounts
 
 import (
+	"bytes"
 	"encoding/json"
 	"errors"
 	"io"
@@ -66,8 +67,11 @@ type account struct {
 }
 
 func getFirstAccountUid(accountsJson string) (string, error) {
+	decoder := json.NewDecoder(bytes.NewReader([]byte(accountsJson)))
+	decoder.DisallowUnknownFields()
+
 	var accountsAPIResponse accountsAPIResponse
-	err := json.Unmarshal([]byte(accountsJson), &accountsAPIResponse)
+	err := decoder.Decode(&accountsAPIResponse)
 
 	if err != nil {
 		log.WithError(err).Error("Failed to parse the APIs response from JSON.")
