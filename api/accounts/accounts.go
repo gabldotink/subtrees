@@ -50,6 +50,12 @@ func getAccounts(accessToken string) (string, error) {
 		return "", err
 	}
 
+	if response.StatusCode != 200 {
+		err = errors.New("the HTTP status code was '" + response.Status + "' not 200")
+		log.WithError(err).Error("Failed to successfully query the Accounts API.")
+		return "", err
+	}
+
 	return string(body), nil
 }
 
