@@ -52,7 +52,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	transactions, err := transactions.GetTransactions(accessToken, accountUid)
+	transactions, err := transactions.GetLastWeeksTransactionsRoundUp(accessToken, accountUid)
 
 	if err != nil {
 		os.Exit(1)

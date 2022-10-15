@@ -1,6 +1,8 @@
 package transactions
 
 import (
+	"bytes"
+	"encoding/json"
 	"errors"
 	"io"
 	"net/http"
@@ -11,17 +13,23 @@ import (
 	log "github.com/sirupsen/logrus"
 )
 
-func GetTransactions(accessToken string, accountUid string) (string, error) {
-	transactionsJson, err := getTransactions(accessToken, accountUid)
+func GetLastWeeksTransactionsRoundUp(accessToken string, accountUid string) (int, error) {
+	transactionsJSON, err := getLastWeeksTransactionsJSON(accessToken, accountUid)
 
 	if err != nil {
-		return "", err
+		return 0, err
 	}
 
-	return getOutTransactions(transactionsJson)
+	transactions, err := decodeToTransactions(transactionsJSON)
+
+	if err != nil {
+		return 0, err
+	}
+
+	return getRoundUpTotal(transactions), nil
 }
 
-func getTransactions(accessToken string, accountUid string) (string, error) {
+func getLastWeeksTransactionsJSON(accessToken string, accountUid string) (string, error) {
 	// We use the more verbose NewRequest so we can add headers/query parameters.
 	request, err := http.NewRequest("GET", api.BaseUrl+"/feed/account/"+accountUid+"/settled-transactions-between", nil)
 
@@ -72,8 +80,65 @@ func getTransactions(accessToken string, accountUid string) (string, error) {
 	return string(body), nil
 }
 
-func getOutTransactions(
-	transactionsJson string) (string, error) {
+type transactionsAPIResponse struct {
+	Transactions []transaction `json:"feedItems"`
+}
 
-	return "", nil
+type transaction struct {
+	FeedItemUid                        string `json:"feedItemUid"`
+	CategoryUid                        string `json:"categoryUid"`
+	Amount                             amount `json:"amount"`
+	SourceAmount                       amount `json:"sourceAmount"`
+	Direction                          string `json:"direction"`
+	UpdatedAt                          string `json:"updatedAt"`
+	TransactionTime                    string `json:"transactionTime"`
+	SettlementTime                     string `json:"settlementTime"`
+	Source                             string `json:"source"`
+	Status                             string `json:"status"`
+	TransactingApplicationUserUid      string `json:"transactingApplicationUserUid"`
+	CounterPartyType                   string `json:"counterPartyType"`
+	CounterPartyUid                    string `json:"counterPartyUid"`
+	CounterPartyName                   string `json:"counterPartyName"`
+	CounterPartySubEntityName          string `json:"counterPartySubEntityName"`
+	CounterPartySubEntityUid           string `json:"counterPartySubEntityUid"`
+	CounterPartySubEntityIdentifier    string `json:"counterPartySubEntityIdentifier"`
+	CounterPartySubEntitySubIdentifier string `json:"counterPartySubEntitySubIdentifier"`
+	Reference                          string `json:"reference"`
+	Country                            string `json:"country"`
+	SpendingCategory                   string `json:"spendingCategory"`
+	HasAttachment                      bool   `json:"hasAttachment"`
+	HasReceipt                         bool   `json:"hasReceipt"`
+	BatchPaymentDetails                string `json:"batchPaymentDetails"`
+}
+
+type amount struct {
+	Currency string `json:"currency"`
+	Value    int    `json:"minorUnits"`
+}
+
+func decodeToTransactions(transactionsJSON string) ([]transaction, error) {
+	decoder := json.NewDecoder(bytes.NewReader([]byte(transactionsJSON)))
+	decoder.DisallowUnknownFields()
+
+	var transactionsAPIResponse transactionsAPIResponse
+	err := decoder.Decode(&transactionsAPIResponse)
+
+	if err != nil {
+		log.WithError(err).Error("Failed to parse the APIs response from JSON.")
+		return []transaction{}, err
+	}
+
+	return transactionsAPIResponse.Transactions, nil
+}
+
+func getRoundUpTotal(transactions []transaction) int {
+	roundUpTotal := 0
+
+	for _, transaction := range transactions {
+		if transaction.Direction == "OUT" {
+			roundUpTotal += (100 - (transaction.Amount.Value % 100))
+		}
+	}
+
+	return roundUpTotal
 }
