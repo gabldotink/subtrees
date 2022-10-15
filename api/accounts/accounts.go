@@ -13,16 +13,22 @@ import (
 )
 
 func GetAccountUid(accessToken string) (string, error) {
-	accountsJson, err := getAccounts(accessToken)
+	accountsJSON, err := getAccountsJSON(accessToken)
 
 	if err != nil {
 		return "", err
 	}
 
-	return getFirstAccountUid(accountsJson)
+	accounts, err := decodeToAccounts(accountsJSON)
+
+	if err != nil {
+		return "", err
+	}
+
+	return getFirstAccountUid(accounts)
 }
 
-func getAccounts(accessToken string) (string, error) {
+func getAccountsJSON(accessToken string) (string, error) {
 	// We use the more verbose NewRequest so we can add headers/query parameters.
 	request, err := http.NewRequest("GET", api.BaseUrl+"/accounts", nil)
 
@@ -77,8 +83,8 @@ type account struct {
 	Name      string `json:"name"`
 }
 
-func getFirstAccountUid(accountsJson string) (string, error) {
-	decoder := json.NewDecoder(bytes.NewReader([]byte(accountsJson)))
+func decodeToAccounts(accountsJSON string) ([]account, error) {
+	decoder := json.NewDecoder(bytes.NewReader([]byte(accountsJSON)))
 	decoder.DisallowUnknownFields()
 
 	var accountsAPIResponse accountsAPIResponse
@@ -86,15 +92,17 @@ func getFirstAccountUid(accountsJson string) (string, error) {
 
 	if err != nil {
 		log.WithError(err).Error("Failed to parse the APIs response from JSON.")
-		return "", err
+		return []account{}, err
 	}
 
-	accounts := accountsAPIResponse.Accounts
+	return accountsAPIResponse.Accounts, nil
+}
 
+func getFirstAccountUid(accounts []account) (string, error) {
 	// See Technical Decisions in the README.md.
 	if len(accounts) == 0 {
-		err = errors.New("accounts array was empty")
-		log.WithError(err).Error("Failed to have a single account in the APIs response.")
+		err := errors.New("accounts: accounts array is empty")
+		log.WithError(err).Error("The accounts APIs response had no accounts.")
 		return "", err
 	}
 

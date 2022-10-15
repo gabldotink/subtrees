@@ -6,25 +6,81 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func TestGetFirstAccountUidWithNoAccounts(t *testing.T) {
+func TestDecodeToAccountsWithNoAccounts(t *testing.T) {
 	// Given
 	response := `{"accounts":[]}`
 
 	// When
-	_, err := getFirstAccountUid(response)
+	_, err := decodeToAccounts(response)
+
+	// Then
+	assert.NoError(t, err)
+}
+
+func TestDecodeToAccountsWithSingleAccount(t *testing.T) {
+	// Given
+	response := `{"accounts":[{"accountUid":"account-1","accountType":"PRIMARY","defaultCategory":"category","currency":"GBP","createdAt":"2022-10-11T16:58:48.398Z","name":"Personal"}]}`
+	expectedNumberOfAccounts := 1
+
+	// When
+	returnedAccounts, err := decodeToAccounts(response)
+
+	// Then
+	assert.NoError(t, err)
+	assert.Equal(t, expectedNumberOfAccounts, len(returnedAccounts))
+	// TODO assert.Equal(t, expectedAccountUid, returnedAccountUid)
+}
+
+func TestDecodeToAccountsWithMultipleAccounts(t *testing.T) {
+	// Given
+	response := `{"accounts":[{"accountUid":"account-1","accountType":"PRIMARY","defaultCategory":"category","currency":"GBP","createdAt":"2022-10-11T16:58:48.398Z","name":"Personal"},{"accountUid":"account-2","accountType":"PRIMARY","defaultCategory":"category","currency":"GBP","createdAt":"2022-10-11T16:58:48.398Z","name":"Personal"}]}`
+	expectedNumberOfAccounts := 2
+
+	// When
+	returnedAccounts, err := decodeToAccounts(response)
+
+	// Then
+	assert.NoError(t, err)
+	assert.Equal(t, expectedNumberOfAccounts, len(returnedAccounts))
+	// TODO assert.Equal(t, expectedAccountUid, returnedAccountUid)
+}
+
+func TestDecodeToAccountsErrorsWithUnexpectedFormat(t *testing.T) {
+	// Given
+	response := `{"error":"invalid_token","error_description":"Could not validate provided access token"}`
+
+	// When
+	_, err := decodeToAccounts(response)
 
 	// Then
 	assert.Error(t, err)
-	assert.EqualError(t, err, "accounts array was empty")
+	assert.Contains(t, err.Error(), "json: unknown field")
+}
+
+func TestGetFirstAccountUidWithNoAccounts(t *testing.T) {
+	// Given
+	response := `{"accounts":[]}`
+	accounts, err := decodeToAccounts(response)
+	assert.NoError(t, err)
+	expectedErrorMessage := "accounts: accounts array is empty"
+
+	// When
+	_, err = getFirstAccountUid(accounts)
+
+	// Then
+	assert.Error(t, err)
+	assert.EqualError(t, err, expectedErrorMessage)
 }
 
 func TestGetFirstAccountUidWithSingleAccount(t *testing.T) {
 	// Given
 	response := `{"accounts":[{"accountUid":"account-1","accountType":"PRIMARY","defaultCategory":"category","currency":"GBP","createdAt":"2022-10-11T16:58:48.398Z","name":"Personal"}]}`
+	accounts, err := decodeToAccounts(response)
+	assert.NoError(t, err)
 	expectedAccountUid := "account-1"
 
 	// When
-	returnedAccountUid, err := getFirstAccountUid(response)
+	returnedAccountUid, err := getFirstAccountUid(accounts)
 
 	// Then
 	assert.NoError(t, err)
@@ -34,24 +90,14 @@ func TestGetFirstAccountUidWithSingleAccount(t *testing.T) {
 func TestGetFirstAccountUidWithMultipleAccounts(t *testing.T) {
 	// Given
 	response := `{"accounts":[{"accountUid":"account-1","accountType":"PRIMARY","defaultCategory":"category","currency":"GBP","createdAt":"2022-10-11T16:58:48.398Z","name":"Personal"},{"accountUid":"account-2","accountType":"PRIMARY","defaultCategory":"category","currency":"GBP","createdAt":"2022-10-11T16:58:48.398Z","name":"Personal"}]}`
+	accounts, err := decodeToAccounts(response)
+	assert.NoError(t, err)
 	expectedAccountUid := "account-1"
 
 	// When
-	returnedAccountUid, err := getFirstAccountUid(response)
+	returnedAccountUid, err := getFirstAccountUid(accounts)
 
 	// Then
 	assert.NoError(t, err)
 	assert.Equal(t, expectedAccountUid, returnedAccountUid)
-}
-
-func TestGetFirstAccountUidErrorsWithUnexpectedFormat(t *testing.T) {
-	// Given
-	response := `{"error":"invalid_token","error_description":"Could not validate provided access token"}`
-
-	// When
-	_, err := getFirstAccountUid(response)
-
-	// Then
-	assert.Error(t, err)
-	assert.Contains(t, err.Error(), "json: unknown field")
 }
