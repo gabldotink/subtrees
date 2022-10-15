@@ -11,13 +11,23 @@ import (
 	log "github.com/sirupsen/logrus"
 )
 
-func GetTransactions(accessToken string, accountUid string) {
+func GetTransactions(accessToken string, accountUid string) (string, error) {
+	transactionsJson, err := getTransactions(accessToken, accountUid)
+
+	if err != nil {
+		return "", err
+	}
+
+	return getOutTransactions(transactionsJson)
+}
+
+func getTransactions(accessToken string, accountUid string) (string, error) {
 	// We use the more verbose NewRequest so we can add headers/query parameters.
 	request, err := http.NewRequest("GET", api.BaseUrl+"/feed/account/"+accountUid+"/settled-transactions-between", nil)
 
 	if err != nil {
 		log.WithError(err).Error("Failed to create a HTTP request.")
-		return
+		return "", err
 	}
 
 	// Adding the date of transactions between query paramters.
@@ -40,14 +50,14 @@ func GetTransactions(accessToken string, accountUid string) {
 
 	if err != nil {
 		log.WithError(err).Error("Failed to perform the HTTP request.")
-		return
+		return "", err
 	}
 
 	body, err := io.ReadAll(response.Body)
 
 	if err != nil {
 		log.WithError(err).Error("Failed to read the HTTP response's body.")
-		return
+		return "", err
 	}
 
 	if response.StatusCode != 200 {
@@ -56,8 +66,14 @@ func GetTransactions(accessToken string, accountUid string) {
 			"err":  err,
 			"body": string(body),
 		}).Error("Failed to successfully query the Accounts API.")
-		return
+		return "", err
 	}
 
-	log.Info(string(body))
+	return string(body), nil
+}
+
+func getOutTransactions(
+	transactionsJson string) (string, error) {
+
+	return "", nil
 }

@@ -52,5 +52,11 @@ func main() {
 		os.Exit(1)
 	}
 
-	transactions.GetTransactions(accessToken, accountUid)
+	transactions, err := transactions.GetTransactions(accessToken, accountUid)
+
+	if err != nil {
+		os.Exit(1)
+	}
+
+	log.Info(transactions)
 }
