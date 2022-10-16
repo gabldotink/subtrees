@@ -9,12 +9,14 @@ import (
 func TestDecodeToAccountsWithNoAccounts(t *testing.T) {
 	// Given
 	response := `{"accounts":[]}`
+	expectedNumberOfAccounts := 0
 
 	// When
-	_, err := decodeToAccounts(response)
+	returnedAccounts, err := decodeToAccounts(response)
 
 	// Then
 	assert.NoError(t, err)
+	assert.Equal(t, expectedNumberOfAccounts, len(returnedAccounts))
 }
 
 func TestDecodeToAccountsWithSingleAccount(t *testing.T) {
@@ -28,7 +30,6 @@ func TestDecodeToAccountsWithSingleAccount(t *testing.T) {
 	// Then
 	assert.NoError(t, err)
 	assert.Equal(t, expectedNumberOfAccounts, len(returnedAccounts))
-	// TODO assert.Equal(t, expectedAccountUid, returnedAccountUid)
 }
 
 func TestDecodeToAccountsWithMultipleAccounts(t *testing.T) {
@@ -42,7 +43,6 @@ func TestDecodeToAccountsWithMultipleAccounts(t *testing.T) {
 	// Then
 	assert.NoError(t, err)
 	assert.Equal(t, expectedNumberOfAccounts, len(returnedAccounts))
-	// TODO assert.Equal(t, expectedAccountUid, returnedAccountUid)
 }
 
 func TestDecodeToAccountsErrorsWithUnexpectedFormat(t *testing.T) {
