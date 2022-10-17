@@ -14,13 +14,7 @@ import (
 )
 
 func GetLastWeeksTransactionsRoundUp(accessToken string, accountUid string) (int, error) {
-	transactionsJSON, err := getLastWeeksTransactionsJSON(accessToken, accountUid)
-
-	if err != nil {
-		return 0, err
-	}
-
-	transactions, err := decodeToTransactions(transactionsJSON)
+	transactions, err := getLastWeeksTransactions(accessToken, accountUid)
 
 	if err != nil {
 		return 0, err
@@ -29,14 +23,14 @@ func GetLastWeeksTransactionsRoundUp(accessToken string, accountUid string) (int
 	return getRoundUpTotal(transactions), nil
 }
 
-func getLastWeeksTransactionsJSON(accessToken string, accountUid string) (string, error) {
-	log.Debug("Querying the transactions API to get a list of all transactions from the past week.")
+func getLastWeeksTransactions(accessToken string, accountUid string) ([]transaction, error) {
+	log.Debug("Getting a list of all the transaction from last week from the Transaction Feed API endpoint.")
 	// We use the more verbose NewRequest so we can add headers/query parameters.
 	request, err := http.NewRequest("GET", api.BaseUrl+"/feed/account/"+accountUid+"/settled-transactions-between", nil)
 
 	if err != nil {
 		log.WithError(err).Error("Failed to create a HTTP request.")
-		return "", err
+		return []transaction{}, err
 	}
 
 	// Adding the date of transactions between query paramters.
@@ -59,27 +53,27 @@ func getLastWeeksTransactionsJSON(accessToken string, accountUid string) (string
 
 	if err != nil {
 		log.WithError(err).Error("Failed to perform the HTTP request.")
-		return "", err
+		return []transaction{}, err
 	}
 
-	body, err := io.ReadAll(response.Body)
+	transactionsJSON, err := io.ReadAll(response.Body)
 
 	if err != nil {
 		log.WithError(err).Error("Failed to read the HTTP response's body.")
-		return "", err
+		return []transaction{}, err
 	}
 
 	if response.StatusCode != 200 {
 		err = errors.New("the HTTP status code was '" + response.Status + "' not 200")
 		log.WithFields(log.Fields{
 			"err":  err,
-			"body": string(body),
-		}).Error("Failed to successfully query the Accounts API.")
-		return "", err
+			"body": string(transactionsJSON),
+		}).Error("Failed to get from the Transaction Feed API endpoint.")
+		return []transaction{}, err
 	}
 
-	log.Debug("Successfully quiered the transactions API.")
-	return string(body), nil
+	log.Debug("Successfully got a list of all the transaction from last week from the Transaction Feed API endpoint.")
+	return decodeToTransactions(transactionsJSON)
 }
 
 type transactionsAPIResponse struct {
@@ -118,21 +112,21 @@ type amount struct {
 	Value    int    `json:"minorUnits"`
 }
 
-func decodeToTransactions(transactionsJSON string) ([]transaction, error) {
-	log.Debug("Decoding the JSON response from the transactions API.")
-	decoder := json.NewDecoder(bytes.NewReader([]byte(transactionsJSON)))
+func decodeToTransactions(transactionsJSON []byte) ([]transaction, error) {
+	log.Debug("Decoding the JSON response from the Transaction Feed API endpoint.")
+	decoder := json.NewDecoder(bytes.NewReader(transactionsJSON))
 	decoder.DisallowUnknownFields()
 
 	var transactionsAPIResponse transactionsAPIResponse
 	err := decoder.Decode(&transactionsAPIResponse)
 
 	if err != nil {
-		log.WithError(err).Error("Failed to parse the APIs response from JSON.")
+		log.WithError(err).Error("Failed to parse the JSON.")
 		return []transaction{}, err
 	}
 
 	transactions := transactionsAPIResponse.Transactions
-	log.Debugf("Decoded %#v transactions from the JSON response from the transactions API.", len(transactions))
+	log.Debugf("Decoded %#v transactions from the JSON response from the Transaction Feed API endpoint.", len(transactions))
 	return transactions, nil
 }
 
