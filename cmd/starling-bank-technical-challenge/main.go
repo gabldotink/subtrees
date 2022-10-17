@@ -5,6 +5,7 @@ import (
 	"os"
 
 	"github.com/DeveloperC286/starlingbanktechnicalchallenge/api/accounts"
+	"github.com/DeveloperC286/starlingbanktechnicalchallenge/api/savings/goals"
 	"github.com/DeveloperC286/starlingbanktechnicalchallenge/api/transactions"
 
 	log "github.com/sirupsen/logrus"
@@ -51,12 +52,21 @@ func main() {
 	if err != nil {
 		os.Exit(1)
 	}
+	log.Infof("Account UID = %#v.", accountUid)
 
-	transactions, err := transactions.GetLastWeeksTransactionsRoundUp(accessToken, accountUid)
+	roundUpTotal, err := transactions.GetLastWeeksTransactionsRoundUp(accessToken, accountUid)
 
 	if err != nil {
 		os.Exit(1)
 	}
 
-	log.Info(transactions)
+	log.Infof("Round Up Total = %#v.", roundUpTotal)
+
+	savingsGoalUid, err := goals.GetSavingsGoalsUid(accessToken, accountUid)
+
+	if err != nil {
+		os.Exit(1)
+	}
+
+	log.Infof("Savings Goal UID = %#v.", savingsGoalUid)
 }
