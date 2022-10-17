@@ -12,6 +12,54 @@ import (
 	log "github.com/sirupsen/logrus"
 )
 
+func CreateSavingsGoal(accessToken string, accountUid string) (string, error) {
+	err := createSavingsGoal(accessToken, accountUid)
+
+	if err != nil {
+		return "", err
+	}
+
+	return GetSavingsGoalsUid(accessToken, accountUid)
+}
+
+func createSavingsGoal(accessToken string, accountUid string) error {
+	log.Debug("Creating a savings goals using the Savings Goals API endpoint.")
+	// TODO currency pass in.
+	JSON := []byte(`{"name": "Round Up Savings","currency": "GBP"}`)
+	// We use the more verbose NewRequest so we can add headers/query parameters.
+	request, err := http.NewRequest("PUT", api.BaseUrl+"/account/"+accountUid+"/savings-goals", bytes.NewBuffer(JSON))
+
+	if err != nil {
+		log.WithError(err).Error("Failed to create a HTTP request.")
+		return err
+	}
+
+	// Adding the headers used for authentication.
+	request.Header = http.Header{
+		"Content-Type":  {"application/json"},
+		"Authorization": {"Bearer " + accessToken},
+	}
+
+	client := http.Client{}
+	response, err := client.Do(request)
+
+	if err != nil {
+		log.WithError(err).Error("Failed to perform the HTTP request.")
+		return err
+	}
+
+	if response.StatusCode != 200 {
+		err = errors.New("the HTTP status code was '" + response.Status + "' not 200")
+		log.WithFields(log.Fields{
+			"err": err,
+		}).Error("Failed to put to the Savings Goals API endpoint.")
+		return err
+	}
+
+	log.Debug("Successfully created a savings goals using the Savings Goals API endpoint.")
+	return nil
+}
+
 func GetSavingsGoalsUid(accessToken string, accountUid string) (string, error) {
 	savingsGoals, err := getSavingsGoals(accessToken, accountUid)
 
