@@ -13,6 +13,7 @@ This amount should then be transferred into a savings goal, helping the customer
   * [Language Choice](#language-choice)
 * [Possible Improvements](#possible-improvements)
   * [Support Multiple Accounts](#support-multiple-accounts)
+  * [Snapshot Testing](#snapshot-testing)
 * [Development](#development)
   * [Setup](#setup)
   * [Commands](#commands)
@@ -43,6 +44,13 @@ Go also has excellent performance charismatics.
 To make it simpler currently only a singular account is supported.
 If multiple are returned by the Starling API, then it only actions upon the first account.
 You could support multiple accounts by having `GetAccountUid()` in `api/accounts/accounts.go` return an array of UIDs.
+
+### Snapshot Testing
+This project has unit tests asserting that valid JSON responses from Starling's API can be successfully parsed.
+The unit tests only assert that the parsing did not error and on the number of objects returned.
+Constructing and asserting upon the expected array of objects would produce low-value and fragile tests, as the tests are asserting upon the structure of internal data models, not on behaviour.
+Snapshot testing could be added, which takes a snapshot of your output and compares it against the snapshot committed alongside your test.
+Snapshot testing would have the benefits of adding more assertions on the structure of internal data models and reducing fragility while making the tests easier to update, as you do not have to cumbersomely construct the expected array of objects.
 
 ## Development
 [🌍 Earthly](https://earthly.dev) is used as the build tool, it is a CI/CD framework that allows you to develop pipelines locally and run them anywhere.
