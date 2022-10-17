@@ -29,6 +29,7 @@ func GetSavingsGoalsUid(accessToken string, accountUid string) (string, error) {
 }
 
 func getSavingsGoalsJSON(accessToken string, accountUid string) (string, error) {
+	log.Debug("Querying the savings goals API to get a list of all savings goals.")
 	// We use the more verbose NewRequest so we can add headers/query parameters.
 	request, err := http.NewRequest("GET", api.BaseUrl+"/account/"+accountUid+"/savings-goals", nil)
 
@@ -67,6 +68,7 @@ func getSavingsGoalsJSON(accessToken string, accountUid string) (string, error) 
 		return "", err
 	}
 
+	log.Debug("Successfully quiered the savings goals API.")
 	return string(body), nil
 }
 
@@ -88,6 +90,7 @@ type amount struct {
 }
 
 func decodeToSavingsGoals(savingsGoalsJSON string) ([]savingsGoal, error) {
+	log.Debug("Decoding the JSON response from the savings goals API.")
 	decoder := json.NewDecoder(bytes.NewReader([]byte(savingsGoalsJSON)))
 	decoder.DisallowUnknownFields()
 
@@ -99,7 +102,9 @@ func decodeToSavingsGoals(savingsGoalsJSON string) ([]savingsGoal, error) {
 		return []savingsGoal{}, err
 	}
 
-	return savingsGoalsAPIResponse.SavingsGoals, nil
+	savingsGoals := savingsGoalsAPIResponse.SavingsGoals
+	log.Debugf("Decoded %#v savings goals from the JSON response from the savings goals API.", len(savingsGoals))
+	return savingsGoals, nil
 }
 
 func getFirstSavingsGoalUid(savingsGoals []savingsGoal) string {

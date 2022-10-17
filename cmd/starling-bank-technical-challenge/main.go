@@ -41,10 +41,11 @@ func main() {
 	})
 
 	// Get API related environment variables.
-	accessToken := os.Getenv("ACCESS_TOKEN")
+	accessTokenEnvName := "ACCESS_TOKEN"
+	accessToken := os.Getenv(accessTokenEnvName)
 
 	if accessToken == "" {
-		log.Fatal("The environment variable 'ACCESS_TOKEN' is not set.")
+		log.Fatalf("The environment variable %#v is not set.", accessTokenEnvName)
 	}
 
 	accountUid, err := accounts.GetAccountUid(accessToken)
@@ -52,7 +53,7 @@ func main() {
 	if err != nil {
 		os.Exit(1)
 	}
-	log.Infof("Account UID = %#v.", accountUid)
+	log.Infof("Rounding up the transactions for the account %#v.", accountUid)
 
 	roundUpTotal, err := transactions.GetLastWeeksTransactionsRoundUp(accessToken, accountUid)
 
@@ -60,7 +61,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	log.Infof("Round Up Total = %#v.", roundUpTotal)
+	log.Infof("The total transaction round up for the account %#v is %#v.", accountUid, roundUpTotal)
 
 	savingsGoalUid, err := goals.GetSavingsGoalsUid(accessToken, accountUid)
 
@@ -68,5 +69,5 @@ func main() {
 		os.Exit(1)
 	}
 
-	log.Infof("Savings Goal UID = %#v.", savingsGoalUid)
+	log.Infof("The transaction round ups for the account %#v is being transfered to the savings goal %#v.", accountUid, savingsGoalUid)
 }

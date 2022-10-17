@@ -29,6 +29,7 @@ func GetAccountUid(accessToken string) (string, error) {
 }
 
 func getAccountsJSON(accessToken string) (string, error) {
+	log.Debug("Querying the accounts API to get a list of all accounts.")
 	// We use the more verbose NewRequest so we can add headers/query parameters.
 	request, err := http.NewRequest("GET", api.BaseUrl+"/accounts", nil)
 
@@ -67,6 +68,7 @@ func getAccountsJSON(accessToken string) (string, error) {
 		return "", err
 	}
 
+	log.Debug("Successfully quiered the accounts API.")
 	return string(body), nil
 }
 
@@ -84,6 +86,7 @@ type account struct {
 }
 
 func decodeToAccounts(accountsJSON string) ([]account, error) {
+	log.Debug("Decoding the JSON response from the accounts API.")
 	decoder := json.NewDecoder(bytes.NewReader([]byte(accountsJSON)))
 	decoder.DisallowUnknownFields()
 
@@ -95,7 +98,9 @@ func decodeToAccounts(accountsJSON string) ([]account, error) {
 		return []account{}, err
 	}
 
-	return accountsAPIResponse.Accounts, nil
+	accounts := accountsAPIResponse.Accounts
+	log.Debugf("Decoded %#v accounts from the JSON response from the accounts API.", len(accounts))
+	return accounts, nil
 }
 
 func getFirstAccountUid(accounts []account) (string, error) {

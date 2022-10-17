@@ -30,6 +30,7 @@ func GetLastWeeksTransactionsRoundUp(accessToken string, accountUid string) (int
 }
 
 func getLastWeeksTransactionsJSON(accessToken string, accountUid string) (string, error) {
+	log.Debug("Querying the transactions API to get a list of all transactions from the past week.")
 	// We use the more verbose NewRequest so we can add headers/query parameters.
 	request, err := http.NewRequest("GET", api.BaseUrl+"/feed/account/"+accountUid+"/settled-transactions-between", nil)
 
@@ -77,6 +78,7 @@ func getLastWeeksTransactionsJSON(accessToken string, accountUid string) (string
 		return "", err
 	}
 
+	log.Debug("Successfully quiered the transactions API.")
 	return string(body), nil
 }
 
@@ -85,7 +87,7 @@ type transactionsAPIResponse struct {
 }
 
 type transaction struct {
-	FeedItemUid                        string `json:"feedItemUid"`
+	Uid                                string `json:"feedItemUid"`
 	CategoryUid                        string `json:"categoryUid"`
 	Amount                             amount `json:"amount"`
 	SourceAmount                       amount `json:"sourceAmount"`
@@ -117,6 +119,7 @@ type amount struct {
 }
 
 func decodeToTransactions(transactionsJSON string) ([]transaction, error) {
+	log.Debug("Decoding the JSON response from the transactions API.")
 	decoder := json.NewDecoder(bytes.NewReader([]byte(transactionsJSON)))
 	decoder.DisallowUnknownFields()
 
@@ -128,7 +131,9 @@ func decodeToTransactions(transactionsJSON string) ([]transaction, error) {
 		return []transaction{}, err
 	}
 
-	return transactionsAPIResponse.Transactions, nil
+	transactions := transactionsAPIResponse.Transactions
+	log.Debugf("Decoded %#v transactions from the JSON response from the transactions API.", len(transactions))
+	return transactions, nil
 }
 
 func getRoundUpTotal(transactions []transaction) int {
@@ -136,7 +141,9 @@ func getRoundUpTotal(transactions []transaction) int {
 
 	for _, transaction := range transactions {
 		if transaction.Direction == "OUT" {
-			roundUpTotal += (100 - (transaction.Amount.Value % 100))
+			transactionRoundUp := (100 - (transaction.Amount.Value % 100))
+			log.Tracef("The transaction %#v is rounding up by %#v.", transaction.Uid, transactionRoundUp)
+			roundUpTotal += transactionRoundUp
 		}
 	}
 
