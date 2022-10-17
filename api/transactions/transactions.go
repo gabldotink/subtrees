@@ -14,14 +14,14 @@ import (
 	log "github.com/sirupsen/logrus"
 )
 
-func GetLastWeeksTransactionsRoundUp(accessToken string, accountInformation accounts.AccountInformation) (int, error) {
+func GetLastWeeksTransactionsRoundUp(accessToken string, accountInformation accounts.AccountInformation) ([]RoundUpOperation, error) {
 	transactions, err := getLastWeeksTransactions(accessToken, accountInformation)
 
 	if err != nil {
-		return 0, err
+		return []RoundUpOperation{}, err
 	}
 
-	return getRoundUpTotal(transactions), nil
+	return getRoundUpOperations(transactions), nil
 }
 
 func getLastWeeksTransactions(accessToken string, accountInformation accounts.AccountInformation) ([]transaction, error) {
@@ -131,16 +131,29 @@ func decodeToTransactions(transactionsJSON []byte) ([]transaction, error) {
 	return transactions, nil
 }
 
-func getRoundUpTotal(transactions []transaction) int {
-	roundUpTotal := 0
+type RoundUpOperation struct {
+	Uid      string
+	Currency string
+	Value    int
+}
+
+func getRoundUpOperations(transactions []transaction) []RoundUpOperation {
+	roundUpOperations := []RoundUpOperation{}
 
 	for _, transaction := range transactions {
 		if transaction.Direction == "OUT" {
 			transactionRoundUp := (100 - (transaction.Amount.Value % 100))
-			log.Tracef("The transaction %#v is rounding up by %#v.", transaction.Uid, transactionRoundUp)
-			roundUpTotal += transactionRoundUp
+
+			if transactionRoundUp != 100 {
+				log.Tracef("The transaction %#v is being rounded up by %#v.", transaction.Uid, transactionRoundUp)
+				roundUpOperations = append(roundUpOperations, RoundUpOperation{
+					Uid:      transaction.Uid,
+					Currency: transaction.Amount.Currency,
+					Value:    transactionRoundUp,
+				})
+			}
 		}
 	}
 
-	return roundUpTotal
+	return roundUpOperations
 }

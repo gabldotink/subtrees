@@ -55,13 +55,17 @@ func main() {
 	}
 	log.Infof("Rounding up the transactions for the account %#v.", account.Uid)
 
-	roundUpTotal, err := transactions.GetLastWeeksTransactionsRoundUp(accessToken, account)
+	roundUpOperations, err := transactions.GetLastWeeksTransactionsRoundUp(accessToken, account)
 
 	if err != nil {
 		os.Exit(1)
 	}
 
-	log.Infof("The total transaction round up for the account %#v is %#v.", account.Uid, roundUpTotal)
+	log.Infof("%#v transaction round ups for the account %#v.", len(roundUpOperations), account.Uid)
+
+	if len(roundUpOperations) == 0 {
+		os.Exit(0)
+	}
 
 	savingsGoalUid, err := goals.GetSavingsGoalsUid(accessToken, account)
 
@@ -78,5 +82,5 @@ func main() {
 		}
 	}
 
-	log.Infof("The transaction round ups for the account %#v is being transfered to the savings goal %#v.", account.Uid, savingsGoalUid)
+	log.Infof("The transaction round ups for the account %#v are being transfered to the savings goal %#v.", account.Uid, savingsGoalUid)
 }
