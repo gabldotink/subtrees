@@ -13,13 +13,7 @@ import (
 )
 
 func GetSavingsGoalsUid(accessToken string, accountUid string) (string, error) {
-	savingsGoalsJSON, err := getSavingsGoalsJSON(accessToken, accountUid)
-
-	if err != nil {
-		return "", err
-	}
-
-	savingsGoals, err := decodeToSavingsGoals(savingsGoalsJSON)
+	savingsGoals, err := getSavingsGoals(accessToken, accountUid)
 
 	if err != nil {
 		return "", err
@@ -28,14 +22,14 @@ func GetSavingsGoalsUid(accessToken string, accountUid string) (string, error) {
 	return getFirstSavingsGoalUid(savingsGoals), nil
 }
 
-func getSavingsGoalsJSON(accessToken string, accountUid string) (string, error) {
-	log.Debug("Querying the savings goals API to get a list of all savings goals.")
+func getSavingsGoals(accessToken string, accountUid string) ([]savingsGoal, error) {
+	log.Debug("Getting a list of all savings goals from the Savings Goals API endpoint.")
 	// We use the more verbose NewRequest so we can add headers/query parameters.
 	request, err := http.NewRequest("GET", api.BaseUrl+"/account/"+accountUid+"/savings-goals", nil)
 
 	if err != nil {
 		log.WithError(err).Error("Failed to create a HTTP request.")
-		return "", err
+		return []savingsGoal{}, err
 	}
 
 	// Adding the headers used for authentication.
@@ -49,27 +43,27 @@ func getSavingsGoalsJSON(accessToken string, accountUid string) (string, error) 
 
 	if err != nil {
 		log.WithError(err).Error("Failed to perform the HTTP request.")
-		return "", err
+		return []savingsGoal{}, err
 	}
 
-	body, err := io.ReadAll(response.Body)
+	savingsGoalsJSON, err := io.ReadAll(response.Body)
 
 	if err != nil {
 		log.WithError(err).Error("Failed to read the HTTP response's body.")
-		return "", err
+		return []savingsGoal{}, err
 	}
 
 	if response.StatusCode != 200 {
 		err = errors.New("the HTTP status code was '" + response.Status + "' not 200")
 		log.WithFields(log.Fields{
 			"err":  err,
-			"body": string(body),
-		}).Error("Failed to successfully query the Accounts API.")
-		return "", err
+			"body": string(savingsGoalsJSON),
+		}).Error("Failed to get from the Savings Goals API endpoint.")
+		return []savingsGoal{}, err
 	}
 
-	log.Debug("Successfully quiered the savings goals API.")
-	return string(body), nil
+	log.Debug("Successfully got a list of all savings goals from the Savings Goals API endpoint.")
+	return decodeToSavingsGoals(savingsGoalsJSON)
 }
 
 type savingsGoalsAPIResponse struct {
@@ -89,27 +83,27 @@ type amount struct {
 	Value    int    `json:"minorUnits"`
 }
 
-func decodeToSavingsGoals(savingsGoalsJSON string) ([]savingsGoal, error) {
-	log.Debug("Decoding the JSON response from the savings goals API.")
-	decoder := json.NewDecoder(bytes.NewReader([]byte(savingsGoalsJSON)))
+func decodeToSavingsGoals(savingsGoalsJSON []byte) ([]savingsGoal, error) {
+	log.Debug("Decoding the JSON response from the Savings Goals API endpoint.")
+	decoder := json.NewDecoder(bytes.NewReader(savingsGoalsJSON))
 	decoder.DisallowUnknownFields()
 
 	var savingsGoalsAPIResponse savingsGoalsAPIResponse
 	err := decoder.Decode(&savingsGoalsAPIResponse)
 
 	if err != nil {
-		log.WithError(err).Error("Failed to parse the APIs response from JSON.")
+		log.WithError(err).Error("Failed to parse the JSON.")
 		return []savingsGoal{}, err
 	}
 
 	savingsGoals := savingsGoalsAPIResponse.SavingsGoals
-	log.Debugf("Decoded %#v savings goals from the JSON response from the savings goals API.", len(savingsGoals))
+	log.Debugf("Decoded %#v savings goals from the JSON response from the Savings Goals API endpoint.", len(savingsGoals))
 	return savingsGoals, nil
 }
 
 func getFirstSavingsGoalUid(savingsGoals []savingsGoal) string {
 	if len(savingsGoals) == 0 {
-		log.Warn("The savings goals APIs response had no savings goals.")
+		log.Warn("The Savings Goals APIs endpoint returned no savings goals.")
 		return ""
 	}
 

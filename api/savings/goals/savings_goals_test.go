@@ -8,11 +8,11 @@ import (
 
 func TestDecodeToSavingsGoalsWithNoSavingsGoals(t *testing.T) {
 	// Given
-	response := `{"savingsGoalList":[]}`
+	savingsGoalsJSON := `{"savingsGoalList":[]}`
 	expectedNumberOfSavingsGoals := 0
 
 	// When
-	returnedSavingsGoals, err := decodeToSavingsGoals(response)
+	returnedSavingsGoals, err := decodeToSavingsGoals([]byte(savingsGoalsJSON))
 
 	// Then
 	assert.NoError(t, err)
@@ -21,11 +21,11 @@ func TestDecodeToSavingsGoalsWithNoSavingsGoals(t *testing.T) {
 
 func TestDecodeToSavingsGoalsWithOneSavingsGoalNoTarget(t *testing.T) {
 	// Given
-	response := `{"savingsGoalList":[{"savingsGoalUid":"savings-goal-1","name":"Trip to Paris","totalSaved":{"currency":"GBP","minorUnits":0}}]}`
+	savingsGoalsJSON := `{"savingsGoalList":[{"savingsGoalUid":"savings-goal-1","name":"Trip to Paris","totalSaved":{"currency":"GBP","minorUnits":0}}]}`
 	expectedNumberOfSavingsGoals := 1
 
 	// When
-	returnedSavingsGoals, err := decodeToSavingsGoals(response)
+	returnedSavingsGoals, err := decodeToSavingsGoals([]byte(savingsGoalsJSON))
 
 	// Then
 	assert.NoError(t, err)
@@ -34,11 +34,11 @@ func TestDecodeToSavingsGoalsWithOneSavingsGoalNoTarget(t *testing.T) {
 
 func TestDecodeToSavingsGoalsWithOneSavingsGoalWithTarget(t *testing.T) {
 	// Given
-	response := `{"savingsGoalList":[{"savingsGoalUid":"savings-goal-1","name":"Trip to Paris","target":{"currency":"GBP","minorUnits":123456},"totalSaved":{"currency":"GBP","minorUnits":123456},"savedPercentage":100}]}`
+	savingsGoalsJSON := `{"savingsGoalList":[{"savingsGoalUid":"savings-goal-1","name":"Trip to Paris","target":{"currency":"GBP","minorUnits":123456},"totalSaved":{"currency":"GBP","minorUnits":123456},"savedPercentage":100}]}`
 	expectedNumberOfSavingsGoals := 1
 
 	// When
-	returnedSavingsGoals, err := decodeToSavingsGoals(response)
+	returnedSavingsGoals, err := decodeToSavingsGoals([]byte(savingsGoalsJSON))
 
 	// Then
 	assert.NoError(t, err)
@@ -47,11 +47,11 @@ func TestDecodeToSavingsGoalsWithOneSavingsGoalWithTarget(t *testing.T) {
 
 func TestDecodeToSavingsGoalsWithMultipleSavingsGoals(t *testing.T) {
 	// Given
-	response := `{"savingsGoalList":[{"savingsGoalUid":"savings-goal-1","name":"Trip to Dublin","target":{"currency":"GBP","minorUnits":50000},"totalSaved":{"currency":"GBP","minorUnits":0},"savedPercentage":0},{"savingsGoalUid":"savings-goal-2","name":"Trip to London","totalSaved":{"currency":"GBP","minorUnits":0}},{"savingsGoalUid":"savings-goal-3","name":"Trip to Paris","totalSaved":{"currency":"GBP","minorUnits":20}}]}`
+	savingsGoalsJSON := `{"savingsGoalList":[{"savingsGoalUid":"savings-goal-1","name":"Trip to Dublin","target":{"currency":"GBP","minorUnits":50000},"totalSaved":{"currency":"GBP","minorUnits":0},"savedPercentage":0},{"savingsGoalUid":"savings-goal-2","name":"Trip to London","totalSaved":{"currency":"GBP","minorUnits":0}},{"savingsGoalUid":"savings-goal-3","name":"Trip to Paris","totalSaved":{"currency":"GBP","minorUnits":20}}]}`
 	expectedNumberOfSavingsGoals := 3
 
 	// When
-	returnedSavingsGoals, err := decodeToSavingsGoals(response)
+	returnedSavingsGoals, err := decodeToSavingsGoals([]byte(savingsGoalsJSON))
 
 	// Then
 	assert.NoError(t, err)
@@ -60,8 +60,8 @@ func TestDecodeToSavingsGoalsWithMultipleSavingsGoals(t *testing.T) {
 
 func TestGetFirstAccountUidWithNoSavingsGoals(t *testing.T) {
 	// Given
-	response := `{"savingsGoalList":[]}`
-	savingsGoals, err := decodeToSavingsGoals(response)
+	savingsGoalsJSON := `{"savingsGoalList":[]}`
+	savingsGoals, err := decodeToSavingsGoals([]byte(savingsGoalsJSON))
 	assert.NoError(t, err)
 	expectedSavingsGoalUid := ""
 
@@ -74,8 +74,8 @@ func TestGetFirstAccountUidWithNoSavingsGoals(t *testing.T) {
 
 func TestGetFirstAccountUidWithMultipleSavingsGoals(t *testing.T) {
 	// Given
-	response := `{"savingsGoalList":[{"savingsGoalUid":"savings-goal-1","name":"Trip to Dublin","target":{"currency":"GBP","minorUnits":50000},"totalSaved":{"currency":"GBP","minorUnits":0},"savedPercentage":0},{"savingsGoalUid":"savings-goal-2","name":"Trip to London","totalSaved":{"currency":"GBP","minorUnits":0}},{"savingsGoalUid":"savings-goal-3","name":"Trip to Paris","totalSaved":{"currency":"GBP","minorUnits":20}}]}`
-	savingsGoals, err := decodeToSavingsGoals(response)
+	savingsGoalsJSON := `{"savingsGoalList":[{"savingsGoalUid":"savings-goal-1","name":"Trip to Dublin","target":{"currency":"GBP","minorUnits":50000},"totalSaved":{"currency":"GBP","minorUnits":0},"savedPercentage":0},{"savingsGoalUid":"savings-goal-2","name":"Trip to London","totalSaved":{"currency":"GBP","minorUnits":0}},{"savingsGoalUid":"savings-goal-3","name":"Trip to Paris","totalSaved":{"currency":"GBP","minorUnits":20}}]}`
+	savingsGoals, err := decodeToSavingsGoals([]byte(savingsGoalsJSON))
 	assert.NoError(t, err)
 	expectedSavingsGoalUid := "savings-goal-1"
 
