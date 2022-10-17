@@ -10,6 +10,8 @@ This amount should then be transferred into a savings goal, helping the customer
 * [Usage](#usage)
   * [Usage - Logging](#usage---logging)
 * [Technical Decisions](#technical-decisions)
+  * [Language Choice](#language-choice)
+* [Possible Improvements](#possible-improvements)
   * [Support Multiple Accounts](#support-multiple-accounts)
 * [Development](#development)
   * [Setup](#setup)
@@ -29,6 +31,14 @@ This amount should then be transferred into a savings goal, helping the customer
 The log level defaults to `info`, but you can set level via the command line argument `--log-level` or the environment variable `LOG_LEVEL` can be used to set the logging level. If both are set the command line value takes precedence.
 
 ## Technical Decisions
+### Language Choice
+I choose to use Go for several reasons.
+The first is because it is a simple language, making projects very maintainable.
+Go has excellent support for HTTP and JSON in the standard library.
+Go is statically typed, helping to catch bugs when the stakes are high, like when working with money.
+Go also has excellent performance charismatics.
+
+## Possible Improvement
 ### Support Multiple Accounts
 To make it simpler currently only a singular account is supported.
 If multiple are returned by the Starling API, then it only actions upon the first account.
