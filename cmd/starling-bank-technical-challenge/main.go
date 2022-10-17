@@ -48,22 +48,22 @@ func main() {
 		log.Fatalf("The environment variable %#v is not set.", accessTokenEnvName)
 	}
 
-	accountUid, err := accounts.GetAccountUid(accessToken)
+	account, err := accounts.GetAccount(accessToken)
 
 	if err != nil {
 		os.Exit(1)
 	}
-	log.Infof("Rounding up the transactions for the account %#v.", accountUid)
+	log.Infof("Rounding up the transactions for the account %#v.", account.Uid)
 
-	roundUpTotal, err := transactions.GetLastWeeksTransactionsRoundUp(accessToken, accountUid)
+	roundUpTotal, err := transactions.GetLastWeeksTransactionsRoundUp(accessToken, account)
 
 	if err != nil {
 		os.Exit(1)
 	}
 
-	log.Infof("The total transaction round up for the account %#v is %#v.", accountUid, roundUpTotal)
+	log.Infof("The total transaction round up for the account %#v is %#v.", account.Uid, roundUpTotal)
 
-	savingsGoalUid, err := goals.GetSavingsGoalsUid(accessToken, accountUid)
+	savingsGoalUid, err := goals.GetSavingsGoalsUid(accessToken, account)
 
 	if err != nil {
 		os.Exit(1)
@@ -71,12 +71,12 @@ func main() {
 
 	if savingsGoalUid == "" {
 		log.Info("No savings goal, creating a round up savings goals.")
-		savingsGoalUid, err = goals.CreateSavingsGoal(accessToken, accountUid)
+		savingsGoalUid, err = goals.CreateSavingsGoal(accessToken, account)
 
 		if err != nil {
 			os.Exit(1)
 		}
 	}
 
-	log.Infof("The transaction round ups for the account %#v is being transfered to the savings goal %#v.", accountUid, savingsGoalUid)
+	log.Infof("The transaction round ups for the account %#v is being transfered to the savings goal %#v.", account.Uid, savingsGoalUid)
 }

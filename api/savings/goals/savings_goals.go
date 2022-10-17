@@ -8,26 +8,26 @@ import (
 	"net/http"
 
 	"github.com/DeveloperC286/starlingbanktechnicalchallenge/api"
+	"github.com/DeveloperC286/starlingbanktechnicalchallenge/api/accounts"
 
 	log "github.com/sirupsen/logrus"
 )
 
-func CreateSavingsGoal(accessToken string, accountUid string) (string, error) {
-	err := createSavingsGoal(accessToken, accountUid)
+func CreateSavingsGoal(accessToken string, accountInformation accounts.AccountInformation) (string, error) {
+	err := createSavingsGoal(accessToken, accountInformation)
 
 	if err != nil {
 		return "", err
 	}
 
-	return GetSavingsGoalsUid(accessToken, accountUid)
+	return GetSavingsGoalsUid(accessToken, accountInformation)
 }
 
-func createSavingsGoal(accessToken string, accountUid string) error {
+func createSavingsGoal(accessToken string, accountInformation accounts.AccountInformation) error {
 	log.Debug("Creating a savings goals using the Savings Goals API endpoint.")
-	// TODO currency pass in.
-	JSON := []byte(`{"name": "Round Up Savings","currency": "GBP"}`)
+	JSON := []byte(`{"name": "Round Up Savings","currency": "` + accountInformation.Currency + `"}`)
 	// We use the more verbose NewRequest so we can add headers/query parameters.
-	request, err := http.NewRequest("PUT", api.BaseUrl+"/account/"+accountUid+"/savings-goals", bytes.NewBuffer(JSON))
+	request, err := http.NewRequest("PUT", api.BaseUrl+"/account/"+accountInformation.Uid+"/savings-goals", bytes.NewBuffer(JSON))
 
 	if err != nil {
 		log.WithError(err).Error("Failed to create a HTTP request.")
@@ -60,8 +60,8 @@ func createSavingsGoal(accessToken string, accountUid string) error {
 	return nil
 }
 
-func GetSavingsGoalsUid(accessToken string, accountUid string) (string, error) {
-	savingsGoals, err := getSavingsGoals(accessToken, accountUid)
+func GetSavingsGoalsUid(accessToken string, accountInformation accounts.AccountInformation) (string, error) {
+	savingsGoals, err := getSavingsGoals(accessToken, accountInformation)
 
 	if err != nil {
 		return "", err
@@ -70,10 +70,10 @@ func GetSavingsGoalsUid(accessToken string, accountUid string) (string, error) {
 	return getFirstSavingsGoalUid(savingsGoals), nil
 }
 
-func getSavingsGoals(accessToken string, accountUid string) ([]savingsGoal, error) {
+func getSavingsGoals(accessToken string, accountInformation accounts.AccountInformation) ([]savingsGoal, error) {
 	log.Debug("Getting a list of all savings goals from the Savings Goals API endpoint.")
 	// We use the more verbose NewRequest so we can add headers/query parameters.
-	request, err := http.NewRequest("GET", api.BaseUrl+"/account/"+accountUid+"/savings-goals", nil)
+	request, err := http.NewRequest("GET", api.BaseUrl+"/account/"+accountInformation.Uid+"/savings-goals", nil)
 
 	if err != nil {
 		log.WithError(err).Error("Failed to create a HTTP request.")

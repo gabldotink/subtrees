@@ -12,14 +12,14 @@ import (
 	log "github.com/sirupsen/logrus"
 )
 
-func GetAccountUid(accessToken string) (string, error) {
+func GetAccount(accessToken string) (AccountInformation, error) {
 	accounts, err := getAccounts(accessToken)
 
 	if err != nil {
-		return "", err
+		return AccountInformation{}, err
 	}
 
-	return getFirstAccountUid(accounts)
+	return getFirstAccount(accounts)
 }
 
 func getAccounts(accessToken string) ([]account, error) {
@@ -97,13 +97,22 @@ func decodeToAccounts(accountsJSON []byte) ([]account, error) {
 	return accounts, nil
 }
 
-func getFirstAccountUid(accounts []account) (string, error) {
+type AccountInformation struct {
+	Uid      string
+	Currency string
+}
+
+func getFirstAccount(accounts []account) (AccountInformation, error) {
 	// See Technical Decisions in the README.md.
 	if len(accounts) == 0 {
 		err := errors.New("accounts: accounts array is empty")
 		log.WithError(err).Error("The Accounts APIs endpoint returned no accounts.")
-		return "", err
+		return AccountInformation{}, err
 	}
 
-	return accounts[0].Uid, nil
+	accountInformation := AccountInformation{
+		Uid:      accounts[0].Uid,
+		Currency: accounts[0].Currency,
+	}
+	return accountInformation, nil
 }

@@ -65,7 +65,7 @@ func TestGetFirstAccountUidWithNoAccounts(t *testing.T) {
 	expectedErrorMessage := "accounts: accounts array is empty"
 
 	// When
-	_, err = getFirstAccountUid(accounts)
+	_, err = getFirstAccount(accounts)
 
 	// Then
 	assert.Error(t, err)
@@ -77,14 +77,17 @@ func TestGetFirstAccountUidWithSingleAccount(t *testing.T) {
 	accountsJSON := `{"accounts":[{"accountUid":"account-1","accountType":"PRIMARY","defaultCategory":"category","currency":"GBP","createdAt":"2022-10-11T16:58:48.398Z","name":"Personal"}]}`
 	accounts, err := decodeToAccounts([]byte(accountsJSON))
 	assert.NoError(t, err)
-	expectedAccountUid := "account-1"
+	expectedAccountInformation := AccountInformation{
+		Uid:      "account-1",
+		Currency: "GBP",
+	}
 
 	// When
-	returnedAccountUid, err := getFirstAccountUid(accounts)
+	returnedAccountInformation, err := getFirstAccount(accounts)
 
 	// Then
 	assert.NoError(t, err)
-	assert.Equal(t, expectedAccountUid, returnedAccountUid)
+	assert.Equal(t, expectedAccountInformation, returnedAccountInformation)
 }
 
 func TestGetFirstAccountUidWithMultipleAccounts(t *testing.T) {
@@ -92,12 +95,15 @@ func TestGetFirstAccountUidWithMultipleAccounts(t *testing.T) {
 	accountsJSON := `{"accounts":[{"accountUid":"account-1","accountType":"PRIMARY","defaultCategory":"category","currency":"GBP","createdAt":"2022-10-11T16:58:48.398Z","name":"Personal"},{"accountUid":"account-2","accountType":"PRIMARY","defaultCategory":"category","currency":"GBP","createdAt":"2022-10-11T16:58:48.398Z","name":"Personal"}]}`
 	accounts, err := decodeToAccounts([]byte(accountsJSON))
 	assert.NoError(t, err)
-	expectedAccountUid := "account-1"
+	expectedAccountInformation := AccountInformation{
+		Uid:      "account-1",
+		Currency: "GBP",
+	}
 
 	// When
-	returnedAccountUid, err := getFirstAccountUid(accounts)
+	returnedAccountInformation, err := getFirstAccount(accounts)
 
 	// Then
 	assert.NoError(t, err)
-	assert.Equal(t, expectedAccountUid, returnedAccountUid)
+	assert.Equal(t, expectedAccountInformation, returnedAccountInformation)
 }

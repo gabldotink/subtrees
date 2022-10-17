@@ -9,12 +9,13 @@ import (
 	"time"
 
 	"github.com/DeveloperC286/starlingbanktechnicalchallenge/api"
+	"github.com/DeveloperC286/starlingbanktechnicalchallenge/api/accounts"
 
 	log "github.com/sirupsen/logrus"
 )
 
-func GetLastWeeksTransactionsRoundUp(accessToken string, accountUid string) (int, error) {
-	transactions, err := getLastWeeksTransactions(accessToken, accountUid)
+func GetLastWeeksTransactionsRoundUp(accessToken string, accountInformation accounts.AccountInformation) (int, error) {
+	transactions, err := getLastWeeksTransactions(accessToken, accountInformation)
 
 	if err != nil {
 		return 0, err
@@ -23,10 +24,10 @@ func GetLastWeeksTransactionsRoundUp(accessToken string, accountUid string) (int
 	return getRoundUpTotal(transactions), nil
 }
 
-func getLastWeeksTransactions(accessToken string, accountUid string) ([]transaction, error) {
+func getLastWeeksTransactions(accessToken string, accountInformation accounts.AccountInformation) ([]transaction, error) {
 	log.Debug("Getting a list of all the transaction from last week from the Transaction Feed API endpoint.")
 	// We use the more verbose NewRequest so we can add headers/query parameters.
-	request, err := http.NewRequest("GET", api.BaseUrl+"/feed/account/"+accountUid+"/settled-transactions-between", nil)
+	request, err := http.NewRequest("GET", api.BaseUrl+"/feed/account/"+accountInformation.Uid+"/settled-transactions-between", nil)
 
 	if err != nil {
 		log.WithError(err).Error("Failed to create a HTTP request.")
