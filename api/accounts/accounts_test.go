@@ -8,11 +8,11 @@ import (
 
 func TestDecodeToAccountsWithNoAccounts(t *testing.T) {
 	// Given
-	response := `{"accounts":[]}`
+	accountsJSON := `{"accounts":[]}`
 	expectedNumberOfAccounts := 0
 
 	// When
-	returnedAccounts, err := decodeToAccounts(response)
+	returnedAccounts, err := decodeToAccounts([]byte(accountsJSON))
 
 	// Then
 	assert.NoError(t, err)
@@ -21,11 +21,11 @@ func TestDecodeToAccountsWithNoAccounts(t *testing.T) {
 
 func TestDecodeToAccountsWithSingleAccount(t *testing.T) {
 	// Given
-	response := `{"accounts":[{"accountUid":"account-1","accountType":"PRIMARY","defaultCategory":"category","currency":"GBP","createdAt":"2022-10-11T16:58:48.398Z","name":"Personal"}]}`
+	accountsJSON := `{"accounts":[{"accountUid":"account-1","accountType":"PRIMARY","defaultCategory":"category","currency":"GBP","createdAt":"2022-10-11T16:58:48.398Z","name":"Personal"}]}`
 	expectedNumberOfAccounts := 1
 
 	// When
-	returnedAccounts, err := decodeToAccounts(response)
+	returnedAccounts, err := decodeToAccounts([]byte(accountsJSON))
 
 	// Then
 	assert.NoError(t, err)
@@ -34,11 +34,11 @@ func TestDecodeToAccountsWithSingleAccount(t *testing.T) {
 
 func TestDecodeToAccountsWithMultipleAccounts(t *testing.T) {
 	// Given
-	response := `{"accounts":[{"accountUid":"account-1","accountType":"PRIMARY","defaultCategory":"category","currency":"GBP","createdAt":"2022-10-11T16:58:48.398Z","name":"Personal"},{"accountUid":"account-2","accountType":"PRIMARY","defaultCategory":"category","currency":"GBP","createdAt":"2022-10-11T16:58:48.398Z","name":"Personal"}]}`
+	accountsJSON := `{"accounts":[{"accountUid":"account-1","accountType":"PRIMARY","defaultCategory":"category","currency":"GBP","createdAt":"2022-10-11T16:58:48.398Z","name":"Personal"},{"accountUid":"account-2","accountType":"PRIMARY","defaultCategory":"category","currency":"GBP","createdAt":"2022-10-11T16:58:48.398Z","name":"Personal"}]}`
 	expectedNumberOfAccounts := 2
 
 	// When
-	returnedAccounts, err := decodeToAccounts(response)
+	returnedAccounts, err := decodeToAccounts([]byte(accountsJSON))
 
 	// Then
 	assert.NoError(t, err)
@@ -47,10 +47,10 @@ func TestDecodeToAccountsWithMultipleAccounts(t *testing.T) {
 
 func TestDecodeToAccountsErrorsWithUnexpectedFormat(t *testing.T) {
 	// Given
-	response := `{"error":"invalid_token","error_description":"Could not validate provided access token"}`
+	accountsJSON := `{"error":"invalid_token","error_description":"Could not validate provided access token"}`
 
 	// When
-	_, err := decodeToAccounts(response)
+	_, err := decodeToAccounts([]byte(accountsJSON))
 
 	// Then
 	assert.Error(t, err)
@@ -59,8 +59,8 @@ func TestDecodeToAccountsErrorsWithUnexpectedFormat(t *testing.T) {
 
 func TestGetFirstAccountUidWithNoAccounts(t *testing.T) {
 	// Given
-	response := `{"accounts":[]}`
-	accounts, err := decodeToAccounts(response)
+	accountsJSON := `{"accounts":[]}`
+	accounts, err := decodeToAccounts([]byte(accountsJSON))
 	assert.NoError(t, err)
 	expectedErrorMessage := "accounts: accounts array is empty"
 
@@ -74,8 +74,8 @@ func TestGetFirstAccountUidWithNoAccounts(t *testing.T) {
 
 func TestGetFirstAccountUidWithSingleAccount(t *testing.T) {
 	// Given
-	response := `{"accounts":[{"accountUid":"account-1","accountType":"PRIMARY","defaultCategory":"category","currency":"GBP","createdAt":"2022-10-11T16:58:48.398Z","name":"Personal"}]}`
-	accounts, err := decodeToAccounts(response)
+	accountsJSON := `{"accounts":[{"accountUid":"account-1","accountType":"PRIMARY","defaultCategory":"category","currency":"GBP","createdAt":"2022-10-11T16:58:48.398Z","name":"Personal"}]}`
+	accounts, err := decodeToAccounts([]byte(accountsJSON))
 	assert.NoError(t, err)
 	expectedAccountUid := "account-1"
 
@@ -89,8 +89,8 @@ func TestGetFirstAccountUidWithSingleAccount(t *testing.T) {
 
 func TestGetFirstAccountUidWithMultipleAccounts(t *testing.T) {
 	// Given
-	response := `{"accounts":[{"accountUid":"account-1","accountType":"PRIMARY","defaultCategory":"category","currency":"GBP","createdAt":"2022-10-11T16:58:48.398Z","name":"Personal"},{"accountUid":"account-2","accountType":"PRIMARY","defaultCategory":"category","currency":"GBP","createdAt":"2022-10-11T16:58:48.398Z","name":"Personal"}]}`
-	accounts, err := decodeToAccounts(response)
+	accountsJSON := `{"accounts":[{"accountUid":"account-1","accountType":"PRIMARY","defaultCategory":"category","currency":"GBP","createdAt":"2022-10-11T16:58:48.398Z","name":"Personal"},{"accountUid":"account-2","accountType":"PRIMARY","defaultCategory":"category","currency":"GBP","createdAt":"2022-10-11T16:58:48.398Z","name":"Personal"}]}`
+	accounts, err := decodeToAccounts([]byte(accountsJSON))
 	assert.NoError(t, err)
 	expectedAccountUid := "account-1"
 
