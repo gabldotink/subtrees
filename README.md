@@ -19,6 +19,7 @@ This amount should then be transferred into a savings goal, helping the customer
   * [Snapshot Testing](#snapshot-testing)
   * [API Retries](#api-retries)
   * [End-to-end Tests](#end-to-end-tests)
+  * [Parse Create Savings Goal Response](#parse-create-savings-goal-response)
   * [Reducing Redundant CI](#reducing-redundant-ci)
 * [Development](#development)
   * [Setup](#setup)
@@ -90,7 +91,11 @@ To add automated assertions that the integration has not been broken, and then i
 
 ### More Checking of types
 
-### Create savings goal parse response
+### Parse Create Savings Goal Response
+This project if there are no savings goals creates one, to transfer the rounded up savings too.
+The response from the call to Starling's API to create the savings goal is not parsed for the savings goal's information.
+Instead, to save time writing the code to parse it, I just called the already existing logic to query all the existing savings goals.
+An improvement to remove redundant API calls, would be to parse the response returned.
 
 ### Reducing Redundant CI
 The GitHub Continuous Integration (CI) workflow runs on every pull request, even if no code or dependencies have changed.
