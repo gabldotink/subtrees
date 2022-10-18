@@ -12,8 +12,16 @@ import (
 )
 
 func main() {
+	// Default logging settings/variables.
 	defaultLogLevel := "info"
 	envLogLevelName := "LOG_LEVEL"
+
+	log.SetFormatter(&log.TextFormatter{
+		DisableColors:          false,
+		DisableTimestamp:       true,
+		DisableLevelTruncation: true,
+		PadLevelText:           true,
+	})
 
 	// Reading in log level from the CLI.
 	cliLogLevel := flag.String("log-level", "", "The level of to display. Can also be set by the environment variable '"+envLogLevelName+"'. Defaults to the value '"+defaultLogLevel+"'.")
@@ -45,14 +53,7 @@ func main() {
 	log.Infof("Setting the log level to %q.", logLevel)
 	log.SetLevel(parsedLogLevel)
 
-	log.SetFormatter(&log.TextFormatter{
-		DisableColors:          false,
-		DisableTimestamp:       true,
-		DisableLevelTruncation: true,
-		PadLevelText:           true,
-	})
-
-	// Get API related environment variables.
+	// Get API authentication related environment variables.
 	accessTokenEnvName := "ACCESS_TOKEN"
 	accessToken := os.Getenv(accessTokenEnvName)
 
