@@ -19,6 +19,7 @@ This amount should then be transferred into a savings goal, helping the customer
   * [Snapshot Testing](#snapshot-testing)
   * [API Retries](#api-retries)
   * [End-to-end Tests](#end-to-end-tests)
+  * [Reducing Redundant CI](#reducing-redundant-ci)
 * [Development](#development)
   * [Setup](#setup)
   * [Commands](#commands)
@@ -90,6 +91,12 @@ To add automated assertions that the integration has not been broken, and then i
 ### More Checking of types
 
 ### Create savings goal parse response
+
+### Reducing Redundant CI
+The GitHub Continuous Integration (CI) workflow runs on every pull request, even if no code or dependencies have changed.
+This causes the CI to perform redundant compute when only documentation etc is changed.
+An improvement we could implement to stop spending redundant resources, would be for steps such as compiling and unit testing to only run when code or dependencies have changed.
+This could be accomplished using the tool [Is Affected](https://crates.io/crates/is_affected) I created.
 
 ## Development
 [🌍 Earthly](https://earthly.dev) is used as the build tool, it is a CI/CD framework that allows you to develop pipelines locally and run them anywhere.
