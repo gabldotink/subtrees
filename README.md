@@ -19,6 +19,7 @@ This amount should then be transferred into a savings goal, helping the customer
   * [Snapshot Testing](#snapshot-testing)
   * [API Retries](#api-retries)
   * [End-to-end Tests](#end-to-end-tests)
+  * [Removing Primitive Types](#removing-primitive-types)
   * [Parse Create Savings Goal Response](#parse-create-savings-goal-response)
   * [Reducing Redundant CI](#reducing-redundant-ci)
 * [Development](#development)
@@ -88,6 +89,10 @@ End-to-end tests could be added, which use a sandbox user but against the real 
 To add automated assertions that the integration has not been broken, and then it can also be added to the CI pipeline.
 
 ### Removing Primitive Types
+Data such as the access token and the savings goal UID are being passed around as strings.
+An improvement would be to refactor these from primitives to structures.
+It stops whole categories of bugs at compile time, such as accidentally switching the order of parameters of the same type.
+I already did something similar with the account UID being refactored to the type `AccountInformation` in `api/accounts/accounts.go`.
 
 ### More Checking of types
 
