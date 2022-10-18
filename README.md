@@ -11,9 +11,11 @@ This amount should then be transferred into a savings goal, helping the customer
   * [Usage - Logging](#usage---logging)
 * [Technical Decisions](#technical-decisions)
   * [Language Choice](#language-choice)
-* [Possible Improvements](#possible-improvements)
+* [Customer Experience Future Improvements](#customer-experience-future-improvements)
   * [Support Multiple Accounts](#support-multiple-accounts)
+* [Technical Future Improvements](#technical-future-improvements)
   * [Snapshot Testing](#snapshot-testing)
+  * [API Retries](#api-retries)
 * [Development](#development)
   * [Setup](#setup)
   * [Commands](#commands)
@@ -41,18 +43,35 @@ Go has excellent support for HTTP and JSON in the standard library.
 Go is statically typed, helping to catch bugs when the stakes are high, like when working with money.
 Go also has excellent performance charismatics.
 
-## Possible Improvement
+## Customer Experience Future Improvements
 ### Support Multiple Accounts
 To make it simpler currently only a singular account is supported.
 If multiple are returned by the Starling API, then it only actions upon the first account.
-You could support multiple accounts by having `GetAccountUid()` in `api/accounts/accounts.go` return an array of UIDs.
+Support could easily be added for rounding up multiple accounts by having `GetAccount()` in `api/accounts/accounts.go` return an array.
 
+### Smarter Savings Goals Choice
+
+### Should we create a savings goal?
+
+## Technical Future Improvements
 ### Snapshot Testing
 This project has unit tests asserting that valid JSON responses from Starling's API can be successfully parsed.
 The unit tests only assert that the parsing did not error and on the number of objects returned.
 Constructing and asserting upon the expected array of objects would produce low-value and fragile tests, as the tests are asserting upon the structure of internal data models, not on behaviour.
 Snapshot testing could be added, which takes a snapshot of your output and compares it against the snapshot committed alongside your test.
 Snapshot testing would have the benefits of adding more assertions on the structure of internal data models and reducing fragility while making the tests easier to update, as you do not have to cumbersomely construct the expected array of objects.
+
+### API Retries
+Currently, a single HTTP request is made and if it returns a server error (5xx) then the error is propagated and the program exits unsuccessfully.
+Fault tolerance for these server errors could be added by implementing retries in our client with an exponential backoff algorithm.
+
+### Improved Logging
+
+### End-to-end Tests
+
+### Removing Primitive Types
+
+### More Checking of types
 
 ## Development
 [🌍 Earthly](https://earthly.dev) is used as the build tool, it is a CI/CD framework that allows you to develop pipelines locally and run them anywhere.
