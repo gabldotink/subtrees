@@ -15,6 +15,7 @@ This amount should then be transferred into a savings goal, helping the customer
   * [Support Multiple Accounts](#support-multiple-accounts)
   * [Smarter Savings Goals Choice](#smarter-savings-goals-choice)
   * [Add Reference/Note To Savings Goal Transfers](#add-referencenote-to-savings-goal-transfers)
+  * [Round Up Minimum Threshold](#round-up-minimum-threshold)
 * [Technical Future Improvements](#technical-future-improvements)
   * [Snapshot Testing](#snapshot-testing)
   * [API Retries](#api-retries)
@@ -76,6 +77,12 @@ Then, other logic such as selecting the savings goal closest to its target.
 The transfers from the account to the savings goal have no reference or note.
 The lack of reference or note could be confusing for customers.
 So adding a reference or note to the transfer detailing it is a round up and the transaction that caused it would improve the customer experience.
+
+### Round Up Minimum Threshold
+Each transaction round up is done separately, the round up transfers transaction id is the transaction id that caused it; so even if the tool is executed multiple times a round up for each transaction only happens once.
+An improved customer experience before performing any round up transfers would be to check they have at least the total amount in their account.
+Otherwise, we may drain the account of nearly all funds, leaving them open to overdraft fees or other issues.
+Or we have a threshold for the account which when below(which could be configurable by the customer) then we perform no rounding up at all.
 
 ## Technical Future Improvements
 ### Snapshot Testing
