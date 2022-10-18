@@ -29,7 +29,9 @@ This amount should then be transferred into a savings goal, helping the customer
 ## Usage
 
 ### Usage - Logging
-The log level defaults to `info`, but you can set level via the command line argument `--log-level` or the environment variable `LOG_LEVEL` can be used to set the logging level. If both are set the command line value takes precedence.
+The log level defaults to `info`.
+But you can set the log level via the command line argument `--log-level` or the environment variable `LOG_LEVEL`.
+If a level is provided via the command line and the environment variable, then the command line level is used.
 
 ## Technical Decisions
 ### Language Choice
