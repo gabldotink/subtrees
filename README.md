@@ -17,6 +17,7 @@ This amount should then be transferred into a savings goal, helping the customer
 * [Technical Future Improvements](#technical-future-improvements)
   * [Snapshot Testing](#snapshot-testing)
   * [API Retries](#api-retries)
+  * [End-to-end Tests](#end-to-end-tests)
 * [Development](#development)
   * [Setup](#setup)
   * [Commands](#commands)
@@ -71,6 +72,12 @@ Fault tolerance for these server errors could be added by implementing retries 
 ### Improved Logging
 
 ### End-to-end Tests
+This project has multiple unit tests.
+The unit tests test that valid JSON responses from Starling's API can be successfully parsed. 
+In addition to testing business logic such as the savings goal to round up too selection. 
+But the project has no tests which test the integration with Starling's API.
+End-to-end tests could be added, which use a sandbox user but against the real API.
+To add automated assertions that the integration has not been broken, and then it can also be added to the CI pipeline.
 
 ### Removing Primitive Types
 
