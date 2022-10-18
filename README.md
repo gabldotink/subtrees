@@ -23,6 +23,7 @@ This amount should then be transferred into a savings goal, helping the customer
   * [Removing Primitive Types](#removing-primitive-types)
   * [Parse Create Savings Goal Response](#parse-create-savings-goal-response)
   * [Reducing Redundant CI](#reducing-redundant-ci)
+  * [Stricter Assertions](#stricter-assertions)
 * [Development](#development)
   * [Setup](#setup)
   * [Commands](#commands)
@@ -121,6 +122,12 @@ The GitHub Continuous Integration (CI) workflow runs on every pull request, even
 This causes the CI to perform redundant compute when only documentation etc is changed.
 An improvement we could implement to stop spending redundant resources, would be for steps such as compiling and unit testing to only run when code or dependencies have changed.
 This could be accomplished using the tool [Is Affected](https://crates.io/crates/is_affected) I created.
+
+### Stricter Assertions
+The program currently only performs basic checks on the data.
+As we are dealing with money, an improvement for correctness would be performing stricter checks on the data input.
+Such as checking the account type of accounts before we perform rounding, or checking the currency of accounts compared to savings goals match, etc.
+And default to not performing operations on accounts, transactions, savings goals etc that we are not certain we can correctly operate upon.
 
 ## Development
 [🌍 Earthly](https://earthly.dev) is used as the build tool, it is a CI/CD framework that allows you to develop pipelines locally and run them anywhere.
