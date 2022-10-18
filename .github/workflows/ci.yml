@@ -7,6 +7,7 @@ on:
     branches: [ main ]
 
 jobs:
+
   formatting:
     runs-on: ubuntu-latest
     env:
@@ -17,6 +18,7 @@ jobs:
       run: "sudo /bin/sh -c 'wget https://github.com/earthly/earthly/releases/download/v0.6.25/earthly-linux-amd64 -O /usr/local/bin/earthly && chmod +x /usr/local/bin/earthly'"
     - name: Check formatting.
       run: earthly --ci +check-formatting
+
   linting:
     runs-on: ubuntu-latest
     env:
@@ -27,6 +29,7 @@ jobs:
       run: "sudo /bin/sh -c 'wget https://github.com/earthly/earthly/releases/download/v0.6.25/earthly-linux-amd64 -O /usr/local/bin/earthly && chmod +x /usr/local/bin/earthly'"
     - name: Check linting.
       run: earthly --ci +linting
+
   module-tidying:
     runs-on: ubuntu-latest
     env:
@@ -37,6 +40,7 @@ jobs:
       run: "sudo /bin/sh -c 'wget https://github.com/earthly/earthly/releases/download/v0.6.25/earthly-linux-amd64 -O /usr/local/bin/earthly && chmod +x /usr/local/bin/earthly'"
     - name: Check compiling.
       run: earthly --ci +check-module-tidying
+
   compiling:
     runs-on: ubuntu-latest
     env:
@@ -47,7 +51,6 @@ jobs:
       run: "sudo /bin/sh -c 'wget https://github.com/earthly/earthly/releases/download/v0.6.25/earthly-linux-amd64 -O /usr/local/bin/earthly && chmod +x /usr/local/bin/earthly'"
     - name: Check compiling.
       run: earthly --ci +compiling-linux-amd64
-
 
   unit-testing:
     runs-on: ubuntu-latest
