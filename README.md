@@ -13,6 +13,7 @@ This amount should then be transferred into a savings goal, helping the customer
   * [Language Choice](#language-choice)
 * [Customer Experience Future Improvements](#customer-experience-future-improvements)
   * [Support Multiple Accounts](#support-multiple-accounts)
+  * [Smarter Savings Goals Choice](#smarter-savings-goals-choice)
 * [Technical Future Improvements](#technical-future-improvements)
   * [Snapshot Testing](#snapshot-testing)
   * [API Retries](#api-retries)
@@ -50,8 +51,10 @@ If multiple are returned by the Starling API, then it only actions upon the firs
 Support could easily be added for rounding up multiple accounts by having `GetAccount()` in `api/accounts/accounts.go` return an array.
 
 ### Smarter Savings Goals Choice
-
-### Should we create a savings goal?
+The savings goal to transfer the rounded up savings too is just the first savings goal.
+For an improved customer experience, we could add intelligence to the selected savings goal.
+Initially, we could exclude from the choice all savings goals at or exceeding their target.
+Then, other logic such as selecting the savings goal closest to its target.
 
 ## Technical Future Improvements
 ### Snapshot Testing
