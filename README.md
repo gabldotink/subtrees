@@ -35,6 +35,17 @@ This amount should then be transferred into a savings goal, helping the customer
     * [Unit Testing](#unit-testing)
 
 ## Usage
+To use this tool you first of all want to compile Go source code to a binary, see [setup](#setup) and [compiling](#compiling) on details to compile the binary.
+Once we have the binary then we need to make the access token of the customer available to the tool, by exporting the access token to the environment variable `ACCESS_TOKEN`.
+After the access token is set we can then execute the binary to perform the rounding up of transactions for a customer.
+
+E.g.
+
+```
+earthly +compiling-darwin-amd64
+export ACCESS_TOKEN="123"
+./starling-bank-technical-challenge --log-level "DEBUG"
+```
 
 ### Usage - Logging
 The log level defaults to `info`.
