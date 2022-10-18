@@ -14,6 +14,7 @@ This amount should then be transferred into a savings goal, helping the customer
 * [Customer Experience Future Improvements](#customer-experience-future-improvements)
   * [Support Multiple Accounts](#support-multiple-accounts)
   * [Smarter Savings Goals Choice](#smarter-savings-goals-choice)
+  * [Add Reference/Note To Savings Goal Transfers](#add-referencenote-to-savings-goal-transfers)
 * [Technical Future Improvements](#technical-future-improvements)
   * [Snapshot Testing](#snapshot-testing)
   * [API Retries](#api-retries)
@@ -57,6 +58,11 @@ For an improved customer experience, we could add intelligence to the selected s
 Initially, we could exclude from the choice all savings goals at or exceeding their target.
 Then, other logic such as selecting the savings goal closest to its target.
 
+### Add Reference/Note To Savings Goal Transfers
+The transfers from the account to the savings goal have no reference or note.
+The lack of reference or note could be confusing for customers.
+So adding a reference or note to the transfer detailing it is a round up and the transaction that caused it would improve the customer experience.
+
 ## Technical Future Improvements
 ### Snapshot Testing
 This project has unit tests asserting that valid JSON responses from Starling's API can be successfully parsed.
@@ -82,6 +88,8 @@ To add automated assertions that the integration has not been broken, and then i
 ### Removing Primitive Types
 
 ### More Checking of types
+
+### Create savings goal parse response
 
 ## Development
 [🌍 Earthly](https://earthly.dev) is used as the build tool, it is a CI/CD framework that allows you to develop pipelines locally and run them anywhere.
