@@ -78,8 +78,6 @@ Snapshot testing would have the benefits of adding more assertions on the stru
 Currently, a single HTTP request is made and if it returns a server error (5xx) then the error is propagated and the program exits unsuccessfully.
 Fault tolerance for these server errors could be added by implementing retries in our client with an exponential backoff algorithm.
 
-### Improved Logging
-
 ### End-to-end Tests
 This project has multiple unit tests.
 The unit tests test that valid JSON responses from Starling's API can be successfully parsed. 
@@ -93,8 +91,6 @@ Data such as the access token and the savings goal UID are being passed around a
 An improvement would be to refactor these from primitives to structures.
 It stops whole categories of bugs at compile time, such as accidentally switching the order of parameters of the same type.
 I already did something similar with the account UID being refactored to the type `AccountInformation` in `api/accounts/accounts.go`.
-
-### More Checking of types
 
 ### Parse Create Savings Goal Response
 This project if there are no savings goals creates one, to transfer the rounded up savings too.
