@@ -74,7 +74,7 @@ func main() {
 	}
 
 	if savingsGoalUid == "" {
-		log.Info("No savings goal, creating a round up savings goals.")
+		log.Info("No savings goal, creating a savings goals for the round up savings.")
 		savingsGoalUid, err = goals.CreateSavingsGoal(accessToken, account)
 
 		if err != nil {
@@ -83,4 +83,11 @@ func main() {
 	}
 
 	log.Infof("The transaction round ups for the account %#v are being transfered to the savings goal %#v.", account.Uid, savingsGoalUid)
+	err = goals.PerformRoundUpOperations(accessToken, account, savingsGoalUid, roundUpOperations)
+
+	if err != nil {
+		os.Exit(1)
+	}
+
+	log.Info("Successfully transfered all the transaction round ups.")
 }

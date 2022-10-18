@@ -6,12 +6,63 @@ import (
 	"errors"
 	"io"
 	"net/http"
+	"strconv"
 
 	"github.com/DeveloperC286/starlingbanktechnicalchallenge/api"
 	"github.com/DeveloperC286/starlingbanktechnicalchallenge/api/accounts"
+	"github.com/DeveloperC286/starlingbanktechnicalchallenge/api/transactions"
 
 	log "github.com/sirupsen/logrus"
 )
+
+func PerformRoundUpOperations(accessToken string, accountInformation accounts.AccountInformation, savingsGoalUid string, roundUpOperations []transactions.RoundUpOperation) error {
+	for _, roundUpOperation := range roundUpOperations {
+		err := performRoundUpOperation(accessToken, accountInformation, savingsGoalUid, roundUpOperation)
+
+		if err != nil {
+			return err
+		}
+	}
+
+	return nil
+}
+
+func performRoundUpOperation(accessToken string, accountInformation accounts.AccountInformation, savingsGoalUid string, roundUpOperation transactions.RoundUpOperation) error {
+	log.Debug("Adding money to a savings goal using the Savings Goals API endpoint.")
+	JSON := []byte(`{"amount":{"currency": "` + roundUpOperation.Currency + `","minorUnits":` + strconv.Itoa(roundUpOperation.Value) + `}}`)
+	// We use the more verbose NewRequest so we can add headers/query parameters.
+	request, err := http.NewRequest("PUT", api.BaseUrl+"/account/"+accountInformation.Uid+"/savings-goals/"+savingsGoalUid+"/add-money/"+roundUpOperation.Uid, bytes.NewBuffer(JSON))
+
+	if err != nil {
+		log.WithError(err).Error("Failed to create a HTTP request.")
+		return err
+	}
+
+	// Adding the headers used for authentication.
+	request.Header = http.Header{
+		"Content-Type":  {"application/json"},
+		"Authorization": {"Bearer " + accessToken},
+	}
+
+	client := http.Client{}
+	response, err := client.Do(request)
+
+	if err != nil {
+		log.WithError(err).Error("Failed to perform the HTTP request.")
+		return err
+	}
+
+	if response.StatusCode != 200 {
+		err = errors.New("the HTTP status code was '" + response.Status + "' not 200")
+		log.WithFields(log.Fields{
+			"err": err,
+		}).Error("Failed to put to the Savings Goals API endpoint.")
+		return err
+	}
+
+	log.Debug("Successfully added money to a savings goal using the Savings Goals API endpoint.")
+	return nil
+}
 
 func CreateSavingsGoal(accessToken string, accountInformation accounts.AccountInformation) (string, error) {
 	err := createSavingsGoal(accessToken, accountInformation)
