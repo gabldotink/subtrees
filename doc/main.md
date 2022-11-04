@@ -1,6 +1,9 @@
 # Main
 
-## [Change Requests](https://docs.gitbook.com/getting-started/collaboration/change-requests)
+## [Change Requests](https://docs.gitbook.com/getting-started/collaboration/change-requests)__ <a href="#cr" id="cr"></a>
+
+_Also known as "_[_CR_](https://docs.gitbook.com/getting-started/collaboration/change-requests)_"_\
+_Not to be mistaken with "_[_Pull Requests_](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests)_", "_[_PR_](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/proposing-changes-to-your-work-with-pull-requests/about-pull-requests)_"_
 
 ### Guidelines
 
@@ -15,11 +18,11 @@
     * Following by "`:` "
     * Following by the page path of the [change request](https://docs.gitbook.com/getting-started/collaboration/change-requests), separating sub-pages with "`﹣`"
     * Following by "`︱`"
-    * Following by the section path of the page  of the [change request](https://docs.gitbook.com/getting-started/collaboration/change-requests), separating sub-sections with "`﹣`"
+    * Following by the section path of the page of the [change request](https://docs.gitbook.com/getting-started/collaboration/change-requests), separating sub-sections with "`﹣`"
     * **Example**: the [change request](https://docs.gitbook.com/getting-started/collaboration/change-requests) subject for this change is named\
       "`Feature: Documentation﹣Main︱Change Requests﹣Guidelines`"
 
-### Create <a href="#make.changes" id="make.changes"></a>
+### Create
 
 #### Procedure
 
@@ -42,7 +45,7 @@ _Must be done while following_ [#guidelines](main.md#guidelines "mention")__
   * [x] If you are sure that your [change request](https://docs.gitbook.com/getting-started/collaboration/change-requests) can be published right away: \
     you can [submit and merge it](https://docs.gitbook.com/getting-started/collaboration/change-requests#merging-a-change-request) (not recommended)
 
-### Review <a href="#review.changes" id="review.changes"></a>
+### Review
 
 #### Procedure
 
