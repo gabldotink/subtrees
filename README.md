@@ -43,7 +43,7 @@ After the access token is set we can then execute the binary to perform the roun
 
 E.g.
 
-```
+```sh
 earthly +compiling-darwin-amd64
 export ACCESS_TOKEN="123"
 ./starling-bank-technical-challenge --log-level "DEBUG"
@@ -144,54 +144,54 @@ You only need Earthly and Docker installed, Earthly handles all build and runtim
 #### Check Formatting
 You can check the source code is correctly formatted by running the command.
 
-```
+```sh
 earthly +check-formatting
 ```
 
 #### Fix Formatting
 You can fix the formatting of the source code by running the command.
 
-```
+```sh
 earthly +fix-formatting
 ```
 
 #### Linting
 You can lint the source code by running the command.
 
-```
+```sh
 earthly +linting
 ```
 
 #### Check Module Tidying
 You can check there are no missing or redundant module requirements by running the command.
 
-```
+```sh
 earthly +check-module-tidying
 ```
 
 #### Fix Module Tidying
 You can fix missing or redundant module requirements by running the command.
 
-```
+```sh
 earthly +fix-module-tidying
 ```
 
 #### Compiling
 You can compile the source code into a binary by running the command.
 
-```
+```sh
 earthly +compiling-linux-amd64
 ```
 
 or
 
-```
+```sh
 earthly +compiling-darwin-amd64
 ```
 
 #### Unit Testing
 You can run all the unit tests by running the command.
 
-```
+```sh
 earthly +unit-testing
 ```
