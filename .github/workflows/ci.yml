@@ -13,52 +13,49 @@ jobs:
     env:
       FORCE_COLOR: 1
     steps:
-    - uses: actions/checkout@v3
-    - name: Download Earthly v0.6.25
-      run: "sudo /bin/sh -c 'wget https://github.com/earthly/earthly/releases/download/v0.6.25/earthly-linux-amd64 -O /usr/local/bin/earthly && chmod +x /usr/local/bin/earthly'"
+    - name: Download Earthly v0.6.30.
+      run: "sudo /bin/sh -c 'wget https://github.com/earthly/earthly/releases/download/v0.6.30/earthly-linux-amd64 -O /usr/local/bin/earthly && chmod +x /usr/local/bin/earthly'"
+    - name: Checkout code.
+      uses: actions/checkout@v3
     - name: Check formatting.
       run: earthly --ci +check-formatting
 
   linting:
     runs-on: ubuntu-latest
-    env:
-      FORCE_COLOR: 1
     steps:
-    - uses: actions/checkout@v3
-    - name: Download Earthly v0.6.25
-      run: "sudo /bin/sh -c 'wget https://github.com/earthly/earthly/releases/download/v0.6.25/earthly-linux-amd64 -O /usr/local/bin/earthly && chmod +x /usr/local/bin/earthly'"
+    - name: Download Earthly v0.6.30.
+      run: "sudo /bin/sh -c 'wget https://github.com/earthly/earthly/releases/download/v0.6.30/earthly-linux-amd64 -O /usr/local/bin/earthly && chmod +x /usr/local/bin/earthly'"
+    - name: Checkout code.
+      uses: actions/checkout@v3
     - name: Check linting.
       run: earthly --ci +linting
 
   module-tidying:
     runs-on: ubuntu-latest
-    env:
-      FORCE_COLOR: 1
     steps:
-    - uses: actions/checkout@v3
-    - name: Download Earthly v0.6.25
-      run: "sudo /bin/sh -c 'wget https://github.com/earthly/earthly/releases/download/v0.6.25/earthly-linux-amd64 -O /usr/local/bin/earthly && chmod +x /usr/local/bin/earthly'"
+    - name: Download Earthly v0.6.30.
+      run: "sudo /bin/sh -c 'wget https://github.com/earthly/earthly/releases/download/v0.6.30/earthly-linux-amd64 -O /usr/local/bin/earthly && chmod +x /usr/local/bin/earthly'"
+    - name: Checkout code.
+      uses: actions/checkout@v3
     - name: Check compiling.
       run: earthly --ci +check-module-tidying
 
   compiling:
     runs-on: ubuntu-latest
-    env:
-      FORCE_COLOR: 1
     steps:
-    - uses: actions/checkout@v3
-    - name: Download Earthly v0.6.25
-      run: "sudo /bin/sh -c 'wget https://github.com/earthly/earthly/releases/download/v0.6.25/earthly-linux-amd64 -O /usr/local/bin/earthly && chmod +x /usr/local/bin/earthly'"
+    - name: Download Earthly v0.6.30.
+      run: "sudo /bin/sh -c 'wget https://github.com/earthly/earthly/releases/download/v0.6.30/earthly-linux-amd64 -O /usr/local/bin/earthly && chmod +x /usr/local/bin/earthly'"
+    - name: Checkout code.
+      uses: actions/checkout@v3
     - name: Check compiling.
       run: earthly --ci +compiling-linux-amd64
 
   unit-testing:
     runs-on: ubuntu-latest
-    env:
-      FORCE_COLOR: 1
     steps:
-    - uses: actions/checkout@v3
-    - name: Download Earthly v0.6.25
-      run: "sudo /bin/sh -c 'wget https://github.com/earthly/earthly/releases/download/v0.6.25/earthly-linux-amd64 -O /usr/local/bin/earthly && chmod +x /usr/local/bin/earthly'"
+    - name: Download Earthly v0.6.30.
+      run: "sudo /bin/sh -c 'wget https://github.com/earthly/earthly/releases/download/v0.6.30/earthly-linux-amd64 -O /usr/local/bin/earthly && chmod +x /usr/local/bin/earthly'"
+    - name: Checkout code.
+      uses: actions/checkout@v3
     - name: Check compiling.
       run: earthly --ci +unit-testing
