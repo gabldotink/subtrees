@@ -16,4 +16,4 @@ jobs:
         token: ${{ secrets.GITLAB_PERSONAL_ACCESS_TOKEN }}
       run: |
         git remote set-url origin "https://oauth2:${token}@gitlab.com/DeveloperC/starlingbanktechnicalchallenge"
-        git push
+        git push --force
