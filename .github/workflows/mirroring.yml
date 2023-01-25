@@ -1,0 +1,16 @@
+name: Mirroring
+
+on: push
+
+jobs:
+  GitLab:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout code.
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+    - name: Setup mirror URL.
+      run: git remote set-url origin "https://oauth2:${{ secrets.GITLAB_PERSONAL_ACCESS_TOKEN }}@gitlab.com/DeveloperC/starlingbanktechnicalchallenge"
+    - name: Push.
+      run: git push --force
