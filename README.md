@@ -1,4 +1,5 @@
 # Starling Bank Technical Challenge
+[![Continuous Integration (CI)](https://github.com/DeveloperC-Organization/starlingbanktechnicalchallenge/actions/workflows/continuous-integration.yml/badge.svg)](https://github.com/DeveloperC-Organization/starlingbanktechnicalchallenge/actions/workflows/continuous-integration.yml)
 
 We’d like you to develop a “round-up” feature for Starling customers using our public developer API that is available to all customers and partners.
 
