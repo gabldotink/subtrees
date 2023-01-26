@@ -1,6 +1,9 @@
 name: Mirroring
 
-on: push
+on:
+  push:
+    # Only mirroring on the default branch, otherwise dead branches are pushed and never cleaned up.
+    branches: [ main ]
 
 jobs:
   GitLab:
