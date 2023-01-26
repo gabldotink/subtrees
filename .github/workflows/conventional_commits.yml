@@ -1,0 +1,17 @@
+name: Conventional Commits
+
+on: pull_request
+
+jobs:
+  Linting:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code.
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+      - name: Installing conventional_commits_linter.
+        run: cargo install conventional_commits_linter
+      - name: Executing conventional_commits_linter.
+        run: RUST_LOG=trace conventional_commits_linter --allow-angular-type-only --from-reference "origin/${{ github.base_ref }}"
