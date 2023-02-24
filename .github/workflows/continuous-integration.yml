@@ -12,6 +12,16 @@ env:
 
 jobs:
 
+  github-actions-linting:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Installing actionlint.
+      run: "GOBIN=/usr/local/bin/ go install github.com/rhysd/actionlint/cmd/actionlint@latest"
+    - name: Checkout code.
+      uses: actions/checkout@v3
+    - name: Running actionlint.
+      run: "actionlint .github/workflows/*"
+
   formatting:
     runs-on: ubuntu-latest
     steps:
