@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # find domains with format ia######.us.archive.org
 # CC0 Public Domain
-# [gist url]
+# https://gist.github.com/gabldotink/02076e1c66935de876f6a59ac1cd16e7
 
 unset n
 declare -i n='0'
