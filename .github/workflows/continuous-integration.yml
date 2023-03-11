@@ -8,6 +8,19 @@ env:
 
 jobs:
 
+  clean-git-history-checking:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code.
+        uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 0
+      - name: Installing clean_git_history.
+        run: cargo install clean_git_history
+      - name: Executing clean_git_history.
+        run: RUST_LOG=trace clean_git_history --from-reference "origin/${{ github.base_ref }}"
+
   github-actions-linting:
     runs-on: ubuntu-latest
     steps:
