@@ -48,5 +48,5 @@ until [[ "${n}" -gt 999999 ]]; do
 	declare -i n="${n}+1"
 done
 
-printf "finished\n" 1>&2
-printf "note that if you had an unstable connection while searching, some domains may have been missed\n" 1>&2
+printf "finished\n" >&2
+printf "note that if you had an unstable connection while searching, some domains may have been missed\n" >&2
