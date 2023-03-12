@@ -14,5 +14,5 @@
 ## Skills
 
 <center>
-  (https://skillicons.dev/icons?i=js,html,css,lua)](https://skillicons.dev)
+  [![Skills](https://skillicons.dev/icons?i=js,html,css,lua)](https://skillicons.dev)
   </center>
