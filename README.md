@@ -14,6 +14,5 @@
 ## Skills
 
 <center>
-  <img src="(https://skillicons.dev/icons?i=js,html,css,lua)](https://skillicons.dev)"
-       </
+  <img src="(https://skillicons.dev/icons?i=js,html,css,lua)](https://skillicons.dev)" alt="isayiwantacost's Coding Skills"/>
   </center>
