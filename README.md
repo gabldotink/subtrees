@@ -21,8 +21,6 @@
     />
   </a>
 </p>
-  </center>
-  
   <center>
  <summary> Most Used Languages (Stats) </summary>
  
