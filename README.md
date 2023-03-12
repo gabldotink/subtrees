@@ -8,8 +8,8 @@
 
 ## Socials
 
-- [Twitter] (https://twitter.com/zoom12023669)
-- [Youtube] (https://www.youtube.com/channel/UC4k-mtFMXwGZS7L1ql7Dgjw)
+- Twitter (https://twitter.com/zoom12023669)
+- Youtube (https://www.youtube.com/channel/UC4k-mtFMXwGZS7L1ql7Dgjw)
 
 ## Skills
 
