@@ -13,7 +13,7 @@ jobs:
       uses: actions/checkout@v3
       with:
         fetch-depth: 0
-    - name: Setup mirror URL.
+    - name: Setup Git mirror.
       run: git remote set-url origin "https://oauth2:${{ secrets.GITLAB_PERSONAL_ACCESS_TOKEN }}@gitlab.com/DeveloperC/starlingbanktechnicalchallenge"
-    - name: Push.
+    - name: Push to Git mirror.
       run: git push --force
