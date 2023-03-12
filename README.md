@@ -17,7 +17,7 @@
   <p align="center">
   <a href="https://skillicons.dev/" target="_blank">
   <img src="[(https://skillicons.dev/icons?i=js,html,css,lua)](https://skillicons.dev)](https://skillicons.dev/icons?i=html,lua,css,js&theme=dark)"
-       />
+       </img>
     </p>
   </a>
   </center>
