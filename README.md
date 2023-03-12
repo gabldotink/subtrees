@@ -4,4 +4,15 @@
 ### I do the following coding languages:
 #### HTML, LUA, CSS, JAVA\JSON, JAVASCRIPT.
 
-#### ALSO STIRFY SUCKS
+#### ALSO STIRFY IS KINDA COOL
+
+## Socials
+
+- [Twitter] (https://twitter.com/zoom12023669)
+- [Youtube] (https://www.youtube.com/channel/UC4k-mtFMXwGZS7L1ql7Dgjw)
+
+## Skills
+
+<center>
+  (https://skillicons.dev/icons?i=js,html,css,lua)](https://skillicons.dev)
+  </center>
