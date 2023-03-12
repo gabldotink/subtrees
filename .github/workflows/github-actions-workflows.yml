@@ -1,4 +1,4 @@
-name: GitHub Workflows
+name: GitHub Actions Workflows
 
 on: pull_request
 
@@ -7,9 +7,9 @@ jobs:
   Linting:
     runs-on: ubuntu-latest
     steps:
-    - name: Installing actionlint.
+    - name: Install actionlint.
       run: "GOBIN=/usr/local/bin/ go install github.com/rhysd/actionlint/cmd/actionlint@latest"
     - name: Checkout code.
       uses: actions/checkout@v3
-    - name: Running actionlint.
+    - name: Lint GitHub Actions Workflows.
       run: "actionlint .github/workflows/*"
