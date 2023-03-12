@@ -14,10 +14,11 @@
 ## Skills
 
 <center>
-  <p align="center">
+ <p align="center">
   <a href="https://skillicons.dev/" target="_blank">
-  <img src="[(https://skillicons.dev/icons?i=js,html,css,lua)](https://skillicons.dev)](https://skillicons.dev/icons?i=html,lua,css,js&theme=dark)"
-       </img>
-    </p>
+    <img
+      src="https://skillicons.dev/icons?i=github,arduino,blender,cloudflare,css,discord,bots,docker,express,fastapi,firebase,git,githubactions,gitlab,heroku,html,java,js,lua,linux,mongodb,mysql,nodejs,powershell,py,sqlite,stackoverflow,twitter,ts,unity,visualstudio,vscode,wordpress&theme=dark"
+    />
   </a>
+</p>
   </center>
