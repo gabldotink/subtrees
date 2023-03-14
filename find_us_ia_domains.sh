@@ -8,40 +8,40 @@ declare -i n='0'
 
 printf 'looking for domains\n' >&2
 
-until [[ "${n}" -gt 9 ]]; do
-	if curl -s https://ia00000"${n}".us.archive.org &> /dev/null; then
-		printf 'https://ia00000%d.us.archive.org\n' "${n}"
-	fi
-	declare -i n="${n}+1"
-done
+#until [[ "${n}" -gt 9 ]]; do
+#	if curl -s https://ia00000"${n}".us.archive.org &> /dev/null; then
+#		printf 'https://ia00000%d.us.archive.org\n' "${n}"
+#	fi
+#	declare -i n="${n}+1"
+#done
 
-until [[ "${n}" -gt 99 ]]; do
-	if curl -s https://ia0000"${n}".us.archive.org &> /dev/null; then
-		printf 'https://ia0000%d.us.archive.org\n' "${n}"
-	fi
-	declare -i n="${n}+1"
-done
+#until [[ "${n}" -gt 99 ]]; do
+#	if curl -s https://ia0000"${n}".us.archive.org &> /dev/null; then
+#		printf 'https://ia0000%d.us.archive.org\n' "${n}"
+#	fi
+#	declare -i n="${n}+1"
+#done
 
-until [[ "${n}" -gt 999 ]]; do
-	if curl -s https://ia000"${n}".us.archive.org &> /dev/null; then
-		printf 'https://ia000%d.us.archive.org\n' "${n}"
-	fi
-	declare -i n="${n}+1"
-done
+#until [[ "${n}" -gt 999 ]]; do
+#	if curl -s https://ia000"${n}".us.archive.org &> /dev/null; then
+#		printf 'https://ia000%d.us.archive.org\n' "${n}"
+#	fi
+#	declare -i n="${n}+1"
+#done
 
-until [[ "${n}" -gt 9999 ]]; do
-	if curl -s https://ia00"${n}".us.archive.org &> /dev/null; then
-		printf 'https://ia00%d.us.archive.org\n' "${n}"
-	fi
-	declare -i n="${n}+1"
-done
+#until [[ "${n}" -gt 9999 ]]; do
+#	if curl -s https://ia00"${n}".us.archive.org &> /dev/null; then
+#		printf 'https://ia00%d.us.archive.org\n' "${n}"
+#	fi
+#	declare -i n="${n}+1"
+#done
 
-until [[ "${n}" -gt 99999 ]]; do
-	if curl -s https://ia0"${n}".us.archive.org &> /dev/null; then
-		printf 'https://ia0%d.us.archive.org\n' "${n}"
-	fi
-	declare -i n="${n}+1"
-done
+#until [[ "${n}" -gt 99999 ]]; do
+#	if curl -s https://ia0"${n}".us.archive.org &> /dev/null; then
+#		printf 'https://ia0%d.us.archive.org\n' "${n}"
+#	fi
+#	declare -i n="${n}+1"
+#done
 
 until [[ "${n}" -gt 999999 ]]; do
 	if curl -s https://ia"${n}".us.archive.org &> /dev/null; then
