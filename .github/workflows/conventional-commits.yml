@@ -20,16 +20,12 @@ jobs:
   Next-Version:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code.
-        uses: actions/checkout@v3
-        with:
-          ref: ${{ github.event.pull_request.head.sha }}
-          fetch-depth: 0
-      - name: Installing conventional_commits_next_version.
-        run: cargo install conventional_commits_next_version
-      - name: Get current verison.
-        run: echo "current_version=$(cat 'VERSION')" >> "${GITHUB_ENV}"
-      - name: Get latest tag.
-        run: echo "latest_tag=$(git show origin/${{ github.base_ref }}:VERSION)" >> "${GITHUB_ENV}"
-      - name: Executing conventional_commits_next_version
-        run: RUST_LOG=trace conventional_commits_next_version --calculation-mode "Batch" --from-reference "origin/${{ github.base_ref }}" --from-version "${latest_tag}" --current-version "${current_version}"
+    - name: Download Earthly v0.6.30.
+      run: "sudo /bin/sh -c 'wget https://github.com/earthly/earthly/releases/download/v0.6.30/earthly-linux-amd64 -O /usr/local/bin/earthly && chmod +x /usr/local/bin/earthly'"
+    - name: Checkout code.
+      uses: actions/checkout@v3
+      with:
+        ref: ${{ github.event.pull_request.head.sha }}
+        fetch-depth: 0
+    - name: Checking expected vs current version.
+      run: earthly --ci +conventional-commits-next-version-checking --from_reference "origin/${{ github.base_ref }}"

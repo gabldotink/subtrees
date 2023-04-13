@@ -24,6 +24,14 @@ conventional-commits-linting:
     RUN ./ci/conventional-commits-linting.sh --from-reference "${from_reference}"
 
 
+conventional-commits-next-version-checking:
+    FROM rust
+    RUN cargo install conventional_commits_next_version
+    DO +COPY_METADATA
+    ARG from_reference="origin/HEAD"
+    RUN ./ci/conventional-commits-next-version-checking.sh --from-reference "${from_reference}"
+
+
 INSTALL_DEPENDENCIES:
     COMMAND
     COPY "go.mod" "go.mod"
