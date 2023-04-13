@@ -11,15 +11,15 @@ jobs:
   clean-git-history-checking:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout code.
-        uses: actions/checkout@v3
-        with:
-          ref: ${{ github.event.pull_request.head.sha }}
-          fetch-depth: 0
-      - name: Installing clean_git_history.
-        run: cargo install clean_git_history
-      - name: Executing clean_git_history.
-        run: RUST_LOG=trace clean_git_history --from-reference "origin/${{ github.base_ref }}"
+    - name: Download Earthly v0.6.30.
+      run: "sudo /bin/sh -c 'wget https://github.com/earthly/earthly/releases/download/v0.6.30/earthly-linux-amd64 -O /usr/local/bin/earthly && chmod +x /usr/local/bin/earthly'"
+    - name: Checkout code.
+      uses: actions/checkout@v3
+      with:
+        ref: ${{ github.event.pull_request.head.sha }}
+        fetch-depth: 0
+    - name: Check history.
+      run: earthly --ci +clean-git-history-checking --from_reference "origin/${{ github.base_ref }}"
 
   formatting:
     runs-on: ubuntu-latest
@@ -48,7 +48,7 @@ jobs:
       run: "sudo /bin/sh -c 'wget https://github.com/earthly/earthly/releases/download/v0.6.30/earthly-linux-amd64 -O /usr/local/bin/earthly && chmod +x /usr/local/bin/earthly'"
     - name: Checkout code.
       uses: actions/checkout@v3
-    - name: Check compiling.
+    - name: Check module.
       run: earthly --ci +check-module-tidying
 
   compiling:
@@ -68,5 +68,5 @@ jobs:
       run: "sudo /bin/sh -c 'wget https://github.com/earthly/earthly/releases/download/v0.6.30/earthly-linux-amd64 -O /usr/local/bin/earthly && chmod +x /usr/local/bin/earthly'"
     - name: Checkout code.
       uses: actions/checkout@v3
-    - name: Check compiling.
+    - name: Check unit testing.
       run: earthly --ci +unit-testing

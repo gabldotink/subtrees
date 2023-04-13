@@ -1,5 +1,21 @@
 VERSION 0.6
 
+
+COPY_METADATA:
+    COMMAND
+    COPY "./ci" "./ci"
+    COPY ".git" ".git"
+    COPY "./VERSION" "./VERSION"
+
+
+clean-git-history-checking:
+    FROM rust
+    RUN cargo install clean_git_history
+    DO +COPY_METADATA
+    ARG from_reference="origin/HEAD"
+    RUN ./ci/clean-git-history-checking.sh --from-reference "${from_reference}"
+
+
 INSTALL_DEPENDENCIES:
     COMMAND
     COPY "go.mod" "go.mod"
