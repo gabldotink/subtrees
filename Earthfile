@@ -16,6 +16,14 @@ clean-git-history-checking:
     RUN ./ci/clean-git-history-checking.sh --from-reference "${from_reference}"
 
 
+conventional-commits-linting:
+    FROM rust
+    RUN cargo install conventional_commits_linter
+    DO +COPY_METADATA
+    ARG from_reference="origin/HEAD"
+    RUN ./ci/conventional-commits-linting.sh --from-reference "${from_reference}"
+
+
 INSTALL_DEPENDENCIES:
     COMMAND
     COPY "go.mod" "go.mod"
