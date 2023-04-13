@@ -1,19 +1,17 @@
 name: Mirroring
-
 on:
   push:
     # Only mirroring on the default branch, otherwise dead branches are pushed and never cleaned up.
-    branches: [ main ]
-
+    branches: [main]
 jobs:
   GitLab:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout code.
-      uses: actions/checkout@v3
-      with:
-        fetch-depth: 0
-    - name: Setup Git mirror.
-      run: git remote set-url origin "https://oauth2:${{ secrets.GITLAB_PERSONAL_ACCESS_TOKEN }}@gitlab.com/DeveloperC/starlingbanktechnicalchallenge"
-    - name: Push to Git mirror.
-      run: git push --force
+      - name: Checkout code.
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Setup Git mirror.
+        run: git remote set-url origin "https://oauth2:${{ secrets.GITLAB_PERSONAL_ACCESS_TOKEN }}@gitlab.com/DeveloperC/starlingbanktechnicalchallenge"
+      - name: Push to Git mirror.
+        run: git push --force
