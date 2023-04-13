@@ -1,9 +1,15 @@
 VERSION 0.6
 
 
-COPY_METADATA:
+COPY_CI_DATA:
     COMMAND
     COPY "./ci" "./ci"
+    COPY ".github" ".github"
+
+
+COPY_METADATA:
+    COMMAND
+    DO +COPY_CI_DATA
     COPY ".git" ".git"
     COPY "./VERSION" "./VERSION"
 
@@ -41,7 +47,7 @@ INSTALL_DEPENDENCIES:
 
 COPY_SOURCECODE:
     COMMAND
-    COPY "./ci" "./ci"
+    DO +COPY_CI_DATA
     COPY "./cmd" "./cmd"
     COPY "./api" "./api"
 
@@ -66,6 +72,15 @@ check-formatting:
     DO +INSTALL_DEPENDENCIES
     DO +COPY_SOURCECODE
     RUN ./ci/check-formatting.sh
+
+
+check-yaml-formatting:
+    FROM ubuntu
+    RUN apt-get update
+    RUN apt-get install wget -y
+	RUN wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq && chmod +x /usr/bin/yq
+    DO +COPY_CI_DATA
+    RUN ./ci/check-yaml-formatting.sh
 
 
 fix-formatting:

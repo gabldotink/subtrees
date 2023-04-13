@@ -21,6 +21,16 @@ jobs:
     - name: Check history.
       run: earthly --ci +clean-git-history-checking --from_reference "origin/${{ github.base_ref }}"
 
+  yaml-formatting:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Download Earthly v0.6.30.
+      run: "sudo /bin/sh -c 'wget https://github.com/earthly/earthly/releases/download/v0.6.30/earthly-linux-amd64 -O /usr/local/bin/earthly && chmod +x /usr/local/bin/earthly'"
+    - name: Checkout code.
+      uses: actions/checkout@v3
+    - name: Check formatting.
+      run: earthly --ci +check-yaml-formatting
+
   formatting:
     runs-on: ubuntu-latest
     steps:
