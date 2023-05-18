@@ -67,7 +67,7 @@ golang-base:
     ENV GOARCH=amd64
 
 
-check-formatting:
+check-go-formatting:
     FROM +golang-base
     DO +INSTALL_DEPENDENCIES
     DO +COPY_SOURCECODE
@@ -84,6 +84,7 @@ check-sh-formatting:
     FROM +sh-formatting-base
     RUN ./ci/check-sh-formatting.sh
 
+
 yaml-formatting-base:
     FROM ubuntu
     RUN apt-get update
@@ -95,6 +96,12 @@ yaml-formatting-base:
 check-yaml-formatting:
     FROM +yaml-formatting-base
     RUN ./ci/check-yaml-formatting.sh
+
+
+check-formatting:
+    BUILD +check-go-formatting
+    BUILD +check-sh-formatting
+    BUILD +check-yaml-formatting
 
 
 fix-formatting:

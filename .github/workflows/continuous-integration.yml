@@ -34,7 +34,7 @@ jobs:
         uses: actions/checkout@v3
       - name: Check formatting.
         run: earthly --ci +check-yaml-formatting
-  formatting:
+  go-formatting:
     runs-on: ubuntu-latest
     steps:
       - name: Download Earthly v0.7.5.
@@ -42,7 +42,7 @@ jobs:
       - name: Checkout code.
         uses: actions/checkout@v3
       - name: Check formatting.
-        run: earthly --ci +check-formatting
+        run: earthly --ci +check-go-formatting
   linting:
     runs-on: ubuntu-latest
     steps:
