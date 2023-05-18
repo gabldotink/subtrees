@@ -104,7 +104,7 @@ check-formatting:
     BUILD +check-yaml-formatting
 
 
-fix-formatting:
+fix-go-formatting:
     FROM +golang-base
     DO +INSTALL_DEPENDENCIES
     DO +COPY_SOURCECODE
@@ -123,6 +123,11 @@ fix-yaml-formatting:
     RUN ./ci/fix-yaml-formatting.sh
     SAVE ARTIFACT "./.github" AS LOCAL "./.github"
 
+
+fix-formatting:
+    BUILD +fix-go-formatting
+    BUILD +fix-sh-formatting
+    BUILD +fix-yaml-formatting
 
 linting:
     FROM +golang-base
