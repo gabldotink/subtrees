@@ -175,3 +175,14 @@ unit-testing:
     DO +INSTALL_DEPENDENCIES
     DO +COPY_SOURCECODE
     RUN ./ci/unit-testing.sh
+
+
+releasing:
+    FROM ubuntu
+    RUN apt-get update
+    RUN apt-get install wget git -y
+    RUN wget https://github.com/cli/cli/releases/download/v2.29.0/gh_2.29.0_linux_amd64.tar.gz
+    RUN tar -xzvf gh_2.29.0_linux_amd64.tar.gz
+    RUN cp ./gh_2.29.0_linux_amd64/bin/gh /bin/gh
+    DO +COPY_METADATA
+    RUN --secret GH_TOKEN ./ci/releasing.sh
