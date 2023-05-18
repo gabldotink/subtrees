@@ -74,10 +74,14 @@ check-formatting:
     RUN ./ci/check-formatting.sh
 
 
-check-sh-formatting:
+sh-formatting-base:
     FROM golang
 	RUN go install mvdan.cc/sh/v3/cmd/shfmt@latest
     DO +COPY_CI_DATA
+
+
+check-sh-formatting:
+    FROM +sh-formatting-base
     RUN ./ci/check-sh-formatting.sh
 
 
@@ -96,6 +100,12 @@ fix-formatting:
     DO +COPY_SOURCECODE
     RUN ./ci/fix-formatting.sh
     SAVE ARTIFACT "./src" AS LOCAL "./src"
+
+
+fix-sh-formatting:
+    FROM +sh-formatting-base
+    RUN ./ci/fix-sh-formatting.sh
+    SAVE ARTIFACT "./ci" AS LOCAL "./ci"
 
 
 linting:
