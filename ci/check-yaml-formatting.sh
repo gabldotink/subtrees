@@ -6,7 +6,7 @@ set -o xtrace
 exit_code=0
 
 # Iterate over all the YAML files in the repository.
-for file in $(find "." -type f -name "*.yml" -o -name "*.yaml"); do
+for file in $(find "./.github" -type f -name "*.yml" -o -name "*.yaml"); do
 	# Format the YAML file.
 	cp "${file}" "${file}.formatted"
 	yq --inplace "${file}.formatted"

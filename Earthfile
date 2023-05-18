@@ -84,13 +84,16 @@ check-sh-formatting:
     FROM +sh-formatting-base
     RUN ./ci/check-sh-formatting.sh
 
-
-check-yaml-formatting:
+yaml-formatting-base:
     FROM ubuntu
     RUN apt-get update
     RUN apt-get install wget -y
 	RUN wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq && chmod +x /usr/bin/yq
     DO +COPY_CI_DATA
+
+
+check-yaml-formatting:
+    FROM +yaml-formatting-base
     RUN ./ci/check-yaml-formatting.sh
 
 
@@ -106,6 +109,12 @@ fix-sh-formatting:
     FROM +sh-formatting-base
     RUN ./ci/fix-sh-formatting.sh
     SAVE ARTIFACT "./ci" AS LOCAL "./ci"
+
+
+fix-yaml-formatting:
+    FROM +yaml-formatting-base
+    RUN ./ci/fix-yaml-formatting.sh
+    SAVE ARTIFACT "./.github" AS LOCAL "./.github"
 
 
 linting:
