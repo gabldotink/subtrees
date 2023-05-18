@@ -74,6 +74,13 @@ check-formatting:
     RUN ./ci/check-formatting.sh
 
 
+check-sh-formatting:
+    FROM golang
+	RUN go install mvdan.cc/sh/v3/cmd/shfmt@latest
+    DO +COPY_CI_DATA
+    RUN ./ci/check-sh-formatting.sh
+
+
 check-yaml-formatting:
     FROM ubuntu
     RUN apt-get update
