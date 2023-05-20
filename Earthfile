@@ -137,6 +137,14 @@ go-linting:
     RUN ./ci/go-linting.sh
 
 
+sh-linting:
+    FROM ubuntu
+    RUN apt-get update
+    RUN apt-get install shellcheck -y
+    DO +COPY_CI_DATA
+    RUN ./ci/sh-linting.sh
+
+
 github-actions-workflows-linting:
     FROM +golang-base
     RUN go install github.com/rhysd/actionlint/cmd/actionlint@v1.6.24
@@ -146,6 +154,7 @@ github-actions-workflows-linting:
 
 linting:
     BUILD +go-linting
+    BUILD +sh-linting
     BUILD +github-actions-workflows-linting
 
 
