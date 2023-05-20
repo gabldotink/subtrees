@@ -71,7 +71,7 @@ check-go-formatting:
     FROM +golang-base
     DO +INSTALL_DEPENDENCIES
     DO +COPY_SOURCECODE
-    RUN ./ci/check-formatting.sh
+    RUN ./ci/check-go-formatting.sh
 
 
 sh-formatting-base:
@@ -108,7 +108,7 @@ fix-go-formatting:
     FROM +golang-base
     DO +INSTALL_DEPENDENCIES
     DO +COPY_SOURCECODE
-    RUN ./ci/fix-formatting.sh
+    RUN ./ci/fix-go-formatting.sh
     SAVE ARTIFACT "./src" AS LOCAL "./src"
 
 
