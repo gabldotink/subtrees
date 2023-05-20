@@ -137,8 +137,17 @@ go-linting:
     RUN ./ci/go-linting.sh
 
 
+github-actions-workflows-linting:
+    FROM golang
+    ENV GOPROXY=direct
+    RUN go install github.com/rhysd/actionlint/cmd/actionlint@v1.6.24
+    DO +COPY_METADATA
+    RUN ./ci/github-actions-workflows-linting.sh
+
+
 linting:
     BUILD +go-linting
+    BUILD +github-actions-workflows-linting
 
 
 check-module-tidying:
