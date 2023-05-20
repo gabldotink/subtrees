@@ -138,8 +138,7 @@ go-linting:
 
 
 github-actions-workflows-linting:
-    FROM golang
-    ENV GOPROXY=direct
+    FROM +golang-base
     RUN go install github.com/rhysd/actionlint/cmd/actionlint@v1.6.24
     DO +COPY_METADATA
     RUN ./ci/github-actions-workflows-linting.sh
