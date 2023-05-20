@@ -129,12 +129,16 @@ fix-formatting:
     BUILD +fix-sh-formatting
     BUILD +fix-yaml-formatting
 
-linting:
+go-linting:
     FROM +golang-base
     RUN go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.50.0
     DO +INSTALL_DEPENDENCIES
     DO +COPY_SOURCECODE
-    RUN ./ci/linting.sh
+    RUN ./ci/go-linting.sh
+
+
+linting:
+    BUILD +go-linting
 
 
 check-module-tidying:
