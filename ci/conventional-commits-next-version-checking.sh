@@ -60,7 +60,7 @@ set -o xtrace
 # Get current version.
 current_version=$(cat "VERSION")
 # Get latest tag.
-latest_tag=$(git show ${_arg_from_reference}:VERSION)
+latest_tag=$(git show "${_arg_from_reference}":VERSION)
 # Check current vs expected.
 "${CARGO_HOME}/bin/conventional_commits_next_version" --calculation-mode "Batch" --from-reference "${_arg_from_reference}" --from-version "${latest_tag}" --current-version "${current_version}"
 # ] <-- needed because of Argbash

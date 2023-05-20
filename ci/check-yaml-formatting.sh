@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 set -o errexit
 set -o xtrace
@@ -6,7 +6,7 @@ set -o xtrace
 exit_code=0
 
 # Iterate over all the YAML files in the repository.
-for file in $(find "./.github" -type f -name "*.yml" -o -name "*.yaml"); do
+while IFS= read -r -d '' file; do
 	# Format the YAML file.
 	cp "${file}" "${file}.formatted"
 	yq --inplace "${file}.formatted"
@@ -16,6 +16,6 @@ for file in $(find "./.github" -type f -name "*.yml" -o -name "*.yaml"); do
 
 	# Cleanup.
 	rm "${file}.formatted"
-done
+done < <(find "./.github" -type f \( -name "*.yml" -o -name "*.yaml" \) -print0)
 
 exit "${exit_code}"

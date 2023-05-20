@@ -13,6 +13,6 @@ base_commit=$(git rev-list --max-parents=0 HEAD)
 latest_tag=$(git describe --exact-match --tags || echo "")
 notes_from="${latest_tag:-${base_commit}}"
 # Generate the release notes.
-release_notes=$(git log --format="* %s" ${notes_from}.. --no-merges)
+release_notes=$(git log --format="* %s" "${notes_from}".. --no-merges)
 # Create release and the tag.
 gh release create "${current_version}" --notes "${release_notes}"
