@@ -17,4 +17,4 @@ jobs:
       - name: Setup Git mirror.
         run: git remote set-url origin "https://oauth2:${{ secrets.GITLAB_PERSONAL_ACCESS_TOKEN }}@gitlab.com/DeveloperC/starlingbanktechnicalchallenge"
       - name: Push to Git mirror.
-        run: git push --force
+        run: git push --follow-tags --force
