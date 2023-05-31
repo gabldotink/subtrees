@@ -85,9 +85,14 @@ check-sh-formatting:
     RUN ./ci/check-sh-formatting.sh
 
 
-yaml-formatting-base:
+ubuntu-base:
     FROM ubuntu
-    RUN apt-get update
+	# https://askubuntu.com/questions/462690/what-does-apt-get-fix-missing-do-and-when-is-it-useful
+    RUN apt-get update --fix-missing
+
+
+yaml-formatting-base:
+    FROM +ubuntu-base
     RUN apt-get install wget -y
 	RUN wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq && chmod +x /usr/bin/yq
     DO +COPY_CI_DATA
@@ -138,8 +143,7 @@ go-linting:
 
 
 sh-linting:
-    FROM ubuntu
-    RUN apt-get update
+    FROM +ubuntu-base
     RUN apt-get install shellcheck -y
     DO +COPY_CI_DATA
     RUN ./ci/sh-linting.sh
@@ -199,8 +203,7 @@ unit-testing:
 
 
 releasing:
-    FROM ubuntu
-    RUN apt-get update
+    FROM +ubuntu-base
     RUN apt-get install wget git -y
     # Install GitHub CLI.
     ENV GH_VERSION=2.29.0
