@@ -202,8 +202,10 @@ releasing:
     FROM ubuntu
     RUN apt-get update
     RUN apt-get install wget git -y
-    RUN wget https://github.com/cli/cli/releases/download/v2.29.0/gh_2.29.0_linux_amd64.tar.gz
-    RUN tar -xzvf gh_2.29.0_linux_amd64.tar.gz
-    RUN cp ./gh_2.29.0_linux_amd64/bin/gh /bin/gh
+    # Install GitHub CLI.
+    ENV GH_VERSION=2.29.0
+    RUN wget "https://github.com/cli/cli/releases/download/v${GH_VERSION}/gh_${GH_VERSION}_linux_amd64.tar.gz"
+    RUN tar -xzvf "gh_${GH_VERSION}_linux_amd64.tar.gz"
+    RUN cp "./gh_${GH_VERSION}_linux_amd64/bin/gh" /bin/gh
     DO +COPY_METADATA
     RUN --secret GH_TOKEN ./ci/releasing.sh
