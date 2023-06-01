@@ -59,7 +59,7 @@ SAVE_OUTPUT:
 
 
 golang-base:
-    FROM golang:1.19
+    FROM golang:1.20.4
     WORKDIR /tmp/starling-bank-technical-challenge
     ENV GOPROXY=direct
     ENV CGO_ENABLED=0
