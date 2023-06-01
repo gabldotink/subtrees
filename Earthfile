@@ -206,7 +206,7 @@ releasing:
     FROM +ubuntu-base
     RUN apt-get install wget git -y
     # Install GitHub CLI.
-    ENV GH_VERSION=2.29.0
+    ENV GH_VERSION=2.30.0
     RUN wget "https://github.com/cli/cli/releases/download/v${GH_VERSION}/gh_${GH_VERSION}_linux_amd64.tar.gz"
     RUN tar -xzvf "gh_${GH_VERSION}_linux_amd64.tar.gz"
     RUN cp "./gh_${GH_VERSION}_linux_amd64/bin/gh" /bin/gh
