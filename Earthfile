@@ -210,5 +210,10 @@ releasing:
     RUN wget "https://github.com/cli/cli/releases/download/v${GH_VERSION}/gh_${GH_VERSION}_linux_amd64.tar.gz"
     RUN tar -xzvf "gh_${GH_VERSION}_linux_amd64.tar.gz"
     RUN cp "./gh_${GH_VERSION}_linux_amd64/bin/gh" /bin/gh
+    # Install Git Cliff.
+    ENV GIT_CLIFF_VERSION=1.2.0
+    RUN wget "https://github.com/orhun/git-cliff/releases/download/v${GIT_CLIFF_VERSION}/git-cliff-${GIT_CLIFF_VERSION}-x86_64-unknown-linux-gnu.tar.gz"
+    RUN tar -xzvf "git-cliff-${GIT_CLIFF_VERSION}-x86_64-unknown-linux-gnu.tar.gz"
+    RUN cp "./git-cliff-${GIT_CLIFF_VERSION}/git-cliff" /bin/git-cliff
     DO +COPY_METADATA
     RUN --secret GH_TOKEN ./ci/releasing.sh
