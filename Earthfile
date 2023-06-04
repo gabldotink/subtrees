@@ -14,8 +14,12 @@ COPY_METADATA:
     COPY "./VERSION" "./VERSION"
 
 
+rust-base:
+    FROM rust:1.70.0
+
+
 clean-git-history-checking:
-    FROM rust
+    FROM +rust-base
     RUN cargo install clean_git_history
     DO +COPY_METADATA
     ARG from_reference="origin/HEAD"
@@ -23,7 +27,7 @@ clean-git-history-checking:
 
 
 conventional-commits-linting:
-    FROM rust
+    FROM +rust-base
     RUN cargo install conventional_commits_linter
     DO +COPY_METADATA
     ARG from_reference="origin/HEAD"
@@ -31,7 +35,7 @@ conventional-commits-linting:
 
 
 conventional-commits-next-version-checking:
-    FROM rust
+    FROM +rust-base
     RUN cargo install conventional_commits_next_version
     DO +COPY_METADATA
     ARG from_reference="origin/HEAD"
