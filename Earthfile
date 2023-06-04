@@ -98,7 +98,7 @@ ubuntu-base:
 yaml-formatting-base:
     FROM +ubuntu-base
     RUN apt-get install wget -y
-	RUN wget https://github.com/mikefarah/yq/releases/latest/download/yq_linux_amd64 -O /usr/bin/yq && chmod +x /usr/bin/yq
+	RUN wget https://github.com/mikefarah/yq/releases/download/v4.34.1/yq_linux_amd64 -O /usr/bin/yq && chmod +x /usr/bin/yq
     DO +COPY_CI_DATA
 
 
