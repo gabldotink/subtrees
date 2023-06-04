@@ -80,7 +80,7 @@ check-go-formatting:
 
 sh-formatting-base:
     FROM golang
-	RUN go install mvdan.cc/sh/v3/cmd/shfmt@latest
+	RUN go install mvdan.cc/sh/v3/cmd/shfmt@v3.6.0
     DO +COPY_CI_DATA
 
 
