@@ -90,7 +90,7 @@ check-sh-formatting:
 
 
 ubuntu-base:
-    FROM ubuntu
+    FROM ubuntu:22.04
 	# https://askubuntu.com/questions/462690/what-does-apt-get-fix-missing-do-and-when-is-it-useful
     RUN apt-get update --fix-missing
 
