@@ -28,7 +28,7 @@ clean-git-history-checking:
 
 conventional-commits-linting:
     FROM +rust-base
-    RUN cargo install conventional_commits_linter
+    RUN cargo install conventional_commits_linter --version 0.12.3
     DO +COPY_METADATA
     ARG from_reference="origin/HEAD"
     RUN ./ci/conventional-commits-linting.sh --from-reference "${from_reference}"
