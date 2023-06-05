@@ -36,7 +36,7 @@ conventional-commits-linting:
 
 conventional-commits-next-version-checking:
     FROM +rust-base
-    RUN cargo install conventional_commits_next_version
+    RUN cargo install conventional_commits_next_version --version 6.0.0
     DO +COPY_METADATA
     ARG from_reference="origin/HEAD"
     RUN ./ci/conventional-commits-next-version-checking.sh --from-reference "${from_reference}"
