@@ -20,7 +20,7 @@ rust-base:
 
 clean-git-history-checking:
     FROM +rust-base
-    RUN cargo install clean_git_history
+    RUN cargo install clean_git_history --version 0.1.2
     DO +COPY_METADATA
     ARG from_reference="origin/HEAD"
     RUN ./ci/clean-git-history-checking.sh --from-reference "${from_reference}"
