@@ -14,5 +14,8 @@ latest_tag=$(git describe --exact-match --tags || echo "")
 notes_from="${latest_tag:-${base_commit}}"
 # Generate the release notes.
 release_notes=$(git-cliff "${notes_from}.." --tag "${current_version}" --strip all)
-# Create release and the tag.
+# Create the tag.
+git tag -a "${current_version}" -m "${release_notes}"
+git push "${current_version}"
+# Create the release.
 gh release create "${current_version}" --notes "${release_notes}"
