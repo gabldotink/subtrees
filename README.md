@@ -9,7 +9,7 @@
 ## Socials
 
 - Twitter (https://twitter.com/zoom12023669)
-- Youtube ([https://www.youtube.com/channel/UCxvzFWL25XauoLK3BDJEoNA])
+- Youtube (https://www.youtube.com/channel/UCxvzFWL25XauoLK3BDJEoNA)
 
 ## Skills
 
