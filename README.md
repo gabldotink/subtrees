@@ -4,8 +4,6 @@
 ### I do the following coding languages:
 #### HTML, LUA, CSS, JAVA\JSON, JAVASCRIPT.
 
-#### ALSO STIRFY IS KINDA COOL
-
 ## Socials
 
 - Twitter (https://twitter.com/zoom12023669)
