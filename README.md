@@ -1,7 +1,7 @@
 ### Hi there 👋
 
-### I am isayiwantacost, or also known as Anvil.
-### I do the following coding languages:
+### I am isayiwantacost, or also known as Anvil. I am a Frontend Dev
+### I code in the following coding languages:
 #### HTML, LUA, CSS, JAVA\JSON, JAVASCRIPT.
 
 ## Socials
