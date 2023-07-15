@@ -1,0 +1,92 @@
+---
+Accessibility:
+  - folhascadentes/mamao-app
+
+Business Software:
+  - tsuru/tsuru
+  - RocketChat/Rocket.Chat
+  - RocketChat/Rocket.Chat.ReactNative
+
+Consumer Software:
+  - maykbrito/mini-video-me
+  - clappr/clappr
+  - devhubapp/devhub
+  - raphamorim/rio
+
+Data Science & Engineering:
+  - BrasilAPI/BrasilAPI
+
+Developer Productivity & Tools:
+  - editor-bootstrap/vim-bootstrap
+  - glorious-codes/glorious-demo
+  - fsouza/go-dockerclient
+  - kazzkiq/balloon.css
+  - lpereira/lwan
+  - dynaconf/dynaconf
+  - open-cli-tools/concurrently
+  - goreleaser/goreleaser
+  - htop-dev/htop
+  - heartcombo/devise
+  - ellisonleao/magictools
+  - go-task/task
+  - dracula/dracula-theme
+  - OtacilioN/Brasilino
+  - brazilian-utils/brazilian-utils
+  - shellhub-io/shellhub
+  - raphamorim/react-ape
+  - avelino/awesome-go
+  - ujizin/camposer
+  - undistro/cel-playground
+  - backend-br/vagas
+  - backend-br/desafios
+
+Observability:
+  - badtuxx/giropops-monitoring
+
+Machine Learning:
+  - nubank/fklearn
+  
+Observability:
+  - badtuxx/giropops-monitoring
+  
+Frameworks:
+  - expressots/expressots
+
+Libraries:
+  - giggio/node-chromedriver
+
+GitHub Power-Ups:
+  - iuricode/readme-template
+
+Learning & Education:
+  - leandromoreira/ffmpeg-libav-tutorial
+  - CollabCodeTech/backend-challenges
+  - badtuxx/DescomplicandoKubernetes
+  - badtuxx/DescomplicandoDocker
+  - Universidade-Livre/ciencia-da-computacao
+  - felipefialho/frontend-challenges
+  - flaviojmendes/trilhainfo
+  - gustavofreze/kotlin4noobs
+  - OtacilioN/awesome-hacktoberfest
+  - ReciHub/FunnyAlgorithms
+  
+Machine Learning:
+  - nubank/fklearn
+
+Observability:
+  - badtuxx/giropops-monitoring
+
+Software Testing:
+  - scanapi/scanapi
+
+UI/UX:
+  - milligram/milligram
+
+Security & Privacy:
+  - htrgouvea/nipe
+  - undistro/zora
+  - undistro/marvin
+  - halencarjunior/BugBuntu
+
+Azure DevOps Tools:
+  - vinijmoura/Azure-DevOps
