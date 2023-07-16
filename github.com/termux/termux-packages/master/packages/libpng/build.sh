@@ -1,0 +1,11 @@
+TERMUX_PKG_HOMEPAGE=http://www.libpng.org/pub/png/libpng.html
+TERMUX_PKG_DESCRIPTION="Official PNG reference library"
+TERMUX_PKG_LICENSE="Libpng"
+TERMUX_PKG_MAINTAINER="@termux"
+TERMUX_PKG_VERSION=1.6.40
+TERMUX_PKG_SRCURL=https://download.sourceforge.net/libpng/libpng-$TERMUX_PKG_VERSION.tar.xz
+TERMUX_PKG_SHA256=535b479b2467ff231a3ec6d92a525906fb8ef27978be4f66dbe05d3f3a01b3a1
+TERMUX_PKG_DEPENDS="zlib"
+TERMUX_PKG_BREAKS="libpng-dev"
+TERMUX_PKG_REPLACES="libpng-dev"
+TERMUX_PKG_RM_AFTER_INSTALL="bin/png-fix-itxt bin/pngfix"
