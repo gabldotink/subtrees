@@ -1,0 +1,54 @@
+{
+  "name": "spectrum",
+  "displayName": "Spectrum",
+  "publisher": "githubocto",
+  "description": "An extension that helps you quickly find and copy a VSCode theme token or underlying color value.",
+  "version": "0.3.0",
+  "engines": {
+    "vscode": "^1.46.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/githubnext/spectrum"
+  },
+  "icon": "docs/icon.png",
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:spectrum.showTokens"
+  ],
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "spectrum.showTokens",
+        "title": "Show theme tokens",
+        "category": "Spectrum",
+        "icon": "$(paintcan)"
+      }
+    ]
+  },
+  "scripts": {
+    "install:all": "npm install && npm --prefix ./webview-ui install ./webview-ui",
+    "start:webview": "npm --prefix ./webview-ui run start",
+    "build:webview": "npm --prefix ./webview-ui run build",
+    "vscode:prepublish": "npm run compile && npm run build:webview",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.1.3",
+    "@types/node": "^12.11.7",
+    "@types/vscode": "^1.46.0",
+    "@typescript-eslint/eslint-plugin": "^4.14.1",
+    "@typescript-eslint/parser": "^4.14.1",
+    "eslint": "^7.19.0",
+    "glob": "^7.1.6",
+    "prettier": "^2.2.1",
+    "typescript": "^4.1.3",
+    "vscode-test": "^1.5.0"
+  }
+}
