@@ -1,0 +1,263 @@
+# Order by section, and, unless otherwise noted, by
+# first author initials and then program path
+
+# From Libes and Ressler, Life with Unix pp. 29-36
+# Ordered by author login name
+usr/src/libdbm/.*		aho
+usr/man/man3/dbm\.3x		aho
+usr/include/varargs.h		ark
+usr/man/man1/tar.1		cbh
+usr/src/cmd/tar/.*		cbh
+usr/src/cmd/find\.c		haight
+usr/man/man1/find\.1		haight
+usr/man/man1/expr\.1		haight
+usr/src/cmd/expr\.y		haight
+usr/src/cmd/uucp/pk[01]\.c	xtp
+usr/man/man5/mpxio\.5		xtp
+usr/man/man2/mpx\.2		xtp
+usr/man/man2/mpxcall\.2		xtp
+usr/include/sys/mpx\.h		xtp
+usr/src/libc/gen/mpx\.c		xtp
+usr/src/libc/sys/mpxcall\.s	xtp
+usr/sys/h/mpx\.h		xtp
+
+# Contributed via email
+usr/man/man1/deroff\.1		llc
+usr/src/cmd/deroff\.c		llc
+
+# 1. Owner listed in V1/man
+# http://minnie.tuhs.org/cgi-bin/utree.pl?file=V1/man/man1
+
+usr/src/cmd/cmp\.c		dmr
+usr/src/cmd/date\.c		dmr
+usr/src/cmd/du\.c		dmr
+usr/src/cmd/ld\.c		dmr
+usr/src/cmd/strip\.c		dmr
+usr/src/cmd/ls\.c		dmr,ken
+usr/src/cmd/mesg\.c		dmr,ken
+usr/src/cmd/nm\.c		dmr,ken
+usr/src/cmd/su\.c		dmr,ken
+usr/src/cmd/tty\.c		dmr,ken
+usr/src/cmd/wc\.c		jfo
+usr/src/cmd/who\.c		dmr,ken
+usr/src/cmd/write\.c		dmr,ken
+
+# See http://www.cs.bell-labs.com/who/ken/index.html
+# According to V1/man
+usr/src/cmd/cal\.c		ken
+usr/src/cmd/mail\.c		ken
+
+# 2. http://www.cs.bell-labs.com/who/doug/index.html
+# "Text- and data-processing utilities:
+# spell, diff, sort, join, graph, speak, etc."
+usr/src/cmd/diff.*		doug
+usr/src/cmd/graph\.c		doug
+usr/src/cmd/join\.c		doug
+usr/src/cmd/spell/.*		doug
+bin/spell			doug
+
+
+# 3. [Morris] was also the author of the series of crypt programs
+# that came with early Unix, including the final one distributed with the
+# Seventh Edition
+# http://cm.bell-labs.com/cm/cs/who/dmr/crypt.html
+usr/man/man1/crypt\.1		rhm
+usr/man/man3/crypt\.3		rhm
+usr/src/cmd/crypt\.c		rhm
+usr/src/libc/gen/crypt\.c	rhm
+
+
+# 4. Kernel ownership
+# On v6/usr/sys run
+# ls ken  | xargs -n 1 find ../../../v7/usr/sys -name
+# ls dmr  | xargs -n 1 find ../../../v7/usr/sys -name
+# which establishes that ken was in charge of sys/sys and dmr of sys/dev
+usr/sys/dev/.*			dmr
+usr/sys/sys/.*			ken
+# By inspection allocate manual pages accordingly
+usr/man/man4/.*			dmr
+usr/man/man2/.*			ken
+
+# 5. Volume 2 of the manual (supplementary documents)
+# Based on the authors listed in each document
+# Obtain file names with:
+# find . -type f | xargs grep -A 2 \\.AU | sed -n 's/^\.\/\([^-\/:]*\)\([:/]\).*/\/usr\/doc\/\1\2\.*/p' | sed 's/:\.\*//;s/\///' | sort -u | winclip -c
+# Show authors with:
+# find . -type f | xargs grep -A 2 \\.AU | more
+# Ordered by /usr/doc name
+
+usr/doc/adb/.*			jfm,srb
+usr/doc/adv.ed/.*		bwk
+usr/doc/assembler		dmr
+usr/doc/awk			aho,pjw,bwk
+usr/doc/bc			llc,rhm
+usr/doc/beginners/.*		bwk
+usr/doc/cacm/.*			dmr,ken
+usr/doc/ctour/.*		dmr
+usr/doc/dc			llc,rhm
+usr/doc/edtut/.*		bwk
+usr/doc/eqn/.*			bwk,llc
+usr/doc/f77			sif,pjw
+usr/doc/implement		ken
+usr/doc/iosys			dmr
+usr/doc/learn/.*		bwk,mel
+usr/doc/lex			mel,schmidt
+usr/doc/lint			scj
+usr/doc/m4			bwk,dmr
+usr/doc/make			sif
+usr/doc/msmacros/.*		mel
+usr/doc/neqn/.*			bwk,llc
+usr/doc/password		rhm,ken
+usr/doc/porttour/.*		scj
+usr/doc/ratfor/.*		bwk
+usr/doc/refer/.*		mel
+usr/doc/regen			cbh,dmr
+usr/doc/security		dmr
+usr/doc/sed			lem
+usr/doc/setup			cbh,dmr
+usr/doc/shell/.*		srb
+usr/doc/tbl			mel
+usr/doc/troff/.*		jfo
+usr/doc/trofftut/.*		bwk
+usr/doc/uprog/.*		bwk,dmr
+usr/doc/uucp/.*			dan,mel
+usr/doc/yacc/.*			scj
+
+# 6. Commands based on Volume 2 authors
+# Ordered by the corresponding /usr/doc name
+usr/src/cmd/adb/.*		jfm,srb
+usr/src/cmd/as/.*		dmr
+usr/src/cmd/awk/.*		aho,pjw,bwk
+usr/src/cmd/bc\.y		llc,rhm
+usr/src/cmd/dc/.*		llc,rhm
+usr/src/cmd/eqn/.*		bwk,llc
+usr/src/cmd/f77/.*		sif,pjw
+usr/src/cmd/learn/.*		bwk,mel
+usr/src/cmd/lex/.*		mel,schmidt
+usr/src/cmd/lint/.*		scj
+usr/src/cmd/m4/.*		bwk,dmr
+usr/src/cmd/make/.*		sif
+usr/src/cmd/neqn/.*		bwk,llc
+usr/lib/tmac/tmac\.s.*		mel
+usr/src/cmd/c/.*		dmr
+usr/src/cmd/mip/.*		scj
+usr/src/cmd/pcc/.*		scj
+usr/src/cmd/ratfor/.*		bwk
+usr/src/cmd/refer/.*		mel
+usr/src/cmd/sed/.*		lem
+usr/src/cmd/sh/.*		srb
+usr/src/cmd/struct/.*		bsb
+usr/src/cmd/tbl/.*		mel
+usr/src/cmd/troff/.*		jfo
+usr/src/cmd/uucp/.*		dan,mel
+usr/src/cmd/uucp/.*		dan,mel
+usr/src/cmd/yacc/.*		scj
+
+# 7. Manual pages based on the preceding command authors
+# Initial list was created by passing the lines through
+# perl -ne 'if (s|usr/src/cmd/|usr/man/man1/|) { s/((\\\.)|(\/\.))[^        ]*/\\.1/; ($man) = split; print "# XXX " unless (-r $man); print }'
+# and the hand-tuned
+usr/man/man1/cmp\.1		dmr
+usr/man/man1/date\.1		dmr
+usr/man/man1/du\.1		dmr
+usr/man/man1/ld\.1		dmr
+usr/man/man1/strip\.1		dmr
+usr/man/man1/ls\.1		dmr,ken
+usr/man/man1/mesg\.1		dmr,ken
+usr/man/man1/nm\.1		dmr,ken
+usr/man/man1/su\.1		dmr,ken
+usr/man/man1/tty\.1		dmr,ken
+usr/man/man1/who\.1		dmr,ken
+usr/man/man1/write\.1		dmr,ken
+usr/man/man1/wc\.1		jfo
+usr/man/man1/cal\.1		ken
+usr/man/man1/mail\.1		ken
+usr/man/man1/diff.*		doug
+usr/man/man1/graph\.1g		doug
+usr/man/man1/join\.1		doug
+usr/man/man1/spell\.1		doug
+usr/man/man1/crypt\.1		rhm
+usr/man/man1/adb\.1		jfm,srb
+usr/man/man1/as\.1		dmr
+usr/man/man1/awk\.1		aho,pjw,bwk
+usr/man/man1/bc\.1		llc,rhm
+usr/man/man1/dc\.1		llc,rhm
+usr/man/man1/eqn\.1		bwk,llc
+usr/man/man7/eqnchar\.7		bwk,llc
+usr/man/man1/f77\.1		sif,pjw
+usr/man/man1/lex\.1		mel,schmidt
+usr/man/man1/lint\.1		scj
+usr/man/man1/m4\.1		bwk,dmr
+usr/man/man1/make\.1		sif
+usr/man/man7/ms\.7		mel
+usr/man/man1/cc\.1		scj
+usr/man/man1/ratfor\.1		bwk
+usr/man/man1/refer\.1		mel
+usr/man/man1/sed\.1		lem
+usr/man/man1/sh\.1		srb
+usr/man/man1/struct\.1		bsb
+usr/man/man1/tbl\.1		mel
+usr/man/man1/uucp\.1c		dan
+usr/man/man1/yacc\.1		scj
+
+# 8. Commands based on http://www.princeton.edu/~hos/Mahoney/unixpeople.htm
+# ordered according to their order on the page
+usr/src/cmd/bas/.*		ken
+usr/man/man1/bas\.1		ken
+usr/src/cmd/f77/.*		ken,dmr
+usr/man/man1/f77\.1		ken,dmr
+usr/src/cmd/ed/.*		ken,dmr
+usr/man/man1/ed\.1		ken,dmr
+usr/src/cmd/roff/.*		ken
+usr/man/man1/roff\.1		ken
+# Also claimed by Doug McIlroy
+usr/src/cmd/sort\.c		ken
+usr/man/man1/sort\.1		ken
+usr/src/cmd/grep\.c		ken,lem
+usr/man/man1/grep\.1		ken,lem
+usr/src/cmd/uniq\.c		ken
+usr/man/man1/uniq\.1		ken
+usr/src/cmd/plot/.*		ken
+usr/man/man1/plot\.1		ken
+usr/src/libplot/.*		ken
+usr/src/cmd/sa\.c		ken
+usr/man/man1/sa\.1m		ken
+usr/src/cmd/dd\.c		ken
+usr/man/man1/dd\.1		ken
+usr/src/libm/.*			rhm
+usr/man/man3/.*\.3m		rhm
+usr/src/cmd/primes\.s		rhm
+usr/src/cmd/factor\.s		rhm
+usr/man/man1/factor\.1		rhm
+
+usr/src/cmd/look\.c		doug
+usr/man/man1/look\.1		doug
+
+usr/src/cmd/comm\.c		lem
+usr/man/man1/comm\.1		lem
+usr/man/man3/qsort\.3		lem
+usr/src/libc/gen/qsort\.c	lem
+usr/src/cmd/cu\.c		lem
+usr/man/man1/cu\.1c		lem
+
+usr/src/libI77/.*		pjw
+usr/src/libmp/.*		pjw
+usr/man/man3/mp.3x		pjw
+
+usr/src/cmd/egrep\.c		aho
+usr/man/man1/egrep\.1		aho
+usr/src/cmd/fgrep\.c		aho
+usr/man/man1/fgrep\.1		aho
+
+# 9. Default for C library
+usr/src/libc/.*			dmr
+usr/man/man3/.*			dmr
+
+# Default
+# Regarding the order of names
+# "The reader will not, on the average, go far wrong if he reads each
+# occurrence of `we' with unclear antecedent as `Thompson, with some
+# assistance from me.'"
+# http://cm.bell-labs.com/cm/cs/who/dmr/hist.html
+# ... and OWNER section in remaining manual pages of V1
+.*				ken,dmr

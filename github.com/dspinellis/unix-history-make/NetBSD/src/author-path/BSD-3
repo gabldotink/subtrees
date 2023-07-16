@@ -1,0 +1,161 @@
+# From Libes and Ressler, Life with Unix pp. 29-36
+usr/src/cmd/pascal/.*		wnj,cbh
+usr/lib/tmac/tmac\.vcat		x-br,td,mike
+usr/src/cmd/versatec/vcat\.c	x-br,td,mike
+
+
+# Order by file path
+
+# Find man page authors using
+# grep -r AUTHOR -A 1 . | egrep -v -e '--|AUTHOR' | sed 's/..//;s/-/\t\t/;s/\./\\./'
+# as(1) is attributed to John F. Resier; assume it's John F. Reiser
+# Add command authorship using
+# grep /man1/ bsd3.map | sed 's|man/man1|src/cmd|;s/\\.1./\t/' | perl -na -e 'print "$F[0]/.*\t\t$F[1]\n" if -d "archive/3bsd/$F[0]" ; print "$F[0]\\.c\t\t$F[1]\n" if -r "archive/3bsd/$F[0].c"' | winclip -c
+# Manually examine files in usr/doc and add authorship for documentation and
+# corresponding source code
+#
+
+usr/doc/as\.ms			jfr,rrh
+usr/doc/berknet/.*		schmidt
+usr/doc/cshms			wnj
+usr/doc/csh/.*			wnj
+# From Libes and Ressler, Life with Unix pp. 29-36
+usr/doc/ex/.*			wnj,cbh
+usr/doc/libNS/.*		sklower
+usr/doc/lisp/.*			jkf
+usr/doc/mail/.*			kurt
+usr/doc/memacros/.*		eric
+usr/doc/pascal/.*		wnj
+usr/doc/pxp/.*			wnj
+usr/doc/sdb/.*			hpk
+usr/doc/spice			x-rd,arn,dop
+usr/doc/vi/.*			wnj
+usr/doc/vmunix/.*		ozalp,wnj,x-jp
+usr/games/lib/fortunes		arnold
+usr/lib/lisp/.*			jkf
+usr/man/man1/analyze\.1m	ozalp,wnj
+usr/man/man1/apl\.1		ken,x-rh,x-dl
+usr/man/man1/apropos\.1		wnj
+usr/man/man1/arff\.1m		sklower,tuck
+usr/man/man1/as\.1		jfr
+usr/man/man1/ccat\.1		x-clm
+usr/man/man1/chfn\.1		mark
+usr/man/man1/colcrt\.1		wnj
+usr/man/man1/colrm\.1		jeff
+usr/man/man1/compact\.1		x-clm
+usr/man/man1/csh\.1		wnj
+usr/man/man1/cxref\.1		wnj
+usr/man/man1/diffdir\.1		wnj
+usr/man/man1/edit\.1		wnj
+usr/man/man1/ex\.1		wnj
+usr/man/man1/expand\.1		wnj
+usr/man/man1/finger\.1		x-etc
+usr/man/man1/flcopy\.1m		sklower,tuck
+usr/man/man1/fmt\.1		kurt
+usr/man/man1/iul\.1		wnj
+usr/man/man1/last\.1		hpk
+usr/man/man1/lastcomm\.1	x-le
+usr/man/man1/leave\.1		mark
+usr/man/man1/liszt\.1		tbl
+usr/man/man1/lock\.1		kurt
+usr/man/man1/mail\.1		kurt
+usr/man/man1/man\.1		wnj
+usr/man/man1/mkstr\.1		wnj,cbh
+usr/man/man1/more\.1		erics
+usr/man/man1/msgs\.1		wnj
+usr/man/man1/net\.1		schmidt
+usr/man/man1/netcp\.1		schmidt
+usr/man/man1/netlpr\.1		schmidt
+usr/man/man1/netmail\.1		schmidt
+usr/man/man1/netq\.1		schmidt
+usr/man/man1/netrm\.1		schmidt
+usr/man/man1/num\.1		wnj,mckusick
+usr/man/man1/pi\.1		cbh,wnj,ken
+usr/man/man1/pix\.1		wnj
+usr/man/man1/px\.1		cbh,wnj,ken
+usr/man/man1/pxp\.1		wnj
+usr/man/man1/reset\.1		kurt
+usr/man/man1/rewind\.1		mark
+usr/man/man1/script\.1		mark
+usr/man/man1/see\.1		wnj
+usr/man/man1/soelim\.1		wnj
+usr/man/man1/ssp\.1		wnj
+usr/man/man1/strings\.1		wnj
+usr/man/man1/tra\.1		wnj
+usr/man/man1/tset\.1		eric
+usr/man/man1/ul\.1		mark
+usr/man/man1/uncompact\.1	x-clm
+# From Libes and Ressler, Life with Unix p. 34
+usr/man/man1/vgrind\.1		wnj,presott
+usr/man/man1/vi\.1		wnj
+usr/man/man1/vmstat\.1		wnj,ozalp
+usr/man/man1/vpac\.1m		kurt
+usr/man/man1/w\.1		mark
+usr/man/man1/whatis\.1		wnj
+usr/man/man1/whereis\.1		wnj
+usr/man/man1/xstr\.1		wnj
+usr/man/man3/termlib\.3		wnj
+usr/man/man5/termcap\.5		wnj
+usr/man/man6/banner\.6		mark
+usr/src/cmd/analyze\.c		ozalp,wnj
+usr/src/cmd/apl/.*		ken,x-rh,x-dl
+usr/src/cmd/apropos\.c		wnj
+usr/src/cmd/arff\.c		sklower,tuck
+usr/src/cmd/as/.*		jfr
+usr/src/cmd/chfn\.c		mark
+usr/src/cmd/colcrt\.c		wnj
+usr/src/cmd/colrm\.c		jeff
+usr/src/cmd/compact/.*		x-clm
+usr/src/cmd/csh/.*		wnj
+usr/src/cmd/diffdir\.c		wnj
+usr/src/cmd/expand\.c		wnj
+usr/src/cmd/ex/.*		wnj
+usr/src/cmd/finger\.c		x-etc
+usr/src/cmd/flcopy\.c		sklower,tuck
+usr/src/cmd/iul\.c		wnj
+usr/src/cmd/last\.c		hpk
+usr/src/cmd/lastcomm\.c		x-le
+usr/src/cmd/leave\.c		mark
+usr/src/cmd/lisp/.*		jkf
+usr/src/cmd/liszt/.*		tbl
+usr/src/cmd/lock\.c		kurt
+usr/src/cmd/mail\.c		kurt
+usr/src/cmd/man/.*		wnj
+usr/src/cmd/mkstr\.c		wnj,cbh
+usr/src/cmd/more\.c		erics
+usr/src/cmd/msgs\.c		wnj
+usr/src/cmd/net/.*		schmidt
+usr/src/cmd/num\.c		wnj,mckusick
+usr/src/cmd/pi/.*		cbh,wnj,ken
+usr/src/cmd/pxp/.*		wnj
+usr/src/cmd/px/.*		cbh,wnj,ken
+usr/src/cmd/reset\.c		kurt
+usr/src/cmd/rewind\.c		mark
+usr/src/cmd/script\.c		mark
+usr/src/cmd/sdb/.*		hpk
+usr/src/cmd/see\.c		wnj
+usr/src/cmd/soelim\.c		wnj
+usr/src/cmd/spice/.*		x-rd,arn,dop
+usr/src/cmd/ssp\.c		wnj
+usr/src/cmd/strings\.c		wnj
+usr/src/cmd/tra\.c		wnj
+usr/src/cmd/tset/.*		eric
+usr/src/cmd/ucbmail/.*		kurt
+usr/src/cmd/ul\.c		mark
+usr/src/cmd/versatec/sidebyside\.c	wnj
+# From Libes and Ressler, Life with Unix p. 34
+usr/src/cmd/versatec/vgrind\.sh	wnj,presott
+usr/src/cmd/vmstat\.c		wnj,ozalp
+usr/src/cmd/w\.c		mark
+usr/src/cmd/whatis\.c		wnj
+usr/src/cmd/whereis\.c		wnj
+usr/src/cmd/xstr\.c		wnj
+usr/src/games/banner\.c		mark
+usr/src/games/fortune\.c	arnold
+usr/src/new/libI77uc/.*		dlw
+usr/src/sys/sys/locore\.s	ozalp,wnj,x-jp
+usr/src/sys/sys/vm.*		ozalp,wnj,x-jp
+
+
+# Default (wnj, given the number of contributions)
+.*			wnj
