@@ -1,0 +1,287 @@
+Goal: Consolidate data concerning the evolution of a Unix system
+in a form that helps the study of the system's evolution,
+by entering them into a revision repository.
+
+Branches {{{1
+See
+http://upload.wikimedia.org/wikipedia/commons/thumb/7/77/Unix_history-simple.svg/2000px-Unix_history-simple.svg.png
+Research-Development-*
+	Contains the files from the releases committed at their
+	last modification date.
+	This is merged after each release on the date of the newest file
+	in a specific release.
+Research-Release
+	Contains a complete snapshot of each release by merging complete
+	development and (possibly) SCCS branches.
+	Tagged with the name of the release
+
+BSD-Development
+	The parent is Research-Release v7
+	As above
+BSD-SCCS
+	A recursive import of the SCCS repos
+	According to https://github.com/weiss/original-bsd/blob/master/README
+	"The project began using a source code control system (SCCS) in 1980 
+	three years after Bill Joy began his initial Berkeley UNIX
+	development)."
+	Given that 3BSD was released at the end of 1979, it seems logical to
+	import SCCS commits on top of BSD3
+	(Files in BSD 4.0 start on Oct 1 1980)
+	The SCCS logs are available on CD-ROM from:
+	https://www.mckusick.com/csrg/
+
+Unix32V
+	http://www.tuhs.org/Archive/VAX/Distributions/32V/
+	Parent is the Seventh Edition
+
+BSD-Release
+	As above
+	In addition each release's commit is marked as a merge with the
+	SCCS branch at the timepoint of its creation.
+
+	http://www.tuhs.org/Archive/PDP-11/Distributions/
+		1bsd (parent is the sixth edition)
+		2bsd
+	http://www.tuhs.org/Archive/4BSD/Distributions/
+		3bsd (parents are 2bsd and Unix32V)
+		4.0 (from McKusick's CD-ROM 1)
+		4.1 (from McKusick's CD-ROM 1)
+		...
+		4.2BSD
+		4.3BSD
+		4.3BSD-Tahoe
+		4.3BSD-Reno
+		Net2
+
+386BSD
+	http://www.oldlinux.org/Linux.old/distributions/386BSD/386bsd-0.0/
+	( March 1992)
+	http://www.oldlinux.org/Linux.old/distributions/386BSD/0.1/
+	( July 14, 1992)
+
+FreeBSD
+	A pull from the FreeBSD git conversion site
+	FreeBSD commits start on Sat Jun 12 14:49:13 1993 UTC
+	http://svnweb.freebsd.org/base?view=revision&revision=2
+	This is before  late 1994 when the finished version of
+	386BSD Release 1.0 was distributed.
+
+	After FreeBSD 2.2.x pull in BSD 4.4 lite2
+
+Data sources {{{1
+A good map to all available material is
+http://minnie.tuhs.org/cgi-bin/utree.pl
+
+A map of merges can be glanced from
+http://upload.wikimedia.org/wikipedia/commons/1/11/Unix-history.svg
+and details from
+http://minnie.tuhs.org/Unix_History/index.html
+
+Bell Labs
+http://www.tuhs.org/archive_sites.html
+v1 http://unix-jun72.googlecode.com/files/svntree-20081216.tar.gz
+v3 http://unixarchive.cn-k.de/PDP-11/Distributions/research/Dennis_v3/nsys.tar.gz
+v5
+v6
+v7
+
+BSD-SCCS {{{1
+http://www.mckusick.com/csrg/index.html
+
+Method
+Find newest file in a directory
+find . -type f | xargs stat -c %y | sort | tail -1
+
+Contributor names
+http://unix.stackexchange.com/questions/64025/who-are-these-bsd-unix-contributors#comment92758_64025
+
+Early FreeBSD git {{{1
+The FreeBSD-1.1.5.1 distribution is strange
+It contains a CVS repo, a new.tar.gz file, and a tarballs/srcdist directory
+The Makefile documents how the git repo is created
+
+Extracting FreeBSD-1.1.5.1/tarballs/srcdist with
+cd FreeBSD-1.1.5.1/tarballs/srcdist
+mkdir ../../../tarballs
+EXTRACT_TARGET=../../../tarballs ./EXTRACT.sh
+yields a source directory that appears to be the same as the
+checkout of FreeBSD-release/1.1.5 from CVS (git) appart from the
+RCS Id headers.
+
+The following command sequences show that the main differences are RCS Id tags
+cd archive/freebsd-early.git
+git checkout FreeBSD-release/1.0
+diff -r . ../FreeBSD-1.0/filesys/usr/src/
+
+cd archive/freebsd-early.git
+git checkout FreeBSD-release/1.1
+diff -r . ../FreeBSD-1.1/filesys/usr/src/
+
+The git FreeBSD-release/1.0.2 tag only contains the sys directory
+It is therefore removed from the git tags.
+
+The file new/RELNOTES.FreeBSD from new.tar.gz claims to be from FreeBSD 1.1,
+but many files appear to be newer than 1.1.  They are also older from 1.1.5.
+Therefore, the file new.tar.gz is ignored, because it seems to represent
+changes include in the CVS repo.
+
+
+Snapshot contributors {{{1
+
+List by Michael S. Mahoney
+http://www.princeton.edu/~hos/Mahoney/unixpeople.htm
+Michael S. Mahoney. \"In the Beginning: Unix at Bell Labs\". . 2013-02-18. URL:http://www.princeton.edu/~hos/Mahoney/unixpeople.htm. Accessed: 2013-02-18. (Archived by WebCite® at http://www.webcitation.org/6EWDj7eVc)
+
+The first edition manual pages list the "owner" of specific
+elements.
+http://minnie.tuhs.org/cgi-bin/utree.pl?file=V1/man
+
+Dick Haight's find, cpio and expr
+http://doc.cat-v.org/unix/find-history
+
+History of Unix manual pages reconstructed from primary sources
+http://manpages.bsd.lv/history.html
+
+Based on published documentation in Part II {{{2
+Dennis M. Ritchie C, as, UNIXIO
+S. R. Bourne V7 sh
+Stephen C. Johnson yacc, lint
+Alfred V. Aho awk
+J. F. Maranzano adb
+L. E. McMahon sed
+Stuart I. Feldman make
+J. F. Ossanna troff
+Stuart I. Feldman f77
+Brian W. Kernighan v7ratfor, m4, eqn
+Michael E. Lesk tbl, refer
+R. H. Morris dc, bc
+D. A. Nowitz uucp
+ TMG [11] that was implemented by McIlroy
+
+Contributor logins {{{2
+From bwk:
+srb S. R. Bourne
+rhaight? D. Haight
+scj S. C. Johnson
+jfm J. F. Maranzano
+sif S. I. Feldman
+jfo J. F. Ossanna
+mel M. E. Lesk
+rhm R. H. Morris
+dan D. A. Nowitz
+
+L. E. McMahon is lem
+Found by matching photo in
+http://senseis.xmp.net/?LeeMcMahon
+with Faceserver image
+http://sydney.edu.au/engineering/it/faces/album/faces.pgrad/com/bell-labs/research/lem/
+
+Peter J. Weinberger pjw
+https://en.wikipedia.org/wiki/Peter_J._Weinberger
+
+Alfred V. Aho aho
+Based on the name of his Columbia page and email: http://www1.cs.columbia.edu/~aho
+
+
+Commands {{{1
+
+git log --graph --full-history --all --color --pretty=format:"%x1b[31m%h%x09%x1b[32m%d%x1b[0m%x20%s" --simplify-by-decoration
+
+# To see blame after renames: keep a copy of the old snapshot when adding
+# development commits and run
+git blame -C -C ...
+# For log use
+git log --follow
+
+
+Lessons learned {{{1
+Split responsibilities between kernel and device drivers
+Ability to follow file moves by keeping a lookaside copy of preceding snapshot
+Ownership: early man pages, then BSD man pages
+Which commands are retained? Has it got to do with the author's presence?
+Significant code duplication in early releases
+Co-distributed systems: Lisp, Pascal, Ingres, Ratfor
+Performance problems: git takes tens of seconds to show a commit, minutes to blame
+CVS repo covering FreeBSD 1.*
+
+
+
+New strategy {{{1
+First commit:
+rename old top directories to previous_version/...
+
+Last commit
+Remove previous_version
+TODO {{{1
+- Add https://github.com/illumos/illumos-gate.git which is a Unix System V
+  descendant. The commits cover the period from Jun 2005 until today.
+- Compare snapshots with corresponding SCCS to see when coverage is sufficient
+- Add
+ - 4.* merging appropriate SCCS time points. According to CSRG/cd4/README
+   "The project began using a source code control system (SCCS)
+   in 1980 (three years after Bill Joy began his initial Berkeley UNIX
+   development).  Initially only the kernel was put under SCCS, but
+   by 1983 everything had been put under SCCS."
+
+   Note that the 4.0 and 4.1 CDs appear to be the same
+   diff -r  cd1/4.0/usr/src cd1/4.1/usr/src
+
+   These are the release dates as evidenced by C source file timestamps.
+   for i in cd1/4* cd2/* cd3/* ; do find $i -type f -print0 | xargs -0 file | awk -F: '$2 ~ /text/ && $1 !~ /\.MAP/ {print $1}' | tr '\n' '\0' | xargs -0 stat --format='%n %Y %y' | sort -k 2n >`echo $i | sed 's/\//_/g'`.time ; done
+   for i in *.time; do echo -n "$i " ; grep '/src/.*\.c ' $i | tail -1; done | sort -k 3n
+   cd1_4.0.time cd1/4.0/usr/src/cmd/dumpdir.c 343128297 1980-11-15 11:24:57.000000000 +0200
+   cd1_4.1.time cd1/4.1/usr/src/cmd/dumpdir.c 343128297 1980-11-15 11:24:57.000000000 +0200
+   cd1_4.1.snap.time cd1/4.1.snap/usr/src/games/canfield.c 381566084 1982-02-03 08:34:44.000000000 +0200
+   cd1_4.1a.time cd1/4.1a/src/cmd/berknet/sub.c 391016830 1982-05-23 18:47:10.000000000 +0300 (appears incomplete)
+   cd1_4.1c.1.time cd1/4.1c.1/usr.lib/sendmail/src/Version.c 415096464 1983-02-26 10:34:24.000000000 +0200 (appears to contain /usr/src)
+   cd1_4.1c.2.time cd1/4.1c.2/usr/src/usr.lib/sendmail/src/Version.c 416306791 1983-03-12 10:46:31.000000000 +0200
+   cd1_4.2.time cd1/4.2/usr/src/usr.lib/sendmail/src/Version.c 433434266 1983-09-26 16:24:26.000000000 +0200
+   cd1_4.3.time cd1/4.3/usr/src/usr.lib/libmp/util.c 541669130 1987-03-02 09:38:50.000000000 +0200
+   cd2_net.1.time cd2/net.1/sendmail/src/util.c 599652958 1989-01-01 12:15:58.000000000 +0200
+   cd2_4.3tahoe.time cd2/4.3tahoe/usr/src/sys/tahoevba/vx.c 611923663 1989-05-23 13:47:43.000000000 +0300
+   cd2_4.3reno.time cd2/4.3reno/usr/src/sys/GENERIC.vaxminiroot/vers.c 662803858 1991-01-02 10:10:58.000000000 +0200
+   cd2_net.2.time cd2/net.2/usr/src/usr.sbin/vipw/vipw.c 672050997 1991-04-19 11:49:57.000000000 +0300
+   cd3_4.4.time cd3/4.4/usr/src/usr.sbin/vipw/vipw.c 739350755 1993-06-06 10:12:35.000000000 +0300
+   cd2_4.4BSD-Lite1.time cd2/4.4BSD-Lite1/usr/src/usr.sbin/vipw/vipw.c 765255936 1994-04-02 06:05:36.000000000 +0300
+   cd3_4.4BSD-Lite2.time cd3/4.4BSD-Lite2/usr/src/usr.sbin/vipw/pw_util.c 799063982 1995-04-28 13:13:02.000000000 +0300
+
+  Therefore until 1983 (4.1c?) releases are imported incrementally.
+  into -Development-
+  When importing skip over
+   - SCCS and .MAP files
+  At the release add the SCCS files to the release image
+  From then on BSD-SCCS is merged directly (in one go) into -Release- at the
+  timestamp of each release, and a tag is created
+
+- Flag to indicate release text file
+- Coalesce commits by the same author on same date/time and with same
+  message (for SCCS) in import-dir.pl
+  E.g.
+  Author: Bill Joy <bill@ucbvax.Berkeley.EDU>
+  Date:   Mon Apr 14 16:58:04 1980 -0800
+      IUPDAT fast inline from inline.h in stat()
+
+- Indicate in unmatched % changed and remove unchanged files
+  (could be done with git blame on each file)
+- Add support for SCCS file comment fields (^AT and ^At)
+  See http://publib.boulder.ibm.com/infocenter/aix/v7r1/index.jsp?topic=%2Fcom.ibm.aix.files%2Fdoc%2Faixfiles%2Fsccsfile.htm
+- On FreeBSD import add a from to the reference files to commits missing a from field
+- Check for duplicate files at existing tags and add them to the ignore lists
+- Add actual persons in the BSD-default file.  For instance 4.2 appears to have been released by Sam Leffler, and later versions by Keith Bostic
+- Use more descriptive characters in names (./).  It seems that are almost
+alwaysallowed.  See https://wincent.com/wiki/Legal_Git_branch_names
+- Attribute BSD code based on http://netbsd.org/people/CSRG-contrib.html
+- Add NetBSD 0.8 based on http://ftp.netbsd.org/pub/NetBSD/NetBSD-current/src/share/misc/bsd-family-tree and https://svnweb.freebsd.org/base/head/share/misc/bsd-family-tree?view=co
+git log --all --pretty=format:'%ae' | sed 's/@.*//' | sort -u >../freebsd.authors
+- Merge 4.4BSD Lite 2 into FreeBSD 3.0
+- Use the 4th Edition manual page authors to claim ownership of source files
+in later editions.
+- Jeremy C. Reed writes: By the way, there are scattered SCCS files or SCCS history found in the tarballs in the CSRG set that are not included in the csrg-sccs repo.  For example look for the SCCS files in 4.1c.1.  I didn't look recently, but I recall some of that code there was different.
+- Incorporate people from https://www.netbsd.org/people/CSRG-contrib.html into authorship information.
+- Add the Second Edition source code http://www.tuhs.org/Archive/PDP-11/Distributions/research/1972_stuff/Readme
+Based on the path names in s2-bits and the Fifth Edition directory layout the the files should be placed in usr/source/s1
+- Visualize the repo with https://github.com/acaudwell/Gource (suggested by C.Meloche)
+- Add 386BSD patchkit
+- Add PDP7 Unix: https://github.com/DoctorWkt/pdp7-unix/tree/master/scans
+- Use single author in commit messages (this will improve GitHub attribution).  Additional authors can be added in the comment.
+- Perform seamless merges (without reference files) when the next import is Git based and includes all files. For example, import freebsd-early.git from ec7d9c94e5bf, which contains all files from 386BSD + patchkit

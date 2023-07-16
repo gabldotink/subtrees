@@ -1,0 +1,34 @@
+# Email address template
+%A $@research.uucp
+
+# Id (used in path maps):Full name:email
+aho:Alfred V. Aho
+ark:Andrew Koenig
+bsb:Brenda S. Baker
+bwk:Brian W. Kernighan
+cbh:Charles B. Haley
+rje:R. Jane Elliott
+csr:C. S. Roberts
+dan:D. A. Nowitz
+dmr:Dennis Ritchie
+doug:Doug McIlroy
+xtp:Greg Chesson
+haight:Dick Haight
+jfm:J. F. Maranzano
+jfo:Joe Ossanna
+jfr:John Reiser
+ken:Ken Thompson
+lem:Lee E. McMahon
+llc:Lorinda Cherry
+mel:Michael E. Lesk
+marc:Mark J Rochkind
+mrw:Molly Wagner
+pjw:Peter J. Weinberger
+rhm:Robert Morris
+schmidt:Eric Schmidt:schmidt@ucbvax.Berkeley.EDU
+scj:Stephen C. Johnson
+sif:S. I. Feldman
+srb:S. R. Bourne
+tad:Ted Dolotta
+tbl:Tom London
+x-hg:Herb Gellis

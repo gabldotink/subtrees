@@ -1,0 +1,227 @@
+patch00001	Chris G. Demetriou
+patch00002	William Jolitz
+patch00003	Terry Lambert
+patch00004	Frank Maclachlan
+patch00005	Andrew Moore
+patch00006	Christoph Robitschko
+patch00007	David Greenman
+patch00008	James W. Dolter
+patch00009	Wolfgang Solfrank
+patch00010	Frank Maclachlan
+patch00011	Paul Kranenburg
+patch00012	Stephen McKay
+patch00013	Kevin Lahey
+patch00014	Paul Kranenburg
+patch00015	John Woods
+patch00016	Arne Henrik Juul
+patch00017	Frank Maclachlan
+patch00018	Christoph Robitschko
+patch00019	Poul-Henning Kamp
+patch00020	Julian Elischer
+patch00021	Christoph Robitschko
+patch00022	Christoph Robitschko
+patch00023	Nate Williams
+patch00024	Mark Tinguely
+patch00025	Paul Kranenburg
+patch00026	Bruce Evans
+patch00027	Wiljo Heinen
+patch00028	Pace Willisson
+patch00029	David Dawes
+patch00030	Pace Willisson
+patch00031	Pace Willisson
+patch00032	David Greenman
+patch00032	Paul Kranenburg
+patch00033	Paul Kranenburg
+patch00034	Gary A. Browning
+patch00035	Felix Gaehtgens
+patch00036	Goran Hammarback
+patch00037	Adrian Hall
+patch00038	Frank Maclachlan
+patch00039	David Dawes
+patch00040	Scott Burris
+patch00041	Bob Wilcox
+patch00042	Martin Renters
+patch00043	Felix Gaehtgens
+patch00044	Arne Henrik Juul
+patch00045	Rodney W. Grimes
+patch00046	Ishii Masahiro
+patch00046	R. Kym Horsell
+patch00047	Dave Rivers
+patch00048	Guy Harris
+patch00049	Robert D. Thrush
+patch00050	Paul Kranenburg
+patch00051	David Greenman
+patch00052	David Greenman
+patch00052	Paul Kranenburg
+patch00053	Rick "gopher I"
+patch00054	Rick "gopher I"
+patch00055	Terry Lee
+patch00056	James Clark
+patch00057	Havard Eidnes
+patch00058	Havard Eidnes
+patch00059	Scott Reynolds
+patch00060	Poul-Henning Kamp
+patch00061	William Jolitz
+patch00062	Warren Toomey
+patch00063	Poul-Henning Kamp
+patch00064	Frank Maclachlan
+patch00065	Mark Tinguely
+patch00066	Warren Toomey
+patch00067	Holger Veit
+patch00068	Karl Lehenbauer
+patch00069	Julian Elischer
+patch00070	Julian Elischer
+patch00071	Bruce Evans
+patch00072	Andrey A. Chernov
+patch00072	Bruce Evans
+patch00073	Frank Maclachlan
+patch00074	Paul Mackerras
+patch00075	Bruce Evans
+patch00076	David Dawes
+patch00077	William Jolitz
+patch00078	Rich Murphey
+patch00079	Chris G. Demetriou
+patch00079	Jordan K. Hubbard
+patch00080	Julian Elischer
+patch00081	Julian Elischer
+patch00082	Julian Elischer
+patch00083	Bruce Evans
+patch00083	Chris G. Demetriou
+patch00083	Frank Maclachlan
+patch00084	Nick Handel
+patch00085	Nick Handel
+patch00085	Rodney W. Grimes
+patch00086	Daniel Poirot
+patch00086	Nick Handel
+patch00086	Peter da Silva
+patch00087	Karl Lehenbauer
+patch00087	Rodney W. Grimes
+patch00088	James da Silva
+patch00088	Jörg Lohse
+patch00088	Rodney W. Grimes
+patch00089	Jörg Wunsch
+patch00090	Greg Hackney
+patch00091	Chris G. Demetriou
+patch00092	Jordan K. Hubbard
+patch00093	Charles Hannum
+patch00094	Charles Hannum
+patch00095	Charles Hannum
+patch00096	Julian Elischer
+patch00097	Jordan K. Hubbard
+patch00097	Julian Elischer
+patch00097	Rodney W. Grimes
+patch00098	Julian Elischer
+patch00098	Rodney W. Grimes
+patch00099	Julian Elischer
+patch00099	Rodney W. Grimes
+patch00100	Barry Lustig
+patch00100	Michael Galassi
+patch00100	Mike Durkin
+patch00101	Andy Valencia
+patch00101	Rodney W. Grimes
+patch00102	Herb Peyerl
+patch00102	Rodney W. Grimes
+patch00103	Rodney W. Grimes
+patch00104	Bakul Shah
+patch00104	Rodney W. Grimes
+patch00105	Charles Hannum
+patch00105	Kent Talarico
+patch00106	Chris Torek
+patch00107	Ken Hughes
+patch00108	Jordan K. Hubbard
+patch00109	Branko Lankester
+patch00109	Tor Egge
+patch00110	Keith Bostic
+patch00111	Julian Elischer
+patch00111	Kent Talarico
+patch00111	Paul Popelka
+patch00111	Rodney W. Grimes
+patch00112	David Greenman
+patch00112	Marc Frajola
+patch00112	Rodney W. Grimes
+patch00113	Poul-Henning Kamp
+patch00113	Sean Eric Fagan
+patch00114	David Greenman
+patch00114	Rodney W. Grimes
+patch00115	Charles Hannum
+patch00116	Rodney W. Grimes
+patch00117	Phil Sutherland
+patch00117	Rodney W. Grimes
+patch00118	Rodney W. Grimes
+patch00119	Rodney W. Grimes
+patch00120	Rodney W. Grimes
+patch00121	Rodney W. Grimes
+patch00122	Rodney W. Grimes
+patch00123	Rodney W. Grimes
+patch00124	Kevin Lahey
+patch00124	Paul Kranenburg
+patch00124	Rodney W. Grimes
+patch00125	Rodney W. Grimes
+patch00126	Rodney W. Grimes
+patch00127	Rodney W. Grimes
+patch00128	Rodney W. Grimes
+patch00129	James Jegers
+patch00129	Paul Popelka
+patch00129	Ralf Friedl
+patch00130	Sascha Wildner
+patch00131	Adam Glass
+patch00132	Geoff Rehmet
+patch00133	Andy Valencia
+patch00133	Eric J. Haug
+patch00133	Rodney W. Grimes
+patch00133	Wolfgang Stanglmeier
+patch00134	Andrew Herbert
+patch00134	Chris G. Demetriou
+patch00134	John Dyson
+patch00134	Rodney W. Grimes
+patch00135	Rodney W. Grimes
+patch00136	Paul Kranenburg
+patch00137	Bruce Evans
+patch00137	David Greenman
+patch00137	Paul Kranenburg
+patch00137	Yuval Yarom
+patch00138	Rodney W. Grimes
+patch00139	Peter da Silva
+patch00140	Dave Burgess
+patch00141	Jay Fenlason
+patch00142	Simon J Gerraty
+patch00143	Steven M. Schultz
+patch00144	Julian Stacey
+patch00145	Richard Murphey
+patch00146	Mark Tinguely
+patch00147	Paul Kranenburg
+patch00148	J.T. Conklin
+patch00149	Julian Elischer
+patch00149	Rodney W. Grimes
+patch00150	David Greenman
+patch00150	Rodney W. Grimes
+patch00151	Jagane D Sundar
+patch00152	David Greenman
+patch00152	Rodney W. Grimes
+patch00153	Julian Elischer
+patch00154	Bruce Evans
+patch00155	Brett Lymn
+patch00155	Rodney W. Grimes
+patch00155	Terry Lee
+patch00156	Bruce Evans
+patch00157	Rodney W. Grimes
+patch00158	Bruce Evans
+patch00158	Rodney W. Grimes
+patch00159	Rodney W. Grimes
+patch00160	Holger Veit
+patch00160	Rodney W. Grimes
+patch00161	Rodney W. Grimes
+patch00162	Holger Veit
+patch00163	Andrey A. Chernov
+patch00163	Bruce Evans
+patch00163	Guido van Rooij
+patch00163	Rodney W. Grimes
+patch00164	Rodney W. Grimes
+patch00165	Chris G. Demetriou
+patch00166	Rodney W. Grimes
+patch00167	Bruce Evans
+patch00168	Jim Wilson
+patch00169	Paul Kranenburg
+patch00170	Holger Veit
+patch00170	Jordan K. Hubbard
+patch00170	Rodney W. Grimes
