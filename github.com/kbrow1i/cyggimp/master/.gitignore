@@ -1,0 +1,8 @@
+*~
+*.tar.bz2
+*.tar.gz
+*.tgz
+*.noarch/
+*.i686/
+*.x86_64/
+*.log
