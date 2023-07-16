@@ -1,0 +1,110 @@
+isomd5sum
+------------------------------------------
+isomd5sum provides a way of making use of the ISO9660 application data area to
+store md5sum data about the iso. This allows you to check the iso given nothing
+more than the iso itself.
+
+Runtime requirements:
+  cygwin-3.0.1-1
+  libcheckisomd5-devel-1.2.3-1bl1
+  libcheckisomd5_0-1.2.3-1bl1
+  libimplantisomd5-devel-1.2.3-1bl1
+  libimplantisomd5_0-1.2.3-1bl1
+  libpopt0-1.16-2
+  pkg-config-0.29.1-1
+  python36-3.6.8-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-10-1
+  binutils-2.29-1
+  cygport-0.32.0-1
+  gcc-core-7.4.0-1
+  libtool-2.4.6-6
+  make-4.2.1-2
+  python36-3.6.8-1
+
+Canonical website:
+  https://github.com/rhinstaller/isomd5sum
+
+Canonical download:
+  https://github.com/rhinstaller/isomd5sum/archive/1.2.3.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack isomd5sum-1.2.3-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./isomd5sum-1.2.3-X.cygport all
+
+This will create:
+  /usr/src/isomd5sum-1.2.3-X-src.tar.xz
+  /usr/src/isomd5sum-1.2.3-X.tar.xz
+  /usr/src/libcheckisomd5_0-1.2.3-X.tar.xz
+  /usr/src/libcheckisomd5-devel-1.2.3-X.tar.xz
+  /usr/src/libimplantisomd5_0-1.2.3-X.tar.xz
+  /usr/src/libimplantisomd5-devel-1.2.3-X.tar.xz
+  /usr/src/python3-isomd5sum-1.2.3-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(isomd5sum)
+  /usr/bin/checkisomd5.exe
+  /usr/bin/implantisomd5.exe
+  /usr/share/doc/Cygwin/isomd5sum.README
+  /usr/share/doc/isomd5sum/COPYING
+  /usr/share/doc/isomd5sum/README
+  /usr/share/man/man1/checkisomd5.1.gz
+  /usr/share/man/man1/implantisomd5.1.gz
+
+(libcheckisomd5_0)
+  /usr/bin/cygcheckisomd5-0.dll
+
+(libcheckisomd5-devel)
+  /usr/include/libcheckisomd5.h
+  /usr/lib/libcheckisomd5.dll.a
+  /usr/lib/pkgconfig/libcheckisomd5.pc
+
+(libimplantisomd5_0)
+  /usr/bin/cygimplantisomd5-0.dll
+
+(libimplantisomd5-devel)
+  /usr/include/libimplantisomd5.h
+  /usr/lib/libimplantisomd5.dll.a
+  /usr/lib/pkgconfig/libimplantisomd5.pc
+
+(python3-isomd5sum)
+  /usr/lib/python3.6/site-packages/pyisomd5sum.dll
+
+------------------
+
+Port Notes:
+
+----- version 1.2.3-1bl1 -----
+Version bump.
+
+----- version 1.2.2-1bl1 -----
+Version bump.
+
+----- version 1.0.12-1bl1 -----
+Version bump.
+
+----- version 1.0.11-1bl1 -----
+Version bump.
+
+----- version 1.0.10-1bl1 -----
+Version bump.
+
+----- version 1.0.9-1bl1 -----
+Version bump.
+
+----- version 1.0.7-1bl1 -----
+Version bump.
+
+----- version 1.0.5-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

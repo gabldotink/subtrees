@@ -1,0 +1,30 @@
+HOMEPAGE="https://code.google.com/archive/p/${PN}/"
+SRC_URI="https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/${PN}/${P}.tar.bz2"
+
+CATEGORY="Libs"
+SUMMARY="Fast memory pool allocator"
+DESCRIPTION="Memory pool allocator that help to improve memory allocation speed and memory
+usage by improving memory locality during data manipulation. To do so it
+require a little bit more help from the developper to tell him what kind of
+usage pattern the allocator must expect."
+
+PKG_NAMES="
+	${PN}
+	lib${PN}0
+	lib${PN}-devel
+"
+ememoa_CONTENTS="
+	usr/share/doc/Cygwin
+	usr/share/doc/${PN}/[AC]*
+"
+libememoa0_CONTENTS="
+	usr/bin
+"
+libememoa_devel_CONTENTS="
+	usr/include
+	usr/lib
+	usr/share/doc/${PN}/doxygen_ref.tar.gz
+"
+ememoa_SUMMARY="${SUMMARY} (licensing & readmes)"
+libememoa0_SUMMARY="${SUMMARY} (runtime)"
+libememoa_devel_SUMMARY="${SUMMARY} (development)"

@@ -1,0 +1,66 @@
+aespipe
+------------------------------------------
+aespipe is an encryption tool that reads from standard input and writes to
+standard output. It uses the AES (Rijndael) cipher.
+
+Runtime requirements:
+  bash-4.4.12-3
+  cygwin-3.1.2-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  binutils-2.29-1
+  cygport-0.33.1-1
+  gcc-core-7.4.0-1
+  make-4.2.1-2
+
+Canonical website:
+  http://loop-aes.sf.net/
+
+Canonical download:
+  http://loop-aes.sf.net/aespipe/aespipe-v2.4f.tar.bz2
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack aespipe-2.4f-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./aespipe-2.4f-X.cygport all
+
+This will create:
+  /usr/src/aespipe-2.4f-X-src.tar.xz
+  /usr/src/aespipe-2.4f-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(aespipe)
+  /usr/bin/aespipe.exe
+  /usr/bin/bz2aespipe
+  /usr/share/doc/Cygwin/aespipe.README
+  /usr/share/doc/aespipe/ChangeLog
+  /usr/share/doc/aespipe/README
+  /usr/share/man/man1/aespipe.1.gz
+
+------------------
+
+Port Notes:
+
+----- version 2.4f-1bl1 -----
+Version bump.
+
+----- version 2.4e-1bl1 -----
+Version bump.
+
+----- version 2.4d-1bl1 -----
+Version bump.
+
+----- version 2.4c-1bl1 -----
+Version bump.
+
+----- version 2.4b-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

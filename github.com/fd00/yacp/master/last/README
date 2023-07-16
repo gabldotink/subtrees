@@ -1,0 +1,150 @@
+last
+------------------------------------------
+LAST is designed for moderately large data (e.g. genomes, DNA reads,
+proteomes).
+
+Runtime requirements:
+  bash-4.4.12-3
+  cygwin-3.4.3-1
+  libgcc1-11.3.0-1
+  libstdc++6-11.3.0-1
+  python39-3.9.10-1
+  zlib0-1.2.13-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.39-1
+  cygport-0.35.5-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  make-4.4-1
+  zlib-devel-1.2.13-1
+
+Canonical website:
+  https://gitlab.com/mcfrith/last
+
+Canonical download:
+  https://gitlab.com/mcfrith/last/-/archive/1422/last-1422.tar.bz2
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack last-1422-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./last-1422-X.cygport all
+
+This will create:
+  /usr/src/last-1422-X-src.tar.xz
+  /usr/src/last-1422-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(last)
+  /usr/bin/fasta-nr
+  /usr/bin/fastq-interleave
+  /usr/bin/last-dotplot
+  /usr/bin/last-map-probs
+  /usr/bin/last-merge-batches.exe
+  /usr/bin/last-pair-probs.exe
+  /usr/bin/last-postmask
+  /usr/bin/last-split.exe
+  /usr/bin/last-split5.exe
+  /usr/bin/last-train
+  /usr/bin/lastal.exe
+  /usr/bin/lastal5.exe
+  /usr/bin/lastdb.exe
+  /usr/bin/lastdb5.exe
+  /usr/bin/maf-convert
+  /usr/bin/maf-cut
+  /usr/bin/maf-join
+  /usr/bin/maf-sort
+  /usr/bin/maf-swap
+  /usr/bin/parallel-fasta
+  /usr/bin/parallel-fastq
+  /usr/share/doc/Cygwin/last.README
+  /usr/share/doc/last/COPYING.txt
+  /usr/share/doc/last/FAQ.rst
+  /usr/share/doc/last/README.rst
+  /usr/share/doc/last/bisulfite.rst
+  /usr/share/doc/last/last-cookbook.rst
+  /usr/share/doc/last/last-dotplot.rst
+  /usr/share/doc/last/last-evalues.rst
+  /usr/share/doc/last/last-map-probs.rst
+  /usr/share/doc/last/last-matrices.rst
+  /usr/share/doc/last/last-pair-probs.rst
+  /usr/share/doc/last/last-papers.rst
+  /usr/share/doc/last/last-parallel.rst
+  /usr/share/doc/last/last-postmask.rst
+  /usr/share/doc/last/last-repeats.rst
+  /usr/share/doc/last/last-scripts.txt
+  /usr/share/doc/last/last-seeds.rst
+  /usr/share/doc/last/last-split.rst
+  /usr/share/doc/last/last-train.rst
+  /usr/share/doc/last/last-tuning.rst
+  /usr/share/doc/last/lastal.rst
+  /usr/share/doc/last/lastdb.rst
+  /usr/share/doc/last/maf-convert.rst
+  /usr/share/doc/last/maf-cut.rst
+  /usr/share/doc/last/tag-seeds.txt
+
+------------------
+
+Port Notes:
+
+----- version 1422-1bl1 -----
+Version bump.
+
+----- version 1389-1bl1 -----
+Version bump.
+
+----- version 1260-1bl1 -----
+Version bump.
+
+----- version 1256-1bl1 -----
+Version bump.
+
+----- version 1179-1bl1 -----
+Version bump.
+
+----- version 1145-1bl1 -----
+Version bump.
+
+----- version 1133-1bl1 -----
+Version bump.
+
+----- version 1111-1bl1 -----
+Version bump.
+
+----- version 1080-1bl1 -----
+Version bump.
+
+----- version 1066-1bl1 -----
+Version bump.
+
+----- version 1047-1bl1 -----
+Version bump.
+
+----- version 1045-1bl1 -----
+Version bump.
+
+----- version 983-1bl1 -----
+Version bump.
+
+----- version 963-1bl1 -----
+Version bump.
+
+----- version 819-1bl1 -----
+Version bump.
+
+----- version 572-1bl1 -----
+Version bump.
+
+----- version 320-1bl1 -----
+Version bump.
+
+----- version 230-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

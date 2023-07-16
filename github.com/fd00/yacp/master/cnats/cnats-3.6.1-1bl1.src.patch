@@ -1,0 +1,74 @@
+--- origsrc/nats.c-3.6.1/CMakeLists.txt	2023-03-08 05:17:31.000000000 +0900
++++ src/nats.c-3.6.1/CMakeLists.txt	2023-03-25 07:27:30.689318400 +0900
+@@ -113,7 +113,7 @@ if(NATS_BUILD_USE_SODIUM)
+       ${NATS_SODIUM_DIR}
+   )
+   FIND_LIBRARY(NATS_SODIUM_LIBRARY
+-    NAMES libsodium.so libsodium.dylib libsodium.a libsodium.lib libsodium.dll
++    NAMES libsodium.so libsodium.dylib libsodium.a libsodium.lib libsodium.dll sodium.dll
+     HINTS ${NATS_SODIUM_DIR}
+   )
+   FIND_PACKAGE_HANDLE_STANDARD_ARGS(libsodium DEFAULT_MSG
+--- origsrc/nats.c-3.6.1/src/CMakeLists.txt	2023-03-08 05:17:31.000000000 +0900
++++ src/nats.c-3.6.1/src/CMakeLists.txt	2023-03-25 07:27:30.709467000 +0900
+@@ -60,7 +60,7 @@ if(NATS_BUILD_LIB_SHARED)
+   target_include_directories(nats PUBLIC
+         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
+         $<INSTALL_INTERFACE:include>)
+-  install(TARGETS nats EXPORT cnats-targets DESTINATION ${NATS_LIBDIR})
++  install(TARGETS nats EXPORT cnats-targets RUNTIME DESTINATION bin ARCHIVE DESTINATION ${NATS_LIBDIR})
+   install(EXPORT cnats-targets
+         NAMESPACE cnats::
+         FILE cnats-config.cmake
+--- origsrc/nats.c-3.6.1/src/libnats.pc.in	2023-03-08 05:17:31.000000000 +0900
++++ src/nats.c-3.6.1/src/libnats.pc.in	2023-03-25 07:27:30.762422000 +0900
+@@ -1,12 +1,12 @@
+-prefix="@CMAKE_INSTALL_PREFIX@"
+-exec_prefix="${prefix}"
+-libdir="${prefix}/@CMAKE_INSTALL_LIBDIR@"
+-includedir="${prefix}/include"
++prefix=@CMAKE_INSTALL_PREFIX@
++exec_prefix=${prefix}
++libdir=${prefix}/@CMAKE_INSTALL_LIBDIR@
++includedir=${prefix}/include
+ 
+ Name: NATS & NATS Streaming - C Client library
+ Description: A C client library for the NATS messaging system.
+ URL: https://github.com/nats-io/nats.c
+ Version: @NATS_VERSION_MAJOR@.@NATS_VERSION_MINOR@.@NATS_VERSION_PATCH@
+-Cflags: -I"${includedir}"
+-Libs: -L"${libdir}" -lnats
+-Libs.private: -L"${libdir}" -lnats @PKGCONF_LIBS_PRIV@
++Cflags: -I${includedir}
++Libs: -L${libdir} -lnats
++Libs.private: -L${libdir} -lnats @PKGCONF_LIBS_PRIV@
+--- origsrc/nats.c-3.6.1/test/CMakeLists.txt	2023-03-08 05:17:31.000000000 +0900
++++ src/nats.c-3.6.1/test/CMakeLists.txt	2023-03-25 07:27:30.768306900 +0900
+@@ -1,7 +1,7 @@
+ if(NOT BUILD_TESTING)
+   return()
+ endif()
+-if(NOT NATS_BUILD_LIB_STATIC)
++if(NOT NATS_BUILD_LIB_STATIC AND NOT CYGWIN)
+    MESSAGE(FATAL_ERROR
+      "Building tests require static library, or run CMake with -DBUILD_TESTING=OFF")
+   return()
+@@ -20,8 +20,16 @@ endif(NATS_BUILD_STREAMING)
+ # Build the test program
+ add_executable(testsuite test.c)
+ 
+-# Link statically with the library
+-target_link_libraries(testsuite nats_static ${NATS_EXTRA_LIB})
++# Link with the library
++if(NATS_BUILD_LIB_SHARED)
++  target_link_libraries(testsuite nats ${NATS_EXTRA_LIB})
++elseif(NATS_BUILD_LIB_STATIC)
++  target_link_libraries(testsuite nats_static ${NATS_EXTRA_LIB})
++else()
++  message("Building tests require shared or static library")
++  return()
++endif()
++
+ 
+ # Set the test index to 0
+ set(testIndex 0)

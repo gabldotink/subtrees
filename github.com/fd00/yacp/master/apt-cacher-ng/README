@@ -1,0 +1,116 @@
+apt-cacher-ng
+------------------------------------------
+A caching proxy. Specialized for package files from Linux distributors,
+primarily for Debian (and Debian based) distributions but not limited to those.
+See documentation of Apt-Cacher to learn what it's good for.
+
+Runtime requirements:
+  cygwin-3.0.7-1
+  libbz2_1-1.0.6-3
+  libgcc1-7.4.0-1
+  liblzma5-5.2.3-1
+  libssl1.1-1.1.1b-1
+  libstdc++6-7.4.0-1
+  libwrap0-7.6-26
+  zlib0-1.2.11-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.29-1
+  cmake-3.13.1-1
+  cygport-0.33.1-1
+  gcc-core-7.4.0-1
+  gcc-g++-7.4.0-1
+  
+  ninja-1.9.0-1
+
+Canonical website:
+  https://www.unix-ag.uni-kl.de/~bloch/acng/
+
+Canonical download:
+  mirror://debian/pool/main/a/apt-cacher-ng/apt-cacher-ng_3.2.orig.tar.xz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack apt-cacher-ng-3.2-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./apt-cacher-ng-3.2-X.cygport all
+
+This will create:
+  /usr/src/apt-cacher-ng-3.2-X-src.tar.xz
+  /usr/src/apt-cacher-ng-3.2-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(apt-cacher-ng)
+  /etc/apt-cacher-ng/acng.conf
+  /etc/apt-cacher-ng/security.conf
+  /etc/avahi/services/apt-cacher-ng.service
+  /usr/lib/apt-cacher-ng/acngtool.exe
+  /usr/lib/apt-cacher-ng/archlx_mirrors
+  /usr/lib/apt-cacher-ng/backends_debian.default
+  /usr/lib/apt-cacher-ng/backends_gentoo.default
+  /usr/lib/apt-cacher-ng/backends_ubuntu.default
+  /usr/lib/apt-cacher-ng/cygwin_mirrors
+  /usr/lib/apt-cacher-ng/deb_mirrors.gz
+  /usr/lib/apt-cacher-ng/debvol_mirrors.gz
+  /usr/lib/apt-cacher-ng/delconfirm.html
+  /usr/lib/apt-cacher-ng/epel_mirrors
+  /usr/lib/apt-cacher-ng/fedora_mirrors
+  /usr/lib/apt-cacher-ng/gentoo_mirrors.gz
+  /usr/lib/apt-cacher-ng/in.acng.exe
+  /usr/lib/apt-cacher-ng/maint.html
+  /usr/lib/apt-cacher-ng/report.html
+  /usr/lib/apt-cacher-ng/sfnet_mirrors
+  /usr/lib/apt-cacher-ng/sl_mirrors
+  /usr/lib/apt-cacher-ng/style.css
+  /usr/lib/apt-cacher-ng/ubuntu_mirrors
+  /usr/lib/apt-cacher-ng/userinfo.html
+  /usr/sbin/apt-cacher-ng.exe
+  /usr/share/doc/Cygwin/apt-cacher-ng.README
+  /usr/share/doc/apt-cacher-ng/COPYING
+  /usr/share/doc/apt-cacher-ng/ChangeLog
+  /usr/share/doc/apt-cacher-ng/README
+  /usr/share/doc/apt-cacher-ng/TODO
+  /usr/share/doc/apt-cacher-ng/apt-cacher-ng.pdf
+  /usr/share/doc/apt-cacher-ng/html/Intro.html
+  /usr/share/doc/apt-cacher-ng/html/bugs.html
+  /usr/share/doc/apt-cacher-ng/html/config-serv.html
+  /usr/share/doc/apt-cacher-ng/html/config-servquick.html
+  /usr/share/doc/apt-cacher-ng/html/cont.html
+  /usr/share/doc/apt-cacher-ng/html/distinstructions.html
+  /usr/share/doc/apt-cacher-ng/html/howtos.html
+  /usr/share/doc/apt-cacher-ng/html/index.html
+  /usr/share/doc/apt-cacher-ng/html/maint.html
+  /usr/share/doc/apt-cacher-ng/html/secure.html
+  /usr/share/doc/apt-cacher-ng/html/troublefaq.html
+  /usr/share/doc/apt-cacher-ng/html/usage.html
+  /usr/share/man/man8/acngfs.8.gz
+  /usr/share/man/man8/apt-cacher-ng.8.gz
+
+------------------
+
+Port Notes:
+
+----- version 3.2-1bl1 -----
+Version bump.
+
+----- version 3.1-1bl1 -----
+Version bump.
+
+----- version 2-1bl1 -----
+Version bump.
+
+----- version 0.8.2-1bl1 -----
+Version bump.
+
+----- version 0.7.26-1bl1 -----
+Version bump.
+
+----- version 0.7.24-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

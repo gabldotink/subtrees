@@ -1,0 +1,40 @@
+HOMEPAGE="https://github.com/${PN}/${PN}"
+SRC_URI="https://github.com/${PN}/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Portable and simple API for accessing Allen-Bradley PLC data"
+DESCRIPTION="This library for Linux and Windows (not heavily tested) provides a means of
+accessing PLCs to read and write simple data."
+
+LICENSE="MPL-2.0"
+LICENSE_SPDX="SPDX-License-Identifier: MPL-2.0"
+LICENSE_URI="LICENSE-1.MPL"
+
+inherit cmake
+
+DOCS="
+	LICENSE*
+"
+
+DIFF_EXCLUDES="
+	version.h
+"
+
+PKG_NAMES="
+	libplctag
+	libplctag${PV[1]}.${PV[2]}
+	libplctag-devel
+"
+libplctag_CONTENTS="
+	usr/share
+"
+libplctag2_5_CONTENTS="
+	usr/bin
+"
+libplctag_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+libplctag_SUMMARY="${SUMMARY} (licensing & readmes)"
+libplctag2_5_SUMMARY="${SUMMARY} (runtime)"
+libplctag_devel_SUMMARY="${SUMMARY} (development)"

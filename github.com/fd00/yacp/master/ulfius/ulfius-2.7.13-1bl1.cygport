@@ -1,0 +1,56 @@
+HOMEPAGE="https://github.com/babelouest/${PN}"
+SRC_URI="https://github.com/babelouest/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="HTTP Framework for REST Applications in C"
+DESCRIPTION="HTTP Framework for REST API in C, using JSON or not, with websockets or not,
+with streaming data or not."
+
+LICENSE="LGPL-2.1-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: LGPL-2.1-or-later"
+LICENSE_URI="LICENSE"
+
+BUILD_REQUIRES="gnutls libcurl-devel libgnutls-devel libjansson-devel libmicrohttpd-devel liborcania-devel libyder-devel zlib-devel"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-D_GNU_SOURCE:BOOL=ON
+	-DBUILD_ULFIUS_TESTING:BOOL=ON
+"
+
+src_test()
+{
+	cd ${B}
+	rm -rf cert
+	cp -R ${S}/test/cert .
+	./cert/create-cert.sh
+	ninja_test
+}
+
+DOCS="
+	CHANGELOG.md
+"
+
+PKG_NAMES="
+	ulfius
+	libulfius${PV[1]}.${PV[2]}
+	libulfius-devel
+"
+ulfius_CONTENTS="
+	usr/bin/*.exe
+	usr/share/doc/Cygwin
+	usr/share/doc/${PN}/[ACILR]*
+	usr/share/man
+"
+libulfius2_7_CONTENTS="
+	usr/bin/*.dll
+"
+libulfius_devel_CONTENTS="
+	usr/include
+	usr/lib
+	usr/share/doc/${PN}/example*
+"
+ulfius_SUMMARY="${SUMMARY} (utilities)"
+libulfius2_7_SUMMARY="${SUMMARY} (runtime)"
+libulfius_devel_SUMMARY="${SUMMARY} (development)"

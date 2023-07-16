@@ -1,0 +1,89 @@
+libgrapple
+------------------------------------------
+Grapple is designed to be a simple network layer, allowing the addition of
+multiplayer features to a game (or other application) for as little as a dozen
+lines of code. However it is also fully featured, so if you want more from your
+networking, you can have it.
+
+Runtime requirements:
+  cygwin-3.1.6-1
+  libgrapple-devel-0.9.8-1bl2
+  libgrapple0.9_2-0.9.8-1bl2
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.34+1git.de9c1b7cfe-1
+  cygport-0.34.0-1
+  gcc-core-9.3.0-2
+  libtool-2.4.6-7
+  make-4.3-1
+
+Canonical website:
+  http://www.libgrapple.net/
+
+Canonical download:
+  http://www.libgrapple.net/downloads/libgrapple-0.9.8.tbz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libgrapple-0.9.8-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libgrapple-0.9.8-X.cygport all
+
+This will create:
+  /usr/src/libgrapple-0.9.8-X-src.tar.xz
+  /usr/src/libgrapple-0.9.8-X.tar.xz
+  /usr/src/libgrapple0.9_2-0.9.8-X.tar.xz
+  /usr/src/libgrapple-devel-0.9.8-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libgrapple)
+  /usr/share/doc/Cygwin/libgrapple.README
+  /usr/share/doc/libgrapple/BOUNTY
+  /usr/share/doc/libgrapple/CREDITS
+  /usr/share/doc/libgrapple/LICENSE
+  /usr/share/doc/libgrapple/README
+  /usr/share/doc/libgrapple/README.advanced
+  /usr/share/doc/libgrapple/README.lobby
+  /usr/share/doc/libgrapple/README.nattrav
+  /usr/share/doc/libgrapple/UPDATES
+
+(libgrapple0.9_2)
+  /usr/bin/cyggrapple-0-9-2.dll
+
+(libgrapple-devel)
+  /usr/include/grapple/grapple.h
+  /usr/include/grapple/grapple_callback.h
+  /usr/include/grapple/grapple_certificate.h
+  /usr/include/grapple/grapple_client.h
+  /usr/include/grapple/grapple_defines.h
+  /usr/include/grapple/grapple_error.h
+  /usr/include/grapple/grapple_lobby.h
+  /usr/include/grapple/grapple_lobby_types.h
+  /usr/include/grapple/grapple_lobbyclient.h
+  /usr/include/grapple/grapple_message.h
+  /usr/include/grapple/grapple_protocols.h
+  /usr/include/grapple/grapple_server.h
+  /usr/include/grapple/grapple_tools.h
+  /usr/include/grapple/grapple_types.h
+  /usr/lib/libgrapple.dll.a
+  /usr/lib/pkgconfig/libgrapple.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.9.8-1bl2 -----
+Version bump.
+
+----- version 0.9.8-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://fd0.hatenablog.jp/>

@@ -1,0 +1,13 @@
+--- origsrc/silvia/src/lib/Makefile.am	2019-12-24 19:26:42.000000000 +0900
++++ src/silvia/src/lib/Makefile.am	2019-12-24 19:26:47.678273900 +0900
+@@ -19,8 +19,8 @@ libsilvia_la_LIBADD =		issuer/libsilvia_
+ 				common/libsilvia_common.la  \
+ 				stdio/libsilvia_stdio.la
+ 
+-libsilvia_la_LDFLAGS =		-version-info @VERSION_INFO@ \
+-				@OPENSSL_LIBS@
++libsilvia_la_LDFLAGS =		-no-undefined -version-info @VERSION_INFO@ \
++				@OPENSSL_LIBS@ -lstdc++
+ 
+ # Create a convenience library from all the other convenience libraries; this is
+ # necessary to resolve circular dependencies when statically linking the test

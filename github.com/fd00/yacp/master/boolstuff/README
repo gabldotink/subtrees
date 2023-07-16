@@ -1,0 +1,86 @@
+boolstuff
+------------------------------------------
+BoolStuff is a C++ library that supports a few operations on boolean expression
+binary trees.
+
+Runtime requirements:
+  cygwin-3.3.5-1
+  libboolstuff0.1-devel-0.1.17-1bl1
+  libboolstuff0.1_0-0.1.17-1bl1
+  libgcc1-11.3.0-1
+  libstdc++6-11.3.0-1
+  pkg-config-1.8.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.38-1
+  cygport-0.35.1-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libtool-2.4.7-1
+  make-4.3-1
+
+Canonical website:
+  http://perso.b2b2c.ca/~sarrazip/dev/boolstuff.html
+
+Canonical download:
+  http://perso.b2b2c.ca/~sarrazip/dev/boolstuff-0.1.17.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack boolstuff-0.1.17-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./boolstuff-0.1.17-X.cygport all
+
+This will create:
+  /usr/src/boolstuff-0.1.17-X-src.tar.xz
+  /usr/src/boolstuff-0.1.17-X.tar.xz
+  /usr/src/libboolstuff0.1_0-0.1.17-X.tar.xz
+  /usr/src/libboolstuff0.1-devel-0.1.17-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(boolstuff)
+  /usr/bin/booldnf.exe
+  /usr/share/doc/Cygwin/boolstuff.README
+  /usr/share/doc/boolstuff/AUTHORS
+  /usr/share/doc/boolstuff/COPYING
+  /usr/share/doc/boolstuff/NEWS
+  /usr/share/doc/boolstuff/README
+  /usr/share/doc/boolstuff/THANKS
+  /usr/share/man/man1/booldnf.1.gz
+
+(libboolstuff0.1_0)
+  /usr/bin/cygboolstuff-0.1-0.dll
+
+(libboolstuff0.1-devel)
+  /usr/include/boolstuff-0.1/boolstuff/BoolExpr.cpp
+  /usr/include/boolstuff-0.1/boolstuff/BoolExpr.h
+  /usr/include/boolstuff-0.1/boolstuff/BoolExprParser.h
+  /usr/include/boolstuff-0.1/boolstuff/c-api.h
+  /usr/lib/libboolstuff-0.1.dll.a
+  /usr/lib/pkgconfig/boolstuff-0.1.pc
+  /usr/share/man/man3/boolstuff.3.gz
+
+------------------
+
+Port Notes:
+
+----- version 0.1.17-1bl1 -----
+Version bump.
+
+----- version 0.1.16-1bl1 -----
+Version bump.
+
+----- version 0.1.14-1bl1 -----
+Version bump.
+
+----- version 0.1.13-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

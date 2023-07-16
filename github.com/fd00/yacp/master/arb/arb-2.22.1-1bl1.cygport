@@ -1,0 +1,37 @@
+HOMEPAGE="https://github.com/fredrik-johansson/${PN}"
+SRC_URI="https://github.com/fredrik-johansson/${PN}/archive/refs/tags/${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="C library for arbitrary-precision interval arithmetic"
+DESCRIPTION="Arb is a C library for arbitrary-precision interval arithmetic. It has full
+support for both real and complex numbers. The library is thread-safe,
+portable, and extensively tested."
+
+BUILD_REQUIRES="libflint-devel libgmp-devel libmpfr-devel"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DARB_MAJOR:STRING=${PV[1]}
+	-DARB_MINOR:STRING=${PV[2]}
+	-DARB_PATCH:STRING=${PV[3]}
+"
+
+PKG_NAMES="
+	arb
+	libarb2
+	libarb-devel
+"
+arb_CONTENTS="
+	usr/share
+"
+libarb2_CONTENTS="
+	usr/bin
+"
+libarb_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+arb_SUMMARY="${SUMMARY} (licensing & readmes)"
+libarb2_SUMMARY="${SUMMARY} (runtime)"
+libarb_devel_SUMMARY="${SUMMARY} (development)"

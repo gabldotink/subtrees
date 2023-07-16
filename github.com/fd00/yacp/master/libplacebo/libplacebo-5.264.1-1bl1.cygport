@@ -1,0 +1,47 @@
+HOMEPAGE="https://github.com/haasn/${PN}"
+GIT_URI="https://github.com/haasn/${PN}.git"
+GIT_TAG="v${PV}"
+
+CATEGORY="Libs"
+SUMMARY="Core rendering algorithms and ideas of mpv turned into a library"
+DESCRIPTION="libplacebo is essentially the core rendering algorithms and ideas of mpv
+turned into a library."
+
+LICENSE="LGPL-2.1-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: LGPL-2.1-or-later"
+LICENSE_URI="LICENSE"
+
+BUILD_REQUIRES="liblcms2-devel"
+
+inherit git
+inherit meson
+
+CYGMESON_ARGS="
+	-Dd3d11=disabled
+	-Dlibdovi=disabled
+	-Dglslang=disabled
+	-Dshaderc=disabled
+	-Dtests=true
+	-Dunwind=disabled
+	-Dvk-proc-addr=disabled
+	-Dvulkan=disabled
+"
+
+PKG_NAMES="
+	libplacebo
+	libplacebo264
+	libplacebo-devel
+"
+libplacebo_CONTENTS="
+	usr/share
+"
+libplacebo264_CONTENTS="
+	usr/bin/*-264.dll
+"
+libplacebo_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+libplacebo_SUMMARY="${SUMMARY} (licensing & readmes)"
+libplacebo264_SUMMARY="${SUMMARY} (runtime)"
+libplacebo_devel_SUMMARY="${SUMMARY} (development)"

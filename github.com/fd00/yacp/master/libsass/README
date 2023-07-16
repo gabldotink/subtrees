@@ -1,0 +1,130 @@
+libsass
+------------------------------------------
+Libsass is a C/C++ port of the Sass CSS precompiler. The original version was
+written in Ruby, but this version is meant for efficiency and portability.
+
+Runtime requirements:
+  cygwin-3.2.0-1
+  libgcc1-10.2.0-1
+  libsass-devel-3.6.5-1bl1
+  libsass1-3.6.5-1bl1
+  libstdc++6-10.2.0-1
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.36.1-2
+  cygport-0.34.0-1
+  gcc-core-10.2.0-1
+  gcc-g++-10.2.0-1
+  libtool-2.4.6-7
+
+Canonical website:
+  https://github.com/sass/libsass
+
+Canonical download:
+  https://github.com/sass/libsass/archive/3.6.5.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libsass-3.6.5-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libsass-3.6.5-X.cygport all
+
+This will create:
+  /usr/src/libsass-3.6.5-X-src.tar.xz
+  /usr/src/libsass-3.6.5-X.tar.xz
+  /usr/src/libsass1-3.6.5-X.tar.xz
+  /usr/src/libsass-devel-3.6.5-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libsass)
+  /usr/share/doc/Cygwin/libsass.README
+  /usr/share/doc/libsass/CODE_OF_CONDUCT.md
+  /usr/share/doc/libsass/COPYING
+  /usr/share/doc/libsass/LICENSE
+  /usr/share/doc/libsass/README.md
+  /usr/share/doc/libsass/SECURITY.md
+
+(libsass1)
+  /usr/bin/cygsass-1.dll
+
+(libsass-devel)
+  /usr/include/sass.h
+  /usr/include/sass/base.h
+  /usr/include/sass/context.h
+  /usr/include/sass/functions.h
+  /usr/include/sass/values.h
+  /usr/include/sass/version.h
+  /usr/include/sass2scss.h
+  /usr/lib/libsass.dll.a
+  /usr/lib/pkgconfig/libsass.pc
+
+------------------
+
+Port Notes:
+
+----- version 3.6.5-1bl1 -----
+Version bump.
+
+----- version 3.6.4-1bl1 -----
+Version bump.
+
+----- version 3.6.3-1bl1 -----
+Version bump.
+
+----- version 3.6.1-1bl1 -----
+Version bump.
+
+----- version 3.6.0-1bl1 -----
+Version bump.
+
+----- version 3.5.5-1bl1 -----
+Version bump.
+
+----- version 3.5.4-1bl1 -----
+Version bump.
+
+----- version 3.5.2-1bl1 -----
+Version bump.
+
+----- version 3.4.9-1bl1 -----
+Version bump.
+
+----- version 3.4.8-1bl1 -----
+Version bump.
+
+----- version 3.4.7-1bl1 -----
+Version bump.
+
+----- version 3.4.5-1bl1 -----
+Version bump.
+
+----- version 3.3.6-1bl1 -----
+Version bump.
+
+----- version 3.3.4-1bl1 -----
+Version bump.
+
+----- version 3.3.2-1bl1 -----
+Version bump.
+
+----- version 3.2.4-1bl1 -----
+Version bump.
+
+----- version 3.0.2-1bl1 -----
+Version bump.
+
+----- version 1.0.1-1bl1 -----
+Version bump.
+
+----- version 1.0+git20130610-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://fd0.hatenablog.jp/>

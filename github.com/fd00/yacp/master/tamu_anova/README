@@ -1,0 +1,79 @@
+tamu_anova
+------------------------------------------
+ANOVA, or Analysis of Variance, is a method for comparing levels of some
+continuous response variable between different groups. The main idea is to
+compare variation within each group to variation between the groups; if the
+groups vary considerably from one group to another in comparison to the within
+group variation, we can reject the null hypothesis that all the groups have
+similar levels of the response variable.
+
+Runtime requirements:
+  cygwin-3.4.6-1
+  libgsl19-2.3-2
+  libtamuanova-devel-0.2.1-1bl3
+  libtamuanova0-0.2.1-1bl3
+  pkg-config-1.9.4-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.40-1
+  cygport-0.36.0-1
+  gcc-core-11.3.0-1
+  libgsl-devel-2.3-2
+  libtool-2.4.7-1
+  make-4.4.1-1
+
+Canonical website:
+  https://tracker.debian.org/pkg/tamuanova
+
+Canonical download:
+  https://cdn-fastly.deb.debian.org/debian/pool/main/t/tamuanova/tamuanova_0.2.orig.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack tamu_anova-0.2.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./tamu_anova-0.2.1-X.cygport all
+
+This will create:
+  /usr/src/tamu_anova-0.2.1-X-src.tar.xz
+  /usr/src/tamu_anova-0.2.1-X.tar.xz
+  /usr/src/libtamuanova0-0.2.1-X.tar.xz
+  /usr/src/libtamuanova-devel-0.2.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(tamu_anova)
+  /usr/share/doc/Cygwin/tamu_anova.README
+  /usr/share/doc/tamu_anova/COPYING
+  /usr/share/doc/tamu_anova/NEWS
+  /usr/share/doc/tamu_anova/README
+
+(libtamuanova0)
+  /usr/bin/cygtamuanova-0.dll
+
+(libtamuanova-devel)
+  /usr/include/tamu_anova/tamu_anova.h
+  /usr/lib/libtamuanova.dll.a
+  /usr/lib/pkgconfig/tamu_anova.pc
+  /usr/share/info/tamu_anova.info.gz
+
+------------------
+
+Port Notes:
+
+----- version 0.2.1-1bl3 -----
+Rebuild with gcc-11.3.0
+
+----- version 0.2.1-1bl2 -----
+Rebuild on x86_64
+
+----- version 0.2.1-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

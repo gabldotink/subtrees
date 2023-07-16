@@ -1,0 +1,69 @@
+xmlindent
+------------------------------------------
+XML Indent is a XML stream reformatter written in ANSI C. It is analogous to
+GNU indent.
+
+Runtime requirements:
+  cygwin-2.11.2-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.29-1
+  bison-3.0.4-1
+  cygport-0.31.1-1
+  gcc-core-7.4.0-1
+  make-4.2.1-2
+
+Canonical website:
+  http://xmlindent.sf.net/
+
+Canonical download:
+  mirror://sourceforge/xmlindent/xmlindent-0.2.17.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack xmlindent-0.2.17-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./xmlindent-0.2.17-X.cygport all
+
+This will create:
+  /usr/src/xmlindent-0.2.17-X-src.tar.xz
+  /usr/src/xmlindent-0.2.17-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(xmlindent)
+  /usr/bin/xmlindent.exe
+  /usr/share/doc/Cygwin/xmlindent.README
+  /usr/share/doc/xmlindent/BUGS
+  /usr/share/doc/xmlindent/ChangeLog
+  /usr/share/doc/xmlindent/LICENSE
+  /usr/share/doc/xmlindent/README
+  /usr/share/man/man1/xmlindent.1.gz
+
+------------------
+
+Port Notes:
+
+----- version 0.2.17-1bl6 -----
+Rebuild with gcc-7.4.0
+
+----- version 0.2.17-1bl5 -----
+Rebuild on x86_64
+
+----- version 0.2.17-1bl4 -----
+Rebuild with gcc-4.7.3
+
+----- version 0.2.17-1bl3 -----
+Repackage for licensing & readmes
+
+----- version 0.2.17-1bl2 -----
+Rebuild with gcc-4 by fd0 <http://d.hatena.ne.jp/fd0/>
+
+----- version 0.2.17-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0/>

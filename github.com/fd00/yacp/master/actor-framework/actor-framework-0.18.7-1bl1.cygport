@@ -1,0 +1,52 @@
+HOMEPAGE="https://github.com/${PN}/${PN}"
+SRC_URI="https://github.com/${PN}/${PN}/archive/refs/tags/${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Implementation of the Actor Model for C++"
+DESCRIPTION="An Open Source Implementation of the Actor Model in C++"
+
+LICENSE="BSD-3-Clause"
+LICENSE_SPDX="SPDX-License-Identifier: BSD-3-Clause"
+LICENSE_URI="LICENSE"
+
+BUILD_REQUIRES="libssl-devel"
+
+export CPPFLAGS="${CPPFLAGS} -D_GNU_SOURCE"
+export CXXFLAGS="${CXXFLAGS} -fpermissive"
+
+inherit cmake
+
+src_test()
+{
+	cd ${B}
+	PATH=${B}/libcaf_core:${B}/libcaf_io:${B}/libcaf_openssl:${PATH} ninja_test
+}
+
+DOCS="
+	CONTRIBUTING.md
+"
+
+DIFF_EXCLUDES="
+	Doxyfile
+	build_config.hpp
+"
+
+PKG_NAMES="
+	actor-framework
+	libcaf${PV}
+	libcaf-devel
+"
+actor_framework_CONTENTS="
+	usr/share/doc
+"
+libcaf0_18_7_CONTENTS="
+	usr/bin
+"
+libcaf_devel_CONTENTS="
+	usr/include
+	usr/lib
+	usr/share/caf
+"
+actor_framework_SUMMARY="${SUMMARY} (licensing & readmes)"
+libcaf0_18_7_SUMMARY="${SUMMARY} (runtime)"
+libcaf_devel_SUMMARY="${SUMMARY} (development)"

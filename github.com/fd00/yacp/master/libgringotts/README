@@ -1,0 +1,89 @@
+libgringotts
+------------------------------------------
+libGringotts is a small, easy-to-use, thread-safe C library originally
+developed for Gringotts; its purpose is to encapsulate data (generic: ASCII,
+but also binary data) in an encrypted and compressed structure, to be written
+in a file or used elseway. It makes use of strong encryption algorithms, to
+ensure the data are as safe as possible, and allow the user to have the
+complete control over all the algorithms used in the process.
+
+Runtime requirements:
+  cygwin-2.6.1-1
+  libbz2_1-1.0.6-2
+  libgringotts-devel-1.2.1-1bl5
+  libgringotts2-1.2.1-1bl5
+  libmcrypt4-2.5.8-1
+  libmhash2-0.9.9.9-2
+  pkg-config-0.29.1-1
+  zlib0-1.2.8-3
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-9-1
+  binutils-2.25-4
+  cygport-0.23.0-1
+  gcc-core-5.4.0-1
+  libtool-2.4.6-4
+  make-4.2.1-1
+
+Canonical website:
+  http://gringotts.berlios.de/
+
+Canonical download:
+  mirror://sourceforge/gringotts.berlios/libgringotts-1.2.1.tar.bz2
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libgringotts-1.2.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libgringotts-1.2.1-X.cygport all
+
+This will create:
+  /usr/src/libgringotts-1.2.1-X-src.tar.xz
+  /usr/src/libgringotts-1.2.1-X.tar.xz
+  /usr/src/libgringotts2-1.2.1-X.tar.xz
+  /usr/src/libgringotts-devel-1.2.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libgringotts)
+  /usr/share/doc/Cygwin/libgringotts.README
+  /usr/share/doc/libgringotts/AUTHORS
+  /usr/share/doc/libgringotts/COPYING
+  /usr/share/doc/libgringotts/ChangeLog
+  /usr/share/doc/libgringotts/README
+  /usr/share/doc/libgringotts/TODO
+  /usr/share/doc/libgringotts/html/manual.htm
+
+(libgringotts2)
+  /usr/bin/cyggringotts-2.dll
+
+(libgringotts-devel)
+  /usr/include/libgringotts.h
+  /usr/lib/libgringotts.dll.a
+  /usr/lib/pkgconfig/libgringotts.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.2.1-1bl5 -----
+Rebuild with gcc-5.4.0
+
+----- version 1.2.1-1bl4 -----
+Rebuild with gcc-4.5.3.
+
+----- version 1.2.1-1bl3 -----
+Repackage for licensing & readmes
+
+----- version 1.2.1-1bl2 -----
+Rebuild with gcc-4 by fd0 <http://d.hatena.ne.jp/fd0/>
+
+----- version 1.2.1-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

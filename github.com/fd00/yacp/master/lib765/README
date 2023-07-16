@@ -1,0 +1,88 @@
+lib765
+------------------------------------------
+Lib765 is the floppy controller emulation from JOYCE, separately packaged. It
+is (in some sense) the reverse of LibDsk; it converts uPD765a commands into
+LibDsk API calls. It should come in handy if you're writing a PCW, CPC or
+Spectrum+3 emulator; if you want to use it in a PC emulator, you'll need to add
+features such as DMA.
+
+Runtime requirements:
+  cygwin-3.1.7-1
+  lib765-devel-0.4.2-1bl7
+  lib765_3-0.4.2-1bl7
+  libdsk5-1.5.12-1bl2
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.34+1git.de9c1b7cfe-1
+  cygport-0.34.0-1
+  gcc-core-10.2.0-1
+  libtool-2.4.6-7
+  make-4.3-1
+
+Canonical website:
+  https://www.seasip.info/Unix/LibDsk/
+
+Canonical download:
+  https://www.seasip.info/Unix/LibDsk/lib765-0.4.2.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack lib765-0.4.2-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./lib765-0.4.2-X.cygport all
+
+This will create:
+  /usr/src/lib765-0.4.2-X-src.tar.xz
+  /usr/src/lib765-0.4.2-X.tar.xz
+  /usr/src/lib765_3-0.4.2-X.tar.xz
+  /usr/src/lib765-devel-0.4.2-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(lib765)
+  /usr/share/doc/Cygwin/lib765.README
+  /usr/share/doc/lib765/765.txt
+  /usr/share/doc/lib765/COPYING.LIB
+  /usr/share/doc/lib765/ChangeLog
+
+(lib765_3)
+  /usr/bin/cyg765-3.dll
+
+(lib765-devel)
+  /usr/include/765.h
+  /usr/lib/lib765.dll.a
+  /usr/lib/pkgconfig/lib765.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.4.2-1bl7 -----
+Rebuild for libdsk
+
+----- version 0.4.2-1bl6 -----
+Rebuild for libdsk
+
+----- version 0.4.2-1bl5 -----
+Rebuild on x86_64
+
+----- version 0.4.2-1bl4 -----
+Rebuild with gcc-4.5.3
+
+----- version 0.4.2-1bl3 -----
+Repackage for licensing & readmes
+
+----- version 0.4.2-1bl2 -----
+Rebuild with gcc-4 by fd0 <http://d.hatena.ne.jp/fd0/>
+
+----- version 0.4.2-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

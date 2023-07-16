@@ -1,0 +1,104 @@
+libtubo
+------------------------------------------
+Libtubo Interprocess Communication is small and simple function set to enable a
+process to run any other process in the background and communicate via the
+stdout, stderr and stdin file descriptors. This library is used by Rodent
+filemanager but is also available here for other programs to use freely.
+
+Runtime requirements:
+  cygwin-3.1.2-1
+  cygwin-devel-3.1.2-1
+  libglib2.0_0-2.54.3-1
+  libtubo-devel-5.0.15-1bl3
+  libtubo0-5.0.15-1bl3
+  pkg-config-1.6.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.29-1
+  cygport-0.33.1-1
+  gcc-core-7.4.0-1
+  libtool-2.4.6-7
+  make-4.2.1-2
+
+Canonical website:
+  http://xffm.sf.net/libtubo.html
+
+Canonical download:
+  mirror://sourceforge/xffm/libtubo0-5.0.15.tar.bz2
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libtubo-5.0.15-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libtubo-5.0.15-X.cygport all
+
+This will create:
+  /usr/src/libtubo-5.0.15-X-src.tar.xz
+  /usr/src/libtubo-5.0.15-X.tar.xz
+  /usr/src/libtubo0-5.0.15-X.tar.xz
+  /usr/src/libtubo-devel-5.0.15-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libtubo)
+  /usr/bin/tubo-example.exe
+  /usr/bin/tuboexec.exe
+  /usr/share/doc/Cygwin/libtubo.README
+  /usr/share/doc/libtubo/AUTHORS
+  /usr/share/doc/libtubo/COPYING
+  /usr/share/doc/libtubo/ChangeLog
+  /usr/share/doc/libtubo/NEWS
+  /usr/share/doc/libtubo/README
+  /usr/share/doc/libtubo/TODO
+  /usr/share/man/man1/tuboexec.1.gz
+
+(libtubo0)
+  /usr/bin/cygtubo-0.dll
+
+(libtubo-devel)
+  /usr/include/tubo.h
+  /usr/lib/libtubo.dll.a
+  /usr/lib/pkgconfig/tubo.pc
+  /usr/share/gtk-doc/html/libtubo/ch01.html
+  /usr/share/gtk-doc/html/libtubo/home.png
+  /usr/share/gtk-doc/html/libtubo/index.html
+  /usr/share/gtk-doc/html/libtubo/index.sgml
+  /usr/share/gtk-doc/html/libtubo/left.png
+  /usr/share/gtk-doc/html/libtubo/libtubo-tubo.html
+  /usr/share/gtk-doc/html/libtubo/libtubo.devhelp2
+  /usr/share/gtk-doc/html/libtubo/right.png
+  /usr/share/gtk-doc/html/libtubo/style.css
+  /usr/share/gtk-doc/html/libtubo/up.png
+
+------------------
+
+Port Notes:
+
+----- version 5.0.15-1bl3 -----
+Rebuild with gcc-7.4.0
+
+----- version 5.0.15-1bl2 -----
+Rebuild with gcc-6.4.0
+
+----- version 5.0.15-1bl1 -----
+Version bump.
+
+----- version 5.0.14-1bl1 -----
+Version bump.
+
+----- version 5.0.12-1bl1 -----
+Version bump.
+
+----- version 4.5.0-1bl2 -----
+Rebuild with gcc-4.5.3
+
+----- version 4.5.0-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

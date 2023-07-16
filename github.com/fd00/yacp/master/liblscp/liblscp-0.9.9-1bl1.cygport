@@ -1,0 +1,36 @@
+HOMEPAGE="https://linuxsampler.org/"
+SRC_URI="https://www.rncbc.org/archive/${P}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="LinuxSampler Control Protocol API"
+DESCRIPTION="liblscp is an implementation of the LinuxSampler control protocol,
+proposed as a C language API."
+
+LICENSE="LGPL-2.1-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: LGPL-2.1-or-later"
+LICENSE_URI="LICENSE"
+
+inherit cmake
+
+DIFF_EXCLUDES="
+	version.h
+"
+
+PKG_NAMES="
+	${PN}
+	${PN}6
+	${PN}-devel
+"
+liblscp_CONTENTS="
+	usr/share
+"
+liblscp6_CONTENTS="
+	usr/bin/*-6.dll
+"
+liblscp_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+liblscp_SUMMARY="${SUMMARY} (licensing & readmes)"
+liblscp6_SUMMARY="${SUMMARY} (runtime)"
+liblscp_devel_SUMMARY="${SUMMARY} (development)"

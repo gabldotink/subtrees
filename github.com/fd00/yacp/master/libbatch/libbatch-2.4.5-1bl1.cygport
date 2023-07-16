@@ -1,0 +1,54 @@
+HOMEPAGE="https://git.salome-platform.org/gitweb/?p=tools/${PN}.git"
+GIT_URI="https://git.salome-platform.org/gitpub/tools/${PN}.git"
+GIT_TAG="V${PV//./_}"
+
+PATCH_URI="
+	https://src.fedoraproject.org/rpms/${PN}/raw/rawhide/f/${PN}_libdir.patch
+	https://src.fedoraproject.org/rpms/${PN}/raw/rawhide/f/${PN}_soversion.patch
+"
+
+CATEGORY="Libs"
+SUMMARY="Generic batch management library"
+DESCRIPTION="${SUMMARY}"
+
+export CPPFLAGS="${CPPFLAGS} -D_GNU_SOURCE"
+
+inherit cmake
+inherit git
+
+CYGCMAKE_ARGS="
+	-DLIBBATCH_BUILD_TESTS:BOOL=ON
+"
+
+src_test()
+{
+	cd ${B}
+	PATH=${B}/src:${PATH} BATCH_TEST_CONFIG_FILE=${S}/src/Core/Test/batchtest.conf ninja_test
+}
+
+PKG_NAMES="
+	${PN}
+	${PN}${PV[1]}.${PV[2]}
+	${PN}-devel
+	python39-${PN}
+"
+libbatch_CONTENTS="
+	usr/share/doc
+"
+libbatch2_4_CONTENTS="
+	usr/bin
+"
+libbatch_devel_CONTENTS="
+	usr/include
+	usr/lib/cmake
+	usr/lib/${PN}*
+	usr/lib/pkgconfig
+	usr/share/aclocal
+"
+python39_libbatch_CONTENTS="
+	usr/lib/python3*
+"
+libbatch_SUMMARY="${SUMMARY} (licensing & readmes)"
+libbatch2_4_SUMMARY="${SUMMARY} (runtime)"
+libbatch_devel_SUMMARY="${SUMMARY} (development)"
+python39_libbatch_SUMMARY="${SUMMARY} (python39 bindings)"

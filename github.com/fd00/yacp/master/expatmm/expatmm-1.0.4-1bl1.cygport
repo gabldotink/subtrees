@@ -1,0 +1,30 @@
+HOMEPAGE="https://github.com/ckane/${PN}"
+SRC_URI="https://github.com/ckane/${PN}/archive/${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="C++ wrapper for libexpat"
+DESCRIPTION="ExpatMM XML Parser class for C++ based upon Expat."
+
+DOCS="
+	README.md
+	README-${PN}
+"
+
+PKG_NAMES="
+	${PN}
+	lib${PN}0
+	lib${PN}-devel
+"
+expatmm_CONTENTS="
+	usr/share
+"
+libexpatmm0_CONTENTS="
+	usr/bin
+"
+libexpatmm_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+expatmm_SUMMARY="${SUMMARY} (licensing & readmes)"
+libexpatmm0_SUMMARY="${SUMMARY} (runtime)"
+libexpatmm_devel_SUMMARY="${SUMMARY} (development)"

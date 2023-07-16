@@ -1,0 +1,31 @@
+HOMEPAGE="https://github.com/jgarzik/${PN}"
+SRC_URI="https://github.com/jgarzik/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="C++ universal value object and JSON library"
+DESCRIPTION="A universal value object, with JSON encoding (output) and decoding (input)."
+
+src_test()
+{
+	cd ${B}
+	PATH=${B}/.libs:${PATH} cygtest
+}
+
+PKG_NAMES="
+	${PN}
+	lib${PN}0
+	lib${PN}-devel
+"
+univalue_CONTENTS="
+	usr/share
+"
+libunivalue0_CONTENTS="
+	usr/bin
+"
+libunivalue_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+univalue_SUMMARY="${SUMMARY} (licensing & readmes)"
+libunivalue0_SUMMARY="${SUMMARY} (runtime)"
+libunivalue_devel_SUMMARY="${SUMMARY} (development)"

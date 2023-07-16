@@ -1,0 +1,58 @@
+HOMEPAGE="https://github.com/bluescarni/${PN}"
+SRC_URI="https://github.com/bluescarni/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Multiprecision for modern C++"
+DESCRIPTION="mp++ is a C++11 library for multiprecision arithmetic, currently supporting
+arbitrary-precision integers, rationals and floats, and quadruple-precision
+floats."
+
+LICENSE="MPL-2.0"
+LICENSE_SPDX="SPDX-License-Identifier: MPL-2.0"
+LICENSE_URI="COPYING"
+
+BUILD_REQUIRES="libboost-devel libgmp-devel libmpc-devel libmpfr-devel"
+
+inherit cmake
+
+# benchmark: find_package(fmt 6.2 REQUIRED)
+# /usr/include/fmt/core.h:1733:7: error: static assertion failed: Cannot format an argument. To make type T formattable provide a formatter<T> specialization: https://fmt.dev/latest/api.html#udt
+CYGCMAKE_ARGS="
+	-DMPPP_BENCHMARK_BOOST:BOOL=OFF
+	-DMPPP_BUILD_BENCHMARKS:BOOL=OFF
+	-DMPPP_BUILD_TESTS:BOOL=ON
+	-DMPPP_WITH_BOOST_S11N:BOOL=ON
+	-DMPPP_WITH_MPC:BOOL=ON
+	-DMPPP_WITH_MPFR:BOOL=ON
+	-DMPPP_WITH_QUADMATH:BOOL=ON
+"
+
+src_test()
+{
+	cd ${B}
+	PATH=${B}:${PATH} ninja_test
+}
+
+DIFF_EXCLUDES="
+	Doxyfile
+	conf.py
+"
+
+PKG_NAMES="
+	mppp
+	libmp++14
+	libmp++-devel
+"
+mppp_CONTENTS="
+	usr/share
+"
+libmp__14_CONTENTS="
+	usr/bin
+"
+libmp___devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+mppp_SUMMARY="${SUMMARY} (licensing & readmes)"
+libmp__14_SUMMARY="${SUMMARY} (runtime)"
+libmp___devel_SUMMARY="${SUMMARY} (development)"

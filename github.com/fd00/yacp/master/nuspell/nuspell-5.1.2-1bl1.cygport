@@ -1,0 +1,49 @@
+HOMEPAGE="https://github.com/${PN}/${PN}"
+GIT_URI="https://github.com/${PN}/${PN}.git"
+GIT_TAG="v${PV}"
+
+CATEGORY="Libs"
+SUMMARY="Free and open source C++ spell checking library"
+DESCRIPTION="Nuspell is a spell checker library and command-line program designed for
+languages with rich morphology and complex word compounding. Nuspell is a pure
+C++ re-implementation of Hunspell."
+
+LICENSE="LGPL-3.0-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: LGPL-3.0-or-later"
+LICENSE_URI="COPYING.LESSER"
+
+BUILD_REQUIRES="libicu-devel"
+
+inherit cmake
+inherit git
+
+src_test()
+{
+	cd ${B}
+	PATH=${B}/src/nuspell:${PATH} ninja_test
+}
+
+DOCS="
+	CHANGELOG.md
+	COPYING.LESSER
+"
+
+PKG_NAMES="
+	nuspell
+	libnuspell5
+	libnuspell-devel
+"
+nuspell_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+libnuspell5_CONTENTS="
+	usr/bin/*.dll
+"
+libnuspell_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+nuspell_SUMMARY="${SUMMARY} (utilities)"
+libnuspell5_SUMMARY="${SUMMARY} (runtime)"
+libnuspell_devel_SUMMARY="${SUMMARY} (development)"

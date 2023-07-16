@@ -1,0 +1,14 @@
+HOMEPAGE="https://github.com/jpmens/${PN}"
+SRC_URI="https://github.com/jpmens/${PN}/archive/refs/tags/${PV}.tar.gz"
+
+CATEGORY="Utils"
+SUMMARY="JSON output from a shell"
+DESCRIPTION="This is jo, a small utility to create JSON objects or arrays."
+
+LICENSE="GPL-2.0-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: GPL-2.0-or-later"
+LICENSE_URI="COPYING"
+
+DIFF_EXCLUDES="
+	tap-driver.sh
+"

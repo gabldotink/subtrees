@@ -1,0 +1,100 @@
+axel
+------------------------------------------
+Axel tries to accelerate the downloading process by using multiple connections
+for one file, similar to DownThemAll and other famous programs. It can also use
+multiple mirrors for one download.
+
+Runtime requirements:
+  cygwin-3.3.3-1
+  libintl8-0.21-1
+  libssl1.1-1.1.1l-2
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.37-2
+  cygport-0.34.1-1
+  gcc-core-11.2.0-1
+  make-4.3-1
+  txt2man-1.7.1-1bl1
+
+Canonical website:
+  https://github.com/axel-download-accelerator/axel
+
+Canonical download:
+  https://github.com/axel-download-accelerator/axel/archive/refs/tags/v2.17.11.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack axel-2.17.11-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./axel-2.17.11-X.cygport all
+
+This will create:
+  /usr/src/axel-2.17.11-X-src.tar.xz
+  /usr/src/axel-2.17.11-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(axel)
+  /usr/bin/axel.exe
+  /usr/share/doc/Cygwin/axel.README
+  /usr/share/doc/axel/API
+  /usr/share/doc/axel/CONTRIBUTING.md
+  /usr/share/doc/axel/COPYING
+  /usr/share/doc/axel/ChangeLog
+  /usr/share/doc/axel/NEWS
+  /usr/share/doc/axel/README.md
+  /usr/share/doc/axel/ROADMAP
+  /usr/share/doc/axel/axelrc.example
+  /usr/share/locale/de/LC_MESSAGES/axel.mo
+  /usr/share/locale/es/LC_MESSAGES/axel.mo
+  /usr/share/locale/id_ID/LC_MESSAGES/axel.mo
+  /usr/share/locale/it/LC_MESSAGES/axel.mo
+  /usr/share/locale/ja/LC_MESSAGES/axel.mo
+  /usr/share/locale/nl/LC_MESSAGES/axel.mo
+  /usr/share/locale/pt_BR/LC_MESSAGES/axel.mo
+  /usr/share/locale/ru/LC_MESSAGES/axel.mo
+  /usr/share/locale/tr/LC_MESSAGES/axel.mo
+  /usr/share/locale/zh_CN/LC_MESSAGES/axel.mo
+  /usr/share/man/man1/axel.1.gz
+
+------------------
+
+Port Notes:
+
+----- version 2.17.11-1bl1 -----
+Version bump.
+
+----- version 2.17.10-1bl1 -----
+Version bump.
+
+----- version 2.17.9-1bl1 -----
+Version bump.
+
+----- version 2.17.7-1bl1 -----
+Version bump.
+
+----- version 2.17.6-1bl1 -----
+Version bump.
+
+----- version 2.17.5-1bl1 -----
+Version bump.
+
+----- version 2.17.3-1bl1 -----
+Version bump.
+
+----- version 2.16.1-1bl1 -----
+Version bump.
+
+----- version 2.4-1bl2 -----
+Rebuild with gcc-4.8.2
+
+----- version 2.4-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

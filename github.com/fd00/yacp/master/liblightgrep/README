@@ -1,0 +1,84 @@
+liblightgrep
+------------------------------------------
+Lightgrep is a new regular expression engine, designed specifically for digital
+forensics.
+
+Runtime requirements:
+  cygwin-3.3.6-1
+  libgcc1-11.3.0-1
+  libicu-devel-70.1-1
+  libicu70-70.1-1
+  liblightgrep-devel-1.4-1bl4
+  liblightgrep0-1.4-1bl4
+  libstdc++6-11.3.0-1
+  pkg-config-1.9.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.39-1
+  cygport-0.35.4-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libicu-devel-70.1-1
+  libtool-2.4.7-1
+  make-4.4-1
+
+Canonical website:
+  https://github.com/strozfriedberg/liblightgrep
+
+Canonical download:
+  https://github.com/strozfriedberg/liblightgrep/archive/refs/tags/v1.4.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack liblightgrep-1.4-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./liblightgrep-1.4-X.cygport all
+
+This will create:
+  /usr/src/liblightgrep-1.4-X-src.tar.xz
+  /usr/src/liblightgrep-1.4-X.tar.xz
+  /usr/src/liblightgrep0-1.4-X.tar.xz
+  /usr/src/liblightgrep-devel-1.4-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(liblightgrep)
+  /usr/share/doc/Cygwin/liblightgrep.README
+  /usr/share/doc/liblightgrep/COPYING
+  /usr/share/doc/liblightgrep/README.md
+
+(liblightgrep0)
+  /usr/bin/cyglightgrep-0.dll
+
+(liblightgrep-devel)
+  /usr/include/lightgrep/api.h
+  /usr/include/lightgrep/encodings.h
+  /usr/include/lightgrep/search_hit.h
+  /usr/include/lightgrep/transforms.h
+  /usr/include/lightgrep/util.h
+  /usr/lib/liblightgrep.dll.a
+  /usr/lib/pkgconfig/lightgrep.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.4-1bl4 -----
+Rebuild with gcc-11.3.0
+
+----- version 1.4-1bl3 -----
+Rebuild for libicu
+
+----- version 1.4-1bl2 -----
+Version bump.
+
+----- version 1.4-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

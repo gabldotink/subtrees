@@ -1,0 +1,130 @@
+log4shib
+------------------------------------------
+Log4shib is a forked version of log4cpp that has been created for the
+Shibboleth project to ensure a consistent, working snapshot that builds
+reliably on the necessary platforms. Not every project can afford to devote
+resources to every platform, but unfortunately maintaining every other project
+just to maintain your own is also not realistic.
+
+Runtime requirements:
+  cygwin-3.3.1-1
+  libgcc1-11.2.0-1
+  liblog4shib-devel-2.0.1-1bl1
+  liblog4shib2-2.0.1-1bl1
+  libstdc++6-11.2.0-1
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.37-2
+  cygport-0.34.0-1
+  gcc-core-11.2.0-1
+  gcc-g++-11.2.0-1
+  libtool-2.4.6-7
+  make-4.3-1
+
+Canonical website:
+  https://shibboleth.atlassian.net/wiki/spaces/OpenSAML/pages/1573290030/log4shib
+
+Canonical download:
+  https://shibboleth.net/downloads/log4shib/2.0.1/log4shib-2.0.1.tar.bz2
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack log4shib-2.0.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./log4shib-2.0.1-X.cygport all
+
+This will create:
+  /usr/src/log4shib-2.0.1-X-src.tar.xz
+  /usr/src/log4shib-2.0.1-X.tar.xz
+  /usr/src/liblog4shib2-2.0.1-X.tar.xz
+  /usr/src/liblog4shib-devel-2.0.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(log4shib)
+  /usr/share/doc/Cygwin/log4shib.README
+  /usr/share/doc/log4shib/AUTHORS
+  /usr/share/doc/log4shib/COPYING
+  /usr/share/doc/log4shib/ChangeLog
+  /usr/share/doc/log4shib/NEWS
+  /usr/share/doc/log4shib/README
+  /usr/share/doc/log4shib/THANKS
+
+(liblog4shib2)
+  /usr/bin/cyglog4shib-2.dll
+
+(liblog4shib-devel)
+  /usr/include/log4shib/AbortAppender.hh
+  /usr/include/log4shib/Appender.hh
+  /usr/include/log4shib/AppenderSkeleton.hh
+  /usr/include/log4shib/BasicConfigurator.hh
+  /usr/include/log4shib/BasicLayout.hh
+  /usr/include/log4shib/Category.hh
+  /usr/include/log4shib/CategoryStream.hh
+  /usr/include/log4shib/Configurator.hh
+  /usr/include/log4shib/Export.hh
+  /usr/include/log4shib/FileAppender.hh
+  /usr/include/log4shib/Filter.hh
+  /usr/include/log4shib/FixedContextCategory.hh
+  /usr/include/log4shib/HierarchyMaintainer.hh
+  /usr/include/log4shib/IdsaAppender.hh
+  /usr/include/log4shib/Layout.hh
+  /usr/include/log4shib/LayoutAppender.hh
+  /usr/include/log4shib/LoggingEvent.hh
+  /usr/include/log4shib/NDC.hh
+  /usr/include/log4shib/NTEventLogAppender.hh
+  /usr/include/log4shib/OstreamAppender.hh
+  /usr/include/log4shib/PatternLayout.hh
+  /usr/include/log4shib/Portability.hh
+  /usr/include/log4shib/Priority.hh
+  /usr/include/log4shib/PropertyConfigurator.hh
+  /usr/include/log4shib/RemoteSyslogAppender.hh
+  /usr/include/log4shib/RollingFileAppender.hh
+  /usr/include/log4shib/SimpleConfigurator.hh
+  /usr/include/log4shib/SimpleLayout.hh
+  /usr/include/log4shib/StringQueueAppender.hh
+  /usr/include/log4shib/SyslogAppender.hh
+  /usr/include/log4shib/TimeStamp.hh
+  /usr/include/log4shib/Win32DebugAppender.hh
+  /usr/include/log4shib/config-openvms.h
+  /usr/include/log4shib/config-win32.h
+  /usr/include/log4shib/config.h
+  /usr/include/log4shib/threading/BoostThreads.hh
+  /usr/include/log4shib/threading/DummyThreads.hh
+  /usr/include/log4shib/threading/MSThreads.hh
+  /usr/include/log4shib/threading/OmniThreads.hh
+  /usr/include/log4shib/threading/PThreads.hh
+  /usr/include/log4shib/threading/Threading.hh
+  /usr/lib/liblog4shib.dll.a
+  /usr/lib/pkgconfig/log4shib.pc
+
+------------------
+
+Port Notes:
+
+----- version 2.0.1-1bl1 -----
+Version bump.
+
+----- version 2.0.0-1bl1 -----
+Version bump.
+
+----- version 1.0.9-1bl1 -----
+Version bump.
+
+----- version 1.0.8-1bl1 -----
+Version bump.
+
+----- version 1.0.7-1bl1 -----
+Version bump.
+
+----- version 1.0.5-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://fd0.hatenablog.jp/>

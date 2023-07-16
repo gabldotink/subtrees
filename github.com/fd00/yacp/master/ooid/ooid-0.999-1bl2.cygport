@@ -1,0 +1,31 @@
+HOMEPAGE="http://${PN}.sf.net/"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
+SRC_DIR="${PN}"
+
+CATEGORY="Devel"
+SUMMARY="C++ UUID compliant to RFC 4122"
+DESCRIPTION="${SUMMARY}"
+
+src_compile()
+{
+	cd ${B}
+	lndirs
+	${CXX} cli.cpp -o cli.exe
+}
+
+src_test()
+{
+	cd ${B}
+	./cli.exe
+}
+
+src_install()
+{
+	cd ${B}
+	includeinto ${PN}
+	doinclude kashmir/*.h
+}
+
+DOCS="
+	LICENSE*
+"

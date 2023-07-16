@@ -1,0 +1,69 @@
+--- origsrc/vifm-0.12/configure.ac	2021-09-29 18:57:51.000000000 +0900
++++ src/vifm-0.12/configure.ac	2021-10-12 17:49:25.839786400 +0900
+@@ -481,54 +481,7 @@ if test "x$ncurses_found" != "xyes"; the
+ fi
+ LIBS=$LIBS $GUI_LINK_OPTS_TERM
+ 
+-dnl Check for curses.h header and all its required elements.
+-AC_CHECK_HEADER([curses.h], [], [AC_MSG_ERROR([curses.h header not found.])])
+-AC_CHECK_DECL([A_ITALIC], [AC_DEFINE([HAVE_A_ITALIC_DECL], [1], [A_ITALIC attribute is available.])], [], [[#include <curses.h>]])
+-AC_CHECK_DECL([COLORS], [], [AC_MSG_ERROR([COLORS not found in curses.h])], [[#include <curses.h>]])
+-AC_CHECK_DECL([TABSIZE], [], [AC_MSG_ERROR([TABSIZE not found in curses.h])], [[#include <curses.h>]])
+-AC_CHECK_FUNC([curs_set], [], [AC_MSG_ERROR([curs_set() function not found.])])
+-AC_CHECK_FUNC([def_prog_mode], [], [AC_MSG_ERROR([def_prog_mode() function not found.])])
+-AC_CHECK_FUNC([doupdate], [], [AC_MSG_ERROR([doupdate() function not found.])])
+-AC_CHECK_FUNC([endwin], [], [AC_MSG_ERROR([endwin() function not found.])])
+-AC_CHECK_FUNC([flushinp], [], [AC_MSG_ERROR([flushinp() function not found.])])
+-AC_CHECK_FUNC([getcchar], [], [AC_MSG_ERROR([getcchar() function not found.])])
+-AC_CHECK_FUNC([has_colors], [], [AC_MSG_ERROR([has_colors() function not found.])])
+-AC_CHECK_FUNC([init_pair], [], [AC_MSG_ERROR([init_pair() function not found.])])
+-AC_CHECK_FUNC([initscr], [], [AC_MSG_ERROR([initscr() function not found.])])
+-AC_CHECK_FUNC([isendwin], [], [AC_MSG_ERROR([isendwin() function not found.])])
+-AC_CHECK_FUNC([keypad], [], [AC_MSG_ERROR([keypad() function not found.])])
+-AC_CHECK_FUNC([mvwin], [], [AC_MSG_ERROR([mvwin() function not found.])])
+-AC_CHECK_FUNC([mvwprintw], [], [AC_MSG_ERROR([mvwprintw() function not found.])])
+-AC_CHECK_FUNC([newwin], [], [AC_MSG_ERROR([newwin() function not found.])])
+-AC_CHECK_FUNC([noecho], [], [AC_MSG_ERROR([noecho() function not found.])])
+-AC_CHECK_FUNC([nonl], [], [AC_MSG_ERROR([nonl() function not found.])])
+-AC_CHECK_FUNC([raw], [], [AC_MSG_ERROR([raw() function not found.])])
+-AC_CHECK_FUNC([reset_prog_mode], [], [AC_MSG_ERROR([reset_prog_mode() function not found.])])
+-AC_CHECK_FUNC([resize_term], [], [AC_MSG_ERROR([resize_term() function not found.])])
+-AC_CHECK_FUNC([resizeterm], [], [AC_MSG_ERROR([resizeterm() function not found.])])
+-AC_CHECK_FUNC([scrollok], [], [AC_MSG_ERROR([scrollok() function not found.])])
+-AC_CHECK_FUNC([set_escdelay], [AC_DEFINE([HAVE_SET_ESCDELAY_FUNC], [1], [set_escdelay() function is available.])])
+-AC_CHECK_FUNC([setcchar], [], [AC_MSG_ERROR([setcchar() function not found.])])
+-AC_CHECK_FUNC([start_color], [], [AC_MSG_ERROR([start_color() function not found.])])
+-AC_CHECK_FUNC([use_default_colors], [], [AC_MSG_ERROR([use_default_colors() function not found.])])
+-AC_CHECK_FUNC([waddch], [], [AC_MSG_ERROR([waddch() function not found.])])
+-AC_CHECK_FUNC([waddnstr], [], [AC_MSG_ERROR([waddnstr() function not found.])])
+-AC_CHECK_FUNC([waddnwstr], [], [AC_MSG_ERROR([waddnwstr() function not found.])])
+-AC_CHECK_FUNC([wattr_set], [], [AC_MSG_ERROR([wattr_set() function not found.])])
+-AC_CHECK_FUNC([wbkgrndset], [], [AC_MSG_ERROR([wbkgrndset() function not found.])])
+-AC_CHECK_FUNC([wborder], [], [AC_MSG_ERROR([wborder() function not found.])])
+-AC_CHECK_FUNC([wclrtoeol], [], [AC_MSG_ERROR([wclrtoeol() function not found.])])
+-AC_CHECK_FUNC([werase], [], [AC_MSG_ERROR([werase() function not found.])])
+-AC_CHECK_FUNC([wget_wch], [], [AC_MSG_ERROR([wget_wch() function not found.])])
+-AC_CHECK_FUNC([wgetch], [], [AC_MSG_ERROR([wgetch() function not found.])])
+-AC_CHECK_FUNC([wmove], [], [AC_MSG_ERROR([wmove() function not found.])])
+-AC_CHECK_FUNC([wnoutrefresh], [], [AC_MSG_ERROR([wnoutrefresh() function not found.])])
+-AC_CHECK_FUNC([wprintw], [], [AC_MSG_ERROR([wprintw() function not found.])])
+-AC_CHECK_FUNC([wredrawln], [], [AC_MSG_ERROR([wredrawln() function not found.])])
+-AC_CHECK_FUNC([wrefresh], [], [AC_MSG_ERROR([wrefresh() function not found.])])
+-AC_CHECK_FUNC([wresize], [], [AC_MSG_ERROR([wresize() function not found.])])
+-AC_CHECK_FUNC([wtimeout], [], [AC_MSG_ERROR([wtimeout() function not found.])])
+-AC_CHECK_FUNC([wtouchln], [], [AC_MSG_ERROR([wtouchln() function not found.])])
++PKG_CHECK_MODULES([NCURSES], [ncursesw])
+ 
+ dnl ----------------------------------------------------------------------------
+ dnl check for extended colors/pairs
+--- origsrc/vifm-0.12/src/Makefile.am	2021-09-14 21:16:16.000000000 +0900
++++ src/vifm-0.12/src/Makefile.am	2021-10-12 17:49:25.843770800 +0900
+@@ -326,6 +326,8 @@ vifm_SOURCES = \
+ 	vifm.c vifm.h
+ nodist_vifm_SOURCES = \
+ 	compile_info.c
++vifm_CFLAGS = $(NCURSES_CFLAGS)
++vifm_LDADD = $(NCURSES_LIBS)
+ 
+ check_SCRIPTS = runtests
+ TESTS = $(check_SCRIPTS)

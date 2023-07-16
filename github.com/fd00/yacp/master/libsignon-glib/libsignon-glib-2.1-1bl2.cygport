@@ -1,0 +1,53 @@
+HOMEPAGE="https://gitlab.com/accounts-sso/${PN}"
+GIT_URI="https://gitlab.com/accounts-sso/${PN}.git"
+GIT_TAG="${PV}"
+
+CATEGORY="Libs"
+SUMMARY="Single signon authentication library for GLib applications"
+DESCRIPTION="This project is a library for managing single signon credentials which can be
+used from GLib applications. It is effectively a GLib binding for the D-Bus
+API provided by signond. It is part of the accounts-sso project."
+
+inherit git
+inherit meson
+
+CYGMESON_ARGS="
+	-Ddocumentation=false
+"
+
+PKG_NAMES="
+	${PN}
+	${PN}2
+	${PN}-devel
+	girepository-Signon2.0
+	vala-${PN}
+	python36-${PN}
+"
+libsignon_glib_CONTENTS="
+	usr/share/doc
+"
+libsignon_glib2_CONTENTS="
+	usr/bin
+"
+libsignon_glib_devel_CONTENTS="
+	usr/include
+	usr/lib/${PN}*
+	usr/lib/pkgconfig
+	usr/share/gtk-doc
+"
+girepository_Signon2_0_CONTENTS="
+	usr/lib/girepository*
+	usr/share/gir*
+"
+vala_libsignon_glib_CONTENTS="
+	usr/share/vala
+"
+python36_libsignon_glib_CONTENTS="
+	usr/lib/python*
+"
+libsignon_glib_SUMMARY="${SUMMARY} (utilities)"
+libsignon_glib2_SUMMARY="${SUMMARY} (runtime)"
+libsignon_glib_devel_SUMMARY="${SUMMARY} (development)"
+girepository_Signon2_0_SUMMARY="${SUMMARY} (GObject Introspection data)"
+vala_libsignon_glib_SUMMARY="${SUMMARY} (vala bindings)"
+python36_libsignon_glib_SUMMARY="${SUMMARY} (python36 bindings)"

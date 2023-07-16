@@ -1,0 +1,54 @@
+aquario
+------------------------------------------
+Aquario is a GC-oriented Lisp interpreter.
+
+Runtime requirements:
+  cygwin-3.0.7-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.29-1
+  cygport-0.33.1-1
+  gcc-core-7.4.0-1
+  make-4.2.1-2
+
+Canonical website:
+  https://github.com/hikarin/aquario
+
+Canonical download:
+  https://github.com/hikarin/aquario/archive/0.2.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack aquario-0.2.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./aquario-0.2.0-X.cygport all
+
+This will create:
+  /usr/src/aquario-0.2.0-X-src.tar.xz
+  /usr/src/aquario-0.2.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(aquario)
+  /usr/bin/aquario.exe
+  /usr/share/doc/Cygwin/aquario.README
+  /usr/share/doc/aquario/README.md
+
+------------------
+
+Port Notes:
+
+----- version 0.2.0-1bl1 -----
+Version bump.
+
+----- version 0.0.2-1bl1 -----
+Version bump.
+
+----- version 0.0.1-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://fd0.hatenablog.jp/>

@@ -1,0 +1,119 @@
+liboop
+------------------------------------------
+Liboop is a low-level event loop management library for POSIX-based operating
+systems. It supports the development of modular, multiplexed applications
+which may respond to events from several sources. It replaces the select()
+loop and allows the registration of event handlers for file and network I/O,
+timers and signals. Since processes use these mechanisms for almost all
+external communication, liboop can be used as the basis for almost any
+application.
+
+Runtime requirements:
+  cygwin-2.9.0-3
+  cygwin-devel-2.9.0-3
+  libglib2.0-devel-2.52.3-1
+  libglib2.0_0-2.52.3-1
+  liboop-devel-1.0.1-1bl1
+  liboop-glib2-devel-1.0.1-1bl1
+  liboop-glib2_0-1.0.1-1bl1
+  liboop-rl0-1.0.1-1bl1
+  liboop-tcl0-1.0.1-1bl1
+  liboop4-1.0.1-1bl1
+  libreadline7-7.0.3-3
+  pkg-config-0.29.1-1
+  tcl-8.6.6-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-10-1
+  binutils-2.28-3
+  cygport-0.24.1-1
+  gcc-core-6.4.0-1
+  libtool-2.4.6-5
+  make-4.2.1-2
+
+Canonical website:
+  http://www.lysator.liu.se/liboop/
+
+Canonical download:
+  http://ftp.lysator.liu.se/pub/liboop/liboop-1.0.1.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack liboop-1.0.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./liboop-1.0.1-X.cygport all
+
+This will create:
+  /usr/src/liboop-1.0.1-X-src.tar.xz
+  /usr/src/liboop-1.0.1-X.tar.xz
+  /usr/src/liboop4-1.0.1-X.tar.xz
+  /usr/src/liboop-devel-1.0.1-X.tar.xz
+  /usr/src/liboop-glib2_0-1.0.1-X.tar.xz
+  /usr/src/liboop-glib2-devel-1.0.1-X.tar.xz
+  /usr/src/liboop-rl0-1.0.1-X.tar.xz
+  /usr/src/liboop-rl-devel-1.0.1-X.tar.xz
+  /usr/src/liboop-tcl0-1.0.1-X.tar.xz
+  /usr/src/liboop-tcl-devel-1.0.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(liboop)
+  /usr/share/doc/Cygwin/liboop.README
+  /usr/share/doc/liboop/COPYING
+
+(liboop4)
+  /usr/bin/cygoop-4.dll
+
+(liboop-devel)
+  /usr/include/oop-read.h
+  /usr/include/oop.h
+  /usr/lib/liboop.dll.a
+  /usr/lib/pkgconfig/liboop.pc
+
+(liboop-glib2_0)
+  /usr/bin/cygoop-glib2-0.dll
+
+(liboop-glib2-devel)
+  /usr/include/oop-glib.h
+  /usr/lib/liboop-glib2.dll.a
+  /usr/lib/pkgconfig/liboop-glib2.pc
+
+(liboop-rl0)
+  /usr/bin/cygoop-rl-0.dll
+
+(liboop-rl-devel)
+  /usr/include/oop-rl.h
+  /usr/lib/liboop-rl.dll.a
+
+(liboop-tcl0)
+  /usr/bin/cygoop-tcl-0.dll
+
+(liboop-tcl-devel)
+  /usr/include/oop-tcl.h
+  /usr/lib/liboop-tcl.dll.a
+
+------------------
+
+Port Notes:
+
+----- version 1.0.1-1bl1 -----
+Version bump.
+
+----- version 1.0-1bl4 -----
+Rebuild with gcc-4.5.3
+
+----- version 1.0-1bl3 -----
+Repackage for licensing & readmes
+
+----- version 1.0-1bl2 -----
+Rebuild with gcc-4 by fd0 <http://d.hatena.ne.jp/fd0/>
+
+----- version 1.0-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

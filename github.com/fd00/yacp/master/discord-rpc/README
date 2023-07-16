@@ -1,0 +1,89 @@
+discord-rpc
+------------------------------------------
+This is a library for interfacing your game with a locally running Discord
+desktop client. It's known to work on Windows, macOS, and Linux. You can use
+the lib directly if you like, or use it as a guide to writing your own if it
+doesn't suit your game as is. PRs/feedback welcome if you have an improvement
+everyone might want, or can describe how this doesn't meet your needs.
+
+Runtime requirements:
+  cygwin-2.11.2-1
+  libdiscord-rpc-devel-3.4.0-1bl1
+  libdiscord-rpc0-3.4.0-1bl1
+  libgcc1-7.4.0-1
+  libstdc++6-7.4.0-1
+  pkg-config-0.29.1-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.29-1
+  cmake-3.6.2-1
+  cygport-0.31.1-1
+  gcc-core-7.4.0-1
+  gcc-g++-7.4.0-1
+  gcc-objc-7.4.0-1
+  make-4.2.1-2
+  ninja-1.8.2-2
+
+Canonical website:
+  https://github.com/discordapp/discord-rpc
+
+Canonical download:
+  https://github.com/discordapp/discord-rpc/archive/v3.4.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack discord-rpc-3.4.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./discord-rpc-3.4.0-X.cygport all
+
+This will create:
+  /usr/src/discord-rpc-3.4.0-X-src.tar.xz
+  /usr/src/discord-rpc-3.4.0-X.tar.xz
+  /usr/src/libdiscord-rpc0-3.4.0-X.tar.xz
+  /usr/src/libdiscord-rpc-devel-3.4.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(discord-rpc)
+  /usr/bin/send-presence.exe
+  /usr/share/doc/Cygwin/discord-rpc.README
+  /usr/share/doc/discord-rpc/LICENSE
+  /usr/share/doc/discord-rpc/README.md
+  /usr/share/doc/discord-rpc/hard-mode.md
+  /usr/share/doc/discord-rpc/rp-dev-dashboard.png
+  /usr/share/doc/discord-rpc/rp-profile-view.png
+  /usr/share/doc/discord-rpc/rp-secret-example.png
+
+(libdiscord-rpc0)
+  /usr/bin/cygdiscord-rpc-0.dll
+
+(libdiscord-rpc-devel)
+  /usr/include/discord_register.h
+  /usr/include/discord_rpc.h
+  /usr/lib/libdiscord-rpc.dll.a
+  /usr/lib/pkgconfig/discord-rpc.pc
+
+------------------
+
+Port Notes:
+
+----- version 3.4.0-1bl1 -----
+Version bump.
+
+----- version 3.3.0-1bl1 -----
+Version bump.
+
+----- version 3.1.0-1bl1 -----
+Version bump.
+
+----- version 2.1.0-1bl1 -----
+Version bump.
+
+----- version 2.0.1-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

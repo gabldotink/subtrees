@@ -1,0 +1,36 @@
+--- origsrc/level-zero-1.11.0/source/layers/tracing/CMakeLists.txt	2023-04-29 01:33:11.000000000 +0900
++++ src/level-zero-1.11.0/source/layers/tracing/CMakeLists.txt	2023-05-18 09:47:23.080820400 +0900
+@@ -49,6 +49,7 @@ set_target_properties(${TARGET_NAME} PRO
+ )
+ 
+ install(TARGETS ze_tracing_layer
++    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+     ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+     LIBRARY
+         DESTINATION ${CMAKE_INSTALL_LIBDIR}
+@@ -57,6 +58,7 @@ install(TARGETS ze_tracing_layer
+ )
+ 
+ install(TARGETS ze_tracing_layer
++    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+     ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+     LIBRARY
+         DESTINATION ${CMAKE_INSTALL_LIBDIR}
+--- origsrc/level-zero-1.11.0/source/layers/validation/CMakeLists.txt	2023-04-29 01:33:11.000000000 +0900
++++ src/level-zero-1.11.0/source/layers/validation/CMakeLists.txt	2023-05-18 09:47:23.084821600 +0900
+@@ -36,6 +36,7 @@ set_target_properties(${TARGET_NAME} PRO
+ )
+ 
+ install(TARGETS ze_validation_layer
++    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+     ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+     LIBRARY
+         DESTINATION ${CMAKE_INSTALL_LIBDIR}
+@@ -44,6 +45,7 @@ install(TARGETS ze_validation_layer
+ )
+ 
+ install(TARGETS ze_validation_layer
++    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+     ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+     LIBRARY
+         DESTINATION ${CMAKE_INSTALL_LIBDIR}

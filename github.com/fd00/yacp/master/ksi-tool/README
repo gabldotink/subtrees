@@ -1,0 +1,68 @@
+ksi-tool
+------------------------------------------
+KSI command-line tool enables the access to the KSI blockchain and its
+functions from the shell. It can be used for signing data in files or other
+sources, extending existing KSI signatures and verifying them using different
+trust anchors.
+
+Runtime requirements:
+  cygwin-3.1.2-1
+  libksi13-3.20.3025-1bl1
+  libparamset2-1.1.240-1bl1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.29-1
+  cygport-0.33.1-1
+  gcc-core-7.4.0-1
+
+Canonical website:
+  https://github.com/guardtime/ksi-tool
+
+Canonical download:
+  https://github.com/guardtime/ksi-tool/archive/v2.9.1374.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack ksi-tool-2.9.1374-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./ksi-tool-2.9.1374-X.cygport all
+
+This will create:
+  /usr/src/ksi-tool-2.9.1374-X-src.tar.xz
+  /usr/src/ksi-tool-2.9.1374-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(ksi-tool)
+  /usr/bin/ksi.exe
+  /usr/share/doc/Cygwin/ksi-tool.README
+  /usr/share/doc/ksi-tool/ChangeLog
+  /usr/share/doc/ksi-tool/LICENSE
+  /usr/share/doc/ksi-tool/README.md
+  /usr/share/man/man1/ksi-extend.1.gz
+  /usr/share/man/man1/ksi-pubfile.1.gz
+  /usr/share/man/man1/ksi-sign.1.gz
+  /usr/share/man/man1/ksi-verify.1.gz
+  /usr/share/man/man1/ksi.1.gz
+  /usr/share/man/man5/ksi-conf.5.gz
+
+------------------
+
+Port Notes:
+
+----- version 2.9.1374-1bl1 -----
+Version bump.
+
+----- version 2.8.1300-1bl1 -----
+Version bump.
+
+----- version 2.6.1136-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

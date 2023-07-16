@@ -1,0 +1,35 @@
+HOMEPAGE="https://${PN}.sourceforge.net/"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tgz"
+
+CATEGORY="Utils"
+SUMMARY="Small shell utility, similar to expect(1)"
+DESCRIPTION="empty is an utility that provides an interface to execute and/or interact with
+processes under pseudo-terminal sessions (PTYs). This tool is definitely
+useful in programming of shell scripts designed to communicate with
+interactive programs like telnet, ssh, ftp, etc. In some cases empty can be
+the simplest replacement for TCL/expect or other similar programming tools."
+
+LICENSE="BSD-3-Clause"
+LICENSE_SPDX="SPDX-License-Identifier: BSD-3-Clause"
+LICENSE_URI="COPYRIGHT"
+
+src_compile()
+{
+	cd ${B}
+	lndirs
+	cygmake
+}
+
+src_install()
+{
+	cd ${B}
+	dobin ${PN}.exe
+	doman ${PN}.1
+
+	exeinto /usr/share/${PN}
+	doexe examples/*.sh
+}
+
+DOCS="
+	README.CYGWIN
+"

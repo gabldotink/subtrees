@@ -1,0 +1,88 @@
+libuvc
+------------------------------------------
+libuvc is a cross-platform library for USB video devices, built atop libusb.
+It enables fine-grained control over USB video devices exporting the standard
+USB Video Class (UVC) interface, enabling developers to write drivers for
+previously unsupported devices, or just access UVC devices in a generic
+fashion.
+
+Runtime requirements:
+  cygwin-2.9.0-3
+  libusb1.0-1.0.21-1
+  libusb1.0-devel-1.0.21-1
+  libuvc-devel-0.0.6-1bl1
+  libuvc0-0.0.6-1bl1
+  pkg-config-0.29.1-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.29-1
+  cmake-3.6.2-1
+  cygport-0.24.1-1
+  gcc-core-6.4.0-1
+  make-4.2.1-2
+  python-2.7.13-1
+
+Canonical website:
+  https://github.com/ktossell/libuvc
+
+Canonical download:
+  https://github.com/ktossell/libuvc/archive/v0.0.6.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libuvc-0.0.6-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libuvc-0.0.6-X.cygport all
+
+This will create:
+  /usr/src/libuvc-0.0.6-X-src.tar.xz
+  /usr/src/libuvc-0.0.6-X.tar.xz
+  /usr/src/libuvc0-0.0.6-X.tar.xz
+  /usr/src/libuvc-devel-0.0.6-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libuvc)
+  /usr/share/doc/Cygwin/libuvc.README
+  /usr/share/doc/libuvc/ChangeLog.txt
+  /usr/share/doc/libuvc/LICENSE.txt
+  /usr/share/doc/libuvc/README.md
+  /usr/share/doc/libuvc/isight_imac.txt
+  /usr/share/doc/libuvc/isight_macbook.txt
+  /usr/share/doc/libuvc/logitech_hd_pro_920.txt
+  /usr/share/doc/libuvc/ms_lifecam_show.txt
+  /usr/share/doc/libuvc/quickcampro9000.txt
+  /usr/share/doc/libuvc/quickcampro9000_builtin_ctrls.txt
+  /usr/share/doc/libuvc/quickcampro9000_extra_ctrls.txt
+
+(libuvc0)
+  /usr/bin/cyguvc-0.dll
+
+(libuvc-devel)
+  /usr/include/libuvc/libuvc.h
+  /usr/include/libuvc/libuvc_config.h
+  /usr/lib/cmake/libuvc/libuvcConfig.cmake
+  /usr/lib/cmake/libuvc/libuvcConfigVersion.cmake
+  /usr/lib/cmake/libuvc/libuvcTargets-release.cmake
+  /usr/lib/cmake/libuvc/libuvcTargets.cmake
+  /usr/lib/libuvc.dll.a
+  /usr/lib/pkgconfig/libuvc.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.0.6-1bl1 -----
+Version bump.
+
+----- version 0.0.5-1bl1 -----
+Version bump.
+
+----- version 0.0.3-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

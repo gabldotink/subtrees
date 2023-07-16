@@ -1,0 +1,54 @@
+--- origsrc/procbench_0.9.0aubuntu3~intrepid/src/bench/Makefile.am	2008-12-30 22:02:57.000000000 +0900
++++ src/procbench_0.9.0aubuntu3~intrepid/src/bench/Makefile.am	2012-03-31 16:56:58.097680400 +0900
+@@ -1,7 +1,6 @@
+ lib_LTLIBRARIES= libpbbench.la
+ libpbbench_la_SOURCES = ctbench.c  ctest1.c  ctest2.c  ctfibo.c  ctheapsort.c  ctmatrix.c  ctrandom.c
++libpbbench_la_LDFLAGS = -no-undefined
+ 
+ AM_CFLAGS = -O2 -fPIC -c
+ 
+-AM_LDFLAGS = -shared -Wl,-soname,libpbbench.so.1 
+-
+--- origsrc/procbench_0.9.0aubuntu3~intrepid/src/idriver-i386.cpp	2008-12-30 22:02:57.000000000 +0900
++++ src/procbench_0.9.0aubuntu3~intrepid/src/idriver-i386.cpp	2012-03-31 17:03:02.426782000 +0900
+@@ -29,6 +29,8 @@
+ #include <stdarg.h>
+ #include "cross.h"
+ 
++#include <cstdio>
++
+ const char *host_detect_local_cpu ();
+ const char *host_detect_local_cpu_old ();
+ 
+--- origsrc/procbench_0.9.0aubuntu3~intrepid/src/multi_cpu.cpp	2008-12-30 22:02:57.000000000 +0900
++++ src/procbench_0.9.0aubuntu3~intrepid/src/multi_cpu.cpp	2012-03-31 17:03:26.801782000 +0900
+@@ -26,6 +26,8 @@
+ #include <windows.h>
+ #endif
+ 
++#include <cstdio>
++
+ #define bit_HTT (1 << 28)
+ unsigned int HTTSupported(void)
+ {
+--- origsrc/procbench_0.9.0aubuntu3~intrepid/src/pbbench.cpp	2008-12-30 22:02:57.000000000 +0900
++++ src/procbench_0.9.0aubuntu3~intrepid/src/pbbench.cpp	2012-03-31 16:56:21.114282000 +0900
+@@ -61,11 +61,16 @@ int *PBBench(int arg)
+ 	int x;
+ 	char *error;
+ 	printf("\n------=[CPU Benchmarks]=----------------------------------------------\n");
+-	lib_handle = dlopen("libpbbench.so", RTLD_LAZY);
++#if defined(__CYGWIN__)
++#define SO_NAME "cygpbbench-0.dll"
++#else
++#define SO_NAME "libpbbench.so"
++#endif
++	lib_handle = dlopen(SO_NAME, RTLD_LAZY);
+ 	if (!lib_handle) 
+ 	{
+ 		fprintf(stderr, "%s\n", dlerror());
+-		fprintf(stderr, "probably \"libpbbench.so\" file is missing\n", dlerror());
++		fprintf(stderr, "probably \"" SO_NAME "\" file is missing\n");
+ 		return 0;
+ 	}
+ 

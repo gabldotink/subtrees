@@ -1,0 +1,34 @@
+HOMEPAGE="https://tddft.org/programs/${PN}/"
+SRC_URI="https://gitlab.com/${PN}/${PN}/-/archive/${PV}/${P}.tar.bz2"
+
+CATEGORY="Libs"
+SUMMARY="Library of exchange and correlation functionals to be used in DFT codes"
+DESCRIPTION="libxc is a library of exchange and correlation functionals. Its purpose is to
+be used in codes that implement density-functional theory. For the moment, the
+library includes most of the local density approximations (LDAs), generalized
+density approximation (GGAs), and meta-GGAs. The library provides values for
+the energy density and its 1st, 2nd, and (for the LDAs) 3rd derivatives."
+
+LICENSE="MPL-2.0"
+LICENSE_SPDX="SPDX-License-Identifier: MPL-2.0"
+LICENSE_URI="COPYING"
+
+PKG_NAMES="
+	${PN}
+	${PN}12
+	${PN}-devel
+"
+libxc_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+libxc12_CONTENTS="
+	usr/bin/*.dll
+"
+libxc_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+libxc_SUMMARY="${SUMMARY} (utilities)"
+libxc12_SUMMARY="${SUMMARY} (runtime)"
+libxc_devel_SUMMARY="${SUMMARY} (development)"

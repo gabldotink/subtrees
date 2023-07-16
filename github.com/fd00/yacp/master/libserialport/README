@@ -1,0 +1,74 @@
+libserialport
+------------------------------------------
+libserialport is a minimal, cross-platform shared library written in C that is
+intended to take care of the OS-specific details when writing software that
+uses serial ports.
+
+Runtime requirements:
+  cygwin-3.1.7-1
+  libserialport-devel-0.1.1-1bl3
+  libserialport0-0.1.1-1bl3
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.34+1git.de9c1b7cfe-1
+  cygport-0.34.0-1
+  gcc-core-10.2.0-1
+  libtool-2.4.6-7
+  make-4.3-1
+
+Canonical website:
+  https://sigrok.org/wiki/Libserialport
+
+Canonical download:
+  git://sigrok.org/libserialport
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libserialport-0.1.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libserialport-0.1.1-X.cygport all
+
+This will create:
+  /usr/src/libserialport-0.1.1-X-src.tar.xz
+  /usr/src/libserialport-0.1.1-X.tar.xz
+  /usr/src/libserialport0-0.1.1-X.tar.xz
+  /usr/src/libserialport-devel-0.1.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libserialport)
+  /usr/share/doc/Cygwin/libserialport.README
+  /usr/share/doc/libserialport/AUTHORS
+  /usr/share/doc/libserialport/COPYING
+  /usr/share/doc/libserialport/NEWS
+  /usr/share/doc/libserialport/README
+
+(libserialport0)
+  /usr/bin/cygserialport-0.dll
+
+(libserialport-devel)
+  /usr/include/libserialport.h
+  /usr/lib/libserialport.dll.a
+  /usr/lib/pkgconfig/libserialport.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.1.1-1bl3 -----
+Rebuild with gcc-10.2.0
+
+----- version 0.1.1-1bl2 -----
+Rebuild with gcc-7.4.0
+
+----- version 0.1.1-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

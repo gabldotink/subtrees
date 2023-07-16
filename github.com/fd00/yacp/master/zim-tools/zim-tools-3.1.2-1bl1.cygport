@@ -1,0 +1,20 @@
+HOMEPAGE="https://github.com/openzim/${PN}"
+SRC_URI="https://github.com/openzim/${PN}/archive/refs/tags/${PV}.tar.gz"
+
+CATEGORY="Utils"
+SUMMARY="Various ZIM command line tools"
+DESCRIPTION="Various ZIM command line tools."
+
+LICENSE="GPL-3.0-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: GPL-3.0-or-later"
+LICENSE_URI="LICENSE"
+
+BUILD_REQUIRES="libdocopt-devel libgumbo-devel libzim-devel Mustache zlib-devel"
+
+export CPPFLAGS="${CPPFLAGS} -D_GNU_SOURCE"
+
+inherit meson
+
+DIFF_EXCLUDES="
+    *.html
+"

@@ -1,0 +1,103 @@
+libfwsi
+------------------------------------------
+libfwsi is a library to access the Windows Shell Item format.
+
+Runtime requirements:
+  cygwin-3.3.5-1
+  libcdata1-20220115-1bl1
+  libcerror1-20220101-1bl1
+  libclocale1-20220107-1bl2
+  libcnotify1-20220108-1bl1
+  libfguid1-20220113-1bl1
+  libfwsi-devel-20220123-1bl1
+  libfwsi1-20220123-1bl1
+  libuna1-20220611-1bl1
+  pkg-config-1.8.0-1
+  python39-3.9.10-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.38-1
+  cygport-0.35.2-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libcdata-devel-20220115-1bl1
+  libcerror-devel-20220101-1bl1
+  libclocale-devel-20220107-1bl2
+  libcnotify-devel-20220108-1bl1
+  libfguid-devel-20220113-1bl1
+  libtool-2.4.7-1
+  libuna-devel-20220611-1bl1
+  make-4.3-1
+  python39-3.9.10-1
+  python39-devel-3.9.10-1
+
+Canonical website:
+  https://github.com/libyal/libfwsi
+
+Canonical download:
+  https://github.com/libyal/libfwsi/archive/refs/tags/20220123.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libfwsi-20220123-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libfwsi-20220123-X.cygport all
+
+This will create:
+  /usr/src/libfwsi-20220123-X-src.tar.xz
+  /usr/src/libfwsi-20220123-X.tar.xz
+  /usr/src/libfwsi1-20220123-X.tar.xz
+  /usr/src/libfwsi-devel-20220123-X.tar.xz
+  /usr/src/python39-libfwsi-20220123-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libfwsi)
+  /usr/share/doc/Cygwin/libfwsi.README
+  /usr/share/doc/libfwsi/AUTHORS
+  /usr/share/doc/libfwsi/COPYING
+  /usr/share/doc/libfwsi/COPYING.LESSER
+  /usr/share/doc/libfwsi/ChangeLog
+  /usr/share/doc/libfwsi/README
+
+(libfwsi1)
+  /usr/bin/cygfwsi-1.dll
+
+(libfwsi-devel)
+  /usr/include/libfwsi.h
+  /usr/include/libfwsi/codepage.h
+  /usr/include/libfwsi/definitions.h
+  /usr/include/libfwsi/error.h
+  /usr/include/libfwsi/extern.h
+  /usr/include/libfwsi/features.h
+  /usr/include/libfwsi/types.h
+  /usr/lib/libfwsi.dll.a
+  /usr/lib/pkgconfig/libfwsi.pc
+  /usr/share/man/man3/libfwsi.3.gz
+
+(python39-libfwsi)
+  /usr/lib/python3.9/site-packages/pyfwsi.dll
+
+------------------
+
+Port Notes:
+
+----- version 20220123-1bl1 -----
+Version bump.
+
+----- version 20191221-1bl1 -----
+Version bump.
+
+----- version 20181227-1bl1 -----
+Version bump.
+
+----- version 20160110-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

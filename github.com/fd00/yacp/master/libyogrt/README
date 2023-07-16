@@ -1,0 +1,94 @@
+libyogrt
+------------------------------------------
+A simple wrapper library that provides a unified get-remaining-time interface
+for multiple parallel job scheduling systems.
+
+Runtime requirements:
+  cygwin-3.3.5-1
+  libyogrt1-1.29-1bl1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.38-1
+  cygport-0.35.2-1
+  gcc-core-11.3.0-1
+  libtool-2.4.7-1
+  make-4.3-1
+
+Canonical website:
+  https://github.com/LLNL/libyogrt
+
+Canonical download:
+  https://github.com/LLNL/libyogrt/archive/refs/tags/1.29.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libyogrt-1.29-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libyogrt-1.29-X.cygport all
+
+This will create:
+  /usr/src/libyogrt-1.29-X-src.tar.xz
+  /usr/src/libyogrt-1.29-X.tar.xz
+  /usr/src/libyogrt1-1.29-X.tar.xz
+  /usr/src/libyogrt-devel-1.29-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libyogrt)
+  /etc/yogrt.conf.example
+  /usr/share/doc/Cygwin/libyogrt.README
+  /usr/share/doc/libyogrt/COPYING
+  /usr/share/doc/libyogrt/COPYING.LESSER
+  /usr/share/doc/libyogrt/DISCLAIMER
+  /usr/share/doc/libyogrt/README.md
+
+(libyogrt1)
+  /usr/bin/cygyogrt-1.dll
+  /usr/bin/cygyogrt-none-1.dll
+
+(libyogrt-devel)
+  /usr/include/yogrt.h
+  /usr/lib/libyogrt.dll.a
+  /usr/lib/libyogrt/libyogrt-none.dll.a
+  /usr/share/man/man3/yogrt_get_debug.3.gz
+  /usr/share/man/man3/yogrt_get_fudge_factor.3.gz
+  /usr/share/man/man3/yogrt_get_interval1.3.gz
+  /usr/share/man/man3/yogrt_get_interval2.3.gz
+  /usr/share/man/man3/yogrt_get_interval2_start.3.gz
+  /usr/share/man/man3/yogrt_remaining.3.gz
+  /usr/share/man/man3/yogrt_set_debug.3.gz
+  /usr/share/man/man3/yogrt_set_fudge_factor.3.gz
+  /usr/share/man/man3/yogrt_set_interval1.3.gz
+  /usr/share/man/man3/yogrt_set_interval2.3.gz
+  /usr/share/man/man3/yogrt_set_interval2_start.3.gz
+  /usr/share/man/man3/yogrt_set_remaining.3.gz
+  /usr/share/man/man5/yogrt.conf.5.gz
+  /usr/share/man/man7/libyogrt.7.gz
+  /usr/share/man/man7/yogrt.7.gz
+
+------------------
+
+Port Notes:
+
+----- version 1.29-1bl1 -----
+Version bump.
+
+----- version 1.27-1bl1 -----
+Version bump.
+
+----- version 1.24-1bl1 -----
+Version bump.
+
+----- version 1.20-6-1bl1 -----
+Version bump.
+
+----- version 1.20-4-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

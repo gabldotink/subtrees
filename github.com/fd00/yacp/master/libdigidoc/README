@@ -1,0 +1,110 @@
+libdigidoc
+------------------------------------------
+libDigiDoc is a library implementing a subset of the XAdES digital signature
+standard on top of Estonian specific .ddoc container format. It allows to
+create, sign, verify, and modify digidoc XML containers.
+
+Runtime requirements:
+  cygwin-3.1.4-1
+  libdigidoc-devel-3.10.5-1bl1
+  libdigidoc2-3.10.5-1bl1
+  libssl1.1-1.1.1d-1
+  libxml2-2.9.9-2
+  pkg-config-1.6.0-1
+  zlib0-1.2.11-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.34-1
+  cmake-3.14.5-1
+  cygport-0.33.1-1
+  gcc-core-9.2.0-3
+  ninja-1.9.0-1
+
+Canonical website:
+  https://github.com/open-eid/libdigidoc
+
+Canonical download:
+  https://github.com/open-eid/libdigidoc/archive/v3.10.5.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libdigidoc-3.10.5-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libdigidoc-3.10.5-X.cygport all
+
+This will create:
+  /usr/src/libdigidoc-3.10.5-X-src.tar.xz
+  /usr/src/libdigidoc-3.10.5-X.tar.xz
+  /usr/src/libdigidoc2-3.10.5-X.tar.xz
+  /usr/src/libdigidoc-devel-3.10.5-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libdigidoc)
+  /etc/digidoc.conf
+  /usr/bin/cdigidoc.exe
+  /usr/share/doc/Cygwin/libdigidoc.README
+  /usr/share/doc/libdigidoc/AUTHORS
+  /usr/share/doc/libdigidoc/CONTRIBUTING.md
+  /usr/share/doc/libdigidoc/LICENSE.LGPL
+  /usr/share/doc/libdigidoc/README.md
+  /usr/share/doc/libdigidoc/RELEASE-NOTES.md
+  /usr/share/doc/libdigidoc/SK-CDD-PRG-GUIDE.pdf
+  /usr/share/doc/libdigidoc/SK-COM-PRG-GUIDE.pdf
+  /usr/share/man/man1/cdigidoc.1.gz
+
+(libdigidoc2)
+  /usr/bin/cygdigidoc-2.dll
+
+(libdigidoc-devel)
+  /usr/include/libdigidoc/DigiDocCert.h
+  /usr/include/libdigidoc/DigiDocConfig.h
+  /usr/include/libdigidoc/DigiDocConvert.h
+  /usr/include/libdigidoc/DigiDocDebug.h
+  /usr/include/libdigidoc/DigiDocDefs.h
+  /usr/include/libdigidoc/DigiDocDfExtract.h
+  /usr/include/libdigidoc/DigiDocEnc.h
+  /usr/include/libdigidoc/DigiDocEncGen.h
+  /usr/include/libdigidoc/DigiDocEncSAXParser.h
+  /usr/include/libdigidoc/DigiDocError.h
+  /usr/include/libdigidoc/DigiDocGen.h
+  /usr/include/libdigidoc/DigiDocHTTP.h
+  /usr/include/libdigidoc/DigiDocLib.h
+  /usr/include/libdigidoc/DigiDocMem.h
+  /usr/include/libdigidoc/DigiDocOCSP.h
+  /usr/include/libdigidoc/DigiDocObj.h
+  /usr/include/libdigidoc/DigiDocParser.h
+  /usr/include/libdigidoc/DigiDocSAXParser.h
+  /usr/include/libdigidoc/DigiDocService.h
+  /usr/include/libdigidoc/DigiDocStack.h
+  /usr/include/libdigidoc/DigiDocVerify.h
+  /usr/lib/libdigidoc.dll.a
+  /usr/lib/pkgconfig/libdigidoc.pc
+
+------------------
+
+Port Notes:
+
+----- version 3.10.5-1bl1 -----
+Version bump.
+
+----- version 3.10.4-1bl1 -----
+Version bump.
+
+----- version 3.10.3-1bl1 -----
+Version bump.
+
+----- version 3.10.2-1bl1 -----
+Version bump.
+
+----- version 2.7.0-1bl2 -----
+Rebuild on x86_64
+
+----- version 2.7.0-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://fd0.hatenablog.jp/>

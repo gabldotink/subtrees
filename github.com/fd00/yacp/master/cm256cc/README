@@ -1,0 +1,80 @@
+cm256cc
+------------------------------------------
+Fast GF(256) Cauchy MDS Block Erasure Codec in C++
+
+Runtime requirements:
+  cygwin-3.2.0-1
+  libcm256cc-devel-1.1.0-1bl1
+  libcm256cc1-1.1.0-1bl1
+  libgcc1-10.2.0-1
+  libstdc++6-10.2.0-1
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.36.1-2
+  cmake-3.20.0-1
+  cygport-0.34.0-1
+  gcc-core-10.2.0-1
+  gcc-g++-10.2.0-1
+  ninja-1.10.2-1
+
+Canonical website:
+  https://github.com/f4exb/cm256cc
+
+Canonical download:
+  https://github.com/f4exb/cm256cc/archive/v1.1.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack cm256cc-1.1.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./cm256cc-1.1.0-X.cygport all
+
+This will create:
+  /usr/src/cm256cc-1.1.0-X-src.tar.xz
+  /usr/src/cm256cc-1.1.0-X.tar.xz
+  /usr/src/libcm256cc1-1.1.0-X.tar.xz
+  /usr/src/libcm256cc-devel-1.1.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(cm256cc)
+  /usr/bin/cm256_rx.exe
+  /usr/bin/cm256_test.exe
+  /usr/bin/cm256_tx.exe
+  /usr/share/doc/Cygwin/cm256cc.README
+  /usr/share/doc/cm256cc/LICENSE
+  /usr/share/doc/cm256cc/README.md
+
+(libcm256cc1)
+  /usr/bin/cygcm256cc-1.dll
+
+(libcm256cc-devel)
+  /usr/include/cm256cc/cm256.h
+  /usr/include/cm256cc/export.h
+  /usr/include/cm256cc/gf256.h
+  /usr/include/cm256cc/sse2neon.h
+  /usr/lib/libcm256cc.dll.a
+  /usr/lib/pkgconfig/libcm256cc.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.1.0-1bl1 -----
+Version bump.
+
+----- version 1.0.5-1bl1 -----
+Version bump.
+
+----- version 1.0.4-1bl1 -----
+Version bump.
+
+----- version 1.0.0-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

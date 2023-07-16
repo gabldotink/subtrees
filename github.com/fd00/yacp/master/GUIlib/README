@@ -1,0 +1,88 @@
+GUIlib
+------------------------------------------
+GUIlib is a very simple GUI framework library.
+
+This isn't a full GUI interface library - it's just something I quickly
+whipped up for some demos.
+
+Runtime requirements:
+  cygwin-1.7.33-1
+  libgcc1-4.9.2-1
+  libGUI1.2.0-1.2.1-1bl2
+  libSDL1.2_0-1.2.15-2
+  libstdc++6-4.9.2-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-9-1
+  binutils-2.24.51-6
+  cygport-0.17.1-1
+  gcc-core-4.9.2-1
+  gcc-g++-4.9.2-1
+  libtool-2.4.2-5
+  make-4.0-2
+
+Canonical website:
+  http://www.libsdl.org/projects/GUIlib/
+
+Canonical download:
+  http://www.libsdl.org/projects/GUIlib/src/GUIlib-1.2.1.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  unpack GUIlib-1.2.1-X-src.tar.xz
+    if you use setup to install this src package, it will be
+        unpacked under /usr/src automatically
+  cd /usr/src
+  cygport ./GUIlib-1.2.1-X.cygport all
+
+This will create:
+  /usr/src/GUIlib-1.2.1-X-src.tar.xz
+  /usr/src/GUIlib-1.2.1-X.tar.xz
+  /usr/src/libGUI1.2.0-1.2.1-X.tar.xz
+  /usr/src/libGUI-devel-1.2.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(GUIlib)
+  /usr/share/doc/Cygwin/GUIlib.README
+  /usr/share/doc/GUIlib/CHANGES
+  /usr/share/doc/GUIlib/COPYING
+  /usr/share/doc/GUIlib/README
+
+(libGUI1.2.0)
+  /usr/bin/cygGUI-1-2-0.dll
+
+(libGUI-devel)
+  /usr/include/GUI/GUI.h
+  /usr/include/GUI/GUI_C.h
+  /usr/include/GUI/GUI_area.h
+  /usr/include/GUI/GUI_button.h
+  /usr/include/GUI/GUI_font.h
+  /usr/include/GUI/GUI_generic.h
+  /usr/include/GUI/GUI_image.h
+  /usr/include/GUI/GUI_loadimage.h
+  /usr/include/GUI/GUI_menu.h
+  /usr/include/GUI/GUI_output.h
+  /usr/include/GUI/GUI_scroll.h
+  /usr/include/GUI/GUI_scrollbar.h
+  /usr/include/GUI/GUI_status.h
+  /usr/include/GUI/GUI_termwin.h
+  /usr/include/GUI/GUI_widget.h
+  /usr/include/GUI/GUI_widgets.h
+  /usr/lib/libGUI.dll.a
+
+------------------
+
+Port Notes:
+
+----- version 1.2.1-1bl2 -----
+Rebuild on x86_64
+
+----- version 1.2.1-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>
+

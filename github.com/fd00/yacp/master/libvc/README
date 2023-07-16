@@ -1,0 +1,108 @@
+libvc
+------------------------------------------
+The libvc library is a C library for accessing and manipulating vCard files.
+This package contains only the shared libraries for use by applications that
+need them at run-time.
+
+Runtime requirements:
+  cygwin-3.3.6-1
+  libvc-devel-012-1bl1
+  libvc0-012-1bl1
+  pkg-config-1.9.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.39-1
+  bison-3.8.2-1
+  cygport-0.35.4-1
+  flex-2.6.4-2
+  gcc-core-11.3.0-1
+  libtool-2.4.7-1
+  make-4.3-1
+
+Canonical website:
+  https://github.com/libvc/libvc
+
+Canonical download:
+  https://github.com/libvc/libvc/archive/refs/tags/v012.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libvc-012-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libvc-012-X.cygport all
+
+This will create:
+  /usr/src/libvc-012-X-src.tar.xz
+  /usr/src/libvc-012-X.tar.xz
+  /usr/src/libvc0-012-X.tar.xz
+  /usr/src/libvc-devel-012-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libvc)
+  /usr/share/doc/Cygwin/libvc.README
+  /usr/share/doc/libvc/AUTHORS
+  /usr/share/doc/libvc/COPYING.LIB
+  /usr/share/doc/libvc/ChangeLog
+  /usr/share/doc/libvc/NEWS
+  /usr/share/doc/libvc/README
+  /usr/share/doc/libvc/THANKS
+  /usr/share/doc/libvc/TODO
+  /usr/share/doc/libvc/readme.md
+
+(libvc0)
+  /usr/bin/cygvc-0.dll
+
+(libvc-devel)
+  /usr/include/vc.h
+  /usr/lib/libvc.dll.a
+  /usr/lib/pkgconfig/libvc.pc
+  /usr/share/man/man3/vc.3.gz
+
+------------------
+
+Port Notes:
+
+----- version 012-1bl1 -----
+Version bump.
+
+----- version 011-1bl1 -----
+Version bump.
+
+----- version 009-1bl1 -----
+Version bump.
+
+----- version 007-1bl1 -----
+Version bump.
+
+----- version 006-1bl1 -----
+Version bump.
+
+----- version 005-1bl1 -----
+Version bump.
+
+----- version 003-1bl6 -----
+Rebuild on x86_64
+
+----- version 003-1bl5 -----
+Rebuild with gcc-4.7.3
+
+----- version 003-1bl4 -----
+Rebuild with gcc-4.5.3
+
+----- version 003-1bl3 -----
+Repackage for licensing & readmes
+
+----- version 003-1bl2 -----
+Rebuild with gcc-4 by fd0 <http://d.hatena.ne.jp/fd0/>
+
+----- version 003-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

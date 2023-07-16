@@ -1,0 +1,176 @@
+CLBlast
+------------------------------------------
+CLBlast is a modern, lightweight, performant and tunable OpenCL BLAS library
+written in C++11. It is designed to leverage the full performance potential of
+a wide variety of OpenCL devices from different vendors, including desktop and
+laptop GPUs, embedded GPUs, and other accelerators. CLBlast implements BLAS
+routines: basic linear algebra subprograms operating on vectors and matrices.
+See the CLBlast website for performance reports on various devices as well as
+the latest CLBlast news.
+
+Runtime requirements:
+  cygwin-3.4.2-1
+  libOpenCL1-2.2.12-1
+  libclblast-devel-1.5.3-1bl1
+  libclblast1-1.5.3-1bl1
+  libgcc1-11.3.0-1
+  libopenblas-0.3.20-1
+  libstdc++6-11.3.0-1
+  pkg-config-1.9.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.39-1
+  cmake-3.23.2-1
+  cygport-0.35.5-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  ninja-1.11.1-1
+
+Canonical website:
+  https://github.com/CNugteren/CLBlast
+
+Canonical download:
+  https://github.com/CNugteren/CLBlast/archive/refs/tags/1.5.3.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack CLBlast-1.5.3-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./CLBlast-1.5.3-X.cygport all
+
+This will create:
+  /usr/src/CLBlast-1.5.3-X-src.tar.xz
+  /usr/src/CLBlast-1.5.3-X.tar.xz
+  /usr/src/libclblast1-1.5.3-X.tar.xz
+  /usr/src/libclblast-devel-1.5.3-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(CLBlast)
+  /usr/bin/clblast_test_xamax.exe
+  /usr/bin/clblast_test_xasum.exe
+  /usr/bin/clblast_test_xaxpy.exe
+  /usr/bin/clblast_test_xaxpybatched.exe
+  /usr/bin/clblast_test_xcol2im.exe
+  /usr/bin/clblast_test_xconvgemm.exe
+  /usr/bin/clblast_test_xcopy.exe
+  /usr/bin/clblast_test_xdot.exe
+  /usr/bin/clblast_test_xdotc.exe
+  /usr/bin/clblast_test_xdotu.exe
+  /usr/bin/clblast_test_xgbmv.exe
+  /usr/bin/clblast_test_xgemm.exe
+  /usr/bin/clblast_test_xgemmbatched.exe
+  /usr/bin/clblast_test_xgemmstridedbatched.exe
+  /usr/bin/clblast_test_xgemv.exe
+  /usr/bin/clblast_test_xger.exe
+  /usr/bin/clblast_test_xgerc.exe
+  /usr/bin/clblast_test_xgeru.exe
+  /usr/bin/clblast_test_xhad.exe
+  /usr/bin/clblast_test_xhbmv.exe
+  /usr/bin/clblast_test_xhemm.exe
+  /usr/bin/clblast_test_xhemv.exe
+  /usr/bin/clblast_test_xher.exe
+  /usr/bin/clblast_test_xher2.exe
+  /usr/bin/clblast_test_xher2k.exe
+  /usr/bin/clblast_test_xherk.exe
+  /usr/bin/clblast_test_xhpmv.exe
+  /usr/bin/clblast_test_xhpr.exe
+  /usr/bin/clblast_test_xhpr2.exe
+  /usr/bin/clblast_test_xim2col.exe
+  /usr/bin/clblast_test_xnrm2.exe
+  /usr/bin/clblast_test_xomatcopy.exe
+  /usr/bin/clblast_test_xsbmv.exe
+  /usr/bin/clblast_test_xscal.exe
+  /usr/bin/clblast_test_xspmv.exe
+  /usr/bin/clblast_test_xspr.exe
+  /usr/bin/clblast_test_xspr2.exe
+  /usr/bin/clblast_test_xswap.exe
+  /usr/bin/clblast_test_xsymm.exe
+  /usr/bin/clblast_test_xsymv.exe
+  /usr/bin/clblast_test_xsyr.exe
+  /usr/bin/clblast_test_xsyr2.exe
+  /usr/bin/clblast_test_xsyr2k.exe
+  /usr/bin/clblast_test_xsyrk.exe
+  /usr/bin/clblast_test_xtbmv.exe
+  /usr/bin/clblast_test_xtpmv.exe
+  /usr/bin/clblast_test_xtrmm.exe
+  /usr/bin/clblast_test_xtrmv.exe
+  /usr/bin/clblast_test_xtrsm.exe
+  /usr/bin/clblast_test_xtrsv.exe
+  /usr/bin/clblast_tuner_copy_fast.exe
+  /usr/bin/clblast_tuner_copy_pad.exe
+  /usr/bin/clblast_tuner_invert.exe
+  /usr/bin/clblast_tuner_routine_xgemm.exe
+  /usr/bin/clblast_tuner_routine_xtrsv.exe
+  /usr/bin/clblast_tuner_transpose_fast.exe
+  /usr/bin/clblast_tuner_transpose_pad.exe
+  /usr/bin/clblast_tuner_xaxpy.exe
+  /usr/bin/clblast_tuner_xconvgemm.exe
+  /usr/bin/clblast_tuner_xdot.exe
+  /usr/bin/clblast_tuner_xgemm.exe
+  /usr/bin/clblast_tuner_xgemm_direct.exe
+  /usr/bin/clblast_tuner_xgemv.exe
+  /usr/bin/clblast_tuner_xger.exe
+  /usr/share/doc/CLBlast/CHANGELOG
+  /usr/share/doc/CLBlast/CONTRIBUTING.md
+  /usr/share/doc/CLBlast/LICENSE
+  /usr/share/doc/CLBlast/README.md
+  /usr/share/doc/CLBlast/ROADMAP.md
+  /usr/share/doc/CLBlast/api.md
+  /usr/share/doc/CLBlast/benchmarking.md
+  /usr/share/doc/CLBlast/bindings.md
+  /usr/share/doc/CLBlast/details_conv.md
+  /usr/share/doc/CLBlast/details_gemm.md
+  /usr/share/doc/CLBlast/faq.md
+  /usr/share/doc/CLBlast/glossary.md
+  /usr/share/doc/CLBlast/installation.md
+  /usr/share/doc/CLBlast/routines.md
+  /usr/share/doc/CLBlast/testing.md
+  /usr/share/doc/CLBlast/tuning.md
+  /usr/share/doc/Cygwin/CLBlast.README
+
+(libclblast1)
+  /usr/bin/cygclblast-1.dll
+
+(libclblast-devel)
+  /usr/include/clblast.h
+  /usr/include/clblast_c.h
+  /usr/include/clblast_half.h
+  /usr/lib/cmake/CLBlast/CLBlastConfig-release.cmake
+  /usr/lib/cmake/CLBlast/CLBlastConfig.cmake
+  /usr/lib/libclblast.dll.a
+  /usr/lib/pkgconfig/clblast.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.5.3-1bl1 -----
+Version bump.
+
+----- version 1.5.2-1bl1 -----
+Version bump.
+
+----- version 1.5.1-1bl1 -----
+Version bump.
+
+----- version 1.5.0-1bl1 -----
+Version bump.
+
+----- version 1.4.0-1bl1 -----
+Version bump.
+
+----- version 1.3.0-1bl1 -----
+Version bump.
+
+----- version 1.2.0-1bl1 -----
+Version bump.
+
+----- version 1.0.1-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

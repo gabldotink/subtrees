@@ -1,0 +1,30 @@
+HOMEPAGE="https://github.com/${PN}/${PN}"
+SRC_URI="https://github.com/${PN}/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Effort to implement IETF QUIC protocol"
+DESCRIPTION="ngtcp2 project is an effort to implement QUIC protocol which is now being
+discussed in IETF QUICWG for its standardization."
+
+LICENSE="MIT"
+LICENSE_SPDX="SPDX-License-Identifier: MIT"
+LICENSE_URI="COPYING"
+
+PKG_NAMES="
+	ngtcp2
+	libngtcp2_10
+	libngtcp2-devel
+"
+ngtcp2_CONTENTS="
+	usr/share
+"
+libngtcp2_10_CONTENTS="
+	usr/bin
+"
+libngtcp2_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+ngtcp2_SUMMARY="${SUMMARY} (licensing & readmes)"
+libngtcp2_10_SUMMARY="${SUMMARY} (runtime)"
+libngtcp2_devel_SUMMARY="${SUMMARY} (development)"

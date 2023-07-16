@@ -1,0 +1,21 @@
+HOMEPAGE="http://swapoff.org/${PN}.html"
+SRC_URI="http://swapoff.org/files/${PN}/${P}.tar.gz"
+
+CATEGORY="Utils"
+SUMMARY="Automatic script execution"
+DESCRIPTION="On Dir is a program that automatically executes scripts as you traverse
+directories at a terminal."
+
+src_compile()
+{
+	cd ${B}
+	lndirs
+	cygmake
+}
+
+src_install()
+{
+	cd ${B}
+	dobin ${PN}.exe
+	doman ${PN}.1
+}

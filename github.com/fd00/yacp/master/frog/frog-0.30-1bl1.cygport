@@ -1,0 +1,56 @@
+HOMEPAGE="https://github.com/LanguageMachines/${PN}"
+SRC_URI="https://github.com/LanguageMachines/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Advanced Natural Language Processing suite for Dutch"
+DESCRIPTION="Frog is an integration of memory-based natural language processing (NLP)
+modules developed for Dutch. All NLP modules are based on Timbl, the Tilburg
+memory-based learning software package. Most modules were created in the 1990s
+at the ILK Research Group (Tilburg University, the Netherlands) and the CLiPS
+Research Centre (University of Antwerp, Belgium). Over the years they have
+been integrated into a single text processing tool, which is currently
+maintained and developed by the Language Machines Research Group and the
+Centre for Language and Speech Technology at Radboud University Nijmegen. A
+dependency parser, a base phrase chunker, and a named-entity recognizer
+module were added more recently. Where possible, Frog makes use of
+multi-processor support to run subtasks in parallel."
+
+LICENSE="GPL-3.0-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: GPL-3.0-or-later"
+LICENSE_URI="COPYING"
+
+BUILD_REQUIRES="doxygen graphviz libfolia-devel libicu-devel libmbt-devel libreadline-devel libticcutils-devel libtimbl-devel libucto-devel libxml2-devel"
+
+export CPPFLAGS="${CPPFLAGS} -D_GNU_SOURCE"
+
+# https://bugs.gentoo.org/829253
+export CXXFLAGS="${CXXFLAGS} -std=c++14"
+
+DOCS="
+	README.md
+	docs/*.pdf
+"
+
+DIFF_EXCLUDES="
+	*.m4
+"
+
+PKG_NAMES="
+	${PN}
+	lib${PN}3
+	lib${PN}-devel
+"
+frog_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+libfrog3_CONTENTS="
+	usr/bin/*.dll
+"
+libfrog_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+frog_SUMMARY="${SUMMARY} (utilities)"
+libfrog3_SUMMARY="${SUMMARY} (runtime)"
+libfrog_devel_SUMMARY="${SUMMARY} (development)"

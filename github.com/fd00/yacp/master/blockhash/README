@@ -1,0 +1,68 @@
+blockhash
+------------------------------------------
+Blockhash is a set of libraries (Python and JavaScript, currently) implementing
+a variation of the perceptual image hashing algorithm described by Bian Yang,
+Fan Gu and Xiamu Niu in their paper Block Mean Value Based Image Perceptual
+Hashing
+
+Runtime requirements:
+  cygwin-3.4.6-1
+  libMagickWand7_7-7.0.10.27-2
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.40-1
+  cygport-0.36.1-1
+  gcc-core-11.3.0-1
+  libMagick-devel-7.0.10.27-2
+
+Canonical website:
+  https://github.com/commonsmachinery/blockhash/
+
+Canonical download:
+  https://github.com/commonsmachinery/blockhash/archive/refs/tags/v0.3.3.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack blockhash-0.3.3-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./blockhash-0.3.3-X.cygport all
+
+This will create:
+  /usr/src/blockhash-0.3.3-X-src.tar.xz
+  /usr/src/blockhash-0.3.3-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(blockhash)
+  /usr/bin/blockhash.exe
+  /usr/share/doc/Cygwin/blockhash.README
+  /usr/share/doc/blockhash/LICENSE
+  /usr/share/doc/blockhash/README.md
+
+------------------
+
+Port Notes:
+
+----- version 0.3.3-1bl1 -----
+Version bump.
+
+----- version 0.3.2-1bl1 -----
+Version bump.
+
+----- version 0.3.1-1bl1 -----
+Version bump.
+
+----- version 0.3-1bl1 -----
+Version bump.
+
+----- version 0.2.1-1bl1 -----
+Version bump.
+
+----- version 0.1-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

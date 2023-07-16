@@ -1,0 +1,56 @@
+HOMEPAGE="https://github.com/aws/${PN}-tls"
+GIT_URI="https://github.com/aws/${PN}-tls.git"
+GIT_TAG="v${PV}"
+
+CATEGORY="Libs"
+SUMMARY="Implementation of the TLS/SSL protocols"
+DESCRIPTION="s2n is a C99 implementation of the TLS/SSL protocols that is designed to be
+simple, small, fast, and with security as a priority."
+
+BUILD_REQUIRES="libssl-devel"
+
+inherit cmake
+inherit git
+
+CYGCMAKE_ARGS="
+	-DBUILD_SHARED_LIBS:BOOL=ON
+	-DSOVERSION:STRING=${PV[1]}
+	-DVERSION:STRING=${PV}
+"
+
+src_test()
+{
+	cd ${B}
+	ninja_test
+}
+
+src_install()
+{
+	cd ${B}
+	ninja_install
+
+	cd ${S}
+	insinto /usr/share/doc/${PN}
+	doins docs/*.md
+	insinto /usr/share/doc/${PN}/images
+	doins docs/images/*
+}
+
+PKG_NAMES="
+	${PN}
+	lib${PN}${PV[1]}
+	lib${PN}-devel
+"
+s2n_CONTENTS="
+	usr/share
+"
+libs2n1_CONTENTS="
+	usr/bin
+"
+libs2n_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+s2n_SUMMARY="${SUMMARY} (licensing & readmes)"
+libs2n1_SUMMARY="${SUMMARY} (runtime)"
+libs2n_devel_SUMMARY="${SUMMARY} (development)"

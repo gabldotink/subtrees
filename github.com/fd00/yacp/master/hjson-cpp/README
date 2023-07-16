@@ -1,0 +1,78 @@
+hjson-cpp
+------------------------------------------
+Hjson is a syntax extension to JSON. It's NOT a proposal to replace JSON or to
+incorporate it into the JSON spec itself. It's intended to be used like a user
+interface for humans, to read and edit before passing the JSON data to the
+machine.
+
+Runtime requirements:
+  cygwin-3.3.5-1
+  libgcc1-11.3.0-1
+  libhjson-devel-2.2-1bl2
+  libhjson2-2.2-1bl2
+  libstdc++6-11.3.0-1
+  pkg-config-1.8.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.38-1
+  cmake-3.20.0-1
+  cygport-0.35.1-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  ninja-1.11.0-1
+
+Canonical website:
+  https://github.com/hjson/hjson-cpp
+
+Canonical download:
+  https://github.com/hjson/hjson-cpp/archive/refs/tags/2.2.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack hjson-cpp-2.2-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./hjson-cpp-2.2-X.cygport all
+
+This will create:
+  /usr/src/hjson-cpp-2.2-X-src.tar.xz
+  /usr/src/hjson-cpp-2.2-X.tar.xz
+  /usr/src/libhjson2-2.2-X.tar.xz
+  /usr/src/libhjson-devel-2.2-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(hjson-cpp)
+  /usr/share/doc/Cygwin/hjson-cpp.README
+  /usr/share/doc/hjson-cpp/LICENSE
+  /usr/share/doc/hjson-cpp/README.md
+
+(libhjson2)
+  /usr/bin/cyghjson-2.dll
+
+(libhjson-devel)
+  /usr/include/hjson.h
+  /usr/lib/cmake/hjson/hjson-config-version.cmake
+  /usr/lib/cmake/hjson/hjson-config.cmake
+  /usr/lib/cmake/hjson/hjson-release.cmake
+  /usr/lib/cmake/hjson/hjson.cmake
+  /usr/lib/libhjson.dll.a
+  /usr/lib/pkgconfig/hjson-cpp.pc
+
+------------------
+
+Port Notes:
+
+----- version 2.2-1bl2 -----
+Rebuild with gcc-11.3.0
+
+----- version 2.2-1bl1 -----
+Version bump.
+
+----- version 1.2.1-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

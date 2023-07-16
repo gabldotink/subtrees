@@ -1,0 +1,124 @@
+vnstat
+------------------------------------------
+vnStat is a console-based network traffic monitor for Linux and BSD that keeps
+a log of network traffic for the selected interface(s). It uses the network
+interface statistics provided by the kernel as information source. This means
+that vnStat won't actually be sniffing any traffic and also ensures light use
+of system resources. However, in Linux at least a 2.2 series kernel is
+required.
+
+Runtime requirements:
+  cygwin-3.3.5-1
+  libgd3-2.3.3-1
+  libsqlite3_0-3.34.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.38-1
+  cygport-0.35.1-1
+  gcc-core-11.3.0-1
+  libgd-devel-2.3.3-1
+  libsqlite3-devel-3.34.0-1
+  make-4.3-1
+
+Canonical website:
+  https://humdi.net/vnstat/
+
+Canonical download:
+  https://humdi.net/vnstat/vnstat-2.9.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack vnstat-2.9-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./vnstat-2.9-X.cygport all
+
+This will create:
+  /usr/src/vnstat-2.9-X-src.tar.xz
+  /usr/src/vnstat-2.9-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(vnstat)
+  /etc/rc.d/init.d/vnstat
+  /etc/vnstat.conf
+  /usr/bin/vnstat.exe
+  /usr/bin/vnstati.exe
+  /usr/sbin/vnstatd.exe
+  /usr/share/doc/Cygwin/vnstat.README
+  /usr/share/doc/vnstat/CHANGES
+  /usr/share/doc/vnstat/COPYING
+  /usr/share/doc/vnstat/FAQ
+  /usr/share/doc/vnstat/README
+  /usr/share/man/man1/vnstat.1.gz
+  /usr/share/man/man1/vnstati.1.gz
+  /usr/share/man/man5/vnstat.conf.5.gz
+  /usr/share/man/man8/vnstatd.8.gz
+  /usr/share/vnstat/examples/vnstat-json.cgi
+  /usr/share/vnstat/examples/vnstat-json.php
+  /usr/share/vnstat/examples/vnstat.cgi
+
+------------------
+
+Port Notes:
+
+----- version 2.9-1bl1 -----
+Version bump.
+
+----- version 2.8-1bl1 -----
+Version bump.
+
+----- version 2.6-1bl1 -----
+Version bump.
+
+----- version 2.5-1bl1 -----
+Version bump.
+
+----- version 2.4-1bl1 -----
+Version bump.
+
+----- version 2.2-1bl1 -----
+Version bump.
+
+----- version 2.1-1bl1 -----
+Version bump.
+
+----- version 2.0-1bl1 -----
+Version bump.
+
+----- version 1.18-1bl1 -----
+Version bump.
+
+----- version 1.17-1bl1 -----
+Version bump.
+
+----- version 1.16-1bl1 -----
+Version bump.
+
+----- version 1.15-1bl1 -----
+Version bump.
+
+----- version 1.14-1bl1 -----
+Version bump.
+
+----- version 1.13-1bl1 -----
+Version bump.
+
+----- version 1.12-1bl1 -----
+Version bump.
+
+----- version 1.11-1bl1 -----
+Version bump.
+
+----- version 1.10-1bl1 -----
+Version bump.
+
+----- version 1.9-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

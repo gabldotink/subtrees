@@ -1,0 +1,78 @@
+gtkdialog
+------------------------------------------
+Gtkdialog (or gtkdialog) is a small utility for fast and easy GUI building. It
+can be used to create dialog boxes for almost any interpreted and compiled
+programs which is a very attractive feature since the developer does not have
+to learn various GUI languages for the miscellaneous programming languages.
+
+Runtime requirements:
+  cygwin-2.8.0-1
+  libgdk_pixbuf2.0_0-2.36.6-2
+  libglib2.0_0-2.50.3-1
+  libgtk2.0_0-2.24.31-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-9-1
+  binutils-2.25-4
+  bison-3.0.4-1
+  cygport-0.24.1-1
+  flex-2.6.4-1
+  gcc-core-5.4.0-1
+  make-4.2.1-2
+
+Canonical website:
+  https://code.google.com/archive/p/gtkdialog/
+
+Canonical download:
+  https://storage.googleapis.com/google-code-archive-downloads/v2/code.google.com/gtkdialog/gtkdialog-0.8.3.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack gtkdialog-0.8.3-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./gtkdialog-0.8.3-X.cygport all
+
+This will create:
+  /usr/src/gtkdialog-0.8.3-X-src.tar.xz
+  /usr/src/gtkdialog-0.8.3-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(gtkdialog)
+  /etc/postinstall/gtkdialog.sh
+  /usr/bin/gtkdialog.exe
+  /usr/share/doc/Cygwin/gtkdialog.README
+  /usr/share/doc/gtkdialog/AUTHORS
+  /usr/share/doc/gtkdialog/COPYING
+  /usr/share/doc/gtkdialog/ChangeLog
+  /usr/share/doc/gtkdialog/NEWS
+  /usr/share/doc/gtkdialog/README
+  /usr/share/doc/gtkdialog/TODO
+  /usr/share/icons/hicolor/32x32/apps/gtkdialog.png
+  /usr/share/info/gtkdialog.info.gz
+
+------------------
+
+Port Notes:
+
+----- version 0.8.3-1bl2 -----
+Rebuild with gcc-5.4.0
+
+----- version 0.8.3-1bl1 -----
+Version bump.
+
+----- version 0.7.20-1bl3 -----
+Rebuild with gcc-4.5.2
+
+----- version 0.7.20-1bl2 -----
+Rebuild with gcc-4 by fd0 <http://d.hatena.ne.jp/fd0/>
+
+----- version 0.7.20-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

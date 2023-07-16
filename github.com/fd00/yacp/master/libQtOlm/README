@@ -1,0 +1,79 @@
+libQtOlm
+------------------------------------------
+Qt wrapper for libolm
+
+Runtime requirements:
+  cygwin-3.1.4-1
+  libgcc1-9.3.0-2
+  libolm3-3.1.4-1bl1
+  libQt5Core5-5.9.4-2
+  libQtOlm-devel-3.0.1-1bl1
+  libQtOlm3.0-3.0.1-1bl1
+  libstdc++6-9.3.0-2
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.34+1git.de9c1b7cfe-1
+  cmake-3.14.5-1
+  cygport-0.34.0-1
+  gcc-core-9.3.0-2
+  gcc-g++-9.3.0-2
+  ninja-1.10.0-1
+
+Canonical website:
+  https://gitlab.com/b0/libqtolm
+
+Canonical download:
+  https://gitlab.com/b0/libqtolm/-/archive/v3.0.1/libqtolm-v3.0.1.tar.bz2
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libQtOlm-3.0.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libQtOlm-3.0.1-X.cygport all
+
+This will create:
+  /usr/src/libQtOlm-3.0.1-X-src.tar.xz
+  /usr/src/libQtOlm-3.0.1-X.tar.xz
+  /usr/src/libQtOlm3.0-3.0.1-X.tar.xz
+  /usr/src/libQtOlm-devel-3.0.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libQtOlm)
+  /usr/share/doc/Cygwin/libQtOlm.README
+  /usr/share/doc/libQtOlm/LICENSE
+
+(libQtOlm3.0)
+  /usr/bin/cygQtOlm-3.0.dll
+
+(libQtOlm-devel)
+  /usr/include/qtolm/account.h
+  /usr/include/qtolm/errors.h
+  /usr/include/qtolm/groupsession.h
+  /usr/include/qtolm/message.h
+  /usr/include/qtolm/pk.h
+  /usr/include/qtolm/session.h
+  /usr/include/qtolm/utils.h
+  /usr/lib/cmake/QtOlm/QtOlmConfig.cmake
+  /usr/lib/cmake/QtOlm/QtOlmConfigVersion.cmake
+  /usr/lib/cmake/QtOlm/QtOlmTargets-release.cmake
+  /usr/lib/cmake/QtOlm/QtOlmTargets.cmake
+  /usr/lib/libQtOlm.dll.a
+  /usr/lib/pkgconfig/QtOlm.pc
+
+------------------
+
+Port Notes:
+
+----- version 3.0.1-1bl1 -----
+Version bump.
+
+----- version 0.1.0+git20190930-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

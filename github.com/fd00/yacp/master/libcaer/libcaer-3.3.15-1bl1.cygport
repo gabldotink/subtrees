@@ -1,0 +1,44 @@
+HOMEPAGE="https://gitlab.com/inivation/dv/${PN}/"
+SRC_URI="https://gitlab.com/inivation/dv/${PN}/-/archive/${PV}/${P}.tar.bz2"
+
+CATEGORY="Libs"
+SUMMARY="Minimal C API for low-level access to iniLabs devices"
+DESCRIPTION="Minimal C library to access, configure and get data out of AER sensors,
+such as the Dynamic Vision Sensor (DVS) or DAVIS cameras."
+
+LICENSE="BSD-2-Clause"
+LICENSE_SPDX="SPDX-License-Identifier: BSD-2-Clause"
+LICENSE_URI="LICENSE"
+
+BUILD_REQUIRES="libopencv-devel libserialport-devel libusb1.0-devel"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DENABLE_SERIALDEV:BOOL=ON
+	-DENABLE_OPENCV:BOOL=ON
+	-DEXAMPLES_INSTALL:BOOL=ON
+"
+
+DIFF_EXCLUDES="
+	${PN}.h
+"
+
+PKG_NAMES="
+	${PN}
+	${PN}3
+	${PN}-devel
+"
+libcaer_CONTENTS="
+	usr/share
+"
+libcaer3_CONTENTS="
+	usr/bin
+"
+libcaer_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+libcaer_SUMMARY="${SUMMARY} (licensing & readmes)"
+libcaer3_SUMMARY="${SUMMARY} (runtime)"
+libcaer_devel_SUMMARY="${SUMMARY} (development)"

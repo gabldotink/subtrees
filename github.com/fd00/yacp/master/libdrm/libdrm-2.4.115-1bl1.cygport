@@ -1,0 +1,207 @@
+HOMEPAGE="https://dri.freedesktop.org/wiki/"
+SRC_URI="https://dri.freedesktop.org/${PN}/${P}.tar.xz"
+
+CATEGORY="Libs"
+SUMMARY="Direct Rendering Manager runtime library"
+DESCRIPTION="The Direct Rendering Infrastructure, also known as the DRI, is a framework for
+allowing direct access to graphics hardware under the X Window System in a
+safe and efficient manner. It includes changes to the X server, to several
+client libraries, and to the kernel (DRM, Direct Rendering Manager). The most
+important use for the DRI is to create fast OpenGL implementations providing
+hardware acceleration for Mesa. Several 3D accelerated drivers have been
+written to the DRI specification, including drivers for chipsets produced by
+3DFX, AMD (formerly ATI), Intel and Matrox."
+
+LICENSE="MIT"
+LICENSE_SPDX="SPDX-License-Identifier: MIT"
+# LICENSE_URI="LICENSE"
+
+BUILD_REQUIRES="libcairo-devel libpciaccess-devel python39-docutils"
+
+export CPPFLAGS="${CPPFLAGS} -D__USE_LINUX_IOCTL_DEFS -DDRM_MAJOR=226"
+
+inherit meson
+
+CYGMESON_ARGS="
+	-Detnaviv=enabled
+	-Dexynos=enabled
+	-Dfreedreno=enabled
+	-Dfreedreno-kgsl=true
+	-Dinstall-test-programs=true
+	-Domap=enabled
+	-Dtegra=enabled
+	-Dvalgrind=disabled
+	-Dvc4=enabled
+"
+
+PKG_NAMES="
+	${PN}
+	${PN}2
+	${PN}-devel
+	${PN}_amdgpu1
+	${PN}_amdgpu-devel
+	${PN}_etnaviv1
+	${PN}_etnaviv-devel
+	${PN}_exynos1
+	${PN}_exynos-devel
+	${PN}_freedreno1
+	${PN}_freedreno-devel
+	${PN}_intel1
+	${PN}_intel-devel
+	${PN}_nouveau2
+	${PN}_nouveau-devel
+	${PN}_omap1
+	${PN}_omap-devel
+	${PN}_radeon1
+	${PN}_radeon-devel
+	${PN}_tegra0
+	${PN}_tegra-devel
+	${PN}_vc4-devel
+"
+libdrm_CONTENTS="
+	usr/bin/*.exe
+	usr/share/doc
+"
+libdrm2_CONTENTS="
+	usr/bin/cygdrm-2.dll
+"
+libdrm_devel_CONTENTS="
+	usr/include/libdrm/drm.h
+	usr/include/libdrm/drm_fourcc.h
+	usr/include/libdrm/drm_mode.h
+	usr/include/libdrm/drm_sarea.h
+	usr/include/libdrm/i915_drm.h
+	usr/include/libdrm/mach64_drm.h
+	usr/include/libdrm/mga_drm.h
+	usr/include/libdrm/msm_drm.h
+	usr/include/libdrm/nouveau_drm.h
+	usr/include/libdrm/r128_drm.h
+	usr/include/libdrm/radeon_drm.h
+	usr/include/libdrm/savage_drm.h
+	usr/include/libdrm/sis_drm.h
+	usr/include/libdrm/via_drm.h
+	usr/include/libdrm/virtgpu_drm.h
+	usr/include/libdrm/vmwgfx_drm.h
+	usr/include/libdrm/qxl_drm.h
+	usr/include/libsync.h
+	usr/include/xf86drm.h
+	usr/include/xf86drmMode.h
+	usr/lib/libdrm.*
+	usr/lib/pkgconfig/libdrm.pc
+	usr/share/man
+"
+libdrm_amdgpu1_CONTENTS="
+	usr/bin/cygdrm_amdgpu-1.dll
+	usr/share/${PN}/amdgpu.ids
+"
+libdrm_amdgpu_devel_CONTENTS="
+	usr/include/libdrm/amdgpu.h
+	usr/include/libdrm/amdgpu_drm.h
+	usr/lib/libdrm_amdgpu.*
+	usr/lib/pkgconfig/libdrm_amdgpu.pc
+"
+libdrm_etnaviv1_CONTENTS="
+	usr/bin/cygdrm_etnaviv-1.dll
+"
+libdrm_etnaviv_devel_CONTENTS="
+	usr/include/libdrm/etnaviv_drmif.h
+	usr/lib/libdrm_etnaviv.dll.a
+	usr/lib/pkgconfig/libdrm_etnaviv.pc
+"
+libdrm_exynos1_CONTENTS="
+	usr/bin/cygdrm_exynos-1.dll
+"
+libdrm_exynos_devel_CONTENTS="
+	usr/include/exynos
+	usr/include/libdrm/exynos_drmif.h
+	usr/lib/libdrm_exynos.*
+	usr/lib/pkgconfig/libdrm_exynos.pc
+"
+libdrm_freedreno1_CONTENTS="
+	usr/bin/cygdrm_freedreno-1.dll
+"
+libdrm_freedreno_devel_CONTENTS="
+	usr/include/freedreno
+	usr/lib/libdrm_freedreno.*
+	usr/lib/pkgconfig/libdrm_freedreno.pc
+"
+libdrm_intel1_CONTENTS="
+	usr/bin/cygdrm_intel-1.dll
+"
+libdrm_intel_devel_CONTENTS="
+	usr/include/libdrm/intel_aub.h
+	usr/include/libdrm/intel_bufmgr.h
+	usr/include/libdrm/intel_debug.h
+	usr/lib/libdrm_intel.*
+	usr/lib/pkgconfig/libdrm_intel.pc
+"
+libdrm_nouveau2_CONTENTS="
+	usr/bin/cygdrm_nouveau-2.dll
+"
+libdrm_nouveau_devel_CONTENTS="
+	usr/include/libdrm/nouveau/*.h
+	usr/include/libdrm/nouveau/nvif/*.h
+	usr/lib/libdrm_nouveau.*
+	usr/lib/pkgconfig/libdrm_nouveau.pc
+"
+libdrm_omap1_CONTENTS="
+	usr/bin/cygdrm_omap-1.dll
+"
+libdrm_omap_devel_CONTENTS="
+	usr/include/libdrm/omap_drmif.h
+	usr/include/omap
+	usr/lib/libdrm_omap.*
+	usr/lib/pkgconfig/libdrm_omap.pc
+"
+libdrm_radeon1_CONTENTS="
+	usr/bin/cygdrm_radeon-1.dll
+"
+libdrm_radeon_devel_CONTENTS="
+	usr/include/libdrm/radeon_bo.h
+	usr/include/libdrm/radeon_bo_gem.h
+	usr/include/libdrm/radeon_bo_int.h
+	usr/include/libdrm/radeon_cs.h
+	usr/include/libdrm/radeon_cs_gem.h
+	usr/include/libdrm/radeon_cs_int.h
+	usr/include/libdrm/radeon_surface.h
+	usr/include/libdrm/r600_pci_ids.h
+	usr/lib/libdrm_radeon.*
+	usr/lib/pkgconfig/libdrm_radeon.pc
+"
+libdrm_tegra0_CONTENTS="
+	usr/bin/cygdrm_tegra-0.dll
+"
+libdrm_tegra_devel_CONTENTS="
+	usr/include/libdrm/tegra.h
+	usr/include/libdrm/tegra_drm.h
+	usr/lib/libdrm_tegra.dll.a
+	usr/lib/pkgconfig/libdrm_tegra.pc
+"
+libdrm_vc4_devel_CONTENTS="
+	usr/include/libdrm/vc4_drm.h
+	usr/include/libdrm/vc4_packet.h
+	usr/include/libdrm/vc4_qpu_defines.h
+	usr/lib/pkgconfig/libdrm_vc4.pc
+"
+libdrm_SUMMARY="${SUMMARY} (utilities)"
+libdrm2_SUMMARY="${SUMMARY} (runtime)"
+libdrm_devel_SUMMARY="${SUMMARY} (development)"
+libdrm_amdgpu1_SUMMARY="${SUMMARY} (runtime / amdgpu's KMS API)"
+libdrm_amdgpu_devel_SUMMARY="${SUMMARY} (development / amdgpu's KMS API)"
+libdrm_etnaviv1_SUMMARY="${SUMMARY} (runtime / Etnaviv's experimental API)"
+libdrm_etnaviv_devel_SUMMARY="${SUMMARY} (development / Etnaviv's experimental API)"
+libdrm_exynos1_SUMMARY="${SUMMARY} (runtime / EXYNOS's experimental API)"
+libdrm_exynos_devel_SUMMARY="${SUMMARY} (development / EXYNOS's experimental API)"
+libdrm_freedreno1_SUMMARY="${SUMMARY} (runtime / freedreno's experimental API)"
+libdrm_freedreno_devel_SUMMARY="${SUMMARY} (development / freedreno's experimental API)"
+libdrm_intel1_SUMMARY="${SUMMARY} (runtime / intel's KMS API)"
+libdrm_intel_devel_SUMMARY="${SUMMARY} (development / intel's KMS API)"
+libdrm_nouveau2_SUMMARY="${SUMMARY} (runtime / nouveau's KMS API)"
+libdrm_nouveau_devel_SUMMARY="${SUMMARY} (development / nouveau's KMS API)"
+libdrm_omap1_SUMMARY="${SUMMARY} (runtime / OMAP's experimental API)"
+libdrm_omap_devel_SUMMARY="${SUMMARY} (development / OMAP's experimental API)"
+libdrm_radeon1_SUMMARY="${SUMMARY} (runtime / radeon's KMS API)"
+libdrm_radeon_devel_SUMMARY="${SUMMARY} (development / radeon's KMS API)"
+libdrm_tegra0_SUMMARY="${SUMMARY} (runtime / Tegra's experimental API)"
+libdrm_tegra_devel_SUMMARY="${SUMMARY} (development / Tegra's experimental API)"
+libdrm_vc4_devel_SUMMARY="${SUMMARY} (development / vc4's API)"

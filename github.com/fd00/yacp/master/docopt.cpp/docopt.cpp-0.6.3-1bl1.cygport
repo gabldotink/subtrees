@@ -1,0 +1,44 @@
+HOMEPAGE="https://github.com/docopt/${PN}"
+SRC_URI="https://github.com/docopt/${PN}/archive/v${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="C++11 port of docopt"
+DESCRIPTION="docopt creates beautiful command-line interfaces"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DWITH_EXAMPLE:BOOL=ON
+	-DWITH_TESTS:BOOL=ON
+	-DUSE_BOOST_REGEX:BOOL=ON
+"
+
+src_test()
+{
+	cd ${B}
+	./run_tests
+}
+
+DOCS="
+	LICENSE-*
+	README.rst
+"
+
+PKG_NAMES="
+	${PN}
+	libdocopt0
+	libdocopt-devel
+"
+docopt_cpp_CONTENTS="
+	usr/share
+"
+libdocopt0_CONTENTS="
+	usr/bin
+"
+libdocopt_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+docopt_cpp_SUMMARY="${SUMMARY} (licensing & readmes)"
+libdocopt0_SUMMARY="${SUMMARY} (runtime)"
+libdocopt_devel_SUMMARY="${SUMMARY} (development)"

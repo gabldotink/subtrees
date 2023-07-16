@@ -1,0 +1,30 @@
+HOMEPAGE="http://www.tarsnap.com/${PN}.html"
+SRC_URI="http://www.tarsnap.com/${PN}/${P}.tgz"
+
+CATEGORY="Database"
+SUMMARY="kivaloo data store"
+DESCRIPTION="Kivaloo (pronounced kee-va-lieu) is a collection of utilities which together
+form a data store associating keys of up to 255 bytes with values of up to 255
+bytes. It was designed to satisfy the needs of the Tarsnap online backup
+service for high-performance key-value storage, although it is not yet being
+used for that purpose."
+
+src_compile()
+{
+	cd ${B}
+	lndirs
+	cygmake
+}
+
+src_install()
+{
+	cd ${B}
+	cyginstall install install-bench BINDIR=${D}/usr/bin
+}
+
+DOCS="
+	CHANGELOG
+	DESIGN
+	INTERFACES
+	STYLE
+"

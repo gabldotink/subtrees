@@ -1,0 +1,19 @@
+HOMEPAGE="https://github.com/poacpm/${PN}"
+SRC_URI="https://github.com/poacpm/${PN}/archive/${PV}.tar.gz"
+
+CATEGORY="Devel"
+SUMMARY="Package manager for C++"
+DESCRIPTION="Poac is a package manager for C++ users."
+
+inherit cmake
+
+src_test()
+{
+	p=`uuidgen | sed -e 's/-//g'`
+	cd ${T}
+	${B}/poac new ${p}
+	pushd ${p}
+		${B}/poac run
+	popd
+	rm -rf ${p}
+}

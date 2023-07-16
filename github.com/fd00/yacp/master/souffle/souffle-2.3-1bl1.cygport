@@ -1,0 +1,34 @@
+HOMEPAGE="https://github.com/${PN}-lang/${PN}"
+SRC_URI="https://github.com/${PN}-lang/${PN}/archive/refs/tags/${PV}.tar.gz"
+
+CATEGORY="Devel"
+SUMMARY="Translator of Horn clauses into parallel C++"
+DESCRIPTION="Soufflé is a translator of Horn clauses into parallel C++. Soufflé language
+has similarities to Datalog, and is used as a domain-specific language for
+analysis problems."
+
+BUILD_REQUIRES="libffi-devel libncurses-devel libsqlite3-devel zlib-devel"
+
+export CPPFLAGS="${CPPFLAGS} -D_GNU_SOURCE"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+    -DSOUFFLE_BASH_COMPLETION:BOOL=ON
+    -DSOUFFLE_GIT:BOOL=OFF
+    -DSOUFFLE_VERSION:STRING=${PV}
+"
+
+src_test()
+{
+    cd ${B}
+    ninja_test
+}
+
+DIFF_EXCLUDES="
+    testsuite
+"
+
+DOCS="
+    licenses/*
+"

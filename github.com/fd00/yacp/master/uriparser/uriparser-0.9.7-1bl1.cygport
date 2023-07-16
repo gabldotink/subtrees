@@ -1,0 +1,46 @@
+HOMEPAGE="https://github.com/${PN}/${PN}/"
+SRC_URI="https://github.com/${PN}/${PN}/releases/download/${P}/${P}.tar.xz"
+
+CATEGORY="Libs"
+SUMMARY="RFC 3986 compliant URI parser library"
+DESCRIPTION="uriparser is a strictly RFC 3986 compliant URI parsing and handling library
+written in C. uriparser is cross-platform, fast, supports Unicode and is
+licensed under the New BSD license."
+
+LICENSE="BSD-3-Clause"
+LICENSE_SPDX="SPDX-License-Identifier: BSD-3-Clause"
+LICENSE_URI="COPYING"
+
+BUILD_REQUIRES="libgtest-devel"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DURIPARSER_BUILD_DOCS:BOOL=OFF
+"
+
+src_test()
+{
+	cd ${B}
+	ninja_test
+}
+
+PKG_NAMES="
+	${PN}
+	lib${PN}1
+	lib${PN}-devel
+"
+uriparser_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+liburiparser1_CONTENTS="
+	usr/bin/*.dll
+"
+liburiparser_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+uriparser_SUMMARY="${SUMMARY} (utilities)"
+liburiparser1_SUMMARY="${SUMMARY} (runtime)"
+liburiparser_devel_SUMMARY="${SUMMARY} (development)"

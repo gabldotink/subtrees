@@ -1,0 +1,266 @@
+opensc
+------------------------------------------
+OpenSC provides a set of libraries and utilities to work with smart cards. Its
+main focus is on cards that support cryptographic operations, and facilitate
+their use in security applications such as authentication, mail encryption and
+digital signatures. OpenSC implements the PKCS#11 API so applications
+supporting this API (such as Mozilla Firefox and Thunderbird) can use it. On
+the card OpenSC implements the PKCS#15 standard and aims to be compatible with
+every software/card that does so, too.
+
+Runtime requirements:
+  cygwin-3.4.3-1
+  libeac3-1.1.2-1bl1
+  libopensc-devel-0.23.0-1bl1
+  libopensc8-0.23.0-1bl1
+  libreadline7-8.2-2
+  libssl1.1-1.1.1s-1
+  pkg-config-1.9.3-1
+  zlib0-1.2.13-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.39-1
+  cygport-0.35.5-1
+  flex-2.6.4-2
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  gengetopt-2.23-1bl1
+  libeac-devel-1.1.2-1bl1
+  libreadline-devel-8.2-2
+  libssl-devel-1.1.1s-1
+  libtool-2.4.7-1
+  make-4.4-1
+  zlib-devel-1.2.13-1
+
+Canonical website:
+  https://github.com/OpenSC/OpenSC
+
+Canonical download:
+  https://github.com/OpenSC/OpenSC/archive/refs/tags/0.23.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack opensc-0.23.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./opensc-0.23.0-X.cygport all
+
+This will create:
+  /usr/src/opensc-0.23.0-X-src.tar.xz
+  /usr/src/opensc-0.23.0-X.tar.xz
+  /usr/src/libopensc8-0.23.0-X.tar.xz
+  /usr/src/libopensc-devel-0.23.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(opensc)
+  /etc/eac/cvc/DESCHSMCVCA00001
+  /etc/eac/cvc/DESRCACC100001
+  /etc/opensc.conf
+  /etc/xdg/autostart/pkcs11-register.desktop
+  /usr/bin/cardos-tool.exe
+  /usr/bin/cryptoflex-tool.exe
+  /usr/bin/dnie-tool.exe
+  /usr/bin/egk-tool.exe
+  /usr/bin/eidenv.exe
+  /usr/bin/gids-tool.exe
+  /usr/bin/goid-tool.exe
+  /usr/bin/iasecc-tool.exe
+  /usr/bin/netkey-tool.exe
+  /usr/bin/npa-tool.exe
+  /usr/bin/openpgp-tool.exe
+  /usr/bin/opensc-asn1.exe
+  /usr/bin/opensc-explorer.exe
+  /usr/bin/opensc-notify.exe
+  /usr/bin/opensc-tool.exe
+  /usr/bin/piv-tool.exe
+  /usr/bin/pkcs11-register.exe
+  /usr/bin/pkcs11-tool.exe
+  /usr/bin/pkcs15-crypt.exe
+  /usr/bin/pkcs15-init.exe
+  /usr/bin/pkcs15-tool.exe
+  /usr/bin/sc-hsm-tool.exe
+  /usr/bin/westcos-tool.exe
+  /usr/lib/cygsmm-local-8.dll
+  /usr/lib/onepin-opensc-pkcs11.dll
+  /usr/lib/opensc-pkcs11.dll
+  /usr/lib/pkcs11-spy.dll
+  /usr/lib/pkcs11/onepin-opensc-pkcs11-8.dll
+  /usr/lib/pkcs11/opensc-pkcs11-8.dll
+  /usr/lib/pkcs11/pkcs11-spy-8.dll
+  /usr/share/applications/org.opensc.notify.desktop
+  /usr/share/bash-completion/completions/cardos-tool
+  /usr/share/bash-completion/completions/cryptoflex-tool
+  /usr/share/bash-completion/completions/dnie-tool
+  /usr/share/bash-completion/completions/egk-tool
+  /usr/share/bash-completion/completions/eidenv
+  /usr/share/bash-completion/completions/gids-tool
+  /usr/share/bash-completion/completions/goid-tool
+  /usr/share/bash-completion/completions/iasecc-tool
+  /usr/share/bash-completion/completions/netkey-tool
+  /usr/share/bash-completion/completions/npa-tool
+  /usr/share/bash-completion/completions/openpgp-tool
+  /usr/share/bash-completion/completions/opensc-asn1
+  /usr/share/bash-completion/completions/opensc-explorer
+  /usr/share/bash-completion/completions/opensc-notify
+  /usr/share/bash-completion/completions/opensc-tool
+  /usr/share/bash-completion/completions/piv-tool
+  /usr/share/bash-completion/completions/pkcs11-register
+  /usr/share/bash-completion/completions/pkcs11-tool
+  /usr/share/bash-completion/completions/pkcs15-crypt
+  /usr/share/bash-completion/completions/pkcs15-init
+  /usr/share/bash-completion/completions/pkcs15-tool
+  /usr/share/bash-completion/completions/sc-hsm-tool
+  /usr/share/bash-completion/completions/westcos-tool
+  /usr/share/doc/Cygwin/opensc.README
+  /usr/share/doc/opensc/COPYING
+  /usr/share/doc/opensc/NEWS
+  /usr/share/doc/opensc/README
+  /usr/share/doc/opensc/opensc.conf
+  /usr/share/doc/opensc/readme.md
+  /usr/share/man/man1/cardos-tool.1.gz
+  /usr/share/man/man1/cryptoflex-tool.1.gz
+  /usr/share/man/man1/dnie-tool.1.gz
+  /usr/share/man/man1/egk-tool.1.gz
+  /usr/share/man/man1/eidenv.1.gz
+  /usr/share/man/man1/gids-tool.1.gz
+  /usr/share/man/man1/goid-tool.1.gz
+  /usr/share/man/man1/iasecc-tool.1.gz
+  /usr/share/man/man1/netkey-tool.1.gz
+  /usr/share/man/man1/npa-tool.1.gz
+  /usr/share/man/man1/openpgp-tool.1.gz
+  /usr/share/man/man1/opensc-asn1.1.gz
+  /usr/share/man/man1/opensc-explorer.1.gz
+  /usr/share/man/man1/opensc-notify.1.gz
+  /usr/share/man/man1/opensc-tool.1.gz
+  /usr/share/man/man1/piv-tool.1.gz
+  /usr/share/man/man1/pkcs11-register.1.gz
+  /usr/share/man/man1/pkcs11-tool.1.gz
+  /usr/share/man/man1/pkcs15-crypt.1.gz
+  /usr/share/man/man1/pkcs15-init.1.gz
+  /usr/share/man/man1/pkcs15-tool.1.gz
+  /usr/share/man/man1/sc-hsm-tool.1.gz
+  /usr/share/man/man1/westcos-tool.1.gz
+  /usr/share/man/man5/opensc.conf.5.gz
+  /usr/share/man/man5/pkcs15-profile.5.gz
+  /usr/share/opensc/asepcos.profile
+  /usr/share/opensc/authentic.profile
+  /usr/share/opensc/cardos.profile
+  /usr/share/opensc/cyberflex.profile
+  /usr/share/opensc/entersafe.profile
+  /usr/share/opensc/epass2003.profile
+  /usr/share/opensc/flex.profile
+  /usr/share/opensc/gids.profile
+  /usr/share/opensc/gpk.profile
+  /usr/share/opensc/ias_adele_admin1.profile
+  /usr/share/opensc/ias_adele_admin2.profile
+  /usr/share/opensc/ias_adele_common.profile
+  /usr/share/opensc/iasecc.profile
+  /usr/share/opensc/iasecc_admin_eid.profile
+  /usr/share/opensc/iasecc_generic_oberthur.profile
+  /usr/share/opensc/iasecc_generic_pki.profile
+  /usr/share/opensc/incrypto34.profile
+  /usr/share/opensc/isoApplet.profile
+  /usr/share/opensc/muscle.profile
+  /usr/share/opensc/myeid.profile
+  /usr/share/opensc/oberthur.profile
+  /usr/share/opensc/openpgp.profile
+  /usr/share/opensc/pkcs15.profile
+  /usr/share/opensc/rutoken.profile
+  /usr/share/opensc/rutoken_ecp.profile
+  /usr/share/opensc/rutoken_lite.profile
+  /usr/share/opensc/sc-hsm.profile
+  /usr/share/opensc/setcos.profile
+  /usr/share/opensc/starcos.profile
+  /usr/share/opensc/westcos.profile
+
+(libopensc8)
+  /usr/bin/cygopensc-8.dll
+
+(libopensc-devel)
+  /usr/include/libopensc/asn1.h
+  /usr/include/libopensc/authentic.h
+  /usr/include/libopensc/aux-data.h
+  /usr/include/libopensc/card-cac-common.h
+  /usr/include/libopensc/card-gids.h
+  /usr/include/libopensc/card-npa.h
+  /usr/include/libopensc/card-openpgp.h
+  /usr/include/libopensc/card-sc-hsm.h
+  /usr/include/libopensc/cardctl.h
+  /usr/include/libopensc/cards.h
+  /usr/include/libopensc/ccid-types.h
+  /usr/include/libopensc/compression.h
+  /usr/include/libopensc/ctbcs.h
+  /usr/include/libopensc/cwa-dnie.h
+  /usr/include/libopensc/cwa14890.h
+  /usr/include/libopensc/errors.h
+  /usr/include/libopensc/gp.h
+  /usr/include/libopensc/iasecc-sdo.h
+  /usr/include/libopensc/iasecc.h
+  /usr/include/libopensc/internal-winscard.h
+  /usr/include/libopensc/internal.h
+  /usr/include/libopensc/iso7816.h
+  /usr/include/libopensc/itacns.h
+  /usr/include/libopensc/jpki.h
+  /usr/include/libopensc/log.h
+  /usr/include/libopensc/muscle-filesystem.h
+  /usr/include/libopensc/muscle.h
+  /usr/include/libopensc/opensc.h
+  /usr/include/libopensc/pace.h
+  /usr/include/libopensc/pkcs15-emulator-filter.h
+  /usr/include/libopensc/pkcs15-syn.h
+  /usr/include/libopensc/pkcs15.h
+  /usr/include/libopensc/reader-tr03119.h
+  /usr/include/libopensc/sc-ossl-compat.h
+  /usr/include/libopensc/simpletlv.h
+  /usr/include/libopensc/sm.h
+  /usr/include/libopensc/types.h
+  /usr/lib/libopensc.dll.a
+  /usr/lib/pkgconfig/opensc-pkcs11.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.23.0-1bl1 -----
+Version bump.
+
+----- version 0.22.0-1bl1 -----
+Version bump.
+
+----- version 0.21.0-1bl1 -----
+Version bump.
+
+----- version 0.20.0-1bl1 -----
+Version bump.
+
+----- version 0.19.0-1bl1 -----
+Version bump.
+
+----- version 0.18.0-1bl1 -----
+Version bump.
+
+----- version 0.17.0-1bl1 -----
+Version bump.
+
+----- version 0.14.0-1bl1 -----
+Version bump.
+
+----- version 0.13.0-1bl1 -----
+Version bump.
+
+----- version 0.12.2-1bl2 -----
+Rebuild for libopenssl
+
+----- version 0.12.2-1bl1 -----
+Version bump.
+
+----- version 0.12.1-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

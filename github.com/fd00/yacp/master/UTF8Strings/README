@@ -1,0 +1,80 @@
+UTF8Strings
+------------------------------------------
+UTF8 Strings as a C++ library that provides ability to work natively with UTF8
+strings in a very simple way.
+
+All you get is UTF8::String class with many overloaded operators and serving
+functions. You can concatenate strings just with + operator, assign one to
+another, convert to and from integer, get substring, replace and so on. And
+all the time content of the string is native UTF8 sequence which you can
+access too.
+
+Runtime requirements:
+  cygwin-2.9.0-3
+  libgcc1-6.4.0-4
+  libstdc++6-6.4.0-4
+  libUTF8Strings1-1.14.2-1bl1
+  pkg-config-0.29.1-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.29-1
+  cmake-3.6.2-1
+  cygport-0.25.0-1
+  gcc-core-6.4.0-4
+  gcc-g++-6.4.0-4
+  make-4.2.1-2
+
+Canonical website:
+  http://grigory.info/UTF8Strings.About.html
+
+Canonical download:
+  http://grigory.info/distfiles/UTF8Strings-1.14.2.tar.bz2
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack UTF8Strings-1.14.2-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./UTF8Strings-1.14.2-X.cygport all
+
+This will create:
+  /usr/src/UTF8Strings-1.14.2-X-src.tar.xz
+  /usr/src/UTF8Strings-1.14.2-X.tar.xz
+  /usr/src/libUTF8Strings1-1.14.2-X.tar.xz
+  /usr/src/libUTF8Strings-devel-1.14.2-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(UTF8Strings)
+  /usr/share/doc/Cygwin/UTF8Strings.README
+  /usr/share/doc/UTF8Strings/ChangeLog.txt
+
+(libUTF8Strings1)
+  /usr/bin/cygUTF8Strings-1.dll
+
+(libUTF8Strings-devel)
+  /usr/include/UTF8Strings-1/Exception.h
+  /usr/include/UTF8Strings-1/String.h
+  /usr/lib/libUTF8Strings-1.dll.a
+  /usr/lib/pkgconfig/UTF8Strings.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.14.2-1bl1 -----
+Version bump.
+
+----- version 1.14.0-1bl2 -----
+Rebuild with gcc-6.3.0
+
+----- version 1.14.0-1bl1 -----
+Version bump.
+
+----- version 1.12.1-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://fd0.hatenablog.jp/>

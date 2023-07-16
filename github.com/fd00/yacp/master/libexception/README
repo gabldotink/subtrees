@@ -1,0 +1,76 @@
+libexception
+------------------------------------------
+libexception is an exception handling library for C. It uses the setjmp and
+longjmp calls to build a stack of jump buffers and exceptions and provides high
+level semantics implemented as macros to make exception handling in C
+unobtrusive and easy to use.
+
+Runtime requirements:
+  cygwin-1.7.32-1
+  libexception0-0.1+git20101004-1bl2
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-9-1
+  binutils-2.24.51-6
+  cygport-0.17.0-1
+  gcc-core-4.9.0-1
+  libtool-2.4.2-5
+  make-4.0-2
+
+Canonical website:
+  https://github.com/hollow/libexception
+
+Canonical download:
+  git://github.com/hollow/libexception.git
+
+-------------------------------------------
+
+Build instructions:
+  unpack libexception-0.1+git20101004-X-src.tar.xz
+    if you use setup to install this src package, it will be
+        unpacked under /usr/src automatically
+  cd /usr/src
+  cygport ./libexception-0.1+git20101004-X.cygport all
+
+This will create:
+  /usr/src/libexception-0.1+git20101004-X-src.tar.xz
+  /usr/src/libexception-0.1+git20101004-X.tar.xz
+  /usr/src/libexception0-0.1+git20101004-X.tar.xz
+  /usr/src/libexception-devel-0.1+git20101004-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libexception)
+  /usr/share/doc/Cygwin/libexception.README
+  /usr/share/doc/libexception/LICENSE
+
+(libexception0)
+  /usr/bin/cygexception-0.dll
+
+(libexception-devel)
+  /usr/include/exception.h
+  /usr/lib/libexception.dll.a
+
+------------------
+
+Port Notes:
+
+----- version 0.1+git20101004-1bl2 -----
+Rebuild on x86_64
+
+----- version 0.1+git20101004-1bl1 -----
+Version bump.
+
+----- version 0.1+git20100419-1bl1 -----
+Version bump.
+
+----- version 0.1-1bl2 -----
+Rebuild with gcc-4 by fd0 <http://d.hatena.ne.jp/fd0/>
+
+----- version 0.1-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>
+

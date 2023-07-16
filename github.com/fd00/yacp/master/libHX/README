@@ -1,0 +1,192 @@
+libHX
+------------------------------------------
+libHX is a C library (with some C++ bindings available) that provides data
+structures and functions commonly needed, such as maps, deques, linked lists,
+string formatting and autoresizing, option and config file parsing, type
+checking casts and more.
+
+Runtime requirements:
+  cygwin-3.4.6-1
+  libHX-devel-4.12-1bl1
+  libHX32-4.12-1bl1
+  pkg-config-1.9.4-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.40-1
+  cygport-0.36.1-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libtool-2.4.7-1
+  make-4.4.1-1
+
+Canonical website:
+  https://inai.de/projects/libhx/
+
+Canonical download:
+  https://inai.de/files/libhx/libHX-4.12.tar.xz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libHX-4.12-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libHX-4.12-X.cygport all
+
+This will create:
+  /usr/src/libHX-4.12-X-src.tar.xz
+  /usr/src/libHX-4.12-X.tar.xz
+  /usr/src/libHX32-4.12-X.tar.xz
+  /usr/src/libHX-devel-4.12-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libHX)
+  /usr/share/doc/Cygwin/libHX.README
+  /usr/share/doc/libHX/COPYING
+  /usr/share/doc/libHX/LICENSE.GPL3
+  /usr/share/doc/libHX/LICENSE.LGPL2
+  /usr/share/doc/libHX/LICENSE.LGPL3
+  /usr/share/doc/libHX/LICENSE.MIT
+  /usr/share/doc/libHX/README.rst
+
+(libHX32)
+  /usr/bin/cygHX-32.dll
+  /usr/lib/cygHX_rtcheck.dll
+
+(libHX-devel)
+  /usr/include/libHX.h
+  /usr/include/libHX/ctype_helper.h
+  /usr/include/libHX/defs.h
+  /usr/include/libHX/deque.h
+  /usr/include/libHX/init.h
+  /usr/include/libHX/intdiff.hpp
+  /usr/include/libHX/io.h
+  /usr/include/libHX/libxml_helper.h
+  /usr/include/libHX/list.h
+  /usr/include/libHX/map.h
+  /usr/include/libHX/misc.h
+  /usr/include/libHX/option.h
+  /usr/include/libHX/proc.h
+  /usr/include/libHX/socket.h
+  /usr/include/libHX/string.h
+  /usr/include/libHX/wx_helper.hpp
+  /usr/lib/libHX.dll.a
+  /usr/lib/pkgconfig/libHX.pc
+  /usr/share/doc/libHX/api.rst
+  /usr/share/doc/libHX/assorted.txt
+  /usr/share/doc/libHX/bitmaps.rst
+  /usr/share/doc/libHX/changelog.rst
+  /usr/share/doc/libHX/const_cast.c
+  /usr/share/doc/libHX/dirstamp.rst
+  /usr/share/doc/libHX/files_and_dirs.rst
+  /usr/share/doc/libHX/generator.cpp
+  /usr/share/doc/libHX/helper_headers.rst
+  /usr/share/doc/libHX/history.rst
+  /usr/share/doc/libHX/init.rst
+  /usr/share/doc/libHX/inline_clist.rst
+  /usr/share/doc/libHX/inline_list.rst
+  /usr/share/doc/libHX/install.rst
+  /usr/share/doc/libHX/libHX_Documentation.rst
+  /usr/share/doc/libHX/linked_list.rst
+  /usr/share/doc/libHX/macros.rst
+  /usr/share/doc/libHX/maps.rst
+  /usr/share/doc/libHX/memory_container.rst
+  /usr/share/doc/libHX/misc_functions.rst
+  /usr/share/doc/libHX/option_parsing.rst
+  /usr/share/doc/libHX/process_management.rst
+  /usr/share/doc/libHX/random_numbers.rst
+  /usr/share/doc/libHX/shconfig.rst
+  /usr/share/doc/libHX/socket_functions.rst
+  /usr/share/doc/libHX/string_formatter.rst
+  /usr/share/doc/libHX/string_ops.rst
+  /usr/share/doc/libHX/strlcpy-timing.rst
+  /usr/share/doc/libHX/time_functions.rst
+  /usr/share/doc/libHX/typecheck_casts.rst
+  /usr/share/doc/libHX/ux-file.rst
+  /usr/share/doc/libHX/ux-mmap.rst
+
+------------------
+
+Port Notes:
+
+----- version 4.12-1bl1 -----
+Version bump.
+
+----- version 4.10-1bl1 -----
+Version bump.
+
+----- version 4.9-1bl1 -----
+Version bump.
+
+----- version 4.7-1bl1 -----
+Version bump.
+
+----- version 4.5-1bl1 -----
+Version bump.
+
+----- version 4.2-1bl1 -----
+Version bump.
+
+----- version 4.0.1-1bl1 -----
+Version bump.
+
+----- version 3.26-1bl1 -----
+Version bump.
+
+----- version 3.25-1bl1 -----
+Version bump.
+
+----- version 3.24-1bl1 -----
+Version bump.
+
+----- version 3.23-1bl1 -----
+Version bump.
+
+----- version 3.22-1bl1 -----
+Version bump.
+
+----- version 3.21-1bl1 -----
+Version bump.
+
+----- version 3.18-1bl1 -----
+Version bump.
+
+----- version 3.15-1bl1 -----
+Version bump.
+
+----- version 3.14.1-1bl1 -----
+Version bump.
+
+----- version 3.14-1bl1 -----
+Version bump.
+
+----- version 3.13-1bl1 -----
+Version bump.
+
+----- version 3.12.1-1bl1 -----
+Version bump.
+
+----- version 3.10.1-1bl1 -----
+Version bump.
+
+----- version 3.9.1-1bl1 -----
+Version bump.
+
+----- version 3.8-1bl1 -----
+Version bump.
+
+----- version 3.6-1bl1 -----
+Version bump.
+
+----- version 3.4-1bl1 -----
+Version bump.
+
+----- version 3.2-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

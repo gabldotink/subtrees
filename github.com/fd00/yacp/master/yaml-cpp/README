@@ -1,0 +1,135 @@
+yaml-cpp
+------------------------------------------
+yaml-cpp is a YAML parser and emitter in C++ matching the YAML 1.2 spec.
+
+Runtime requirements:
+  cygwin-3.2.0-1
+  libgcc1-11.2.0-1
+  libstdc++6-11.2.0-1
+  libyaml-cpp-devel-0.7.0-1bl1
+  libyaml-cpp0.7-0.7.0-1bl1
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.37-1
+  cmake-3.20.0-1
+  cygport-0.34.0-1
+  gcc-core-11.2.0-1
+  gcc-g++-11.2.0-1
+  ninja-1.10.2-1
+
+Canonical website:
+  https://github.com/jbeder/yaml-cpp
+
+Canonical download:
+  https://github.com/jbeder/yaml-cpp/archive/refs/tags/yaml-cpp-0.7.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack yaml-cpp-0.7.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./yaml-cpp-0.7.0-X.cygport all
+
+This will create:
+  /usr/src/yaml-cpp-0.7.0-X-src.tar.xz
+  /usr/src/yaml-cpp-0.7.0-X.tar.xz
+  /usr/src/libyaml-cpp0.7-0.7.0-X.tar.xz
+  /usr/src/libyaml-cpp-devel-0.7.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(yaml-cpp)
+  /usr/share/doc/Cygwin/yaml-cpp.README
+  /usr/share/doc/yaml-cpp/LICENSE
+  /usr/share/doc/yaml-cpp/README.md
+
+(libyaml-cpp0.7)
+  /usr/bin/cygyaml-cpp-0.7.dll
+
+(libyaml-cpp-devel)
+  /usr/include/yaml-cpp/anchor.h
+  /usr/include/yaml-cpp/binary.h
+  /usr/include/yaml-cpp/contrib/anchordict.h
+  /usr/include/yaml-cpp/contrib/graphbuilder.h
+  /usr/include/yaml-cpp/depthguard.h
+  /usr/include/yaml-cpp/dll.h
+  /usr/include/yaml-cpp/emitfromevents.h
+  /usr/include/yaml-cpp/emitter.h
+  /usr/include/yaml-cpp/emitterdef.h
+  /usr/include/yaml-cpp/emittermanip.h
+  /usr/include/yaml-cpp/emitterstyle.h
+  /usr/include/yaml-cpp/eventhandler.h
+  /usr/include/yaml-cpp/exceptions.h
+  /usr/include/yaml-cpp/mark.h
+  /usr/include/yaml-cpp/node/convert.h
+  /usr/include/yaml-cpp/node/detail/impl.h
+  /usr/include/yaml-cpp/node/detail/iterator.h
+  /usr/include/yaml-cpp/node/detail/iterator_fwd.h
+  /usr/include/yaml-cpp/node/detail/memory.h
+  /usr/include/yaml-cpp/node/detail/node.h
+  /usr/include/yaml-cpp/node/detail/node_data.h
+  /usr/include/yaml-cpp/node/detail/node_iterator.h
+  /usr/include/yaml-cpp/node/detail/node_ref.h
+  /usr/include/yaml-cpp/node/emit.h
+  /usr/include/yaml-cpp/node/impl.h
+  /usr/include/yaml-cpp/node/iterator.h
+  /usr/include/yaml-cpp/node/node.h
+  /usr/include/yaml-cpp/node/parse.h
+  /usr/include/yaml-cpp/node/ptr.h
+  /usr/include/yaml-cpp/node/type.h
+  /usr/include/yaml-cpp/noexcept.h
+  /usr/include/yaml-cpp/null.h
+  /usr/include/yaml-cpp/ostream_wrapper.h
+  /usr/include/yaml-cpp/parser.h
+  /usr/include/yaml-cpp/stlemitter.h
+  /usr/include/yaml-cpp/traits.h
+  /usr/include/yaml-cpp/yaml.h
+  /usr/lib/cmake/yaml-cpp/yaml-cpp-config-version.cmake
+  /usr/lib/cmake/yaml-cpp/yaml-cpp-config.cmake
+  /usr/lib/cmake/yaml-cpp/yaml-cpp-targets-release.cmake
+  /usr/lib/cmake/yaml-cpp/yaml-cpp-targets.cmake
+  /usr/lib/libyaml-cpp.dll.a
+  /usr/lib/pkgconfig/yaml-cpp.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.7.0-1bl1 -----
+Version bump.
+
+----- version 0.6.3-1bl1 -----
+Version bump.
+
+----- version 0.6.2-1bl1 -----
+Version bump.
+
+----- version 0.5.3-1bl2 -----
+Rebuild with gcc-6.4.0
+
+----- version 0.5.3-1bl1 -----
+Version bump.
+
+----- version 0.5.2-1bl1 -----
+Version bump.
+
+----- version 0.5.1-1bl2 -----
+Rebuild on x86_64
+
+----- version 0.5.1-1bl1 -----
+Version bump.
+
+----- version 0.5.0-1bl1 -----
+Version bump.
+
+----- version 0.3.0-1bl1 -----
+Version bump.
+
+----- version 0.2.6-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

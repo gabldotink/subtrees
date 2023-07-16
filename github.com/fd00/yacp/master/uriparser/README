@@ -1,0 +1,107 @@
+uriparser
+------------------------------------------
+uriparser is a strictly RFC 3986 compliant URI parsing and handling library
+written in C. uriparser is cross-platform, fast, supports Unicode and is
+licensed under the New BSD license.
+
+Runtime requirements:
+  cygwin-3.3.6-1
+  liburiparser-devel-0.9.7-1bl1
+  liburiparser1-0.9.7-1bl1
+  pkg-config-1.9.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.39-1
+  cmake-3.23.2-1
+  cygport-0.35.4-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libgtest-devel-1.12.1-1bl1
+  ninja-1.11.1-1
+
+Canonical website:
+  https://github.com/uriparser/uriparser/
+
+Canonical download:
+  https://github.com/uriparser/uriparser/releases/download/uriparser-0.9.7/uriparser-0.9.7.tar.xz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack uriparser-0.9.7-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./uriparser-0.9.7-X.cygport all
+
+This will create:
+  /usr/src/uriparser-0.9.7-X-src.tar.xz
+  /usr/src/uriparser-0.9.7-X.tar.xz
+  /usr/src/liburiparser1-0.9.7-X.tar.xz
+  /usr/src/liburiparser-devel-0.9.7-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(uriparser)
+  /usr/bin/uriparse.exe
+  /usr/share/doc/Cygwin/uriparser.README
+  /usr/share/doc/uriparser/AUTHORS
+  /usr/share/doc/uriparser/COPYING
+  /usr/share/doc/uriparser/ChangeLog
+  /usr/share/doc/uriparser/README.md
+  /usr/share/doc/uriparser/THANKS
+  /usr/share/doc/uriparser/TODO.txt
+
+(liburiparser1)
+  /usr/bin/cyguriparser-1.dll
+
+(liburiparser-devel)
+  /usr/include/uriparser/Uri.h
+  /usr/include/uriparser/UriBase.h
+  /usr/include/uriparser/UriDefsAnsi.h
+  /usr/include/uriparser/UriDefsConfig.h
+  /usr/include/uriparser/UriDefsUnicode.h
+  /usr/include/uriparser/UriIp4.h
+  /usr/lib/cmake/uriparser/uriparser-config-version.cmake
+  /usr/lib/cmake/uriparser/uriparser-config.cmake
+  /usr/lib/cmake/uriparser/uriparser-release.cmake
+  /usr/lib/cmake/uriparser/uriparser.cmake
+  /usr/lib/liburiparser.dll.a
+  /usr/lib/pkgconfig/liburiparser.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.9.7-1bl1 -----
+Version bump.
+
+----- version 0.9.6-1bl1 -----
+Version bump.
+
+----- version 0.9.5-1bl1 -----
+Version bump.
+
+----- version 0.9.4-1bl1 -----
+Version bump.
+
+----- version 0.9.3-1bl1 -----
+Version bump.
+
+----- version 0.9.1-1bl1 -----
+Version bump.
+
+----- version 0.9.0-1bl1 -----
+Version bump.
+
+----- version 0.8.6-1bl1 -----
+Version bump.
+
+----- version 0.8.5-1bl1 -----
+Version bump.
+
+----- version 0.8.4-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

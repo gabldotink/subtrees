@@ -1,0 +1,66 @@
+HOMEPAGE="https://github.com/libyal/${PN}"
+SRC_URI="https://github.com/libyal/${PN}/archive/refs/tags/${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Library for Windows NT data types"
+DESCRIPTION="libfwnt is a library for Windows NT data types."
+
+LICENSE="LGPL-3.0-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: LGPL-3.0-or-later"
+LICENSE_URI="COPYING"
+
+BUILD_REQUIRES="libcdata-devel libcerror-devel libcnotify-devel python39-devel"
+
+CYGPORT_USE_UNSTABLE_API=1
+src_patch_hook()
+{
+	cd ${origsrcdir}/${SRC_DIR}/tests
+	chmod u+x *.sh *.py
+}
+
+CYGCONF_ARGS="
+	--enable-python3
+"
+
+src_test()
+{
+	cd ${B}
+	pushd tests
+		for sh in ${S}/tests/*.{py,sh}
+		do
+			ln -fs ${sh} .
+		done
+	popd
+	cygtest
+	rm tests/*.{py,sh}
+}
+
+DOCS="
+	COPYING.LESSER
+"
+
+PKG_NAMES="
+	${PN}
+	${PN}1
+	${PN}-devel
+	python39-${PN}
+"
+libfwnt_CONTENTS="
+	usr/share/doc
+"
+libfwnt1_CONTENTS="
+	usr/bin
+"
+libfwnt_devel_CONTENTS="
+	usr/include
+	usr/lib/${PN}.dll.a
+	usr/lib/pkgconfig
+	usr/share/man
+"
+python39_libfwnt_CONTENTS="
+	usr/lib/python*
+"
+libfwnt_SUMMARY="${SUMMARY} (licensing & readmes)"
+libfwnt1_SUMMARY="${SUMMARY} (runtime)"
+libfwnt_devel_SUMMARY="${SUMMARY} (development)"
+python39_libfwnt_SUMMARY="${SUMMARY} (python39 bindings)"

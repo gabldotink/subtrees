@@ -1,0 +1,218 @@
+libqmi
+------------------------------------------
+This package contains the libraries that make it easier to use QMI
+functionality from applications that use glib.
+
+Runtime requirements:
+  bash-4.4.12-3
+  cygwin-3.2.0-1
+  girepository-GLib2.0-1.54.1-3
+  libglib2.0-devel-2.54.3-1
+  libglib2.0_0-2.54.3-1
+  libmbim-glib4-1.24.8-1bl1
+  libqmi-glib-devel-1.28.6-1bl1
+  libqmi-glib5-1.28.6-1bl1
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  autoconf-archive-2019.01.06-1
+  automake-11-1
+  binutils-2.36.1-2
+  cygport-0.34.0-1
+  gcc-core-10.2.0-1
+  gobject-introspection-1.54.1-3
+  libglib2.0-devel-2.54.3-1
+  libmbim-glib-devel-1.24.8-1bl1
+  libtool-2.4.6-7
+  make-4.3-1
+
+Canonical website:
+  https://www.freedesktop.org/wiki/Software/libqmi/
+
+Canonical download:
+  https://www.freedesktop.org/software/libqmi/libqmi-1.28.6.tar.xz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libqmi-1.28.6-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libqmi-1.28.6-X.cygport all
+
+This will create:
+  /usr/src/libqmi-1.28.6-X-src.tar.xz
+  /usr/src/libqmi-1.28.6-X.tar.xz
+  /usr/src/libqmi-glib5-1.28.6-X.tar.xz
+  /usr/src/libqmi-glib-devel-1.28.6-X.tar.xz
+  /usr/src/girepository-Qmi1.0-1.28.6-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libqmi)
+  /usr/bin/qmi-firmware-update.exe
+  /usr/bin/qmi-network
+  /usr/bin/qmicli.exe
+  /usr/libexec/qmi-proxy.exe
+  /usr/share/bash-completion/completions/qmicli
+  /usr/share/doc/Cygwin/libqmi.README
+  /usr/share/doc/libqmi/AUTHORS
+  /usr/share/doc/libqmi/COPYING
+  /usr/share/doc/libqmi/COPYING.LIB
+  /usr/share/doc/libqmi/ChangeLog
+  /usr/share/doc/libqmi/NEWS
+  /usr/share/doc/libqmi/README
+  /usr/share/doc/libqmi/TODO
+  /usr/share/man/man1/qmi-firmware-update.1.gz
+  /usr/share/man/man1/qmi-network.1.gz
+  /usr/share/man/man1/qmicli.1.gz
+
+(libqmi-glib5)
+  /usr/bin/cygqmi-glib-5.dll
+
+(libqmi-glib-devel)
+  /usr/include/libqmi-glib/libqmi-glib.h
+  /usr/include/libqmi-glib/qmi-client.h
+  /usr/include/libqmi-glib/qmi-compat.h
+  /usr/include/libqmi-glib/qmi-device.h
+  /usr/include/libqmi-glib/qmi-dms.h
+  /usr/include/libqmi-glib/qmi-dsd.h
+  /usr/include/libqmi-glib/qmi-enum-types.h
+  /usr/include/libqmi-glib/qmi-enums-dms.h
+  /usr/include/libqmi-glib/qmi-enums-dsd.h
+  /usr/include/libqmi-glib/qmi-enums-gas.h
+  /usr/include/libqmi-glib/qmi-enums-loc.h
+  /usr/include/libqmi-glib/qmi-enums-nas.h
+  /usr/include/libqmi-glib/qmi-enums-oma.h
+  /usr/include/libqmi-glib/qmi-enums-pbm.h
+  /usr/include/libqmi-glib/qmi-enums-pdc.h
+  /usr/include/libqmi-glib/qmi-enums-pds.h
+  /usr/include/libqmi-glib/qmi-enums-private.h
+  /usr/include/libqmi-glib/qmi-enums-qos.h
+  /usr/include/libqmi-glib/qmi-enums-sar.h
+  /usr/include/libqmi-glib/qmi-enums-uim.h
+  /usr/include/libqmi-glib/qmi-enums-voice.h
+  /usr/include/libqmi-glib/qmi-enums-wda.h
+  /usr/include/libqmi-glib/qmi-enums-wds.h
+  /usr/include/libqmi-glib/qmi-enums-wms.h
+  /usr/include/libqmi-glib/qmi-enums.h
+  /usr/include/libqmi-glib/qmi-error-types.h
+  /usr/include/libqmi-glib/qmi-errors.h
+  /usr/include/libqmi-glib/qmi-flags64-dms.h
+  /usr/include/libqmi-glib/qmi-flags64-dsd.h
+  /usr/include/libqmi-glib/qmi-flags64-loc.h
+  /usr/include/libqmi-glib/qmi-flags64-nas.h
+  /usr/include/libqmi-glib/qmi-flags64-types.h
+  /usr/include/libqmi-glib/qmi-gas.h
+  /usr/include/libqmi-glib/qmi-gms.h
+  /usr/include/libqmi-glib/qmi-loc.h
+  /usr/include/libqmi-glib/qmi-message-context.h
+  /usr/include/libqmi-glib/qmi-message.h
+  /usr/include/libqmi-glib/qmi-nas.h
+  /usr/include/libqmi-glib/qmi-oma.h
+  /usr/include/libqmi-glib/qmi-pbm.h
+  /usr/include/libqmi-glib/qmi-pdc.h
+  /usr/include/libqmi-glib/qmi-pds.h
+  /usr/include/libqmi-glib/qmi-proxy.h
+  /usr/include/libqmi-glib/qmi-qos.h
+  /usr/include/libqmi-glib/qmi-sar.h
+  /usr/include/libqmi-glib/qmi-uim.h
+  /usr/include/libqmi-glib/qmi-utils.h
+  /usr/include/libqmi-glib/qmi-version.h
+  /usr/include/libqmi-glib/qmi-voice.h
+  /usr/include/libqmi-glib/qmi-wda.h
+  /usr/include/libqmi-glib/qmi-wds.h
+  /usr/include/libqmi-glib/qmi-wms.h
+  /usr/lib/libqmi-glib.dll.a
+  /usr/lib/pkgconfig/qmi-glib.pc
+
+(girepository-Qmi1.0)
+  /usr/lib/girepository-1.0/Qmi-1.0.typelib
+  /usr/share/gir-1.0/Qmi-1.0.gir
+
+------------------
+
+Port Notes:
+
+----- version 1.28.6-1bl1 -----
+Version bump.
+
+----- version 1.28.4-1bl1 -----
+Version bump.
+
+----- version 1.26.6-1bl1 -----
+Version bump.
+
+----- version 1.26.4-1bl1 -----
+Version bump.
+
+----- version 1.26.0-1bl1 -----
+Version bump.
+
+----- version 1.25.900-1bl1 -----
+Version bump.
+
+----- version 1.24.12-1bl1 -----
+Version bump.
+
+----- version 1.24.8-1bl1 -----
+Version bump.
+
+----- version 1.24.6-1bl1 -----
+Version bump.
+
+----- version 1.24.4-1bl1 -----
+Version bump.
+
+----- version 1.24.2-1bl1 -----
+Version bump.
+
+----- version 1.24.0-1bl1 -----
+Version bump.
+
+----- version 1.22.4-1bl1 -----
+Version bump.
+
+----- version 1.22.2-1bl1 -----
+Version bump.
+
+----- version 1.22.0-1bl1 -----
+Version bump.
+
+----- version 1.20.2-1bl1 -----
+Version bump.
+
+----- version 1.20.0-1bl1 -----
+Version bump.
+
+----- version 1.18.0-1bl1 -----
+Version bump.
+
+----- version 1.16.2-1bl1 -----
+Version bump.
+
+----- version 1.14.2-1bl1 -----
+Version bump.
+
+----- version 1.12.6-1bl1 -----
+Version bump.
+
+----- version 1.10.6-1bl1 -----
+Version bump.
+
+----- version 1.8.0-1bl1 -----
+Version bump.
+
+----- version 1.6.0-1bl1 -----
+Version bump.
+
+----- version 1.4.0-1bl1 -----
+Version bump.
+
+----- version 1.2.0-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://fd0.hatenablog.jp/>

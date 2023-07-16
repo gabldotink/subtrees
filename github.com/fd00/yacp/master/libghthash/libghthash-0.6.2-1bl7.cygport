@@ -1,0 +1,51 @@
+HOMEPAGE="https://github.com/SimonKagstrom/${PN}"
+SRC_URI="https://github.com/SimonKagstrom/${PN}/archive/v${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Generic Hash Table"
+DESCRIPTION="libghthash is a Generic Hash Table which is meant to be easy to extend,
+portable, clear in its code and easy to use. You can store any kind of data in
+it, regardless of size etc."
+
+CYGPORT_USE_UNSTABLE_API=1
+src_patch_hook()
+{
+	cd ${origsrcdir}/${SRC_DIR}
+	rm -f aclocal.m4 configure
+	find . -name Makefile.in | xargs rm -f
+}
+
+src_test()
+{
+	cd ${B}
+	./examples/alloc_example.exe -m Makefile
+	./examples/alloc_example.exe -t Makefile
+	./examples/alloc_example.exe -s Makefile
+	./examples/dict_example.exe -m Makefile Makefile
+	./examples/dict_example.exe -t Makefile Makefile
+	./examples/dict_example.exe -b Makefile Makefile
+	./examples/hash_test.exe
+#	./examples/interactive.exe
+	./examples/iteration.exe
+	./examples/simple.exe
+}
+
+PKG_NAMES="
+	${PN}
+	${PN}1
+	${PN}-devel
+"
+libghthash_CONTENTS="
+	usr/share/doc
+"
+libghthash1_CONTENTS="
+	usr/bin
+"
+libghthash_devel_CONTENTS="
+	usr/include
+	usr/lib
+	usr/share/man
+"
+libghthash_SUMMARY="${SUMMARY} (licensing & readmes)"
+libghthash1_SUMMARY="${SUMMARY} (runtime)"
+libghthash_devel_SUMMARY="${SUMMARY} (development)"

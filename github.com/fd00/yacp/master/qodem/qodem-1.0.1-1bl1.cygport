@@ -1,0 +1,25 @@
+HOMEPAGE="http://${PN}.sourceforge.net/"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
+
+CATEGORY="Comm"
+SUMMARY="Terminal emulator and communications package"
+DESCRIPTION="Qodem is an open-source re-implementation of the Qmodem(tm) shareware
+communications package, updated for more modern uses."
+
+BUILD_REQUIRES="libminiupnpc-devel libncurses-devel libSDL-devel"
+
+CYGCONF_ARGS="
+	--disable-gpm
+"
+
+src_test()
+{
+	cd ${B}
+	./${PN}.exe --version
+}
+
+DOCS="
+	FILE_ID.DIZ
+	docs/*.txt
+	docs/*.md
+"

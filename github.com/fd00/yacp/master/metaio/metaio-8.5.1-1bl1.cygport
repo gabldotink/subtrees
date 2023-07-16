@@ -1,0 +1,32 @@
+HOMEPAGE="https://www.lsc-group.phys.uwm.edu/daswg/projects/${PN}.html"
+SRC_URI="http://software.ligo.org/lscsoft/source/${P}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Library for parsing LIGO_LW Table files"
+DESCRIPTION="This package contains a library for parsing LIGO_LW Table files, plus several
+C programs based on the library, plus a few Tcl scripts which do related
+things. The metiao library can read XML files compressed with the gzip
+compression algorithm. Metaio is available via the lscsoft repository, from
+source of via LIGOtools."
+
+PKG_NAMES="
+	${PN}
+	lib${PN}1
+	lib${PN}-devel
+"
+metaio_CONTENTS="
+	usr/bin/concatMeta
+	usr/bin/lw*
+	usr/bin/_*
+	usr/share
+"
+libmetaio1_CONTENTS="
+	usr/bin/*.dll
+"
+libmetaio_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+metaio_SUMMARY="${SUMMARY} (utilities)"
+libmetaio1_SUMMARY="${SUMMARY} (runtime)"
+libmetaio_devel_SUMMARY="${SUMMARY} (development)"

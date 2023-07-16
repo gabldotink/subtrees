@@ -1,0 +1,45 @@
+HOMEPAGE="https://github.com/OpenKinect/${PN}"
+SRC_URI="https://github.com/OpenKinect/${PN}/archive/v${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Drivers and libraries for the Xbox Kinect device"
+DESCRIPTION="Libfreenect is the core library for accessing the Microsoft Kinect USB camera."
+
+LICENSE="Apache-2.0 OR GPL-2.0-only"
+LICENSE_SPDX="SPDX-License-Identifier: Apache-2.0 OR GPL-2.0-only"
+LICENSE_URI="APACHE20"
+
+BUILD_REQUIRES="libGL-devel libGLU-devel libglut-devel libopencv-devel libusb1.0-devel"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DBUILD_CV:BOOL=ON
+	-DBUILD_SHARED_LIBS:BOOL=ON
+"
+
+DOCS="
+	APACHE20
+    CONTRIB
+	GPL2
+"
+
+PKG_NAMES="
+	${PN}
+	${PN}0
+	${PN}-devel
+"
+libfreenect_CONTENTS="
+	usr/bin/f*
+	usr/share
+"
+libfreenect0_CONTENTS="
+	usr/bin/*.dll
+"
+libfreenect_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+libfreenect_SUMMARY="${SUMMARY} (utilities)"
+libfreenect0_SUMMARY="${SUMMARY} (runtime)"
+libfreenect_devel_SUMMARY="${SUMMARY} (development)"

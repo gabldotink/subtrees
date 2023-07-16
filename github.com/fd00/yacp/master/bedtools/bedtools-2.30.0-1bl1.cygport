@@ -1,0 +1,33 @@
+HOMEPAGE="https://github.com/arq5x/${PN}2"
+SRC_URI="https://github.com/arq5x/${PN}2/archive/refs/tags/v${PV}.tar.gz"
+SRC_DIR="${PN}2-${PV}"
+
+CATEGORY="Science"
+SUMMARY="Powerful toolset for genome arithmetic"
+DESCRIPTION="Collectively, the bedtools utilities are a swiss-army knife of tools for a
+wide-range of genomics analysis tasks. The most widely-used tools enable
+genome arithmetic: that is, set theory on the genome. For example, bedtools
+allows one to intersect, merge, count, complement, and shuffle genomic
+intervals from multiple files in widely-used genomic file formats such as BAM,
+BED, GFF/GTF, VCF."
+
+BUILD_REQUIRES="libbz2-devel liblzma-devel zlib-devel"
+
+src_compile()
+{
+	cd ${B}
+	lndirs
+	cygmake CPPFLAGS=-D_GNU_SOURCE prefix=/usr
+}
+
+src_test()
+{
+	cd ${B}
+	cygtest CPPFLAGS=-D_GNU_SOURCE prefix=/usr 
+}
+
+src_install()
+{
+	cd ${B}
+	cyginstall CPPFLAGS=-D_GNU_SOURCE prefix=/usr
+}

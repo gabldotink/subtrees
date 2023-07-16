@@ -1,0 +1,89 @@
+libfdatetime
+------------------------------------------
+libfdatetime is a library for date and time data types.
+
+Runtime requirements:
+  cygwin-3.3.4-2
+  libcerror1-20220101-1bl1
+  libfdatetime-devel-20220112-1bl1
+  libfdatetime1-20220112-1bl1
+  pkg-config-1.8.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.37-2
+  cygport-0.34.2-1
+  gcc-core-11.2.0-1
+  libcerror-devel-20220101-1bl1
+  libtool-2.4.7-1
+  make-4.3-1
+
+Canonical website:
+  https://github.com/libyal/libfdatetime
+
+Canonical download:
+  https://github.com/libyal/libfdatetime/archive/refs/tags/20220112.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libfdatetime-20220112-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libfdatetime-20220112-X.cygport all
+
+This will create:
+  /usr/src/libfdatetime-20220112-X-src.tar.xz
+  /usr/src/libfdatetime-20220112-X.tar.xz
+  /usr/src/libfdatetime1-20220112-X.tar.xz
+  /usr/src/libfdatetime-devel-20220112-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libfdatetime)
+  /usr/share/doc/Cygwin/libfdatetime.README
+  /usr/share/doc/libfdatetime/AUTHORS
+  /usr/share/doc/libfdatetime/COPYING
+  /usr/share/doc/libfdatetime/ChangeLog
+  /usr/share/doc/libfdatetime/README
+
+(libfdatetime1)
+  /usr/bin/cygfdatetime-1.dll
+
+(libfdatetime-devel)
+  /usr/include/libfdatetime.h
+  /usr/include/libfdatetime/definitions.h
+  /usr/include/libfdatetime/error.h
+  /usr/include/libfdatetime/extern.h
+  /usr/include/libfdatetime/features.h
+  /usr/include/libfdatetime/types.h
+  /usr/lib/libfdatetime.dll.a
+  /usr/lib/pkgconfig/libfdatetime.pc
+  /usr/share/man/man3/libfdatetime.3.gz
+
+------------------
+
+Port Notes:
+
+----- version 20220112-1bl1 -----
+Version bump.
+
+----- version 20180910-1bl2 -----
+Rebuild with gcc-9.3.0
+
+----- version 20180910-1bl1 -----
+Version bump.
+
+----- version 20180116-1bl1 -----
+Version bump.
+
+----- version 20160220-1bl1 -----
+Version bump.
+
+----- version 20141018-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

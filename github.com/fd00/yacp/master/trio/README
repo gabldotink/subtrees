@@ -1,0 +1,79 @@
+trio
+------------------------------------------
+Trio is a fully matured and stable set of printf and string functions designed
+be used by applications with focus on portability or with the need for
+additional features that are not supported by standard stdio implementation.
+
+Runtime requirements:
+  cygwin-3.1.6-1
+  libtrio-devel-1.16-1bl3
+  libtrio2-1.16-1bl3
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.34+1git.de9c1b7cfe-1
+  cygport-0.34.0-1
+  gcc-core-9.3.0-2
+  libtool-2.4.6-7
+  make-4.3-1
+
+Canonical website:
+  http://daniel.haxx.se/projects/trio/
+
+Canonical download:
+  mirror://sourceforge/ctrio/trio-1.16.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack trio-1.16-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./trio-1.16-X.cygport all
+
+This will create:
+  /usr/src/trio-1.16-X-src.tar.xz
+  /usr/src/trio-1.16-X.tar.xz
+  /usr/src/libtrio2-1.16-X.tar.xz
+  /usr/src/libtrio-devel-1.16-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(trio)
+  /usr/share/doc/Cygwin/trio.README
+  /usr/share/doc/trio/CHANGES
+  /usr/share/doc/trio/README
+
+(libtrio2)
+  /usr/bin/cygtrio-2.dll
+
+(libtrio-devel)
+  /usr/include/trio/trio.h
+  /usr/include/trio/triodef.h
+  /usr/include/trio/trionan.h
+  /usr/include/trio/triop.h
+  /usr/include/trio/triostr.h
+  /usr/lib/libtrio.dll.a
+  /usr/lib/pkgconfig/trio.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.16-1bl3 -----
+Rebuild with gcc-9.3.0
+
+----- version 1.16-1bl2 -----
+Rebuild with gcc-5.4.0
+
+----- version 1.16-1bl1 -----
+Version bump.
+
+----- version 1.14-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

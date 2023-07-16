@@ -1,0 +1,46 @@
+HOMEPAGE="https://github.com/zyantific/${PN}"
+SRC_URI="https://github.com/zyantific/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Zyan Core Library for C"
+DESCRIPTION="Internal library providing platform independent types, macros and a fallback
+for environments without LibC."
+
+LICENSE="MIT"
+LICENSE_SPDX="SPDX-License-Identifier: MIT"
+LICENSE_URI="LICENSE"
+
+export CPPFLAGS="${CPPFLAGS} -D_GNU_SOURCE"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DZYCORE_BUILD_EXAMPLES:BOOL=OFF
+	-DZYCORE_BUILD_SHARED_LIB:BOOL=ON
+	-DZYCORE_BUILD_TESTS:BOOL=ON
+"
+
+src_test()
+{
+	cd ${B}
+	ninja_test
+}
+
+PKG_NAMES="
+	zycore-c
+	libZycore${PV[1]}.${PV[2]}
+	libZycore-devel
+"
+zycore_c_CONTENTS="
+	usr/share
+"
+libZycore1_4_CONTENTS="
+	usr/bin
+"
+libZycore_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+zycore_c_SUMMARY="${SUMMARY} (licensing & readmes)"
+libZycore1_4_SUMMARY="${SUMMARY} (runtime)"
+libZycore_devel_SUMMARY="${SUMMARY} (development)"

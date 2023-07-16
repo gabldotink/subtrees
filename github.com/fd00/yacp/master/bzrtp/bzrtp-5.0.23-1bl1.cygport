@@ -1,0 +1,44 @@
+HOMEPAGE="https://gitlab.linphone.org/BC/public/${PN}"
+SRC_URI="https://gitlab.linphone.org/BC/public/${PN}/-/archive/${PV}/${P}.tar.bz2"
+
+CATEGORY="Libs"
+SUMMARY="Opensource implementation of ZRTP keys exchange protocol"
+DESCRIPTION="BZRTP is an opensource implementation of ZRTP keys exchange protocol."
+
+BUILD_REQUIRES="libbctoolbox-devel libsqlite3-devel libxml2-devel"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DENABLE_STATIC:BOOL=OFF
+	-DENABLE_TESTS:BOOL=ON
+"
+
+src_test()
+{
+	cd ${B}
+	PATH=${B}/src:${PATH} ninja_test
+}
+
+DOCS="
+	CHANGELOG.md
+"
+
+PKG_NAMES="
+	bzrtp
+	libbzrtp0
+	libbzrtp-devel
+"
+bzrtp_CONTENTS="
+	usr/share
+"
+libbzrtp0_CONTENTS="
+	usr/bin
+"
+libbzrtp_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+bzrtp_SUMMARY="${SUMMARY} (licensing & readmes)"
+libbzrtp0_SUMMARY="${SUMMARY} (runtime)"
+libbzrtp_devel_SUMMARY="${SUMMARY} (development)"

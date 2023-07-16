@@ -1,0 +1,43 @@
+HOMEPAGE="http://openigtlink.org/"
+SRC_URI="https://github.com/openigtlink/${PN}/archive/v${PV}.tar.gz"
+
+CATEGORY="Graphics"
+SUMMARY="Open Network Interface for Image Guided Therapy"
+DESCRIPTION="OpenIGTLink provides a standardized mechanism for communication among
+computers and devices in operating rooms for wide variety of image-guided
+therapy (IGT) applications."
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DOpenIGTLink_INSTALL_LIB_DIR=lib
+	-DOpenIGTLink_INSTALL_PACKAGE_DIR=lib/cmake/igtl
+	-DBUILD_SHARED_LIBS:BOOL=ON
+	-DBUILD_EXAMPLES:BOOL=ON
+	-DUSE_GTEST:BOOL=OFF
+"
+
+src_test()
+{
+	cd ${B}
+	ninja_test
+}
+
+PKG_NAMES="
+	${PN}
+	lib${PN}3
+	lib${PN}-devel
+"
+OpenIGTLink_CONTENTS="
+	usr/share
+"
+libOpenIGTLink3_CONTENTS="
+	usr/bin
+"
+libOpenIGTLink_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+OpenIGTLink_SUMMARY="${SUMMARY} (licensing & readmes)"
+libOpenIGTLink3_SUMMARY="${SUMMARY} (runtime)"
+libOpenIGTLink_devel_SUMMARY="${SUMMARY} (development)"

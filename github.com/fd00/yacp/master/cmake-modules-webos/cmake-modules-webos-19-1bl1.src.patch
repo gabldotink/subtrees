@@ -1,0 +1,17 @@
+--- origsrc/cmake-modules-webos-submissions-19/CMakeLists.txt	2013-11-22 05:06:41.000000000 +0900
++++ src/cmake-modules-webos-submissions-19/CMakeLists.txt	2020-11-06 03:15:18.928524700 +0900
+@@ -35,8 +35,12 @@ webos_component(${VERSION_ARGS})
+ 
+ # Install the modules directly into the /Modules directory of the currently running cmake instance.
+ # This avoids users having to add a path to CMAKE_MODULES_PATH before they can include webOS/webOS
+-install(DIRECTORY webOS DESTINATION ${CMAKE_ROOT}/Modules FILES_MATCHING PATTERN "*" PATTERN ".*" EXCLUDE)
+-install(FILES REFERENCE.md DESTINATION ${CMAKE_ROOT}/Modules/webOS)
++if(CYGWIN)
++    install(DIRECTORY webOS DESTINATION /usr/lib/cmake FILES_MATCHING PATTERN "*" PATTERN ".*" EXCLUDE)
++else()
++    install(DIRECTORY webOS DESTINATION ${CMAKE_ROOT}/Modules FILES_MATCHING PATTERN "*" PATTERN ".*" EXCLUDE)
++    install(FILES REFERENCE.md DESTINATION ${CMAKE_ROOT}/Modules/webOS)
++endif()
+ 
+ #
+ # Tests - uncomment the appropriate lines to test the modules.

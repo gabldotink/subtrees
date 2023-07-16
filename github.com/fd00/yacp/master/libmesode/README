@@ -1,0 +1,89 @@
+libmesode
+------------------------------------------
+libmesode is a fork of libstrophe (http://strophe.im/libstrophe/) for use in
+Profanity (http://www.profanity.im/).
+
+Runtime requirements:
+  cygwin-3.1.7-1
+  libexpat-devel-2.2.6-1
+  libexpat1-2.2.6-1
+  libmesode-devel-0.10.1-1bl1
+  libmesode0-0.10.1-1bl1
+  libssl-devel-1.1.1f-1
+  libssl1.1-1.1.1f-1
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.34+1git.de9c1b7cfe-1
+  cygport-0.34.0-1
+  gcc-core-10.2.0-1
+  libtool-2.4.6-7
+  make-4.3-1
+
+Canonical website:
+  https://github.com/profanity-im/libmesode
+
+Canonical download:
+  https://github.com/profanity-im/libmesode/archive/0.10.1.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libmesode-0.10.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libmesode-0.10.1-X.cygport all
+
+This will create:
+  /usr/src/libmesode-0.10.1-X-src.tar.xz
+  /usr/src/libmesode-0.10.1-X.tar.xz
+  /usr/src/libmesode0-0.10.1-X.tar.xz
+  /usr/src/libmesode-devel-0.10.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libmesode)
+  /usr/share/doc/Cygwin/libmesode.README
+  /usr/share/doc/libmesode/AUTHORS
+  /usr/share/doc/libmesode/COPYING
+  /usr/share/doc/libmesode/ChangeLog
+  /usr/share/doc/libmesode/GPL-LICENSE.txt
+  /usr/share/doc/libmesode/LICENSE.txt
+  /usr/share/doc/libmesode/MIT-LICENSE.txt
+  /usr/share/doc/libmesode/README
+
+(libmesode0)
+  /usr/bin/cygmesode-0.dll
+
+(libmesode-devel)
+  /usr/include/mesode.h
+  /usr/lib/libmesode.dll.a
+  /usr/lib/pkgconfig/libmesode.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.10.1-1bl1 -----
+Version bump.
+
+----- version 0.10.0-1bl1 -----
+Version bump.
+
+----- version 0.9.3-1bl1 -----
+Version bump.
+
+----- version 0.9.2-1bl2 -----
+Rebuild with gcc-7.4.0
+
+----- version 0.9.2-1bl1 -----
+Version bump.
+
+----- version 0.9.1-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

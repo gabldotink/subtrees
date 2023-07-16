@@ -1,0 +1,93 @@
+confget
+------------------------------------------
+The confget utility examines a INI-style configuration file and retrieves the
+value of the specified variables from the specified section. Its intended use
+is to let shell scripts use the same INI-style configuration files as other
+programs, to avoid duplication of data.
+
+Runtime requirements:
+  cygwin-3.4.6-1
+  libpcre2_8_0-10.42-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.40-1
+  cygport-0.36.1-1
+  gcc-core-11.3.0-1
+  libpcre-devel-8.45-1
+  make-4.4.1-1
+  perl-5.32.1-2
+
+Canonical website:
+  https://devel.ringlet.net/textproc/confget/
+
+Canonical download:
+  https://devel.ringlet.net/files/textproc/confget/confget-5.1.0.tar.xz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack confget-5.1.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./confget-5.1.0-X.cygport all
+
+This will create:
+  /usr/src/confget-5.1.0-X-src.tar.xz
+  /usr/src/confget-5.1.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(confget)
+  /usr/bin/confget.exe
+  /usr/share/doc/Cygwin/confget.README
+  /usr/share/doc/confget/CHANGES
+  /usr/share/doc/confget/README
+  /usr/share/doc/confget/TODO
+  /usr/share/man/man1/confget.1.gz
+
+------------------
+
+Port Notes:
+
+----- version 5.1.0-1bl1 -----
+Version bump.
+
+----- version 4.1.1-1bl1 -----
+Version bump.
+
+----- version 4.1.0-1bl1 -----
+Version bump.
+
+----- version 4.0.1-1bl1 -----
+Version bump.
+
+----- version 3.0.2-1bl1 -----
+Version bump.
+
+----- version 3.0.1-1bl1 -----
+Version bump.
+
+----- version 2.3.4-1bl1 -----
+Version bump.
+
+----- version 2.3.0-1bl1 -----
+Version bump.
+
+----- version 2.2.0-1bl1 -----
+Version bump.
+
+----- version 2.1.0-1bl1 -----
+Version bump.
+
+----- version 2.0.0-1bl1 -----
+Version bump.
+
+----- version 1.05-1bl1 -----
+Version bump.
+
+----- version 1.04-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://fd0.hatenablog.jp/>

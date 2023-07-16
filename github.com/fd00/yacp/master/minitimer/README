@@ -1,0 +1,67 @@
+minitimer
+------------------------------------------
+Mini Timer is a very simple timer that lives in the terminal of your system. It
+also provides a named pipe which you can pass commands to to control a running
+instance of Mini Timer.
+
+Runtime requirements:
+  cygwin-3.4.5-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.39-1
+  cygport-0.36.0-1
+  gcc-core-11.3.0-1
+  make-4.4-1
+
+Canonical website:
+  https://github.com/ariadnavigo/minitimer
+
+Canonical download:
+  https://github.com/ariadnavigo/minitimer/archive/refs/tags/4.2.2.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack minitimer-4.2.2-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./minitimer-4.2.2-X.cygport all
+
+This will create:
+  /usr/src/minitimer-4.2.2-X-src.tar.xz
+  /usr/src/minitimer-4.2.2-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(minitimer)
+  /usr/bin/minitimer.exe
+  /usr/share/doc/Cygwin/minitimer.README
+  /usr/share/doc/minitimer/LICENSE
+  /usr/share/doc/minitimer/README.md
+  /usr/share/man/man1/minitimer.1.gz
+
+------------------
+
+Port Notes:
+
+----- version 4.2.2-1bl1 -----
+Version bump.
+
+----- version 4.2.1-1bl1 -----
+Version bump.
+
+----- version 4.2.0-1bl1 -----
+Version bump.
+
+----- version 4.1.2-1bl1 -----
+Version bump.
+
+----- version 4.1.1-1bl1 -----
+Version bump.
+
+----- version 2.5.2-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

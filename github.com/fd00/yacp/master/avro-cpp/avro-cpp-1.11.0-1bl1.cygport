@@ -1,0 +1,49 @@
+HOMEPAGE="https://avro.apache.org/"
+SRC_URI="mirror://apache/avro/avro-${PV}/cpp/${P}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Data serialization system (C++)"
+DESCRIPTION="Apache Avro(TM) is a data serialization system."
+
+BUILD_REQUIRES="libboost-devel"
+
+export CPPFLAGS="${CPPFLAGS} -D_GNU_SOURCE"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DBUILD_SHARED_LIBS:BOOL=ON
+	-DSOVERSION:STRING=${PV[1]}
+	-DVERSION:STRING=${PV}
+"
+
+src_test()
+{
+	cd ${B}
+	ninja_test
+}
+
+DIFF_EXCLUDES="
+	test.avro
+	test6.df
+"
+
+PKG_NAMES="
+	${PN}
+	libavrocpp1
+	libavrocpp-devel
+"
+avro_cpp_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+libavrocpp1_CONTENTS="
+	usr/bin/*.dll
+"
+libavrocpp_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+avro_cpp_SUMMARY="${SUMMARY} (utilities)"
+libavrocpp1_SUMMARY="${SUMMARY} (runtime)"
+libavrocpp_devel_SUMMARY="${SUMMARY} (development)"

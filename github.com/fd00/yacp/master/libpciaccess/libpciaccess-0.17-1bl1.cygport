@@ -1,0 +1,38 @@
+HOMEPAGE="https://gitlab.freedesktop.org/xorg/lib/${PN}"
+SRC_URI="https://gitlab.freedesktop.org/xorg/lib/${PN}/-/archive/${P}/${PN}-${P}.tar.bz2"
+SRC_DIR="${PN}-${P}"
+
+CATEGORY="X11"
+SUMMARY="Generic PCI access library"
+DESCRIPTION="libpciaccess is a library for portable PCI access routines across multiple
+operating systems."
+
+LICENSE="X11"
+LICENSE_SPDX="SPDX-License-Identifier: X11"
+LICENSE_URI="COPYING"
+
+BUILD_REQUIRES="zlib-devel"
+
+CYGCONF_ARGS="
+	--with-zlib=yes
+"
+
+PKG_NAMES="
+	${PN}
+	${PN}0
+	${PN}-devel
+"
+libpciaccess_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+libpciaccess0_CONTENTS="
+	usr/bin/*.dll
+"
+libpciaccess_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+libpciaccess_SUMMARY="${SUMMARY} (utilities)"
+libpciaccess0_SUMMARY="${SUMMARY} (runtime)"
+libpciaccess_devel_SUMMARY="${SUMMARY} (development)"

@@ -1,0 +1,82 @@
+libcsystem
+------------------------------------------
+libcsystem is a library for cross-platform C system functions.
+
+Runtime requirements:
+  cygwin-2.4.1-1
+  libcerror1-20160327-1bl1
+  libclocale1-20150101-1bl1
+  libcsystem-devel-20150629-1bl1
+  libcsystem1-20150629-1bl1
+  libuna1-20150927-1bl1
+  pkg-config-0.29-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-9-1
+  binutils-2.25-4
+  cygport-0.21.1-1
+  gcc-core-5.3.0-3
+  libtool-2.4.6-3
+  make-4.1-1
+
+Canonical website:
+  https://github.com/libyal/libcsystem
+
+Canonical download:
+  https://github.com/libyal/libcsystem/archive/20150629.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libcsystem-20150629-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libcsystem-20150629-X.cygport all
+
+This will create:
+  /usr/src/libcsystem-20150629-X-src.tar.xz
+  /usr/src/libcsystem-20150629-X.tar.xz
+  /usr/src/libcsystem1-20150629-X.tar.xz
+  /usr/src/libcsystem-devel-20150629-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libcsystem)
+  /usr/share/doc/Cygwin/libcsystem.README
+  /usr/share/doc/libcsystem/AUTHORS
+  /usr/share/doc/libcsystem/COPYING
+  /usr/share/doc/libcsystem/ChangeLog
+  /usr/share/doc/libcsystem/README
+
+(libcsystem1)
+  /usr/bin/cygcsystem-1.dll
+
+(libcsystem-devel)
+  /usr/include/libcsystem.h
+  /usr/include/libcsystem/codepage.h
+  /usr/include/libcsystem/definitions.h
+  /usr/include/libcsystem/error.h
+  /usr/include/libcsystem/extern.h
+  /usr/include/libcsystem/features.h
+  /usr/include/libcsystem/types.h
+  /usr/lib/libcsystem.dll.a
+  /usr/lib/pkgconfig/libcsystem.pc
+  /usr/share/man/man3/libcsystem.3.gz
+
+------------------
+
+Port Notes:
+
+----- version 20150629-1bl1 -----
+Version bump.
+
+----- version 20150101-1bl2 -----
+Fixed abi version
+
+----- version 20150101-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

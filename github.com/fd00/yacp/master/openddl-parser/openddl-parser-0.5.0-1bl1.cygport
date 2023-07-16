@@ -1,0 +1,51 @@
+HOMEPAGE="https://github.com/kimkulling/${PN}"
+SRC_URI="https://github.com/kimkulling/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Simple and fast OpenDDL Parser"
+DESCRIPTION="The OpenDDL-Parser is a small and easy to use library for
+OpenDDL-file-format-parsing. OpenDDL is the shortcut for Open Data Description
+Language, a data-declaration language introduced by Eric Lengyel."
+
+export CPPFLAGS="${CPPFLAGS} -D_GNU_SOURCE"
+
+CYGCMAKE_ARGS="
+	-DDDL_STATIC_LIBRARY:BOOL=OFF
+	-DSOVERSION:STRING=${PV[1]}
+"
+
+inherit cmake
+
+src_test()
+{
+	cd ${B}/bin
+	./openddlparser_unittest.exe
+}
+
+src_install()
+{
+	cd ${B}
+	ninja_install
+
+	dobin bin/openddlparser_demo.exe
+}
+
+PKG_NAMES="
+	openddl-parser
+	libopenddlparser0
+	libopenddlparser-devel
+"
+openddl_parser_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+libopenddlparser0_CONTENTS="
+	usr/bin/*.dll
+"
+libopenddlparser_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+openddl_parser_SUMMARY="${SUMMARY} (utilities)"
+libopenddlparser0_SUMMARY="${SUMMARY} (runtime)"
+libopenddlparser_devel_SUMMARY="${SUMMARY} (development)"

@@ -1,0 +1,18 @@
+--- origsrc/libgeier/src/Makefile.am	2012-03-22 19:29:17.000000000 +0900
++++ src/libgeier/src/Makefile.am	2012-03-22 19:35:53.354566500 +0900
+@@ -33,7 +33,7 @@ libgeier_la_SOURCES = \
+ 	dsig-rewrite-vorgang.c \
+ 	dsig-rewrite-datenlieferant.c
+ 
+-libgeier_la_LDFLAGS = -version-info 0
++libgeier_la_LDFLAGS = -version-info 0 -no-undefined
+ libgeier_la_LIBADD = $(top_builddir)/src/@crypto_module@/libgeier_@crypto_module@.la
+ 
+ noinst_HEADERS = \
+@@ -66,5 +66,5 @@ CLEANFILES = *~
+ bin_PROGRAMS = geier
+ 
+ geier_SOURCES = geier.c
+-geier_LDADD = libgeier.la
++geier_LDADD = libgeier.la -largp
+ 

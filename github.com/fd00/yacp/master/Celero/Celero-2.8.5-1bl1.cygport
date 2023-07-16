@@ -1,0 +1,59 @@
+HOMEPAGE="https://github.com/DigitalInBlue/${PN}"
+SRC_URI="https://github.com/DigitalInBlue/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Devel"
+SUMMARY="C++ Benchmark Authoring Library/Framework"
+DESCRIPTION="Developing consistent and meaningful benchmark results for code is a complex
+task. Measurement tools exist (Intel VTune Amplifier, SmartBear AQTime,
+Valgrind) external to applications, but they are sometimes expensive for small
+teams or cumbersome to utilize. This project, Celero, aims to be a small
+library which can be added to a C++ project and perform benchmarks on code in
+a way which is easy to reproduce, share, and compare among individual runs,
+developers, or projects. Celero uses a framework similar to that of GoogleTest
+to make its API easier to use and integrate into a project. Make automated
+benchmarking as much a part of your development process as automated testing."
+
+LICENSE="Apache-2.0"
+LICENSE_SPDX="SPDX-License-Identifier: Apache-2.0"
+LICENSE_URI="license.txt"
+
+export CPPFLAGS="${CPPFLAGS} -D_GNU_SOURCE"
+export CXXFLAGS="${CXXFLAGS} -fpermissive"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DCELERO_RUN_EXAMPLE_ON_BUILD:BOOL=ON
+	-DCELERO_ENABLE_TESTS:BOOL=ON
+	-DSOVERSION:STRING=${PV[1]}
+	-DVERSION:STRING=${PV}
+"
+
+src_test()
+{
+	cd ${B}
+	./celero-test.exe
+}
+
+DOCS="
+	*.md
+"
+
+PKG_NAMES="
+	${PN}
+	libcelero2
+	libcelero-devel
+"
+Celero_CONTENTS="
+	usr/share
+"
+libcelero2_CONTENTS="
+	usr/bin
+"
+libcelero_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+Celero_SUMMARY="${SUMMARY} (licensing & readmes)"
+libcelero2_SUMMARY="${SUMMARY} (runtime)"
+libcelero_devel_SUMMARY="${SUMMARY} (development)"

@@ -1,0 +1,91 @@
+libcmml
+------------------------------------------
+Libcmml is a library which enables the handling of documents written in CMML
+(Continuous Media Markup Language) for the Continuous Media Web (CMWeb).
+
+It provides a very simple API for reading files marked up with the Continuous
+Media Markup Language (CMML), and returns C structures containing this
+information in a format which can be used by an Annodexer for creating
+ANNODEX(tm) format documents (ANX).
+
+Runtime requirements:
+  cygwin-2.10.0-1
+  cygwin-devel-2.10.0-1
+  libcmml-devel-0.9.4-1bl1
+  libcmml1-0.9.4-1bl1
+  libexpat-devel-2.2.3-1
+  libexpat1-2.2.3-1
+  pkg-config-0.29.1-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-10-1
+  binutils-2.29-1
+  cygport-0.30.1-1
+  gcc-core-6.4.0-5
+  gcc-g++-6.4.0-5
+  libtool-2.4.6-5
+  make-4.2.1-2
+
+Canonical website:
+  http://www.annodex.net/software/libcmml/
+
+Canonical download:
+  http://archive.debian.org/debian-archive/debian/pool/main/libc/libcmml/libcmml_0.9.4.orig.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libcmml-0.9.4-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libcmml-0.9.4-X.cygport all
+
+This will create:
+  /usr/src/libcmml-0.9.4-X-src.tar.xz
+  /usr/src/libcmml-0.9.4-X.tar.xz
+  /usr/src/libcmml1-0.9.4-X.tar.xz
+  /usr/src/libcmml-devel-0.9.4-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libcmml)
+  /usr/bin/cmml-fix.exe
+  /usr/bin/cmml-fortune.exe
+  /usr/bin/cmml-timeshift.exe
+  /usr/bin/cmml-validate.exe
+  /usr/share/doc/Cygwin/libcmml.README
+  /usr/share/doc/libcmml/AUTHORS
+  /usr/share/doc/libcmml/COPYING
+  /usr/share/doc/libcmml/ChangeLog
+  /usr/share/doc/libcmml/README
+  /usr/share/doc/libcmml/TODO
+  /usr/share/man/man1/cmml-fix.1.gz
+  /usr/share/man/man1/cmml-timeshift.1.gz
+  /usr/share/man/man1/cmml-validate.1.gz
+  /usr/share/man/man6/cmml-fortune.6.gz
+
+(libcmml1)
+  /usr/bin/cygcmml-1.dll
+
+(libcmml-devel)
+  /usr/include/cmml.h
+  /usr/lib/libcmml.dll.a
+  /usr/lib/pkgconfig/cmml.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.9.4-1bl1 -----
+Version bump.
+
+----- version 0.9.1+svn4086-1bl2 -----
+Rebuild on x86_64
+
+----- version 0.9.1+svn4086-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

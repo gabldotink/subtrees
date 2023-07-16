@@ -1,0 +1,25 @@
+HOMEPAGE="http://perso.b2b2c.ca/~sarrazip/dev/burgerspace.html"
+SRC_URI="http://perso.b2b2c.ca/~sarrazip/dev/${P}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Small Engine for 2D video games like BurgerSpace"
+DESCRIPTION="Small game engine library required by BurgerSpace and other games."
+
+PKG_NAMES="
+	${PN}
+	lib${PN}0.1_2
+	lib${PN}0.1-devel
+"
+flatzebra_CONTENTS="
+	usr/share
+"
+libflatzebra0_1_2_CONTENTS="
+	usr/bin
+"
+libflatzebra0_1_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+flatzebra_SUMMARY="${SUMMARY} (licensing & readmes)"
+libflatzebra0_1_2_SUMMARY="${SUMMARY} (runtime)"
+libflatzebra0_1_devel_SUMMARY="${SUMMARY} (development)"

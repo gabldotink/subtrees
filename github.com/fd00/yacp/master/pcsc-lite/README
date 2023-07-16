@@ -1,0 +1,150 @@
+pcsc-lite
+------------------------------------------
+The purpose of PCSC Lite is to provide a Windows(R) SCard interface in a very
+small form factor for communicating to smart cards and readers. PCSC Lite can
+be compiled directly to a desired reader driver or can be used to dynamically
+allocate/deallocate reader drivers at runtime (default).
+
+Runtime requirements:
+  cygwin-3.4.3-1
+  libgcc1-11.3.0-1
+  libpcsclite-devel-1.9.9-1bl1
+  libpcsclite1-1.9.9-1bl1
+  pkg-config-1.9.3-1
+  python39-3.9.10-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.39-1
+  cygport-0.35.5-1
+  flex-2.6.4-2
+  gcc-core-11.3.0-1
+  libtool-2.4.7-1
+  make-4.4-1
+  perl-5.32.1-2
+
+Canonical website:
+  https://pcsclite.apdu.fr/
+
+Canonical download:
+  https://pcsclite.apdu.fr/files/pcsc-lite-1.9.9.tar.bz2
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack pcsc-lite-1.9.9-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./pcsc-lite-1.9.9-X.cygport all
+
+This will create:
+  /usr/src/pcsc-lite-1.9.9-X-src.tar.xz
+  /usr/src/pcsc-lite-1.9.9-X.tar.xz
+  /usr/src/libpcsclite1-1.9.9-X.tar.xz
+  /usr/src/libpcsclite-devel-1.9.9-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(pcsc-lite)
+  /usr/sbin/pcscd.exe
+  /usr/share/doc/Cygwin/pcsc-lite.README
+  /usr/share/doc/pcsc-lite/AUTHORS
+  /usr/share/doc/pcsc-lite/COPYING
+  /usr/share/doc/pcsc-lite/ChangeLog
+  /usr/share/doc/pcsc-lite/NEWS
+  /usr/share/doc/pcsc-lite/README
+  /usr/share/doc/pcsc-lite/README.polkit
+  /usr/share/doc/pcsc-lite/TODO
+  /usr/share/doc/pcsc-lite/install_spy.sh
+  /usr/share/doc/pcsc-lite/uninstall_spy.sh
+  /usr/share/man/man5/reader.conf.5.gz
+  /usr/share/man/man8/pcscd.8.gz
+
+(libpcsclite1)
+  /usr/bin/cygpcsclite-1.dll
+
+(libpcsclite-devel)
+  /usr/bin/cygpcscspy-0.dll
+  /usr/bin/pcsc-spy
+  /usr/include/PCSC/debuglog.h
+  /usr/include/PCSC/ifdhandler.h
+  /usr/include/PCSC/pcsclite.h
+  /usr/include/PCSC/reader.h
+  /usr/include/PCSC/winscard.h
+  /usr/include/PCSC/wintypes.h
+  /usr/lib/libpcsclite.dll.a
+  /usr/lib/libpcscspy.dll.a
+  /usr/lib/pkgconfig/libpcsclite.pc
+  /usr/share/man/man1/pcsc-spy.1.gz
+
+------------------
+
+Port Notes:
+
+----- version 1.9.9-1bl1 -----
+Version bump.
+
+----- version 1.9.8-1bl1 -----
+Version bump.
+
+----- version 1.9.4-1bl1 -----
+Version bump.
+
+----- version 1.9.1-1bl1 -----
+Version bump.
+
+----- version 1.9.0-1bl1 -----
+Version bump.
+
+----- version 1.8.26-1bl1 -----
+Version bump.
+
+----- version 1.8.25-1bl1 -----
+Version bump.
+
+----- version 1.8.24-1bl1 -----
+Version bump.
+
+----- version 1.8.23-1bl1 -----
+Version bump.
+
+----- version 1.8.22-1bl1 -----
+Version bump.
+
+----- version 1.8.20-1bl1 -----
+Version bump.
+
+----- version 1.8.14-1bl1 -----
+Version bump.
+
+----- version 1.8.13-1bl1 -----
+Version bump.
+
+----- version 1.8.11-1bl1 -----
+Version bump.
+
+----- version 1.8.8-1bl1 -----
+Version bump.
+
+----- version 1.8.7-1bl1 -----
+Version bump.
+
+----- version 1.8.6-1bl1 -----
+Version bump.
+
+----- version 1.8.4-1bl1 -----
+Version bump.
+
+----- version 1.8.3-1bl1 -----
+Version bump.
+
+----- version 1.7.2-1bl1 -----
+Version bump.
+
+----- version 1.5.5-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

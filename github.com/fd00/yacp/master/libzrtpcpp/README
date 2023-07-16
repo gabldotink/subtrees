@@ -1,0 +1,109 @@
+libzrtpcpp
+------------------------------------------
+This package provides a library that adds ZRTP support to the GNU ccRTP stack
+and serves as library for other RTP stacks (PJSIP, GStreamer). Phil Zimmermann
+developed ZRTP to allow ad-hoc, easy to use key negotiation to setup Secure RTP
+(SRTP) sessions. GNU ZRTP works together with GNU ccRTP (1.5.0 or later) and
+provides a ZRTP implementation that can be directly embedded into client and
+server applications.
+
+Runtime requirements:
+  cygwin-3.1.6-1
+  libccrtp3-2.1.2-1bl1
+  libcommoncpp8-7.0.0-1bl2
+  libgcc1-9.3.0-2
+  libsqlite3_0-3.32.3-1
+  libstdc++6-9.3.0-2
+  libucommon8-7.0.0-1bl2
+  libzrtpcpp-devel-4.7.0-1bl1
+  libzrtpcpp4-4.7.0-1bl1
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.34+1git.de9c1b7cfe-1
+  cmake-3.17.3-2
+  cygport-0.34.0-1
+  gcc-core-9.3.0-2
+  gcc-g++-9.3.0-2
+  ninja-1.10.0-2
+
+Canonical website:
+  https://github.com/wernerd/ZRTPCPP
+
+Canonical download:
+  https://github.com/wernerd/ZRTPCPP/archive/4.7.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libzrtpcpp-4.7.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libzrtpcpp-4.7.0-X.cygport all
+
+This will create:
+  /usr/src/libzrtpcpp-4.7.0-X-src.tar.xz
+  /usr/src/libzrtpcpp-4.7.0-X.tar.xz
+  /usr/src/libzrtpcpp4-4.7.0-X.tar.xz
+  /usr/src/libzrtpcpp-devel-4.7.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libzrtpcpp)
+  /usr/share/doc/Cygwin/libzrtpcpp.README
+  /usr/share/doc/libzrtpcpp/AUTHORS
+  /usr/share/doc/libzrtpcpp/COPYING
+  /usr/share/doc/libzrtpcpp/ChangeLog
+  /usr/share/doc/libzrtpcpp/NEWS.md
+  /usr/share/doc/libzrtpcpp/README.md
+
+(libzrtpcpp4)
+  /usr/bin/cygzrtpcpp-4.dll
+
+(libzrtpcpp-devel)
+  /usr/include/libzrtpcpp/CcrtpTimeoutProvider.h
+  /usr/include/libzrtpcpp/ZrtpCWrapper.h
+  /usr/include/libzrtpcpp/ZrtpCallback.h
+  /usr/include/libzrtpcpp/ZrtpCodes.h
+  /usr/include/libzrtpcpp/ZrtpConfigure.h
+  /usr/include/libzrtpcpp/ZrtpQueue.h
+  /usr/include/libzrtpcpp/ZrtpUserCallback.h
+  /usr/include/libzrtpcpp/common/osSpecifics.h
+  /usr/include/libzrtpcpp/zrtpccrtp.h
+  /usr/lib/libzrtpcpp.dll.a
+  /usr/lib/pkgconfig/libzrtpcpp.pc
+
+------------------
+
+Port Notes:
+
+----- version 4.7.0-1bl1 -----
+Version bump.
+
+----- version 4.6.6-1bl1 -----
+Version bump.
+
+----- version 4.3.1-1bl1 -----
+Version bump.
+
+----- version 2.3.4-1bl1 -----
+Version bump.
+
+----- version 2.3.2-1bl1 -----
+Version bump.
+
+----- version 2.1.2-1bl1 -----
+Version bump.
+
+----- version 2.0.0-1bl1 -----
+Version bump.
+
+----- version 1.6.0-1bl1 -----
+Version bump.
+
+----- version 1.4.6-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

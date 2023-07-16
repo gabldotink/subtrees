@@ -1,0 +1,62 @@
+disfetch
+------------------------------------------
+Yet another *nix distro fetching program, but less complex
+
+Runtime requirements:
+  bash-4.4.12-3
+
+Build requirements:
+(besides corresponding -devel packages)
+  cygport-0.34.2-1
+  make-4.3-1
+
+Canonical website:
+  https://github.com/q60/disfetch
+
+Canonical download:
+  https://github.com/q60/disfetch/archive/refs/tags/3.6.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack disfetch-3.6-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./disfetch-3.6-X.cygport all
+
+This will create:
+  /usr/src/disfetch-3.6-X-src.tar.xz
+  /usr/src/disfetch-3.6-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(disfetch)
+  /usr/bin/disfetch
+  /usr/share/doc/Cygwin/disfetch.README
+  /usr/share/doc/disfetch/LICENSE
+  /usr/share/doc/disfetch/README.rst
+
+------------------
+
+Port Notes:
+
+----- version 3.6-1bl1 -----
+Version bump.
+
+----- version 3.3-1bl1 -----
+Version bump.
+
+----- version 2.15-1bl1 -----
+Version bump.
+
+----- version 2.14-1bl1 -----
+Version bump.
+
+----- version 1.24-1bl1 -----
+Version bump.
+
+----- version 1.21-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

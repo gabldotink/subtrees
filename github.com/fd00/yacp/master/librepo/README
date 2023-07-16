@@ -1,0 +1,174 @@
+librepo
+------------------------------------------
+A library providing C and Python (libcURL like) API for downloading linux
+repository metadata and packages
+
+Runtime requirements:
+  cygwin-3.3.6-1
+  libcurl-devel-7.86.0-2
+  libcurl4-7.86.0-2
+  libglib2.0-devel-2.54.3-1
+  libglib2.0_0-2.54.3-1
+  libgpgme11-1.9.0-1
+  librepo-devel-1.14.5-1bl1
+  librepo0-1.14.5-1bl1
+  libssl-devel-1.1.1s-1
+  libssl1.1-1.1.1s-1
+  libxml2-2.9.12-2
+  libxml2-devel-2.9.12-2
+  libzck1-1.2.3-1bl1
+  pkg-config-1.9.3-1
+  python39-3.9.10-1
+  python39-librepo-1.14.5-1bl1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.39-1
+  cmake-3.23.2-1
+  cygport-0.35.4-1
+  gcc-core-11.3.0-1
+  libcurl-devel-7.86.0-2
+  libglib2.0-devel-2.54.3-1
+  libgpgme-devel-1.9.0-1
+  libssl-devel-1.1.1s-1
+  libxml2-devel-2.9.12-2
+  libzck-devel-1.2.3-1bl1
+  ninja-1.11.1-1
+  python39-3.9.10-1
+  python39-devel-3.9.10-1
+
+Canonical website:
+  https://github.com/rpm-software-management/librepo/
+
+Canonical download:
+  https://github.com/rpm-software-management/librepo/archive/refs/tags/1.14.5.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack librepo-1.14.5-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./librepo-1.14.5-X.cygport all
+
+This will create:
+  /usr/src/librepo-1.14.5-X-src.tar.xz
+  /usr/src/librepo-1.14.5-X.tar.xz
+  /usr/src/librepo0-1.14.5-X.tar.xz
+  /usr/src/librepo-devel-1.14.5-X.tar.xz
+  /usr/src/python39-librepo-1.14.5-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(librepo)
+  /usr/share/doc/Cygwin/librepo.README
+  /usr/share/doc/librepo/AUTHORS
+  /usr/share/doc/librepo/COPYING
+  /usr/share/doc/librepo/README.md
+
+(librepo0)
+  /usr/bin/cygrepo-0.dll
+
+(librepo-devel)
+  /usr/include/librepo/checksum.h
+  /usr/include/librepo/downloader.h
+  /usr/include/librepo/downloader_internal.h
+  /usr/include/librepo/downloadtarget.h
+  /usr/include/librepo/fastestmirror.h
+  /usr/include/librepo/gpg.h
+  /usr/include/librepo/handle.h
+  /usr/include/librepo/librepo.h
+  /usr/include/librepo/metadata_downloader.h
+  /usr/include/librepo/metalink.h
+  /usr/include/librepo/mirrorlist.h
+  /usr/include/librepo/package_downloader.h
+  /usr/include/librepo/rcodes.h
+  /usr/include/librepo/repoconf.h
+  /usr/include/librepo/repomd.h
+  /usr/include/librepo/repoutil_yum.h
+  /usr/include/librepo/result.h
+  /usr/include/librepo/types.h
+  /usr/include/librepo/url_substitution.h
+  /usr/include/librepo/util.h
+  /usr/include/librepo/version.h
+  /usr/include/librepo/xmlparser.h
+  /usr/include/librepo/yum.h
+  /usr/lib/librepo.dll.a
+  /usr/lib/pkgconfig/librepo.pc
+
+(python39-librepo)
+  /usr/lib/python3.9/site-packages/librepo/__init__.py
+  /usr/lib/python3.9/site-packages/librepo/__pycache__/__init__.cpython-39.opt-1.pyc
+  /usr/lib/python3.9/site-packages/librepo/__pycache__/__init__.cpython-39.opt-2.pyc
+  /usr/lib/python3.9/site-packages/librepo/__pycache__/__init__.cpython-39.pyc
+  /usr/lib/python3.9/site-packages/librepo/_librepo.dll
+
+------------------
+
+Port Notes:
+
+----- version 1.14.5-1bl1 -----
+Version bump.
+
+----- version 1.14.3-1bl1 -----
+Version bump.
+
+----- version 1.14.2-1bl1 -----
+Version bump.
+
+----- version 1.14.1-1bl1 -----
+Version bump.
+
+----- version 1.14.0-1bl1 -----
+Version bump.
+
+----- version 1.12.1-1bl1 -----
+Version bump.
+
+----- version 1.12.0-1bl1 -----
+Version bump.
+
+----- version 1.11.3-1bl1 -----
+Version bump.
+
+----- version 1.11.2-1bl1 -----
+Version bump.
+
+----- version 1.11.1-1bl1 -----
+Version bump.
+
+----- version 1.11.0-1bl1 -----
+Version bump.
+
+----- version 1.10.6-1bl1 -----
+Version bump.
+
+----- version 1.10.5-1bl1 -----
+Version bump.
+
+----- version 1.9.6-1bl1 -----
+Version bump.
+
+----- version 1.9.4-1bl1 -----
+Version bump.
+
+----- version 1.9.3-1bl1 -----
+Version bump.
+
+----- version 1.9.1-1bl1 -----
+Version bump.
+
+----- version 1.8.1-1bl1 -----
+Version bump.
+
+----- version 1.8.0-1bl1 -----
+Version bump.
+
+----- version 1.7.18-1bl1 -----
+Version bump.
+
+----- version 1.7.4+git20140702-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

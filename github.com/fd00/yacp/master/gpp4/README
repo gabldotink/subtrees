@@ -1,0 +1,117 @@
+gpp4
+------------------------------------------
+The CCP4 software suite is based around a library of routines which cover
+common tasks, such as file opening, parsing keyworded input, reading and
+writing of standard data formats, applying symmetry operations, etc. Programs
+in the suite call these routines which, as well as saving the programmer some
+effort, ensure that the varied programs in the suite have a similar
+look-and-feel.
+
+Runtime requirements:
+  cygwin-3.1.7-1
+  libgfortran5-10.2.0-1
+  libgpp4-devel-1.3.1-1bl3
+  libgpp4_0-1.3.1-1bl3
+  libmmdb2-devel-2.0.20-1bl1
+  libmmdb2_0-2.0.20-1bl1
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.34+1git.de9c1b7cfe-1
+  cygport-0.34.0-1
+  gcc-core-10.2.0-1
+  gcc-fortran-10.2.0-1
+  libtool-2.4.6-7
+  make-4.3-1
+
+Canonical website:
+  https://launchpad.net/gpp4/
+
+Canonical download:
+  https://launchpad.net/gpp4/1.3/1.3.1/+download/gpp4-1.3.1.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack gpp4-1.3.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./gpp4-1.3.1-X.cygport all
+
+This will create:
+  /usr/src/gpp4-1.3.1-X-src.tar.xz
+  /usr/src/gpp4-1.3.1-X.tar.xz
+  /usr/src/libgpp4_0-1.3.1-X.tar.xz
+  /usr/src/libgpp4-devel-1.3.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(gpp4)
+  /usr/share/doc/Cygwin/gpp4.README
+  /usr/share/doc/gpp4/AUTHORS
+  /usr/share/doc/gpp4/COPYING
+  /usr/share/doc/gpp4/ChangeLog
+  /usr/share/doc/gpp4/Copyright
+  /usr/share/doc/gpp4/NEWS
+  /usr/share/doc/gpp4/README
+  /usr/share/gpp4/default.def
+  /usr/share/gpp4/environ.def
+  /usr/share/gpp4/syminfo.lib
+
+(libgpp4_0)
+  /usr/bin/cyggpp4-0.dll
+  /usr/bin/cyggpp4f-0.dll
+
+(libgpp4-devel)
+  /usr/include/gpp4/ccp4/ccp4_array.h
+  /usr/include/gpp4/ccp4/ccp4_errno.h
+  /usr/include/gpp4/ccp4/ccp4_file_err.h
+  /usr/include/gpp4/ccp4/ccp4_fortran.h
+  /usr/include/gpp4/ccp4/ccp4_general.h
+  /usr/include/gpp4/ccp4/ccp4_parser.h
+  /usr/include/gpp4/ccp4/ccp4_program.h
+  /usr/include/gpp4/ccp4/ccp4_spg.h
+  /usr/include/gpp4/ccp4/ccp4_sysdep.h
+  /usr/include/gpp4/ccp4/ccp4_types.h
+  /usr/include/gpp4/ccp4/ccp4_unitcell.h
+  /usr/include/gpp4/ccp4/ccp4_utils.h
+  /usr/include/gpp4/ccp4/ccp4_vars.h
+  /usr/include/gpp4/ccp4/cmap_data.h
+  /usr/include/gpp4/ccp4/cmap_errno.h
+  /usr/include/gpp4/ccp4/cmap_header.h
+  /usr/include/gpp4/ccp4/cmap_labels.h
+  /usr/include/gpp4/ccp4/cmap_skew.h
+  /usr/include/gpp4/ccp4/cmap_stats.h
+  /usr/include/gpp4/ccp4/cmaplib.h
+  /usr/include/gpp4/ccp4/cmaplib_f.h
+  /usr/include/gpp4/ccp4/cmtzlib.h
+  /usr/include/gpp4/ccp4/csymlib.h
+  /usr/include/gpp4/ccp4/cvecmat.h
+  /usr/include/gpp4/ccp4/library_file.h
+  /usr/include/gpp4/ccp4/mtzdata.h
+  /usr/include/gpp4/ccp4/overview.h
+  /usr/include/gpp4/ccp4/pack_c.h
+  /usr/include/gpp4/ccp4/symlib.h
+  /usr/lib/libgpp4.dll.a
+  /usr/lib/libgpp4f.dll.a
+  /usr/lib/pkgconfig/gpp4.pc
+  /usr/lib/pkgconfig/gpp4f.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.3.1-1bl3 -----
+Rebuild for libgfortran
+
+----- version 1.3.1-1bl2 -----
+Rebuild on x86_64
+
+----- version 1.3.1-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

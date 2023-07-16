@@ -1,0 +1,57 @@
+HOMEPAGE="https://gitlab.com/inkscape/${PN}"
+SRC_URI="https://gitlab.com/inkscape/${PN}/-/archive/${PV}/${P}.tar.bz2"
+
+CATEGORY="Libs"
+SUMMARY="Easy to use 2D geometry library in C++"
+DESCRIPTION="2Geom is a C++ 2D geometry library geared towards processing data associated
+with vector graphics. The primary design consideration is ease of use and
+clarity. It is dual-licensed under LGPL 2.1 and MPL 1.1."
+
+LICENSE="LGPL-2.1-only AND MPL-1.1"
+LICENSE_SPDX="SPDX-License-Identifier: LGPL-2.1-only AND MPL-1.1"
+LICENSE_URI="LICENSE.md"
+
+BUILD_REQUIRES="libcairo-devel libdouble-conversion-devel libglib2.0-devel libgsl-devel libgtest-devel python39-cython python39-devel ragel"
+
+export CPPFLAGS="${CPPFLAGS} -D_GNU_SOURCE"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-D2GEOM_BOOST_PYTHON:BOOL=ON
+	-D2GEOM_BUILD_SHARED:BOOL=ON
+	-D2GEOM_CYTHON_BINDINGS:BOOL=ON
+"
+
+src_test()
+{
+	cd ${B}
+	PATH=${B}/src/2geom:${B}/src:${PATH} ninja_test
+}
+
+DIFF_EXCLUDES="
+	svg-path-parser.cpp
+"
+
+DOCS="
+	COPYING-*
+"
+
+PKG_NAMES="
+	${PN}
+	${PN}1.2.0
+	${PN}-devel
+"
+lib2geom_CONTENTS="
+	usr/share
+"
+lib2geom1_2_0_CONTENTS="
+	usr/bin
+"
+lib2geom_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+lib2geom_SUMMARY="${SUMMARY} (licensing & readmes)"
+lib2geom1_2_0_SUMMARY="${SUMMARY} (runtime)"
+lib2geom_devel_SUMMARY="${SUMMARY} (development)"

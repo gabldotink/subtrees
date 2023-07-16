@@ -1,0 +1,70 @@
+pkcs11-dump
+------------------------------------------
+A small utility to dump PKCS#11 token contents.
+
+Runtime requirements:
+  cygwin-3.1.2-1
+  libgcc1-7.4.0-1
+  libssl1.1-1.1.1d-1
+  libstdc++6-7.4.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.29-1
+  cygport-0.33.1-1
+  gcc-core-7.4.0-1
+  gcc-g++-7.4.0-1
+  libtool-2.4.6-7
+  make-4.2.1-2
+
+Canonical website:
+  https://github.com/alonbl/pkcs11-dump
+
+Canonical download:
+  https://github.com/alonbl/pkcs11-dump/archive/pkcs11-dump-0.3.5.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack pkcs11-dump-0.3.5-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./pkcs11-dump-0.3.5-X.cygport all
+
+This will create:
+  /usr/src/pkcs11-dump-0.3.5-X-src.tar.xz
+  /usr/src/pkcs11-dump-0.3.5-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(pkcs11-dump)
+  /usr/bin/pkcs11-dump.exe
+  /usr/share/doc/Cygwin/pkcs11-dump.README
+  /usr/share/doc/pkcs11-dump/AUTHORS
+  /usr/share/doc/pkcs11-dump/COPYING
+  /usr/share/doc/pkcs11-dump/COPYING.GPL
+  /usr/share/doc/pkcs11-dump/ChangeLog
+  /usr/share/doc/pkcs11-dump/README
+  /usr/share/doc/pkcs11-dump/THANKS
+  /usr/share/man/man1/pkcs11-dump.1.gz
+
+------------------
+
+Port Notes:
+
+----- version 0.3.5-1bl1 -----
+Version bump.
+
+----- version 0.3.4-1bl3 -----
+Rebuild with gcc-5.4.0
+
+----- version 0.3.4-1bl2 -----
+Rebuild for libopenssl
+
+----- version 0.3.4-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

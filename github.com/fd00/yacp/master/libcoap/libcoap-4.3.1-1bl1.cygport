@@ -1,0 +1,57 @@
+HOMEPAGE="https://github.com/obgm/${PN}"
+GIT_URI="https://github.com/obgm/${PN}.git"
+GIT_TAG="v${PV}"
+
+CATEGORY="Libs"
+SUMMARY="C-Implementation of CoAP"
+DESCRIPTION="libcoap implements a lightweight application-protocol for devices that are
+constrained their resources such as computing power, RF range, memory,
+bandwith, or network packet sizes. This protocol, CoAP was standardized in the
+IETF as RFC 7252."
+
+LICENSE="BSD-2-Clause"
+LICENSE_SPDX="SPDX-License-Identifier: BSD-2-Clause"
+LICENSE_URI="LICENSE"
+
+BUILD_REQUIRES="libgnutls-devel"
+
+inherit git
+
+CYGCONF_ARGS="
+	--disable-add-default-names
+	--disable-documentation
+	--enable-tests
+	--without-tinydtls
+"
+
+src_test()
+{
+	cd ${B}
+	./tests/testdriver.exe
+}
+
+PKG_IGNORE="
+	usr/lib/libcoap-3-gnutls.a
+"
+
+PKG_NAMES="
+	${PN}
+	${PN}3-gnutls3
+	${PN}3-gnutls-devel
+"
+libcoap_CONTENTS="
+	usr/bin/*.exe
+	usr/share/doc
+"
+libcoap3_gnutls3_CONTENTS="
+	usr/bin/*.dll
+"
+libcoap3_gnutls_devel_CONTENTS="
+	usr/include
+	usr/lib/lib*.dll.a
+	usr/lib/pkgconfig
+	usr/share/${PN}
+"
+libcoap_SUMMARY="${SUMMARY} (utilities)"
+libcoap3_gnutls3_SUMMARY="${SUMMARY} (runtime)"
+libcoap3_gnutls_devel_SUMMARY="${SUMMARY} (development)"

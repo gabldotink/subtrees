@@ -1,0 +1,83 @@
+cole
+------------------------------------------
+cole is a free C OLE library. Allows handle OLE2 streams. Can take an OLE2 file
+and divide its streams, or take streams and generate an OLE2 file. Examples of
+OLE2 files are: .doc (MSWord) and .xls (MSExcel)
+
+Runtime requirements:
+  cygwin-3.1.7-1
+  libcole-devel-1.0.0-1bl3
+  libcole1-1.0.0-1bl3
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.34+1git.de9c1b7cfe-1
+  cygport-0.34.0-1
+  gcc-core-10.2.0-1
+  libtool-2.4.6-7
+  make-4.3-1
+
+Canonical website:
+  https://ibiblio.org/pub/linux/libs/cole-1.0.0.lsm
+
+Canonical download:
+  https://ibiblio.org/pub/linux/libs/cole-1.0.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack cole-1.0.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./cole-1.0.0-X.cygport all
+
+This will create:
+  /usr/src/cole-1.0.0-X-src.tar.xz
+  /usr/src/cole-1.0.0-X.tar.xz
+  /usr/src/libcole1-1.0.0-X.tar.xz
+  /usr/src/libcole-devel-1.0.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(cole)
+  /usr/share/doc/Cygwin/cole.README
+  /usr/share/doc/cole/AUTHORS
+  /usr/share/doc/cole/BUGS
+  /usr/share/doc/cole/COPYING
+  /usr/share/doc/cole/ChangeLog
+  /usr/share/doc/cole/HACKING
+  /usr/share/doc/cole/NEWS
+  /usr/share/doc/cole/README
+  /usr/share/doc/cole/THANKS
+  /usr/share/doc/cole/TODO
+
+(libcole1)
+  /usr/bin/cygcole-1.dll
+
+(libcole-devel)
+  /usr/include/cole/cole.h
+  /usr/include/cole/coleconfig.h
+  /usr/include/cole/olecod.h
+  /usr/include/cole/oledecod.h
+  /usr/include/cole/support.h
+  /usr/lib/libcole.dll.a
+  /usr/lib/pkgconfig/cole.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.0.0-1bl3 -----
+Rebuild with gcc-10.2.0
+
+----- version 1.0.0-1bl2 -----
+Rebuild on x86_64
+
+----- version 1.0.0-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

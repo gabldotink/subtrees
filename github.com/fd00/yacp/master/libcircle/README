@@ -1,0 +1,75 @@
+libcircle
+------------------------------------------
+An API to provide an efficient distributed queue on a cluster. Libcircle is
+currently used in production to quickly traverse and perform operations on a
+file tree which contains several hundred-million file nodes.
+
+Runtime requirements:
+  cygwin-3.1.7-1
+  libcircle-devel-0.3-1bl1
+  libcircle2-0.3-1bl1
+  libopenmpi40-4.0.5-1
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.34+1git.de9c1b7cfe-1
+  cygport-0.34.0-1
+  gcc-core-10.2.0-1
+  libtool-2.4.6-7
+  make-4.3-1
+
+Canonical website:
+  https://github.com/hpc/libcircle/
+
+Canonical download:
+  https://github.com/hpc/libcircle/archive/v0.3.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libcircle-0.3-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libcircle-0.3-X.cygport all
+
+This will create:
+  /usr/src/libcircle-0.3-X-src.tar.xz
+  /usr/src/libcircle-0.3-X.tar.xz
+  /usr/src/libcircle2-0.3-X.tar.xz
+  /usr/src/libcircle-devel-0.3-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libcircle)
+  /usr/share/doc/Cygwin/libcircle.README
+  /usr/share/doc/libcircle/AUTHORS
+  /usr/share/doc/libcircle/COPYING
+  /usr/share/doc/libcircle/HACKING.md
+  /usr/share/doc/libcircle/README.md
+
+(libcircle2)
+  /usr/bin/cygcircle-2.dll
+
+(libcircle-devel)
+  /usr/include/libcircle.h
+  /usr/lib/libcircle.dll.a
+  /usr/lib/pkgconfig/libcircle.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.3-1bl1 -----
+Version bump.
+
+----- version 0.2.1-rc.1-1bl1 -----
+Version bump.
+
+----- version 0.2.0-rc.1-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

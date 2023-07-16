@@ -1,0 +1,114 @@
+h3
+------------------------------------------
+H3 is a geospatial indexing system using a hexagonal grid that can be
+(approximately) subdivided into finer and finer hexagonal grids, combining the
+benefits of a hexagonal grid with S2's hierarchical subdivisions.
+
+Runtime requirements:
+  cygwin-3.4.5-1
+  libh3-devel-4.0.1-1bl1
+  libh3_1-4.0.1-1bl1
+  pkg-config-1.9.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.39-1
+  cmake-3.23.2-1
+  cygport-0.35.5-1
+  gcc-core-11.3.0-1
+  ninja-1.11.1-1
+
+Canonical website:
+  https://github.com/uber/h3/
+
+Canonical download:
+  https://github.com/uber/h3/archive/refs/tags/v4.0.1.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack h3-4.0.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./h3-4.0.1-X.cygport all
+
+This will create:
+  /usr/src/h3-4.0.1-X-src.tar.xz
+  /usr/src/h3-4.0.1-X.tar.xz
+  /usr/src/libh3_1-4.0.1-X.tar.xz
+  /usr/src/libh3-devel-4.0.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(h3)
+  /usr/bin/cellToBoundary.exe
+  /usr/bin/cellToBoundaryHier.exe
+  /usr/bin/cellToLatLng.exe
+  /usr/bin/cellToLatLngHier.exe
+  /usr/bin/cellToLocalIj.exe
+  /usr/bin/gridDisk.exe
+  /usr/bin/gridDiskUnsafe.exe
+  /usr/bin/h3.exe
+  /usr/bin/h3ToComponents.exe
+  /usr/bin/h3ToHier.exe
+  /usr/bin/latLngToCell.exe
+  /usr/bin/localIjToCell.exe
+  /usr/share/doc/Cygwin/h3.README
+  /usr/share/doc/h3/CHANGELOG.md
+  /usr/share/doc/h3/CONTRIBUTING.md
+  /usr/share/doc/h3/LICENSE
+  /usr/share/doc/h3/NOTICE
+  /usr/share/doc/h3/README.md
+  /usr/share/doc/h3/RELEASE.md
+
+(libh3_1)
+  /usr/bin/cygh3-1.dll
+
+(libh3-devel)
+  /usr/include/h3/h3api.h
+  /usr/lib/cmake/h3/h3Config.cmake
+  /usr/lib/cmake/h3/h3ConfigVersion.cmake
+  /usr/lib/cmake/h3/h3Targets-release.cmake
+  /usr/lib/cmake/h3/h3Targets.cmake
+  /usr/lib/libh3.dll.a
+  /usr/lib/pkgconfig/h3.pc
+
+------------------
+
+Port Notes:
+
+----- version 4.0.1-1bl1 -----
+Version bump.
+
+----- version 4.0.0-1bl1 -----
+Version bump.
+
+----- version 3.7.2-1bl1 -----
+Version bump.
+
+----- version 3.7.1-1bl1 -----
+Version bump.
+
+----- version 3.7.0-1bl1 -----
+Version bump.
+
+----- version 3.6.4-1bl1 -----
+Version bump.
+
+----- version 3.6.3-1bl1 -----
+Version bump.
+
+----- version 3.6.2-1bl1 -----
+Version bump.
+
+----- version 3.5.0-1bl1 -----
+Version bump.
+
+----- version 3.4.4-1bl1 -----
+Version bump.
+
+----- version 3.4.2-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

@@ -1,0 +1,216 @@
+finalcut
+------------------------------------------
+FINAL CUT is a C++ class library and widget toolkit with full mouse support for
+creating a text-based user interface. The library supports the programmer to
+develop an application for the text console. It allows the simultaneous
+handling of multiple text windows on the screen.
+
+Runtime requirements:
+  cygwin-3.3.4-2
+  libfinal-devel-0.8.0-1bl1
+  libfinal0-0.8.0-1bl1
+  libgcc1-11.2.0-1
+  libncursesw10-6.1-1.20190727
+  libstdc++6-11.2.0-1
+  pkg-config-1.8.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.37-2
+  cygport-0.34.2-1
+  gcc-core-11.2.0-1
+  gcc-g++-11.2.0-1
+  libncurses-devel-6.1-1.20190727
+  libtool-2.4.7-1
+  make-4.3-1
+
+Canonical website:
+  https://github.com/gansm/finalcut
+
+Canonical download:
+  https://github.com/gansm/finalcut/archive/refs/tags/0.8.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack finalcut-0.8.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./finalcut-0.8.0-X.cygport all
+
+This will create:
+  /usr/src/finalcut-0.8.0-X-src.tar.xz
+  /usr/src/finalcut-0.8.0-X.tar.xz
+  /usr/src/libfinal0-0.8.0-X.tar.xz
+  /usr/src/libfinal-devel-0.8.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(finalcut)
+  /usr/share/doc/Cygwin/finalcut.README
+  /usr/share/doc/finalcut/AUTHORS
+  /usr/share/doc/finalcut/COPYING
+  /usr/share/doc/finalcut/COPYING.LESSER
+  /usr/share/doc/finalcut/ChangeLog
+  /usr/share/doc/finalcut/Mandelbrot.png
+  /usr/share/doc/finalcut/README.md
+  /usr/share/doc/finalcut/TODO
+  /usr/share/doc/finalcut/benchmark.md
+  /usr/share/doc/finalcut/build_openbsd.txt
+  /usr/share/doc/finalcut/build_solaris.txt
+  /usr/share/doc/finalcut/calculator.png
+  /usr/share/doc/finalcut/calendar-draft.png
+  /usr/share/doc/finalcut/class-diagram.txt
+  /usr/share/doc/finalcut/class_template.cpp
+  /usr/share/doc/finalcut/class_template.h
+  /usr/share/doc/finalcut/coding-style.txt
+  /usr/share/doc/finalcut/console_codes-manual.sh
+  /usr/share/doc/finalcut/console_ioctl-manual.sh
+  /usr/share/doc/finalcut/faq.md
+  /usr/share/doc/finalcut/fileopen-dialog.png
+  /usr/share/doc/finalcut/final-cut-application-structure.svg
+  /usr/share/doc/finalcut/final-cut-widget-tree.svg
+  /usr/share/doc/finalcut/first-steps.md
+  /usr/share/doc/finalcut/first-steps_callback-function.cpp.png
+  /usr/share/doc/finalcut/first-steps_callback-lambda.cpp.png
+  /usr/share/doc/finalcut/first-steps_callback-method.cpp.png
+  /usr/share/doc/finalcut/first-steps_dialog.cpp.png
+  /usr/share/doc/finalcut/first-steps_emit-signal.cpp.png
+  /usr/share/doc/finalcut/first-steps_memory.cpp.png
+  /usr/share/doc/finalcut/first-steps_scrollview.cpp.png
+  /usr/share/doc/finalcut/first-steps_size-adjustment.cpp.png
+  /usr/share/doc/finalcut/first-steps_timer.cpp.png
+  /usr/share/doc/finalcut/first-steps_user-event.cpp.png
+  /usr/share/doc/finalcut/framebuffer.txt
+  /usr/share/doc/finalcut/mouse-control.md
+  /usr/share/doc/finalcut/ncurses.supp
+  /usr/share/doc/finalcut/newfont-8x16.txt
+  /usr/share/doc/finalcut/newfont-9x16.txt
+  /usr/share/doc/finalcut/newfont.txt
+  /usr/share/doc/finalcut/newfont1.png
+  /usr/share/doc/finalcut/newfont2.png
+  /usr/share/doc/finalcut/progress-bar.png
+  /usr/share/doc/finalcut/readme.txt
+  /usr/share/doc/finalcut/terminfo-capabilities.sh
+  /usr/share/doc/finalcut/terminfo-manual.sh
+  /usr/share/doc/finalcut/textview.png
+  /usr/share/doc/finalcut/user-theme-bee-palette.svg
+  /usr/share/doc/finalcut/user-theme-fc16-dark-palette.svg
+  /usr/share/doc/finalcut/user-theme-fc16-palette.svg
+  /usr/share/doc/finalcut/user-theme-fc8-palette.svg
+  /usr/share/doc/finalcut/user-theme-vga-palette.svg
+  /usr/share/doc/finalcut/user-theme.md
+  /usr/share/doc/finalcut/user-theme.png
+  /usr/share/doc/finalcut/vga.txt
+  /usr/share/doc/finalcut/virtual-terminal.txt
+  /usr/share/doc/finalcut/vt100_line_drawing_graphics.png
+  /usr/share/doc/finalcut/widget-coordinates.svg
+  /usr/share/doc/finalcut/widget-geometry.svg
+  /usr/share/doc/finalcut/widget-lengths.svg
+  /usr/share/doc/finalcut/xgraphics
+  /usr/share/doc/finalcut/xterm.txt
+  /usr/share/fonts/X11/misc/finalcut/8x16graph.pcf.gz
+  /usr/share/fonts/X11/misc/finalcut/fonts.alias
+  /usr/share/fonts/X11/misc/finalcut/fonts.dir
+
+(libfinal0)
+  /usr/bin/cygfinal-0.dll
+
+(libfinal-devel)
+  /usr/include/final/dialog/fdialog.h
+  /usr/include/final/dialog/ffiledialog.h
+  /usr/include/final/dialog/fmessagebox.h
+  /usr/include/final/fapplication.h
+  /usr/include/final/fc.h
+  /usr/include/final/fconfig.h
+  /usr/include/final/fevent.h
+  /usr/include/final/final.h
+  /usr/include/final/fobject.h
+  /usr/include/final/fstartoptions.h
+  /usr/include/final/ftypes.h
+  /usr/include/final/fwidget.h
+  /usr/include/final/fwidget_functions.h
+  /usr/include/final/fwidgetcolors.h
+  /usr/include/final/input/fkey_map.h
+  /usr/include/final/input/fkeyboard.h
+  /usr/include/final/input/fmouse.h
+  /usr/include/final/menu/fcheckmenuitem.h
+  /usr/include/final/menu/fdialoglistmenu.h
+  /usr/include/final/menu/fmenu.h
+  /usr/include/final/menu/fmenubar.h
+  /usr/include/final/menu/fmenuitem.h
+  /usr/include/final/menu/fmenulist.h
+  /usr/include/final/menu/fradiomenuitem.h
+  /usr/include/final/output/fcolorpalette.h
+  /usr/include/final/output/foutput.h
+  /usr/include/final/output/tty/fcharmap.h
+  /usr/include/final/output/tty/foptiattr.h
+  /usr/include/final/output/tty/foptimove.h
+  /usr/include/final/output/tty/fterm.h
+  /usr/include/final/output/tty/fterm_functions.h
+  /usr/include/final/output/tty/ftermcap.h
+  /usr/include/final/output/tty/ftermcapquirks.h
+  /usr/include/final/output/tty/ftermdata.h
+  /usr/include/final/output/tty/ftermdebugdata.h
+  /usr/include/final/output/tty/ftermdetection.h
+  /usr/include/final/output/tty/ftermfreebsd.h
+  /usr/include/final/output/tty/ftermios.h
+  /usr/include/final/output/tty/ftermlinux.h
+  /usr/include/final/output/tty/ftermopenbsd.h
+  /usr/include/final/output/tty/ftermoutput.h
+  /usr/include/final/output/tty/ftermxterminal.h
+  /usr/include/final/output/tty/sgr_optimizer.h
+  /usr/include/final/util/emptyfstring.h
+  /usr/include/final/util/fcallback.h
+  /usr/include/final/util/fdata.h
+  /usr/include/final/util/flog.h
+  /usr/include/final/util/flogger.h
+  /usr/include/final/util/fpoint.h
+  /usr/include/final/util/frect.h
+  /usr/include/final/util/fsize.h
+  /usr/include/final/util/fstring.h
+  /usr/include/final/util/fstringstream.h
+  /usr/include/final/util/fsystem.h
+  /usr/include/final/util/fsystemimpl.h
+  /usr/include/final/vterm/fcolorpair.h
+  /usr/include/final/vterm/fstyle.h
+  /usr/include/final/vterm/fvterm.h
+  /usr/include/final/vterm/fvtermattribute.h
+  /usr/include/final/vterm/fvtermbuffer.h
+  /usr/include/final/widget/fbusyindicator.h
+  /usr/include/final/widget/fbutton.h
+  /usr/include/final/widget/fbuttongroup.h
+  /usr/include/final/widget/fcheckbox.h
+  /usr/include/final/widget/fcombobox.h
+  /usr/include/final/widget/flabel.h
+  /usr/include/final/widget/flineedit.h
+  /usr/include/final/widget/flistbox.h
+  /usr/include/final/widget/flistview.h
+  /usr/include/final/widget/fprogressbar.h
+  /usr/include/final/widget/fradiobutton.h
+  /usr/include/final/widget/fscrollbar.h
+  /usr/include/final/widget/fscrollview.h
+  /usr/include/final/widget/fspinbox.h
+  /usr/include/final/widget/fstatusbar.h
+  /usr/include/final/widget/fswitch.h
+  /usr/include/final/widget/ftextview.h
+  /usr/include/final/widget/ftogglebutton.h
+  /usr/include/final/widget/ftooltip.h
+  /usr/include/final/widget/fwindow.h
+  /usr/lib/libfinal.dll.a
+  /usr/lib/pkgconfig/finalcut.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.8.0-1bl1 -----
+Version bump.
+
+----- version 0.7.1-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

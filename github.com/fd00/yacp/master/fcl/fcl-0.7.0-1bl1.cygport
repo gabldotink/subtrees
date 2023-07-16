@@ -1,0 +1,37 @@
+HOMEPAGE="https://github.com/flexible-collision-library/${PN}"
+SRC_URI="https://github.com/flexible-collision-library/${PN}/archive/refs/tags/${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Flexible Collision Library"
+DESCRIPTION="FCL is a library for performing three types of proximity queries on a pair of
+geometric models composed of triangles."
+
+BUILD_REQUIRES="eigen3 libccd-devel liboctomap-devel"
+
+export CPPFLAGS="${CPPFLAGS} -D_GNU_SOURCE -D${PN}_EXPORTS"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DBUILD_TESTING:BOOL=OFF
+"
+
+PKG_NAMES="
+	${PN}
+	lib${PN}${PV[1]}.${PV[2]}
+	lib${PN}-devel
+"
+fcl_CONTENTS="
+	usr/share/doc
+"
+libfcl0_7_CONTENTS="
+	usr/bin
+"
+libfcl_devel_CONTENTS="
+	usr/include
+	usr/lib
+	usr/share/${PN}
+"
+fcl_SUMMARY="${SUMMARY} (licensing & readmes)"
+libfcl0_7_SUMMARY="${SUMMARY} (runtime)"
+libfcl_devel_SUMMARY="${SUMMARY} (development)"

@@ -1,0 +1,50 @@
+--- origsrc/r3-1.3.4/Makefile.am	2015-11-17 19:27:25.000000000 +0900
++++ src/r3-1.3.4/Makefile.am	2017-09-03 18:54:10.987019800 +0900
+@@ -3,7 +3,7 @@ SUBDIRS=3rdparty src . tests examples
+ lib_LTLIBRARIES = libr3.la
+ libr3_la_SOURCES =
+ libr3_la_LIBADD = 3rdparty/libr3ext.la src/libr3core.la
+-libr3_la_LDFLAGS =
++libr3_la_LDFLAGS = -no-undefined
+ 
+ AM_CFLAGS=$(DEPS_CFLAGS) $(GVC_DEPS_CFLAGS) -I$(top_builddir) -I$(top_builddir)/include -I$(top_builddir)/3rdparty -Wall -std=c99
+ AM_LDFLAGS=$(DEPS_LIBS) $(GVC_DEPS_LIBS)
+--- origsrc/r3-1.3.4/examples/Makefile.am	2015-11-17 19:27:25.000000000 +0900
++++ src/r3-1.3.4/examples/Makefile.am	2017-09-03 18:54:10.987019800 +0900
+@@ -1,5 +1,5 @@
+-AM_CFLAGS=$(DEPS_CFLAGS) $(GVC_DEPS_CFLAGS) -I$(top_builddir)/include -Wall -std=c99
+-AM_CXXFLAGS=$(DEPS_CFLAGS) $(GVC_DEPS_CFLAGS) -I$(top_builddir)/include -Wall
++AM_CFLAGS=$(DEPS_CFLAGS) $(GVC_DEPS_CFLAGS) -I$(top_srcdir)/include -Wall -std=c99
++AM_CXXFLAGS=$(DEPS_CFLAGS) $(GVC_DEPS_CFLAGS) -I$(top_srcdir)/include -Wall
+ AM_LDFLAGS=$(DEPS_LIBS) $(GVC_DEPS_LIBS) $(top_builddir)/libr3.la
+ 
+ noinst_PROGRAMS = simple simple_cpp
+--- origsrc/r3-1.3.4/include/r3_str.h	2015-11-17 19:27:25.000000000 +0900
++++ src/r3-1.3.4/include/r3_str.h	2017-09-03 18:58:05.236000000 +0900
+@@ -48,7 +48,7 @@ void print_indent(int level);
+ char *strdup(const char *s);
+ #endif
+ 
+-#ifndef HAVE_STRNDUP
++#if !defined(HAVE_STRNDUP) && !defined(__CYGWIN__)
+ char *strndup(const char *s, int n);
+ #endif
+ 
+--- origsrc/r3-1.3.4/src/Makefile.am	2015-11-17 19:27:25.000000000 +0900
++++ src/r3-1.3.4/src/Makefile.am	2017-09-03 18:54:11.002660700 +0900
+@@ -1,4 +1,4 @@
+-AM_CFLAGS=$(DEPS_CFLAGS) $(GVC_DEPS_CFLAGS) $(JSONC_CFLAGS) -I$(top_builddir) -I$(top_builddir)/include -I$(top_builddir)/3rdparty  -Wall -std=c99
++AM_CFLAGS=$(DEPS_CFLAGS) $(GVC_DEPS_CFLAGS) $(JSONC_CFLAGS) -I$(top_builddir) -I$(top_builddir)/3rdparty -I$(top_srcdir)/include -I$(top_srcdir)/3rdparty -Wall -std=c99
+ AM_LDFLAGS=$(DEPS_LIBS) $(GVC_DEPS_LIBS) $(JSONC_LIBS)
+ MAYBE_COVERAGE=--coverage
+ 
+--- origsrc/r3-1.3.4/tests/Makefile.am	2015-11-17 19:27:25.000000000 +0900
++++ src/r3-1.3.4/tests/Makefile.am	2017-09-03 18:54:11.002660700 +0900
+@@ -1,6 +1,6 @@
+ TESTS =
+ 
+-AM_CFLAGS=$(DEPS_CFLAGS) $(GVC_DEPS_CFLAGS) $(JSONC_CFLAGS) @CHECK_CFLAGS@ -I$(top_builddir) -I$(top_builddir)/include -I$(top_builddir)/src -I$(top_builddir)/3rdparty  -Wall -std=c99 -ggdb -Wall
++AM_CFLAGS=$(DEPS_CFLAGS) $(GVC_DEPS_CFLAGS) $(JSONC_CFLAGS) @CHECK_CFLAGS@ -I$(top_builddir) -I$(top_builddir)/src -I$(top_builddir)/3rdparty -I$(top_srcdir)/include -I$(top_srcdir)/3rdparty -I$(top_srcdir)/src -Wall -std=c99 -ggdb -Wall
+ AM_LDFLAGS=$(DEPS_LIBS) $(GVC_DEPS_LIBS) $(JSONC_LIBS) @CHECK_LIBS@ $(top_builddir)/libr3.la
+ 
+ if USE_JEMALLOC

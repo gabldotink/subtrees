@@ -1,0 +1,39 @@
+HOMEPAGE="https://github.com/samtools/${PN}"
+SRC_URI="https://github.com/samtools/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Custom compression for CRAM and others"
+DESCRIPTION="This repository implements the custom CRAM codecs used for EXTERNAL block
+types. These consist of two variants of the rANS codec (8-bit and 16-bit
+renormalisation, with run-length encoding and bit-packing also supported in
+the latter), a dynamic arithmetic coder, and custom codecs for name/ID
+compression and quality score compression derived from fqzcomp."
+
+LICENSE="BSD-3-Clause"
+LICENSE_SPDX="SPDX-License-Identifier: BSD-3-Clause"
+LICENSE_URI="LICENSE.md"
+
+BUILD_REQUIRES="libbz2-devel zlib-devel"
+
+CYGCONF_ARGS="
+	--enable-maintainer-mode
+"
+
+PKG_NAMES="
+	htscodecs
+	libhtscodecs2
+	libhtscodecs-devel
+"
+htscodecs_CONTENTS="
+	usr/share
+"
+libhtscodecs2_CONTENTS="
+	usr/bin
+"
+libhtscodecs_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+htscodecs_SUMMARY="${SUMMARY} (licensing & readmes)"
+libhtscodecs2_SUMMARY="${SUMMARY} (runtime)"
+libhtscodecs_devel_SUMMARY="${SUMMARY} (development)"

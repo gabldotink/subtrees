@@ -1,0 +1,88 @@
+alac
+------------------------------------------
+The Apple Lossless Audio Codec (ALAC) is an audio codec developed by Apple and
+supported on iPhone, iPad, most iPods, Mac and iTunes. ALAC is a data
+compression method which reduces the size of audio files with no loss of
+information. A decoded ALAC stream is bit-for-bit identical to the original
+uncompressed audio file.
+
+Runtime requirements:
+  cygwin-3.3.6-1
+  libalac-devel-0+git20160511-1bl2
+  libalac0-0+git20160511-1bl2
+  libgcc1-11.3.0-1
+  libstdc++6-11.3.0-1
+  pkg-config-1.9.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.39-1
+  cygport-0.35.2-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libtool-2.4.7-1
+  make-4.3-1
+
+Canonical website:
+  https://macosforge.github.io/alac/
+
+Canonical download:
+  https://github.com/macosforge/alac.git
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack alac-0+git20160511-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./alac-0+git20160511-X.cygport all
+
+This will create:
+  /usr/src/alac-0+git20160511-X-src.tar.xz
+  /usr/src/alac-0+git20160511-X.tar.xz
+  /usr/src/libalac0-0+git20160511-X.tar.xz
+  /usr/src/libalac-devel-0+git20160511-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(alac)
+  /usr/bin/alacconvert.exe
+  /usr/share/doc/Cygwin/alac.README
+  /usr/share/doc/alac/ALACMagicCookieDescription.txt
+  /usr/share/doc/alac/CONTRIBUTING.md
+  /usr/share/doc/alac/LICENSE
+  /usr/share/doc/alac/PULL_REQUEST_TEMPLATE.md
+  /usr/share/doc/alac/README.txt
+
+(libalac0)
+  /usr/bin/cygalac-0.dll
+
+(libalac-devel)
+  /usr/include/alac/ALACAudioTypes.h
+  /usr/include/alac/ALACBitUtilities.h
+  /usr/include/alac/ALACDecoder.h
+  /usr/include/alac/ALACEncoder.h
+  /usr/include/alac/EndianPortable.h
+  /usr/include/alac/aglib.h
+  /usr/include/alac/dplib.h
+  /usr/include/alac/matrixlib.h
+  /usr/lib/libalac.dll.a
+  /usr/lib/pkgconfig/alac.pc
+
+------------------
+
+Port Notes:
+
+----- version 0+git20160511-1bl2 -----
+Rebuild with gcc-11.3.0
+
+----- version 0+git20160511-1bl1 -----
+Version bump.
+
+----- version 0+svn4-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

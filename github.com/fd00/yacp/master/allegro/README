@@ -1,0 +1,283 @@
+allegro
+------------------------------------------
+Allegro is a cross-platform library mainly aimed at video game and multimedia
+programming. It handles common, low-level tasks such as creating windows,
+accepting user input, loading data, drawing images, playing sounds, etc. and
+generally abstracting away the underlying platform. However, Allegro is not a
+game engine: you are free to design and structure your program as you like.
+
+Runtime requirements:
+  cygwin-3.4.6-1
+  libFLAC8-1.3.2-1
+  libGL1-19.1.6-1
+  libX11_6-1.8.1-1
+  libXcursor1-1.2.1-1
+  libXi6-1.8-1
+  libXinerama1-1.1.5-1
+  libXpm4-3.5.14-1
+  libXrandr2-1.5.3-1
+  libXss1-1.2.4-1
+  liballegro5.2-5.2.8.0-1bl1
+  libdumb2-2.0.3-1bl1
+  libfreetype6-2.13.0-1
+  libgcc1-11.3.0-1
+  libglib2.0_0-2.54.3-1
+  libgtk3_0-3.22.28-1
+  libjpeg8-2.1.5.1-1
+  libogg0-1.3.1-1
+  libopenal1-1.18.2-1
+  libopusfile0-0.10-1
+  libphysfs1-3.2.0-1bl1
+  libpng16-1.6.37-1
+  libpulse-simple0-11.1-1
+  libpulse0-11.1-1
+  libtheoradec1-1.1.1-2
+  libvorbis0-1.3.6-1
+  libvorbisfile3-1.3.6-1
+  libwebp7-1.3.0-1
+  pkg-config-1.9.4-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.40-1
+  cmake-3.23.2-1
+  cygport-0.36.0-1
+  flac-devel-1.3.2-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libGL-devel-19.1.6-1
+  libX11-devel-1.8.1-1
+  libXcursor-devel-1.2.1-1
+  libXi-devel-1.8-1
+  libXinerama-devel-1.1.5-1
+  libXpm-devel-3.5.14-1
+  libXrandr-devel-1.5.3-1
+  libXss-devel-1.2.4-1
+  libdumb-devel-2.0.3-1bl1
+  libfreetype-devel-2.13.0-1
+  libglib2.0-devel-2.54.3-1
+  libgtk3-devel-3.22.28-1
+  libjpeg-devel-2.1.5.1-1
+  libogg-devel-1.3.1-1
+  libopenal-devel-1.18.2-1
+  libopusfile-devel-0.10-1
+  libphysfs-devel-3.2.0-1bl1
+  libpng-devel-1.6.37-1
+  libpulse-devel-11.1-1
+  libtheora-devel-1.1.1-2
+  libvorbis-devel-1.3.6-1
+  libwebp-devel-1.3.0-1
+  ninja-1.11.1-1
+
+Canonical website:
+  https://liballeg.org/
+
+Canonical download:
+  https://github.com/liballeg/allegro5/releases/download/5.2.8.0/allegro-5.2.8.0.7z
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack allegro-5.2.8.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./allegro-5.2.8.0-X.cygport all
+
+This will create:
+  /usr/src/allegro-5.2.8.0-X-src.tar.xz
+  /usr/src/allegro-5.2.8.0-X.tar.xz
+  /usr/src/liballegro5.2-5.2.8.0-X.tar.xz
+  /usr/src/liballegro-devel-5.2.8.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(allegro)
+  /usr/share/doc/Cygwin/allegro.README
+  /usr/share/doc/allegro/CHANGES-5.0.txt
+  /usr/share/doc/allegro/CHANGES-5.1.txt
+  /usr/share/doc/allegro/CHANGES-5.2.txt
+  /usr/share/doc/allegro/CONTRIBUTORS.txt
+  /usr/share/doc/allegro/LICENSE.txt
+  /usr/share/doc/allegro/README.txt
+  /usr/share/doc/allegro/README_android.txt
+  /usr/share/doc/allegro/README_cmake.txt
+  /usr/share/doc/allegro/README_iphone.txt
+  /usr/share/doc/allegro/README_macosx.txt
+  /usr/share/doc/allegro/README_make.txt
+  /usr/share/doc/allegro/README_msvc.txt
+  /usr/share/doc/allegro/README_packaging.txt
+  /usr/share/doc/allegro/README_pkgconfig.txt
+  /usr/share/doc/allegro/README_raspberrypi.txt
+  /usr/share/doc/allegro/README_releasing.txt
+  /usr/share/doc/allegro/README_sdl.txt
+  /usr/share/doc/allegro/README_windows.txt
+
+(liballegro5.2)
+  /usr/bin/cygallegro-5.2.dll
+  /usr/bin/cygallegro_acodec-5.2.dll
+  /usr/bin/cygallegro_audio-5.2.dll
+  /usr/bin/cygallegro_color-5.2.dll
+  /usr/bin/cygallegro_dialog-5.2.dll
+  /usr/bin/cygallegro_font-5.2.dll
+  /usr/bin/cygallegro_image-5.2.dll
+  /usr/bin/cygallegro_main-5.2.dll
+  /usr/bin/cygallegro_memfile-5.2.dll
+  /usr/bin/cygallegro_physfs-5.2.dll
+  /usr/bin/cygallegro_primitives-5.2.dll
+  /usr/bin/cygallegro_ttf-5.2.dll
+  /usr/bin/cygallegro_video-5.2.dll
+
+(liballegro-devel)
+  /usr/include/allegro5/alcompat.h
+  /usr/include/allegro5/allegro.h
+  /usr/include/allegro5/allegro5.h
+  /usr/include/allegro5/allegro_acodec.h
+  /usr/include/allegro5/allegro_audio.h
+  /usr/include/allegro5/allegro_color.h
+  /usr/include/allegro5/allegro_direct3d.h
+  /usr/include/allegro5/allegro_font.h
+  /usr/include/allegro5/allegro_image.h
+  /usr/include/allegro5/allegro_memfile.h
+  /usr/include/allegro5/allegro_native_dialog.h
+  /usr/include/allegro5/allegro_opengl.h
+  /usr/include/allegro5/allegro_physfs.h
+  /usr/include/allegro5/allegro_primitives.h
+  /usr/include/allegro5/allegro_ttf.h
+  /usr/include/allegro5/allegro_video.h
+  /usr/include/allegro5/allegro_x.h
+  /usr/include/allegro5/altime.h
+  /usr/include/allegro5/base.h
+  /usr/include/allegro5/bitmap.h
+  /usr/include/allegro5/bitmap_draw.h
+  /usr/include/allegro5/bitmap_io.h
+  /usr/include/allegro5/bitmap_lock.h
+  /usr/include/allegro5/blender.h
+  /usr/include/allegro5/clipboard.h
+  /usr/include/allegro5/color.h
+  /usr/include/allegro5/config.h
+  /usr/include/allegro5/cpu.h
+  /usr/include/allegro5/debug.h
+  /usr/include/allegro5/display.h
+  /usr/include/allegro5/drawing.h
+  /usr/include/allegro5/error.h
+  /usr/include/allegro5/events.h
+  /usr/include/allegro5/file.h
+  /usr/include/allegro5/fixed.h
+  /usr/include/allegro5/fmaths.h
+  /usr/include/allegro5/fshook.h
+  /usr/include/allegro5/fullscreen_mode.h
+  /usr/include/allegro5/haptic.h
+  /usr/include/allegro5/inline/fmaths.inl
+  /usr/include/allegro5/internal/alconfig.h
+  /usr/include/allegro5/joystick.h
+  /usr/include/allegro5/keyboard.h
+  /usr/include/allegro5/keycodes.h
+  /usr/include/allegro5/memory.h
+  /usr/include/allegro5/monitor.h
+  /usr/include/allegro5/mouse.h
+  /usr/include/allegro5/mouse_cursor.h
+  /usr/include/allegro5/opengl/GLext/gl_ext_alias.h
+  /usr/include/allegro5/opengl/GLext/gl_ext_api.h
+  /usr/include/allegro5/opengl/GLext/gl_ext_defs.h
+  /usr/include/allegro5/opengl/GLext/gl_ext_list.h
+  /usr/include/allegro5/opengl/GLext/glx_ext_alias.h
+  /usr/include/allegro5/opengl/GLext/glx_ext_api.h
+  /usr/include/allegro5/opengl/GLext/glx_ext_defs.h
+  /usr/include/allegro5/opengl/GLext/glx_ext_list.h
+  /usr/include/allegro5/opengl/GLext/wgl_ext_alias.h
+  /usr/include/allegro5/opengl/GLext/wgl_ext_api.h
+  /usr/include/allegro5/opengl/GLext/wgl_ext_defs.h
+  /usr/include/allegro5/opengl/GLext/wgl_ext_list.h
+  /usr/include/allegro5/opengl/gl_ext.h
+  /usr/include/allegro5/path.h
+  /usr/include/allegro5/platform/alandroid.h
+  /usr/include/allegro5/platform/alandroidcfg.h
+  /usr/include/allegro5/platform/albcc32.h
+  /usr/include/allegro5/platform/aliphone.h
+  /usr/include/allegro5/platform/aliphonecfg.h
+  /usr/include/allegro5/platform/allegro_sdl_config.h
+  /usr/include/allegro5/platform/almngw32.h
+  /usr/include/allegro5/platform/almsvc.h
+  /usr/include/allegro5/platform/alosx.h
+  /usr/include/allegro5/platform/alosxcfg.h
+  /usr/include/allegro5/platform/alplatf.h
+  /usr/include/allegro5/platform/alraspberrypi.h
+  /usr/include/allegro5/platform/alraspberrypicfg.h
+  /usr/include/allegro5/platform/alucfg.h
+  /usr/include/allegro5/platform/alunix.h
+  /usr/include/allegro5/platform/alwatcom.h
+  /usr/include/allegro5/platform/alwin.h
+  /usr/include/allegro5/platform/astdbool.h
+  /usr/include/allegro5/platform/astdint.h
+  /usr/include/allegro5/render_state.h
+  /usr/include/allegro5/shader.h
+  /usr/include/allegro5/system.h
+  /usr/include/allegro5/threads.h
+  /usr/include/allegro5/timer.h
+  /usr/include/allegro5/tls.h
+  /usr/include/allegro5/touch_input.h
+  /usr/include/allegro5/transformations.h
+  /usr/include/allegro5/utf8.h
+  /usr/lib/liballegro.dll.a
+  /usr/lib/liballegro_acodec.dll.a
+  /usr/lib/liballegro_audio.dll.a
+  /usr/lib/liballegro_color.dll.a
+  /usr/lib/liballegro_dialog.dll.a
+  /usr/lib/liballegro_font.dll.a
+  /usr/lib/liballegro_image.dll.a
+  /usr/lib/liballegro_main.dll.a
+  /usr/lib/liballegro_memfile.dll.a
+  /usr/lib/liballegro_physfs.dll.a
+  /usr/lib/liballegro_primitives.dll.a
+  /usr/lib/liballegro_ttf.dll.a
+  /usr/lib/liballegro_video.dll.a
+  /usr/lib/pkgconfig/allegro-5.pc
+  /usr/lib/pkgconfig/allegro_acodec-5.pc
+  /usr/lib/pkgconfig/allegro_audio-5.pc
+  /usr/lib/pkgconfig/allegro_color-5.pc
+  /usr/lib/pkgconfig/allegro_dialog-5.pc
+  /usr/lib/pkgconfig/allegro_font-5.pc
+  /usr/lib/pkgconfig/allegro_image-5.pc
+  /usr/lib/pkgconfig/allegro_main-5.pc
+  /usr/lib/pkgconfig/allegro_memfile-5.pc
+  /usr/lib/pkgconfig/allegro_physfs-5.pc
+  /usr/lib/pkgconfig/allegro_primitives-5.pc
+  /usr/lib/pkgconfig/allegro_ttf-5.pc
+  /usr/lib/pkgconfig/allegro_video-5.pc
+
+------------------
+
+Port Notes:
+
+----- version 5.2.8.0-1bl1 -----
+Version bump.
+
+----- version 5.2.7.0-1bl1 -----
+Version bump.
+
+----- version 5.2.6.0-1bl1 -----
+Version bump.
+
+----- version 5.2.5.0-1bl1 -----
+Version bump.
+
+----- version 5.2.4.0-1bl1 -----
+Version bump.
+
+----- version 5.2.1.1-1bl1 -----
+Version bump.
+
+----- version 5.1.10-1bl1 -----
+Version bump.
+
+----- version 5.1.9-1bl1 -----
+Version bump.
+
+----- version 5.1.7-1bl2 -----
+rebuild for libavutil
+
+----- version 5.1.7-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://fd0.hatenablog.jp/>

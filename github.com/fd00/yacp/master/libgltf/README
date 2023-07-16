@@ -1,0 +1,92 @@
+libgltf
+------------------------------------------
+LIBGLTF is a C++ library for rendering OpenGL models stored in glTF format.
+
+The glTF, the GL Transmission Format, is the runtime asset format for
+the GL APIs: WebGL, OpenGL ES, and OpenGL. glTF bridges the gap between
+formats used by modeling tools and the GL APIs. You can read more about
+the format in it's specification:
+https://github.com/KhronosGroup/glTF/blob/schema/specification/README.md
+
+LIBGLTF provides methods to load the OpenGL scene from glTF format and render
+it into an existing OpenGL context. LIBGLTF also allows to change the camera
+position so the scene can be displayed from different points of view.
+
+Summary, LIBGLTF can be a good base of a glTF viewer.
+
+Runtime requirements:
+  cygwin-2.9.0-3
+  libepoxy-devel-1.4.3-1
+  libepoxy0-1.4.3-1
+  libgcc1-6.4.0-1
+  libgltf0.1-devel-0.1.0-1bl1
+  libgltf0.1_1-0.1.0-1bl1
+  libstdc++6-6.4.0-1
+  pkg-config-0.29.1-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-10-1
+  binutils-2.28-3
+  cygport-0.24.1-1
+  gcc-core-6.4.0-1
+  gcc-g++-6.4.0-1
+  libtool-2.4.6-5
+  make-4.2.1-2
+
+Canonical website:
+  http://www.libreoffice.org
+
+Canonical download:
+  http://dev-www.libreoffice.org/src/libgltf/libgltf-0.1.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libgltf-0.1.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libgltf-0.1.0-X.cygport all
+
+This will create:
+  /usr/src/libgltf-0.1.0-X-src.tar.xz
+  /usr/src/libgltf-0.1.0-X.tar.xz
+  /usr/src/libgltf0.1_1-0.1.0-X.tar.xz
+  /usr/src/libgltf0.1-devel-0.1.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libgltf)
+  /usr/share/doc/Cygwin/libgltf.README
+  /usr/share/doc/libgltf/AUTHORS
+  /usr/share/doc/libgltf/COPYING
+  /usr/share/doc/libgltf/ChangeLog
+  /usr/share/doc/libgltf/LICENSE
+  /usr/share/doc/libgltf/NEWS
+  /usr/share/doc/libgltf/README
+
+(libgltf0.1_1)
+  /usr/bin/cyggltf-0.1-1.dll
+
+(libgltf0.1-devel)
+  /usr/include/libgltf-0.1/libgltf.h
+  /usr/include/libgltf-0.1/types.h
+  /usr/lib/libgltf-0.1.dll.a
+  /usr/lib/pkgconfig/libgltf-0.1.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.1.0-1bl1 -----
+Version bump.
+
+----- version 0.0.2-1bl1 -----
+Version bump.
+
+----- version 0.0.1-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

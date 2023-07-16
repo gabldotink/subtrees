@@ -1,0 +1,50 @@
+HOMEPAGE="https://github.com/team-charls/${PN}"
+SRC_URI="https://github.com/team-charls/${PN}/archive/refs/tags/${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="C++ JPEG-LS library implementation"
+DESCRIPTION="CharLS is a C++ implementation of the JPEG-LS standard for lossless and
+near-lossless image compression and decompression. JPEG-LS is a low-complexity
+image compression standard that matches JPEG 2000 compression ratios."
+
+LICENSE="BSD-3-Clause"
+LICENSE_SPDX="SPDX-License-Identifier: BSD-3-Clause"
+LICENSE_URI="LICENSE.md"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DBUILD_SHARED_LIBS:BOOL=ON
+	-DCHARLS_BUILD_SAMPLES:BOOL=ON
+	-DCHARLS_BUILD_TESTS:BOOL=ON
+"
+
+src_test()
+{
+	cd ${B}
+	./test/charlstest.exe
+}
+
+DOCS="
+	*.md
+	doc/*
+"
+
+PKG_NAMES="
+	${PN}
+	libcharls2
+	libcharls-devel
+"
+charls_CONTENTS="
+	usr/share
+"
+libcharls2_CONTENTS="
+	usr/bin
+"
+libcharls_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+charls_SUMMARY="${SUMMARY} (licensing & readmes)"
+libcharls2_SUMMARY="${SUMMARY} (runtime)"
+libcharls_devel_SUMMARY="${SUMMARY} (development)"

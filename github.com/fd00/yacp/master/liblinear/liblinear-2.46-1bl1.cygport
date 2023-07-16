@@ -1,0 +1,46 @@
+HOMEPAGE="https://www.csie.ntu.edu.tw/~cjlin/${PN}/"
+SRC_URI="https://www.csie.ntu.edu.tw/~cjlin/${PN}/${P}.tar.gz"
+
+CATEGORY="Math"
+SUMMARY="Library for Large Linear Classification"
+DESCRIPTION="liblinear is an open source library for large-scale linear classification. It
+supports logistic regression and linear support vector machines. It provides
+easy-to-use command-line tools and library calls for users and developers.
+Comprehensive documents are available for both beginners and advanced users."
+
+LICENSE="BSD-3-Clause"
+LICENSE_SPDX="SPDX-License-Identifier: BSD-3-Clause"
+LICENSE_URI="COPYRIGHT"
+
+BUILD_REQUIRES="liblapack-devel"
+
+src_test()
+{
+	cd ${B}
+	./train.exe ${S}/heart_scale
+	./predict.exe ${S}/heart_scale ./heart_scale.model ./heart_scale.output
+}
+
+DIFF_EXCLUDES="
+	Makefile
+"
+
+PKG_NAMES="
+	${PN}
+	${PN}5
+	${PN}-devel
+"
+liblinear_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+liblinear5_CONTENTS="
+	usr/bin/*-5.dll
+"
+liblinear_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+liblinear_SUMMARY="${SUMMARY} (utilities)"
+liblinear5_SUMMARY="${SUMMARY} (runtime)"
+liblinear_devel_SUMMARY="${SUMMARY} (development)"

@@ -1,0 +1,115 @@
+ignition-math
+------------------------------------------
+This library is a self-contained set of classes and functions suitable for
+robot applications.
+
+Runtime requirements:
+  cygwin-2.9.0-3
+  libgcc1-6.4.0-4
+  libignition-math3-devel-3.2.0-1bl1
+  libignition-math3_3-3.2.0-1bl1
+  libstdc++6-6.4.0-4
+  pkg-config-0.29.1-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.29-1
+  cmake-3.6.2-1
+  cygport-0.25.0-1
+  gcc-core-6.4.0-4
+  gcc-g++-6.4.0-4
+  make-4.2.1-2
+  python-2.7.14-1
+
+Canonical website:
+  http://ignitionrobotics.org/libraries/math
+
+Canonical download:
+  https://bitbucket.org/ignitionrobotics/ign-math/get/ignition-math3_3.2.0.tar.bz2
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack ignition-math-3.2.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./ignition-math-3.2.0-X.cygport all
+
+This will create:
+  /usr/src/ignition-math-3.2.0-X-src.tar.xz
+  /usr/src/ignition-math-3.2.0-X.tar.xz
+  /usr/src/libignition-math3_3-3.2.0-X.tar.xz
+  /usr/src/libignition-math3-devel-3.2.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(ignition-math)
+  /usr/share/doc/Cygwin/ignition-math.README
+  /usr/share/doc/ignition-math/AUTHORS
+  /usr/share/doc/ignition-math/COPYING
+  /usr/share/doc/ignition-math/ChangeLog.md
+  /usr/share/doc/ignition-math/LICENSE
+  /usr/share/doc/ignition-math/Migration.md
+  /usr/share/doc/ignition-math/NEWS
+  /usr/share/doc/ignition-math/README.md
+
+(libignition-math3_3)
+  /usr/bin/cygignition-math3-3.dll
+
+(libignition-math3-devel)
+  /usr/include/ignition/math3/ignition/math.hh
+  /usr/include/ignition/math3/ignition/math/Angle.hh
+  /usr/include/ignition/math3/ignition/math/Box.hh
+  /usr/include/ignition/math3/ignition/math/Color.hh
+  /usr/include/ignition/math3/ignition/math/Filter.hh
+  /usr/include/ignition/math3/ignition/math/Frustum.hh
+  /usr/include/ignition/math3/ignition/math/Helpers.hh
+  /usr/include/ignition/math3/ignition/math/Inertial.hh
+  /usr/include/ignition/math3/ignition/math/Kmeans.hh
+  /usr/include/ignition/math3/ignition/math/Line2.hh
+  /usr/include/ignition/math3/ignition/math/Line3.hh
+  /usr/include/ignition/math3/ignition/math/MassMatrix3.hh
+  /usr/include/ignition/math3/ignition/math/Matrix3.hh
+  /usr/include/ignition/math3/ignition/math/Matrix4.hh
+  /usr/include/ignition/math3/ignition/math/OrientedBox.hh
+  /usr/include/ignition/math3/ignition/math/PID.hh
+  /usr/include/ignition/math3/ignition/math/Plane.hh
+  /usr/include/ignition/math3/ignition/math/Pose3.hh
+  /usr/include/ignition/math3/ignition/math/Quaternion.hh
+  /usr/include/ignition/math3/ignition/math/Rand.hh
+  /usr/include/ignition/math3/ignition/math/RotationSpline.hh
+  /usr/include/ignition/math3/ignition/math/SemanticVersion.hh
+  /usr/include/ignition/math3/ignition/math/SignalStats.hh
+  /usr/include/ignition/math3/ignition/math/SphericalCoordinates.hh
+  /usr/include/ignition/math3/ignition/math/Spline.hh
+  /usr/include/ignition/math3/ignition/math/System.hh
+  /usr/include/ignition/math3/ignition/math/Temperature.hh
+  /usr/include/ignition/math3/ignition/math/Triangle.hh
+  /usr/include/ignition/math3/ignition/math/Triangle3.hh
+  /usr/include/ignition/math3/ignition/math/Vector2.hh
+  /usr/include/ignition/math3/ignition/math/Vector3.hh
+  /usr/include/ignition/math3/ignition/math/Vector3Stats.hh
+  /usr/include/ignition/math3/ignition/math/Vector4.hh
+  /usr/include/ignition/math3/ignition/math/config.hh
+  /usr/lib/cmake/ignition-math3/ignition-math3-config-version.cmake
+  /usr/lib/cmake/ignition-math3/ignition-math3-config.cmake
+  /usr/lib/cmake/ignition-math3/ignition-math3-targets-release.cmake
+  /usr/lib/cmake/ignition-math3/ignition-math3-targets.cmake
+  /usr/lib/libignition-math3.dll.a
+  /usr/lib/pkgconfig/ignition-math3.pc
+
+------------------
+
+Port Notes:
+
+----- version 3.2.0-1bl1 -----
+Version bump.
+
+----- version 3.0.0-1bl1 -----
+Version bump.
+
+----- version 1.0.0-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

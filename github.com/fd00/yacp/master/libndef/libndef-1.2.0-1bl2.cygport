@@ -1,0 +1,34 @@
+HOMEPAGE="https://github.com/nfc-tools/${PN}"
+SRC_URI="https://github.com/nfc-tools/${PN}/archive/${P}.tar.gz"
+SRC_DIR="${PN}-${P}"
+
+CATEGORY="Libs"
+SUMMARY="Qt library to encode/decode NDEF (NFC Data Exchange Format) messages"
+DESCRIPTION="This is a C++ library for use in reading and writing messages based on NDEF
+(NFC Data Exchange Format) Specification."
+
+inherit qt5-qmake
+
+CYGQMAKE5_ARGS="
+	PREFIX=/usr
+"
+
+PKG_NAMES="
+	${PN}
+	${PN}1
+	${PN}-devel
+"
+libndef_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+libndef1_CONTENTS="
+	usr/bin/*.dll
+"
+libndef_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+libndef_SUMMARY="${SUMMARY} (utilities)"
+libndef1_SUMMARY="${SUMMARY} (runtime)"
+libndef_devel_SUMMARY="${SUMMARY} (development)"

@@ -1,0 +1,73 @@
+cubature
+------------------------------------------
+This is a simple C package for adaptive multidimensional integration (cubature)
+of vector-valued integrands over hypercubes.
+
+Runtime requirements:
+  cygwin-3.2.0-1
+  libcubature-devel-1.0.4-1bl1
+  libcubature0-1.0.4-1bl1
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.37-1
+  cmake-3.20.0-1
+  cygport-0.34.0-1
+  gcc-core-11.2.0-1
+  ninja-1.10.2-1
+
+Canonical website:
+  https://github.com/stevengj/cubature
+
+Canonical download:
+  https://github.com/stevengj/cubature/archive/refs/tags/v1.0.4.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack cubature-1.0.4-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./cubature-1.0.4-X.cygport all
+
+This will create:
+  /usr/src/cubature-1.0.4-X-src.tar.xz
+  /usr/src/cubature-1.0.4-X.tar.xz
+  /usr/src/libcubature0-1.0.4-X.tar.xz
+  /usr/src/libcubature-devel-1.0.4-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(cubature)
+  /usr/share/doc/Cygwin/cubature.README
+  /usr/share/doc/cubature/COPYING.md
+  /usr/share/doc/cubature/NEWS.md
+  /usr/share/doc/cubature/README.md
+
+(libcubature0)
+  /usr/bin/cygcubature-0.dll
+
+(libcubature-devel)
+  /usr/include/cubature.h
+  /usr/lib/libcubature.dll.a
+  /usr/lib/pkgconfig/cubature.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.0.4-1bl1 -----
+Version bump.
+
+----- version 1.0.3+git20180808-1bl1 -----
+Version bump.
+
+----- version 1.0.1-1bl1 -----
+Version bump.
+
+----- version 20101018-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

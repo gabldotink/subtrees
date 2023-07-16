@@ -1,0 +1,48 @@
+HOMEPAGE="https://sourceforge.net/projects/${PN}/"
+SRC_URI="mirror://sourceforge/${PN}/${PN}_${PV//./_}_stable.tar.gz"
+SRC_DIR="${PN}${PV[1]}"
+
+CATEGORY="Devel"
+SUMMARY="High level imperative/OO programming language"
+DESCRIPTION="Squirrel is a high level imperative, object-oriented programming language,
+designed to be a light-weight scripting language that fits in the size, memory
+bandwidth, and real-time requirements of applications like video games."
+
+CYGPORT_USE_UNSTABLE_API=1
+src_patch_hook()
+{
+	cd ${origsrcdir}/${SRC_DIR}
+	echo @PACKAGE_INIT@ > squirrel-config.cmake.in
+}
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DDISABLE_STATIC:BOOL=ON
+"
+
+src_test()
+{
+	cd ${B}/bin
+	./sq.exe -v
+}
+
+PKG_NAMES="
+	${PN}
+	lib${PN}0
+	lib${PN}-devel
+"
+squirrel_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+libsquirrel0_CONTENTS="
+	usr/bin/*.dll
+"
+libsquirrel_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+squirrel_SUMMARY="${SUMMARY} (utilities)"
+libsquirrel0_SUMMARY="${SUMMARY} (runtime)"
+libsquirrel_devel_SUMMARY="${SUMMARY} (development)"

@@ -1,0 +1,159 @@
+ceres-solver
+------------------------------------------
+Solving nonlinear least squares problems comes up in a broad range of areas
+across science and engineering - from fitting curves in statistics, to
+constructing 3D models from photographs in computer vision. Ceres Solver is a
+portable C++ library that allows for modeling and solving large complicated
+nonlinear least squares problems.
+
+Runtime requirements:
+  cygwin-3.1.1-1
+  libceres-devel-1.14.0-1bl2
+  libceres1-1.14.0-1bl2
+  libcholmod1-3.0.9-1
+  libcxsparse0-3.1.7-1
+  libgcc1-7.4.0-1
+  libglog0-0.4.0-1bl1
+  libgomp1-7.4.0-1
+  liblapack0-3.8.0-1
+  libopenblas-0.3.7-1
+  libspqr1-2.0.5-1
+  libstdc++6-7.4.0-1
+  pkg-config-1.6.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.29-1
+  cmake-3.14.5-1
+  cygport-0.33.1-1
+  gcc-core-7.4.0-1
+  gcc-g++-7.4.0-1
+  ninja-1.9.0-1
+
+Canonical website:
+  http://ceres-solver.org/
+
+Canonical download:
+  http://ceres-solver.org/ceres-solver-1.14.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack ceres-solver-1.14.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./ceres-solver-1.14.0-X.cygport all
+
+This will create:
+  /usr/src/ceres-solver-1.14.0-X-src.tar.xz
+  /usr/src/ceres-solver-1.14.0-X.tar.xz
+  /usr/src/libceres1-1.14.0-X.tar.xz
+  /usr/src/libceres-devel-1.14.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(ceres-solver)
+  /usr/share/doc/Cygwin/ceres-solver.README
+  /usr/share/doc/ceres-solver/LICENSE
+  /usr/share/doc/ceres-solver/README.md
+  /usr/share/doc/ceres-solver/VERSION
+
+(libceres1)
+  /usr/bin/cygceres-1.dll
+
+(libceres-devel)
+  /usr/include/ceres/autodiff_cost_function.h
+  /usr/include/ceres/autodiff_local_parameterization.h
+  /usr/include/ceres/c_api.h
+  /usr/include/ceres/ceres.h
+  /usr/include/ceres/conditioned_cost_function.h
+  /usr/include/ceres/context.h
+  /usr/include/ceres/cost_function.h
+  /usr/include/ceres/cost_function_to_functor.h
+  /usr/include/ceres/covariance.h
+  /usr/include/ceres/crs_matrix.h
+  /usr/include/ceres/cubic_interpolation.h
+  /usr/include/ceres/dynamic_autodiff_cost_function.h
+  /usr/include/ceres/dynamic_cost_function.h
+  /usr/include/ceres/dynamic_cost_function_to_functor.h
+  /usr/include/ceres/dynamic_numeric_diff_cost_function.h
+  /usr/include/ceres/evaluation_callback.h
+  /usr/include/ceres/fpclassify.h
+  /usr/include/ceres/gradient_checker.h
+  /usr/include/ceres/gradient_problem.h
+  /usr/include/ceres/gradient_problem_solver.h
+  /usr/include/ceres/internal/autodiff.h
+  /usr/include/ceres/internal/config.h
+  /usr/include/ceres/internal/disable_warnings.h
+  /usr/include/ceres/internal/eigen.h
+  /usr/include/ceres/internal/fixed_array.h
+  /usr/include/ceres/internal/macros.h
+  /usr/include/ceres/internal/manual_constructor.h
+  /usr/include/ceres/internal/numeric_diff.h
+  /usr/include/ceres/internal/port.h
+  /usr/include/ceres/internal/reenable_warnings.h
+  /usr/include/ceres/internal/scoped_ptr.h
+  /usr/include/ceres/internal/variadic_evaluate.h
+  /usr/include/ceres/iteration_callback.h
+  /usr/include/ceres/jet.h
+  /usr/include/ceres/local_parameterization.h
+  /usr/include/ceres/loss_function.h
+  /usr/include/ceres/normal_prior.h
+  /usr/include/ceres/numeric_diff_cost_function.h
+  /usr/include/ceres/numeric_diff_options.h
+  /usr/include/ceres/ordered_groups.h
+  /usr/include/ceres/problem.h
+  /usr/include/ceres/rotation.h
+  /usr/include/ceres/sized_cost_function.h
+  /usr/include/ceres/solver.h
+  /usr/include/ceres/tiny_solver.h
+  /usr/include/ceres/tiny_solver_autodiff_function.h
+  /usr/include/ceres/tiny_solver_cost_function_adapter.h
+  /usr/include/ceres/types.h
+  /usr/include/ceres/version.h
+  /usr/lib/cmake/Ceres/CeresConfig.cmake
+  /usr/lib/cmake/Ceres/CeresConfigVersion.cmake
+  /usr/lib/cmake/Ceres/CeresTargets-release.cmake
+  /usr/lib/cmake/Ceres/CeresTargets.cmake
+  /usr/lib/cmake/Ceres/FindEigen.cmake
+  /usr/lib/cmake/Ceres/FindGflags.cmake
+  /usr/lib/cmake/Ceres/FindGlog.cmake
+  /usr/lib/libceres.dll.a
+  /usr/lib/pkgconfig/ceres-solver.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.14.0-1bl2 -----
+Rebuild with gcc-7.4.0
+
+----- version 1.14.0-1bl1 -----
+Version bump.
+
+----- version 1.13.0-1bl1 -----
+Version bump.
+
+----- version 1.12.0-1bl1 -----
+Version bump.
+
+----- version 1.11.0-1bl1 -----
+Version bump.
+
+----- version 1.9.0-1bl1 -----
+Version bump.
+
+----- version 1.8.0-1bl1 -----
+Version bump.
+
+----- version 1.7.0-1bl1 -----
+Version bump.
+
+----- version 1.6.0-1bl1 -----
+Version bump.
+
+----- version 1.4.0-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://fd0.hatenablog.jp/>

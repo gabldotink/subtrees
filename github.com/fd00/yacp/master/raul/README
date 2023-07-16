@@ -1,0 +1,68 @@
+raul
+------------------------------------------
+Raul (Realtime Audio Utility Library) is a C++ utility library primarily aimed
+at audio/musical applications.
+
+Runtime requirements:
+  pkg-config-1.9.4-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.40-1
+  cygport-0.36.0-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  meson-0.63.3-1
+  ninja-1.11.1-1
+
+Canonical website:
+  https://github.com/drobilla/raul
+
+Canonical download:
+  https://github.com/drobilla/raul/archive/refs/tags/v2.0.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack raul-2.0.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./raul-2.0.0-X.cygport all
+
+This will create:
+  /usr/src/raul-2.0.0-X-src.tar.xz
+  /usr/src/raul-2.0.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(raul)
+  /usr/include/raul-2/raul/Array.hpp
+  /usr/include/raul-2/raul/Deletable.hpp
+  /usr/include/raul-2/raul/DoubleBuffer.hpp
+  /usr/include/raul-2/raul/Exception.hpp
+  /usr/include/raul-2/raul/Maid.hpp
+  /usr/include/raul-2/raul/Noncopyable.hpp
+  /usr/include/raul-2/raul/Path.hpp
+  /usr/include/raul-2/raul/Process.hpp
+  /usr/include/raul-2/raul/RingBuffer.hpp
+  /usr/include/raul-2/raul/Semaphore.hpp
+  /usr/include/raul-2/raul/Socket.hpp
+  /usr/include/raul-2/raul/Symbol.hpp
+  /usr/lib/pkgconfig/raul-2.pc
+  /usr/share/doc/Cygwin/raul.README
+  /usr/share/doc/raul/COPYING
+  /usr/share/doc/raul/NEWS
+  /usr/share/doc/raul/README.md
+
+------------------
+
+Port Notes:
+
+----- version 2.0.0-1bl1 -----
+Version bump.
+
+----- version 0.8.0-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

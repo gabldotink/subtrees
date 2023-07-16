@@ -1,0 +1,165 @@
+libfolia
+------------------------------------------
+This is a C++ Library, developed by Ko van der Sloot, for working with the
+Format for Linguistic Annotation (FoLiA). The software is intended for C++
+developers, and provides a high-level API to read, manipulate, and create FoLiA
+documents. This software is a necessary dependency for various other tools that
+use FoLiA.
+
+Runtime requirements:
+  cygwin-3.4.6-1
+  libfolia-devel-2.15-1bl1
+  libfolia19-2.15-1bl1
+  libgcc1-11.3.0-1
+  libicu72-72.1-1
+  libstdc++6-11.3.0-1
+  libticcutils9-0.32-1bl1
+  libxml2-2.10.4-2
+  libxml2-devel-2.10.4-2
+  pkg-config-1.9.5-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.40-1
+  cygport-0.36.4-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libicu-devel-72.1-1
+  libticcutils-devel-0.32-1bl1
+  libtool-2.4.7-1
+  libxml2-devel-2.10.4-2
+  make-4.4.1-2
+
+Canonical website:
+  https://github.com/LanguageMachines/libfolia
+
+Canonical download:
+  https://github.com/LanguageMachines/libfolia/archive/refs/tags/v2.15.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libfolia-2.15-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libfolia-2.15-X.cygport all
+
+This will create:
+  /usr/src/libfolia-2.15-X-src.tar.xz
+  /usr/src/libfolia-2.15-X.tar.xz
+  /usr/src/libfolia19-2.15-X.tar.xz
+  /usr/src/libfolia-devel-2.15-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libfolia)
+  /usr/bin/foliadiff.sh
+  /usr/bin/folialint.exe
+  /usr/share/doc/Cygwin/libfolia.README
+  /usr/share/doc/libfolia/AUTHORS
+  /usr/share/doc/libfolia/COPYING
+  /usr/share/doc/libfolia/MAINTAINERS
+  /usr/share/doc/libfolia/NEWS
+  /usr/share/doc/libfolia/README
+  /usr/share/doc/libfolia/README.md
+  /usr/share/doc/libfolia/TODO
+  /usr/share/man/man1/folialint.1.gz
+
+(libfolia19)
+  /usr/bin/cygfolia-19.dll
+
+(libfolia-devel)
+  /usr/include/libfolia/folia.h
+  /usr/include/libfolia/folia_document.h
+  /usr/include/libfolia/folia_engine.h
+  /usr/include/libfolia/folia_impl.h
+  /usr/include/libfolia/folia_metadata.h
+  /usr/include/libfolia/folia_properties.h
+  /usr/include/libfolia/folia_provenance.h
+  /usr/include/libfolia/folia_subclasses.h
+  /usr/include/libfolia/folia_textpolicy.h
+  /usr/include/libfolia/folia_types.h
+  /usr/include/libfolia/folia_utils.h
+  /usr/lib/libfolia.dll.a
+  /usr/lib/pkgconfig/folia.pc
+
+------------------
+
+Port Notes:
+
+----- version 2.15-1bl1 -----
+Version bump.
+
+----- version 2.14-1bl1 -----
+Version bump.
+
+----- version 2.13-1bl1 -----
+Version bump.
+
+----- version 2.12-1bl1 -----
+Version bump.
+
+----- version 2.11-1bl1 -----
+Version bump.
+
+----- version 2.10-1bl2 -----
+Rebuild for libicu
+
+----- version 2.10-1bl1 -----
+Version bump.
+
+----- version 2.9-1bl1 -----
+Version bump.
+
+----- version 2.7-1bl1 -----
+Version bump.
+
+----- version 2.5.1-1bl1 -----
+Version bump.
+
+----- version 2.5-1bl1 -----
+Version bump.
+
+----- version 2.4-1bl1 -----
+Version bump.
+
+----- version 2.3.1-1bl1 -----
+Version bump.
+
+----- version 2.3-1bl1 -----
+Version bump.
+
+----- version 2.2.1-1bl1 -----
+Version bump.
+
+----- version 2.1-1bl1 -----
+Version bump.
+
+----- version 2.0-1bl1 -----
+Version bump.
+
+----- version 1.15-1bl1 -----
+Version bump.
+
+----- version 1.11-1bl1 -----
+Version bump.
+
+----- version 1.10-1bl1 -----
+Version bump.
+
+----- version 1.9-1bl1 -----
+Version bump.
+
+----- version 1.7-1bl1 -----
+Version bump.
+
+----- version 1.5-1bl1 -----
+Version bump.
+
+----- version 0.13+git20160105-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

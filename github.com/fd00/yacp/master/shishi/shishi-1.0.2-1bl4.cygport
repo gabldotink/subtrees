@@ -1,0 +1,51 @@
+HOMEPAGE="http://www.gnu.org/software/${PN}/"
+SRC_URI="mirror://gnu/${PN}/${P}.tar.gz"
+PATCH_URI="
+	https://git.yoctoproject.org/cgit.cgi/poky/plain/meta/recipes-support/gnutls/libtasn1/0001-stdint.m4-reintroduce-GNULIB_OVERRIDES_WINT_T-check.patch
+"
+
+CATEGORY="Security"
+SUMMARY="Free implementation of the Kerberos 5 network security system"
+DESCRIPTION="Shishi is an implementation of the Kerberos 5 network authentication system, as
+specified in RFC 4120. Shishi can be used to authenticate users in distributed
+systems. Shishi is part of a GNU system."
+
+MAKEOPTS="-j1"
+
+CYGPORT_USE_UNSTABLE_API=1
+src_unpack_hook()
+{
+	cd ${origsrcdir}/${SRC_DIR}
+	`cat gl/Makefile.am | grep "# Reproduce by: " | sed -e 's/^.*: //'` # gnulib-tools
+}
+
+DIFF_EXCLUDES="
+	doc
+	*.c
+"
+
+PKG_NAMES="
+	${PN}
+	lib${PN}0
+	lib${PN}-devel
+"
+shishi_CONTENTS="
+	etc
+	usr/bin/*.exe
+	usr/sbin
+	usr/share/doc
+	usr/share/info
+	usr/share/locale
+	usr/share/man/man1
+"
+libshishi0_CONTENTS="
+	usr/bin/*.dll
+"
+libshishi_devel_CONTENTS="
+	usr/include
+	usr/lib
+	usr/share/man/man3
+"
+shishi_SUMMARY="${SUMMARY} (utilities)"
+libshishi0_SUMMARY="${SUMMARY} (runtime)"
+libshishi_devel_SUMMARY="${SUMMARY} (development)"

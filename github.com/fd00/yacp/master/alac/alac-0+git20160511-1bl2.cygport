@@ -1,0 +1,41 @@
+HOMEPAGE="https://macosforge.github.io/${PN}/"
+GIT_URI="https://github.com/macosforge/${PN}.git"
+
+CATEGORY="Audio"
+SUMMARY="Apple Lossless Audio Codec"
+DESCRIPTION="The Apple Lossless Audio Codec (ALAC) is an audio codec developed by Apple and
+supported on iPhone, iPad, most iPods, Mac and iTunes. ALAC is a data
+compression method which reduces the size of audio files with no loss of
+information. A decoded ALAC stream is bit-for-bit identical to the original
+uncompressed audio file."
+
+LICENSE="Apache-2.0"
+LICENSE_SPDX="SPDX-License-Identifier: Apache-2.0"
+LICENSE_URI="LICENSE"
+
+inherit git
+
+DOCS="
+	*.md
+	*.txt
+"
+
+PKG_NAMES="
+	${PN}
+	lib${PN}0
+	lib${PN}-devel
+"
+alac_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+libalac0_CONTENTS="
+	usr/bin/*.dll
+"
+libalac_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+alac_SUMMARY="${SUMMARY} (utilities)"
+libalac0_SUMMARY="${SUMMARY} (runtime)"
+libalac_devel_SUMMARY="${SUMMARY} (development)"

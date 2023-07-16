@@ -1,0 +1,84 @@
+logog
+------------------------------------------
+Logog is a portable C++ library to facilitate logging of real-time events in
+performance-oriented applications, such as games. It is especially appropriate
+for projects that have constrained memory and constrained CPU requirements.
+
+Runtime requirements:
+  cygwin-1.7.34-6
+  libgcc1-4.9.2-2
+  liblogog0-0+git20141023-1bl1
+  libstdc++6-4.9.2-2
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.25-1
+  cmake-3.1.2-1
+  cygport-0.17.1-1
+  gcc-core-4.9.2-2
+  gcc-g++-4.9.2-2
+  make-4.0-2
+
+Canonical website:
+  http://johnwbyrd.github.io/logog/
+
+Canonical download:
+  https://github.com/johnwbyrd/logog.git
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack logog-0+git20141023-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./logog-0+git20141023-X.cygport all
+
+This will create:
+  /usr/src/logog-0+git20141023-X-src.tar.xz
+  /usr/src/logog-0+git20141023-X.tar.xz
+  /usr/src/liblogog0-0+git20141023-X.tar.xz
+  /usr/src/liblogog-devel-0+git20141023-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(logog)
+  /usr/share/doc/Cygwin/logog.README
+
+(liblogog0)
+  /usr/bin/cyglogog-0.dll
+
+(liblogog-devel)
+  /usr/include/logog/api.hpp
+  /usr/include/logog/checkpoint.hpp
+  /usr/include/logog/const.hpp
+  /usr/include/logog/formatter.hpp
+  /usr/include/logog/logog.hpp
+  /usr/include/logog/macro.hpp
+  /usr/include/logog/message.hpp
+  /usr/include/logog/mutex.hpp
+  /usr/include/logog/node.hpp
+  /usr/include/logog/object.hpp
+  /usr/include/logog/platform.hpp
+  /usr/include/logog/socket.hpp
+  /usr/include/logog/statics.hpp
+  /usr/include/logog/string.hpp
+  /usr/include/logog/target.hpp
+  /usr/include/logog/thread.hpp
+  /usr/include/logog/timer.hpp
+  /usr/include/logog/topic.hpp
+  /usr/include/logog/unittest.hpp
+  /usr/lib/liblogog.dll.a
+
+------------------
+
+Port Notes:
+
+----- version 0+git20141023-1bl1 -----
+Version bump.
+
+----- version 0+git20131118-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>
+

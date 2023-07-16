@@ -1,0 +1,36 @@
+HOMEPAGE="http://gavare.se/${PN}/"
+SRC_URI="http://gavare.se/${PN}/src/${P}.tar.gz"
+
+CATEGORY="Emulators"
+SUMMARY="Gavare's eXperimental Emulator"
+DESCRIPTION="GXemul is a framework for full-system computer architecture emulation.
+Several processor architectures and machine types have been implemented.
+It is working well enough to allow unmodified guest operating systems to
+run inside the emulator, as if they were running on real hardware."
+
+BUILD_REQUIRES="libX11-devel"
+
+src_compile()
+{
+	lndirs
+	cd ${B}
+	./configure
+	cygmake OTHERLIBS="-Wl,--allow-multiple-definition"
+}
+
+src_test()
+{
+	cd ${B}
+	./${PN}.exe -h
+}
+
+src_install()
+{
+	cd ${B}
+	dobin ${PN}.exe
+	doman man/${PN}.1
+}
+
+HTMLDOCS="
+	doc/*
+"

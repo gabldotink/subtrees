@@ -1,0 +1,46 @@
+HOMEPAGE="http://www.oyranos.org/${PN}/"
+SRC_URI="https://github.com/oyranos-cms/${PN}/archive/${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Reference implementation of the X Color Management specification"
+DESCRIPTION="The libXcm library contains the a reference implementation of the X Color
+Management specification. The X Color Management specification allows to
+attach colour regions to X windows to communicate with colour servers.
+
+The XcmDDC API can be used to fetch a EDID data block from a monitor over a
+i2c communication. On Linux typical the i2c-dev module must be loaded to use
+this hardware data channel. The device nodes must obtain rights accessible to
+normal users.
+
+The XcmEdidParse API is for parsing EDID data blocks. A small example
+application is included.
+
+The XcmEvents API allowes to easily observe X11 colour management events. The
+included xcmsevents makes use of the XcmEvents API."
+
+CYGPORT_USE_UNSTABLE_API=1
+src_patch_hook()
+{
+	cd ${origsrcdir}/${SRC_DIR}
+	rm -f config.status
+}
+
+PKG_NAMES="
+	${PN}
+	libXcm0
+	libXcm-devel
+"
+libxcm_CONTENTS="
+	usr/share/doc
+"
+libXcm0_CONTENTS="
+	usr/bin
+"
+libXcm_devel_CONTENTS="
+	usr/include
+	usr/lib
+	usr/share/man
+"
+libxcm_SUMMARY="${SUMMARY} (licensing & readmes)"
+libXcm0_SUMMARY="${SUMMARY} (runtime)"
+libXcm_devel_SUMMARY="${SUMMARY} (development)"

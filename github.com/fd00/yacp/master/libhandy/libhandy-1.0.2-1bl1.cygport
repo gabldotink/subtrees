@@ -1,0 +1,52 @@
+HOMEPAGE="https://gitlab.gnome.org/GNOME/${PN}/"
+SRC_URI="https://gitlab.gnome.org/GNOME/${PN}/-/archive/${PV}/${P}.tar.bz2"
+
+CATEGORY="Libs"
+SUMMARY="Building blocks for modern adaptive GNOME apps"
+DESCRIPTION="The aim of the Handy library is to help with developing UI for mobile devices
+using GTK/GNOME."
+
+inherit meson
+
+PKG_IGNORE="
+	usr/lib/glade/modules/libglade-handy-1.dll.a
+"
+
+PKG_NAMES="
+	libhandy
+	libhandy1_0
+	libhandy1-devel
+	girepository-Handy1
+	vala-libhandy1
+	glade-libhandy1
+"
+libhandy_CONTENTS="
+	usr/bin/*.exe
+	usr/share/doc
+	usr/share/glade
+	usr/share/locale
+"
+libhandy1_0_CONTENTS="
+	usr/bin/*.dll
+"
+libhandy1_devel_CONTENTS="
+	usr/include
+	usr/lib/libhandy*.dll.a
+	usr/lib/pkgconfig
+"
+girepository_Handy1_CONTENTS="
+	usr/lib/girepository*
+	usr/share/gir*
+"
+vala_libhandy1_CONTENTS="
+	usr/share/vala
+"
+glade_libhandy1_CONTENTS="
+	usr/lib/glade/modules/*.dll
+"
+libhandy_SUMMARY="${SUMMARY} (utilities)"
+libhandy1_0_SUMMARY="${SUMMARY} (runtime)"
+libhandy1_devel_SUMMARY="${SUMMARY} (development)"
+girepository_Handy1_SUMMARY="${SUMMARY} (GObject Introspection data)"
+vala_libhandy1_SUMMARY="${SUMMARY} (vala bindings)"
+glade_libhandy1_SUMMARY="GTK+2 GUI designer (libhandy catalog)"

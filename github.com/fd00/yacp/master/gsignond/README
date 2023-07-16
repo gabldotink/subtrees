@@ -1,0 +1,114 @@
+gsignond
+------------------------------------------
+The GSignOn daemon is a D-Bus service which performs user authentication on
+behalf of its clients. There are currently authentication plugins for OAuth 1.0
+and 2.0, SASL, Digest-MD5, and plain username/password combination.
+
+Runtime requirements:
+  cygwin-3.1.7-1
+  girepository-GLib2.0-1.54.1-2
+  libglib2.0-devel-2.54.3-1
+  libglib2.0_0-2.54.3-1
+  libgsignond-devel-1.2.0-1bl2
+  libgsignond1-1.2.0-1bl2
+  libsqlite3-devel-3.32.3-1
+  libsqlite3_0-3.32.3-1
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.34+1git.de9c1b7cfe-1
+  cygport-0.34.0-1
+  gcc-core-10.2.0-1
+  gobject-introspection-1.54.1-2
+  meson-0.54.3-1
+  ninja-1.10.1-1
+  vala-0.38.8-1
+
+Canonical website:
+  https://gitlab.com/accounts-sso/gsignond
+
+Canonical download:
+  https://gitlab.com/accounts-sso/gsignond/-/archive/1.2.0/gsignond-1.2.0.tar.bz2
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack gsignond-1.2.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./gsignond-1.2.0-X.cygport all
+
+This will create:
+  /usr/src/gsignond-1.2.0-X-src.tar.xz
+  /usr/src/gsignond-1.2.0-X.tar.xz
+  /usr/src/libgsignond1-1.2.0-X.tar.xz
+  /usr/src/libgsignond-devel-1.2.0-X.tar.xz
+  /usr/src/girepository-gSignond1.0-1.2.0-X.tar.xz
+  /usr/src/vala-gsignond-1.2.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(gsignond)
+  /etc/gsignond.conf
+  /usr/bin/gsignond.exe
+  /usr/lib/gsignond/gplugins/digest.dll
+  /usr/lib/gsignond/gplugins/password.dll
+  /usr/lib/gsignond/gplugins/ssotest.dll
+  /usr/lib/gsignond/pluginloaders/gsignond-plugind.exe
+  /usr/share/dbus-1/services/com.google.code.AccountsSSO.SingleSignOn.service
+  /usr/share/dbus-1/services/com.google.code.AccountsSSO.gSingleSignOn.service
+  /usr/share/doc/Cygwin/gsignond.README
+  /usr/share/doc/gsignond/COPYING.LIB
+  /usr/share/doc/gsignond/README.md
+
+(libgsignond1)
+  /usr/bin/cyggsignond-common-1.dll
+
+(libgsignond-devel)
+  /usr/include/gsignond/gsignond-access-control-manager.h
+  /usr/include/gsignond/gsignond-config-dbus.h
+  /usr/include/gsignond/gsignond-config-general.h
+  /usr/include/gsignond/gsignond-config.h
+  /usr/include/gsignond/gsignond-credentials.h
+  /usr/include/gsignond/gsignond-dictionary.h
+  /usr/include/gsignond/gsignond-error.h
+  /usr/include/gsignond/gsignond-extension-interface.h
+  /usr/include/gsignond/gsignond-log.h
+  /usr/include/gsignond/gsignond-plugin-interface.h
+  /usr/include/gsignond/gsignond-secret-storage.h
+  /usr/include/gsignond/gsignond-security-context.h
+  /usr/include/gsignond/gsignond-session-data.h
+  /usr/include/gsignond/gsignond-signonui-data.h
+  /usr/include/gsignond/gsignond-storage-manager.h
+  /usr/include/gsignond/gsignond-utils.h
+  /usr/include/gsignond/gsignond.h
+  /usr/lib/libgsignond-common.dll.a
+  /usr/lib/pkgconfig/gsignond.pc
+
+(girepository-gSignond1.0)
+  /usr/lib/girepository-1.0/GSignond-1.0.typelib
+  /usr/share/gir-1.0/GSignond-1.0.gir
+
+(vala-gsignond)
+  /usr/share/vala/vapi/gsignond.deps
+  /usr/share/vala/vapi/gsignond.vapi
+
+------------------
+
+Port Notes:
+
+----- version 1.2.0-1bl2 -----
+Rebuild with gcc-10.2.0
+
+----- version 1.2.0-1bl1 -----
+Version bump.
+
+----- version 1.1.0-1bl1 -----
+Version bump.
+
+----- version 1.0.6-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

@@ -1,0 +1,52 @@
+HOMEPAGE="https://github.com/KjellKod/${PN}"
+SRC_URI="https://github.com/KjellKod/${PN}/archive/refs/tags/${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Asynchronous, 'crash safe', logger that is easy to use"
+DESCRIPTION="G3log is an asynchronous, 'crash safe', logger that is easy to use with
+default logging sinks or you can add your own. G3log is made with plain C++11
+with no external libraries (except gtest used for unit tests). G3log is made
+to be cross-platform, currently running on OSX, Windows and several Linux
+distros. See Readme below for details of usage."
+
+LICENSE="Unlicense"
+LICENSE_SPDX="SPDX-License-Identifier: Unlicense"
+LICENSE_URI="LICENSE"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DADD_G3LOG_BENCH_PERFORMANCE:BOOL=ON
+	-DADD_G3LOG_UNIT_TEST:BOOL=ON
+	-DG3_SHARED_LIB:BOOL=ON
+	-DVERSION:STRING=${PV}
+"
+
+src_test()
+{
+	cd ${B}
+	ninja_test
+}
+
+DOCS="
+	*.markdown
+"
+
+PKG_NAMES="
+	g3log
+	libg3log${PV[1]}
+	libg3log-devel
+"
+g3log_CONTENTS="
+	usr/share
+"
+libg3log2_CONTENTS="
+	usr/bin
+"
+libg3log_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+g3log_SUMMARY="${SUMMARY} (licensing & readmes)"
+libg3log2_SUMMARY="${SUMMARY} (runtime)"
+libg3log_devel_SUMMARY="${SUMMARY} (development)"

@@ -1,0 +1,61 @@
+HOMEPAGE="https://github.com/SebWouters/${PN}"
+SRC_URI="https://github.com/SebWouters/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Science"
+SUMMARY="Spin-adapted implementation of DMRG for ab initio quantum chemistry"
+DESCRIPTION="CheMPS2 is a scientific library which contains a spin-adapted implementation
+of the density matrix renormalization group (DMRG) for ab initio quantum
+chemistry."
+
+LICENSE="GPL-2.0-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: GPL-2.0-or-later"
+LICENSE_URI="LICENSE"
+
+BUILD_REQUIRES="libhdf5-devel liblapack-devel"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DSHARED_ONLY:BOOL=ON
+	-DCMAKECONFIG_INSTALL_DIR:STRING=/usr/lib/cmake/${PN}
+"
+
+src_test()
+{
+	cd ${B}
+	PATH=${B}/${PN}:${PATH} ctest
+}
+
+src_install()
+{
+	cd ${B}
+	ninja_install
+
+	cd ${S}
+	doman *.1
+}
+
+DOCS="
+	*.md
+	*.pdf
+"
+
+PKG_NAMES="
+	${PN}
+	libchemps2_3
+	libchemps2-devel
+"
+CheMPS2_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+libchemps2_3_CONTENTS="
+	usr/bin/*.dll
+"
+libchemps2_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+CheMPS2_SUMMARY="${SUMMARY} (utilities)"
+libchemps2_3_SUMMARY="${SUMMARY} (runtime)"
+libchemps2_devel_SUMMARY="${SUMMARY} (development)"

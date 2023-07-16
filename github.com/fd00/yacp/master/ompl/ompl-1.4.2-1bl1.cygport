@@ -1,0 +1,60 @@
+HOMEPAGE="https://${PN}.kavrakilab.org/"
+SRC_URI="https://bitbucket.org/${PN}/${PN}/downloads/${P}-Source.tar.gz"
+SRC_DIR="${P}-Source"
+
+CATEGORY="Libs"
+SUMMARY="Open Motion Planning Library"
+DESCRIPTION="The Open Motion Planning Library (OMPL) consists of many state-of-the-art
+sampling-based motion planning algorithms. OMPL itself does not contain any
+code related to, e.g., collision checking or visualization. This is a
+deliberate design choice, so that OMPL is not tied to a particular collision
+checker or visualization front end."
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DOMPL_BUILD_PYBINDINGS:BOOL=OFF
+	-DOMPL_ODESOLVER:BOOL=ON
+	-DOMPL_REGISTRATION=OFF
+"
+
+src_test()
+{
+	cd ${B}
+	PATH=${B}/lib:${PATH} ninja_test
+}
+
+DOCS="
+	doc/*.pdf
+	TODO
+"
+
+DIFF_EXCLUDES="
+	${PN}.pc
+	*.html
+	*.md
+	config.h
+"
+
+PKG_NAMES="
+	${PN}
+	lib${PN}15
+	lib${PN}-devel
+"
+ompl_CONTENTS="
+	usr/bin/*.py
+	usr/share/doc
+	usr/share/man
+	usr/share/${PN}/${PN}.conf
+"
+libompl15_CONTENTS="
+	usr/bin/*.dll
+"
+libompl_devel_CONTENTS="
+	usr/include
+	usr/lib
+	usr/share/${PN}/demos
+"
+ompl_SUMMARY="${SUMMARY} (utilities)"
+libompl15_SUMMARY="${SUMMARY} (runtime)"
+libompl_devel_SUMMARY="${SUMMARY} (development)"

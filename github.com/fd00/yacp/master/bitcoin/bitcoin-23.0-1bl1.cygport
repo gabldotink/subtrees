@@ -1,0 +1,53 @@
+HOMEPAGE="https://github.com/${PN}/${PN}"
+SRC_URI="https://github.com/${PN}/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Security"
+SUMMARY="Experimental digital currency"
+DESCRIPTION="Bitcoin is an experimental digital currency that enables instant payments to
+anyone, anywhere in the world. Bitcoin uses peer-to-peer technology to operate
+with no central authority: managing transactions and issuing money are carried
+out collectively by the network. Bitcoin Core is the name of open source
+software which enables the use of this currency."
+
+LICENSE="MIT"
+LICENSE_SPDX="SPDX-License-Identifier: MIT"
+LICENSE_URI="COPYING"
+
+BUILD_REQUIRES="libevent-devel libminiupnpc-devel libnatpmp-devel libsecp256k1-devel libunivalue-devel libzmq-devel"
+
+export CPPFLAGS="${CPPPFLAGS} -D_GNU_SOURCE"
+export CXXFLAGS="${CXXFLAGS} -fpermissive"
+
+CYGCONF_ARGS="
+	--disable-wallet
+"
+
+src_test()
+{
+	cd ${B}
+	cygmake check
+}
+
+DIFF_EXCLUDES="
+	*.log
+"
+
+PKG_NAMES="
+	bitcoin
+	libbitcoinconsensus0
+	libbitcoinconsensus-devel
+"
+bitcoin_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+libbitcoinconsensus0_CONTENTS="
+	usr/bin/*.dll
+"
+libbitcoinconsensus_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+bitcoin_SUMMARY="${SUMMARY} (utilities)"
+libbitcoinconsensus0_SUMMARY="${SUMMARY} (runtime)"
+libbitcoinconsensus_devel_SUMMARY="${SUMMARY} (development)"

@@ -1,0 +1,98 @@
+libgta
+------------------------------------------
+Libgta is a portable library that implements the GTA (Generic Tagged Arrays)
+file format. It provides interfaces for C and C++.
+
+Runtime requirements:
+  cygwin-3.0.7-1
+  libbz2_1-1.0.8-1
+  libgta-devel-1.2.1-1bl1
+  libgta1-1.2.1-1bl1
+  liblzma5-5.2.4-1
+  pkg-config-1.6.0-1
+  zlib0-1.2.11-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.29-1
+  cmake-3.14.5-1
+  cygport-0.33.1-1
+  gcc-core-7.4.0-1
+  gcc-g++-7.4.0-1
+  libtool-2.4.6-7
+  make-4.2.1-2
+
+Canonical website:
+  https://marlam.de/gta/
+
+Canonical download:
+  https://marlam.de/gta/releases/libgta-1.2.1.tar.xz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libgta-1.2.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libgta-1.2.1-X.cygport all
+
+This will create:
+  /usr/src/libgta-1.2.1-X-src.tar.xz
+  /usr/src/libgta-1.2.1-X.tar.xz
+  /usr/src/libgta1-1.2.1-X.tar.xz
+  /usr/src/libgta-devel-1.2.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libgta)
+  /usr/share/doc/Cygwin/libgta.README
+  /usr/share/doc/libgta/AUTHORS
+  /usr/share/doc/libgta/COPYING
+  /usr/share/doc/libgta/ChangeLog
+  /usr/share/doc/libgta/NEWS
+  /usr/share/doc/libgta/README
+
+(libgta1)
+  /usr/bin/cyggta-1.dll
+
+(libgta-devel)
+  /usr/include/gta/gta.h
+  /usr/include/gta/gta.hpp
+  /usr/include/gta/gta_version.h
+  /usr/lib/libgta.dll.a
+  /usr/lib/pkgconfig/gta.pc
+  /usr/share/doc/libgta/example-basic.c
+  /usr/share/doc/libgta/example-basic.cpp
+  /usr/share/doc/libgta/example-block-io.c
+  /usr/share/doc/libgta/example-block-io.cpp
+  /usr/share/doc/libgta/example-stream-io.c
+  /usr/share/doc/libgta/example-stream-io.cpp
+  /usr/share/doc/libgta/example-tags.c
+  /usr/share/doc/libgta/example-tags.cpp
+
+------------------
+
+Port Notes:
+
+----- version 1.2.1-1bl1 -----
+Version bump.
+
+----- version 1.0.9-1bl1 -----
+Version bump.
+
+----- version 1.0.8-1bl1 -----
+Version bump.
+
+----- version 1.0.7-1bl1 -----
+Version bump.
+
+----- version 1.0.5-1bl1 -----
+Version bump.
+
+----- version 1.0.2-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

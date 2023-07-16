@@ -1,0 +1,27 @@
+HOMEPAGE="https://www.nongnu.org/${PN}/"
+SRC_URI="mirror://savannah/${PN}/${P}.tar.gz"
+
+CATEGORY="Utils"
+SUMMARY="Free application to download PDF files of Hinduism Today"
+DESCRIPTION="GetHT is a free application for GNU/Linux to download PDF files of Hinduism
+Today."
+
+src_compile()
+{
+	cd ${B}
+	lndirs
+	cygmake
+}
+
+src_test()
+{
+	cd ${B}
+	./getht.exe -lv
+}
+
+src_install()
+{
+	cd ${B}
+	dobin ${PN}.exe
+	doman ${PN}.1
+}

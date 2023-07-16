@@ -1,0 +1,88 @@
+i3ipc-glib
+------------------------------------------
+i3's interprocess communication (or ipc) is the interface i3wm uses to receive
+commands from client applications such as i3-msg. It also features a
+publish/subscribe mechanism for notifying interested parties of window manager
+events.
+
+Runtime requirements:
+  cygwin-3.1.7-1
+  girepository-GLib2.0-1.54.1-2
+  libglib2.0-devel-2.54.3-1
+  libglib2.0_0-2.54.3-1
+  libi3ipc-glib-devel-1.0.1-1bl1
+  libi3ipc-glib0-1.0.1-1bl1
+  libjson-glib1.0-devel-1.4.2-1
+  libjson-glib1.0_0-1.4.2-1
+  libxcb1-1.14-1
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.34+1git.de9c1b7cfe-1
+  cygport-0.34.0-1
+  gcc-core-9.3.0-2
+  gobject-introspection-1.54.1-2
+  libtool-2.4.6-7
+  make-4.3-1
+
+Canonical website:
+  https://github.com/altdesktop/i3ipc-glib
+
+Canonical download:
+  https://github.com/altdesktop/i3ipc-glib/archive/v1.0.1.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack i3ipc-glib-1.0.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./i3ipc-glib-1.0.1-X.cygport all
+
+This will create:
+  /usr/src/i3ipc-glib-1.0.1-X-src.tar.xz
+  /usr/src/i3ipc-glib-1.0.1-X.tar.xz
+  /usr/src/libi3ipc-glib0-1.0.1-X.tar.xz
+  /usr/src/libi3ipc-glib-devel-1.0.1-X.tar.xz
+  /usr/src/girepository-i3ipc1.0-1.0.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(i3ipc-glib)
+  /usr/share/doc/Cygwin/i3ipc-glib.README
+  /usr/share/doc/i3ipc-glib/COPYING
+  /usr/share/doc/i3ipc-glib/ChangeLog.md
+  /usr/share/doc/i3ipc-glib/README.md
+
+(libi3ipc-glib0)
+  /usr/bin/cygi3ipc-glib-1.0-0.dll
+
+(libi3ipc-glib-devel)
+  /usr/include/i3ipc-glib/i3ipc-con.h
+  /usr/include/i3ipc-glib/i3ipc-connection.h
+  /usr/include/i3ipc-glib/i3ipc-enum-types.h
+  /usr/include/i3ipc-glib/i3ipc-event-types.h
+  /usr/include/i3ipc-glib/i3ipc-glib.h
+  /usr/include/i3ipc-glib/i3ipc-reply-types.h
+  /usr/lib/libi3ipc-glib-1.0.dll.a
+  /usr/lib/pkgconfig/i3ipc-glib-1.0.pc
+
+(girepository-i3ipc1.0)
+  /usr/lib/girepository-1.0/i3ipc-1.0.typelib
+  /usr/share/gir-1.0/i3ipc-1.0.gir
+
+------------------
+
+Port Notes:
+
+----- version 1.0.1-1bl1 -----
+Version bump.
+
+----- version 0.6.0-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

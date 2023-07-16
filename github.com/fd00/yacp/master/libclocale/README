@@ -1,0 +1,105 @@
+libclocale
+------------------------------------------
+libclocale is a library for cross-platform C locale functions.
+
+Runtime requirements:
+  cygwin-3.3.4-2
+  libcerror1-20220101-1bl1
+  libclocale-devel-20220107-1bl2
+  libclocale1-20220107-1bl2
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.37-2
+  cygport-0.34.2-1
+  gcc-core-11.2.0-1
+  libcerror-devel-20220101-1bl1
+  libtool-2.4.6-8
+  make-4.3-1
+
+Canonical website:
+  https://github.com/libyal/libclocale
+
+Canonical download:
+  https://github.com/libyal/libclocale/archive/refs/tags/20220107.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libclocale-20220107-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libclocale-20220107-X.cygport all
+
+This will create:
+  /usr/src/libclocale-20220107-X-src.tar.xz
+  /usr/src/libclocale-20220107-X.tar.xz
+  /usr/src/libclocale1-20220107-X.tar.xz
+  /usr/src/libclocale-devel-20220107-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libclocale)
+  /usr/share/doc/Cygwin/libclocale.README
+  /usr/share/doc/libclocale/AUTHORS
+  /usr/share/doc/libclocale/COPYING
+  /usr/share/doc/libclocale/COPYING.LESSER
+  /usr/share/doc/libclocale/ChangeLog
+  /usr/share/doc/libclocale/README
+
+(libclocale1)
+  /usr/bin/cygclocale-1.dll
+
+(libclocale-devel)
+  /usr/include/libclocale.h
+  /usr/include/libclocale/definitions.h
+  /usr/include/libclocale/error.h
+  /usr/include/libclocale/extern.h
+  /usr/include/libclocale/features.h
+  /usr/include/libclocale/types.h
+  /usr/lib/libclocale.dll.a
+  /usr/lib/pkgconfig/libclocale.pc
+  /usr/share/man/man3/libclocale.3.gz
+
+------------------
+
+Port Notes:
+
+----- version 20220107-1bl2 -----
+Export variable
+
+----- version 20220107-1bl1 -----
+Version bump.
+
+----- version 20210526-1bl1 -----
+Version bump.
+
+----- version 20200913-1bl1 -----
+Version bump.
+
+----- version 20200428-1bl2 -----
+Export variable
+
+----- version 20200428-1bl1 -----
+Version bump.
+
+----- version 20180721-1bl2 -----
+Rebuild with --enable-wide-character-type
+
+----- version 20180721-1bl1 -----
+Version bump.
+
+----- version 20170105-1bl1 -----
+Version bump.
+
+----- version 20150101-1bl1 -----
+Version bump.
+
+----- version 20141014-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

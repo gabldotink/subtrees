@@ -1,0 +1,45 @@
+HOMEPAGE="https://github.com/mariusmuja/${PN}/"
+SRC_URI="https://github.com/mariusmuja/${PN}/archive/${PV}.tar.gz"
+
+CATEGORY="Math"
+SUMMARY="Fast Library for Approximate Nearest Neighbors"
+DESCRIPTION="FLANN is a library for performing fast approximate nearest neighbor searches
+in high dimensional spaces. It contains a collection of algorithms we found to
+work best for nearest neighbor search and a system for automatically choosing
+the best algorithm and optimum parameters depending on the dataset."
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DBUILD_PYTHON_BINDINGS:BOOL=OFF
+	-DBUILD_MATLAB_BINDINGS:BOOL=OFF
+	-DBUILD_CUDA_LIB:BOOL=OFF
+	-DBUILD_DOC:BOOL=OFF
+	-DBUILD_SHARED_LIBS:BOOL=ON
+"
+
+src_test()
+{
+	cd ${B}
+	ninja_test
+}
+
+PKG_NAMES="
+	${PN}
+	lib${PN}${PV[1]}.${PV[2]}
+	lib${PN}-devel
+"
+flann_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+libflann1_9_CONTENTS="
+	usr/bin/*.dll
+"
+libflann_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+flann_SUMMARY="${SUMMARY} (utilities)"
+libflann1_9_SUMMARY="${SUMMARY} (runtime)"
+libflann_devel_SUMMARY="${SUMMARY} (development)"

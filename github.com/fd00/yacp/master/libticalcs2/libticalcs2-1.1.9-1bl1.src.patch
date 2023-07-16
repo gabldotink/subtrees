@@ -1,0 +1,11 @@
+--- origsrc/libticalcs2-1.1.9/configure.ac	2016-04-04 14:59:39.000000000 +0900
++++ src/libticalcs2-1.1.9/configure.ac	2017-07-22 22:27:07.857528100 +0900
+@@ -108,7 +108,7 @@ CFLAGS="$CFLAGS $ARCH"
+ # What flag to depends on gcc version: gcc3 uses "-mms-bitfields", while
+ # gcc2 uses "-fnative-struct".
+ case $host_os in
+-*mingw*|*cygwin*)
++*mingw*)
+   if test x$GCC = xyes; then
+     msnative_struct=''
+     AC_MSG_CHECKING([how to get MSVC-compatible struct packing])

@@ -1,0 +1,92 @@
+libgtask
+------------------------------------------
+gTask is an implementation of the progress bar simplification system.
+The intent of the project is to create an easy to use framework for
+application developers to communication the progress to certain long
+running events.
+
+Runtime requirements:
+  cygwin-1.7.30-1
+  libglib2.0-devel-2.38.2-2
+  libglib2.0_0-2.38.2-2
+  libgtask-devel-0.1-1bl3
+  libgtask0-0.1-1bl3
+  libxml2-2.9.1-1
+  libxml2-devel-2.9.1-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-9-1
+  binutils-2.24.51-4
+  cygport-0.16.0-1
+  gcc-core-4.9.0-1
+  libtool-2.4.2-5
+  make-4.0-2
+
+Canonical website:
+  http://gtask.sf.net/
+
+Canonical download:
+  mirror://sourceforge/gtask/libgtask-0.1.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  unpack libgtask-0.1-X-src.tar.xz
+    if you use setup to install this src package, it will be
+        unpacked under /usr/src automatically
+  cd /usr/src
+  cygport ./libgtask-0.1-X.cygport all
+
+This will create:
+  /usr/src/libgtask-0.1-X-src.tar.xz
+  /usr/src/libgtask-0.1-X.tar.xz
+  /usr/src/libgtask0-0.1-X.tar.xz
+  /usr/src/libgtask-devel-0.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libgtask)
+  /usr/share/doc/Cygwin/libgtask.README
+  /usr/share/doc/libgtask/AUTHORS
+  /usr/share/doc/libgtask/COPYING
+  /usr/share/doc/libgtask/README
+
+(libgtask0)
+  /usr/bin/cyggtask-0.dll
+
+(libgtask-devel)
+  /usr/include/gtask-0.1/gtask/gtask-connection-group.h
+  /usr/include/gtask-0.1/gtask/gtask-connection.h
+  /usr/include/gtask-0.1/gtask/gtask-error-packet.h
+  /usr/include/gtask-0.1/gtask/gtask-event-dispatcher.h
+  /usr/include/gtask-0.1/gtask/gtask-factory.h
+  /usr/include/gtask-0.1/gtask/gtask-file.h
+  /usr/include/gtask-0.1/gtask/gtask-generic-task.h
+  /usr/include/gtask-0.1/gtask/gtask-packet.h
+  /usr/include/gtask-0.1/gtask/gtask-query-packet.h
+  /usr/include/gtask-0.1/gtask/gtask-remove-watch-packet.h
+  /usr/include/gtask-0.1/gtask/gtask-role-packet.h
+  /usr/include/gtask-0.1/gtask/gtask-stream-parser.h
+  /usr/include/gtask-0.1/gtask/gtask-task-packet.h
+  /usr/include/gtask-0.1/gtask/gtask-watch-packet.h
+  /usr/include/gtask-0.1/gtask/gtask.h
+  /usr/lib/libgtask.dll.a
+  /usr/lib/pkgconfig/gtask-0.1.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.1-1bl3 -----
+Rebuild on x86_64
+
+----- version 0.1-1bl2 -----
+Rebuild with gcc-4.5.3
+
+----- version 0.1-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>
+

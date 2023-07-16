@@ -1,0 +1,74 @@
+libibcm
+------------------------------------------
+libibcm provides a userspace library that handles the majority of the low
+level work required to open an RDMA connection between two machines.
+
+Runtime requirements:
+  cygwin-2.8.0-1
+  libibcm-devel-1.0.5-1bl3
+  libibcm1-1.0.5-1bl3
+  libibverbs1-1.2.1-1bl1
+  pkg-config-0.29.1-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-9-1
+  binutils-2.25-4
+  cygport-0.24.1-1
+  gcc-core-5.4.0-1
+  libtool-2.4.6-4
+  make-4.2.1-2
+
+Canonical website:
+  https://www.openfabrics.org/
+
+Canonical download:
+  https://www.openfabrics.org/downloads/rdmacm/libibcm-1.0.5.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libibcm-1.0.5-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libibcm-1.0.5-X.cygport all
+
+This will create:
+  /usr/src/libibcm-1.0.5-X-src.tar.xz
+  /usr/src/libibcm-1.0.5-X.tar.xz
+  /usr/src/libibcm1-1.0.5-X.tar.xz
+  /usr/src/libibcm-devel-1.0.5-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libibcm)
+  /usr/share/doc/Cygwin/libibcm.README
+  /usr/share/doc/libibcm/AUTHORS
+  /usr/share/doc/libibcm/COPYING
+  /usr/share/doc/libibcm/README
+
+(libibcm1)
+  /usr/bin/cygibcm-1.dll
+
+(libibcm-devel)
+  /usr/include/infiniband/cm.h
+  /usr/include/infiniband/cm_abi.h
+  /usr/lib/libibcm.dll.a
+  /usr/lib/pkgconfig/libibcm.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.0.5-1bl3 -----
+Rebuild with gcc-5.4.0
+
+----- version 1.0.5-1bl2 -----
+Rebuild on x86_64
+
+----- version 1.0.5-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://fd0.hatenablog.jp/>

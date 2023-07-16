@@ -1,0 +1,49 @@
+HOMEPAGE="https://${PN}.org/"
+SRC_URI="https://github.com/${PN}/${PN}-c/releases/download/c-${PV}/${PN}-c-${PV}.tar.gz"
+SRC_DIR="${PN}-c-${PV}"
+
+CATEGORY="Libs"
+SUMMARY="Binary-based efficient object serialization library"
+DESCRIPTION="MessagePack is a binary-based efficient object serialization library. It
+enables to exchange structured objects between many languages like JSON. But
+unlike JSON, it is very fast and small."
+
+LICENSE="BSL-1.0"
+LICENSE_SPDX="SPDX-License-Identifier: BSL-1.0"
+LICENSE_URI="LICENSE_1_0.txt"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DMSGPACK_ENABLE_SHARED:BOOL=ON
+	-DMSGPACK_ENABLE_STATIC:BOOL=OFF
+"
+
+src_test()
+{
+	cd ${B}
+	ninja_test
+}
+
+DOCS="
+	LICENSE_1_0.txt
+"
+
+PKG_NAMES="
+	${PN}
+	lib${PN}c2
+	lib${PN}c-devel
+"
+msgpack_CONTENTS="
+	usr/share
+"
+libmsgpackc2_CONTENTS="
+	usr/bin
+"
+libmsgpackc_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+msgpack_SUMMARY="${SUMMARY} (licensing & readmes)"
+libmsgpackc2_SUMMARY="${SUMMARY} (runtime)"
+libmsgpackc_devel_SUMMARY="${SUMMARY} (development)"

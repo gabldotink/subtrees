@@ -1,0 +1,74 @@
+libshveu
+------------------------------------------
+libshveu: A library for controlling the SH-Mobile VEU.
+
+The SH-Mobile processor series includes a hardware video engine unit (VEU)
+that supports colorspace conversion, rotation and scaling.
+
+Runtime requirements:
+  cygwin-1.7.35-1
+  libshveu-devel-1.7.2-1bl1
+  libshveu5-1.7.2-1bl1
+  libuiomux1-1.6.2-1bl1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-9-1
+  binutils-2.25-1
+  cygport-0.18.1-1
+  gcc-core-4.9.2-3
+  libtool-2.4.6-1
+  make-4.1-1
+
+Canonical website:
+  https://github.com/pedwo/libshveu
+
+Canonical download:
+  https://github.com/pedwo/libshveu/archive/1.7.2.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libshveu-1.7.2-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libshveu-1.7.2-X.cygport all
+
+This will create:
+  /usr/src/libshveu-1.7.2-X-src.tar.xz
+  /usr/src/libshveu-1.7.2-X.tar.xz
+  /usr/src/libshveu5-1.7.2-X.tar.xz
+  /usr/src/libshveu-devel-1.7.2-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libshveu)
+  /usr/share/doc/Cygwin/libshveu.README
+  /usr/share/doc/libshveu/AUTHORS
+  /usr/share/doc/libshveu/COPYING
+  /usr/share/doc/libshveu/README
+  /usr/share/doc/libshveu/TODO
+
+(libshveu5)
+  /usr/bin/cygshveu-5.dll
+
+(libshveu-devel)
+  /usr/include/shveu/shveu.h
+  /usr/include/shveu/veu_colorspace.h
+  /usr/lib/libshveu.dll.a
+  /usr/lib/pkgconfig/shveu.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.7.2-1bl1 -----
+Version bump.
+
+----- version 1.3.0-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>
+

@@ -1,0 +1,38 @@
+HOMEPAGE="https://${PN}.github.io/"
+SRC_URI="https://github.com/${PN}/${PN}/archive/v${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="ReGular eXpression Generator"
+DESCRIPTION="rgxg (ReGular eXpression Generator) is a C library and a command-line tool to
+generate (extended) regular expressions."
+
+CYGPORT_USE_UNSTABLE_API=1
+src_patch_hook()
+{
+	cd ${origsrcdir}/${SRC_DIR}
+	echo "m4_define([_PACKAGE_VERSION], [${PV}])" > m4/version.m4.$$
+	mv m4/version.m4.$$ m4/version.m4
+    rm -f m4/version.m4.$$
+}
+
+PKG_NAMES="
+	${PN}
+	lib${PN}0
+	lib${PN}-devel
+"
+rgxg_CONTENTS="
+	usr/bin/*.exe
+	usr/share/doc
+	usr/share/man/man1
+"
+librgxg0_CONTENTS="
+	usr/bin/*.dll
+"
+librgxg_devel_CONTENTS="
+	usr/include
+	usr/lib
+	usr/share/man/man3
+"
+rgxg_SUMMARY="${SUMMARY} (utilities)"
+librgxg0_SUMMARY="${SUMMARY} (runtime)"
+librgxg_devel_SUMMARY="${SUMMARY} (development)"

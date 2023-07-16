@@ -1,0 +1,67 @@
+HOMEPAGE="http://cgit.freedesktop.org/${PN}/"
+GIT_URI="git://anongit.freedesktop.org/${PN}"
+
+CATEGORY="Libs"
+SUMMARY="PostScript rendering library"
+DESCRIPTION="Hieroglyph is a PostScript rendering library with the own PostScript
+interpreter, supporting the pluggable I/O devices and the extensions."
+
+inherit git
+
+CYGCONF_ARGS="
+	--enable-maintainer-mode
+	--enable-compile-warnings=minimum
+"
+
+MAKEOPTS="-j1"
+
+src_compile()
+{
+	cd ${S}
+	intltoolize --force
+	cygautoreconf
+	cd ${B}
+	cygconf
+	cygmake
+}
+
+src_test()
+{
+	cd ${B}
+	pushd lib
+	cp ${S}/lib/*.ps .
+	popd
+	pushd tests
+	cp ${S}/tests/run.sh .
+	pushd ps
+	cp ${S}/tests/ps/*.ps .
+	cp ${S}/tests/ps/*.sh .
+	popd
+	popd
+	cygtest
+	rm -f lib/*.ps tests/run.sh tests/ps/*.ps tests/ps/*.sh
+}
+
+PKG_NAMES="
+	${PN}
+	lib${PN}0
+	lib${PN}-devel
+"
+hieroglyph_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+libhieroglyph0_CONTENTS="
+	usr/bin/*.dll
+	usr/lib/${PN}/0.0/*/*.dll
+"
+libhieroglyph_devel_CONTENTS="
+	usr/include
+	usr/lib/${PN}/include
+	usr/lib/lib${PN}.*
+	usr/lib/pkgconfig
+"
+
+hieroglyph_SUMMARY="${SUMMARY} (utilities)"
+libhieroglyph0_SUMMARY="${SUMMARY} (runtime)"
+libhieroglyph_devel_SUMMARY="${SUMMARY} (development)"

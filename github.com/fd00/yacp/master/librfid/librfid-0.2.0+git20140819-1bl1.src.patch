@@ -1,0 +1,21 @@
+--- origsrc/librfid/configure.ac	2017-08-09 01:33:09.000000000 +0900
++++ src/librfid/configure.ac	2017-08-09 01:33:37.325000000 +0900
+@@ -15,7 +15,6 @@ AC_SUBST(LIBTOOL_DEPS)
+ AC_MSG_CHECKING([for build environment])
+ case "$target_alias" in
+ *-mingw*)	BUILDENV=WIN32;;
+-*-cygwin*)	BUILDENV=WIN32;;
+ *)		BUILDENV=UNIX;;
+ esac
+ AC_MSG_RESULT($BUILDENV)
+--- origsrc/librfid/src/Makefile.am	2017-08-09 01:33:09.000000000 +0900
++++ src/librfid/src/Makefile.am	2017-08-09 01:34:04.762757400 +0900
+@@ -52,7 +52,7 @@ endif
+ 
+ 
+ lib_LTLIBRARIES = librfid.la
+-librfid_la_LDFLAGS = -Wc,-nostartfiles -version-info $(LIBVERSION) $(AM_LDFLAGS_WIN32) @OPENCT_LIBS@
++librfid_la_LDFLAGS = -no-undefined -Wc,-nostartfiles -version-info $(LIBVERSION) $(AM_LDFLAGS_WIN32) @OPENCT_LIBS@
+ librfid_la_SOURCES = $(CORE) $(L2) $(PROTO) $(ASIC) $(MISC) $(WIN32) \
+ 		     $(READER_OPENPCD) $(READER_CM5121) $(READER_SPIDEV)
+ 

@@ -1,0 +1,116 @@
+unittest-cpp
+------------------------------------------
+UnitTest++ is a lightweight unit testing framework for C++. It was designed to
+do test-driven development on a wide variety of platforms. Simplicity,
+portability, speed, and small footprint are all very important aspects of
+UnitTest++. UnitTest++ is ANSI portable C++ and makes minimal use of advanced
+library and languages features, which means it should be easily portable to
+just about any platform.
+
+Runtime requirements:
+  cygwin-2.8.2-1
+  libgcc1-6.3.0-2
+  libstdc++6-6.3.0-2
+  libUnitTest++-devel-2.0.0-1bl1
+  libUnitTest++2-2.0.0-1bl1
+  pkg-config-0.29.1-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-9-1
+  binutils-2.28-3
+  cmake-3.6.2-1
+  cygport-0.24.1-1
+  gcc-core-6.3.0-2
+  gcc-g++-6.3.0-2
+  libtool-2.4.6-4
+  make-4.2.1-2
+
+Canonical website:
+  https://github.com/unittest-cpp/unittest-cpp
+
+Canonical download:
+  https://github.com/unittest-cpp/unittest-cpp/archive/v2.0.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack unittest-cpp-2.0.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./unittest-cpp-2.0.0-X.cygport all
+
+This will create:
+  /usr/src/unittest-cpp-2.0.0-X-src.tar.xz
+  /usr/src/unittest-cpp-2.0.0-X.tar.xz
+  /usr/src/libUnitTest++2-2.0.0-X.tar.xz
+  /usr/src/libUnitTest++-devel-2.0.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(unittest-cpp)
+  /usr/share/doc/Cygwin/unittest-cpp.README
+  /usr/share/doc/unittest-cpp/AUTHORS
+  /usr/share/doc/unittest-cpp/LICENSE
+  /usr/share/doc/unittest-cpp/README.md
+
+(libUnitTest++2)
+  /usr/bin/cygUnitTest++-2.dll
+
+(libUnitTest++-devel)
+  /usr/include/UnitTest++/AssertException.h
+  /usr/include/UnitTest++/CheckMacros.h
+  /usr/include/UnitTest++/Checks.h
+  /usr/include/UnitTest++/CompositeTestReporter.h
+  /usr/include/UnitTest++/Config.h
+  /usr/include/UnitTest++/CurrentTest.h
+  /usr/include/UnitTest++/DeferredTestReporter.h
+  /usr/include/UnitTest++/DeferredTestResult.h
+  /usr/include/UnitTest++/ExceptionMacros.h
+  /usr/include/UnitTest++/ExecuteTest.h
+  /usr/include/UnitTest++/HelperMacros.h
+  /usr/include/UnitTest++/MemoryOutStream.h
+  /usr/include/UnitTest++/Posix/SignalTranslator.h
+  /usr/include/UnitTest++/Posix/TimeHelpers.h
+  /usr/include/UnitTest++/ReportAssert.h
+  /usr/include/UnitTest++/ReportAssertImpl.h
+  /usr/include/UnitTest++/RequireMacros.h
+  /usr/include/UnitTest++/RequiredCheckException.h
+  /usr/include/UnitTest++/RequiredCheckTestReporter.h
+  /usr/include/UnitTest++/Test.h
+  /usr/include/UnitTest++/TestDetails.h
+  /usr/include/UnitTest++/TestList.h
+  /usr/include/UnitTest++/TestMacros.h
+  /usr/include/UnitTest++/TestReporter.h
+  /usr/include/UnitTest++/TestReporterStdout.h
+  /usr/include/UnitTest++/TestResults.h
+  /usr/include/UnitTest++/TestRunner.h
+  /usr/include/UnitTest++/TestSuite.h
+  /usr/include/UnitTest++/ThrowingTestReporter.h
+  /usr/include/UnitTest++/TimeConstraint.h
+  /usr/include/UnitTest++/TimeHelpers.h
+  /usr/include/UnitTest++/UnitTest++.h
+  /usr/include/UnitTest++/UnitTestPP.h
+  /usr/include/UnitTest++/XmlTestReporter.h
+  /usr/lib/libUnitTest++.dll.a
+  /usr/lib/pkgconfig/UnitTest++.pc
+
+------------------
+
+Port Notes:
+
+----- version 2.0.0-1bl1 -----
+Version bump.
+
+----- version 1.6.1-1bl1 -----
+Version bump.
+
+----- version 1.4.1+git20150425-1bl1 -----
+Version bump.
+
+----- version 1.4+git20130813-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

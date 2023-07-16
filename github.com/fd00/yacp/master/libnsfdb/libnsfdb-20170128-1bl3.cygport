@@ -1,0 +1,49 @@
+HOMEPAGE="https://github.com/libyal/${PN}"
+SRC_URI="https://github.com/libyal/${PN}/archive/refs/tags/${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Library and tools to access the Notes Storage Facility (NSF) database file format"
+DESCRIPTION="libnsfdb is a library to access the Notes Storage Facility (NSF) database file
+format."
+
+LICENSE="LGPL-3.0-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: LGPL-3.0-or-later"
+LICENSE_URI="COPYING"
+
+BUILD_REQUIRES="libbfio-devel libcdata-devel libcerror-devel libcfile-devel libclocale-devel libcnotify-devel libfcache-devel libcpath-devel libfdata-devel"
+
+src_test()
+{
+	cd ${B}
+	pushd tests
+		for sh in ${S}/tests/*.sh
+		do
+			ln -fs ${sh} .
+		done
+	popd
+	cygtest
+	rm tests/*.sh
+}
+
+PKG_NAMES="
+	${PN}
+	${PN}1
+	${PN}-devel
+"
+libnsfdb_CONTENTS="
+	usr/bin/*.exe
+	usr/share/doc
+	usr/share/man/man1
+"
+libnsfdb1_CONTENTS="
+	usr/bin/*.dll
+"
+libnsfdb_devel_CONTENTS="
+	usr/include
+	usr/lib/lib*.dll.a
+	usr/lib/pkgconfig
+	usr/share/man/man3
+"
+libnsfdb_SUMMARY="${SUMMARY} (utilities)"
+libnsfdb1_SUMMARY="${SUMMARY} (runtime)"
+libnsfdb_devel_SUMMARY="${SUMMARY} (development)"

@@ -1,0 +1,112 @@
+glog
+------------------------------------------
+The glog library implements application-level logging. This library provides
+logging APIs based on C++-style streams and various helper macros.
+
+Runtime requirements:
+  cygwin-3.3.4-2
+  libgcc1-11.2.0-1
+  libgflags2.2-2.2.2-1bl2
+  libglog-devel-0.6.0-1bl1
+  libglog1-0.6.0-1bl1
+  libstdc++6-11.2.0-1
+  pkg-config-1.8.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.37-2
+  cmake-3.20.0-1
+  cygport-0.34.2-1
+  gcc-core-11.2.0-1
+  gcc-g++-11.2.0-1
+  libgflags-devel-2.2.2-1bl2
+  ninja-1.10.2-1
+
+Canonical website:
+  https://github.com/google/glog
+
+Canonical download:
+  https://github.com/google/glog/archive/refs/tags/v0.6.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack glog-0.6.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./glog-0.6.0-X.cygport all
+
+This will create:
+  /usr/src/glog-0.6.0-X-src.tar.xz
+  /usr/src/glog-0.6.0-X.tar.xz
+  /usr/src/libglog1-0.6.0-X.tar.xz
+  /usr/src/libglog-devel-0.6.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(glog)
+  /usr/share/doc/Cygwin/glog.README
+  /usr/share/doc/glog/AUTHORS
+  /usr/share/doc/glog/CONTRIBUTORS
+  /usr/share/doc/glog/COPYING
+  /usr/share/doc/glog/ChangeLog
+  /usr/share/doc/glog/README.rst
+
+(libglog1)
+  /usr/bin/cygglog-1.dll
+
+(libglog-devel)
+  /usr/include/glog/export.h
+  /usr/include/glog/log_severity.h
+  /usr/include/glog/logging.h
+  /usr/include/glog/platform.h
+  /usr/include/glog/raw_logging.h
+  /usr/include/glog/stl_logging.h
+  /usr/include/glog/vlog_is_on.h
+  /usr/lib/cmake/glog/glog-config-version.cmake
+  /usr/lib/cmake/glog/glog-config.cmake
+  /usr/lib/cmake/glog/glog-modules.cmake
+  /usr/lib/cmake/glog/glog-targets-release.cmake
+  /usr/lib/cmake/glog/glog-targets.cmake
+  /usr/lib/libglog.dll.a
+  /usr/lib/pkgconfig/libglog.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.6.0-1bl1 -----
+Version bump.
+
+----- version 0.5.0-1bl1 -----
+Version bump.
+
+----- version 0.4.0-1bl1 -----
+Version bump.
+
+----- version 0.3.5-1bl1 -----
+Version bump.
+
+----- version 0.3.4-1bl2 -----
+Rebuild with gcc-5.4.0
+
+----- version 0.3.4-1bl1 -----
+Version bump.
+
+----- version 0.3.3-1bl2 -----
+Rebuild on x86_64
+
+----- version 0.3.3-1bl1 -----
+Version bump.
+
+----- version 0.3.2-1bl1 -----
+Version bump.
+
+----- version 0.3.1-1bl2 -----
+Rebuild for libgflags.
+
+----- version 0.3.1-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

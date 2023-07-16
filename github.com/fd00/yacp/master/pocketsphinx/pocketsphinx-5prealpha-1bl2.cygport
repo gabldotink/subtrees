@@ -1,0 +1,50 @@
+HOMEPAGE="https://sourceforge.net/projects/cmusphinx/"
+SRC_URI="mirror://sourceforge/cmusphinx/${P}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Recognizer library written in C"
+DESCRIPTION="This is PocketSphinx, one of Carnegie Mellon University's open source large
+vocabulary, speaker-independent continuous speech recognition engine. Please
+see the LICENSE file for terms of use."
+
+LICENSE="BSD-2-Clause"
+LICENSE_SPDX="SPDX-License-Identifier: BSD-2-Clause"
+LICENSE_URI="LICENSE"
+
+BUILD_REQUIRES="libglib2.0-devel libgstreamer1.0-devel libsphinxbase-devel"
+
+export PYTHON=python3
+
+PKG_NAMES="
+	${PN}
+	lib${PN}3
+	lib${PN}-devel
+	python39-${PN}
+	gstreamer1.0-plugins-${PN}
+"
+pocketsphinx_CONTENTS="
+	usr/bin/*.exe
+	usr/share/doc
+	usr/share/man
+	usr/share/${PN}/model
+"
+libpocketsphinx3_CONTENTS="
+	usr/bin/*.dll
+"
+libpocketsphinx_devel_CONTENTS="
+	usr/include
+	usr/lib/lib${PN}*
+	usr/lib/pkgconfig
+	usr/share/${PN}/swig
+"
+python39_pocketsphinx_CONTENTS="
+	usr/lib/python*
+"
+gstreamer1_0_plugins_pocketsphinx_CONTENTS="
+	usr/lib/gstreamer*
+"
+pocketsphinx_SUMMARY="${SUMMARY} (utilities)"
+libpocketsphinx3_SUMMARY="${SUMMARY} (runtime)"
+libpocketsphinx_devel_SUMMARY="${SUMMARY} (development)"
+python39_pocketsphinx_SUMMARY="${SUMMARY} (python39 bindings)"
+gstreamer1_0_plugins_pocketsphinx_SUMMARY="GStreamer 1.0 ${PN} plugin"

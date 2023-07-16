@@ -1,0 +1,234 @@
+xrmc
+------------------------------------------
+Monte Carlo simulation of X-ray imaging and spectroscopy experiments
+
+Runtime requirements:
+  cygwin-3.3.5-1
+  libgcc1-11.3.0-1
+  libglib2.0_0-2.54.3-1
+  libgomp1-11.3.0-1
+  libstdc++6-11.3.0-1
+  libxmimsim0-8.1-1bl1
+  libxrl-devel-4.1.2-1bl1
+  libxrl11-4.1.2-1bl1
+  libxrmc-devel-6.7.0-1bl1
+  libxrmc0-6.7.0-1bl1
+  pkg-config-1.8.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.38-1
+  cygport-0.35.1-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libglib2.0-devel-2.54.3-1
+  libtool-2.4.7-1
+  libxmimsim-devel-8.1-1bl1
+  libxrl-devel-4.1.2-1bl1
+  make-4.3-1
+
+Canonical website:
+  https://github.com/golosio/xrmc
+
+Canonical download:
+  https://xrmc.tomschoonjans.eu/xrmc-6.7.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack xrmc-6.7.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./xrmc-6.7.0-X.cygport all
+
+This will create:
+  /usr/src/xrmc-6.7.0-X-src.tar.xz
+  /usr/src/xrmc-6.7.0-X.tar.xz
+  /usr/src/libxrmc0-6.7.0-X.tar.xz
+  /usr/src/libxrmc-devel-6.7.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(xrmc)
+  /usr/bin/xrmc.exe
+  /usr/lib/xrmc/xrmc-xmimsim.dll
+  /usr/share/doc/Cygwin/xrmc.README
+  /usr/share/doc/xrmc/AUTHORS
+  /usr/share/doc/xrmc/ChangeLog
+  /usr/share/doc/xrmc/xrmc_man.pdf
+  /usr/share/xrmc/examples/anisotropicsource/README
+  /usr/share/xrmc/examples/anisotropicsource/anisotropicsource.dat
+  /usr/share/xrmc/examples/anisotropicsource/composition.dat
+  /usr/share/xrmc/examples/anisotropicsource/detector.dat
+  /usr/share/xrmc/examples/anisotropicsource/geom3d.dat
+  /usr/share/xrmc/examples/anisotropicsource/input.dat
+  /usr/share/xrmc/examples/anisotropicsource/intensityscreen.dat
+  /usr/share/xrmc/examples/anisotropicsource/intensityscreen_image.c
+  /usr/share/xrmc/examples/anisotropicsource/intensityscreen_image.dat
+  /usr/share/xrmc/examples/anisotropicsource/intensityscreen_image.py
+  /usr/share/xrmc/examples/anisotropicsource/intensityscreen_image_py.dat
+  /usr/share/xrmc/examples/anisotropicsource/make.sh
+  /usr/share/xrmc/examples/anisotropicsource/quadric.dat
+  /usr/share/xrmc/examples/anisotropicsource/sample.dat
+  /usr/share/xrmc/examples/anisotropicsource/spectrum.dat
+  /usr/share/xrmc/examples/beamsource/README
+  /usr/share/xrmc/examples/beamsource/beamscreen.dat
+  /usr/share/xrmc/examples/beamsource/beamscreen_image.c
+  /usr/share/xrmc/examples/beamsource/beamsource.dat
+  /usr/share/xrmc/examples/beamsource/composition.dat
+  /usr/share/xrmc/examples/beamsource/detector.dat
+  /usr/share/xrmc/examples/beamsource/geom3d.dat
+  /usr/share/xrmc/examples/beamsource/input.dat
+  /usr/share/xrmc/examples/beamsource/input_spectrum.dat
+  /usr/share/xrmc/examples/beamsource/make.sh
+  /usr/share/xrmc/examples/beamsource/quadric.dat
+  /usr/share/xrmc/examples/beamsource/sample.dat
+  /usr/share/xrmc/examples/beamsource/spectrum_detector.dat
+  /usr/share/xrmc/examples/cylind_cell/composition.dat
+  /usr/share/xrmc/examples/cylind_cell/detector.dat
+  /usr/share/xrmc/examples/cylind_cell/geom3d.dat
+  /usr/share/xrmc/examples/cylind_cell/input.dat
+  /usr/share/xrmc/examples/cylind_cell/quadric.dat
+  /usr/share/xrmc/examples/cylind_cell/sample.dat
+  /usr/share/xrmc/examples/cylind_cell/source.dat
+  /usr/share/xrmc/examples/cylind_cell/spectrum.dat
+  /usr/share/xrmc/examples/fluor_layers/README
+  /usr/share/xrmc/examples/fluor_layers/composition.dat
+  /usr/share/xrmc/examples/fluor_layers/continuous_spectrum.dat
+  /usr/share/xrmc/examples/fluor_layers/detector_0deg.dat
+  /usr/share/xrmc/examples/fluor_layers/detector_response.c
+  /usr/share/xrmc/examples/fluor_layers/detector_routines.c
+  /usr/share/xrmc/examples/fluor_layers/detector_routines.h
+  /usr/share/xrmc/examples/fluor_layers/experimental.dat
+  /usr/share/xrmc/examples/fluor_layers/geom3d.dat
+  /usr/share/xrmc/examples/fluor_layers/input.dat
+  /usr/share/xrmc/examples/fluor_layers/make.sh
+  /usr/share/xrmc/examples/fluor_layers/oct_plot.m
+  /usr/share/xrmc/examples/fluor_layers/quadric.dat
+  /usr/share/xrmc/examples/fluor_layers/sample.dat
+  /usr/share/xrmc/examples/fluor_layers/source_20deg.dat
+  /usr/share/xrmc/examples/fluor_layers/spectrumAg40kV.dat
+  /usr/share/xrmc/examples/materials/composition.dat
+  /usr/share/xrmc/examples/materials/detector.dat
+  /usr/share/xrmc/examples/materials/geom3d.dat
+  /usr/share/xrmc/examples/materials/input.dat
+  /usr/share/xrmc/examples/materials/quadric.dat
+  /usr/share/xrmc/examples/materials/sample.dat
+  /usr/share/xrmc/examples/materials/source.dat
+  /usr/share/xrmc/examples/materials/spectrum.dat
+  /usr/share/xrmc/examples/phasecontrast/composition.dat
+  /usr/share/xrmc/examples/phasecontrast/geom3d.dat
+  /usr/share/xrmc/examples/phasecontrast/input.dat
+  /usr/share/xrmc/examples/phasecontrast/phcdetector.dat
+  /usr/share/xrmc/examples/phasecontrast/quadric.dat
+  /usr/share/xrmc/examples/phasecontrast/sample.dat
+  /usr/share/xrmc/examples/phasecontrast/source.dat
+  /usr/share/xrmc/examples/phasecontrast/spectrum.dat
+  /usr/share/xrmc/examples/quadrics/composition.dat
+  /usr/share/xrmc/examples/quadrics/detector.dat
+  /usr/share/xrmc/examples/quadrics/geom3d.dat
+  /usr/share/xrmc/examples/quadrics/input.dat
+  /usr/share/xrmc/examples/quadrics/quadric.dat
+  /usr/share/xrmc/examples/quadrics/sample.dat
+  /usr/share/xrmc/examples/quadrics/source.dat
+  /usr/share/xrmc/examples/quadrics/spectrum.dat
+  /usr/share/xrmc/examples/radionuclide/composition.dat
+  /usr/share/xrmc/examples/radionuclide/detector.dat
+  /usr/share/xrmc/examples/radionuclide/geom3d.dat
+  /usr/share/xrmc/examples/radionuclide/input.dat
+  /usr/share/xrmc/examples/radionuclide/quadric.dat
+  /usr/share/xrmc/examples/radionuclide/radionuclide.dat
+  /usr/share/xrmc/examples/radionuclide/sample.dat
+  /usr/share/xrmc/examples/radionuclide/source.dat
+  /usr/share/xrmc/examples/star1/composition.dat
+  /usr/share/xrmc/examples/star1/detector.dat
+  /usr/share/xrmc/examples/star1/geom3d.dat
+  /usr/share/xrmc/examples/star1/input.dat
+  /usr/share/xrmc/examples/star1/quadric.dat
+  /usr/share/xrmc/examples/star1/sample.dat
+  /usr/share/xrmc/examples/star1/source.dat
+  /usr/share/xrmc/examples/star1/spectrum.dat
+  /usr/share/xrmc/examples/star2/composition.dat
+  /usr/share/xrmc/examples/star2/detector.dat
+  /usr/share/xrmc/examples/star2/geom3d.dat
+  /usr/share/xrmc/examples/star2/input.dat
+  /usr/share/xrmc/examples/star2/quadric.dat
+  /usr/share/xrmc/examples/star2/sample.dat
+  /usr/share/xrmc/examples/star2/source.dat
+  /usr/share/xrmc/examples/star2/spectrum.dat
+  /usr/share/xrmc/examples/wheel/composition.dat
+  /usr/share/xrmc/examples/wheel/detector.dat
+  /usr/share/xrmc/examples/wheel/geom3d.dat
+  /usr/share/xrmc/examples/wheel/input.dat
+  /usr/share/xrmc/examples/wheel/quadric.dat
+  /usr/share/xrmc/examples/wheel/sample.dat
+  /usr/share/xrmc/examples/wheel/source.dat
+  /usr/share/xrmc/examples/wheel/spectrum.dat
+  /usr/share/xrmc/examples/xmi-msim/composition.dat
+  /usr/share/xrmc/examples/xmi-msim/detector.dat
+  /usr/share/xrmc/examples/xmi-msim/geom3d.dat
+  /usr/share/xrmc/examples/xmi-msim/input.dat
+  /usr/share/xrmc/examples/xmi-msim/quadric.dat
+  /usr/share/xrmc/examples/xmi-msim/sample.dat
+  /usr/share/xrmc/examples/xmi-msim/source.dat
+  /usr/share/xrmc/examples/xmi-msim/spectrum.dat
+  /usr/share/xrmc/examples/xmi-msim2/composition.dat
+  /usr/share/xrmc/examples/xmi-msim2/detector.dat
+  /usr/share/xrmc/examples/xmi-msim2/geom3d.dat
+  /usr/share/xrmc/examples/xmi-msim2/input.dat
+  /usr/share/xrmc/examples/xmi-msim2/quadric.dat
+  /usr/share/xrmc/examples/xmi-msim2/sample.dat
+  /usr/share/xrmc/examples/xmi-msim2/source.dat
+  /usr/share/xrmc/examples/xmi-msim2/spectrum_ebel.dat
+  /usr/share/xrmc/examples/xmi-msim2/transmission-efficiency.txt
+
+(libxrmc0)
+  /usr/bin/cygxrmc-0.dll
+
+(libxrmc-devel)
+  /usr/include/xrmc/alloc.h
+  /usr/include/xrmc/anisotropicsource.h
+  /usr/include/xrmc/beamscreen.h
+  /usr/include/xrmc/beamsource.h
+  /usr/include/xrmc/fft.h
+  /usr/include/xrmc/image_convolution.h
+  /usr/include/xrmc/intensityscreen.h
+  /usr/include/xrmc/phcdetector.h
+  /usr/include/xrmc/phcdevice.h
+  /usr/include/xrmc/randmt.h
+  /usr/include/xrmc/xrmc.h
+  /usr/include/xrmc/xrmc_algo.h
+  /usr/include/xrmc/xrmc_arrayNd.h
+  /usr/include/xrmc/xrmc_composition.h
+  /usr/include/xrmc/xrmc_detector.h
+  /usr/include/xrmc/xrmc_detectorconvolute.h
+  /usr/include/xrmc/xrmc_device.h
+  /usr/include/xrmc/xrmc_exception.h
+  /usr/include/xrmc/xrmc_geom3d.h
+  /usr/include/xrmc/xrmc_gettoken.h
+  /usr/include/xrmc/xrmc_loaddetector.h
+  /usr/include/xrmc/xrmc_math.h
+  /usr/include/xrmc/xrmc_photon.h
+  /usr/include/xrmc/xrmc_radionuclide.h
+  /usr/include/xrmc/xrmc_sample.h
+  /usr/include/xrmc/xrmc_screen.h
+  /usr/include/xrmc/xrmc_source.h
+  /usr/include/xrmc/xrmc_spectrum.h
+  /usr/include/xrmc/xrmc_spectrum_ebel.h
+  /usr/lib/libxrmc.dll.a
+  /usr/lib/pkgconfig/libxrmc.pc
+
+------------------
+
+Port Notes:
+
+----- version 6.7.0-1bl1 -----
+Version bump.
+
+----- version 6.6.0-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

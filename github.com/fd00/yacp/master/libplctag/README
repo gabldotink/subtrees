@@ -1,0 +1,123 @@
+libplctag
+------------------------------------------
+This library for Linux and Windows (not heavily tested) provides a means of
+accessing PLCs to read and write simple data.
+
+Runtime requirements:
+  cygwin-3.4.5-1
+  libgcc1-11.3.0-1
+  libplctag-devel-2.5.5-1bl1
+  libplctag2.5-2.5.5-1bl1
+  pkg-config-1.9.4-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.39-1
+  cmake-3.23.2-1
+  cygport-0.36.0-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  ninja-1.11.1-1
+
+Canonical website:
+  https://github.com/libplctag/libplctag
+
+Canonical download:
+  https://github.com/libplctag/libplctag/archive/refs/tags/v2.5.5.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libplctag-2.5.5-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libplctag-2.5.5-X.cygport all
+
+This will create:
+  /usr/src/libplctag-2.5.5-X-src.tar.xz
+  /usr/src/libplctag-2.5.5-X.tar.xz
+  /usr/src/libplctag2.5-2.5.5-X.tar.xz
+  /usr/src/libplctag-devel-2.5.5-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libplctag)
+  /usr/share/doc/Cygwin/libplctag.README
+  /usr/share/doc/libplctag/LICENSE-1.MPL
+  /usr/share/doc/libplctag/LICENSE-2.LGPL
+  /usr/share/doc/libplctag/README.md
+
+(libplctag2.5)
+  /usr/bin/cygplctag-2.5.dll
+
+(libplctag-devel)
+  /usr/include/libplctag.h
+  /usr/lib/libplctag.dll.a
+  /usr/lib/pkgconfig/libplctag.pc
+
+------------------
+
+Port Notes:
+
+----- version 2.5.5-1bl1 -----
+Version bump.
+
+----- version 2.5.4-1bl1 -----
+Version bump.
+
+----- version 2.5.0-1bl1 -----
+Version bump.
+
+----- version 2.4.4-1bl1 -----
+Version bump.
+
+----- version 2.4.0-1bl1 -----
+Version bump.
+
+----- version 2.3.8-1bl1 -----
+Version bump.
+
+----- version 2.3.6-1bl1 -----
+Version bump.
+
+----- version 2.3.4-1bl1 -----
+Version bump.
+
+----- version 2.2.0-1bl1 -----
+Version bump.
+
+----- version 2.1.21-1bl1 -----
+Version bump.
+
+----- version 2.1.19-1bl1 -----
+Version bump.
+
+----- version 2.1.17-1bl1 -----
+Version bump.
+
+----- version 2.1.15-1bl1 -----
+Version bump.
+
+----- version 2.1.10-1bl1 -----
+Version bump.
+
+----- version 2.1.5-1bl1 -----
+Version bump.
+
+----- version 2.0.20-1bl1 -----
+Version bump.
+
+----- version 1.6.3-1bl1 -----
+Version bump.
+
+----- version 1.5.10-1bl1 -----
+Version bump.
+
+----- version 1.5.8-1bl1 -----
+Version bump.
+
+----- version 1.5.7-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

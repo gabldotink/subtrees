@@ -1,0 +1,46 @@
+HOMEPAGE="https://github.com/${PN}/${PN}"
+SRC_URI="https://github.com/${PN}/${PN}/archive/refs/tags/${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Lattice algorithms using floating-point arithmetic"
+DESCRIPTION="fplll contains several algorithms on lattices that rely on floating-point
+computations. This includes implementations of the floating-point LLL
+reduction algorithm, offering different speed/guarantees ratios. It contains a
+wrapper choosing the estimated best sequence of variants in order to provide a
+guaranteed output as fast as possible. In the case of the wrapper, the
+succession of variants is oblivious to the user. It also includes a rigorous
+floating-point implementation of the Kannan-Fincke-Pohst algorithm that finds
+a shortest non-zero lattice vector."
+
+LICENSE="LGPL-2.1-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: LGPL-2.1-or-later"
+LICENSE_URI="COPYING"
+
+BUILD_REQUIRES="libgmp-devel libmpfr-devel libqd-devel"
+
+export CPPFLAGS="${CPPFLAGS} -D_GNU_SOURCE"
+export CXXFLAGS="${CXXFLAGS} -Wa,-mbig-obj"
+
+DOCS="
+	CONTRIBUTING.md
+"
+
+PKG_NAMES="
+	${PN}
+	lib${PN}8
+	lib${PN}-devel
+"
+fplll_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+libfplll8_CONTENTS="
+	usr/bin/*.dll
+"
+libfplll_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+fplll_SUMMARY="${SUMMARY} (utilities)"
+libfplll8_SUMMARY="${SUMMARY} (runtime)"
+libfplll_devel_SUMMARY="${SUMMARY} (development)"

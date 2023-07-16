@@ -1,0 +1,55 @@
+HOMEPAGE="https://github.com/PCMSolver/${PN}"
+SRC_URI="https://github.com/PCMSolver/${PN}/archive/v${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="API for the Polarizable Continuum Model"
+DESCRIPTION="PCMSolver is an API for solving the Polarizable Continuum Model electrostatic
+problem."
+
+BUILD_REQUIRES="gcc-fortran zlib-devel"
+
+export CFLAGS="${CFLAGS} -D_GNU_SOURCE"
+export CXXFLAGS="${CXXFLAGS} -D_GNU_SOURCE"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DENABLE_TESTS:BOOL=OFF
+	-DSHARED_LIBRARY_ONLY:BOOL=ON
+	-DVERSION:STRING=${PV}
+"
+
+src_test()
+{
+	cd ${B}
+	ninja_test
+}
+
+DOCS="
+	CHANGELOG.md
+	CONTRIBUTING.md
+"
+
+PKG_NAMES="
+	pcmsolver
+	libpcm1
+	libpcm-devel
+"
+pcmsolver_CONTENTS="
+	usr/bin/*.exe
+	usr/bin/*.py
+	usr/lib/python
+	usr/share
+"
+libpcm1_CONTENTS="
+	usr/bin/*.dll
+"
+libpcm_devel_CONTENTS="
+	usr/include
+	usr/lib/cmake
+	usr/lib/lib*.dll.a
+	usr/lib/pkgconfig
+"
+pcmsolver_SUMMARY="${SUMMARY} (utilities)"
+libpcm1_SUMMARY="${SUMMARY} (runtime)"
+libpcm_devel_SUMMARY="${SUMMARY} (development)"

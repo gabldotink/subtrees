@@ -1,0 +1,86 @@
+theft
+------------------------------------------
+theft is a C library for property-based testing. Rather than checking the
+results with specific input, properties are asserted (for any possible input,
+[condition] should hold), and theft searches for counter-examples. If it finds
+a combination of arguments that causes the property to fail, it will search for
+simpler versions of those arguments that still fail, and then print the minimal
+failing input.
+
+Runtime requirements:
+  cygwin-3.3.5-1
+  libtheft-devel-0.4.5-1bl1
+  libtheft0-0.4.5-1bl1
+  pkg-config-1.8.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.38-1
+  cygport-0.35.1-1
+  gcc-core-11.3.0-1
+  libtool-2.4.7-1
+  make-4.3-1
+
+Canonical website:
+  https://github.com/silentbicycle/theft
+
+Canonical download:
+  https://github.com/silentbicycle/theft/archive/refs/tags/v0.4.5.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack theft-0.4.5-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./theft-0.4.5-X.cygport all
+
+This will create:
+  /usr/src/theft-0.4.5-X-src.tar.xz
+  /usr/src/theft-0.4.5-X.tar.xz
+  /usr/src/libtheft0-0.4.5-X.tar.xz
+  /usr/src/libtheft-devel-0.4.5-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(theft)
+  /usr/share/doc/Cygwin/theft.README
+  /usr/share/doc/theft/CONTRIBUTING.md
+  /usr/share/doc/theft/ChangeLog.md
+  /usr/share/doc/theft/LICENSE
+  /usr/share/doc/theft/README.md
+  /usr/share/doc/theft/forking.md
+  /usr/share/doc/theft/glossary.md
+  /usr/share/doc/theft/properties.md
+  /usr/share/doc/theft/shrinking.md
+  /usr/share/doc/theft/usage.md
+
+(libtheft0)
+  /usr/bin/cygtheft-0.dll
+
+(libtheft-devel)
+  /usr/include/theft.h
+  /usr/include/theft_types.h
+  /usr/lib/libtheft.dll.a
+  /usr/lib/pkgconfig/libtheft.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.4.5-1bl1 -----
+Version bump.
+
+----- version 0.4.3-1bl1 -----
+Version bump.
+
+----- version 0.3.0-1bl1 -----
+Version bump.
+
+----- version 0.2.0-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

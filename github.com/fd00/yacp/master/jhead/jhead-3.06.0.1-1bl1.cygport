@@ -1,0 +1,31 @@
+HOMEPAGE="https://www.sentex.net/~mwandel/${PN}/"
+SRC_URI="https://github.com/Matthias-Wandel/${PN}/archive/refs/tags/${PV}.tar.gz"
+
+CATEGORY="Graphics"
+SUMMARY="Exif Jpeg header manipulation tool"
+DESCRIPTION="Jhead displays and manipulates the non-image portions of EXIF formatted
+JPEG images, such as the images produced by most digital cameras."
+
+src_compile()
+{
+	cd ${B}
+	lndirs
+	cygmake
+}
+
+src_test()
+{
+	cd ${B}
+	./${PN}.exe -V
+}
+
+HTMLDOCS="
+	usage.html
+"
+
+src_install()
+{
+	cd ${B}
+	dobin ${PN}.exe
+	doman ${PN}.1
+}

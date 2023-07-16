@@ -1,0 +1,166 @@
+polkit
+------------------------------------------
+PolicyKit is an application-level toolkit for defining and handling the policy
+that allows unprivileged processes to speak to privileged processes: It is a
+framework for centralizing the decision making process with respect to
+granting access to privileged operations for unprivileged applications.
+PolicyKit is specifically targeting applications in rich desktop environments
+on multi-user UNIX-like operating systems. It does not imply or rely on any
+exotic kernel features.
+
+Runtime requirements:
+  cygwin-2.8.2-1
+  girepository-GLib2.0-1.50.0-1
+  girepository-Polkit1.0-0.113-1bl2
+  libexpat1-2.2.1-0
+  libglib2.0-devel-2.50.3-1
+  libglib2.0_0-2.50.3-1
+  libintl8-0.19.8.1-2
+  libmozjs185_1.0-1.0.0-4
+  libpolkit-agent1-devel-0.113-1bl2
+  libpolkit-agent1_0-0.113-1bl2
+  libpolkit-gobject1-devel-0.113-1bl2
+  libpolkit-gobject1_0-0.113-1bl2
+  pkg-config-0.29.1-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-9-1
+  binutils-2.25-4
+  cygport-0.24.1-1
+  gcc-core-5.4.0-1
+  gobject-introspection-1.50.0-1
+  libtool-2.4.6-4
+  make-4.2.1-2
+
+Canonical website:
+  http://www.freedesktop.org/wiki/Software/polkit
+
+Canonical download:
+  http://www.freedesktop.org/software/polkit/releases/polkit-0.113.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack polkit-0.113-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./polkit-0.113-X.cygport all
+
+This will create:
+  /usr/src/polkit-0.113-X-src.tar.xz
+  /usr/src/polkit-0.113-X.tar.xz
+  /usr/src/libpolkit-agent1_0-0.113-X.tar.xz
+  /usr/src/libpolkit-agent1-devel-0.113-X.tar.xz
+  /usr/src/libpolkit-gobject1_0-0.113-X.tar.xz
+  /usr/src/libpolkit-gobject1-devel-0.113-X.tar.xz
+  /usr/src/girepository-Polkit1.0-0.113-X.tar.xz
+  /usr/src/girepository-PolkitAgent1.0-0.113-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(polkit)
+  /etc/dbus-1/system.d/org.freedesktop.PolicyKit1.conf
+  /etc/polkit-1/rules.d/50-default.rules
+  /usr/bin/pk-example-frobnicate.exe
+  /usr/bin/pkaction.exe
+  /usr/bin/pkcheck.exe
+  /usr/bin/pkexec.exe
+  /usr/bin/pkttyagent.exe
+  /usr/lib/polkit-1/polkit-agent-helper-1.exe
+  /usr/lib/polkit-1/polkitd.exe
+  /usr/share/dbus-1/system-services/org.freedesktop.PolicyKit1.service
+  /usr/share/doc/Cygwin/polkit.README
+  /usr/share/doc/polkit/COPYING
+  /usr/share/doc/polkit/HACKING
+  /usr/share/doc/polkit/NEWS
+  /usr/share/doc/polkit/README
+  /usr/share/locale/cs/LC_MESSAGES/polkit-1.mo
+  /usr/share/locale/da/LC_MESSAGES/polkit-1.mo
+  /usr/share/man/man1/pkaction.1.gz
+  /usr/share/man/man1/pkcheck.1.gz
+  /usr/share/man/man1/pkexec.1.gz
+  /usr/share/man/man1/pkttyagent.1.gz
+  /usr/share/man/man8/polkit.8.gz
+  /usr/share/man/man8/polkitd.8.gz
+  /usr/share/polkit-1/actions/org.freedesktop.policykit.examples.pkexec.policy
+  /usr/share/polkit-1/actions/org.freedesktop.policykit.policy
+
+(libpolkit-agent1_0)
+  /usr/bin/cygpolkit-agent-1-0.dll
+
+(libpolkit-agent1-devel)
+  /usr/include/polkit-1/polkitagent/polkitagent.h
+  /usr/include/polkit-1/polkitagent/polkitagentenumtypes.h
+  /usr/include/polkit-1/polkitagent/polkitagentlistener.h
+  /usr/include/polkit-1/polkitagent/polkitagentsession.h
+  /usr/include/polkit-1/polkitagent/polkitagenttextlistener.h
+  /usr/include/polkit-1/polkitagent/polkitagenttypes.h
+  /usr/lib/libpolkit-agent-1.dll.a
+  /usr/lib/pkgconfig/polkit-agent-1.pc
+
+(libpolkit-gobject1_0)
+  /usr/bin/cygpolkit-gobject-1-0.dll
+
+(libpolkit-gobject1-devel)
+  /usr/include/polkit-1/polkit/polkit.h
+  /usr/include/polkit-1/polkit/polkitactiondescription.h
+  /usr/include/polkit-1/polkit/polkitauthority.h
+  /usr/include/polkit-1/polkit/polkitauthorityfeatures.h
+  /usr/include/polkit-1/polkit/polkitauthorizationresult.h
+  /usr/include/polkit-1/polkit/polkitcheckauthorizationflags.h
+  /usr/include/polkit-1/polkit/polkitdetails.h
+  /usr/include/polkit-1/polkit/polkitenumtypes.h
+  /usr/include/polkit-1/polkit/polkiterror.h
+  /usr/include/polkit-1/polkit/polkitidentity.h
+  /usr/include/polkit-1/polkit/polkitimplicitauthorization.h
+  /usr/include/polkit-1/polkit/polkitpermission.h
+  /usr/include/polkit-1/polkit/polkitprivate.h
+  /usr/include/polkit-1/polkit/polkitsubject.h
+  /usr/include/polkit-1/polkit/polkitsystembusname.h
+  /usr/include/polkit-1/polkit/polkittemporaryauthorization.h
+  /usr/include/polkit-1/polkit/polkittypes.h
+  /usr/include/polkit-1/polkit/polkitunixgroup.h
+  /usr/include/polkit-1/polkit/polkitunixnetgroup.h
+  /usr/include/polkit-1/polkit/polkitunixprocess.h
+  /usr/include/polkit-1/polkit/polkitunixsession.h
+  /usr/include/polkit-1/polkit/polkitunixuser.h
+  /usr/lib/libpolkit-gobject-1.dll.a
+  /usr/lib/pkgconfig/polkit-gobject-1.pc
+
+(girepository-Polkit1.0)
+  /usr/lib/girepository-1.0/Polkit-1.0.typelib
+  /usr/share/gir-1.0/Polkit-1.0.gir
+
+(girepository-PolkitAgent1.0)
+  /usr/lib/girepository-1.0/PolkitAgent-1.0.typelib
+  /usr/share/gir-1.0/PolkitAgent-1.0.gir
+
+------------------
+
+Port Notes:
+
+----- version 0.113-1bl2 -----
+Rebuild with gcc-5.4.0
+
+----- version 0.113-1bl1 -----
+Version bump.
+
+----- version 0.112-1bl2 -----
+Rebuild on x86_64
+
+----- version 0.112-1bl1 -----
+Version bump.
+
+----- version 0.109-1bl1 -----
+Version bump.
+
+----- version 0.105-1bl1 -----
+Version bump.
+
+----- version 0.104-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

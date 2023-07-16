@@ -1,0 +1,27 @@
+HOMEPAGE="https://github.com/anse1/${PN}"
+SRC_URI="https://github.com/anse1/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Devel"
+SUMMARY="Random SQL query generator"
+DESCRIPTION="SQLsmith is a random SQL query generator. Its paragon is Csmith, which proved
+valuable for quality assurance in C compilers."
+
+BUILD_REQUIRES="libboost-devel libpq-devel libpqxx-devel libsqlite3-devel"
+
+export CPPFLAGS="${CPPFLAGS} -D_GNU_SOURCE"
+
+src_test()
+{
+	cd ${B}
+	./${PN}.exe --version
+}
+
+DOCS="
+	README.org
+	TODO.org
+	ast.png
+	boring_sqlstates.txt
+	known.txt
+	known_re.txt
+	logo.png
+"

@@ -1,0 +1,34 @@
+HOMEPAGE="https://github.com/yusiwen/${PN}"
+GIT_URI="https://github.com/yusiwen/${PN}.git"
+
+CATEGORY="Libs"
+SUMMARY="OS independent and secure pty/tty and utmp/wtmp/lastlog handling"
+DESCRIPTION="Libptytty is a small library that offers pseudo-tty management in an
+OS-independent way. It was created out of frustration over the many
+differences of pty/tty handling in different operating systems for the
+use inside rxvt-unicode."
+
+export CPPFLAGS="${CPPFLAGS} -D_GNU_SOURCE"
+
+inherit cmake
+inherit git
+
+PKG_NAMES="
+	${PN}
+	${PN}0
+	${PN}-devel
+"
+libptytty_CONTENTS="
+	usr/share/doc
+"
+libptytty0_CONTENTS="
+	usr/bin
+"
+libptytty_devel_CONTENTS="
+	usr/include
+	usr/lib
+	usr/share/man
+"
+libptytty_SUMMARY="${SUMMARY} (licensing & readmes)"
+libptytty0_SUMMARY="${SUMMARY} (runtime)"
+libptytty_devel_SUMMARY="${SUMMARY} (development)"

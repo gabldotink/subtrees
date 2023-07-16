@@ -1,0 +1,3 @@
+inherit xorg
+
+DESCRIPTION="X.org VideoProto protocol headers"

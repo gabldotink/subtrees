@@ -1,0 +1,177 @@
+getdns
+------------------------------------------
+getdns is a modern asynchronous DNS API. It implements DNS entry points from a
+design developed and vetted by application developers, in an API specification.
+The open source C implementation of getdns is developed and maintained in
+collaboration by NLnet Labs, Sinodun and No Mountain Software. This
+implementation is licensed under the New BSD License.
+
+Runtime requirements:
+  cygwin-3.4.3-1
+  libev4-4.33-1
+  libevent2.1_7-2.1.12-1
+  libgetdns-devel-1.7.3-1bl1
+  libgetdns10-1.7.3-1bl1
+  libidn2_0-2.3.4-1
+  libssl1.1-1.1.1s-1
+  libunbound2-1.6.2-1
+  libuv1-1.44.2-1
+  pkg-config-1.9.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.39-1
+  cmake-3.23.2-1
+  cygport-0.35.5-1
+  gcc-core-11.3.0-1
+  libev-devel-4.33-1
+  libevent-devel-2.1.12-1
+  libidn2-devel-2.3.4-1
+  libssl-devel-1.1.1s-1
+  libunbound-devel-1.6.2-1
+  libuv-devel-1.44.2-1
+  ninja-1.11.1-1
+
+Canonical website:
+  https://getdnsapi.net/
+
+Canonical download:
+  https://getdnsapi.net/releases/getdns-1-7-3/getdns-1.7.3.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack getdns-1.7.3-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./getdns-1.7.3-X.cygport all
+
+This will create:
+  /usr/src/getdns-1.7.3-X-src.tar.xz
+  /usr/src/getdns-1.7.3-X.tar.xz
+  /usr/src/libgetdns10-1.7.3-X.tar.xz
+  /usr/src/libgetdns-devel-1.7.3-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(getdns)
+  /usr/bin/getdns_query.exe
+  /usr/bin/getdns_server_mon.exe
+  /usr/share/doc/Cygwin/getdns.README
+  /usr/share/doc/getdns/AUTHORS
+  /usr/share/doc/getdns/COPYING
+  /usr/share/doc/getdns/ChangeLog
+  /usr/share/doc/getdns/LICENSE
+  /usr/share/doc/getdns/NEWS
+  /usr/share/doc/getdns/README.md
+  /usr/share/doc/getdns/spec/index.html
+
+(libgetdns10)
+  /usr/bin/cyggetdns-10.dll
+  /usr/bin/cyggetdns_ext_ev-10.dll
+  /usr/bin/cyggetdns_ext_event-10.dll
+  /usr/bin/cyggetdns_ext_uv-10.dll
+
+(libgetdns-devel)
+  /usr/include/getdns/getdns.h
+  /usr/include/getdns/getdns_ext_libev.h
+  /usr/include/getdns/getdns_ext_libevent.h
+  /usr/include/getdns/getdns_ext_libuv.h
+  /usr/include/getdns/getdns_extra.h
+  /usr/lib/libgetdns.dll.a
+  /usr/lib/libgetdns_ext_ev.dll.a
+  /usr/lib/libgetdns_ext_event.dll.a
+  /usr/lib/libgetdns_ext_uv.dll.a
+  /usr/lib/pkgconfig/getdns.pc
+  /usr/share/man/man3/getdns_address.3.gz
+  /usr/share/man/man3/getdns_address_sync.3.gz
+  /usr/share/man/man3/getdns_cancel_callback.3.gz
+  /usr/share/man/man3/getdns_context.3.gz
+  /usr/share/man/man3/getdns_context_create.3.gz
+  /usr/share/man/man3/getdns_context_create_with_extended_memory_functions.3.gz
+  /usr/share/man/man3/getdns_context_create_with_memory_functions.3.gz
+  /usr/share/man/man3/getdns_context_destroy.3.gz
+  /usr/share/man/man3/getdns_context_get_api_information.3.gz
+  /usr/share/man/man3/getdns_context_set.3.gz
+  /usr/share/man/man3/getdns_context_set_append_name.3.gz
+  /usr/share/man/man3/getdns_context_set_context_update_callback.3.gz
+  /usr/share/man/man3/getdns_context_set_dns_root_servers.3.gz
+  /usr/share/man/man3/getdns_context_set_dns_transport.3.gz
+  /usr/share/man/man3/getdns_context_set_dnssec_allowed_skew.3.gz
+  /usr/share/man/man3/getdns_context_set_dnssec_trust_anchors.3.gz
+  /usr/share/man/man3/getdns_context_set_follow_redirects.3.gz
+  /usr/share/man/man3/getdns_context_set_limit_outstanding_queries.3.gz
+  /usr/share/man/man3/getdns_context_set_namespaces.3.gz
+  /usr/share/man/man3/getdns_context_set_resolution_type.3.gz
+  /usr/share/man/man3/getdns_context_set_suffix.3.gz
+  /usr/share/man/man3/getdns_context_set_timeout.3.gz
+  /usr/share/man/man3/getdns_convert.3.gz
+  /usr/share/man/man3/getdns_convert_dns_name_to_fqdn.3.gz
+  /usr/share/man/man3/getdns_convert_fqdn_to_dns_name.3.gz
+  /usr/share/man/man3/getdns_dict.3.gz
+  /usr/share/man/man3/getdns_dict_create.3.gz
+  /usr/share/man/man3/getdns_dict_create_with_extended_memory_functions.3.gz
+  /usr/share/man/man3/getdns_dict_create_with_memory_functions.3.gz
+  /usr/share/man/man3/getdns_dict_destroy.3.gz
+  /usr/share/man/man3/getdns_dict_get.3.gz
+  /usr/share/man/man3/getdns_dict_get_bindata.3.gz
+  /usr/share/man/man3/getdns_dict_get_data_type.3.gz
+  /usr/share/man/man3/getdns_dict_get_dict.3.gz
+  /usr/share/man/man3/getdns_dict_get_int.3.gz
+  /usr/share/man/man3/getdns_dict_get_list.3.gz
+  /usr/share/man/man3/getdns_dict_get_names.3.gz
+  /usr/share/man/man3/getdns_dict_set.3.gz
+  /usr/share/man/man3/getdns_dict_set_bindata.3.gz
+  /usr/share/man/man3/getdns_dict_set_dict.3.gz
+  /usr/share/man/man3/getdns_dict_set_int.3.gz
+  /usr/share/man/man3/getdns_dict_set_list.3.gz
+  /usr/share/man/man3/getdns_display_ip_address.3.gz
+  /usr/share/man/man3/getdns_general.3.gz
+  /usr/share/man/man3/getdns_general_sync.3.gz
+  /usr/share/man/man3/getdns_hostname.3.gz
+  /usr/share/man/man3/getdns_hostname_sync.3.gz
+  /usr/share/man/man3/getdns_list.3.gz
+  /usr/share/man/man3/getdns_list_create.3.gz
+  /usr/share/man/man3/getdns_list_create_with_extended_memory_functions.3.gz
+  /usr/share/man/man3/getdns_list_create_with_memory_functions.3.gz
+  /usr/share/man/man3/getdns_list_destroy.3.gz
+  /usr/share/man/man3/getdns_list_get.3.gz
+  /usr/share/man/man3/getdns_list_get_bindata.3.gz
+  /usr/share/man/man3/getdns_list_get_data_type.3.gz
+  /usr/share/man/man3/getdns_list_get_dict.3.gz
+  /usr/share/man/man3/getdns_list_get_int.3.gz
+  /usr/share/man/man3/getdns_list_get_length.3.gz
+  /usr/share/man/man3/getdns_list_get_list.3.gz
+  /usr/share/man/man3/getdns_list_set.3.gz
+  /usr/share/man/man3/getdns_list_set_bindata.3.gz
+  /usr/share/man/man3/getdns_list_set_dict.3.gz
+  /usr/share/man/man3/getdns_list_set_int.3.gz
+  /usr/share/man/man3/getdns_list_set_list.3.gz
+  /usr/share/man/man3/getdns_pretty_print_dict.3.gz
+  /usr/share/man/man3/getdns_root_trust_anchor.3.gz
+  /usr/share/man/man3/getdns_service.3.gz
+  /usr/share/man/man3/getdns_service_sync.3.gz
+  /usr/share/man/man3/getdns_validate_dnssec.3.gz
+  /usr/share/man/man3/libgetdns.3.gz
+
+------------------
+
+Port Notes:
+
+----- version 1.7.3-1bl1 -----
+Version bump.
+
+----- version 1.7.2-1bl1 -----
+Version bump.
+
+----- version 1.7.0-1bl1 -----
+Version bump.
+
+----- version 1.6.0-1bl1 -----
+Version bump.
+
+----- version 1.5.2-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

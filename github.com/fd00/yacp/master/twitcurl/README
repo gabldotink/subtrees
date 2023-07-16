@@ -1,0 +1,70 @@
+twitcurl
+------------------------------------------
+twitcurl is a pure C++ library for twitter APIs. twitcurl uses cURL library
+for handling HTTP requests and responses.
+
+Runtime requirements:
+  cygwin-1.7.33-1
+  libcurl4-7.39.0-1
+  libgcc1-4.9.2-1
+  libstdc++6-4.9.2-1
+  libtwitcurl0-0+svn129-1bl1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.25-1
+  cmake-2.8.12.2-3
+  cygport-0.17.1-1
+  gcc-core-4.9.2-1
+  gcc-g++-4.9.2-1
+  make-4.0-2
+
+Canonical website:
+  http://code.google.com/p/twitcurl/
+
+Canonical download:
+  http://twitcurl.googlecode.com/svn/trunk/libtwitcurl
+
+-------------------------------------------
+
+Build instructions:
+  unpack twitcurl-0+svn129-X-src.tar.xz
+    if you use setup to install this src package, it will be
+        unpacked under /usr/src automatically
+  cd /usr/src
+  cygport ./twitcurl-0+svn129-X.cygport all
+
+This will create:
+  /usr/src/twitcurl-0+svn129-X-src.tar.xz
+  /usr/src/twitcurl-0+svn129-X.tar.xz
+  /usr/src/libtwitcurl0-0+svn129-X.tar.xz
+  /usr/src/libtwitcurl-devel-0+svn129-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(twitcurl)
+  /usr/share/doc/Cygwin/twitcurl.README
+  /usr/share/doc/twitcurl/COPYING
+
+(libtwitcurl0)
+  /usr/bin/cygtwitcurl-0.dll
+
+(libtwitcurl-devel)
+  /usr/include/libtwitcurl/oauthlib.h
+  /usr/include/libtwitcurl/twitcurl.h
+  /usr/lib/libtwitcurl.dll.a
+
+------------------
+
+Port Notes:
+
+----- version 0+svn129-1bl1 -----
+Version bump.
+
+----- version 0+svn93-1bl1 -----
+Version bump.
+
+----- version 0+svn88-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

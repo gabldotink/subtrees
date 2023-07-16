@@ -1,0 +1,98 @@
+lrslib
+------------------------------------------
+lrslib is a self-contained ANSI C implementation as a callable library
+of the reverse search algorithm for vertex enumeration/convex hull
+problems and comes with a choice of three arithmetic packages.  Input
+file formats are compatible with Komei Fukuda's cdd package (cddlib).
+All computations are done exactly in either multiple precision or fixed
+integer arithmetic.  Output is not stored in memory, so even problems
+with very large output sizes can sometimes be solved.
+
+Runtime requirements:
+  cygwin-1.7.33-1
+  libboost_system1.55-1.55.0-1
+  libboost_thread1.55-1.55.0-1
+  libgcc1-4.9.2-1
+  libgmp10-6.0.0a-1
+  liblrslib5-5.0-1bl1
+  libstdc++6-4.9.2-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-9-1
+  binutils-2.24.51-6
+  boost.m4-0.4-1bl2
+  cygport-0.17.0-1
+  gcc-core-4.9.2-1
+  gcc-g++-4.9.2-1
+  libtool-2.4.2-5
+  make-4.0-2
+
+Canonical website:
+  http://cgm.cs.mcgill.ca/~avis/C/lrs.html
+
+Canonical download:
+  http://cgm.cs.mcgill.ca/~avis/C/lrslib/lrslib-050.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  unpack lrslib-5.0-X-src.tar.xz
+    if you use setup to install this src package, it will be
+        unpacked under /usr/src automatically
+  cd /usr/src
+  cygport ./lrslib-5.0-X.cygport all
+
+This will create:
+  /usr/src/lrslib-5.0-X-src.tar.xz
+  /usr/src/lrslib-5.0-X.tar.xz
+  /usr/src/liblrslib5-5.0-X.tar.xz
+  /usr/src/liblrslib-devel-5.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(lrslib)
+  /usr/bin/lrs.exe
+  /usr/bin/lrs_2nash.exe
+  /usr/bin/lrs_float2rat.exe
+  /usr/bin/lrs_fourier.exe
+  /usr/bin/lrs_nash.exe
+  /usr/bin/lrs_rat2float.exe
+  /usr/bin/lrs_redund.exe
+  /usr/bin/lrs_setupnash.exe
+  /usr/bin/lrs_setupnash2.exe
+  /usr/bin/plrs.exe
+  /usr/share/doc/Cygwin/lrslib.README
+  /usr/share/doc/lrslib/COPYING
+  /usr/share/doc/lrslib/README
+
+(liblrslib5)
+  /usr/bin/cyglrsgmp-5.dll
+  /usr/bin/cyglrslong-5.dll
+  /usr/bin/cyglrsmp-5.dll
+
+(liblrslib-devel)
+  /usr/include/lrslib/lrsgmp.h
+  /usr/include/lrslib/lrslib.h
+  /usr/include/lrslib/lrslong.h
+  /usr/include/lrslib/lrsmp.h
+  /usr/lib/liblrsgmp.dll.a
+  /usr/lib/liblrslong.dll.a
+  /usr/lib/liblrsmp.dll.a
+
+------------------
+
+Port Notes:
+
+----- version 5.0-1bl1 -----
+Version bump.
+
+----- version 4.3-1bl1 -----
+Version bump.
+
+----- version 4.2c-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>
+

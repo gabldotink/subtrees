@@ -1,0 +1,38 @@
+HOMEPAGE="https://github.com/gentoo/${PN}"
+SRC_URI="https://github.com/gentoo/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Utils"
+SUMMARY="Small and fast portage helper tools written in C"
+DESCRIPTION="Portage-utils is a collection of very fast utilities written in C, which are
+meant to offer a faster but more limited alternative to their gentoolkit
+counterparts. Please note that portage-utils is not meant to replace
+gentoolkit. Its utilities are much more efficient than the equivalent ones
+from gentoolkit and might be better suited to be used in scripts that need to
+call Portage repeatedly, but portage-utils does not offer the same
+functionalities. It does not consider eclasses at all and does not provide
+tools like revdep-rebuild and glsa-check."
+
+BUILD_REQUIRES="libb2-devel libgpgme-devel libssl-devel zlib-devel"
+
+CYGCONF_ARGS="
+	--enable-maintainer-mode
+"
+
+CYGPORT_USE_UNSTABLE_API=1
+src_patch_hook()
+{
+	cd ${origsrcdir}/${SRC_DIR}
+	sed -i -e "s/\[git\]/\[${PV}\]/" configure.ac
+}
+
+src_test()
+{
+	cd ${B}
+	pushd tests/atom_explode
+		ln -fs ${S}/tests/atom_explode/ebuildlist.xz .
+		ln -fs ${S}/tests/atom_explode/portageatoms.xz .
+	popd
+	cygmake check
+	rm -f tests/atom_explode/ebuildlist.xz
+	rm -f tests/atom_explode/portageatoms.xz
+}

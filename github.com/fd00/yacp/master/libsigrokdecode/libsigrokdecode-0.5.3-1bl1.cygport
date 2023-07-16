@@ -1,0 +1,32 @@
+HOMEPAGE="https://sigrok.org/wiki/Libsigrokdecode"
+SRC_URI="https://sigrok.org/download/source/${PN}/${P}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Basic API for running protocol decoders"
+DESCRIPTION="libsigrokdecode is a shared library written in C, which provides (streaming)
+protocol decoding functionality."
+
+LICENSE="GPL-3.0-only"
+LICENSE_SPDX="SPDX-License-Identifier: GPL-3.0-only"
+LICENSE_URI="COPYING"
+
+BUILD_REQUIRES="libglib2.0-devel python38-devel"
+
+PKG_NAMES="
+	${PN}
+	${PN}4
+	${PN}-devel
+"
+libsigrokdecode_CONTENTS="
+	usr/share
+"
+libsigrokdecode4_CONTENTS="
+	usr/bin
+"
+libsigrokdecode_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+libsigrokdecode_SUMMARY="${SUMMARY} (licensing & readmes)"
+libsigrokdecode4_SUMMARY="${SUMMARY} (runtime)"
+libsigrokdecode_devel_SUMMARY="${SUMMARY} (development)"

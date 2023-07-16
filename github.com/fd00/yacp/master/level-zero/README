@@ -1,0 +1,119 @@
+level-zero
+------------------------------------------
+oneAPI Level Zero Specification Headers and Loader
+
+Runtime requirements:
+  cygwin-3.4.6-1
+  libgcc1-11.3.0-1
+  liblevel-zero-devel-1.11.0-1bl1
+  liblevel-zero1-1.11.0-1bl1
+  libstdc++6-11.3.0-1
+  pkg-config-1.9.5-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.40-1
+  cmake-3.23.2-1
+  cygport-0.36.4-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  ninja-1.11.1-1
+
+Canonical website:
+  https://github.com/oneapi-src/level-zero
+
+Canonical download:
+  https://github.com/oneapi-src/level-zero/archive/refs/tags/v1.11.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack level-zero-1.11.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./level-zero-1.11.0-X.cygport all
+
+This will create:
+  /usr/src/level-zero-1.11.0-X-src.tar.xz
+  /usr/src/level-zero-1.11.0-X.tar.xz
+  /usr/src/liblevel-zero1-1.11.0-X.tar.xz
+  /usr/src/liblevel-zero-devel-1.11.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(level-zero)
+  /usr/share/doc/Cygwin/level-zero.README
+  /usr/share/doc/level-zero/CHANGELOG.md
+  /usr/share/doc/level-zero/CONTRIBUTING.md
+  /usr/share/doc/level-zero/LICENSE
+  /usr/share/doc/level-zero/README.md
+  /usr/share/doc/level-zero/SECURITY.md
+  /usr/share/doc/level-zero/loader_api.md
+
+(liblevel-zero1)
+  /usr/bin/cygze_loader-1.dll
+  /usr/bin/cygze_tracing_layer-1.dll
+  /usr/bin/cygze_validation_layer-1.dll
+
+(liblevel-zero-devel)
+  /usr/include/level_zero/layers/zel_tracing_api.h
+  /usr/include/level_zero/layers/zel_tracing_ddi.h
+  /usr/include/level_zero/layers/zel_tracing_register_cb.h
+  /usr/include/level_zero/loader/ze_loader.h
+  /usr/include/level_zero/ze_api.h
+  /usr/include/level_zero/ze_ddi.h
+  /usr/include/level_zero/zes_api.h
+  /usr/include/level_zero/zes_ddi.h
+  /usr/include/level_zero/zet_api.h
+  /usr/include/level_zero/zet_ddi.h
+  /usr/lib/libze_loader.dll.a
+  /usr/lib/libze_tracing_layer.dll.a
+  /usr/lib/libze_validation_layer.dll.a
+  /usr/lib/pkgconfig/level-zero.pc
+  /usr/lib/pkgconfig/libze_loader.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.11.0-1bl1 -----
+Version bump.
+
+----- version 1.9.9-1bl1 -----
+Version bump.
+
+----- version 1.9.4-1bl1 -----
+Version bump.
+
+----- version 1.8.12-1bl1 -----
+Version bump.
+
+----- version 1.8.5-1bl1 -----
+Version bump.
+
+----- version 1.8.1-1bl1 -----
+Version bump.
+
+----- version 1.7.9-1bl1 -----
+Version bump.
+
+----- version 1.5.4-1bl1 -----
+Version bump.
+
+----- version 1.4.1-1bl1 -----
+Version bump.
+
+----- version 1.3.6-1bl1 -----
+Version bump.
+
+----- version 1.2.3-1bl1 -----
+Version bump.
+
+----- version 1.1.0-1bl1 -----
+Version bump.
+
+----- version 1.0.22-1bl1 -----
+Version bump.

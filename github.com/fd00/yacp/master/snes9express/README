@@ -1,0 +1,71 @@
+snes9express
+------------------------------------------
+Snes9express is a graphical interface for the X11 versions of snes9x, featuring
+an organized layout of common snes9x options.
+
+Runtime requirements:
+  cygwin-3.1.6-1
+  libgcc1-9.3.0-2
+  libgdk_pixbuf2.0_0-2.36.11-1
+  libglib2.0_0-2.54.3-1
+  libgtk2.0_0-2.24.32-1
+  libpango1.0_0-1.40.14-1
+  libstdc++6-9.3.0-2
+  zlib0-1.2.11-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.34+1git.de9c1b7cfe-1
+  cygport-0.34.0-1
+  gcc-core-9.3.0-2
+  gcc-g++-9.3.0-2
+  make-4.3-1
+
+Canonical website:
+  http://snes9express.sourceforge.net/
+
+Canonical download:
+  mirror://sourceforge/snes9express/snes9express-1.43.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack snes9express-1.43-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./snes9express-1.43-X.cygport all
+
+This will create:
+  /usr/src/snes9express-1.43-X-src.tar.xz
+  /usr/src/snes9express-1.43-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(snes9express)
+  /usr/bin/snes9express.exe
+  /usr/share/doc/Cygwin/snes9express.README
+  /usr/share/doc/snes9express/AUTHORS
+  /usr/share/doc/snes9express/COPYING
+  /usr/share/doc/snes9express/ChangeLog
+  /usr/share/doc/snes9express/NEWS
+  /usr/share/doc/snes9express/README
+  /usr/share/snes9express/snes.s9xskin
+  /usr/share/snes9express/snsp.s9xskin
+
+------------------
+
+Port Notes:
+
+----- version 1.43-1bl3 -----
+Rebuild with gcc-9.3.0
+
+----- version 1.43-1bl2 -----
+Rebuild on x86_64
+
+----- version 1.43-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

@@ -1,0 +1,13 @@
+--- origsrc/c-blosc-1.21.3/tests/fuzz/CMakeLists.txt	2022-12-16 01:35:44.000000000 +0900
++++ src/c-blosc-1.21.3/tests/fuzz/CMakeLists.txt	2023-01-16 23:24:25.021902700 +0900
+@@ -52,8 +52,8 @@ foreach(source ${SOURCES})
+         target_link_libraries(${target} ${FUZZING_ENGINE})
+     endif()
+ 
+-    target_link_libraries(${target} blosc_static)
+-    add_dependencies(${target} blosc_static)
++    target_link_libraries(${target} blosc)
++    add_dependencies(${target} blosc)
+ 
+     # run standalone fuzzer against each file
+     file(GLOB COMPAT_FILES ${PROJECT_SOURCE_DIR}/compat/*.cdata)

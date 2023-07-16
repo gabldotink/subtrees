@@ -1,0 +1,34 @@
+HOMEPAGE="http://www.nongnu.org/maitretarot/"
+SRC_URI="mirror://savannah/maitretarot/${P}.tar.bz2"
+
+CATEGORY="Libs"
+SUMMARY="Backend library for the maitretarot games"
+DESCRIPTION="${SUMMARY}"
+
+CYGPORT_USE_UNSTABLE_API=1
+src_patch_hook()
+{
+	cd ${origsrcdir}/${SRC_DIR}
+	rm -f aclocal.m4 configure
+	find . -name Makefile.in | xargs rm -f
+}
+
+PKG_NAMES="
+	${PN}
+	${PN}0
+	${PN}-devel
+"
+libmaitretarot_CONTENTS="
+	usr/share
+"
+libmaitretarot0_CONTENTS="
+	usr/bin
+"
+libmaitretarot_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+
+libmaitretarot_SUMMARY="${SUMMARY} (licensing & readmes)"
+libmaitretarot0_SUMMARY="${SUMMARY} (runtime)"
+libmaitretarot_devel_SUMMARY="${SUMMARY} (development)"

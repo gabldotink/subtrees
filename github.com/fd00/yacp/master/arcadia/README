@@ -1,0 +1,60 @@
+arcadia
+------------------------------------------
+Implementation of the Arc programming language
+
+Runtime requirements:
+  cygwin-3.2.0-1
+  libreadline7-7.0.3-3
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.37-1
+  cmake-3.20.0-1
+  cygport-0.34.0-1
+  gcc-core-11.2.0-1
+  libreadline-devel-7.0.3-3
+  ninja-1.10.2-1
+
+Canonical website:
+  https://github.com/kimtg/arcadia
+
+Canonical download:
+  https://github.com/kimtg/arcadia/archive/v0.25.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack arcadia-0.25-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./arcadia-0.25-X.cygport all
+
+This will create:
+  /usr/src/arcadia-0.25-X-src.tar.xz
+  /usr/src/arcadia-0.25-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(arcadia)
+  /usr/bin/arcadia.exe
+  /usr/share/doc/Cygwin/arcadia.README
+  /usr/share/doc/arcadia/README.md
+
+------------------
+
+Port Notes:
+
+----- version 0.25-1bl1 -----
+Version bump.
+
+----- version 0.22.3-1bl1 -----
+Version bump.
+
+----- version 0.18.5-1bl1 -----
+Version bump.
+
+----- version 0.18.3-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

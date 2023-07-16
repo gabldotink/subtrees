@@ -1,0 +1,64 @@
+HOMEPAGE="https://github.com/airsim/${PN}"
+SRC_URI="https://github.com/airsim/${PN}/archive/refs/tags/${P}.tar.gz"
+SRC_DIR="${PN}-${P}"
+
+CATEGORY="Libs"
+SUMMARY="C++ Simulation Travel Demand Generation Library"
+DESCRIPTION="TraDemGen aims at providing a clean API, and the corresponding C++
+implementation, able to generate demand for travel solutions (e.g., from JFK
+to PEK on 25-05-2009) according to characteristics (e.g., Willingness-To-Pay,
+preferred airline, etc)."
+
+LICENSE="LGPL-2.1-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: LGPL-2.1-or-later"
+LICENSE_URI="COPYING"
+
+BUILD_REQUIRES="libboost-devel libreadline-devel libstdair-devel libsoci_core-devel python39-devel"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DINSTALL_DOC:BOOL=OFF
+"
+
+src_test()
+{
+	cd ${B}
+	PATH=${B}/${PN}:${PATH} ninja_test
+}
+
+PKG_NAMES="
+	${PN}
+	lib${PN}1.00
+	lib${PN}-devel
+	python39-${PN}
+"
+trademgen_CONTENTS="
+	usr/bin/${PN}.exe
+	usr/bin/${PN}_*
+	usr/share/doc/Cygwin
+	usr/share/doc/${PN}/[ACNR]*
+	usr/share/man/man1/py${PN}.1*
+	usr/share/man/man1/${PN}.1*
+	usr/share/man/man1/${PN}_*.1*
+"
+libtrademgen1_00_CONTENTS="
+	usr/bin/*.dll
+"
+libtrademgen_devel_CONTENTS="
+	usr/bin/${PN}-config
+	usr/include
+	usr/lib/cmake
+	usr/lib/lib${PN}*
+	usr/lib/pkgconfig
+	usr/share/aclocal
+	usr/share/man/man1/${PN}-config.1*
+	usr/share/man/man3
+"
+python39_trademgen_CONTENTS="
+	usr/lib/python*
+"
+trademgen_SUMMARY="${SUMMARY} (utilities)"
+libtrademgen1_00_SUMMARY="${SUMMARY} (runtime)"
+libtrademgen_devel_SUMMARY="${SUMMARY} (development)"
+python39_trademgen_SUMMARY="${SUMMARY} (python39 bindings)"

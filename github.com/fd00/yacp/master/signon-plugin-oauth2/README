@@ -1,0 +1,68 @@
+signon-plugin-oauth2
+------------------------------------------
+This plugin for the Accounts-SSO SignOn daemon handles the OAuth 1.0 and 2.0
+authentication protocols.
+
+Runtime requirements:
+  cygwin-3.1.7-1
+  libQt5Core5-5.9.4-2
+  libsignond-devel-8.60-1bl2
+  libsignond1-8.60-1bl2
+  libstdc++6-10.2.0-1
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.34+1git.de9c1b7cfe-1
+  cygport-0.34.0-1
+  gcc-core-10.2.0-1
+  gcc-g++-10.2.0-1
+  libQt5Core-devel-5.9.4-2
+  make-4.3-1
+
+Canonical website:
+  https://gitlab.com/accounts-sso/signon-plugin-oauth2
+
+Canonical download:
+  https://gitlab.com/accounts-sso/signon-plugin-oauth2/-/archive/VERSION_0.25/signon-plugin-oauth2-VERSION_0.25.tar.bz2
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack signon-plugin-oauth2-0.25-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./signon-plugin-oauth2-0.25-X.cygport all
+
+This will create:
+  /usr/src/signon-plugin-oauth2-0.25-X-src.tar.xz
+  /usr/src/signon-plugin-oauth2-0.25-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(signon-plugin-oauth2)
+  /usr/bin/signon-oauth2plugin-tests.exe
+  /usr/include/signon-plugins/oauth1data.h
+  /usr/include/signon-plugins/oauth2data.h
+  /usr/lib/pkgconfig/signon-oauth2plugin.pc
+  /usr/lib/signon/cygoauth2plugin.dll
+  /usr/share/doc/Cygwin/signon-plugin-oauth2.README
+  /usr/share/doc/signon-plugin-oauth2/COPYING
+  /usr/share/doc/signon-plugin-oauth2/README.md
+  /usr/share/signon-oauth2plugin-tests/tests.xml
+
+------------------
+
+Port Notes:
+
+----- version 0.25-1bl1 -----
+Version bump.
+
+----- version 0.24-1bl1 -----
+Version bump.
+
+----- version 0.19-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

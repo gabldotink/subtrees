@@ -1,0 +1,92 @@
+aces_container
+------------------------------------------
+This folder contains a reference implementation for an ACES container file
+writer intended to be used with the Academy Color Encoding System (ACES). The
+resulting file is compliant with the ACES container specification (SMPTE
+S2065-4). However, there are a few things that are not demonstrated by this
+reference implementation.
+
+Runtime requirements:
+  cygwin-3.1.7-1
+  libAcesContainer0-1.0.2-1bl2
+  libgcc1-9.3.0-2
+  libstdc++6-9.3.0-2
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.34+1git.de9c1b7cfe-1
+  cmake-3.17.3-2
+  cygport-0.34.0-1
+  gcc-core-9.3.0-2
+  gcc-g++-9.3.0-2
+  ninja-1.10.1-1
+
+Canonical website:
+  https://github.com/ampas/aces_container
+
+Canonical download:
+  https://github.com/ampas/aces_container/archive/v1.0.2.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack aces_container-1.0.2-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./aces_container-1.0.2-X.cygport all
+
+This will create:
+  /usr/src/aces_container-1.0.2-X-src.tar.xz
+  /usr/src/aces_container-1.0.2-X.tar.xz
+  /usr/src/libAcesContainer0-1.0.2-X.tar.xz
+  /usr/src/libAcesContainer-devel-1.0.2-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(aces_container)
+  /usr/share/doc/Cygwin/aces_container.README
+  /usr/share/doc/aces_container/LICENSE
+  /usr/share/doc/aces_container/README.md
+
+(libAcesContainer0)
+  /usr/bin/cygAcesContainer-0.dll
+
+(libAcesContainer-devel)
+  /usr/include/aces/aces_Writer.h
+  /usr/include/aces/aces_attributestructs.h
+  /usr/include/aces/aces_errors.h
+  /usr/include/aces/aces_formatter.h
+  /usr/include/aces/aces_genericWriter.h
+  /usr/include/aces/aces_iostat.h
+  /usr/include/aces/aces_items.h
+  /usr/include/aces/aces_log.h
+  /usr/include/aces/aces_timing.h
+  /usr/include/aces/aces_types.h
+  /usr/include/aces/aces_typesAndRationals.h
+  /usr/include/aces/aces_writeattributes.h
+  /usr/lib/CMake/AcesContainer/AcesContainerConfig.cmake
+  /usr/lib/CMake/AcesContainer/AcesContainerConfigVersion.cmake
+  /usr/lib/CMake/AcesContainer/AcesContainerTargets-release.cmake
+  /usr/lib/CMake/AcesContainer/AcesContainerTargets.cmake
+  /usr/lib/libAcesContainer.dll.a
+  /usr/lib/pkgconfig/AcesContainer.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.0.2-1bl2 -----
+Rebuild with gcc-9.3.0
+
+----- version 1.0.2-1bl1 -----
+Version bump.
+
+----- version 1.0.1-1bl1 -----
+Version bump.
+
+----- version 1.0-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

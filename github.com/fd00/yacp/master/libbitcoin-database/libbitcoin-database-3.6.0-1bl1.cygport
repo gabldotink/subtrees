@@ -1,0 +1,28 @@
+HOMEPAGE="https://github.com/libbitcoin/${PN}"
+SRC_URI="https://github.com/libbitcoin/${PN}/archive/v${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Bitcoin High Performance Blockchain Database"
+DESCRIPTION="${SUMMARY}"
+
+export CPPFLAGS="${CPPFLAGS} -DBCD_STATIC"
+export CXXFLAGS="-O3"
+
+PKG_NAMES="
+	${PN}
+	${PN}0
+	${PN}-devel
+"
+libbitcoin_database_CONTENTS="
+	usr/share
+"
+libbitcoin_database0_CONTENTS="
+	usr/bin
+"
+libbitcoin_database_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+libbitcoin_database_SUMMARY="${SUMMARY} (licensing & readmes)"
+libbitcoin_database0_SUMMARY="${SUMMARY} (runtime)"
+libbitcoin_database_devel_SUMMARY="${SUMMARY} (development)"

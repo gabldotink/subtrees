@@ -1,0 +1,15 @@
+HOMEPAGE="https://${PN}.hepforge.org/"
+SRC_URI="https://${PN}.hepforge.org/download/${P}.tar.gz"
+
+CATEGORY="Science"
+SUMMARY="Program for reducing Feynman integrals"
+DESCRIPTION="Reduze is a computer program for reducing Feynman integrals to master integrals
+employing a variant of Laporta's reduction algorithm."
+
+BUILD_REQUIRES="libginac-devel"
+
+inherit cmake
+
+DOCS="
+	GPL-3.0.txt
+"

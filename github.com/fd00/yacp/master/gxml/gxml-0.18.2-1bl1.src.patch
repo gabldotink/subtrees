@@ -1,0 +1,11 @@
+--- origsrc/gxml-0.18.2/gxml/Makefile.am	2020-08-12 04:25:04.516694300 +0900
++++ src/gxml-0.18.2/gxml/Makefile.am	2020-12-06 15:48:27.989098800 +0900
+@@ -169,7 +169,7 @@ libgxml_0_16_la_LIBADD = \
+ 	$(VALA_LIBS) \
+ 	$(NULL)
+ 
+-libgxml_0_16_la_LDFLAGS = \
++libgxml_0_16_la_LDFLAGS = -no-undefined \
+ 	-version-info "$(LT_CURRENT)":"$(LT_REVISION)":"$(LT_AGE)"
+ 
+ vala-stamp: $(sources)

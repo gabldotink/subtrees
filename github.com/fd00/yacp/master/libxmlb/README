@@ -1,0 +1,152 @@
+libxmlb
+------------------------------------------
+Library to help create and query binary XML blobs
+
+Runtime requirements:
+  cygwin-3.4.6-1
+  girepository-GLib2.0-1.54.1-4
+  libglib2.0-devel-2.54.3-1
+  libglib2.0_0-2.54.3-1
+  liblzma-devel-5.4.2-1
+  liblzma5-5.4.2-1
+  libxmlb-devel-0.3.11-1bl1
+  libxmlb2-0.3.11-1bl1
+  libzstd-devel-1.5.4-1
+  libzstd1-1.5.4-1
+  pkg-config-1.9.4-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.40-1
+  cygport-0.36.1-1
+  gcc-core-11.3.0-1
+  gobject-introspection-1.54.1-4
+  libglib2.0-devel-2.54.3-1
+  liblzma-devel-5.4.2-1
+  libzstd-devel-1.5.4-1
+  meson-0.63.3-1
+  ninja-1.11.1-1
+
+Canonical website:
+  https://github.com/hughsie/libxmlb
+
+Canonical download:
+  https://github.com/hughsie/libxmlb/archive/refs/tags/0.3.11.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libxmlb-0.3.11-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libxmlb-0.3.11-X.cygport all
+
+This will create:
+  /usr/src/libxmlb-0.3.11-X-src.tar.xz
+  /usr/src/libxmlb-0.3.11-X.tar.xz
+  /usr/src/libxmlb2-0.3.11-X.tar.xz
+  /usr/src/libxmlb-devel-0.3.11-X.tar.xz
+  /usr/src/girepository-Xmlb2.0-0.3.11-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libxmlb)
+  /usr/bin/xb-tool.exe
+  /usr/share/doc/Cygwin/libxmlb.README
+  /usr/share/doc/libxmlb/LICENSE
+  /usr/share/doc/libxmlb/MAINTAINERS
+  /usr/share/doc/libxmlb/NEWS
+  /usr/share/doc/libxmlb/README.md
+  /usr/share/man/man1/xb-tool.1.gz
+
+(libxmlb2)
+  /usr/bin/cygxmlb-2.dll
+
+(libxmlb-devel)
+  /usr/include/libxmlb-2/libxmlb/xb-builder-fixup.h
+  /usr/include/libxmlb-2/libxmlb/xb-builder-node.h
+  /usr/include/libxmlb-2/libxmlb/xb-builder-source-ctx.h
+  /usr/include/libxmlb-2/libxmlb/xb-builder-source.h
+  /usr/include/libxmlb-2/libxmlb/xb-builder.h
+  /usr/include/libxmlb-2/libxmlb/xb-machine.h
+  /usr/include/libxmlb-2/libxmlb/xb-node-query.h
+  /usr/include/libxmlb-2/libxmlb/xb-node-silo.h
+  /usr/include/libxmlb-2/libxmlb/xb-node.h
+  /usr/include/libxmlb-2/libxmlb/xb-opcode.h
+  /usr/include/libxmlb-2/libxmlb/xb-query-context.h
+  /usr/include/libxmlb-2/libxmlb/xb-query.h
+  /usr/include/libxmlb-2/libxmlb/xb-silo-export.h
+  /usr/include/libxmlb-2/libxmlb/xb-silo-query.h
+  /usr/include/libxmlb-2/libxmlb/xb-silo.h
+  /usr/include/libxmlb-2/libxmlb/xb-stack.h
+  /usr/include/libxmlb-2/libxmlb/xb-string.h
+  /usr/include/libxmlb-2/libxmlb/xb-value-bindings.h
+  /usr/include/libxmlb-2/libxmlb/xb-version.h
+  /usr/include/libxmlb-2/xmlb.h
+  /usr/lib/libxmlb.dll.a
+  /usr/lib/pkgconfig/xmlb.pc
+  /usr/libexec/installed-tests/libxmlb/test.xml.gz.gz.gz
+  /usr/libexec/installed-tests/libxmlb/xb-self-test.exe
+  /usr/share/installed-tests/libxmlb/libxmlb.test
+
+(girepository-Xmlb2.0)
+  /usr/lib/girepository-1.0/Xmlb-2.0.typelib
+  /usr/share/gir-1.0/Xmlb-2.0.gir
+
+------------------
+
+Port Notes:
+
+----- version 0.3.11-1bl1 -----
+Version bump.
+
+----- version 0.3.10-1bl1 -----
+Version bump.
+
+----- version 0.3.9-1bl1 -----
+Version bump.
+
+----- version 0.3.7-1bl1 -----
+Version bump.
+
+----- version 0.3.6-1bl1 -----
+Version bump.
+
+----- version 0.3.3-1bl1 -----
+Version bump.
+
+----- version 0.3.2-1bl1 -----
+Version bump.
+
+----- version 0.2.1-1bl1 -----
+Version bump.
+
+----- version 0.2.0-1bl1 -----
+Version bump.
+
+----- version 0.1.15-1bl1 -----
+Version bump.
+
+----- version 0.1.14-1bl1 -----
+Version bump.
+
+----- version 0.1.12-1bl1 -----
+Version bump.
+
+----- version 0.1.11-1bl1 -----
+Version bump.
+
+----- version 0.1.10-1bl1 -----
+Version bump.
+
+----- version 0.1.8-1bl1 -----
+Version bump.
+
+----- version 0.1.6-1bl1 -----
+Version bump.
+
+----- version 0.1.5-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

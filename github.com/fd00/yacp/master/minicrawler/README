@@ -1,0 +1,106 @@
+minicrawler
+------------------------------------------
+Minicrawler parses URLs, executes HTTP (HTTP/2) requests while handling
+cookies, network connection management and SSL/TLS protocols. By default it
+follows redirect locations and returns a full response, final URL, parsed
+cookied and more. It is designed to handle many request in parallel in a single
+thread. It multiplexes connections, running the read/write communication
+asynchronously.
+
+Runtime requirements:
+  cygwin-3.4.6-1
+  libcares2-1.14.0-1
+  libgcc1-11.3.0-1
+  libiconv2-1.17-1
+  libicu72-72.1-1
+  libminicrawler-url5-devel-5.2.4-1bl1
+  libminicrawler-url5_5-5.2.4-1bl1
+  libminicrawler5-devel-5.2.4-1bl1
+  libminicrawler5_5-5.2.4-1bl1
+  libnghttp2_14-1.52.0-1
+  libssl1.1-1.1.1t-1
+  libstdc++6-11.3.0-1
+  pkg-config-1.9.4-1
+  zlib0-1.2.13-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.40-1
+  cygport-0.36.1-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libcares-devel-1.14.0-1
+  libiconv-devel-1.17-1
+  libicu-devel-72.1-1
+  libnghttp2-devel-1.52.0-1
+  libssl-devel-1.1.1t-1
+  libtool-2.4.7-1
+  make-4.4.1-1
+  zlib-devel-1.2.13-1
+
+Canonical website:
+  https://github.com/testomato/minicrawler
+
+Canonical download:
+  https://github.com/testomato/minicrawler/archive/refs/tags/v5.2.4.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack minicrawler-5.2.4-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./minicrawler-5.2.4-X.cygport all
+
+This will create:
+  /usr/src/minicrawler-5.2.4-X-src.tar.xz
+  /usr/src/minicrawler-5.2.4-X.tar.xz
+  /usr/src/libminicrawler5_5-5.2.4-X.tar.xz
+  /usr/src/libminicrawler5-devel-5.2.4-X.tar.xz
+  /usr/src/libminicrawler-url5_5-5.2.4-X.tar.xz
+  /usr/src/libminicrawler-url5-devel-5.2.4-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(minicrawler)
+  /usr/bin/minicrawler5.exe
+  /usr/share/doc/Cygwin/minicrawler.README
+  /usr/share/doc/minicrawler/LICENSE.txt
+  /usr/share/doc/minicrawler/README.md
+
+(libminicrawler5_5)
+  /usr/bin/cygminicrawler-5-5.dll
+
+(libminicrawler5-devel)
+  /usr/include/libminicrawler-5/minicrawler/minicrawler.h
+  /usr/lib/libminicrawler-5.dll.a
+  /usr/lib/pkgconfig/libminicrawler-5.pc
+
+(libminicrawler-url5_5)
+  /usr/bin/cygminicrawler-url-5-5.dll
+
+(libminicrawler-url5-devel)
+  /usr/include/libminicrawler-5/minicrawler/minicrawler-url.h
+  /usr/lib/libminicrawler-url-5.dll.a
+  /usr/lib/pkgconfig/libminicrawler-url-5.pc
+
+------------------
+
+Port Notes:
+
+----- version 5.2.4-1bl1 -----
+Version bump.
+
+----- version 5.1.4-1bl1 -----
+Version bump.
+
+----- version 5.1.1-1bl1 -----
+Version bump.
+
+----- version 3.0.1-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

@@ -1,0 +1,37 @@
+HOMEPAGE="https://github.com/yandex/${PN}"
+SRC_URI="https://github.com/yandex/${PN}/archive/${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="C++ library for collecting user-defined in-process runtime statistics with low overhead"
+DESCRIPTION="Handystats is C++ library for collecting user-defined in-process runtime
+statistics with low overhead."
+
+export CPPFLAGS="${CPPFLAGS} -D_GNU_SOURCE"
+export CXXFLAGS="${CXXFLAGS} -fpermissive"
+
+inherit cmake
+
+src_test()
+{
+	cd ${B}
+	PATH=${B}:${PATH} cygninja check
+}
+
+PKG_NAMES="
+	${PN}
+	lib${PN}1
+	lib${PN}-devel
+"
+handystats_CONTENTS="
+	usr/share
+"
+libhandystats1_CONTENTS="
+	usr/bin
+"
+libhandystats_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+handystats_SUMMARY="${SUMMARY} (licensing & readmes)"
+libhandystats1_SUMMARY="${SUMMARY} (runtime)"
+libhandystats_devel_SUMMARY="${SUMMARY} (development)"

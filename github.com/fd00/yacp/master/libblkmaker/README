@@ -1,0 +1,87 @@
+libblkmaker
+------------------------------------------
+C implementation of getblocktemplate (BIP 22)
+
+Runtime requirements:
+  cygwin-3.0.7-1
+  libbase58-devel-0.1.4-1bl2
+  libbase58_0-0.1.4-1bl2
+  libblkmaker0.1-devel-0.6.0-1bl1
+  libblkmaker0.1_8-0.6.0-1bl1
+  libjansson4-2.12-1
+  pkg-config-1.6.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-10-1
+  binutils-2.29-1
+  cygport-0.33.1-1
+  gcc-core-7.4.0-1
+  libtool-2.4.6-6
+  make-4.2.1-2
+
+Canonical website:
+  https://github.com/bitcoin/libblkmaker
+
+Canonical download:
+  https://github.com/bitcoin/libblkmaker/archive/v0.6.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libblkmaker-0.6.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libblkmaker-0.6.0-X.cygport all
+
+This will create:
+  /usr/src/libblkmaker-0.6.0-X-src.tar.xz
+  /usr/src/libblkmaker-0.6.0-X.tar.xz
+  /usr/src/libblkmaker0.1_8-0.6.0-X.tar.xz
+  /usr/src/libblkmaker0.1-devel-0.6.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libblkmaker)
+  /usr/share/doc/Cygwin/libblkmaker.README
+  /usr/share/doc/libblkmaker/AUTHORS
+  /usr/share/doc/libblkmaker/COPYING
+  /usr/share/doc/libblkmaker/README
+
+(libblkmaker0.1_8)
+  /usr/bin/cygblkmaker-0.1-8.dll
+  /usr/bin/cygblkmaker_jansson-0.1-8.dll
+
+(libblkmaker0.1-devel)
+  /usr/include/libblkmaker-0.1/blkmaker.h
+  /usr/include/libblkmaker-0.1/blkmaker_jansson.h
+  /usr/include/libblkmaker-0.1/blktemplate.h
+  /usr/lib/libblkmaker-0.1.dll.a
+  /usr/lib/libblkmaker_jansson-0.1.dll.a
+  /usr/lib/pkgconfig/libblkmaker_jansson-0.1.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.6.0-1bl1 -----
+Version bump.
+
+----- version 0.5.3-1bl1 -----
+Version bump.
+
+----- version 0.5.2-1bl1 -----
+Version bump.
+
+----- version 0.5.1-1bl1 -----
+Version bump.
+
+----- version 0.4.0-1bl1 -----
+Version bump.
+
+----- version 0.3.2-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

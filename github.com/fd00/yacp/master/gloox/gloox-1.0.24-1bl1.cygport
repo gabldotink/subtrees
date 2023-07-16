@@ -1,0 +1,37 @@
+HOMEPAGE="https://camaya.net/${PN}/"
+SRC_URI="https://camaya.net/download/${P}.tar.bz2"
+
+CATEGORY="Net"
+SUMMARY="Portable high-level Jabber/XMPP library for C++"
+DESCRIPTION="gloox is a rock-solid, full-featured Jabber/XMPP client library, written in
+clean ANSI C++. It makes writing spec-compliant clients easy and allows for
+hassle-free integration of Jabber/XMPP functionality into existing
+applications."
+
+CYGCONF_ARGS="
+	--enable-mdns
+"
+
+DIFF_EXCLUDES="
+	config.h.unix.in
+"
+
+PKG_NAMES="
+	${PN}
+	lib${PN}18
+	lib${PN}-devel
+"
+gloox_CONTENTS="
+	usr/share
+"
+libgloox18_CONTENTS="
+	usr/bin/*.dll
+"
+libgloox_devel_CONTENTS="
+	usr/bin/${PN}-config
+	usr/include
+	usr/lib
+"
+gloox_SUMMARY="${SUMMARY} (licensing & readmes)"
+libgloox18_SUMMARY="${SUMMARY} (runtime)"
+libgloox_devel_SUMMARY="${SUMMARY} (development)"

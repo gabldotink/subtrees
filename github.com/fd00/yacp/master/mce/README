@@ -1,0 +1,55 @@
+mce
+------------------------------------------
+Maemo MCE (Mode Control Entity) definitions
+
+Runtime requirements:
+  pkg-config-1.6.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.29-1
+  cygport-0.33.0-1
+  gcc-core-7.4.0-1
+  make-4.2.1-2
+
+Canonical website:
+  https://github.com/maemo-leste/mce-dev
+
+Canonical download:
+  https://github.com/maemo-leste/mce-dev/archive/1.8.21.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack mce-1.8.21-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./mce-1.8.21-X.cygport all
+
+This will create:
+  /usr/src/mce-1.8.21-X-src.tar.xz
+  /usr/src/mce-1.8.21-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(mce)
+  /usr/include/mce/dbus-names.h
+  /usr/include/mce/mode-names.h
+  /usr/lib/pkgconfig/mce.pc
+  /usr/share/doc/Cygwin/mce.README
+
+------------------
+
+Port Notes:
+
+----- version 1.8.21-1bl1 -----
+Version bump.
+
+----- version 1.8.19-1bl2 -----
+Rebuild on x86_64
+
+----- version 1.8.19-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

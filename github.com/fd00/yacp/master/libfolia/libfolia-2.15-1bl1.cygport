@@ -1,0 +1,51 @@
+HOMEPAGE="https://github.com/LanguageMachines/${PN}"
+SRC_URI="https://github.com/LanguageMachines/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="FoLiA library for C++"
+DESCRIPTION="This is a C++ Library, developed by Ko van der Sloot, for working with the
+Format for Linguistic Annotation (FoLiA). The software is intended for C++
+developers, and provides a high-level API to read, manipulate, and create
+FoLiA documents. This software is a necessary dependency for various other
+tools that use FoLiA."
+
+LICENSE="GPL-3.0-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: GPL-3.0-or-later"
+LICENSE_URI="COPYING"
+
+BUILD_REQUIRES="libicu-devel libticcutils-devel libxml2-devel"
+
+export CPPFLAGS="${CPPFLAGS} -D_GNU_SOURCE"
+
+DIFF_EXCLUDES="
+	*.m4
+"
+
+src_install()
+{
+	cd ${B}
+	cyginstall
+
+	cd ${S}
+	doman docs/*
+}
+
+PKG_NAMES="
+	${PN}
+	${PN}19
+	${PN}-devel
+"
+libfolia_CONTENTS="
+	usr/bin/folia*
+	usr/share
+"
+libfolia19_CONTENTS="
+	usr/bin/*-19.dll
+"
+libfolia_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+libfolia_SUMMARY="${SUMMARY} (utilities)"
+libfolia19_SUMMARY="${SUMMARY} (runtime)"
+libfolia_devel_SUMMARY="${SUMMARY} (development)"

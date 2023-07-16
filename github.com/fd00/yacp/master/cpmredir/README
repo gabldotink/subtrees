@@ -1,0 +1,73 @@
+cpmredir
+------------------------------------------
+CPMREDIR is a library intended to support the filesystem functions of an
+emulated CP/M computer, in a Unix or Windows (mingw32) environment.
+
+Runtime requirements:
+  cygwin-3.1.7-1
+  libcpmredir-devel-1.1.1-1bl4
+  libcpmredir0-1.1.1-1bl4
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.34+1git.de9c1b7cfe-1
+  cygport-0.34.0-1
+  gcc-core-10.2.0-1
+  libtool-2.4.6-7
+  make-4.3-1
+
+Canonical website:
+  https://www.seasip.info/Unix/Zxcc/
+
+Canonical download:
+  http://www.seasip.demon.co.uk/Unix/Zxcc/cpmredir-1.1.1.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack cpmredir-1.1.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./cpmredir-1.1.1-X.cygport all
+
+This will create:
+  /usr/src/cpmredir-1.1.1-X-src.tar.xz
+  /usr/src/cpmredir-1.1.1-X.tar.xz
+  /usr/src/libcpmredir0-1.1.1-X.tar.xz
+  /usr/src/libcpmredir-devel-1.1.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(cpmredir)
+  /usr/share/doc/Cygwin/cpmredir.README
+  /usr/share/doc/cpmredir/README
+
+(libcpmredir0)
+  /usr/bin/cygcpmredir-0.dll
+
+(libcpmredir-devel)
+  /usr/include/cpmredir.h
+  /usr/lib/libcpmredir.dll.a
+  /usr/lib/pkgconfig/cpmredir.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.1.1-1bl4 -----
+Rebuild with gcc-10.2.0
+
+----- version 1.1.1-1bl3 -----
+Rebuild with gcc-6.4.0
+
+----- version 1.1.1-1bl2 -----
+Rebuild on x86_64
+
+----- version 1.1.1-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

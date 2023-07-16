@@ -1,0 +1,136 @@
+xraylib
+------------------------------------------
+This is xraylib, a library for X-ray matter interactions cross sections for
+X-ray fluorescence applications: core C library
+
+Runtime requirements:
+  cygwin-3.3.5-1
+  libgfortran5-11.3.0-1
+  liblua5.3-5.3.6-4
+  libxrl-devel-4.1.2-1bl1
+  libxrl11-4.1.2-1bl1
+  libxrlf03-devel-4.1.2-1bl1
+  libxrlf03_11-4.1.2-1bl1
+  perl5_032
+  perl_base-5.32.1-2
+  pkg-config-1.8.0-1
+  ruby-2.6.4-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.38-1
+  cygport-0.35.1-1
+  gcc-core-11.3.0-1
+  gcc-fortran-11.3.0-1
+  gcc-g++-11.3.0-1
+  liblua-devel-5.3.6-4
+  libtool-2.4.7-1
+  lua-5.3.6-4
+  make-4.3-1
+  perl-5.32.1-2
+  python39-devel-3.9.10-1
+  ruby-devel-2.6.4-1
+
+Canonical website:
+  https://github.com/tschoonj/xraylib
+
+Canonical download:
+  https://github.com/tschoonj/xraylib/archive/refs/tags/xraylib-4.1.2.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack xraylib-4.1.2-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./xraylib-4.1.2-X.cygport all
+
+This will create:
+  /usr/src/xraylib-4.1.2-X-src.tar.xz
+  /usr/src/xraylib-4.1.2-X.tar.xz
+  /usr/src/libxrl11-4.1.2-X.tar.xz
+  /usr/src/libxrl-devel-4.1.2-X.tar.xz
+  /usr/src/libxrlf03_11-4.1.2-X.tar.xz
+  /usr/src/libxrlf03-devel-4.1.2-X.tar.xz
+  /usr/src/lua-xraylib-4.1.2-X.tar.xz
+  /usr/src/perl-xraylib-4.1.2-X.tar.xz
+  /usr/src/ruby-xraylib-4.1.2-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(xraylib)
+  /usr/share/doc/Cygwin/xraylib.README
+  /usr/share/doc/xraylib/AUTHORS
+  /usr/share/doc/xraylib/Changelog
+  /usr/share/doc/xraylib/README
+  /usr/share/doc/xraylib/TODO
+  /usr/share/doc/xraylib/license_all.txt
+  /usr/share/doc/xraylib/license_teemu.txt
+  /usr/share/doc/xraylib/license_tom.txt
+  /usr/share/doc/xraylib/readme.md
+  /usr/share/xraylib/xraydoc.txt
+
+(libxrl11)
+  /usr/bin/cygxrl-11.dll
+
+(libxrl-devel)
+  /usr/include/xraylib/xraylib++.h
+  /usr/include/xraylib/xraylib-auger.h
+  /usr/include/xraylib/xraylib-aux.h
+  /usr/include/xraylib/xraylib-crystal-diffraction.h
+  /usr/include/xraylib/xraylib-defs.h
+  /usr/include/xraylib/xraylib-deprecated.h
+  /usr/include/xraylib/xraylib-error.h
+  /usr/include/xraylib/xraylib-lines.h
+  /usr/include/xraylib/xraylib-nist-compounds.h
+  /usr/include/xraylib/xraylib-parser.h
+  /usr/include/xraylib/xraylib-radionuclides.h
+  /usr/include/xraylib/xraylib-shells.h
+  /usr/include/xraylib/xraylib.h
+  /usr/lib/libxrl.dll.a
+  /usr/lib/pkgconfig/libxrl.pc
+
+(libxrlf03_11)
+  /usr/bin/cygxrlf03-11.dll
+
+(libxrlf03-devel)
+  /usr/include/xraylib/xraylib.mod
+  /usr/lib/libxrlf03.dll.a
+  /usr/lib/pkgconfig/libxrlf03.pc
+
+(lua-xraylib)
+  /usr/lib/lua/5.3/xraylib.dll
+
+(perl-xraylib)
+  /usr/lib/perl5/vendor_perl/5.32.1/x86_64-cygwin-threads-multi/auto/xraylib/xraylib.dll
+  /usr/lib/perl5/vendor_perl/5.32.1/x86_64-cygwin-threads-multi/xraylib.pm
+
+(ruby-xraylib)
+  /usr/lib/ruby/site_ruby/vendor_ruby/2.6/xraylib.so
+
+------------------
+
+Port Notes:
+
+----- version 4.1.2-1bl1 -----
+Version bump.
+
+----- version 4.1.1-1bl1 -----
+Version bump.
+
+----- version 4.1.0-1bl1 -----
+Version bump.
+
+----- version 4.0.0-1bl1 -----
+Version bump.
+
+----- version 3.3.0-1bl1 -----
+Version bump.
+
+----- version 3.0.0-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

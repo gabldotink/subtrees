@@ -1,0 +1,127 @@
+CGNS
+------------------------------------------
+The Computational Fluid Dynamics General Notation System (CGNS) provides a
+general, portable, and extensible standard for the storage and retrieval of
+computational fluid dynamics (CFD) analysisdata. It consists of a collection of
+conventions, and free and open software implementing those conventions. It is
+self-descriptive, machine-independent, well-documented, and administered by an
+international steering committee.
+
+Runtime requirements:
+  bash-4.4.12-3
+  cygwin-3.3.4-2
+  libcgns-devel-4.2.0-1bl1
+  libcgns4.3-4.3.0-1bl1
+  libhdf5_200-1.12.1-1
+  pkg-config-1.8.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  binutils-2.37-2
+  cmake-3.20.0-1
+  cygport-0.34.2-1
+  gcc-core-11.2.0-1
+  gcc-fortran-11.2.0-1
+  libhdf5-devel-1.12.1-1
+  ninja-1.10.2-1
+
+Canonical website:
+  https://github.com/CGNS/CGNS
+
+Canonical download:
+  https://github.com/CGNS/CGNS/archive/refs/tags/v4.3.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack CGNS-4.3.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./CGNS-4.3.0-X.cygport all
+
+This will create:
+  /usr/src/CGNS-4.3.0-X-src.tar.xz
+  /usr/src/CGNS-4.3.0-X.tar.xz
+  /usr/src/libcgns4.3-4.3.0-X.tar.xz
+  /usr/src/libcgns-devel-4.3.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(CGNS)
+  /usr/bin/adf2hdf
+  /usr/bin/cgnscheck.exe
+  /usr/bin/cgnscompress.exe
+  /usr/bin/cgnsconvert.exe
+  /usr/bin/cgnsdiff.exe
+  /usr/bin/cgnslist.exe
+  /usr/bin/cgnsnames.exe
+  /usr/bin/cgnsupdate
+  /usr/bin/hdf2adf
+  /usr/share/doc/CGNS/LICENSE.txt
+  /usr/share/doc/CGNS/README.md
+  /usr/share/doc/Cygwin/CGNS.README
+
+(libcgns4.3)
+  /usr/bin/cygcgns-4.3.dll
+
+(libcgns-devel)
+  /usr/include/cgns.mod
+  /usr/include/cgnsBuild.defs
+  /usr/include/cgns_io.h
+  /usr/include/cgnsconfig.h
+  /usr/include/cgnslib.h
+  /usr/include/cgnstypes.h
+  /usr/include/cgnstypes_f.h
+  /usr/include/cgnstypes_f03.h
+  /usr/include/cgnswin_f.h
+  /usr/lib/cmake/cgns/cgns-targets-release.cmake
+  /usr/lib/cmake/cgns/cgns-targets.cmake
+  /usr/lib/libcgns.dll.a
+  /usr/lib/pkgconfig/CGNS.pc
+
+------------------
+
+Port Notes:
+
+----- version 4.3.0-1bl1 -----
+Version bump.
+
+----- version 4.2.0-1bl1 -----
+Version bump.
+
+----- version 4.1.2-1bl1 -----
+Version bump.
+
+----- version 4.0.0-1bl1 -----
+Version bump.
+
+----- version 3.4.0-1bl1 -----
+Version bump.
+
+----- version 3.3.1-1bl1 -----
+Version bump.
+
+----- version 3.3.0-1bl1 -----
+Version bump.
+
+----- version 3.2.1-1bl2 -----
+Rebuild for libhdf5
+
+----- version 3.2.1-1bl1 -----
+Version bump.
+
+----- version 3.1.4-2-1bl1 -----
+Version bump.
+
+----- version 3.1.3-4-1bl1 -----
+Version bump.
+
+----- version 3.1.3-1bl2 -----
+Rebuild for libhdf5
+
+----- version 3.1.3-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

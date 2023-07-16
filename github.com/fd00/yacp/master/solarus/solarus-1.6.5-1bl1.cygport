@@ -1,0 +1,45 @@
+HOMEPAGE="https://${PN}-games.org/"
+SRC_URI="https://gitlab.com/${PN}-games/${PN}/-/archive/v${PV}/${PN}-v${PV}.tar.bz2"
+SRC_DIR="${PN}-v${PV}"
+
+CATEGORY="Games"
+SUMMARY="Free and open-source Action-RPG game engine"
+DESCRIPTION="Solarus is a free and open-source Action-RPG game engine, licensed under GPL,
+and written in C++. It runs quests in Lua, and can work on a great number of
+platforms."
+
+BUILD_REQUIRES="libmodplug-devel libopenal-devel libphysfs-devel libQt5Core-devel libQt5Gui-devel libSDL2-devel libSDL2_image-devel libSDL2_ttf-devel libvorbis-devel"
+
+inherit cmake
+
+src_test()
+{
+	cd ${B}
+	PATH=${B}:${PATH} ninja_test
+}
+
+DOCS="
+	changelog.txt
+	license_gpl.txt
+"
+
+PKG_NAMES="
+	${PN}
+	lib${PN}1
+	lib${PN}-devel
+"
+solarus_CONTENTS="
+	etc
+	usr/bin/*.exe
+	usr/share
+"
+libsolarus1_CONTENTS="
+	usr/bin/*.dll
+"
+libsolarus_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+solarus_SUMMARY="${SUMMARY} (utilities)"
+libsolarus1_SUMMARY="${SUMMARY} (runtime)"
+libsolarus_devel_SUMMARY="${SUMMARY} (development)"

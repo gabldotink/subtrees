@@ -1,0 +1,171 @@
+tlog
+------------------------------------------
+Tlog is a terminal I/O recording and playback package suitable for implementing
+centralized user session recording. At the moment it is not ready for
+production and is to be considered development preview quality.
+
+Runtime requirements:
+  cygwin-3.3.5-1
+  libcurl-devel-7.83.1-1
+  libcurl4-7.83.1-1
+  libjson-c-devel-0.12-1
+  libjson-c2-0.12-1
+  libtlog-devel-12.1-1bl1
+  libtlog0-12.1-1bl1
+  pkg-config-1.8.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.38-1
+  cygport-0.35.1-1
+  gcc-core-11.3.0-1
+  libcurl-devel-7.83.1-1
+  libjson-c-devel-0.12-1
+  libtool-2.4.7-1
+  make-4.3-1
+
+Canonical website:
+  https://github.com/Scribery/tlog
+
+Canonical download:
+  https://github.com/Scribery/tlog/archive/refs/tags/v12.1.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack tlog-12.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./tlog-12.1-X.cygport all
+
+This will create:
+  /usr/src/tlog-12.1-X-src.tar.xz
+  /usr/src/tlog-12.1-X.tar.xz
+  /usr/src/libtlog0-12.1-X.tar.xz
+  /usr/src/libtlog-devel-12.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(tlog)
+  /etc/tlog/tlog-play.conf
+  /etc/tlog/tlog-rec-session.conf
+  /etc/tlog/tlog-rec.conf
+  /usr/bin/tlog-play.exe
+  /usr/bin/tlog-rec-session.exe
+  /usr/bin/tlog-rec.exe
+  /usr/share/doc/Cygwin/tlog.README
+  /usr/share/doc/tlog/CONTRIBUTING.md
+  /usr/share/doc/tlog/COPYING
+  /usr/share/doc/tlog/NOTES.txt
+  /usr/share/doc/tlog/README.md
+  /usr/share/doc/tlog/log_format.md
+  /usr/share/doc/tlog/mapping.json
+  /usr/share/doc/tlog/schema.json
+  /usr/share/man/man5/tlog-play.conf.5.gz
+  /usr/share/man/man5/tlog-rec-session.conf.5.gz
+  /usr/share/man/man5/tlog-rec.conf.5.gz
+  /usr/share/man/man8/tlog-play.8.gz
+  /usr/share/man/man8/tlog-rec-session.8.gz
+  /usr/share/man/man8/tlog-rec.8.gz
+  /usr/share/tlog/tlog-play.default.conf
+  /usr/share/tlog/tlog-rec-session.default.conf
+  /usr/share/tlog/tlog-rec.default.conf
+
+(libtlog0)
+  /usr/bin/cygtlog-0.dll
+
+(libtlog-devel)
+  /usr/include/tlog/conf_origin.h
+  /usr/include/tlog/delay.h
+  /usr/include/tlog/errs.h
+  /usr/include/tlog/es_json_reader.h
+  /usr/include/tlog/fd_json_reader.h
+  /usr/include/tlog/fd_json_writer.h
+  /usr/include/tlog/grc.h
+  /usr/include/tlog/json_chunk.h
+  /usr/include/tlog/json_dispatcher.h
+  /usr/include/tlog/json_misc.h
+  /usr/include/tlog/json_msg.h
+  /usr/include/tlog/json_reader.h
+  /usr/include/tlog/json_reader_type.h
+  /usr/include/tlog/json_sink.h
+  /usr/include/tlog/json_source.h
+  /usr/include/tlog/json_stream.h
+  /usr/include/tlog/json_writer.h
+  /usr/include/tlog/json_writer_type.h
+  /usr/include/tlog/mem_json_reader.h
+  /usr/include/tlog/mem_json_writer.h
+  /usr/include/tlog/misc.h
+  /usr/include/tlog/pkt.h
+  /usr/include/tlog/play.h
+  /usr/include/tlog/play_conf.h
+  /usr/include/tlog/play_conf_cmd.h
+  /usr/include/tlog/play_conf_validate.h
+  /usr/include/tlog/rc.h
+  /usr/include/tlog/rec.h
+  /usr/include/tlog/rec_conf.h
+  /usr/include/tlog/rec_conf_cmd.h
+  /usr/include/tlog/rec_conf_validate.h
+  /usr/include/tlog/rec_item.h
+  /usr/include/tlog/rec_session_conf.h
+  /usr/include/tlog/rec_session_conf_cmd.h
+  /usr/include/tlog/rec_session_conf_validate.h
+  /usr/include/tlog/rl_json_writer.h
+  /usr/include/tlog/session.h
+  /usr/include/tlog/sink.h
+  /usr/include/tlog/sink_type.h
+  /usr/include/tlog/source.h
+  /usr/include/tlog/source_type.h
+  /usr/include/tlog/syslog_json_writer.h
+  /usr/include/tlog/syslog_misc.h
+  /usr/include/tlog/tap.h
+  /usr/include/tlog/timespec.h
+  /usr/include/tlog/timestr.h
+  /usr/include/tlog/trx.h
+  /usr/include/tlog/trx_act.h
+  /usr/include/tlog/trx_basic.h
+  /usr/include/tlog/trx_frame.h
+  /usr/include/tlog/trx_iface.h
+  /usr/include/tlog/trx_level.h
+  /usr/include/tlog/trx_state.h
+  /usr/include/tlog/tty_sink.h
+  /usr/include/tlog/tty_source.h
+  /usr/include/tlog/utf8.h
+  /usr/lib/libtlog.dll.a
+  /usr/lib/pkgconfig/tlog.pc
+
+------------------
+
+Port Notes:
+
+----- version 12.1-1bl1 -----
+Version bump.
+
+----- version 11-1bl1 -----
+Version bump.
+
+----- version 9-1bl1 -----
+Version bump.
+
+----- version 8-1bl1 -----
+Version bump.
+
+----- version 7-1bl1 -----
+Version bump.
+
+----- version 6-1bl1 -----
+Version bump.
+
+----- version 4-1bl1 -----
+Version bump.
+
+----- version 3-1bl1 -----
+Version bump.
+
+----- version 2-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

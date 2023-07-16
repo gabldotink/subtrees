@@ -1,0 +1,41 @@
+HOMEPAGE="https://wiki.documentfoundation.org/Libexttextcat"
+SRC_URI="https://dev-www.libreoffice.org/src/${PN}/${P}.tar.xz"
+
+CATEGORY="Libs"
+SUMMARY="Text categorization library"
+DESCRIPTION="Libexttextcat is an N-Gram-Based Text Categorization library primarily
+intended for language guessing."
+
+CYGCONF_ARGS="
+	--enable-maintainer-mode
+"
+
+DIFF_EXCLUDES="
+	Makefile
+"
+
+PKG_NAMES="
+	${PN}
+	${PN}2.0_0
+	${PN}2.0-devel
+	vala-${PN}
+"
+libexttextcat_CONTENTS="
+	usr/bin/*.exe
+	usr/share/doc
+	usr/share/${PN}
+"
+libexttextcat2_0_0_CONTENTS="
+	usr/bin/*.dll
+"
+libexttextcat2_0_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+vala_libexttextcat_CONTENTS="
+	usr/share/vala
+"
+libexttextcat_SUMMARY="${SUMMARY} (utilities)"
+libexttextcat2_0_0_SUMMARY="${SUMMARY} (runtime)"
+libexttextcat2_0_devel_SUMMARY="${SUMMARY} (development)"
+vala_libexttextcat_SUMMARY="${SUMMARY} (vala bindings)"

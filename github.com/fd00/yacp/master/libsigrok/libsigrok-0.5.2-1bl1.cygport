@@ -1,0 +1,53 @@
+HOMEPAGE="https://sigrok.org/wiki/Libsigrok"
+SRC_URI="https://sigrok.org/download/source/${PN}/${P}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Hardware access and backend lib"
+DESCRIPTION="libsigrok is a shared library written in C, which provides the basic hardware
+access drivers for logic analyzers and other supported devices, as well as
+input/output file format support."
+
+LICENSE="GPL-3.0-only"
+LICENSE_SPDX="SPDX-License-Identifier: GPL-3.0-only"
+LICENSE_URI="COPYING"
+
+BUILD_REQUIRES="libftdi1-devel libglib2.0-devel libglibmm2.4-devel libhidapi-devel libieee1284-devel libserialport-devel libusb1.0-devel libvisa-devel libzip-devel"
+
+export CPPFLAGS="${CPPFLAGS} -D__USE_LINUX_IOCTL_DEFS -D_GNU_SOURCE"
+
+CYGCONF_ARGS="
+	--disable-ruby
+"
+
+PKG_NAMES="
+	${PN}
+	${PN}4
+	${PN}-devel
+	${PN}cxx4
+	${PN}cxx-devel
+"
+libsigrok_CONTENTS="
+	etc
+	usr/share
+"
+libsigrok4_CONTENTS="
+	usr/bin/cygsigrok-4.dll
+"
+libsigrok_devel_CONTENTS="
+	usr/include/${PN}
+	usr/lib/${PN}.dll.a
+	usr/lib/pkgconfig/${PN}.pc
+"
+libsigrokcxx4_CONTENTS="
+	usr/bin/cygsigrokcxx-4.dll
+"
+libsigrokcxx_devel_CONTENTS="
+	usr/include/${PN}cxx
+	usr/lib/${PN}cxx.dll.a
+	usr/lib/pkgconfig/${PN}cxx.pc
+"
+libsigrok_SUMMARY="${SUMMARY} (licensing & readmes)"
+libsigrok4_SUMMARY="${SUMMARY} (runtime)"
+libsigrok_devel_SUMMARY="${SUMMARY} (development)"
+libsigrokcxx4_SUMMARY="${SUMMARY} (runtime / c++)"
+libsigrokcxx_devel_SUMMARY="${SUMMARY} (development / c++)"

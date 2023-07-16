@@ -1,0 +1,48 @@
+HOMEPAGE="http://taku910.github.io/${PN}/"
+SRC_URI="http://distfiles.gentoo.org/distfiles/${P}.tar.gz"
+
+CATEGORY="Text"
+SUMMARY="Yet Another Part-of-Speech and Morphological Analyzer"
+DESCRIPTION="MeCab is a open source morphological analyzer which uses CRF (Conditional
+Random Fields) as the estimation of parameters."
+
+CYGCONF_ARGS="
+	--enable-utf8-only
+"
+
+src_test()
+{
+	cd ${B}/tests
+	cp -R ${S}/tests/[^M]* .
+	pushd ..
+	cygtest
+}
+
+DOCS="
+	BSD
+	LGPL
+"
+
+PKG_NAMES="
+	${PN}
+	lib${PN}2
+	lib${PN}-devel
+"
+mecab_CONTENTS="
+	etc
+	usr/bin/${PN}.exe
+	usr/libexec/${PN}
+	usr/share
+"
+libmecab2_CONTENTS="
+	usr/bin/*.dll
+"
+libmecab_devel_CONTENTS="
+	usr/bin/${PN}-config
+	usr/include
+	usr/lib/lib*
+	usr/lib/pkgconfig
+"
+mecab_SUMMARY="${SUMMARY} (utilities)"
+libmecab2_SUMMARY="${SUMMARY} (runtime)"
+libmecab_devel_SUMMARY="${SUMMARY} (development)"

@@ -1,0 +1,85 @@
+libgsystem
+------------------------------------------
+LibGSystem is a GIO-based library, targeted primarily for use by operating
+system components.
+
+Runtime requirements:
+  cygwin-3.1.7-1
+  girepository-GLib2.0-1.54.1-2
+  libglib2.0-devel-2.54.3-1
+  libglib2.0_0-2.54.3-1
+  libgsystem-devel-2014.1-1bl2
+  libgsystem0-2014.1-1bl2
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.34+1git.de9c1b7cfe-1
+  cygport-0.34.0-1
+  gcc-core-10.2.0-1
+  gobject-introspection-1.54.1-2
+  libtool-2.4.6-7
+  make-4.3-1
+
+Canonical website:
+  https://wiki.gnome.org/Projects/LibGSystem
+
+Canonical download:
+  mirror://gnome/sources/libgsystem/2014.1/libgsystem-2014.1.tar.xz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libgsystem-2014.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libgsystem-2014.1-X.cygport all
+
+This will create:
+  /usr/src/libgsystem-2014.1-X-src.tar.xz
+  /usr/src/libgsystem-2014.1-X.tar.xz
+  /usr/src/libgsystem0-2014.1-X.tar.xz
+  /usr/src/libgsystem-devel-2014.1-X.tar.xz
+  /usr/src/girepository-GSystem1.0-2014.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libgsystem)
+  /usr/share/doc/Cygwin/libgsystem.README
+  /usr/share/doc/libgsystem/COPYING
+  /usr/share/doc/libgsystem/README
+
+(libgsystem0)
+  /usr/bin/cyggsystem-0.dll
+
+(libgsystem-devel)
+  /usr/include/libgsystem/gsystem-console.h
+  /usr/include/libgsystem/gsystem-file-utils.h
+  /usr/include/libgsystem/gsystem-glib-compat.h
+  /usr/include/libgsystem/gsystem-local-alloc.h
+  /usr/include/libgsystem/gsystem-log.h
+  /usr/include/libgsystem/gsystem-shutil.h
+  /usr/include/libgsystem/gsystem-subprocess-context.h
+  /usr/include/libgsystem/gsystem-subprocess.h
+  /usr/include/libgsystem/libgsystem.h
+  /usr/lib/libgsystem.dll.a
+  /usr/lib/pkgconfig/libgsystem.pc
+
+(girepository-GSystem1.0)
+  /usr/lib/girepository-1.0/GSystem-1.0.typelib
+  /usr/share/gir-1.0/GSystem-1.0.gir
+
+------------------
+
+Port Notes:
+
+----- version 2014.1-1bl2 -----
+Rebuild with gcc-10.2.0
+
+----- version 2014.1-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

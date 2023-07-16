@@ -1,0 +1,62 @@
+gn
+------------------------------------------
+GN is a meta-build system that generates build files for Ninja.
+
+Runtime requirements:
+  cygwin-3.3.5-1
+  libgcc1-11.3.0-1
+  libstdc++6-11.3.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.38-1
+  cygport-0.35.1-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  gcc-objc-11.3.0-1
+  gcc-objc++-11.3.0-1
+  ninja-1.11.0-1
+  python39-3.9.10-1
+
+Canonical website:
+  https://gn.googlesource.com/
+
+Canonical download:
+  https://dev.gentoo.org/~sultan/distfiles/dev-util/gn/gn-0.1943.tar.xz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack gn-0.1943-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./gn-0.1943-X.cygport all
+
+This will create:
+  /usr/src/gn-0.1943-X-src.tar.xz
+  /usr/src/gn-0.1943-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(gn)
+  /usr/bin/gn.exe
+  /usr/share/doc/Cygwin/gn.README
+  /usr/share/doc/gn/AUTHORS
+  /usr/share/doc/gn/LICENSE
+  /usr/share/doc/gn/README.md
+
+------------------
+
+Port Notes:
+
+----- version 0.1943-1bl2 -----
+Platform: linux -> cygwin
+
+----- version 0.1943-1bl1 -----
+Version bump.
+
+----- version 0.1807-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

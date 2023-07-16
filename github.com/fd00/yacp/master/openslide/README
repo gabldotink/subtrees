@@ -1,0 +1,121 @@
+openslide
+------------------------------------------
+The OpenSlide library allows programs to access virtual slide files regardless
+of the underlying image format.
+
+Runtime requirements:
+  cygwin-3.1.6-1
+  libcairo2-1.16.0-1
+  libgdk_pixbuf2.0_0-2.36.11-1
+  libglib2.0_0-2.54.3-1
+  libjpeg8-1.5.3-1
+  libopenjp2_7-2.3.0-1
+  libopenslide-devel-3.4.1-1bl4
+  libopenslide0-3.4.1-1bl4
+  libpng16-1.6.37-1
+  libsqlite3_0-3.32.3-1
+  libtiff6-4.0.9-1
+  libxml2-2.9.9-2
+  pkg-config-1.6.3-1
+  zlib0-1.2.11-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.34+1git.de9c1b7cfe-1
+  cygport-0.34.0-1
+  gcc-core-9.3.0-2
+  libtool-2.4.6-7
+  make-4.3-1
+
+Canonical website:
+  https://openslide.org/
+
+Canonical download:
+  https://github.com/openslide/openslide/releases/download/v3.4.1/openslide-3.4.1.tar.xz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack openslide-3.4.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./openslide-3.4.1-X.cygport all
+
+This will create:
+  /usr/src/openslide-3.4.1-X-src.tar.xz
+  /usr/src/openslide-3.4.1-X.tar.xz
+  /usr/src/libopenslide0-3.4.1-X.tar.xz
+  /usr/src/libopenslide-devel-3.4.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(openslide)
+  /usr/bin/openslide-quickhash1sum.exe
+  /usr/bin/openslide-show-properties.exe
+  /usr/bin/openslide-write-png.exe
+  /usr/share/doc/Cygwin/openslide.README
+  /usr/share/doc/openslide/CONTRIBUTING.txt
+  /usr/share/doc/openslide/ChangeLog.txt
+  /usr/share/doc/openslide/LICENSE.txt
+  /usr/share/doc/openslide/README.txt
+  /usr/share/doc/openslide/lgpl-2.1.txt
+  /usr/share/man/man1/openslide-quickhash1sum.1.gz
+  /usr/share/man/man1/openslide-show-properties.1.gz
+  /usr/share/man/man1/openslide-write-png.1.gz
+
+(libopenslide0)
+  /usr/bin/cygopenslide-0.dll
+
+(libopenslide-devel)
+  /usr/include/openslide/openslide-features.h
+  /usr/include/openslide/openslide.h
+  /usr/lib/libopenslide.dll.a
+  /usr/lib/pkgconfig/openslide.pc
+
+------------------
+
+Port Notes:
+
+----- version 3.4.1-1bl4 -----
+Rebuild with gcc-9.3.0
+
+----- version 3.4.1-1bl3 -----
+Rebuild with gcc-7.3.0
+
+----- version 3.4.1-1bl2 -----
+Rebuild with gcc-5.4.0
+
+----- version 3.4.1-1bl1 -----
+Version bump.
+
+----- version 3.4.0-1bl1 -----
+Version bump.
+
+----- version 3.3.3-1bl1 -----
+Version bump.
+
+----- version 3.3.2-1bl1 -----
+Version bump.
+
+----- version 3.2.6-1bl1 -----
+Version bump.
+
+----- version 3.2.5-1bl1 -----
+Version bump.
+
+----- version 3.2.4-1bl1 -----
+Version bump.
+
+----- version 3.2.3-1bl2 -----
+Rebuild for libpng
+
+----- version 3.2.3-1bl1 -----
+Version bump.
+
+----- version 2.3.0-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

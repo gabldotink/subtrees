@@ -1,0 +1,101 @@
+curlcpp
+------------------------------------------
+An object-oriented C++ wrapper for cURL tool
+
+Runtime requirements:
+  cygwin-3.4.2-1
+  libcurl-devel-7.86.0-2
+  libcurl4-7.86.0-2
+  libcurlcpp-devel-2.1-1bl1
+  libcurlcpp2-2.1-1bl1
+  libgcc1-11.3.0-1
+  libstdc++6-11.3.0-1
+  pkg-config-1.9.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.39-1
+  cmake-3.23.2-1
+  cygport-0.35.5-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libcurl-devel-7.86.0-2
+  ninja-1.11.1-1
+
+Canonical website:
+  https://github.com/JosephP91/curlcpp
+
+Canonical download:
+  https://github.com/JosephP91/curlcpp/archive/refs/tags/2.1.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack curlcpp-2.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./curlcpp-2.1-X.cygport all
+
+This will create:
+  /usr/src/curlcpp-2.1-X-src.tar.xz
+  /usr/src/curlcpp-2.1-X.tar.xz
+  /usr/src/libcurlcpp2-2.1-X.tar.xz
+  /usr/src/libcurlcpp-devel-2.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(curlcpp)
+  /usr/share/doc/Cygwin/curlcpp.README
+  /usr/share/doc/curlcpp/LICENSE
+  /usr/share/doc/curlcpp/README.md
+
+(libcurlcpp2)
+  /usr/bin/cygcurlcpp-2.dll
+
+(libcurlcpp-devel)
+  /usr/include/curlcpp/cookie.h
+  /usr/include/curlcpp/cookie_date.h
+  /usr/include/curlcpp/cookie_datetime.h
+  /usr/include/curlcpp/cookie_time.h
+  /usr/include/curlcpp/curl_config.h
+  /usr/include/curlcpp/curl_cookie.h
+  /usr/include/curlcpp/curl_easy.h
+  /usr/include/curlcpp/curl_easy_info.h
+  /usr/include/curlcpp/curl_exception.h
+  /usr/include/curlcpp/curl_form.h
+  /usr/include/curlcpp/curl_global.h
+  /usr/include/curlcpp/curl_header.h
+  /usr/include/curlcpp/curl_info.h
+  /usr/include/curlcpp/curl_interface.h
+  /usr/include/curlcpp/curl_ios.h
+  /usr/include/curlcpp/curl_multi.h
+  /usr/include/curlcpp/curl_option.h
+  /usr/include/curlcpp/curl_pair.h
+  /usr/include/curlcpp/curl_receiver.h
+  /usr/include/curlcpp/curl_sender.h
+  /usr/include/curlcpp/curl_share.h
+  /usr/include/curlcpp/curl_utility.h
+  /usr/lib/cmake/curlcpp/curlcppConfig.cmake
+  /usr/lib/cmake/curlcpp/curlcppTargets-release.cmake
+  /usr/lib/cmake/curlcpp/curlcppTargets.cmake
+  /usr/lib/libcurlcpp.dll.a
+  /usr/lib/pkgconfig/curlcpp.pc
+
+------------------
+
+Port Notes:
+
+----- version 2.1-1bl1 -----
+Version bump.
+
+----- version 2.0-1bl1 -----
+Version bump.
+
+----- version 1.4-1bl1 -----
+Version bump.
+
+----- version 1.1-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

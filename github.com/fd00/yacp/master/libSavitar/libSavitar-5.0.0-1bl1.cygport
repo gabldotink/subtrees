@@ -1,0 +1,46 @@
+HOMEPAGE="https://github.com/Ultimaker/${PN}"
+SRC_URI="https://github.com/Ultimaker/${PN}/archive/refs/tags/${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="C++ implementation of 3mf loading with SIP python bindings"
+DESCRIPTION="libSavitar is a c++ implementation of 3mf loading with SIP python bindings."
+
+LICENSE="LGPL-3.0-only"
+LICENSE_SPDX="SPDX-License-Identifier: LGPL-3.0-only"
+LICENSE_URI="LICENSE"
+
+export CPPFLAGS="${CPPFLAGS} -D_GNU_SOURCE"
+
+BUILD_REQUIRES="libpugixml-devel"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DBUILD_PYTHON:BOOL=OFF
+	-DBUILD_TESTS:BOOL=ON
+"
+
+src_test()
+{
+	cd ${B}
+	ninja_test
+}
+
+PKG_NAMES="
+	libSavitar
+	libSavitar5
+	libSavitar-devel
+"
+libSavitar_CONTENTS="
+	usr/share
+"
+libSavitar5_CONTENTS="
+	usr/bin
+"
+libSavitar_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+libSavitar_SUMMARY="${SUMMARY} (licensing & readmes)"
+libSavitar5_SUMMARY="${SUMMARY} (runtime)"
+libSavitar_devel_SUMMARY="${SUMMARY} (development)"

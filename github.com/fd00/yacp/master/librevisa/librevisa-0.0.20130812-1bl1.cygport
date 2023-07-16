@@ -1,0 +1,33 @@
+HOMEPAGE="https://web.archive.org/web/20210508121637/http://www.${PN}.org/"
+SRC_URI="mirror://debian/pool/main/${PN:0:4}/${PN}/${PN}_${PV}.orig.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Compliant implementation of the VISA standard"
+DESCRIPTION="LibreVISA aims to be a compliant implementation of the VISA standard in a free
+software library."
+
+LICENSE="GPL-3.0-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: GPL-3.0-or-later"
+LICENSE_URI=""
+
+BUILD_REQUIRES="libavahi-client-devel libusb1.0-devel"
+
+PKG_NAMES="
+	${PN}
+	libvisa0
+	libvisa-devel
+"
+librevisa_CONTENTS="
+	usr/share/doc
+"
+libvisa0_CONTENTS="
+	usr/bin
+"
+libvisa_devel_CONTENTS="
+	usr/include
+	usr/lib
+	usr/share/man
+"
+librevisa_SUMMARY="${SUMMARY} (licensing & readmes)"
+libvisa0_SUMMARY="${SUMMARY} (runtime)"
+libvisa_devel_SUMMARY="${SUMMARY} (development)"

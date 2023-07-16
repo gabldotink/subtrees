@@ -1,0 +1,109 @@
+libversion
+------------------------------------------
+Advanced version string comparison library.
+
+Runtime requirements:
+  cygwin-3.4.5-1
+  libgcc1-11.3.0-1
+  libstdc++6-11.3.0-1
+  libversion-devel-3.0.3-1bl1
+  libversion1-3.0.3-1bl1
+  pkg-config-1.9.4-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.39-1
+  cmake-3.23.2-1
+  cygport-0.36.0-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  ninja-1.11.1-1
+
+Canonical website:
+  https://github.com/repology/libversion
+
+Canonical download:
+  https://github.com/repology/libversion/archive/refs/tags/3.0.3.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libversion-3.0.3-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libversion-3.0.3-X.cygport all
+
+This will create:
+  /usr/src/libversion-3.0.3-X-src.tar.xz
+  /usr/src/libversion-3.0.3-X.tar.xz
+  /usr/src/libversion1-3.0.3-X.tar.xz
+  /usr/src/libversion-devel-3.0.3-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libversion)
+  /usr/bin/version_compare.exe
+  /usr/bin/version_sort.exe
+  /usr/share/doc/Cygwin/libversion.README
+  /usr/share/doc/libversion/ALGORITHM.md
+  /usr/share/doc/libversion/CHANGES.md
+  /usr/share/doc/libversion/COPYING
+  /usr/share/doc/libversion/README.md
+
+(libversion1)
+  /usr/bin/cygversion-1.dll
+
+(libversion-devel)
+  /usr/include/libversion/config.h
+  /usr/include/libversion/export.h
+  /usr/include/libversion/version.h
+  /usr/lib/cmake/libversion/libversionConfig-release.cmake
+  /usr/lib/cmake/libversion/libversionConfig.cmake
+  /usr/lib/libversion.dll.a
+  /usr/lib/pkgconfig/libversion.pc
+
+------------------
+
+Port Notes:
+
+----- version 3.0.3-1bl1 -----
+Version bump.
+
+----- version 3.0.2-1bl1 -----
+Version bump.
+
+----- version 3.0.1-1bl1 -----
+Version bump.
+
+----- version 3.0.0-1bl1 -----
+Version bump.
+
+----- version 2.9.0-1bl1 -----
+Version bump.
+
+----- version 2.8.1-1bl1 -----
+Version bump.
+
+----- version 2.7.0-1bl1 -----
+Version bump.
+
+----- version 2.6.0-1bl1 -----
+Version bump.
+
+----- version 2.5.0-1bl1 -----
+Version bump.
+
+----- version 2.3.0-1bl1 -----
+Version bump.
+
+----- version 2.2.0-1bl1 -----
+Version bump.
+
+----- version 2.0.0-1bl1 -----
+Version bump.
+
+----- version 1.2.0-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

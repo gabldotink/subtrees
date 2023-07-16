@@ -1,0 +1,61 @@
+seabattle
+------------------------------------------
+Text console curses sea battle game
+
+Runtime requirements:
+  cygwin-3.3.5-1
+  libncursesw10-6.1-1.20190727
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.38-1
+  cygport-0.35.1-1
+  gcc-core-11.3.0-1
+  libncurses-devel-6.1-1.20190727
+  make-4.3-1
+
+Canonical website:
+  https://github.com/deater/seabattle
+
+Canonical download:
+  https://github.com/deater/seabattle/archive/refs/tags/v1.1.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack seabattle-1.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./seabattle-1.1-X.cygport all
+
+This will create:
+  /usr/src/seabattle-1.1-X-src.tar.xz
+  /usr/src/seabattle-1.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(seabattle)
+  /usr/bin/seabattle.exe
+  /usr/share/doc/Cygwin/seabattle.README
+  /usr/share/doc/seabattle/LICENSE
+  /usr/share/doc/seabattle/README
+  /usr/share/doc/seabattle/readme.historical
+  /usr/share/seabattle/hit1.au
+  /usr/share/seabattle/hit2.au
+  /usr/share/seabattle/miss1.au
+  /usr/share/seabattle/miss2.au
+  /usr/share/seabattle/opening.au
+  /usr/share/seabattle/sunkit.au
+
+------------------
+
+Port Notes:
+
+----- version 1.1-1bl1 -----
+Version bump.
+
+----- version 1.0-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

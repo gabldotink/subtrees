@@ -1,0 +1,37 @@
+HOMEPAGE="https://www.davidhbailey.com/dhbsoftware/"
+SRC_URI="https://www.davidhbailey.com/dhbsoftware/${P}.tar.gz"
+
+CATEGORY="Math"
+SUMMARY="C++/Fortran-90 double-double and quad-double package"
+DESCRIPTION="This package provides numeric types of twice the precision of IEEE double (106
+mantissa bits, or approximately 32 decimal digits) and four times the
+precision of IEEE double (212 mantissa bits, or approximately 64 decimal
+digits).  Due to features such as operator and function overloading, these
+facilities can be utilized with only minor modifications to conventional C++
+and Fortran-90 programs."
+
+src_test()
+{
+	cd ${B}
+	cygmake check
+}
+
+PKG_NAMES="
+	${PN}
+	lib${PN}0
+	lib${PN}-devel
+"
+qd_CONTENTS="
+	usr/share
+"
+libqd0_CONTENTS="
+	usr/bin/*.dll
+"
+libqd_devel_CONTENTS="
+	usr/bin/${PN}-config
+	usr/include
+	usr/lib
+"
+qd_SUMMARY="${SUMMARY} (licensing & readmes)"
+libqd0_SUMMARY="${SUMMARY} (runtime)"
+libqd_devel_SUMMARY="${SUMMARY} (development)"

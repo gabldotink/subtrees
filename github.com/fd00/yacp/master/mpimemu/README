@@ -1,0 +1,68 @@
+mpimemu
+------------------------------------------
+This distribution contains the source code for mpimemu, a simple tool that
+helps approximate MPI library memory usage as a function of scale.
+
+Runtime requirements:
+  cygwin-3.2.0-1
+  libopenmpi40-4.1.0-1
+  perl_base-5.32.1-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.36.1-2
+  cygport-0.34.0-1
+  gcc-core-10.2.0-1
+  libopenmpi-devel-4.1.0-1
+  make-4.3-1
+  openmpi-4.1.0-1
+
+Canonical website:
+  https://hpc.github.io/mpimemu/
+
+Canonical download:
+  https://hpc.github.io/mpimemu/dists/mpimemu-1.3.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack mpimemu-1.3-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./mpimemu-1.3-X.cygport all
+
+This will create:
+  /usr/src/mpimemu-1.3-X-src.tar.xz
+  /usr/src/mpimemu-1.3-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(mpimemu)
+  /usr/bin/mpimemu-mkstats
+  /usr/bin/mpimemu-plot
+  /usr/bin/mpimemu-run
+  /usr/bin/mpimemu.exe
+  /usr/share/doc/Cygwin/mpimemu.README
+  /usr/share/doc/mpimemu/AUTHORS
+  /usr/share/doc/mpimemu/ChangeLog
+  /usr/share/doc/mpimemu/Copyright
+  /usr/share/doc/mpimemu/LICENSE
+  /usr/share/doc/mpimemu/README
+  /usr/share/doc/mpimemu/README.QUICKSTART
+  /usr/share/doc/mpimemu/THANKS
+  /usr/share/doc/mpimemu/TODO
+
+------------------
+
+Port Notes:
+
+----- version 1.3-1bl1 -----
+Version bump.
+
+----- version 1.0-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

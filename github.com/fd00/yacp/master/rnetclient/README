@@ -1,0 +1,69 @@
+rnetclient
+------------------------------------------
+Rnetclient is a Free Software that can be used to submit the Brazilian Income
+Tax Report to the Brazilian Tax Authority (Receita Federal).
+It is the outcome of reverse-engineering ReceitaNet, the official and
+proprietary software that Receita Federal develops.
+
+Runtime requirements:
+  cygwin-2.9.0-3
+  libargp-20110921-3
+  libgcrypt20-1.7.8-1
+  libgnutls30-3.5.13-1
+  zlib0-1.2.11-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-10-1
+  binutils-2.29-1
+  cygport-0.25.0-1
+  gcc-core-6.4.0-4
+  make-4.2.1-2
+
+Canonical website:
+  http://wiki.libreplanetbr.org/rnetclient/
+
+Canonical download:
+  http://libreplanetbr.org/files/sw/rnetclient/rnetclient-2017.1.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack rnetclient-2017.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./rnetclient-2017.1-X.cygport all
+
+This will create:
+  /usr/src/rnetclient-2017.1-X-src.tar.xz
+  /usr/src/rnetclient-2017.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(rnetclient)
+  /usr/bin/rnetclient.exe
+  /usr/share/doc/Cygwin/rnetclient.README
+  /usr/share/doc/rnetclient/AUTHORS
+  /usr/share/doc/rnetclient/COPYING
+  /usr/share/doc/rnetclient/NEWS
+  /usr/share/doc/rnetclient/README
+  /usr/share/doc/rnetclient/TODO
+  /usr/share/man/man1/rnetclient.1.gz
+  /usr/share/man/pt_BR/man1/rnetclient.1.gz
+
+------------------
+
+Port Notes:
+
+----- version 2017.1-1bl1 -----
+Version bump.
+
+----- version 2016.0-1bl1 -----
+Version bump.
+
+----- version 2015.1-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

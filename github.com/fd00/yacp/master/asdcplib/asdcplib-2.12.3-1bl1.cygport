@@ -1,0 +1,53 @@
+HOMEPAGE="https://github.com/cinecert/${PN}/"
+SRC_URI="https://github.com/cinecert/${PN}/archive/rel_${PV//./_}.tar.gz"
+SRC_DIR="${PN}-rel_${PV//./_}"
+
+CATEGORY="Libs"
+SUMMARY="AS-DCP File Access Library"
+DESCRIPTION="asdcplib is an open source implementation of SMPTE and the MXF Interop 'Sound
+& Picture Track File' format. It was originally developed with support from
+DCI. Development is currently supported by CineCert and other D-Cinema
+manufacturers."
+
+LICENSE="BSD-3-Clause"
+LICENSE_SPDX="SPDX-License-Identifier: BSD-3-Clause"
+LICENSE_URI="COPYING"
+
+BUILD_REQUIRES="libexpat-devel libssl-devel"
+
+export CPPFLAGS="${CPPFLAGS} -DHAVE_EXPAT=1 -DHAVE_OPENSSL=1"
+
+CYGCONF_ARGS="
+	--includedir=/usr/include/${PN}
+	--enable-dev-headers
+	--enable-random-case-UUID
+	--enable-as-02
+	--enable-phdr
+	--with-python=no
+"
+
+src_test()
+{
+	cd ${B}
+	./src/asdcp-info.exe -V
+}
+
+PKG_NAMES="
+	${PN}
+	libasdcp${PV}
+	libasdcp-devel
+"
+asdcplib_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+libasdcp2_12_3_CONTENTS="
+	usr/bin/*.dll
+"
+libasdcp_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+asdcplib_SUMMARY="${SUMMARY} (utilities)"
+libasdcp2_12_3_SUMMARY="${SUMMARY} (runtime)"
+libasdcp_devel_SUMMARY="${SUMMARY} (development)"

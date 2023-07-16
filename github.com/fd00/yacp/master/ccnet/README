@@ -1,0 +1,174 @@
+ccnet
+------------------------------------------
+Ccnet is a framework for writing networked applications in C.
+
+Runtime requirements:
+  cygwin-3.1.7-1
+  libccnet-devel-6.1.8-1bl2
+  libccnet0-6.1.8-1bl2
+  libevent-devel-2.0.22-1
+  libevent2.0_5-2.0.22-1
+  libglib2.0-devel-2.54.3-1
+  libglib2.0_0-2.54.3-1
+  libintl-devel-0.19.8.1-2
+  libjansson-devel-2.12-1
+  libjansson4-2.12-1
+  libsearpc-devel-3.2.0-1bl2
+  libsearpc1-3.2.0-1bl2
+  libsqlite3_0-3.32.3-1
+  libssl1.1-1.1.1f-1
+  libuuid-devel-2.33.1-2
+  libuuid1-2.33.1-2
+  pkg-config-1.6.3-1
+  python27-2.7.18-1
+  python27-ccnet-6.1.8-1bl2
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.34+1git.de9c1b7cfe-1
+  cygport-0.34.0-1
+  gcc-core-10.2.0-1
+  libtool-2.4.6-7
+  make-4.3-1
+  python27-2.7.18-1
+  vala-0.38.8-1
+
+Canonical website:
+  https://github.com/haiwen/ccnet
+
+Canonical download:
+  https://github.com/haiwen/ccnet/archive/v6.1.8.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack ccnet-6.1.8-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./ccnet-6.1.8-X.cygport all
+
+This will create:
+  /usr/src/ccnet-6.1.8-X-src.tar.xz
+  /usr/src/ccnet-6.1.8-X.tar.xz
+  /usr/src/libccnet0-6.1.8-X.tar.xz
+  /usr/src/libccnet-devel-6.1.8-X.tar.xz
+  /usr/src/python27-ccnet-6.1.8-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(ccnet)
+  /usr/bin/ccnet-init.exe
+  /usr/bin/ccnet.exe
+  /usr/share/doc/Cygwin/ccnet.README
+  /usr/share/doc/ccnet/HACKING
+  /usr/share/doc/ccnet/LICENSE.txt
+  /usr/share/doc/ccnet/README.markdown
+
+(libccnet0)
+  /usr/bin/cygccnet-0.dll
+
+(libccnet-devel)
+  /usr/include/ccnet.h
+  /usr/include/ccnet/async-rpc-proc.h
+  /usr/include/ccnet/ccnet-client.h
+  /usr/include/ccnet/ccnet-object.h
+  /usr/include/ccnet/ccnet-session-base.h
+  /usr/include/ccnet/ccnetrpc-transport.h
+  /usr/include/ccnet/cevent.h
+  /usr/include/ccnet/invoke-service-proc.h
+  /usr/include/ccnet/job-mgr.h
+  /usr/include/ccnet/message.h
+  /usr/include/ccnet/mqclient-proc.h
+  /usr/include/ccnet/option.h
+  /usr/include/ccnet/packet.h
+  /usr/include/ccnet/peer.h
+  /usr/include/ccnet/proc-factory.h
+  /usr/include/ccnet/processor.h
+  /usr/include/ccnet/rpcserver-proc.h
+  /usr/include/ccnet/sendcmd-proc.h
+  /usr/include/ccnet/status-code.h
+  /usr/include/ccnet/threaded-rpcserver-proc.h
+  /usr/include/ccnet/timer.h
+  /usr/include/ccnet/valid-check.h
+  /usr/lib/libccnet.dll.a
+  /usr/lib/pkgconfig/libccnet.pc
+
+(python27-ccnet)
+  /usr/lib/python2.7/site-packages/ccnet/__init__.py
+  /usr/lib/python2.7/site-packages/ccnet/__init__.pyc
+  /usr/lib/python2.7/site-packages/ccnet/__init__.pyo
+  /usr/lib/python2.7/site-packages/ccnet/async/__init__.py
+  /usr/lib/python2.7/site-packages/ccnet/async/__init__.pyc
+  /usr/lib/python2.7/site-packages/ccnet/async/__init__.pyo
+  /usr/lib/python2.7/site-packages/ccnet/async/async_client.py
+  /usr/lib/python2.7/site-packages/ccnet/async/async_client.pyc
+  /usr/lib/python2.7/site-packages/ccnet/async/async_client.pyo
+  /usr/lib/python2.7/site-packages/ccnet/async/mqclientproc.py
+  /usr/lib/python2.7/site-packages/ccnet/async/mqclientproc.pyc
+  /usr/lib/python2.7/site-packages/ccnet/async/mqclientproc.pyo
+  /usr/lib/python2.7/site-packages/ccnet/async/processor.py
+  /usr/lib/python2.7/site-packages/ccnet/async/processor.pyc
+  /usr/lib/python2.7/site-packages/ccnet/async/processor.pyo
+  /usr/lib/python2.7/site-packages/ccnet/async/rpcserverproc.py
+  /usr/lib/python2.7/site-packages/ccnet/async/rpcserverproc.pyc
+  /usr/lib/python2.7/site-packages/ccnet/async/rpcserverproc.pyo
+  /usr/lib/python2.7/site-packages/ccnet/async/sendcmdproc.py
+  /usr/lib/python2.7/site-packages/ccnet/async/sendcmdproc.pyc
+  /usr/lib/python2.7/site-packages/ccnet/async/sendcmdproc.pyo
+  /usr/lib/python2.7/site-packages/ccnet/async/timer.py
+  /usr/lib/python2.7/site-packages/ccnet/async/timer.pyc
+  /usr/lib/python2.7/site-packages/ccnet/async/timer.pyo
+  /usr/lib/python2.7/site-packages/ccnet/client.py
+  /usr/lib/python2.7/site-packages/ccnet/client.pyc
+  /usr/lib/python2.7/site-packages/ccnet/client.pyo
+  /usr/lib/python2.7/site-packages/ccnet/errors.py
+  /usr/lib/python2.7/site-packages/ccnet/errors.pyc
+  /usr/lib/python2.7/site-packages/ccnet/errors.pyo
+  /usr/lib/python2.7/site-packages/ccnet/message.py
+  /usr/lib/python2.7/site-packages/ccnet/message.pyc
+  /usr/lib/python2.7/site-packages/ccnet/message.pyo
+  /usr/lib/python2.7/site-packages/ccnet/packet.py
+  /usr/lib/python2.7/site-packages/ccnet/packet.pyc
+  /usr/lib/python2.7/site-packages/ccnet/packet.pyo
+  /usr/lib/python2.7/site-packages/ccnet/pool.py
+  /usr/lib/python2.7/site-packages/ccnet/pool.pyc
+  /usr/lib/python2.7/site-packages/ccnet/pool.pyo
+  /usr/lib/python2.7/site-packages/ccnet/rpc.py
+  /usr/lib/python2.7/site-packages/ccnet/rpc.pyc
+  /usr/lib/python2.7/site-packages/ccnet/rpc.pyo
+  /usr/lib/python2.7/site-packages/ccnet/status_code.py
+  /usr/lib/python2.7/site-packages/ccnet/status_code.pyc
+  /usr/lib/python2.7/site-packages/ccnet/status_code.pyo
+  /usr/lib/python2.7/site-packages/ccnet/sync_client.py
+  /usr/lib/python2.7/site-packages/ccnet/sync_client.pyc
+  /usr/lib/python2.7/site-packages/ccnet/sync_client.pyo
+  /usr/lib/python2.7/site-packages/ccnet/utils.py
+  /usr/lib/python2.7/site-packages/ccnet/utils.pyc
+  /usr/lib/python2.7/site-packages/ccnet/utils.pyo
+
+------------------
+
+Port Notes:
+
+----- version 6.1.8-1bl2 -----
+Rebuild with gcc-10.2.0
+
+----- version 6.1.8-1bl1 -----
+Version bump.
+
+----- version 6.1.7-1bl1 -----
+Version bump.
+
+----- version 6.1.3-1bl1 -----
+Version bump.
+
+----- version 6.0.1-1bl1 -----
+Version bump.
+
+----- version 5.0.1-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

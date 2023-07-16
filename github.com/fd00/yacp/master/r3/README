@@ -1,0 +1,89 @@
+r3
+------------------------------------------
+R3 is an URL router library with high performance, thus, it's implemented in
+C. It compiles your route paths into a prefix trie.
+
+By using the prefix tree constructed in the start-up time, you can dispatch
+the path to the controller with high efficiency.
+
+Runtime requirements:
+  cygwin-2.8.2-1
+  libcgraph6-2.40.1-2
+  libgvc6-2.40.1-2
+  libjson-c2-0.12-1
+  libpcre-devel-8.40-3
+  libpcre1-8.40-3
+  libr3-devel-1.3.4-1bl1
+  libr3_0-1.3.4-1bl1
+  pkg-config-0.29.1-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-9-1
+  binutils-2.25-4
+  cmake-3.6.2-1
+  cygport-0.24.1-1
+  gcc-core-5.4.0-1
+  gcc-g++-5.4.0-1
+  libtool-2.4.6-4
+  make-4.2.1-2
+  ruby-2.3.3-1
+
+Canonical website:
+  https://github.com/c9s/r3
+
+Canonical download:
+  https://github.com/c9s/r3/archive/1.3.4.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack r3-1.3.4-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./r3-1.3.4-X.cygport all
+
+This will create:
+  /usr/src/r3-1.3.4-X-src.tar.xz
+  /usr/src/r3-1.3.4-X.tar.xz
+  /usr/src/libr3_0-1.3.4-X.tar.xz
+  /usr/src/libr3-devel-1.3.4-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(r3)
+  /usr/share/doc/Cygwin/r3.README
+  /usr/share/doc/r3/CHANGES.md
+  /usr/share/doc/r3/COPYING
+  /usr/share/doc/r3/HACKING.md
+  /usr/share/doc/r3/LICENSE
+  /usr/share/doc/r3/README.md
+
+(libr3_0)
+  /usr/bin/cygr3-0.dll
+
+(libr3-devel)
+  /usr/include/r3/r3.h
+  /usr/include/r3/r3.hpp
+  /usr/include/r3/r3_define.h
+  /usr/include/r3/r3_gvc.h
+  /usr/include/r3/r3_json.h
+  /usr/include/r3/r3_list.h
+  /usr/include/r3/r3_str.h
+  /usr/include/r3/str_array.h
+  /usr/lib/libr3.dll.a
+  /usr/lib/pkgconfig/r3.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.3.4-1bl1 -----
+Version bump.
+
+----- version 1.3.3-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

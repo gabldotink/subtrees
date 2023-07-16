@@ -1,0 +1,82 @@
+readosm
+------------------------------------------
+ReadOSM is an open source library to extract valid data from within an Open
+Street Map input file.
+
+Runtime requirements:
+  cygwin-3.1.7-1
+  libexpat-devel-2.2.6-1
+  libexpat1-2.2.6-1
+  libreadosm-devel-1.1.0a-1bl1
+  libreadosm1-1.1.0a-1bl1
+  pkg-config-1.6.3-1
+  zlib-devel-1.2.11-1
+  zlib0-1.2.11-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.34+1git.de9c1b7cfe-1
+  cygport-0.34.0-1
+  gcc-core-10.2.0-1
+  libtool-2.4.6-7
+  make-4.3-1
+
+Canonical website:
+  https://www.gaia-gis.it/fossil/readosm/index
+
+Canonical download:
+  https://www.gaia-gis.it/gaia-sins/readosm-1.1.0a.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack readosm-1.1.0a-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./readosm-1.1.0a-X.cygport all
+
+This will create:
+  /usr/src/readosm-1.1.0a-X-src.tar.xz
+  /usr/src/readosm-1.1.0a-X.tar.xz
+  /usr/src/libreadosm1-1.1.0a-X.tar.xz
+  /usr/src/libreadosm-devel-1.1.0a-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(readosm)
+  /usr/share/doc/Cygwin/readosm.README
+  /usr/share/doc/readosm/AUTHORS
+  /usr/share/doc/readosm/COPYING
+  /usr/share/doc/readosm/README
+
+(libreadosm1)
+  /usr/bin/cygreadosm-1.dll
+
+(libreadosm-devel)
+  /usr/include/readosm.h
+  /usr/lib/libreadosm.dll.a
+  /usr/lib/pkgconfig/readosm.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.1.0a-1bl1 -----
+Version bump.
+
+----- version 1.1.0-1bl1 -----
+Version bump.
+
+----- version 1.0.0e-1bl1 -----
+Version bump.
+
+----- version 1.0.0d-1bl1 -----
+Version bump.
+
+----- version 1.0.0b-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://fd0.hatenablog.jp/>

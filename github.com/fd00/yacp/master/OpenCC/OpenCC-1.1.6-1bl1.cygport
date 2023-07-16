@@ -1,0 +1,57 @@
+HOMEPAGE="https://github.com/BYVoid/${PN}"
+SRC_URI="https://github.com/BYVoid/${PN}/archive/refs/tags/ver.${PV}.tar.gz"
+SRC_DIR="${PN}-ver.${PV}"
+
+CATEGORY="Text"
+SUMMARY="Conversion between Traditional and Simplified Chinese"
+DESCRIPTION="Open Chinese Convert (OpenCC) is an opensource project for conversion between
+Traditional Chinese and Simplified Chinese, supporting character-level
+conversion, phrase-level conversion, variant conversion and regional idioms
+among Mainland China, Taiwan and Hong kong."
+
+LICENSE="Apache-2.0"
+LICENSE_SPDX="SPDX-License-Identifier: Apache-2.0"
+LICENSE_URI="LICENSE"
+
+BUILD_REQUIRES="libmarisa-devel"
+
+export CPPFLAGS="${CPPFLAGS} -D_GNU_SOURCE"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DBUILD_SHARED_LIBS:BOOL=ON
+	-DENABLE_BENCHMARK:BOOL=ON
+	-DENABLE_GTEST:BOOL=ON
+	-DUSE_SYSTEM_GOOGLE_BENCHMARK:BOOL=ON
+	-DUSE_SYSTEM_GTEST:BOOL=ON
+	-DUSE_SYSTEM_MARISA:BOOL=ON
+	-DUSE_SYSTEM_RAPIDJSON:BOOL=ON
+"
+
+src_test()
+{
+	cd ${B}
+	ninja_test
+}
+
+PKG_NAMES="
+	${PN}
+	libopencc1.1
+	libopencc-devel"
+
+OpenCC_CONTENTS="
+	usr/bin/*.exe
+	usr/share/doc
+	usr/share/opencc
+"
+libopencc1_1_CONTENTS="
+	usr/bin/*.dll
+"
+libopencc_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+OpenCC_SUMMARY="${SUMMARY} (utilities)"
+libopencc1_1_SUMMARY="${SUMMARY} (runtime)"
+libopencc_devel_SUMMARY="${SUMMARY} (development)"

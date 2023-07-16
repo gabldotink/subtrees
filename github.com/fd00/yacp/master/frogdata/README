@@ -1,0 +1,159 @@
+frogdata
+------------------------------------------
+Data for Frog, mandatory
+
+Runtime requirements:
+  pkg-config-1.9.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  cygport-0.35.5-1
+  flex-2.6.4-2
+  make-4.4-1
+
+Canonical website:
+  https://github.com/LanguageMachines/frogdata
+
+Canonical download:
+  https://github.com/LanguageMachines/frogdata/archive/refs/tags/v0.21.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack frogdata-0.21-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./frogdata-0.21-X.cygport all
+
+This will create:
+  /usr/src/frogdata-0.21-X-src.tar.xz
+  /usr/src/frogdata-0.21-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(frogdata)
+  /usr/lib/pkgconfig/frogdata.pc
+  /usr/share/doc/Cygwin/frogdata.README
+  /usr/share/doc/frogdata/AUTHORS
+  /usr/share/doc/frogdata/COPYING
+  /usr/share/doc/frogdata/NEWS
+  /usr/share/doc/frogdata/README
+  /usr/share/doc/frogdata/TODO
+  /usr/share/doc/frogdata/readme.md
+  /usr/share/frog/dum/crmconstraints.cgn
+  /usr/share/frog/dum/crmsub.cgn
+  /usr/share/frog/dum/frog.cfg
+  /usr/share/frog/dum/froggen.data.1paxes
+  /usr/share/frog/dum/froggen.data.known.dddwfWawa
+  /usr/share/frog/dum/froggen.data.known.dddwfWawa.wgt
+  /usr/share/frog/dum/froggen.data.lex
+  /usr/share/frog/dum/froggen.data.lex.ambi.05
+  /usr/share/frog/dum/froggen.data.top500
+  /usr/share/frog/dum/froggen.data.unknown.chnppdddwFawasss
+  /usr/share/frog/dum/froggen.settings
+  /usr/share/frog/dum/froggen.tree
+  /usr/share/frog/dum/froggen.tree.data
+  /usr/share/frog/dum/froggen.tree.wgt
+  /usr/share/frog/nld-vnn/babconstraints.cgn
+  /usr/share/frog/nld-vnn/babsub.cgn
+  /usr/share/frog/nld-vnn/frog.cfg
+  /usr/share/frog/nld-vnn/froggen.data.1paxes
+  /usr/share/frog/nld-vnn/froggen.data.known.dddwfWawa
+  /usr/share/frog/nld-vnn/froggen.data.known.dddwfWawa.wgt
+  /usr/share/frog/nld-vnn/froggen.data.lex
+  /usr/share/frog/nld-vnn/froggen.data.lex.ambi.05
+  /usr/share/frog/nld-vnn/froggen.data.top500
+  /usr/share/frog/nld-vnn/froggen.data.unknown.chnppdddwFawasss
+  /usr/share/frog/nld-vnn/froggen.settings
+  /usr/share/frog/nld-vnn/froggen.tree
+  /usr/share/frog/nld-vnn/froggen.tree.data
+  /usr/share/frog/nld-vnn/froggen.tree.wgt
+  /usr/share/frog/nld/Frog.mbdp.1.0.dir.ibase
+  /usr/share/frog/nld/Frog.mbdp.1.0.dir.ibase.wgt
+  /usr/share/frog/nld/Frog.mbdp.1.0.pairs.sampled.ibase
+  /usr/share/frog/nld/Frog.mbdp.1.0.pairs.sampled.ibase.wgt
+  /usr/share/frog/nld/Frog.mbdp.1.0.rels.ibase
+  /usr/share/frog/nld/Frog.mbdp.1.0.rels.ibase.wgt
+  /usr/share/frog/nld/Frog.mbt.1.1.1paxes
+  /usr/share/frog/nld/Frog.mbt.1.1.known.dddwfWawa
+  /usr/share/frog/nld/Frog.mbt.1.1.known.dddwfWawa.wgt
+  /usr/share/frog/nld/Frog.mbt.1.1.lex
+  /usr/share/frog/nld/Frog.mbt.1.1.lex.ambi.05
+  /usr/share/frog/nld/Frog.mbt.1.1.settings
+  /usr/share/frog/nld/Frog.mbt.1.1.top500
+  /usr/share/frog/nld/Frog.mbt.1.1.unknown.chnppdddwFawasss
+  /usr/share/frog/nld/Frog.mwu.1.0
+  /usr/share/frog/nld/cgn_token.trans
+  /usr/share/frog/nld/cgntags.main
+  /usr/share/frog/nld/cgntags.sub
+  /usr/share/frog/nld/chunkgen.data.10paxes
+  /usr/share/frog/nld/chunkgen.data.known.dddwfWawa
+  /usr/share/frog/nld/chunkgen.data.lex
+  /usr/share/frog/nld/chunkgen.data.lex.ambi.05
+  /usr/share/frog/nld/chunkgen.data.settings
+  /usr/share/frog/nld/chunkgen.data.top200
+  /usr/share/frog/nld/chunkgen.data.unknown.chnppddwFawasss
+  /usr/share/frog/nld/constraints.cgn
+  /usr/share/frog/nld/eve.ner
+  /usr/share/frog/nld/familienamen.ner
+  /usr/share/frog/nld/frog.cfg
+  /usr/share/frog/nld/frog.filter
+  /usr/share/frog/nld/gemeenten-nld.ner
+  /usr/share/frog/nld/geonames-be.ner
+  /usr/share/frog/nld/geonames-nl.ner
+  /usr/share/frog/nld/landen-europa.ner
+  /usr/share/frog/nld/loc.ner
+  /usr/share/frog/nld/mblem.tree
+  /usr/share/frog/nld/mblem.tree.wgt
+  /usr/share/frog/nld/mbma.igtree
+  /usr/share/frog/nld/mbma.igtree.wgt
+  /usr/share/frog/nld/misc.ner
+  /usr/share/frog/nld/nergen.data.10paxes
+  /usr/share/frog/nld/nergen.data.known.ddwdwfWawaa
+  /usr/share/frog/nld/nergen.data.lex
+  /usr/share/frog/nld/nergen.data.lex.ambi.05
+  /usr/share/frog/nld/nergen.data.settings
+  /usr/share/frog/nld/nergen.data.top1000
+  /usr/share/frog/nld/nergen.data.unknown.chnppddwdwFawawasss
+  /usr/share/frog/nld/ners.known
+  /usr/share/frog/nld/org.ner
+  /usr/share/frog/nld/per.ner
+  /usr/share/frog/nld/plaatsen-nld.ner
+  /usr/share/frog/nld/pro.ner
+  /usr/share/frog/nld/provincies-nld.ner
+  /usr/share/frog/nld/regios-nld.ner
+  /usr/share/frog/nld/straten-nld.ner
+  /usr/share/frog/nld/striptokens.txt
+  /usr/share/frog/nld/subsets.cgn
+  /usr/share/frog/nld/voornamen.ner
+  /usr/share/frog/nld/waterschappen-nld.ner
+
+------------------
+
+Port Notes:
+
+----- version 0.21-1bl1 -----
+Version bump.
+
+----- version 0.20-1bl1 -----
+Version bump.
+
+----- version 0.18-1bl1 -----
+Version bump.
+
+----- version 0.17-1bl1 -----
+Version bump.
+
+----- version 0.16-1bl1 -----
+Version bump.
+
+----- version 0.15-1bl1 -----
+Version bump.
+
+----- version 0.13-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

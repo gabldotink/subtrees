@@ -1,0 +1,209 @@
+blitz
+------------------------------------------
+Blitz++ is a C++ template class library that provides array objects for
+scientific computing. It is not a linear algebra or fft library; see
+http://oonumerics.org/oon or http://www.math.unipd.it/~michela/OP.htm for
+libraries that will do those things.
+
+Runtime requirements:
+  cygwin-3.1.7-1
+  libblitz-devel-1.0.2-1bl1
+  libblitz0-1.0.2-1bl1
+  libgcc1-9.3.0-2
+  libstdc++6-9.3.0-2
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.34+1git.de9c1b7cfe-1
+  cmake-3.17.3-2
+  cygport-0.34.0-1
+  gcc-core-9.3.0-2
+  gcc-fortran-9.3.0-2
+  gcc-g++-9.3.0-2
+  libtool-2.4.6-7
+  make-4.3-1
+
+Canonical website:
+  https://github.com/blitzpp/blitz
+
+Canonical download:
+  https://github.com/blitzpp/blitz/archive/1.0.2.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack blitz-1.0.2-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./blitz-1.0.2-X.cygport all
+
+This will create:
+  /usr/src/blitz-1.0.2-X-src.tar.xz
+  /usr/src/blitz-1.0.2-X.tar.xz
+  /usr/src/libblitz0-1.0.2-X.tar.xz
+  /usr/src/libblitz-devel-1.0.2-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(blitz)
+  /usr/share/doc/Cygwin/blitz.README
+  /usr/share/doc/blitz/AUTHORS
+  /usr/share/doc/blitz/COPYING
+  /usr/share/doc/blitz/COPYING.LESSER
+  /usr/share/doc/blitz/COPYING.temp
+  /usr/share/doc/blitz/ChangeLog
+  /usr/share/doc/blitz/ChangeLog.0
+  /usr/share/doc/blitz/ChangeLog.1
+  /usr/share/doc/blitz/ChangeLog.2
+  /usr/share/doc/blitz/Copyright
+  /usr/share/doc/blitz/LEGAL
+  /usr/share/doc/blitz/LICENSE
+  /usr/share/doc/blitz/NEWS
+  /usr/share/doc/blitz/README.md
+
+(libblitz0)
+  /usr/bin/cygblitz-0.dll
+
+(libblitz-devel)
+  /usr/include/blitz/array-impl.h
+  /usr/include/blitz/array.cc
+  /usr/include/blitz/array.h
+  /usr/include/blitz/array/asexpr.cc
+  /usr/include/blitz/array/asexpr.h
+  /usr/include/blitz/array/cartesian.h
+  /usr/include/blitz/array/cgsolve.h
+  /usr/include/blitz/array/complex.cc
+  /usr/include/blitz/array/convolve.cc
+  /usr/include/blitz/array/convolve.h
+  /usr/include/blitz/array/cycle.cc
+  /usr/include/blitz/array/domain.h
+  /usr/include/blitz/array/et.h
+  /usr/include/blitz/array/expr.cc
+  /usr/include/blitz/array/expr.h
+  /usr/include/blitz/array/fastiter.h
+  /usr/include/blitz/array/funcs.h
+  /usr/include/blitz/array/functorExpr.h
+  /usr/include/blitz/array/geometry.h
+  /usr/include/blitz/array/indirect.h
+  /usr/include/blitz/array/interlace.cc
+  /usr/include/blitz/array/io.cc
+  /usr/include/blitz/array/iter.h
+  /usr/include/blitz/array/map.h
+  /usr/include/blitz/array/methods.cc
+  /usr/include/blitz/array/misc.cc
+  /usr/include/blitz/array/multi.h
+  /usr/include/blitz/array/newet-macros.h
+  /usr/include/blitz/array/newet.h
+  /usr/include/blitz/array/ops.cc
+  /usr/include/blitz/array/ops.h
+  /usr/include/blitz/array/reduce.cc
+  /usr/include/blitz/array/reduce.h
+  /usr/include/blitz/array/resize.cc
+  /usr/include/blitz/array/shape.h
+  /usr/include/blitz/array/slice.h
+  /usr/include/blitz/array/slicing.cc
+  /usr/include/blitz/array/stencil-classes.cc
+  /usr/include/blitz/array/stencil-et-macros.h
+  /usr/include/blitz/array/stencil-et.h
+  /usr/include/blitz/array/stencilops.h
+  /usr/include/blitz/array/stencils.cc
+  /usr/include/blitz/array/stencils.h
+  /usr/include/blitz/array/storage.h
+  /usr/include/blitz/array/where.h
+  /usr/include/blitz/array/zip.h
+  /usr/include/blitz/bench.cc
+  /usr/include/blitz/bench.h
+  /usr/include/blitz/benchext.cc
+  /usr/include/blitz/benchext.h
+  /usr/include/blitz/blitz.h
+  /usr/include/blitz/bounds.h
+  /usr/include/blitz/bzconfig.h
+  /usr/include/blitz/bzdebug.h
+  /usr/include/blitz/compiler.h
+  /usr/include/blitz/constpointerstack.h
+  /usr/include/blitz/et-forward.h
+  /usr/include/blitz/etbase.h
+  /usr/include/blitz/funcs.h
+  /usr/include/blitz/globeval.cc
+  /usr/include/blitz/gnu/bzconfig.h
+  /usr/include/blitz/indexexpr.h
+  /usr/include/blitz/indexmap-forward.h
+  /usr/include/blitz/levicivita.h
+  /usr/include/blitz/limits-hack.h
+  /usr/include/blitz/listinit.h
+  /usr/include/blitz/memblock.cc
+  /usr/include/blitz/memblock.h
+  /usr/include/blitz/meta/dot.h
+  /usr/include/blitz/meta/matassign.h
+  /usr/include/blitz/meta/matmat.h
+  /usr/include/blitz/meta/matvec.h
+  /usr/include/blitz/meta/metaprog.h
+  /usr/include/blitz/meta/product.h
+  /usr/include/blitz/meta/sum.h
+  /usr/include/blitz/meta/vecassign.h
+  /usr/include/blitz/minmax.h
+  /usr/include/blitz/numinquire.h
+  /usr/include/blitz/numtrait.h
+  /usr/include/blitz/ops.h
+  /usr/include/blitz/prettyprint.h
+  /usr/include/blitz/promote.h
+  /usr/include/blitz/range.cc
+  /usr/include/blitz/range.h
+  /usr/include/blitz/ranks.h
+  /usr/include/blitz/reduce.h
+  /usr/include/blitz/shapecheck.h
+  /usr/include/blitz/simdtypes.h
+  /usr/include/blitz/tau.h
+  /usr/include/blitz/timer.h
+  /usr/include/blitz/tinymat2.cc
+  /usr/include/blitz/tinymat2.h
+  /usr/include/blitz/tinymat2io.cc
+  /usr/include/blitz/tinyvec2.cc
+  /usr/include/blitz/tinyvec2.h
+  /usr/include/blitz/tinyvec2io.cc
+  /usr/include/blitz/tm2fastiter.h
+  /usr/include/blitz/tmevaluate.h
+  /usr/include/blitz/traversal.cc
+  /usr/include/blitz/traversal.h
+  /usr/include/blitz/tuning.h
+  /usr/include/blitz/tv2fastiter.h
+  /usr/include/blitz/tvcross.h
+  /usr/include/blitz/tvecglobs.h
+  /usr/include/blitz/tvevaluate.h
+  /usr/include/blitz/update.h
+  /usr/include/blitz/wrap-climits.h
+  /usr/include/random/F.h
+  /usr/include/random/beta.h
+  /usr/include/random/chisquare.h
+  /usr/include/random/default.h
+  /usr/include/random/discrete-uniform.h
+  /usr/include/random/exponential.h
+  /usr/include/random/gamma.h
+  /usr/include/random/mt.h
+  /usr/include/random/mtparam.cc
+  /usr/include/random/normal.h
+  /usr/include/random/uniform.h
+  /usr/lib/libblitz.dll.a
+  /usr/lib/pkgconfig/blitz.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.0.2-1bl1 -----
+Version bump.
+
+----- version 1.0.1-1bl1 -----
+Version bump.
+
+----- version 0.10-1bl2 -----
+Rebuild on x86_64
+
+----- version 0.10-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://fd0.hatenablog.jp/>

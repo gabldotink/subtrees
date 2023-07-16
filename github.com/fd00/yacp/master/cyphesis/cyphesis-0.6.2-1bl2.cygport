@@ -1,0 +1,63 @@
+HOMEPAGE="https://github.com/worldforge/${PN}"
+SRC_URI="
+	https://github.com/worldforge/${PN}/archive/${PV}.tar.gz
+	https://src.fedoraproject.org/rpms/cyphesis/raw/master/f/logwatch.logconf.cyphesis
+	https://src.fedoraproject.org/rpms/cyphesis/raw/master/f/logwatch.script.cyphesis
+	https://src.fedoraproject.org/rpms/cyphesis/raw/master/f/logwatch.serviceconf.cyphesis
+	https://src.fedoraproject.org/rpms/cyphesis/raw/master/f/logwatch.shared.applycyphesisdate
+	https://src.fedoraproject.org/rpms/cyphesis/raw/master/f/cyphesis-tmpfiles.conf
+"
+PATCH_URI="
+	https://src.fedoraproject.org/rpms/cyphesis/raw/master/f/cyphesis-0.5.19-init.patch
+	https://src.fedoraproject.org/rpms/cyphesis/raw/master/f/cyphesis-0.5.11-logdir.patch
+	https://src.fedoraproject.org/rpms/cyphesis/raw/master/f/cyphesis-socketdir.patch
+"
+# https://src.fedoraproject.org/rpms/cyphesis/raw/master/f/logwatch.logconf.cyphesiscyphesis-0.5.21-dso-linking.patch not apply
+
+CATEGORY="Games"
+SUMMARY="WorldForge game server"
+DESCRIPTION="Cyphesis is a WorldForge server suitable running small games. It is also
+designed by be used as an AI subsystem in a network of distributed servers. It
+includes a terrain engine based on the Mercator library, a persistence system
+based on PostgreSQL, and an AI engine using goal trees implemented in Python.
+It is the server used in most current WorldForge games."
+
+export CXXFLAGS="${CXXFLAGS} -fpermissive"
+
+KEEPDIRS="
+	/var/run/${PN}
+"
+
+src_install()
+{
+	cd ${D}
+	mkdir -p var/run/${PN}
+
+	cd ${B}
+	cyginstall
+
+	cd ${S}
+	insinto /etc/rc.d/init.d
+	newins ${PN}.init ${PN}
+	insinto /etc/sysconfig
+	newins ${PN}.sysconfig ${PN}
+
+	insinto /usr/share/logwatch/dist.conf/logfiles
+	newins logwatch.logconf.${PN} ${PN}.conf
+	insinto /usr/share/logwatch/scripts/services
+	newins logwatch.script.${PN} ${PN}
+	insinto /usr/share/logwatch/dist.conf/services
+	newins logwatch.serviceconf.${PN} ${PN}.conf
+	insinto /usr/share/logwatch/scripts/shared
+	newins logwatch.shared.apply${PN}date apply${PN}date
+
+	insinto /etc/tmpfile.d
+	newins ${PN}-tmpfiles.conf ${PN}.conf
+
+	cd ${D}
+	rm -f usr/share/doc/${P}/[A-Z]*
+}
+
+DOCS="
+	FIXME
+"

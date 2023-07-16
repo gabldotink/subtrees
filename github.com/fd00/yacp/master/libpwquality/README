@@ -1,0 +1,145 @@
+libpwquality
+------------------------------------------
+The libpwquality library purpose is to provide common functions for password
+quality checking and also scoring them based on their apparent randomness. The
+library also provides a function for generating random passwords with good
+pronounceability. The library supports reading and parsing of a configuration
+file.
+
+In the package there are also very simple utilities that use the library
+function and PAM module that can be used instead of pam_cracklib. The module
+supports all the options of pam_cracklib.
+
+Runtime requirements:
+  cygwin-2.2.1-1
+  libcrack-devel-2.8.22-1
+  libcrack2-2.8.22-1
+  libintl8-0.19.4-1
+  libpwquality-devel-1.3.0-1bl1
+  libpwquality1-1.3.0-1bl1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-9-1
+  binutils-2.25-2
+  cygport-0.20.2-1
+  gcc-core-4.9.3-1
+  libtool-2.4.6-1
+  make-4.1-1
+
+Canonical website:
+  https://fedorahosted.org/libpwquality/
+
+Canonical download:
+  https://fedorahosted.org/releases/l/i/libpwquality/libpwquality-1.3.0.tar.bz2
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libpwquality-1.3.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libpwquality-1.3.0-X.cygport all
+
+This will create:
+  /usr/src/libpwquality-1.3.0-X-src.tar.xz
+  /usr/src/libpwquality-1.3.0-X.tar.xz
+  /usr/src/libpwquality1-1.3.0-X.tar.xz
+  /usr/src/libpwquality-devel-1.3.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libpwquality)
+  /etc/security/pwquality.conf
+  /usr/bin/pwmake.exe
+  /usr/bin/pwscore.exe
+  /usr/share/doc/Cygwin/libpwquality.README
+  /usr/share/doc/libpwquality/AUTHORS
+  /usr/share/doc/libpwquality/COPYING
+  /usr/share/doc/libpwquality/ChangeLog
+  /usr/share/doc/libpwquality/NEWS
+  /usr/share/doc/libpwquality/README
+  /usr/share/man/man1/pwmake.1.gz
+  /usr/share/man/man1/pwscore.1.gz
+  /usr/share/man/man3/pwquality.3.gz
+  /usr/share/man/man5/pwquality.conf.5.gz
+
+(libpwquality1)
+  /usr/bin/cygpwquality-1.dll
+  /usr/share/locale/ar/LC_MESSAGES/libpwquality.mo
+  /usr/share/locale/as/LC_MESSAGES/libpwquality.mo
+  /usr/share/locale/bg/LC_MESSAGES/libpwquality.mo
+  /usr/share/locale/bn_IN/LC_MESSAGES/libpwquality.mo
+  /usr/share/locale/ca/LC_MESSAGES/libpwquality.mo
+  /usr/share/locale/cs/LC_MESSAGES/libpwquality.mo
+  /usr/share/locale/da/LC_MESSAGES/libpwquality.mo
+  /usr/share/locale/de/LC_MESSAGES/libpwquality.mo
+  /usr/share/locale/es/LC_MESSAGES/libpwquality.mo
+  /usr/share/locale/eu/LC_MESSAGES/libpwquality.mo
+  /usr/share/locale/fi/LC_MESSAGES/libpwquality.mo
+  /usr/share/locale/fr/LC_MESSAGES/libpwquality.mo
+  /usr/share/locale/gu/LC_MESSAGES/libpwquality.mo
+  /usr/share/locale/he/LC_MESSAGES/libpwquality.mo
+  /usr/share/locale/hi/LC_MESSAGES/libpwquality.mo
+  /usr/share/locale/hu/LC_MESSAGES/libpwquality.mo
+  /usr/share/locale/it/LC_MESSAGES/libpwquality.mo
+  /usr/share/locale/ja/LC_MESSAGES/libpwquality.mo
+  /usr/share/locale/kk/LC_MESSAGES/libpwquality.mo
+  /usr/share/locale/km/LC_MESSAGES/libpwquality.mo
+  /usr/share/locale/kn/LC_MESSAGES/libpwquality.mo
+  /usr/share/locale/ko/LC_MESSAGES/libpwquality.mo
+  /usr/share/locale/ml/LC_MESSAGES/libpwquality.mo
+  /usr/share/locale/mr/LC_MESSAGES/libpwquality.mo
+  /usr/share/locale/mr_IN/LC_MESSAGES/libpwquality.mo
+  /usr/share/locale/nb/LC_MESSAGES/libpwquality.mo
+  /usr/share/locale/nl/LC_MESSAGES/libpwquality.mo
+  /usr/share/locale/or/LC_MESSAGES/libpwquality.mo
+  /usr/share/locale/pa/LC_MESSAGES/libpwquality.mo
+  /usr/share/locale/pl/LC_MESSAGES/libpwquality.mo
+  /usr/share/locale/pt/LC_MESSAGES/libpwquality.mo
+  /usr/share/locale/pt_BR/LC_MESSAGES/libpwquality.mo
+  /usr/share/locale/ru/LC_MESSAGES/libpwquality.mo
+  /usr/share/locale/si/LC_MESSAGES/libpwquality.mo
+  /usr/share/locale/sk/LC_MESSAGES/libpwquality.mo
+  /usr/share/locale/sr/LC_MESSAGES/libpwquality.mo
+  /usr/share/locale/sr@latin/LC_MESSAGES/libpwquality.mo
+  /usr/share/locale/sv/LC_MESSAGES/libpwquality.mo
+  /usr/share/locale/ta/LC_MESSAGES/libpwquality.mo
+  /usr/share/locale/te/LC_MESSAGES/libpwquality.mo
+  /usr/share/locale/tr/LC_MESSAGES/libpwquality.mo
+  /usr/share/locale/uk/LC_MESSAGES/libpwquality.mo
+  /usr/share/locale/vi/LC_MESSAGES/libpwquality.mo
+  /usr/share/locale/zh_CN/LC_MESSAGES/libpwquality.mo
+  /usr/share/locale/zh_TW/LC_MESSAGES/libpwquality.mo
+  /usr/share/locale/zu/LC_MESSAGES/libpwquality.mo
+
+(libpwquality-devel)
+  /usr/include/pwquality.h
+  /usr/lib/libpwquality.dll.a
+  /usr/lib/pkgconfig/pwquality.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.3.0-1bl1 -----
+Version bump.
+
+----- version 1.2.4-1bl1 -----
+Version bump.
+
+----- version 1.2.3-1bl1 -----
+Version bump.
+
+----- version 1.2.2-1bl1 -----
+Version bump.
+
+----- version 1.2.0-1bl1 -----
+Version bump.
+
+----- version 1.1.1-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

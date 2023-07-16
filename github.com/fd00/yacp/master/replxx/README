@@ -1,0 +1,81 @@
+replxx
+------------------------------------------
+A small, portable GNU readline replacement for Linux, Windows and MacOS which
+is capable of handling UTF-8 characters. Unlike GNU readline, which is GPL,
+this library uses a BSD license and can be used in any kind of program.
+
+Runtime requirements:
+  cygwin-3.3.1-1
+  libgcc1-11.2.0-1
+  libreplxx-devel-0.0.4-1bl1
+  libreplxx0-0.0.4-1bl1
+  libstdc++6-11.2.0-1
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.37-2
+  cmake-3.20.0-1
+  cygport-0.34.0-1
+  gcc-core-11.2.0-1
+  gcc-g++-11.2.0-1
+  ninja-1.10.2-1
+
+Canonical website:
+  https://github.com/AmokHuginnsson/replxx
+
+Canonical download:
+  https://github.com/AmokHuginnsson/replxx/archive/refs/tags/release-0.0.4.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack replxx-0.0.4-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./replxx-0.0.4-X.cygport all
+
+This will create:
+  /usr/src/replxx-0.0.4-X-src.tar.xz
+  /usr/src/replxx-0.0.4-X.tar.xz
+  /usr/src/libreplxx0-0.0.4-X.tar.xz
+  /usr/src/libreplxx-devel-0.0.4-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(replxx)
+  /usr/share/doc/Cygwin/replxx.README
+  /usr/share/doc/replxx/LICENSE.md
+  /usr/share/doc/replxx/README.md
+
+(libreplxx0)
+  /usr/bin/cygreplxx-0.dll
+
+(libreplxx-devel)
+  /usr/include/replxx.h
+  /usr/include/replxx.hxx
+  /usr/lib/cmake/replxx/replxx-config-version.cmake
+  /usr/lib/cmake/replxx/replxx-config.cmake
+  /usr/lib/cmake/replxx/replxx-targets-release.cmake
+  /usr/lib/cmake/replxx/replxx-targets.cmake
+  /usr/lib/libreplxx.dll.a
+  /usr/lib/pkgconfig/replxx.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.0.4-1bl1 -----
+Version bump.
+
+----- version 0.0.3-1bl1 -----
+Version bump.
+
+----- version 0.0.2-1bl1 -----
+Version bump.
+
+----- version 0.0.1-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

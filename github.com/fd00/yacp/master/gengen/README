@@ -1,0 +1,76 @@
+gengen
+------------------------------------------
+Gengen (GENerator GENerator) is a tool that, starting from a parameterized
+text, called template, generates a text generator that can substitute
+parameters with values.
+
+Runtime requirements:
+  cygwin-2.10.0-1
+  libgcc1-7.3.0-3
+  libstdc++6-7.3.0-3
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-10-1
+  binutils-2.29-1
+  bison-3.0.4-1
+  cygport-0.31.1-1
+  gcc-core-7.3.0-3
+  gcc-g++-7.3.0-3
+  gengetopt-2.22.6-1bl3
+  make-4.2.1-2
+
+Canonical website:
+  http://www.gnu.org/software/gengen/
+
+Canonical download:
+  mirror://gnu/gengen/gengen-1.4.2.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack gengen-1.4.2-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./gengen-1.4.2-X.cygport all
+
+This will create:
+  /usr/src/gengen-1.4.2-X-src.tar.xz
+  /usr/src/gengen-1.4.2-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(gengen)
+  /usr/bin/gengen.exe
+  /usr/share/doc/Cygwin/gengen.README
+  /usr/share/doc/gengen/AUTHORS
+  /usr/share/doc/gengen/COPYING
+  /usr/share/doc/gengen/ChangeLog
+  /usr/share/doc/gengen/INSTALL
+  /usr/share/doc/gengen/NEWS
+  /usr/share/doc/gengen/README
+  /usr/share/doc/gengen/THANKS
+  /usr/share/doc/gengen/gengen.html
+  /usr/share/doc/gengen/index.html
+  /usr/share/info/gengen.info.gz
+  /usr/share/man/man1/gengen.1.gz
+
+------------------
+
+Port Notes:
+
+----- version 1.4.2-1bl3 -----
+Rebuild with gcc-7.3.0
+
+----- version 1.4.2-1bl2 -----
+Rebuild on x86_64
+
+----- version 1.4.2-1bl1 -----
+Version bump.
+
+----- version 1.4.1-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

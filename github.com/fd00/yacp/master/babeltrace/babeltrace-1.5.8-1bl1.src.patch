@@ -1,0 +1,11 @@
+--- origsrc/babeltrace-1.5.8/bindings/python/setup.py.in	2020-02-06 04:45:47.000000000 +0900
++++ src/babeltrace-1.5.8/bindings/python/setup.py.in	2020-02-13 10:53:19.212725500 +0900
+@@ -37,7 +37,7 @@ following command to your .bashrc/.zshrc
+ def main():
+     babeltrace_ext = Extension('babeltrace/_babeltrace',
+                         sources=['babeltrace/babeltrace.i','babeltrace/python-complements.c'],
+-                        libraries=['babeltrace', 'babeltrace-ctf'],)
++                        libraries=['babeltrace', 'babeltrace-ctf', 'glib-2.0'],)
+ 
+     dist = setup(name='babeltrace',
+             version='@PACKAGE_VERSION@',

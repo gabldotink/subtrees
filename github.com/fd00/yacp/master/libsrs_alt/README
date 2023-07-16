@@ -1,0 +1,86 @@
+libsrs_alt
+------------------------------------------
+This is a complete standalone C implementation of the SRS (Sender Rewriting
+Scheme) and includes a command line utility and daemon, test utility and
+static and dynamic libraries. SRS is a stop-gap for users of SPF (Sender
+Policy Framework).
+
+libsrs_alt has been hugely successful and has been running on hundreds of mail
+servers without fault. It has now been released with a couple of minor updates
+and some code optimizations.
+
+Runtime requirements:
+  cygwin-2.6.1-1
+  libsrs_alt-devel-1.0-1bl5
+  libsrs_alt1-1.0-1bl5
+  pkg-config-0.29.1-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-9-1
+  binutils-2.25-4
+  cygport-0.23.0-1
+  gcc-core-5.4.0-1
+  libtool-2.4.6-4
+  make-4.2.1-1
+
+Canonical website:
+  https://opsec.eu/src/srs/
+
+Canonical download:
+  https://opsec.eu/src/srs/libsrs_alt-1.0.tar.bz2
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libsrs_alt-1.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libsrs_alt-1.0-X.cygport all
+
+This will create:
+  /usr/src/libsrs_alt-1.0-X-src.tar.xz
+  /usr/src/libsrs_alt-1.0-X.tar.xz
+  /usr/src/libsrs_alt1-1.0-X.tar.xz
+  /usr/src/libsrs_alt-devel-1.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libsrs_alt)
+  /usr/bin/srs_alt.exe
+  /usr/share/doc/Cygwin/libsrs_alt.README
+  /usr/share/doc/libsrs_alt/AUTHORS
+  /usr/share/doc/libsrs_alt/COPYING
+  /usr/share/doc/libsrs_alt/ChangeLog
+  /usr/share/doc/libsrs_alt/README
+
+(libsrs_alt1)
+  /usr/bin/cygsrs_alt-1.dll
+
+(libsrs_alt-devel)
+  /usr/include/srs_alt.h
+  /usr/lib/libsrs_alt.dll.a
+  /usr/lib/pkgconfig/libsrs_alt.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.0-1bl5 -----
+Rebuild with gcc-5.4.0
+
+----- version 1.0-1bl4 -----
+Rebuild on x86_64
+
+----- version 1.0-1bl3 -----
+Rebuild with gcc-4.5.2
+
+----- version 1.0-1bl2 -----
+Rebuild with gcc-4 by fd0 <http://d.hatena.ne.jp/fd0/>
+
+----- version 1.0-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

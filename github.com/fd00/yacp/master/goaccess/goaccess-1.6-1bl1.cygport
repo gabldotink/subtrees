@@ -1,0 +1,26 @@
+HOMEPAGE="https://${PN}.io/"
+SRC_URI="https://tar.${PN}.io/${P}.tar.gz"
+
+CATEGORY="Web"
+SUMMARY="Real-time web log analyzer"
+DESCRIPTION="GoAccess is an open source real-time web log analyzer and interactive viewer
+that runs in a terminal in *nix systems. It provides fast and valuable HTTP
+statistics for system administrators that require a visual server report on
+the fly."
+
+BUILD_REQUIRES="libintl-devel libmaxminddb-devel libncurses-devel"
+
+CYGCONF_ARGS="
+	--enable-geoip=mmdb
+	--enable-utf8
+"
+
+src_test()
+{
+	cd ${B}
+	./${PN}.exe --version
+}
+
+DIFF_EXCLUDES="
+	*.tmp
+"

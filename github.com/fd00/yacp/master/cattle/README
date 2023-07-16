@@ -1,0 +1,92 @@
+cattle
+------------------------------------------
+Cattle is a toolkit for the Brainfuck programming language.
+
+Runtime requirements:
+  cygwin-3.1.5-1
+  girepository-GLib2.0-1.54.1-1
+  libcattle1.0-devel-1.4.0-1bl1
+  libcattle1.0_0-1.4.0-1bl1
+  libglib2.0-devel-2.54.3-1
+  libglib2.0_0-2.54.3-1
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.34+1git.de9c1b7cfe-1
+  cygport-0.34.0-1
+  gcc-core-9.3.0-2
+  gobject-introspection-1.54.1-1
+  libtool-2.4.6-7
+  make-4.3-1
+
+Canonical website:
+  https://kiyuko.org/software/cattle
+
+Canonical download:
+  https://kiyuko.org/software/cattle/releases/cattle-1.4.0.tar.xz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack cattle-1.4.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./cattle-1.4.0-X.cygport all
+
+This will create:
+  /usr/src/cattle-1.4.0-X-src.tar.xz
+  /usr/src/cattle-1.4.0-X.tar.xz
+  /usr/src/libcattle1.0_0-1.4.0-X.tar.xz
+  /usr/src/libcattle1.0-devel-1.4.0-X.tar.xz
+  /usr/src/girepository-Cattle1.0-1.4.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(cattle)
+  /usr/share/doc/Cygwin/cattle.README
+  /usr/share/doc/cattle/AUTHORS.rst
+  /usr/share/doc/cattle/COPYING
+  /usr/share/doc/cattle/NEWS.rst
+  /usr/share/doc/cattle/README.rst
+  /usr/share/doc/cattle/TODO.rst
+
+(libcattle1.0_0)
+  /usr/bin/cygcattle-1.0-0.dll
+
+(libcattle1.0-devel)
+  /usr/include/cattle-1.0/cattle/cattle-buffer.h
+  /usr/include/cattle-1.0/cattle/cattle-configuration.h
+  /usr/include/cattle-1.0/cattle/cattle-constants.h
+  /usr/include/cattle-1.0/cattle/cattle-enums.h
+  /usr/include/cattle-1.0/cattle/cattle-error.h
+  /usr/include/cattle-1.0/cattle/cattle-instruction.h
+  /usr/include/cattle-1.0/cattle/cattle-interpreter.h
+  /usr/include/cattle-1.0/cattle/cattle-program.h
+  /usr/include/cattle-1.0/cattle/cattle-tape.h
+  /usr/include/cattle-1.0/cattle/cattle-version.h
+  /usr/include/cattle-1.0/cattle/cattle.h
+  /usr/lib/libcattle-1.0.dll.a
+  /usr/lib/pkgconfig/cattle-1.0.pc
+
+(girepository-Cattle1.0)
+  /usr/lib/girepository-1.0/Cattle-1.0.typelib
+  /usr/share/gir-1.0/Cattle-1.0.gir
+
+------------------
+
+Port Notes:
+
+----- version 1.4.0-1bl1 -----
+Version bump.
+
+----- version 1.2.2-1bl1 -----
+Version bump.
+
+----- version 1.2.0-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

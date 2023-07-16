@@ -1,0 +1,220 @@
+libslax
+------------------------------------------
+libslax is a C implementation of the SLAX programming language, a dialect of
+XSLT that is more perl/C-like and easier to read/code/use.
+
+Runtime requirements:
+  bash-4.4.12-3
+  cygwin-3.3.1-1
+  libcurl4-7.79.1-1
+  libreadline7-8.1-2
+  libslax-devel-0.22.1-1bl1
+  libslax0-0.22.1-1bl1
+  libsqlite3_0-3.34.0-1
+  libxml2-2.9.10-2
+  libxml2-devel-2.9.10-2
+  libxslt-1.1.29-1
+  libxslt-devel-1.1.29-1
+  perl_base-5.32.1-2
+  pkg-config-1.6.3-1
+  tcl-8.6.11-1
+  tcl-tk-8.6.11-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.37-2
+  bison-3.8.2-1
+  cygport-0.34.0-1
+  gcc-core-11.2.0-1
+  libcurl-devel-7.79.1-1
+  libreadline-devel-8.1-2
+  libsqlite3-devel-3.34.0-1
+  libtool-2.4.6-7
+  libxml2-devel-2.9.10-2
+  libxslt-devel-1.1.29-1
+  make-4.3-1
+
+Canonical website:
+  http://www.libslax.org/
+
+Canonical download:
+  https://github.com/Juniper/libslax/releases/download/0.22.1/libslax-0.22.1.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libslax-0.22.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libslax-0.22.1-X.cygport all
+
+This will create:
+  /usr/src/libslax-0.22.1-X-src.tar.xz
+  /usr/src/libslax-0.22.1-X.tar.xz
+  /usr/src/libslax0-0.22.1-X.tar.xz
+  /usr/src/libslax-devel-0.22.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libslax)
+  /usr/bin/gt
+  /usr/bin/oxtradoc
+  /usr/bin/slaxproc.exe
+  /usr/share/doc/Cygwin/libslax.README
+  /usr/share/doc/libslax/Copyright
+  /usr/share/doc/libslax/README.md
+  /usr/share/man/man1/slaxdebugger.1x.gz
+  /usr/share/man/man1/slaxproc.1x.gz
+  /usr/share/oxtradoc/jquery-ui.js
+  /usr/share/oxtradoc/jquery.dbgpr.js
+  /usr/share/oxtradoc/jquery.js
+  /usr/share/oxtradoc/oxtradoc
+  /usr/share/oxtradoc/oxtradoc-nav.js
+  /usr/share/oxtradoc/oxtradoc-tips.js
+  /usr/share/oxtradoc/oxtradoc.css
+  /usr/share/oxtradoc/rfc2629-other.ent
+  /usr/share/oxtradoc/rfc2629-to-html.slax
+  /usr/share/oxtradoc/rfc2629-xhtml.ent
+  /usr/share/oxtradoc/rfc2629.dtd
+  /usr/share/oxtradoc/xml2rfc.tcl
+
+(libslax0)
+  /usr/bin/cygparrotdb-0.dll
+  /usr/bin/cygpsu-0.dll
+  /usr/bin/cygslax-0.dll
+  /usr/bin/cygslax-xi-0.dll
+  /usr/lib/slax/extensions/bit.prefix
+  /usr/lib/slax/extensions/crypto.prefix
+  /usr/lib/slax/extensions/curl.prefix
+  /usr/lib/slax/extensions/cygext_bit.dll
+  /usr/lib/slax/extensions/cygext_curl.dll
+  /usr/lib/slax/extensions/cygext_db.dll
+  /usr/lib/slax/extensions/cygext_exslt.dll
+  /usr/lib/slax/extensions/cygext_os.dll
+  /usr/lib/slax/extensions/cygext_xutil.dll
+  /usr/lib/slax/extensions/date.prefix
+  /usr/lib/slax/extensions/db.prefix
+  /usr/lib/slax/extensions/db/cygext_db_sqlite.dll
+  /usr/lib/slax/extensions/db/db_driver_sqlite.so
+  /usr/lib/slax/extensions/dyn.prefix
+  /usr/lib/slax/extensions/exsl.prefix
+  /usr/lib/slax/extensions/func.prefix
+  /usr/lib/slax/extensions/http%3A%2F%2Fexslt.org%2Fcommon.ext
+  /usr/lib/slax/extensions/http%3A%2F%2Fexslt.org%2Fcrypto.ext
+  /usr/lib/slax/extensions/http%3A%2F%2Fexslt.org%2Fdates-and-times.ext
+  /usr/lib/slax/extensions/http%3A%2F%2Fexslt.org%2Fdynamic.ext
+  /usr/lib/slax/extensions/http%3A%2F%2Fexslt.org%2Ffunctions.ext
+  /usr/lib/slax/extensions/http%3A%2F%2Fexslt.org%2Fmath.ext
+  /usr/lib/slax/extensions/http%3A%2F%2Fexslt.org%2Fsets.ext
+  /usr/lib/slax/extensions/http%3A%2F%2Fexslt.org%2Fstrings.ext
+  /usr/lib/slax/extensions/http%3A%2F%2Ficl.com%2Fsaxon.ext
+  /usr/lib/slax/extensions/http%3A%2F%2Fxml.libslax.org%2Fbit.ext
+  /usr/lib/slax/extensions/http%3A%2F%2Fxml.libslax.org%2Fcurl.ext
+  /usr/lib/slax/extensions/http%3A%2F%2Fxml.libslax.org%2Fdb.ext
+  /usr/lib/slax/extensions/http%3A%2F%2Fxml.libslax.org%2Fos.ext
+  /usr/lib/slax/extensions/http%3A%2F%2Fxml.libslax.org%2Fxutil.ext
+  /usr/lib/slax/extensions/math.prefix
+  /usr/lib/slax/extensions/os.prefix
+  /usr/lib/slax/extensions/saxon.prefix
+  /usr/lib/slax/extensions/set.prefix
+  /usr/lib/slax/extensions/str.prefix
+  /usr/lib/slax/extensions/xutil.prefix
+
+(libslax-devel)
+  /usr/bin/slax-config
+  /usr/include/libpsu/psualloc.h
+  /usr/include/libpsu/psubase64.h
+  /usr/include/libpsu/psucommon.h
+  /usr/include/libpsu/psucpu.h
+  /usr/include/libpsu/psulog.h
+  /usr/include/libpsu/psustring.h
+  /usr/include/libpsu/psuthread.h
+  /usr/include/libpsu/psutime.h
+  /usr/include/libslax/internal/jsonlexer.h
+  /usr/include/libslax/internal/jsonwriter.h
+  /usr/include/libslax/internal/slaxext.h
+  /usr/include/libslax/internal/slaxinternals.h
+  /usr/include/libslax/internal/slaxio.h
+  /usr/include/libslax/internal/slaxlexer.h
+  /usr/include/libslax/internal/slaxloader.h
+  /usr/include/libslax/internal/slaxnames.h
+  /usr/include/libslax/internal/slaxparser-tail.y
+  /usr/include/libslax/internal/slaxparser-xp.y
+  /usr/include/libslax/internal/slaxparser-xpl.y
+  /usr/include/libslax/internal/slaxparser.y
+  /usr/include/libslax/internal/slaxprofiler.h
+  /usr/include/libslax/internal/slaxstring.h
+  /usr/include/libslax/internal/slaxtree.h
+  /usr/include/libslax/slax.h
+  /usr/include/libslax/slaxconfig.h
+  /usr/include/libslax/slaxdata.h
+  /usr/include/libslax/slaxdyn.h
+  /usr/include/libslax/slaxversion.h
+  /usr/include/libslax/xmlsoft.h
+  /usr/include/libxi/xicommon.h
+  /usr/include/libxi/xinodeset.h
+  /usr/include/libxi/xiparse.h
+  /usr/include/libxi/xirules.h
+  /usr/include/libxi/xisource.h
+  /usr/include/libxi/xitree.h
+  /usr/include/libxi/xiwhiffle.h
+  /usr/include/libxi/xiworkspace.h
+  /usr/include/libxi/xixpath.h
+  /usr/include/parrotdb/paarb.h
+  /usr/include/parrotdb/pabitmap.h
+  /usr/include/parrotdb/pacommon.h
+  /usr/include/parrotdb/paconfig.h
+  /usr/include/parrotdb/pafixed.h
+  /usr/include/parrotdb/paistr.h
+  /usr/include/parrotdb/palog2.h
+  /usr/include/parrotdb/pammap.h
+  /usr/include/parrotdb/papat.h
+  /usr/lib/libparrotdb.dll.a
+  /usr/lib/libpsu.dll.a
+  /usr/lib/libslax-xi.dll.a
+  /usr/lib/libslax.dll.a
+  /usr/lib/pkgconfig/libslax.pc
+  /usr/share/doc/libslax/slax-manual.html
+  /usr/share/doc/libslax/slax-manual.txt
+  /usr/share/doc/libslax/slax-quick-reference.pdf
+  /usr/share/doc/libslax/slax.txt
+  /usr/share/man/man3/libslax.3x.gz
+
+------------------
+
+Port Notes:
+
+----- version 0.22.1-1bl1 -----
+Version bump.
+
+----- version 0.20.2-1bl1 -----
+Version bump.
+
+----- version 0.20.1-1bl1 -----
+Version bump.
+
+----- version 0.18.1-1bl1 -----
+Version bump.
+
+----- version 0.17.3-1bl1 -----
+Version bump.
+
+----- version 0.17.2-1bl1 -----
+Version bump.
+
+----- version 0.17.1-1bl1 -----
+Version bump.
+
+----- version 0.16.18-1bl1 -----
+Version bump.
+
+----- version 0.16.15-1bl1 -----
+Version bump.
+
+----- version 0.12.2-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://fd0.hatenablog.jp/>

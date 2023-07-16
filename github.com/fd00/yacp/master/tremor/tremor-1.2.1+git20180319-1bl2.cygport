@@ -1,0 +1,40 @@
+HOMEPAGE="https://gitlab.xiph.org/xiph/${PN}"
+GIT_URI="https://gitlab.xiph.org/xiph/${PN}.git"
+
+CATEGORY="Audio"
+SUMMARY="Embedded/fixed-point vorbis decoder"
+DESCRIPTION="The Tremor Vorbis I stream and file decoder provides an embeddable,
+integer-only library [libvorbisidec] intended for decoding all current and
+future Vorbis I compliant streams. The Tremor libvorbisidec library exposes an
+API intended to be as similar as possible to the familiar 'vorbisfile' library
+included with the open source Vorbis reference libraries distributed for free
+by Xiph.org."
+
+inherit git
+
+CYGCONF_ARGS="
+	--enable-maintainer-mode
+"
+
+DOCS="
+	CHANGELOG
+"
+
+PKG_NAMES="
+	${PN}
+	libvorbisidec1
+	libvorbisidec-devel
+"
+tremor_CONTENTS="
+	usr/share
+"
+libvorbisidec1_CONTENTS="
+	usr/bin
+"
+libvorbisidec_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+tremor_SUMMARY="${SUMMARY} (licensning & readmes)"
+libvorbisidec1_SUMMARY="${SUMMARY} (runtime)"
+libvorbisidec_devel_SUMMARY="${SUMMARY} (development)"

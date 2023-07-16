@@ -1,0 +1,137 @@
+trng4
+------------------------------------------
+Tina's Random Number Generator Library (TRNG) is a state of the art C++
+pseudo-random number generator library for sequential and parallel Monte Carlo
+simulations. Its design principles are based on a proposal for an extensible
+random number generator facility, that has become part of the C++11 standard.
+
+Runtime requirements:
+  cygwin-3.1.7-1
+  libtrng4-devel-4.23-1bl1
+  libtrng4_23-4.23-1bl1
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.34+1git.de9c1b7cfe-1
+  cmake-3.17.3-2
+  cygport-0.34.0-1
+  gcc-core-10.2.0-1
+  gcc-g++-10.2.0-1
+  ninja-1.10.1-1
+
+Canonical website:
+  https://github.com/rabauke/trng4
+
+Canonical download:
+  https://github.com/rabauke/trng4/archive/v4.23.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack trng4-4.23-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./trng4-4.23-X.cygport all
+
+This will create:
+  /usr/src/trng4-4.23-X-src.tar.xz
+  /usr/src/trng4-4.23-X.tar.xz
+  /usr/src/libtrng4_23-4.23-X.tar.xz
+  /usr/src/libtrng4-devel-4.23-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(trng4)
+  /usr/share/doc/Cygwin/trng4.README
+  /usr/share/doc/trng4/AUTHORS
+  /usr/share/doc/trng4/COPYING
+  /usr/share/doc/trng4/NEWS
+  /usr/share/doc/trng4/README
+  /usr/share/doc/trng4/trng.pdf
+
+(libtrng4_23)
+  /usr/bin/cygtrng4-22.dll
+
+(libtrng4-devel)
+  /usr/include/trng/bernoulli_dist.hpp
+  /usr/include/trng/beta_dist.hpp
+  /usr/include/trng/binomial_dist.hpp
+  /usr/include/trng/cauchy_dist.hpp
+  /usr/include/trng/chi_square_dist.hpp
+  /usr/include/trng/constants.hpp
+  /usr/include/trng/correlated_normal_dist.hpp
+  /usr/include/trng/cuda.hpp
+  /usr/include/trng/discrete_dist.hpp
+  /usr/include/trng/exponential_dist.hpp
+  /usr/include/trng/extreme_value_dist.hpp
+  /usr/include/trng/fast_discrete_dist.hpp
+  /usr/include/trng/gamma_dist.hpp
+  /usr/include/trng/generate_canonical.hpp
+  /usr/include/trng/geometric_dist.hpp
+  /usr/include/trng/hypergeometric_dist.hpp
+  /usr/include/trng/int_math.hpp
+  /usr/include/trng/int_types.hpp
+  /usr/include/trng/lagfib2plus.hpp
+  /usr/include/trng/lagfib2xor.hpp
+  /usr/include/trng/lagfib4plus.hpp
+  /usr/include/trng/lagfib4xor.hpp
+  /usr/include/trng/lcg64.hpp
+  /usr/include/trng/lcg64_shift.hpp
+  /usr/include/trng/limits.hpp
+  /usr/include/trng/linear_algebra.hpp
+  /usr/include/trng/logistic_dist.hpp
+  /usr/include/trng/lognormal_dist.hpp
+  /usr/include/trng/math.hpp
+  /usr/include/trng/maxwell_dist.hpp
+  /usr/include/trng/minstd.hpp
+  /usr/include/trng/mrg2.hpp
+  /usr/include/trng/mrg3.hpp
+  /usr/include/trng/mrg3s.hpp
+  /usr/include/trng/mrg4.hpp
+  /usr/include/trng/mrg5.hpp
+  /usr/include/trng/mrg5s.hpp
+  /usr/include/trng/mrg_parameter.hpp
+  /usr/include/trng/mrg_status.hpp
+  /usr/include/trng/mt19937.hpp
+  /usr/include/trng/mt19937_64.hpp
+  /usr/include/trng/negative_binomial_dist.hpp
+  /usr/include/trng/normal_dist.hpp
+  /usr/include/trng/pareto_dist.hpp
+  /usr/include/trng/poisson_dist.hpp
+  /usr/include/trng/powerlaw_dist.hpp
+  /usr/include/trng/rayleigh_dist.hpp
+  /usr/include/trng/snedecor_f_dist.hpp
+  /usr/include/trng/special_functions.hpp
+  /usr/include/trng/student_t_dist.hpp
+  /usr/include/trng/tent_dist.hpp
+  /usr/include/trng/truncated_normal_dist.hpp
+  /usr/include/trng/twosided_exponential_dist.hpp
+  /usr/include/trng/uniform01_dist.hpp
+  /usr/include/trng/uniform_dist.hpp
+  /usr/include/trng/uniform_int_dist.hpp
+  /usr/include/trng/uniformxx.hpp
+  /usr/include/trng/utility.hpp
+  /usr/include/trng/weibull_dist.hpp
+  /usr/include/trng/yarn2.hpp
+  /usr/include/trng/yarn3.hpp
+  /usr/include/trng/yarn3s.hpp
+  /usr/include/trng/yarn4.hpp
+  /usr/include/trng/yarn5.hpp
+  /usr/include/trng/yarn5s.hpp
+  /usr/include/trng/zero_truncated_poisson_dist.hpp
+  /usr/lib/libtrng4.dll.a
+  /usr/lib/pkgconfig/trng4.pc
+
+------------------
+
+Port Notes:
+
+----- version 4.23-1bl1 -----
+Version bump.
+
+----- version 4.19-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

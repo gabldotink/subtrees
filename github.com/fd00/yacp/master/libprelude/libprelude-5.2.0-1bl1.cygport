@@ -1,0 +1,88 @@
+HOMEPAGE="https://www.prelude-siem.org"
+SRC_URI="https://www.prelude-siem.org/attachments/download/1395/${P}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Main library, used in every program using the Prelude architecture"
+DESCRIPTION="Libprelude is a library that guarantees secure connections between all sensors
+and the Prelude Manager. Libprelude provides an Application Programming
+Interface (API) for the communication with Prelude sub-systems, it supplies
+the necessary functionality for generating and emitting IDMEF alerts with
+Prelude and automates the saving and re-transmission of data in times of
+temporary interruption of one of the components of the system."
+
+CYGCONF_ARGS="
+	--enable-maintainer-mode
+	--with-python3=no
+"
+
+src_install()
+{
+	cd ${B}
+	cyginstall
+
+	cd ${D}
+	mv usr/local/lib/ruby usr/lib/ruby
+}
+
+DIFF_EXCLUDES="
+	libltdl
+	*.m4
+"
+
+PKG_NAMES="
+	${PN}
+	${PN}28
+	${PN}-devel
+	${PN}cpp12
+	${PN}cpp-devel
+	lua-${PN}
+	perl-${PN}
+	python27-${PN}
+	ruby-${PN}
+"
+libprelude_CONTENTS="
+	etc
+	usr/bin/prelude-*
+	usr/share/doc
+	usr/share/man/man1/prelude-admin.1*
+"
+libprelude28_CONTENTS="
+	usr/bin/cygprelude-*.dll
+"
+libprelude_devel_CONTENTS="
+	usr/bin/${PN}-config
+	usr/include/${PN}/*.h
+	usr/lib/${PN}.dll.a
+	usr/lib/pkgconfig
+	usr/share/aclocal
+	usr/share/${PN}
+	usr/share/man/man1/libprelude-config.1*
+"
+libpreludecpp12_CONTENTS="
+	usr/bin/cygpreludecpp-*.dll
+"
+libpreludecpp_devel_CONTENTS="
+	usr/include/${PN}/*.hxx
+	usr/lib/${PN}cpp.dll.a
+"
+lua_libprelude_CONTENTS="
+	usr/lib/lua
+"
+perl_libprelude_CONTENTS="
+	usr/lib/perl5
+"
+python27_libprelude_CONTENTS="
+	usr/lib/python2.7
+"
+ruby_libprelude_CONTENTS="
+	usr/lib/ruby
+"
+libprelude_SUMMARY="${SUMMARY} (utilities)"
+libprelude28_SUMMARY="${SUMMARY} (runtime)"
+libprelude_devel_SUMMARY="${SUMMARY} (development)"
+libpreludecpp8_SUMMARY="${SUMMARY} (runtime / c++)"
+libpreludecpp_devel_SUMMARY="${SUMMARY} (development / c++)"
+lua_libprelude_SUMMARY="${SUMMARY} (lua bindings)"
+perl_libprelude_SUMMARY="${SUMMARY} (perl bindings)"
+python27_libprelude_SUMMARY="${SUMMARY} (python2 bindings)"
+ruby_libprelude_SUMMARY="${SUMMARY} (ruby bindings)"

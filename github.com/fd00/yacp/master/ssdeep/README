@@ -1,0 +1,93 @@
+ssdeep
+------------------------------------------
+ssdeep is a program for computing context triggered piecewise hashes (CTPH).
+Also called fuzzy hashes, CTPH can match inputs that have homologies. Such
+inputs have sequences of identical bytes in the same order, although bytes in
+between these sequences may be different in both content and length.
+
+Runtime requirements:
+  cygwin-2.10.0-1
+  libfuzzy-devel-2.14.1-1bl1
+  libfuzzy2-2.14.1-1bl1
+  libgcc1-6.4.0-5
+  libstdc++6-6.4.0-5
+  pkg-config-0.29.1-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-10-1
+  binutils-2.29-1
+  cygport-0.31.0-1
+  gcc-core-6.4.0-5
+  gcc-g++-6.4.0-5
+  libtool-2.4.6-5
+  make-4.2.1-2
+
+Canonical website:
+  https://ssdeep-project.github.io/ssdeep/
+
+Canonical download:
+  https://github.com/ssdeep-project/ssdeep/releases/download/release-2.14.1/ssdeep-2.14.1.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack ssdeep-2.14.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./ssdeep-2.14.1-X.cygport all
+
+This will create:
+  /usr/src/ssdeep-2.14.1-X-src.tar.xz
+  /usr/src/ssdeep-2.14.1-X.tar.xz
+  /usr/src/libfuzzy2-2.14.1-X.tar.xz
+  /usr/src/libfuzzy-devel-2.14.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(ssdeep)
+  /usr/bin/ssdeep.exe
+  /usr/share/doc/Cygwin/ssdeep.README
+  /usr/share/doc/ssdeep/AUTHORS
+  /usr/share/doc/ssdeep/COPYING
+  /usr/share/doc/ssdeep/ChangeLog
+  /usr/share/doc/ssdeep/FILEFORMAT
+  /usr/share/doc/ssdeep/NEWS
+  /usr/share/doc/ssdeep/README
+  /usr/share/doc/ssdeep/TODO
+  /usr/share/man/man1/ssdeep.1.gz
+
+(libfuzzy2)
+  /usr/bin/cygfuzzy-2.dll
+
+(libfuzzy-devel)
+  /usr/include/ssdeep/edit_dist.h
+  /usr/include/ssdeep/fuzzy.h
+  /usr/lib/libfuzzy.dll.a
+  /usr/lib/pkgconfig/ssdeep.pc
+
+------------------
+
+Port Notes:
+
+----- version 2.14.1-1bl1 -----
+Version bump.
+
+----- version 2.14-1bl1 -----
+Version bump.
+
+----- version 2.13-1bl1 -----
+Version bump.
+
+----- version 2.12-1bl1 -----
+Version bump.
+
+----- version 2.7-1bl1 -----
+Version bump.
+
+----- version 2.6-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

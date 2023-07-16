@@ -1,0 +1,102 @@
+charls
+------------------------------------------
+CharLS is a C++ implementation of the JPEG-LS standard for lossless and
+near-lossless image compression and decompression. JPEG-LS is a low-complexity
+image compression standard that matches JPEG 2000 compression ratios.
+
+Runtime requirements:
+  cygwin-3.4.3-1
+  libcharls-devel-2.4.1-1bl1
+  libcharls2-2.4.1-1bl1
+  libgcc1-11.3.0-1
+  libstdc++6-11.3.0-1
+  pkg-config-1.9.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.39-1
+  cmake-3.23.2-1
+  cygport-0.35.5-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  ninja-1.11.1-1
+
+Canonical website:
+  https://github.com/team-charls/charls
+
+Canonical download:
+  https://github.com/team-charls/charls/archive/refs/tags/2.4.1.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack charls-2.4.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./charls-2.4.1-X.cygport all
+
+This will create:
+  /usr/src/charls-2.4.1-X-src.tar.xz
+  /usr/src/charls-2.4.1-X.tar.xz
+  /usr/src/libcharls2-2.4.1-X.tar.xz
+  /usr/src/libcharls-devel-2.4.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(charls)
+  /usr/share/doc/Cygwin/charls.README
+  /usr/share/doc/charls/CHANGELOG.md
+  /usr/share/doc/charls/LICENSE.md
+  /usr/share/doc/charls/README.md
+  /usr/share/doc/charls/SECURITY.md
+  /usr/share/doc/charls/default.ruleset.md
+  /usr/share/doc/charls/jpeg_ls_logo.png
+  /usr/share/doc/charls/requirements.md
+  /usr/share/doc/charls/style_and_design.md
+
+(libcharls2)
+  /usr/bin/cygcharls-2.dll
+
+(libcharls-devel)
+  /usr/include/charls/annotations.h
+  /usr/include/charls/api_abi.h
+  /usr/include/charls/charls.h
+  /usr/include/charls/charls_jpegls_decoder.h
+  /usr/include/charls/charls_jpegls_encoder.h
+  /usr/include/charls/jpegls_error.h
+  /usr/include/charls/public_types.h
+  /usr/include/charls/validate_spiff_header.h
+  /usr/include/charls/version.h
+  /usr/lib/cmake/charls/charlsConfig-release.cmake
+  /usr/lib/cmake/charls/charlsConfig.cmake
+  /usr/lib/cmake/charls/charlsConfigVersion.cmake
+  /usr/lib/libcharls.dll.a
+  /usr/lib/pkgconfig/charls.pc
+
+------------------
+
+Port Notes:
+
+----- version 2.4.1-1bl1 -----
+Version bump.
+
+----- version 2.3.4-1bl1 -----
+Version bump.
+
+----- version 2.3.1-1bl1 -----
+Version bump.
+
+----- version 2.2.0-1bl1 -----
+Version bump.
+
+----- version 2.1.0-1bl1 -----
+Version bump.
+
+----- version 2.0.0-1bl1 -----
+Version bump.
+
+----- version 1.0+git20160130-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

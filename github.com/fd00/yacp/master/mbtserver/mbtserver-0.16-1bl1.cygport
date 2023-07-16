@@ -1,0 +1,36 @@
+HOMEPAGE="https://github.com/LanguageMachines/${PN}"
+SRC_URI="https://github.com/LanguageMachines/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Science"
+SUMMARY="Server extension of mbt"
+DESCRIPTION="${SUMMARY}"
+
+LICENSE="GPL-3.0-only"
+LICENSE_SPDX="SPDX-License-Identifier: GPL-3.0-only"
+LICENSE_URI="COPYING"
+
+BUILD_REQUIRES="libicu-devel libmbt-devel libticcutils-devel libtimbl-devel"
+
+DIFF_EXCLUDES="
+	*.m4
+"
+
+PKG_NAMES="
+	mbtserver
+	libmbtserver2
+	libmbtserver-devel
+"
+mbtserver_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+libmbtserver2_CONTENTS="
+	usr/bin/*.dll
+"
+libmbtserver_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+mbtserver_SUMMARY="${SUMMARY} (utilities)"
+libmbtserver2_SUMMARY="${SUMMARY} (runtime)"
+libmbtserver_devel_SUMMARY="${SUMMARY} (development)"

@@ -1,0 +1,25 @@
+HOMEPAGE="https://github.com/kazu-yamamoto/${PN}/"
+SRC_URI="https://github.com/kazu-yamamoto/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Security"
+SUMMARY="PGP packet visualizer"
+DESCRIPTION="pgpdump is a PGP packet visualizer which displays the packet format of OpenPGP
+(RFC 4880) and PGP version 2 (RFC 1991)."
+
+BUILD_REQUIRES="libbz2-devel zlib-devel"
+
+src_compile()
+{
+	cd ${S}
+	cygautoreconf
+	cd ${B}
+	lndirs
+	cygconf
+	cygmake
+}
+
+src_test()
+{
+	cd ${B}
+	./${PN}.exe -v
+}

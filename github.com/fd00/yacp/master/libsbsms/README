@@ -1,0 +1,79 @@
+libsbsms
+------------------------------------------
+libsbsms is a library for high quality time and pitch scale modification. It
+uses octave subband sinusoidal modeling.
+
+Runtime requirements:
+  cygwin-3.2.0-1
+  libgcc1-11.2.0-1
+  libsbsms-devel-2.3.0-1bl1
+  libsbsms0-2.3.0-1bl1
+  libstdc++6-11.2.0-1
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.37-1
+  cmake-3.20.0-1
+  cygport-0.34.0-1
+  gcc-core-11.2.0-1
+  gcc-g++-11.2.0-1
+  libtool-2.4.6-7
+  make-4.3-1
+
+Canonical website:
+  https://github.com/claytonotey/libsbsms
+
+Canonical download:
+  https://github.com/claytonotey/libsbsms/archive/refs/tags/2.3.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libsbsms-2.3.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libsbsms-2.3.0-X.cygport all
+
+This will create:
+  /usr/src/libsbsms-2.3.0-X-src.tar.xz
+  /usr/src/libsbsms-2.3.0-X.tar.xz
+  /usr/src/libsbsms0-2.3.0-X.tar.xz
+  /usr/src/libsbsms-devel-2.3.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libsbsms)
+  /usr/share/doc/Cygwin/libsbsms.README
+  /usr/share/doc/libsbsms/AUTHORS
+  /usr/share/doc/libsbsms/ChangeLog
+  /usr/share/doc/libsbsms/LICENSE.txt
+  /usr/share/doc/libsbsms/NEWS
+  /usr/share/doc/libsbsms/README.md
+  /usr/share/doc/libsbsms/TODO
+
+(libsbsms0)
+  /usr/bin/cygsbsms-0.dll
+
+(libsbsms-devel)
+  /usr/include/sbsms.h
+  /usr/lib/libsbsms.dll.a
+  /usr/lib/pkgconfig/sbsms.pc
+
+------------------
+
+Port Notes:
+
+----- version 2.3.0-1bl1 -----
+Version bump.
+
+----- version 2.0.2-1bl1 -----
+Version bump.
+
+----- version 2.0.1-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://fd0.hatenablog.jp/>

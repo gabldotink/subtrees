@@ -1,0 +1,34 @@
+HOMEPAGE="https://research.wand.net.nz/software/lib${PN}.php"
+SRC_URI="https://research.wand.net.nz/software/${PN}/${P}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Variety of supported compression methods"
+DESCRIPTION="Libwandio is a software library written in C that provides an API for
+transparently reading from and writing to files using a variety of supported
+compression methods. Provided pthreads are available, I/O performance will be
+improved by doing any compression and/or decompression using a separate
+thread."
+
+DOCS="
+	COPYING.LESSER
+"
+
+PKG_NAMES="
+	${PN}
+	lib${PN}6
+	lib${PN}-devel
+"
+wandio_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+libwandio6_CONTENTS="
+	usr/bin/*.dll
+"
+libwandio_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+wandio_SUMMARY="${SUMMARY} (utilities)"
+libwandio6_SUMMARY="${SUMMARY} (runtime)"
+libwandio_devel_SUMMARY="${SUMMARY} (development)"

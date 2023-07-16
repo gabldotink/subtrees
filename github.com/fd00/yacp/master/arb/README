@@ -1,0 +1,118 @@
+arb
+------------------------------------------
+Arb is a C library for arbitrary-precision interval arithmetic. It has full
+support for both real and complex numbers. The library is thread-safe,
+portable, and extensively tested.
+
+Runtime requirements:
+  cygwin-3.3.4-2
+  libarb-devel-2.22.1-1bl1
+  libarb2-2.22.1-1bl1
+  libflint-devel-2.8.4-1
+  libflint16-2.8.4-1
+  libgcc1-11.2.0-1
+  libgmp-devel-6.2.1-2
+  libgmp10-6.2.1-2
+  libmpfr-devel-4.1.0-2
+  libmpfr6-4.1.0-2
+  pkg-config-1.8.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.37-2
+  cmake-3.20.0-1
+  cygport-0.34.2-1
+  gcc-core-11.2.0-1
+  libflint-devel-2.8.4-1
+  libgmp-devel-6.2.1-2
+  libmpfr-devel-4.1.0-2
+  ninja-1.10.2-1
+
+Canonical website:
+  https://github.com/fredrik-johansson/arb
+
+Canonical download:
+  https://github.com/fredrik-johansson/arb/archive/refs/tags/2.22.1.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack arb-2.22.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./arb-2.22.1-X.cygport all
+
+This will create:
+  /usr/src/arb-2.22.1-X-src.tar.xz
+  /usr/src/arb-2.22.1-X.tar.xz
+  /usr/src/libarb2-2.22.1-X.tar.xz
+  /usr/src/libarb-devel-2.22.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(arb)
+  /usr/share/doc/Cygwin/arb.README
+  /usr/share/doc/arb/LICENSE
+  /usr/share/doc/arb/README.md
+
+(libarb2)
+  /usr/bin/cygarb-2.dll
+
+(libarb-devel)
+  /usr/include/arb/acb.h
+  /usr/include/arb/acb_calc.h
+  /usr/include/arb/acb_dft.h
+  /usr/include/arb/acb_dirichlet.h
+  /usr/include/arb/acb_elliptic.h
+  /usr/include/arb/acb_hypgeom.h
+  /usr/include/arb/acb_mat.h
+  /usr/include/arb/acb_modular.h
+  /usr/include/arb/acb_poly.h
+  /usr/include/arb/arb.h
+  /usr/include/arb/arb_calc.h
+  /usr/include/arb/arb_fmpz_poly.h
+  /usr/include/arb/arb_fpwrap.h
+  /usr/include/arb/arb_hypgeom.h
+  /usr/include/arb/arb_mat.h
+  /usr/include/arb/arb_poly.h
+  /usr/include/arb/arf.h
+  /usr/include/arb/bernoulli.h
+  /usr/include/arb/bool_mat.h
+  /usr/include/arb/dirichlet.h
+  /usr/include/arb/dlog.h
+  /usr/include/arb/double_interval.h
+  /usr/include/arb/fmpr.h
+  /usr/include/arb/fmpz_extras.h
+  /usr/include/arb/hypgeom.h
+  /usr/include/arb/mag.h
+  /usr/include/arb/partitions.h
+  /usr/lib/libarb.dll.a
+  /usr/lib/pkgconfig/arb.pc
+
+------------------
+
+Port Notes:
+
+----- version 2.22.1-1bl1 -----
+Version bump.
+
+----- version 2.22.0-1bl1 -----
+Version bump.
+
+----- version 2.21.1-1bl1 -----
+Version bump.
+
+----- version 2.21.0-1bl1 -----
+Version bump.
+
+----- version 2.20.0-1bl1 -----
+Version bump.
+
+----- version 2.19.0-1bl1 -----
+Version bump.
+
+----- version 2.18.1-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

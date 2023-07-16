@@ -1,0 +1,44 @@
+HOMEPAGE="https://sourceforge.net/projects/${PN}/"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="C++ logging library"
+DESCRIPTION="vxlog is a C++ library for writing messages to log files. Its main feature is
+a printf-like syntax. Messages can be output to file, the console, and using
+syslog. Output messages and journal modules can be filtered. The library is
+thread-safe."
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DVERSION:STRING=${PV}
+"
+
+src_test()
+{
+	cd ${B}
+	ninja_test
+}
+
+DOCS="
+	doc/*.txt
+"
+
+PKG_NAMES="
+	${PN}
+	lib${PN}1
+	lib${PN}-devel
+"
+vxlog_CONTENTS="
+	usr/share
+"
+libvxlog1_CONTENTS="
+	usr/bin
+"
+libvxlog_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+vxlog_SUMMARY="${SUMMARY} (licensing & readmes)"
+libvxlog1_SUMMARY="${SUMMARY} (runtime)"
+libvxlog_devel_SUMMARY="${SUMMARY} (development)"

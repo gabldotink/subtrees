@@ -1,0 +1,134 @@
+unibilium
+------------------------------------------
+Unibilium is a very basic terminfo library. It doesn't depend on curses or any
+other library. It also doesn't use global variables, so it should be
+thread-safe.
+
+Runtime requirements:
+  cygwin-3.2.0-1
+  libunibilium-devel-2.1.1-1bl1
+  libunibilium4-2.1.1-1bl1
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.36.1-2
+  cmake-3.20.0-1
+  cygport-0.34.0-1
+  gcc-core-10.2.0-1
+  libtool-2.4.6-7
+  make-4.3-1
+
+Canonical website:
+  https://github.com/neovim/unibilium
+
+Canonical download:
+  https://github.com/neovim/unibilium/archive/v2.1.1.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack unibilium-2.1.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./unibilium-2.1.1-X.cygport all
+
+This will create:
+  /usr/src/unibilium-2.1.1-X-src.tar.xz
+  /usr/src/unibilium-2.1.1-X.tar.xz
+  /usr/src/libunibilium4-2.1.1-X.tar.xz
+  /usr/src/libunibilium-devel-2.1.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(unibilium)
+  /usr/share/doc/Cygwin/unibilium.README
+  /usr/share/doc/unibilium/CHANGES
+  /usr/share/doc/unibilium/LICENSE
+  /usr/share/doc/unibilium/README.md
+
+(libunibilium4)
+  /usr/bin/cygunibilium-4.dll
+
+(libunibilium-devel)
+  /usr/include/unibilium.h
+  /usr/lib/libunibilium.dll.a
+  /usr/lib/pkgconfig/unibilium.pc
+  /usr/share/man/man3/unibi_add_ext_bool.3.gz
+  /usr/share/man/man3/unibi_add_ext_num.3.gz
+  /usr/share/man/man3/unibi_add_ext_str.3.gz
+  /usr/share/man/man3/unibi_count_ext_bool.3.gz
+  /usr/share/man/man3/unibi_count_ext_num.3.gz
+  /usr/share/man/man3/unibi_count_ext_str.3.gz
+  /usr/share/man/man3/unibi_del_ext_bool.3.gz
+  /usr/share/man/man3/unibi_destroy.3.gz
+  /usr/share/man/man3/unibi_dummy.3.gz
+  /usr/share/man/man3/unibi_dump.3.gz
+  /usr/share/man/man3/unibi_format.3.gz
+  /usr/share/man/man3/unibi_from_env.3.gz
+  /usr/share/man/man3/unibi_from_fd.3.gz
+  /usr/share/man/man3/unibi_from_file.3.gz
+  /usr/share/man/man3/unibi_from_fp.3.gz
+  /usr/share/man/man3/unibi_from_mem.3.gz
+  /usr/share/man/man3/unibi_from_term.3.gz
+  /usr/share/man/man3/unibi_get_aliases.3.gz
+  /usr/share/man/man3/unibi_get_bool.3.gz
+  /usr/share/man/man3/unibi_get_ext_bool.3.gz
+  /usr/share/man/man3/unibi_get_ext_bool_name.3.gz
+  /usr/share/man/man3/unibi_get_ext_num.3.gz
+  /usr/share/man/man3/unibi_get_ext_num_name.3.gz
+  /usr/share/man/man3/unibi_get_ext_str.3.gz
+  /usr/share/man/man3/unibi_get_ext_str_name.3.gz
+  /usr/share/man/man3/unibi_get_name.3.gz
+  /usr/share/man/man3/unibi_get_num.3.gz
+  /usr/share/man/man3/unibi_get_str.3.gz
+  /usr/share/man/man3/unibi_int_from_var.3.gz
+  /usr/share/man/man3/unibi_name_bool.3.gz
+  /usr/share/man/man3/unibi_name_num.3.gz
+  /usr/share/man/man3/unibi_name_str.3.gz
+  /usr/share/man/man3/unibi_num_from_var.3.gz
+  /usr/share/man/man3/unibi_run.3.gz
+  /usr/share/man/man3/unibi_set_aliases.3.gz
+  /usr/share/man/man3/unibi_set_bool.3.gz
+  /usr/share/man/man3/unibi_set_ext_bool.3.gz
+  /usr/share/man/man3/unibi_set_ext_bool_name.3.gz
+  /usr/share/man/man3/unibi_set_ext_num.3.gz
+  /usr/share/man/man3/unibi_set_ext_num_name.3.gz
+  /usr/share/man/man3/unibi_set_ext_str.3.gz
+  /usr/share/man/man3/unibi_set_ext_str_name.3.gz
+  /usr/share/man/man3/unibi_set_name.3.gz
+  /usr/share/man/man3/unibi_set_num.3.gz
+  /usr/share/man/man3/unibi_set_str.3.gz
+  /usr/share/man/man3/unibi_short_name_bool.3.gz
+  /usr/share/man/man3/unibi_short_name_num.3.gz
+  /usr/share/man/man3/unibi_short_name_str.3.gz
+  /usr/share/man/man3/unibi_str_from_var.3.gz
+  /usr/share/man/man3/unibi_terminfo_dirs.3.gz
+  /usr/share/man/man3/unibi_var_from_num.3.gz
+  /usr/share/man/man3/unibi_var_from_str.3.gz
+  /usr/share/man/man3/unibilium.h.3.gz
+
+------------------
+
+Port Notes:
+
+----- version 2.1.1-1bl1 -----
+Version bump.
+
+----- version 2.1.0-1bl1 -----
+Version bump.
+
+----- version 2.0.0-1bl1 -----
+Version bump.
+
+----- version 1.2.1-1bl1 -----
+Version bump.
+
+----- version 1.2.0-1bl1 -----
+Version bump.
+
+----- version 1.1.2-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

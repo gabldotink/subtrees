@@ -1,0 +1,86 @@
+crlibm
+------------------------------------------
+CRlibm is a free mathematical library (libm) which provides:
+ * implementations of the double-precision C99 standard elementary functions,
+ * correctly rounded in the four IEEE-754 rounding modes,
+ * with a comprehensive proof of both the algorithms used and their
+   implementation,
+ * sufficiently efficient in average time, worst-case time, and memory
+   consumption to replace existing libms transparently.
+
+Runtime requirements:
+  cygwin-1.7.30-1
+  libcrlibm0-1.0beta4-1bl3
+  libgmp10-6.0.0a-1
+  libmpfr4-3.1.2-1
+  libscs0-1.4.1-1bl3
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-9-1
+  binutils-2.24.51-4
+  cygport-0.16.0-1
+  gcc-core-4.9.0-1
+  libtool-2.4.2-5
+  make-4.0-2
+
+Canonical website:
+  http://lipforge.ens-lyon.fr/www/crlibm/
+
+Canonical download:
+  http://lipforge.ens-lyon.fr/frs/download.php/162/crlibm-1.0beta4.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  unpack crlibm-1.0beta4-X-src.tar.xz
+    if you use setup to install this src package, it will be
+        unpacked under /usr/src automatically
+  cd /usr/src
+  cygport ./crlibm-1.0beta4-X.cygport all
+
+This will create:
+  /usr/src/crlibm-1.0beta4-X-src.tar.xz
+  /usr/src/crlibm-1.0beta4-X.tar.xz
+  /usr/src/libcrlibm0-1.0beta4-X.tar.xz
+  /usr/src/libcrlibm-devel-1.0beta4-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(crlibm)
+  /usr/bin/crlibm_blindtest.exe
+  /usr/bin/crlibm_generate_test_vectors.exe
+  /usr/bin/crlibm_soaktest.exe
+  /usr/bin/crlibm_testperf.exe
+  /usr/bin/crlibm_testval.exe
+  /usr/share/doc/Cygwin/crlibm.README
+  /usr/share/doc/crlibm/AUTHORS
+  /usr/share/doc/crlibm/COPYING
+  /usr/share/doc/crlibm/COPYING.LIB
+  /usr/share/doc/crlibm/ChangeLog
+  /usr/share/doc/crlibm/README
+  /usr/share/doc/crlibm/TODO
+
+(libcrlibm0)
+  /usr/bin/cygcrlibm-0.dll
+
+(libcrlibm-devel)
+  /usr/include/crlibm.h
+  /usr/lib/libcrlibm.dll.a
+
+------------------
+
+Port Notes:
+
+----- version 1.0beta4-1bl3 -----
+Rebuild on x86_64
+
+----- version 1.0beta4-1bl2 -----
+Rebuild for libmpfr.
+
+----- version 1.0beta4-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>
+

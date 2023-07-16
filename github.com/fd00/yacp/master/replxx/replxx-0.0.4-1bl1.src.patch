@@ -1,0 +1,64 @@
+--- origsrc/replxx-release-0.0.4/CMakeLists.txt	2021-10-21 06:53:48.000000000 +0900
++++ src/replxx-release-0.0.4/CMakeLists.txt	2021-11-07 21:16:55.661689400 +0900
+@@ -112,6 +112,9 @@ else()
+ endif()
+ target_link_libraries(replxx PUBLIC Threads::Threads)
+ set_target_properties(replxx PROPERTIES VERSION ${PROJECT_VERSION})
++if (CYGWIN)
++	set_target_properties(replxx PROPERTIES SOVERSION ${SOVERSION})
++endif()
+ 
+ set_property(TARGET replxx PROPERTY DEBUG_POSTFIX -d)
+ set_property(TARGET replxx PROPERTY RELWITHDEBINFO_POSTFIX -rd)
+@@ -125,7 +128,7 @@ generate_export_header(replxx)
+ configure_package_config_file(
+ 	"${PROJECT_SOURCE_DIR}/replxx-config.cmake.in"
+ 	"${PROJECT_BINARY_DIR}/replxx-config.cmake"
+-	INSTALL_DESTINATION ${CMAKE_INSTALL_DATADIR}/cmake/replxx
++	INSTALL_DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/replxx
+ 	NO_CHECK_REQUIRED_COMPONENTS_MACRO
+ 	NO_SET_AND_CHECK_MACRO
+ )
+@@ -145,7 +148,7 @@ install(
+ install(
+ 	EXPORT replxx-targets
+ 	NAMESPACE replxx::
+-	DESTINATION ${CMAKE_INSTALL_DATADIR}/cmake/replxx
++	DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/replxx
+ )
+ 
+ install(
+@@ -153,7 +156,7 @@ install(
+ 		"${PROJECT_BINARY_DIR}/replxx-config-version.cmake"
+ 		"${PROJECT_BINARY_DIR}/replxx-config.cmake"
+ 	DESTINATION
+-		${CMAKE_INSTALL_DATADIR}/cmake/replxx
++		${CMAKE_INSTALL_LIBDIR}/cmake/replxx
+ )
+ 
+ # headers
+@@ -221,3 +224,11 @@ set(CPACK_STRIP_FILES "ON")
+ 
+ set(CPACK_DEBIAN_PACKAGE_SECTION "utilities")
+ 
++if (CYGWIN)
++	set(prefix ${CMAKE_INSTALL_PREFIX})
++	set(exec_prefix ${CMAKE_INSTALL_PREFIX})
++	set(libdir ${CMAKE_INSTALL_PREFIX}/lib)
++	set(includedir ${CMAKE_INSTALL_PREFIX}/include)
++	configure_file(${CMAKE_SOURCE_DIR}/replxx.pc.in ${CMAKE_BINARY_DIR}/replxx.pc @ONLY)
++	install(FILES ${CMAKE_BINARY_DIR}/replxx.pc DESTINATION ${CMAKE_INSTALL_PREFIX}/lib/pkgconfig)
++endif()
+--- origsrc/replxx-release-0.0.4/replxx.pc.in	1970-01-01 09:00:00.000000000 +0900
++++ src/replxx-release-0.0.4/replxx.pc.in	2021-11-07 21:09:42.128294100 +0900
+@@ -0,0 +1,10 @@
++prefix=@prefix@
++exec_prefix=@exec_prefix@
++libdir=@libdir@
++includedir=@includedir@
++
++Name: replxx
++Description: Readline and libedit replacement
++Version: @PROJECT_VERSION@
++Libs: -L${libdir} -lreplxx
++Cflags: -I${includedir}

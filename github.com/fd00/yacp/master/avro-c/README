@@ -1,0 +1,147 @@
+avro-c
+------------------------------------------
+Apache Avro(TM) is a data serialization system.
+
+Runtime requirements:
+  cygwin-3.3.6-1
+  libavro-devel-1.11.1-1bl1
+  libavro23-1.11.1-1bl1
+  libjansson4-2.13.1-1
+  liblzma-devel-5.2.6-1
+  liblzma5-5.2.6-1
+  libsnappy1-1.1.7-1
+  pkg-config-1.9.3-1
+  zlib-devel-1.2.12-1
+  zlib0-1.2.12-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.39-1
+  cmake-3.23.2-1
+  cygport-0.35.3-1
+  gcc-core-11.3.0-1
+  libjansson-devel-2.13.1-1
+  liblzma-devel-5.2.6-1
+  libsnappy-devel-1.1.7-1
+  ninja-1.11.0-1
+  zlib-devel-1.2.12-1
+
+Canonical website:
+  https://avro.apache.org/
+
+Canonical download:
+  mirror://apache/avro/avro-1.11.1/c/avro-c-1.11.1.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack avro-c-1.11.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./avro-c-1.11.1-X.cygport all
+
+This will create:
+  /usr/src/avro-c-1.11.1-X-src.tar.xz
+  /usr/src/avro-c-1.11.1-X.tar.xz
+  /usr/src/libavro23-1.11.1-X.tar.xz
+  /usr/src/libavro-devel-1.11.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(avro-c)
+  /usr/bin/avroappend.exe
+  /usr/bin/avrocat.exe
+  /usr/bin/avromod.exe
+  /usr/bin/avropipe.exe
+  /usr/share/doc/Cygwin/avro-c.README
+  /usr/share/doc/avro-c/AUTHORS
+  /usr/share/doc/avro-c/ChangeLog
+  /usr/share/doc/avro-c/LICENSE
+  /usr/share/doc/avro-c/NEWS
+  /usr/share/doc/avro-c/NOTICE
+  /usr/share/doc/avro-c/README
+  /usr/share/doc/avro-c/index.html
+
+(libavro23)
+  /usr/bin/cygavro-23.dll
+
+(libavro-devel)
+  /usr/include/avro.h
+  /usr/include/avro/allocation.h
+  /usr/include/avro/basics.h
+  /usr/include/avro/consumer.h
+  /usr/include/avro/data.h
+  /usr/include/avro/errors.h
+  /usr/include/avro/generic.h
+  /usr/include/avro/io.h
+  /usr/include/avro/legacy.h
+  /usr/include/avro/msinttypes.h
+  /usr/include/avro/msstdint.h
+  /usr/include/avro/platform.h
+  /usr/include/avro/refcount.h
+  /usr/include/avro/resolver.h
+  /usr/include/avro/schema.h
+  /usr/include/avro/value.h
+  /usr/lib/libavro.dll.a
+  /usr/lib/pkgconfig/avro-c.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.11.1-1bl1 -----
+Version bump.
+
+----- version 1.11.0-1bl1 -----
+Version bump.
+
+----- version 1.10.2-1bl1 -----
+Version bump.
+
+----- version 1.10.1-1bl1 -----
+Version bump.
+
+----- version 1.10.0-1bl2 -----
+Fix avro-c.pc
+
+----- version 1.10.0-1bl1 -----
+Version bump.
+
+----- version 1.9.2-1bl1 -----
+Version bump.
+
+----- version 1.9.1-1bl1 -----
+Version bump.
+
+----- version 1.9.0-1bl1 -----
+Version bump.
+
+----- version 1.8.2-1bl2 -----
+Rebuild for libsnappy
+
+----- version 1.8.2-1bl1 -----
+Version bump.
+
+----- version 1.8.1-1bl1 -----
+Version bump.
+
+----- version 1.8.0-1bl1 -----
+Version bump.
+
+----- version 1.7.7-1bl1 -----
+Version bump.
+
+----- version 1.7.6-1bl1 -----
+Version bump.
+
+----- version 1.7.5-1bl1 -----
+Version bump.
+
+----- version 1.7.4-1bl1 -----
+Version bump.
+
+----- version 1.7.3-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://fd0.hatenablog.jp/>

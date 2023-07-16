@@ -1,0 +1,35 @@
+--- origsrc/clstl-0.3.1/CMakeLists.txt	2020-07-24 01:29:27.000000000 +0900
++++ src/clstl-0.3.1/CMakeLists.txt	2020-11-13 06:12:45.796401900 +0900
+@@ -29,8 +29,18 @@ set_target_properties(
+     CXX_STANDARD 17
+     CXX_STANDARD_REQUIRED YES
+ )
++if (CYGWIN)
++    set_target_properties(clstl PROPERTIES SOVERSION 0)
++endif()
+ 
+ target_include_directories(clstl PUBLIC include)
+ 
+-install(TARGETS clstl DESTINATION lib)
++install(TARGETS clstl RUNTIME DESTINATION bin ARCHIVE DESTINATION lib)
+ install(DIRECTORY include DESTINATION .)
++
++SET(prefix ${CMAKE_INSTALL_PREFIX})
++SET(exec_prefix ${CMAKE_INSTALL_PREFIX})
++SET(libdir ${CMAKE_INSTALL_PREFIX}/lib)
++SET(includedir ${CMAKE_INSTALL_PREFIX}/include)
++CONFIGURE_FILE(${CMAKE_SOURCE_DIR}/clstl.pc.in ${CMAKE_BINARY_DIR}/clstl.pc @ONLY)
++INSTALL(FILES ${CMAKE_BINARY_DIR}/clstl.pc DESTINATION ${CMAKE_INSTALL_PREFIX}/lib/pkgconfig)
+--- origsrc/clstl-0.3.1/clstl.pc.in	1970-01-01 09:00:00.000000000 +0900
++++ src/clstl-0.3.1/clstl.pc.in	2020-11-13 06:12:45.810398700 +0900
+@@ -0,0 +1,10 @@
++prefix=@prefix@
++exec_prefix=@exec_prefix@
++libdir=@libdir@
++includedir=@includedir@
++
++Name: clstl
++Description: CodeLog Standard Template Library
++Version: @VERSION@
++Libs: -L${libdir} -lclstl
++Cflags: -I${includedir}

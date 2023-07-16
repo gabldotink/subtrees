@@ -1,0 +1,128 @@
+quill
+------------------------------------------
+Quill is a cross-platform low latency logging library based on C++14.
+
+Runtime requirements:
+  cygwin-3.4.6-1
+  cygwin-devel-3.4.6-1
+  libfmt-devel-9.1.0-1bl1
+  libfmt9-9.1.0-1bl1
+  libgcc1-11.3.0-1
+  libquill-devel-2.7.0-1bl1
+  libquill2.7.0-2.7.0-1bl1
+  libstdc++6-11.3.0-1
+  pkg-config-1.9.4-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.40-1
+  cmake-3.23.2-1
+  cygport-0.36.0-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libfmt-devel-9.1.0-1bl1
+  ninja-1.11.1-1
+
+Canonical website:
+  https://github.com/odygrd/quill
+
+Canonical download:
+  https://github.com/odygrd/quill/archive/refs/tags/v2.7.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack quill-2.7.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./quill-2.7.0-X.cygport all
+
+This will create:
+  /usr/src/quill-2.7.0-X-src.tar.xz
+  /usr/src/quill-2.7.0-X.tar.xz
+  /usr/src/libquill2.7.0-2.7.0-X.tar.xz
+  /usr/src/libquill-devel-2.7.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(quill)
+  /usr/share/doc/Cygwin/quill.README
+  /usr/share/doc/quill/LICENSE
+  /usr/share/doc/quill/README.md
+
+(libquill2.7.0)
+  /usr/bin/cygquill-2.7.0.dll
+
+(libquill-devel)
+  /usr/include/quill/Config.h
+  /usr/include/quill/Fmt.h
+  /usr/include/quill/LogLevel.h
+  /usr/include/quill/Logger.h
+  /usr/include/quill/MacroMetadata.h
+  /usr/include/quill/PatternFormatter.h
+  /usr/include/quill/Quill.h
+  /usr/include/quill/QuillError.h
+  /usr/include/quill/TransitEvent.h
+  /usr/include/quill/TweakMe.h
+  /usr/include/quill/Utility.h
+  /usr/include/quill/clock/TimestampClock.h
+  /usr/include/quill/detail/HandlerCollection.h
+  /usr/include/quill/detail/LogMacros.h
+  /usr/include/quill/detail/LogManager.h
+  /usr/include/quill/detail/LoggerCollection.h
+  /usr/include/quill/detail/LoggerDetails.h
+  /usr/include/quill/detail/Serialize.h
+  /usr/include/quill/detail/SignalHandler.h
+  /usr/include/quill/detail/ThreadContext.h
+  /usr/include/quill/detail/ThreadContextCollection.h
+  /usr/include/quill/detail/backend/BackendWorker.h
+  /usr/include/quill/detail/backend/BacktraceStorage.h
+  /usr/include/quill/detail/backend/StringFromTime.h
+  /usr/include/quill/detail/backend/TimestampFormatter.h
+  /usr/include/quill/detail/backend/TransitEventBuffer.h
+  /usr/include/quill/detail/misc/Attributes.h
+  /usr/include/quill/detail/misc/Common.h
+  /usr/include/quill/detail/misc/FileUtilities.h
+  /usr/include/quill/detail/misc/Os.h
+  /usr/include/quill/detail/misc/Rdtsc.h
+  /usr/include/quill/detail/misc/RdtscClock.h
+  /usr/include/quill/detail/misc/TypeTraitsCopyable.h
+  /usr/include/quill/detail/misc/Utilities.h
+  /usr/include/quill/detail/spsc_queue/BoundedQueue.h
+  /usr/include/quill/detail/spsc_queue/UnboundedQueue.h
+  /usr/include/quill/filters/FilterBase.h
+  /usr/include/quill/handlers/ConsoleHandler.h
+  /usr/include/quill/handlers/FileHandler.h
+  /usr/include/quill/handlers/Handler.h
+  /usr/include/quill/handlers/JsonFileHandler.h
+  /usr/include/quill/handlers/RotatingFileHandler.h
+  /usr/include/quill/handlers/StreamHandler.h
+  /usr/include/quill/handlers/TimeRotatingFileHandler.h
+  /usr/lib/cmake/quill/quill-config-version.cmake
+  /usr/lib/cmake/quill/quill-config.cmake
+  /usr/lib/cmake/quill/quill-targets-release.cmake
+  /usr/lib/cmake/quill/quill-targets.cmake
+  /usr/lib/libquill.dll.a
+  /usr/lib/pkgconfig/quill.pc
+
+------------------
+
+Port Notes:
+
+----- version 2.7.0-1bl1 -----
+Version bump.
+
+----- version 2.5.1-1bl1 -----
+Version bump.
+
+----- version 1.6.3-1bl1 -----
+Version bump.
+
+----- version 1.6.2-1bl1 -----
+Version bump.
+
+----- version 1.6.0-1bl1 -----
+Version bump.

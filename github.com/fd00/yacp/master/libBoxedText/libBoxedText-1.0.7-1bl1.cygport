@@ -1,0 +1,32 @@
+HOMEPAGE="https://gitlab.info-ufr.univ-montp2.fr/doccy/${PN}"
+GIT_URI="https://gitlab.info-ufr.univ-montp2.fr/doccy/${PN}.git"
+GIT_TAG="v${PV}"
+
+CATEGORY="Libs"
+SUMMARY="Library for displaying enriched text in an ASCII art box on a console terminal"
+DESCRIPTION="Library for displaying enriched text in an ASCII art box on a console terminal."
+
+inherit git
+
+DIFF_EXCLUDES="
+	version.configure.ac
+"
+
+PKG_NAMES="
+	libBoxedText
+	libBoxedText${PV}_0
+	libBoxedText-devel
+"
+libBoxedText_CONTENTS="
+	usr/share
+"
+libBoxedText1_0_7_0_CONTENTS="
+	usr/bin
+"
+libBoxedText_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+libBoxedText_SUMMARY="${SUMMARY} (licensing & readmes)"
+libBoxedText1_0_7_0_SUMMARY="${SUMMARY} (runtime)"
+libBoxedText_devel_SUMMARY="${SUMMARY} (development)"

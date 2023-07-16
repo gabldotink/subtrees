@@ -1,0 +1,42 @@
+HOMEPAGE="https://complearn.org/"
+SRC_URI="https://complearn.org/downloads/${P}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Coveb fast stratified tree library"
+DESCRIPTION="van Emde Boas cache oblivious tree data structure ideal for 32-bit integer
+priority queues."
+
+CYGCONF_ARGS="
+	--enable-maintainer-mode
+	--enable-openmp
+	--enable-optimize
+"
+
+src_test()
+{
+	cd ${B}/src
+	./benchcoveb.exe
+}
+
+PKG_NAMES="
+	${PN}
+	${PN}1
+	${PN}-devel
+"
+libcoveb_CONTENTS="
+	usr/bin/*.exe
+	usr/share/doc
+"
+libcoveb1_CONTENTS="
+	usr/bin/*.dll
+"
+libcoveb_devel_CONTENTS="
+	usr/bin/coveb-config
+	usr/include
+	usr/lib
+	usr/share/aclocal
+	usr/share/man
+"
+libcoveb_SUMMARY="${SUMMARY} (utilities)"
+libcoveb1_SUMMARY="${SUMMARY} (runtime)"
+libcoveb_devel_SUMMARY="${SUMMARY} (development)"

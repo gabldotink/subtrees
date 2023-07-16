@@ -1,0 +1,111 @@
+libmcrypto
+------------------------------------------
+Libmcrypto is a library providing C++ cryptography related utilities.
+It is used by the Minisip project.
+
+Runtime requirements:
+  cygwin-2.4.1-1
+  libgcc1-5.3.0-3
+  libgcrypt20-1.6.4-1
+  libgnutls28-3.3.17-1
+  libmcrypto-devel-0.8.0+svn4734-1bl1
+  libmcrypto0-0.8.0+svn4734-1bl1
+  libmnetutil-devel-0.8.0+svn4734-1bl1
+  libmnetutil0-0.8.0+svn4734-1bl1
+  libmutil-devel-0.8.0+svn4734-1bl2
+  libmutil0-0.8.0+svn4734-1bl2
+  libpcsclite1-1.8.14-1bl1
+  libstdc++6-5.3.0-3
+  pkg-config-0.29-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-9-1
+  binutils-2.25-4
+  cygport-0.21.0-1
+  gcc-core-5.3.0-3
+  gcc-g++-5.3.0-3
+  libtool-2.4.6-3
+  make-4.1-1
+
+Canonical website:
+  http://www.minisip.org/
+
+Canonical download:
+  http://packages.minisip.org/pool/trunk/libm/libmcrypto/libmcrypto_0.8.0+4734~saucy.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libmcrypto-0.8.0+svn4734-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libmcrypto-0.8.0+svn4734-X.cygport all
+
+This will create:
+  /usr/src/libmcrypto-0.8.0+svn4734-X-src.tar.xz
+  /usr/src/libmcrypto-0.8.0+svn4734-X.tar.xz
+  /usr/src/libmcrypto0-0.8.0+svn4734-X.tar.xz
+  /usr/src/libmcrypto-devel-0.8.0+svn4734-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libmcrypto)
+  /usr/share/doc/Cygwin/libmcrypto.README
+  /usr/share/doc/libmcrypto/AUTHORS
+  /usr/share/doc/libmcrypto/COPYING.LIB
+  /usr/share/doc/libmcrypto/NEWS
+  /usr/share/doc/libmcrypto/README
+  /usr/share/doc/libmcrypto/TODO
+
+(libmcrypto0)
+  /usr/bin/cygmcrypto-0.dll
+
+(libmcrypto-devel)
+  /usr/include/libmcrypto/CacheManager.h
+  /usr/include/libmcrypto/CertificateFinder.h
+  /usr/include/libmcrypto/CertificatePathFinderUcd.h
+  /usr/include/libmcrypto/GDEnum.h
+  /usr/include/libmcrypto/OakleyDH.h
+  /usr/include/libmcrypto/SipSim.h
+  /usr/include/libmcrypto/SipSimDh.h
+  /usr/include/libmcrypto/SipSimPk.h
+  /usr/include/libmcrypto/SipSimSmartCardGD.h
+  /usr/include/libmcrypto/SipSimSoft.h
+  /usr/include/libmcrypto/SmartCard.h
+  /usr/include/libmcrypto/SmartCardException.h
+  /usr/include/libmcrypto/TlsException.h
+  /usr/include/libmcrypto/TlsServerSocket.h
+  /usr/include/libmcrypto/TlsSocket.h
+  /usr/include/libmcrypto/ZrtpDH.h
+  /usr/include/libmcrypto/aes.h
+  /usr/include/libmcrypto/base64.h
+  /usr/include/libmcrypto/cert.h
+  /usr/include/libmcrypto/config.h
+  /usr/include/libmcrypto/hmac.h
+  /usr/include/libmcrypto/hmac256.h
+  /usr/include/libmcrypto/init.h
+  /usr/include/libmcrypto/rand.h
+  /usr/include/libmcrypto/sha1.h
+  /usr/include/libmcrypto/sha256.h
+  /usr/include/libmcrypto/uuid.h
+  /usr/lib/libmcrypto.dll.a
+  /usr/lib/pkgconfig/libmcrypto.pc
+  /usr/share/aclocal/libmcrypto.m4
+
+------------------
+
+Port Notes:
+
+----- version 0.8.0+svn4734-1bl1 -----
+Version bump.
+
+----- version 0.8.0+svn4171-1bl1 -----
+Version bump.
+
+----- version 0.8.0+svn3799-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

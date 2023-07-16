@@ -1,0 +1,60 @@
+HOMEPAGE="https://www.ssisc.org/${PN}/index.en.html"
+SRC_URI="https://www.ssisc.org/${PN}/dl/${P}.zip"
+
+CATEGORY="Math"
+SUMMARY="Library of Iterative Solvers for Linear Systems"
+DESCRIPTION="Lis, a Library of Iterative Solvers for linear systems, is a scalable parallel
+library for solving systems of linear equations and standard eigenvalue
+problems with real sparse matrices using iterative methods."
+
+BUILD_REQUIRES="libopenmpi-devel"
+
+export MPIF77="mpif90"
+export FFLAGS="${FFLAGS} -fallow-argument-mismatch"
+export FCFLAGS="${FCFLAGS} -fallow-argument-mismatch"
+
+CYGCONF_ARGS="
+	--includedir=/usr/include/${PN}
+	--enable-maintainer-mode
+	--enable-fortran
+	--enable-f90
+	--enable-saamg
+	--enable-mpi
+	--enable-omp
+	--enable-quad
+	--enable-fma
+"
+
+DOCS="
+	doc/*.pdf
+"
+
+DIFF_EXCLUDES="
+	${PN}_config.h
+"
+
+PKG_NAMES="
+	${PN}
+	lib${PN}0
+	lib${PN}-devel
+"
+lis_CONTENTS="
+	usr/bin/*.exe
+	usr/lib/lis/examples
+	usr/share/doc/Cygwin
+	usr/share/doc/${PN}/[ACR]*
+	usr/share/man/man1
+"
+liblis0_CONTENTS="
+	usr/bin/*.dll
+"
+liblis_devel_CONTENTS="
+	usr/include
+	usr/lib/liblis.*
+	usr/lib/pkgconfig
+	usr/share/doc/${PN}/*.pdf
+	usr/share/man/man3
+"
+lis_SUMMARY="${SUMMARY} (utilities)"
+liblis0_SUMMARY="${SUMMARY} (runtime)"
+liblis_devel_SUMMARY="${SUMMARY} (development)"

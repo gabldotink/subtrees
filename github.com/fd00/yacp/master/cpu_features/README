@@ -1,0 +1,90 @@
+cpu_features
+------------------------------------------
+A cross-platform C library to retrieve CPU features (such as available
+instructions) at runtime.
+
+Runtime requirements:
+  cygwin-3.3.5-1
+  libcpu_features-devel-0.7.0-1bl2
+  libcpu_features0-0.7.0-1bl2
+  pkg-config-1.8.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.38-1
+  cmake-3.20.0-1
+  cygport-0.35.1-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  ninja-1.11.0-1
+
+Canonical website:
+  https://github.com/google/cpu_features
+
+Canonical download:
+  https://github.com/google/cpu_features/archive/refs/tags/v0.7.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack cpu_features-0.7.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./cpu_features-0.7.0-X.cygport all
+
+This will create:
+  /usr/src/cpu_features-0.7.0-X-src.tar.xz
+  /usr/src/cpu_features-0.7.0-X.tar.xz
+  /usr/src/libcpu_features0-0.7.0-X.tar.xz
+  /usr/src/libcpu_features-devel-0.7.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(cpu_features)
+  /usr/bin/list_cpu_features.exe
+  /usr/share/doc/Cygwin/cpu_features.README
+  /usr/share/doc/cpu_features/CONTRIBUTING.md
+  /usr/share/doc/cpu_features/LICENSE
+  /usr/share/doc/cpu_features/README.md
+
+(libcpu_features0)
+  /usr/bin/cygcpu_features-0.dll
+
+(libcpu_features-devel)
+  /usr/include/cpu_features/cpu_features_cache_info.h
+  /usr/include/cpu_features/cpu_features_macros.h
+  /usr/include/cpu_features/cpuinfo_x86.h
+  /usr/lib/cmake/CpuFeatures/CpuFeaturesConfig.cmake
+  /usr/lib/cmake/CpuFeatures/CpuFeaturesConfigVersion.cmake
+  /usr/lib/cmake/CpuFeatures/CpuFeaturesTargets-release.cmake
+  /usr/lib/cmake/CpuFeatures/CpuFeaturesTargets.cmake
+  /usr/lib/libcpu_features.dll.a
+  /usr/lib/pkgconfig/cpu_features.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.7.0-1bl2 -----
+Rebuild with gcc-11.3.0
+
+----- version 0.7.0-1bl1 -----
+Version bump.
+
+----- version 0.6.0-1bl1 -----
+Version bump.
+
+----- version 0.5.0-1bl1 -----
+Version bump.
+
+----- version 0.4.1-1bl1 -----
+Version bump.
+
+----- version 0.3.0-1bl1 -----
+Version bump.
+
+----- version 0.1.0+git20180327-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

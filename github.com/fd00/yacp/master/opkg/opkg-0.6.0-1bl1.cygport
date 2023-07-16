@@ -1,0 +1,49 @@
+HOMEPAGE="https://www.yoctoproject.org/software-item/${PN}/"
+SRC_URI="https://downloads.yoctoproject.org/releases/${PN}/${P}.tar.gz"
+
+CATEGORY="System"
+SUMMARY="Open PacKaGe Management"
+DESCRIPTION="Opkg is a lightweight package management system. It is written in C and
+resembles apt/dpkg in operation. It is intended for use on embedded Linux
+devices and is used in this capacity in the OpenEmbedded and OpenWrt projects."
+
+LICENSE="GPL-2.0-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: GPL-2.0-or-later"
+LICENSE_URI="COPYING"
+
+BUILD_REQUIRES="libarchive-devel libcurl-devel libgpg-error-devel libgpgme-devel"
+
+CYGCONF_ARGS="
+	--enable-bzip2
+	--enable-libopkg-api
+	--enable-lz4
+	--enable-sha256
+	--enable-ssl-curl
+	--enable-zstd
+"
+
+src_test()
+{
+	cd ${B}
+	./src/${PN}.exe --version
+}
+
+PKG_NAMES="
+	${PN}
+	lib${PN}1
+	lib${PN}-devel
+"
+opkg_CONTENTS="
+	usr/bin/${PN}*
+	usr/share
+"
+libopkg1_CONTENTS="
+	usr/bin/*.dll
+"
+libopkg_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+opkg_SUMMARY="${SUMMARY} (utilities)"
+libopkg1_SUMMARY="${SUMMARY} (runtime)"
+libopkg_devel_SUMMARY="${SUMMARY} (development)"

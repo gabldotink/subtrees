@@ -1,0 +1,110 @@
+rhonabwy
+------------------------------------------
+Create, modify, parse or export Json Web Keys as defined in the RFC 7517
+
+Runtime requirements:
+  cygwin-3.4.6-1
+  libcurl4-7.88.1-1
+  libgmp10-6.2.1-2
+  libgnutls30-3.6.9-1
+  libhogweed4-3.4.1-1
+  libjansson4-2.13.1-1
+  libnettle6-3.4.1-1
+  liborcania-devel-2.3.2-1bl1
+  liborcania2.3-2.3.2-1bl1
+  librhonabwy-devel-1.1.11-1bl1
+  librhonabwy1.1-1.1.11-1bl1
+  libyder-devel-1.4.19-1bl1
+  libyder1.4-1.4.19-1bl1
+  pkg-config-1.9.4-1
+  zlib0-1.2.13-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.40-1
+  cmake-3.23.2-1
+  cygport-0.36.1-1
+  gcc-core-11.3.0-1
+  libcurl-devel-7.88.1-1
+  libgmp-devel-6.2.1-2
+  libgnutls-devel-3.6.9-1
+  libjansson-devel-2.13.1-1
+  libnettle-devel-3.4.1-1
+  liborcania-devel-2.3.2-1bl1
+  libyder-devel-1.4.19-1bl1
+  ninja-1.11.1-1
+  zlib-devel-1.2.13-1
+
+Canonical website:
+  https://github.com/babelouest/rhonabwy
+
+Canonical download:
+  https://github.com/babelouest/rhonabwy/archive/refs/tags/v1.1.11.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack rhonabwy-1.1.11-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./rhonabwy-1.1.11-X.cygport all
+
+This will create:
+  /usr/src/rhonabwy-1.1.11-X-src.tar.xz
+  /usr/src/rhonabwy-1.1.11-X.tar.xz
+  /usr/src/librhonabwy1.1-1.1.11-X.tar.xz
+  /usr/src/librhonabwy-devel-1.1.11-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(rhonabwy)
+  /usr/bin/rnbyc.exe
+  /usr/share/doc/Cygwin/rhonabwy.README
+  /usr/share/doc/rhonabwy/API.md
+  /usr/share/doc/rhonabwy/CHANGELOG.md
+  /usr/share/doc/rhonabwy/LICENSE
+  /usr/share/doc/rhonabwy/README.md
+  /usr/share/man/man1/rnbyc.1.gz
+
+(librhonabwy1.1)
+  /usr/bin/cygrhonabwy-1.1.dll
+
+(librhonabwy-devel)
+  /usr/include/rhonabwy-cfg.h
+  /usr/include/rhonabwy.h
+  /usr/lib/librhonabwy.dll.a
+  /usr/lib/pkgconfig/librhonabwy.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.1.11-1bl1 -----
+Version bump.
+
+----- version 1.1.10-1bl1 -----
+Version bump.
+
+----- version 1.1.8-1bl1 -----
+Version bump.
+
+----- version 1.1.6-1bl1 -----
+Version bump.
+
+----- version 1.1.4-1bl1 -----
+Version bump.
+
+----- version 1.1.1-1bl1 -----
+Version bump.
+
+----- version 1.1.0-1bl1 -----
+Version bump.
+
+----- version 1.0.0-1bl1 -----
+Version bump.
+
+----- version 0.9.12-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

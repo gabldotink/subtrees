@@ -1,0 +1,82 @@
+libgetar
+------------------------------------------
+libgetar is a library to read and write GEneric Trajectory ARchives, a binary
+data format designed for efficient, extensible storage of trajectory data.
+
+Runtime requirements:
+  cygwin-3.0.7-1
+  libgcc1-7.4.0-1
+  libgetar-devel-1.0.1-1bl1
+  libgetar0-1.0.1-1bl1
+  liblz4_1-1.7.5-1
+  libsqlite3_0-3.28.0-1
+  libstdc++6-7.4.0-1
+  pkg-config-1.6.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.29-1
+  cmake-3.14.5-1
+  cygport-0.33.1-1
+  gcc-core-7.4.0-1
+  gcc-g++-7.4.0-1
+  ninja-1.9.0-1
+
+Canonical website:
+  https://github.com/glotzerlab/libgetar
+
+Canonical download:
+  https://github.com/glotzerlab/libgetar/archive/v1.0.1.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libgetar-1.0.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libgetar-1.0.1-X.cygport all
+
+This will create:
+  /usr/src/libgetar-1.0.1-X-src.tar.xz
+  /usr/src/libgetar-1.0.1-X.tar.xz
+  /usr/src/libgetar0-1.0.1-X.tar.xz
+  /usr/src/libgetar-devel-1.0.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libgetar)
+  /usr/share/doc/Cygwin/libgetar.README
+  /usr/share/doc/libgetar/ChangeLog.md
+  /usr/share/doc/libgetar/LICENSE
+  /usr/share/doc/libgetar/README.md
+
+(libgetar0)
+  /usr/bin/cyggetar-0.dll
+
+(libgetar-devel)
+  /usr/include/getar/Archive.hpp
+  /usr/include/getar/DirArchive.hpp
+  /usr/include/getar/GTAR.hpp
+  /usr/include/getar/Record.hpp
+  /usr/include/getar/SharedArray.hpp
+  /usr/include/getar/SqliteArchive.hpp
+  /usr/include/getar/TarArchive.hpp
+  /usr/include/getar/ZipArchive.hpp
+  /usr/lib/libgetar.dll.a
+  /usr/lib/pkgconfig/libgetar.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.0.1-1bl1 -----
+Version bump.
+
+----- version 0.5.4-1bl1 -----
+Version bump.
+
+----- version 0.5.3-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

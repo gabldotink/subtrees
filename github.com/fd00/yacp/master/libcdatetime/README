@@ -1,0 +1,90 @@
+libcdatetime
+------------------------------------------
+libcdatetime is a library for cross-platform C date and time functions.
+
+Runtime requirements:
+  cygwin-3.3.5-1
+  libcdatetime-devel-20220104-1bl1
+  libcdatetime1-20220104-1bl1
+  libcerror1-20220101-1bl1
+  pkg-config-1.9.2-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.38-1
+  cygport-0.35.2-1
+  gcc-core-11.3.0-1
+  libcerror-devel-20220101-1bl1
+  libtool-2.4.7-1
+  make-4.3-1
+
+Canonical website:
+  https://github.com/libyal/libcdatetime
+
+Canonical download:
+  https://github.com/libyal/libcdatetime/archive/refs/tags/20220104.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libcdatetime-20220104-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libcdatetime-20220104-X.cygport all
+
+This will create:
+  /usr/src/libcdatetime-20220104-X-src.tar.xz
+  /usr/src/libcdatetime-20220104-X.tar.xz
+  /usr/src/libcdatetime1-20220104-X.tar.xz
+  /usr/src/libcdatetime-devel-20220104-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libcdatetime)
+  /usr/share/doc/Cygwin/libcdatetime.README
+  /usr/share/doc/libcdatetime/AUTHORS
+  /usr/share/doc/libcdatetime/COPYING
+  /usr/share/doc/libcdatetime/COPYING.LESSER
+  /usr/share/doc/libcdatetime/ChangeLog
+  /usr/share/doc/libcdatetime/README
+
+(libcdatetime1)
+  /usr/bin/cygcdatetime-1.dll
+
+(libcdatetime-devel)
+  /usr/include/libcdatetime.h
+  /usr/include/libcdatetime/definitions.h
+  /usr/include/libcdatetime/error.h
+  /usr/include/libcdatetime/extern.h
+  /usr/include/libcdatetime/features.h
+  /usr/include/libcdatetime/types.h
+  /usr/lib/libcdatetime.dll.a
+  /usr/lib/pkgconfig/libcdatetime.pc
+  /usr/share/man/man3/libcdatetime.3.gz
+
+------------------
+
+Port Notes:
+
+----- version 20220104-1bl1 -----
+Version bump.
+
+----- version 20200510-1bl1 -----
+Version bump.
+
+----- version 20181004-1bl1 -----
+Version bump.
+
+----- version 20170609-1bl1 -----
+Version bump.
+
+----- version 20160403-1bl1 -----
+Version bump.
+
+----- version 20141018-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

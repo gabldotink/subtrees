@@ -1,0 +1,27 @@
+--- origsrc/uriparser-0.9.7/CMakeLists.txt	2022-10-05 23:36:09.000000000 +0900
++++ src/uriparser-0.9.7/CMakeLists.txt	2022-10-28 19:29:16.350793000 +0900
+@@ -404,7 +404,7 @@ configure_package_config_file(
+         ${CMAKE_CURRENT_SOURCE_DIR}/cmake/uriparser-config.cmake.in
+         cmake/uriparser-config.cmake
+     INSTALL_DESTINATION
+-        ${CMAKE_INSTALL_LIBDIR}/cmake/uriparser-${PROJECT_VERSION}/
++        ${CMAKE_INSTALL_LIBDIR}/cmake/uriparser/
+ )
+ write_basic_package_version_file(
+     cmake/uriparser-config-version.cmake
+@@ -421,13 +421,13 @@ uriparser_install(
+         ${CMAKE_CURRENT_BINARY_DIR}/cmake/uriparser-config.cmake
+         ${CMAKE_CURRENT_BINARY_DIR}/cmake/uriparser-config-version.cmake
+     DESTINATION
+-        ${CMAKE_INSTALL_LIBDIR}/cmake/uriparser-${PROJECT_VERSION}/
++        ${CMAKE_INSTALL_LIBDIR}/cmake/uriparser/
+ )
+ uriparser_install(
+     EXPORT
+         uriparser
+     DESTINATION
+-        ${CMAKE_INSTALL_LIBDIR}/cmake/uriparser-${PROJECT_VERSION}/
++        ${CMAKE_INSTALL_LIBDIR}/cmake/uriparser/
+     NAMESPACE
+         uriparser::
+ )

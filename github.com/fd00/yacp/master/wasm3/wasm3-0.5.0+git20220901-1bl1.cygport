@@ -1,0 +1,36 @@
+HOMEPAGE="https://github.com/${PN}/${PN}"
+GIT_URI="https://github.com/${PN}/${PN}.git"
+GIT_BRANCH="main"
+
+CATEGORY="Interpreters"
+SUMMARY="Fastest WebAssembly interpreter"
+DESCRIPTION="A high performance WebAssembly interpreter written in C."
+
+LICENSE="MIT"
+LICENSE_SPDX="SPDX-License-Identifier: MIT"
+LICENSE_URI="LICENSE"
+
+BUILD_REQUIRES="libuvwasi-devel"
+
+inherit cmake
+inherit git
+
+src_test()
+{
+	cd ${B}
+	./${PN}.exe --version
+}
+
+src_install()
+{
+	cd ${B}
+	dobin ${PN}.exe
+}
+
+DOCS="
+	docs/*.md
+"
+
+DIFF_EXCLUDES="
+	platforms
+"

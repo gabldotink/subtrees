@@ -1,0 +1,107 @@
+libcf
+------------------------------------------
+The netCDF CF Library, or libCF, uses the netCDF API to aid in the creation,
+processing and sharing of scientific data files which conform to the Climate
+and Forecast (CF) conventions.
+
+Runtime requirements:
+  cygwin-3.1.7-1
+  libcf0-1.6.10+svn1050-1bl2
+  libgfortran5-10.2.0-1
+  liblapack0-3.9.0-2
+  libnetcdf15-4.7.3-2
+  libuuid1-2.33.1-2
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.34+1git.de9c1b7cfe-1
+  cygport-0.34.0-1
+  gcc-core-10.2.0-1
+  gcc-fortran-10.2.0-1
+  libtool-2.4.6-7
+  make-4.3-1
+
+Canonical website:
+  https://sourceforge.net/projects/libcf/
+
+Canonical download:
+  https://svn.code.sf.net/p/libcf/code
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libcf-1.6.10+svn1050-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libcf-1.6.10+svn1050-X.cygport all
+
+This will create:
+  /usr/src/libcf-1.6.10+svn1050-X-src.tar.xz
+  /usr/src/libcf-1.6.10+svn1050-X.tar.xz
+  /usr/src/libcf0-1.6.10+svn1050-X.tar.xz
+  /usr/src/libcf-devel-1.6.10+svn1050-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libcf)
+  /usr/bin/tst_uniform.exe
+  /usr/share/doc/Cygwin/libcf.README
+  /usr/share/doc/libcf/Copyright
+  /usr/share/doc/libcf/README
+
+(libcf0)
+  /usr/bin/cygcf-0.dll
+  /usr/bin/cygcf_src-0.dll
+  /usr/bin/cygcff_src-0.dll
+
+(libcf-devel)
+  /usr/include/cf_config.h
+  /usr/include/cflistitem.h
+  /usr/include/libcf.h
+  /usr/include/libcf_gridspec.h
+  /usr/include/libcf_src.h
+  /usr/include/nccf_axis.h
+  /usr/include/nccf_constants.h
+  /usr/include/nccf_coord.h
+  /usr/include/nccf_data.h
+  /usr/include/nccf_errors.h
+  /usr/include/nccf_find_next_indices.h
+  /usr/include/nccf_global.h
+  /usr/include/nccf_grid.h
+  /usr/include/nccf_handle_error.h
+  /usr/include/nccf_host.h
+  /usr/include/nccf_keyvalue.h
+  /usr/include/nccf_mosaic.h
+  /usr/include/nccf_regrid.h
+  /usr/include/nccf_utility_functions.h
+  /usr/include/nccf_varObj.h
+  /usr/lib/libcf.dll.a
+  /usr/lib/libcf_src.dll.a
+  /usr/lib/libcff_src.dll.a
+
+------------------
+
+Port Notes:
+
+----- version 1.6.10+svn1050-1bl2 -----
+Rebuild for libgfortran
+
+----- version 1.6.10+svn1050-1bl1 -----
+Version bump.
+
+----- version 1.6.1+svn1043-1bl1 -----
+Version bump.
+
+----- version 1.0-beta11+svn931-1bl2 -----
+Rebuild on x86_64
+
+----- version 1.0-beta11+svn931-1bl1 -----
+Version bump.
+
+----- version 1.0-beta10+svn926-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

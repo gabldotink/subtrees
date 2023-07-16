@@ -1,0 +1,149 @@
+CheMPS2
+------------------------------------------
+CheMPS2 is a scientific library which contains a spin-adapted implementation of
+the density matrix renormalization group (DMRG) for ab initio quantum
+chemistry.
+
+Runtime requirements:
+  cygwin-3.3.5-1
+  libchemps2_3-1.8.12-1bl1
+  libgcc1-11.3.0-1
+  libgomp1-11.3.0-1
+  libhdf5_200-1.12.2-1
+  liblapack0-3.10.1-1
+  libopenblas-0.3.20-1
+  libstdc++6-11.3.0-1
+  pkg-config-1.8.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.38-1
+  cmake-3.23.2-1
+  cygport-0.35.2-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libhdf5-devel-1.12.2-1
+  liblapack-devel-3.10.1-1
+  ninja-1.11.0-1
+
+Canonical website:
+  https://github.com/SebWouters/CheMPS2
+
+Canonical download:
+  https://github.com/SebWouters/CheMPS2/archive/refs/tags/v1.8.12.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack CheMPS2-1.8.12-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./CheMPS2-1.8.12-X.cygport all
+
+This will create:
+  /usr/src/CheMPS2-1.8.12-X-src.tar.xz
+  /usr/src/CheMPS2-1.8.12-X.tar.xz
+  /usr/src/libchemps2_3-1.8.12-X.tar.xz
+  /usr/src/libchemps2-devel-1.8.12-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(CheMPS2)
+  /usr/bin/chemps2.exe
+  /usr/share/doc/CheMPS2/CHANGELOG.md
+  /usr/share/doc/CheMPS2/CheMPS2logo.pdf
+  /usr/share/doc/CheMPS2/FILES.md
+  /usr/share/doc/CheMPS2/LICENSE
+  /usr/share/doc/CheMPS2/README.md
+  /usr/share/doc/Cygwin/CheMPS2.README
+  /usr/share/man/man1/chemps2.1.gz
+
+(libchemps2_3)
+  /usr/bin/cygchemps2-3.dll
+
+(libchemps2-devel)
+  /usr/include/chemps2/CASPT2.h
+  /usr/include/chemps2/CASSCF.h
+  /usr/include/chemps2/ConjugateGradient.h
+  /usr/include/chemps2/ConvergenceScheme.h
+  /usr/include/chemps2/Correlations.h
+  /usr/include/chemps2/Cumulant.h
+  /usr/include/chemps2/DIIS.h
+  /usr/include/chemps2/DMRG.h
+  /usr/include/chemps2/DMRGSCFindices.h
+  /usr/include/chemps2/DMRGSCFintegrals.h
+  /usr/include/chemps2/DMRGSCFmatrix.h
+  /usr/include/chemps2/DMRGSCFoptions.h
+  /usr/include/chemps2/DMRGSCFrotations.h
+  /usr/include/chemps2/DMRGSCFunitary.h
+  /usr/include/chemps2/DMRGSCFwtilde.h
+  /usr/include/chemps2/Davidson.h
+  /usr/include/chemps2/EdmistonRuedenberg.h
+  /usr/include/chemps2/Excitation.h
+  /usr/include/chemps2/FCI.h
+  /usr/include/chemps2/FourIndex.h
+  /usr/include/chemps2/Hamiltonian.h
+  /usr/include/chemps2/Heff.h
+  /usr/include/chemps2/Initialize.h
+  /usr/include/chemps2/Irreps.h
+  /usr/include/chemps2/Lapack.h
+  /usr/include/chemps2/MPIchemps2.h
+  /usr/include/chemps2/Molden.h
+  /usr/include/chemps2/Options.h
+  /usr/include/chemps2/Problem.h
+  /usr/include/chemps2/Sobject.h
+  /usr/include/chemps2/Special.h
+  /usr/include/chemps2/SyBookkeeper.h
+  /usr/include/chemps2/Tensor.h
+  /usr/include/chemps2/Tensor3RDM.h
+  /usr/include/chemps2/TensorF0.h
+  /usr/include/chemps2/TensorF1.h
+  /usr/include/chemps2/TensorGYZ.h
+  /usr/include/chemps2/TensorKM.h
+  /usr/include/chemps2/TensorL.h
+  /usr/include/chemps2/TensorO.h
+  /usr/include/chemps2/TensorOperator.h
+  /usr/include/chemps2/TensorQ.h
+  /usr/include/chemps2/TensorS0.h
+  /usr/include/chemps2/TensorS1.h
+  /usr/include/chemps2/TensorT.h
+  /usr/include/chemps2/TensorX.h
+  /usr/include/chemps2/ThreeDM.h
+  /usr/include/chemps2/TwoDM.h
+  /usr/include/chemps2/TwoIndex.h
+  /usr/include/chemps2/Wigner.h
+  /usr/lib/cmake/CheMPS2/CheMPS2Config.cmake
+  /usr/lib/cmake/CheMPS2/CheMPS2ConfigVersion.cmake
+  /usr/lib/cmake/CheMPS2/CheMPS2Targets-shared-release.cmake
+  /usr/lib/cmake/CheMPS2/CheMPS2Targets-shared.cmake
+  /usr/lib/cmake/CheMPS2/FindTargetHDF5.cmake
+  /usr/lib/libchemps2.dll.a
+  /usr/lib/pkgconfig/CheMPS2.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.8.12-1bl1 -----
+Version bump.
+
+----- version 1.8.11-1bl1 -----
+Version bump.
+
+----- version 1.8.10-1bl1 -----
+Version bump.
+
+----- version 1.8.9-1bl1 -----
+Version bump.
+
+----- version 1.8.7-1bl1 -----
+Version bump.
+
+----- version 1.8.3-1bl1 -----
+Version bump.
+
+----- version 1.6-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

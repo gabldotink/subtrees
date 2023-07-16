@@ -1,0 +1,58 @@
+HOMEPAGE="https://github.com/vitalif/${PN}2"
+SRC_URI="https://github.com/vitalif/${PN}2/archive/refs/tags/v${PV}.tar.gz"
+SRC_DIR="${PN}2-${PV}"
+
+CATEGORY="Net"
+SUMMARY="Open source Linux client for Google Drive"
+DESCRIPTION="Grive can be considered still beta quality. It simply downloads all the files
+in your Google Drive into the current directory."
+
+LICENSE="GPL-2.0-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: GPL-2.0-or-later"
+LICENSE_URI="COPYING"
+
+BUILD_REQUIRES="libboost-devel libcurl-devel libexpat-devel libgcrypt-devel libyajl-devel"
+
+export CPPFLAGS="${CPPFLAGS} -D_GNU_SOURCE -DPOLLRDHUP=0"
+
+CYGCMAKE_ARGS="
+	-DBUILD_SHARED_LIBS:BOOL=ON
+"
+
+inherit cmake
+
+src_test()
+{
+	cd ${B}
+	./libgrive/unittest.exe
+}
+
+src_install()
+{
+	cd ${B}
+	ninja_install
+
+	cd ${S}
+	insinto /usr/share/zsh/site-functions
+	newins completion.zsh _${PN}
+}
+
+PKG_NAMES="
+	${PN}
+	lib${PN}0
+	lib${PN}-devel
+"
+grive_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+libgrive0_CONTENTS="
+	usr/bin/*.dll
+"
+libgrive_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+grive_SUMMARY="${SUMMARY} (utilities)"
+libgrive0_SUMMARY="${SUMMARY} (runtime)"
+libgrive_devel_SUMMARY="${SUMMARY} (development)"

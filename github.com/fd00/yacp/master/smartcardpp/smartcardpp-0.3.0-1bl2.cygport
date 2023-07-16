@@ -1,0 +1,36 @@
+HOMEPAGE="http://code.google.com/p/esteid/"
+SRC_URI="http://esteid.googlecode.com/files/${P}.tar.bz2"
+
+# http://pkgs.fedoraproject.org/gitweb/?p=smartcardpp.git
+PATCH_URI="
+	0001-Include-unistd.h-for-sleep.patch
+	0002-Fix-compat_getopt-build-with-getopt.h-installed.patch
+"
+
+CATEGORY="Libs"
+SUMMARY="Library for accessing smart cards"
+DESCRIPTION="smartcardpp is a set of C++ classes to manage smart card communications and
+implement basic command primitives."
+
+inherit cmake
+
+PKG_NAMES="
+	${PN}
+	lib${PN}1
+	lib${PN}-devel
+"
+smartcardpp_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+libsmartcardpp1_CONTENTS="
+	usr/bin/*.dll
+"
+libsmartcardpp_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+
+smartcardpp_SUMMARY="${SUMMARY} (utilities)"
+libsmartcardpp1_SUMMARY="${SUMMARY} (runtime)"
+libsmartcardpp_devel_SUMMARY="${SUMMARY} (development)"

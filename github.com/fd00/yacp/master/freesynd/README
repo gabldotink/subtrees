@@ -1,0 +1,79 @@
+freesynd
+------------------------------------------
+FreeSynd is a cross-platform, GPLed reimplementation of engine for the classic
+Bullfrog game, Syndicate.
+
+Runtime requirements:
+  cygwin-2.6.1-1
+  libgcc1-5.4.0-1
+  libpng16-1.6.24-1
+  libSDL1.2_0-1.2.15-3
+  libSDL_image1.2_0-1.2.12-5
+  libSDL_mixer1.2_0-1.2.12-4
+  libstdc++6-5.4.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.25-4
+  cmake-3.6.2-1
+  cygport-0.23.0-1
+  gcc-core-5.4.0-1
+  gcc-g++-5.4.0-1
+  gcc-objc-5.4.0-1
+  make-4.2.1-1
+
+Canonical website:
+  http://freesynd.sf.net/
+
+Canonical download:
+  mirror://sourceforge/freesynd/freesynd-0.7.5.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack freesynd-0.7.5-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./freesynd-0.7.5-X.cygport all
+
+This will create:
+  /usr/src/freesynd-0.7.5-X-src.tar.xz
+  /usr/src/freesynd-0.7.5-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(freesynd)
+  /usr/bin/freesynd.exe
+  /usr/share/doc/Cygwin/freesynd.README
+  /usr/share/doc/freesynd/AUTHORS
+  /usr/share/doc/freesynd/COPYING
+  /usr/share/doc/freesynd/ChangeLog
+  /usr/share/doc/freesynd/NEWS
+  /usr/share/doc/freesynd/README
+  /usr/share/doc/freesynd/TODO.txt
+  /usr/share/freesynd/data/cursors/cursors.png
+  /usr/share/freesynd/data/lang/english.lng
+  /usr/share/freesynd/data/lang/french.lng
+  /usr/share/freesynd/data/lang/german.lng
+  /usr/share/freesynd/data/lang/italian.lng
+  /usr/share/freesynd/data/music/assassinate.ogg
+  /usr/share/freesynd/data/music/intro.ogg
+  /usr/share/freesynd/data/ref/original_data.crc
+  /usr/share/freesynd/data/ref/research.dat
+  /usr/share/freesynd/data/ref/weapons.dat
+
+------------------
+
+Port Notes:
+
+----- version 0.7.5-1bl1 -----
+Version bump.
+
+----- version 0.7.1-1bl1 -----
+Version bump.
+
+----- version 0.7-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://fd0.hatenablog.jp/>

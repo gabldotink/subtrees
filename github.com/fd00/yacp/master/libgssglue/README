@@ -1,0 +1,79 @@
+libgssglue
+------------------------------------------
+Libgssglue provides a GSS-API library, but does not implement any mechanisms
+itself; instead it calls routines in other libraries, depending on the
+mechanism and system configuration.
+
+Runtime requirements:
+  cygwin-3.3.6-1
+  cygwin-devel-3.3.6-1
+  libgssglue-devel-0.7-1bl1
+  libgssglue1-0.7-1bl1
+  pkg-config-1.9.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.39-1
+  cygport-0.35.4-1
+  gcc-core-11.3.0-1
+  libtool-2.4.7-1
+  make-4.3-1
+
+Canonical website:
+  https://gitlab.com/gsasl/libgssglue
+
+Canonical download:
+  https://gitlab.com/gsasl/libgssglue/-/archive/libgssglue-0.7/libgssglue-libgssglue-0.7.tar.bz2
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libgssglue-0.7-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libgssglue-0.7-X.cygport all
+
+This will create:
+  /usr/src/libgssglue-0.7-X-src.tar.xz
+  /usr/src/libgssglue-0.7-X.tar.xz
+  /usr/src/libgssglue1-0.7-X.tar.xz
+  /usr/src/libgssglue-devel-0.7-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libgssglue)
+  /etc/gssapi_mech.conf
+  /usr/share/doc/Cygwin/libgssglue.README
+  /usr/share/doc/libgssglue/AUTHORS
+  /usr/share/doc/libgssglue/COPYING
+  /usr/share/doc/libgssglue/NEWS
+  /usr/share/doc/libgssglue/README
+
+(libgssglue1)
+  /usr/bin/cyggssglue-1.dll
+
+(libgssglue-devel)
+  /usr/include/gssglue/gssapi/gssapi.h
+  /usr/lib/libgssglue.dll.a
+  /usr/lib/pkgconfig/libgssglue.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.7-1bl1 -----
+Version bump.
+
+----- version 0.4-1bl2 -----
+Rebuild on x86_64
+
+----- version 0.4-1bl1 -----
+Version bump.
+
+----- version 0.3-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

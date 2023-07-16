@@ -1,0 +1,89 @@
+piplib
+------------------------------------------
+PIP/PipLib is the well known Paul Feautrier's parametric integer linear
+programming solver. PIP is a software that finds the lexicographic minimum (or
+maximum) in the set of integer points belonging to a convex polyhedron. The
+very big difference with well known integer programming tools like lp_solve or
+CPLEX is the polyhedron may depend linearly on one or more integral
+parameters. If the user asks for a non integral solution, PIP can give the
+exact solution as an integral quotient. The heart of PIP is the parametrized
+Gomory's cuts algorithm followed by the parameterized dual simplex method. The
+PIP Library (PipLib for short) was implemented to allow the user to call PIP
+directly from his programs, without file accesses or system calls. The user
+only needs to link his programs with C libraries.
+
+Runtime requirements:
+  cygwin-1.7.31-2
+  libgmp10-6.0.0a-1
+  libpiplib2-1.4.0+git20100809-1bl3
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-9-1
+  binutils-2.24.51-4
+  cygport-0.16.0-1
+  gcc-core-4.9.0-1
+  libtool-2.4.2-5
+  make-4.0-2
+
+Canonical website:
+  http://www.piplib.org/
+
+Canonical download:
+  git://repo.or.cz/piplib.git
+
+-------------------------------------------
+
+Build instructions:
+  unpack piplib-1.4.0+git20100809-X-src.tar.xz
+    if you use setup to install this src package, it will be
+        unpacked under /usr/src automatically
+  cd /usr/src
+  cygport ./piplib-1.4.0+git20100809-X.cygport all
+
+This will create:
+  /usr/src/piplib-1.4.0+git20100809-X-src.tar.xz
+  /usr/src/piplib-1.4.0+git20100809-X.tar.xz
+  /usr/src/libpiplib2-1.4.0+git20100809-X.tar.xz
+  /usr/src/libpiplib-devel-1.4.0+git20100809-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(piplib)
+  /usr/bin/pip32.exe
+  /usr/bin/pip64.exe
+  /usr/bin/pipMP.exe
+  /usr/share/doc/Cygwin/piplib.README
+  /usr/share/doc/piplib/LICENSE
+  /usr/share/doc/piplib/README
+
+(libpiplib2)
+  /usr/bin/cygpiplib32-2.dll
+  /usr/bin/cygpiplib64-2.dll
+  /usr/bin/cygpiplibMP-2.dll
+
+(libpiplib-devel)
+  /usr/include/piplib/piplib.h
+  /usr/include/piplib/piplib32.h
+  /usr/include/piplib/piplib64.h
+  /usr/include/piplib/piplibMP.h
+  /usr/lib/libpiplib32.dll.a
+  /usr/lib/libpiplib64.dll.a
+  /usr/lib/libpiplibMP.dll.a
+
+------------------
+
+Port Notes:
+
+----- version 1.4.0+git20100809-1bl3 -----
+Rebuild on x86_64
+
+----- version 1.4.0+git20100809-1bl2 -----
+Rebuild with gcc-4.5.3
+
+----- version 1.4.0+git20100809-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>
+

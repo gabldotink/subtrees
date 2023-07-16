@@ -1,0 +1,119 @@
+remctl
+------------------------------------------
+remctl is a client/server application that supports remote execution of
+specific commands, using Kerberos GSS-API for authentication and
+confidentiality. Which commands a given user can execute is controlled by a
+configuration file and ACL files and can be easily tightly limited, unlike with
+rsh. The mapping of command to backend program is done by the configuration
+file, which allows some additional flexibility compared to ssh command
+restrictions and works with Kerberos authentications rather than being limited
+to public key authentications.
+
+Runtime requirements:
+  cygwin-3.3.5-1
+  libevent2.1_7-2.1.12-1
+  libgssapi_krb5_2-1.15.2-2
+  libkrb5_3-1.15.2-2
+  libpcre2_8_0-10.40-1
+  libremctl-devel-3.18-1bl1
+  libremctl1-3.18-1bl1
+  pkg-config-1.8.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.38-1
+  cygport-0.35.1-1
+  gcc-core-11.3.0-1
+  libevent-devel-2.1.12-1
+  libkrb5-devel-1.15.2-2
+  libpcre2-devel-10.40-1
+  libtool-2.4.7-1
+  make-4.3-1
+
+Canonical website:
+  https://www.eyrie.org/~eagle/software/remctl/
+
+Canonical download:
+  https://archives.eyrie.org/software/kerberos/remctl-3.18.tar.xz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack remctl-3.18-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./remctl-3.18-X.cygport all
+
+This will create:
+  /usr/src/remctl-3.18-X-src.tar.xz
+  /usr/src/remctl-3.18-X.tar.xz
+  /usr/src/libremctl1-3.18-X.tar.xz
+  /usr/src/libremctl-devel-3.18-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(remctl)
+  /usr/bin/remctl.exe
+  /usr/sbin/remctl-shell.exe
+  /usr/sbin/remctld.exe
+  /usr/share/doc/Cygwin/remctl.README
+  /usr/share/doc/remctl/LICENSE
+  /usr/share/doc/remctl/NEWS
+  /usr/share/doc/remctl/README
+  /usr/share/doc/remctl/THANKS
+  /usr/share/doc/remctl/TODO
+  /usr/share/doc/remctl/readme.md
+  /usr/share/man/man1/remctl.1.gz
+  /usr/share/man/man8/remctl-shell.8.gz
+  /usr/share/man/man8/remctld.8.gz
+
+(libremctl1)
+  /usr/bin/cygremctl-1.dll
+
+(libremctl-devel)
+  /usr/include/remctl.h
+  /usr/lib/libremctl.dll.a
+  /usr/lib/pkgconfig/libremctl.pc
+  /usr/share/man/man3/remctl.3.gz
+  /usr/share/man/man3/remctl_close.3.gz
+  /usr/share/man/man3/remctl_command.3.gz
+  /usr/share/man/man3/remctl_commandv.3.gz
+  /usr/share/man/man3/remctl_error.3.gz
+  /usr/share/man/man3/remctl_new.3.gz
+  /usr/share/man/man3/remctl_noop.3.gz
+  /usr/share/man/man3/remctl_open.3.gz
+  /usr/share/man/man3/remctl_open_addrinfo.3.gz
+  /usr/share/man/man3/remctl_open_fd.3.gz
+  /usr/share/man/man3/remctl_open_sockaddr.3.gz
+  /usr/share/man/man3/remctl_output.3.gz
+  /usr/share/man/man3/remctl_result_free.3.gz
+  /usr/share/man/man3/remctl_set_ccache.3.gz
+  /usr/share/man/man3/remctl_set_source_ip.3.gz
+  /usr/share/man/man3/remctl_set_timeout.3.gz
+
+------------------
+
+Port Notes:
+
+----- version 3.18-1bl1 -----
+Version bump.
+
+----- version 3.17-1bl1 -----
+Version bump.
+
+----- version 3.16-1bl1 -----
+Version bump.
+
+----- version 3.15-1bl1 -----
+Version bump.
+
+----- version 3.13-1bl1 -----
+Version bump.
+
+----- version 3.10-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

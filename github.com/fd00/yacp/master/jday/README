@@ -1,0 +1,79 @@
+jday
+------------------------------------------
+A simple command to convert calendar dates to julian dates. Quite useful
+intiming situations where you need elapsed time between dates.Also useful for
+astronomy applications.
+
+Runtime requirements:
+  cygwin-3.0.7-1
+  libjday-devel-2.4-1bl3
+  libjday2-2.4-1bl3
+  pkg-config-1.6.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-10-1
+  binutils-2.29-1
+  cygport-0.33.1-1
+  gcc-core-7.4.0-1
+  libtool-2.4.6-6
+  make-4.2.1-2
+
+Canonical website:
+  https://sourceforge.net/projects/jday/
+
+Canonical download:
+  mirror://sourceforge/jday/jday-2.4.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack jday-2.4-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./jday-2.4-X.cygport all
+
+This will create:
+  /usr/src/jday-2.4-X-src.tar.xz
+  /usr/src/jday-2.4-X.tar.xz
+  /usr/src/libjday2-2.4-X.tar.xz
+  /usr/src/libjday-devel-2.4-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(jday)
+  /usr/bin/dbd.exe
+  /usr/bin/j2d.exe
+  /usr/bin/jday.exe
+  /usr/share/doc/Cygwin/jday.README
+  /usr/share/doc/jday/AUTHORS
+  /usr/share/doc/jday/COPYING
+  /usr/share/doc/jday/ChangeLog
+  /usr/share/doc/jday/NEWS
+  /usr/share/doc/jday/README
+  /usr/share/man/man1/jday.1.gz
+
+(libjday2)
+  /usr/bin/cygjday-2.dll
+
+(libjday-devel)
+  /usr/include/jday.h
+  /usr/lib/libjday.dll.a
+  /usr/lib/pkgconfig/jday.pc
+
+------------------
+
+Port Notes:
+
+----- version 2.4-1bl3 -----
+Rebuild with gcc-7.4.0
+
+----- version 2.4-1bl2 -----
+Rebuild on x86_64
+
+----- version 2.4-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

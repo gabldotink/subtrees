@@ -1,0 +1,43 @@
+HOMEPAGE="https://github.com/ofiwg/${PN}"
+SRC_URI="https://github.com/ofiwg/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Open Fabric Interfaces"
+DESCRIPTION="The Open Fabrics Interfaces (OFI) is a framework focused on exporting fabric
+communication services to applications."
+
+LICENSE="BSD-2-Clause OR GPL-2.0-only"
+LICENSE_SPDX="SPDX-License-Identifier: BSD-2-Clause OR GPL-2.0-only"
+LICENSE_URI="COPYING"
+
+diff()
+{
+	/usr/bin/diff --no-dereference $*
+}
+
+CYGCONF_ARGS="
+	--disable-opx
+	--without-ze
+"
+
+PKG_NAMES="
+	libfabric
+	libfabric1
+	libfabric-devel
+"
+libfabric_CONTENTS="
+	usr/bin/*.exe
+	usr/share/doc
+	usr/share/man/man1
+"
+libfabric1_CONTENTS="
+	usr/bin/*.dll
+"
+libfabric_devel_CONTENTS="
+	usr/include
+	usr/lib
+	usr/share/man/man[37]
+"
+libfabric_SUMMARY="${SUMMARY} (utilities)"
+libfabric1_SUMMARY="${SUMMARY} (runtime)"
+libfabric_devel_SUMMARY="${SUMMARY} (development)"

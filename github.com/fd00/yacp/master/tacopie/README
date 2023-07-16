@@ -1,0 +1,85 @@
+tacopie
+------------------------------------------
+tacopie is a multi-platform TCP Client & Server C++11 library.
+
+Runtime requirements:
+  cygwin-3.3.5-1
+  libgcc1-11.3.0-1
+  libgtest0-1.11.0-1bl1
+  libstdc++6-11.3.0-1
+  libtacopie-devel-3.2.0-1bl2
+  libtacopie3-3.2.0-1bl2
+  pkg-config-1.8.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.38-1
+  cmake-3.20.0-1
+  cygport-0.35.1-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libgtest-devel-1.11.0-1bl1
+  ninja-1.11.0-1
+
+Canonical website:
+  https://github.com/Cylix/tacopie
+
+Canonical download:
+  https://github.com/Cylix/tacopie/archive/refs/tags/3.2.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack tacopie-3.2.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./tacopie-3.2.0-X.cygport all
+
+This will create:
+  /usr/src/tacopie-3.2.0-X-src.tar.xz
+  /usr/src/tacopie-3.2.0-X.tar.xz
+  /usr/src/libtacopie3-3.2.0-X.tar.xz
+  /usr/src/libtacopie-devel-3.2.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(tacopie)
+  /usr/bin/tacopie_logger.exe
+  /usr/bin/tacopie_tcp_client.exe
+  /usr/bin/tacopie_tcp_server.exe
+  /usr/bin/tacopie_tests.exe
+  /usr/share/doc/Cygwin/tacopie.README
+  /usr/share/doc/tacopie/CHANGELOG.md
+  /usr/share/doc/tacopie/CONTRIBUTING.md
+  /usr/share/doc/tacopie/LICENSE
+  /usr/share/doc/tacopie/README.md
+
+(libtacopie3)
+  /usr/bin/cygtacopie-3.dll
+
+(libtacopie-devel)
+  /usr/include/tacopie/network/io_service.hpp
+  /usr/include/tacopie/network/self_pipe.hpp
+  /usr/include/tacopie/network/tcp_client.hpp
+  /usr/include/tacopie/network/tcp_server.hpp
+  /usr/include/tacopie/network/tcp_socket.hpp
+  /usr/include/tacopie/tacopie
+  /usr/include/tacopie/utils/error.hpp
+  /usr/include/tacopie/utils/logger.hpp
+  /usr/include/tacopie/utils/thread_pool.hpp
+  /usr/include/tacopie/utils/typedefs.hpp
+  /usr/lib/libtacopie.dll.a
+  /usr/lib/pkgconfig/tacopie.pc
+
+------------------
+
+Port Notes:
+
+----- version 3.2.0-1bl2 -----
+Rebuild with gcc-11.3.0
+
+----- version 3.2.0-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

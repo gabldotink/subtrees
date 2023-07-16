@@ -1,0 +1,97 @@
+libqsearch
+------------------------------------------
+Using a distance matrix as input, the qsearch library finds a tree that fits
+the input data as well as possible and returns this tree along with a
+confidence score for any non-degenerate distance matrix.
+
+Runtime requirements:
+  cygwin-2.10.0-1
+  libcomplearn-gomp1-1.1.7-1bl3
+  libglib2.0-devel-2.54.3-1
+  libglib2.0_0-2.54.3-1
+  libgomp1-7.3.0-3
+  libgsl-devel-2.3-2
+  libgsl19-2.3-2
+  libintl8-0.19.8.1-2
+  libqsearch-gomp-devel-1.0.8-1bl3
+  libqsearch-gomp1-1.0.8-1bl3
+  pkg-config-0.29.1-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-10-1
+  binutils-2.29-1
+  cygport-0.31.1-1
+  gcc-core-7.3.0-3
+  libtool-2.4.6-6
+  make-4.2.1-2
+
+Canonical website:
+  http://complearn.org/
+
+Canonical download:
+  http://complearn.org/downloads/libqsearch-1.0.8.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libqsearch-1.0.8-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libqsearch-1.0.8-X.cygport all
+
+This will create:
+  /usr/src/libqsearch-1.0.8-X-src.tar.xz
+  /usr/src/libqsearch-1.0.8-X.tar.xz
+  /usr/src/libqsearch-gomp1-1.0.8-X.tar.xz
+  /usr/src/libqsearch-gomp-devel-1.0.8-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libqsearch)
+  /usr/bin/improvetree.exe
+  /usr/bin/maketree.exe
+  /usr/share/doc/Cygwin/libqsearch.README
+  /usr/share/doc/libqsearch/AUTHORS
+  /usr/share/doc/libqsearch/COPYING
+  /usr/share/doc/libqsearch/ChangeLog
+  /usr/share/doc/libqsearch/NEWS
+  /usr/share/doc/libqsearch/README
+  /usr/share/doc/libqsearch/THANKS
+  /usr/share/man/man1/maketree.1.gz
+  /usr/share/man/man1/qsearch-config.1.gz
+
+(libqsearch-gomp1)
+  /usr/bin/cygqsearch-gomp-1.dll
+
+(libqsearch-gomp-devel)
+  /usr/bin/qsearch-config.exe
+  /usr/include/qsearch-1.0/qsearch.h
+  /usr/include/qsearch-1.0/qsearch/clconfig.h
+  /usr/include/qsearch-1.0/qsearch/qsearch-fulltree.h
+  /usr/include/qsearch-1.0/qsearch/qsearch-maketree-private.h
+  /usr/include/qsearch-1.0/qsearch/qsearch-maketree.h
+  /usr/include/qsearch-1.0/qsearch/qsearch-neighborlist.h
+  /usr/include/qsearch-1.0/qsearch/qsearch-tree.h
+  /usr/include/qsearch-1.0/qsearch/qsearch-treemaster.h
+  /usr/include/qsearch-1.0/qsearch/qsearch.h
+  /usr/lib/libqsearch-gomp.dll.a
+  /usr/lib/pkgconfig/qsearch-gomp.pc
+  /usr/share/aclocal/qsearch.m4
+
+------------------
+
+Port Notes:
+
+----- version 1.0.8-1bl3 -----
+Rebuild for libgsl
+
+----- version 1.0.8-1bl2 -----
+Rebuild on x86_64
+
+----- version 1.0.8-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

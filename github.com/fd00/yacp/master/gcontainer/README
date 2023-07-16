@@ -1,0 +1,98 @@
+gcontainer
+------------------------------------------
+Developing applications using gobject-based libraries, I noticed too often I
+need container for my own types. While the UI problems are partially solved by
+GtkContainer, I ever messed a more generic way to do the same thing for no UI
+objects.
+
+libgcontainer is a little library that provides the following types:
+
+ * GChildable, an interface for object that can be child of another object;
+ * GChild, a base class implementing GChildable;
+ * GContainerable, an interface for object that can have children;
+ * GContainer, a base class implementing GChildable and GContainerable
+   managing children trought a GSList (similar to GtkContainer);
+ * GBin, a base class implementing GChildable and GContainerable which can
+   have only one child (similar to GtkBin).
+
+Runtime requirements:
+  cygwin-1.7.35-1
+  libgcontainer-devel-1.99.3-1bl4
+  libgcontainer1.99_3-1.99.3-1bl4
+  libglib2.0-devel-2.42.1-2
+  libglib2.0_0-2.42.1-2
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-9-1
+  binutils-2.25-1
+  cygport-0.18.1-1
+  gcc-core-4.9.2-3
+  libtool-2.4.6-1
+  make-4.1-1
+
+Canonical website:
+  http://savannah.nongnu.org/projects/gcontainer
+
+Canonical download:
+  http://git.savannah.gnu.org/cgit/gcontainer.git/snapshot/gcontainer-1.99.3.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack gcontainer-1.99.3-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./gcontainer-1.99.3-X.cygport all
+
+This will create:
+  /usr/src/gcontainer-1.99.3-X-src.tar.xz
+  /usr/src/gcontainer-1.99.3-X.tar.xz
+  /usr/src/libgcontainer1.99_3-1.99.3-X.tar.xz
+  /usr/src/libgcontainer-devel-1.99.3-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(gcontainer)
+  /usr/share/doc/Cygwin/gcontainer.README
+  /usr/share/doc/gcontainer/AUTHORS
+  /usr/share/doc/gcontainer/COPYING
+  /usr/share/doc/gcontainer/ChangeLog
+  /usr/share/doc/gcontainer/NEWS
+  /usr/share/doc/gcontainer/README
+  /usr/share/doc/gcontainer/TODO
+  /usr/share/gcontainer/examples/demo.exe
+  /usr/share/gcontainer/examples/misuse.exe
+
+(libgcontainer1.99_3)
+  /usr/bin/cyggcontainer-1-99-3.dll
+
+(libgcontainer-devel)
+  /usr/include/gcontainer/gbin.h
+  /usr/include/gcontainer/gchild.h
+  /usr/include/gcontainer/gchildable.h
+  /usr/include/gcontainer/gcontainer.h
+  /usr/include/gcontainer/gcontainerable.h
+  /usr/lib/libgcontainer.dll.a
+  /usr/lib/pkgconfig/gcontainer.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.99.3-1bl4 -----
+Rebuild on x86_64
+
+----- version 1.99.3-1bl3 -----
+Rebuild with gcc-4.5.3
+
+----- version 1.99.3-1bl2 -----
+Repackage for licensing & readmes
+
+----- version 1.99.3-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>
+

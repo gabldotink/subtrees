@@ -1,0 +1,64 @@
+HOMEPAGE="https://${PN}.org/"
+SRC_URI="https://${PN}.org/files/${P}.tar.gz"
+PATCH_URI="
+	https://src.fedoraproject.org/rpms/memcached/raw/rawhide/f/${PN}-unit.patch
+	https://gitweb.gentoo.org/repo/gentoo.git/plain/net-misc/${PN}/files/${PN}-1.2.2-fbsd.patch
+	https://gitweb.gentoo.org/repo/gentoo.git/plain/net-misc/${PN}/files/${PN}-1.4.0-fix-as-needed-linking.patch
+	https://gitweb.gentoo.org/repo/gentoo.git/plain/net-misc/${PN}/files/${PN}-1.4.4-as-needed.patch
+	https://gitweb.gentoo.org/repo/gentoo.git/plain/net-misc/${PN}/files/${PN}-1.4.17-EWOULDBLOCK.patch
+"
+
+CATEGORY="Net"
+SUMMARY="Distributed memory object caching system"
+DESCRIPTION="Free & open source, high-performance, distributed memory object caching
+system, generic in nature, but intended for use in speeding up dynamic web
+applications by alleviating database load."
+
+LICENSE="BSD-3-Clause"
+LICENSE_SPDX="SPDX-License-Identifier: BSD-3-Clause"
+LICENSE_URI="COPYING"
+
+BUILD_REQUIRES="libevent-devel libsasl2-devel"
+
+CYGCONF_ARGS="
+	--enable-sasl
+	--enable-sasl-pwdb
+"
+
+src_test()
+{
+	cd ${B}
+	SKIP_TEST_101=1 cygmake test
+}
+
+src_install()
+{
+	cd ${B}
+	cyginstall
+
+	cd ${S}
+	dobin scripts/${PN}-tool
+	insinto /etc/rc.d/init.d
+	newins scripts/${PN}.sysv ${PN}
+}
+
+DOCS="
+	README.md
+	doc/CONTRIBUTORS
+	doc/*.txt
+"
+
+DIFF_EXCLUDES="
+	Makefile
+"
+
+PKG_IGNORE="
+	usr/include/memcached/xxhash.h
+"
+
+PKG_CONTENTS="
+	etc
+	usr/bin
+	usr/include/memcached/protocol_binary.h
+	usr/share
+"

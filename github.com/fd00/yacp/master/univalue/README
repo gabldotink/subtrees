@@ -1,0 +1,83 @@
+univalue
+------------------------------------------
+A universal value object, with JSON encoding (output) and decoding (input).
+
+Runtime requirements:
+  cygwin-3.2.0-1
+  libgcc1-11.2.0-1
+  libstdc++6-11.2.0-1
+  libunivalue-devel-1.1.1-1bl1
+  libunivalue0-1.1.1-1bl1
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.37-1
+  cygport-0.34.0-1
+  gcc-core-11.2.0-1
+  gcc-g++-11.2.0-1
+  libtool-2.4.6-7
+  make-4.3-1
+
+Canonical website:
+  https://github.com/jgarzik/univalue
+
+Canonical download:
+  https://github.com/jgarzik/univalue/archive/refs/tags/v1.1.1.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack univalue-1.1.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./univalue-1.1.1-X.cygport all
+
+This will create:
+  /usr/src/univalue-1.1.1-X-src.tar.xz
+  /usr/src/univalue-1.1.1-X.tar.xz
+  /usr/src/libunivalue0-1.1.1-X.tar.xz
+  /usr/src/libunivalue-devel-1.1.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(univalue)
+  /usr/share/doc/Cygwin/univalue.README
+  /usr/share/doc/univalue/COPYING
+  /usr/share/doc/univalue/README.md
+  /usr/share/doc/univalue/TODO
+
+(libunivalue0)
+  /usr/bin/cygunivalue-0.dll
+
+(libunivalue-devel)
+  /usr/include/univalue.h
+  /usr/lib/libunivalue.dll.a
+  /usr/lib/pkgconfig/libunivalue.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.1.1-1bl1 -----
+Version bump.
+
+----- version 1.0.5-1bl1 -----
+Version bump.
+
+----- version 1.0.4-1bl1 -----
+Version bump.
+
+----- version 1.0.3-1bl1 -----
+Version bump.
+
+----- version 1.0.2-1bl1 -----
+Version bump.
+
+----- version 0.0.1-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

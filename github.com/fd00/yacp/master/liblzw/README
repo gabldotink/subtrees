@@ -1,0 +1,85 @@
+liblzw
+------------------------------------------
+Small library to provide an API for reading LZW compressed (.Z) files. API is
+similar to that of zlib (for reading .gz files) and bzlib (for reading .bz2
+files) which themselves are just like the classical UNIX functions for reading
+files.
+
+Runtime requirements:
+  cygwin-3.1.7-1
+  liblzw-devel-0.3-1bl1
+  liblzw0-0.3-1bl1
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.35.2-1
+  cygport-0.34.0-1
+  gcc-core-10.2.0-1
+  libtool-2.4.6-7
+  make-4.3-1
+
+Canonical website:
+  https://github.com/vapier/liblzw
+
+Canonical download:
+  https://github.com/vapier/liblzw/archive/v0.3.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack liblzw-0.3-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./liblzw-0.3-X.cygport all
+
+This will create:
+  /usr/src/liblzw-0.3-X-src.tar.xz
+  /usr/src/liblzw-0.3-X.tar.xz
+  /usr/src/liblzw0-0.3-X.tar.xz
+  /usr/src/liblzw-devel-0.3-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(liblzw)
+  /usr/share/doc/Cygwin/liblzw.README
+  /usr/share/doc/liblzw/AUTHORS
+  /usr/share/doc/liblzw/COPYING
+  /usr/share/doc/liblzw/ChangeLog
+  /usr/share/doc/liblzw/NEWS
+  /usr/share/doc/liblzw/README.md
+
+(liblzw0)
+  /usr/bin/cyglzw-0.dll
+
+(liblzw-devel)
+  /usr/include/lzw.h
+  /usr/lib/liblzw.dll.a
+  /usr/lib/pkgconfig/liblzw.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.3-1bl1 -----
+Version bump.
+
+----- version 0.2-1bl4 -----
+Rebuild on x86_64
+
+----- version 0.2-1bl3 -----
+Rebuild with gcc-4.5.3
+
+----- version 0.2-1bl2 -----
+Repackage for licensing & readmes
+
+----- version 0.2-1bl1 -----
+Version bump.
+
+----- version 0.1.2-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

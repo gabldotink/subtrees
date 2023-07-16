@@ -1,0 +1,36 @@
+HOMEPAGE="https://github.com/Joungkyun/${PN}"
+SRC_URI="https://github.com/Joungkyun/${PN}/archive/${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Mozilla's Universal Charset Detector C/C++ API"
+DESCRIPTION="libchardet is based on Mozilla Universal Charset Detector library and, detects
+the character set used to encode data."
+
+CYGCONF_ARGS="
+	--enable-maintainer-mode
+"
+
+DIFF_EXCLUDES="
+	chardet-config.h
+"
+
+PKG_NAMES="
+	${PN}
+	${PN}1
+	${PN}-devel
+"
+libchardet_CONTENTS="
+	usr/share/doc
+"
+libchardet1_CONTENTS="
+	usr/bin/*.dll
+"
+libchardet_devel_CONTENTS="
+	usr/bin/*-config
+	usr/include
+	usr/lib
+	usr/share/man
+"
+libchardet_SUMMARY="${SUMMARY} (licensing & readmes)"
+libchardet1_SUMMARY="${SUMMARY} (runtime)"
+libchardet_devel_SUMMARY="${SUMMARY} (development)"

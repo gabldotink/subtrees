@@ -1,0 +1,105 @@
+timblserver
+------------------------------------------
+For server functionality around Timbl
+
+Runtime requirements:
+  cygwin-3.4.6-1
+  libgcc1-11.3.0-1
+  libstdc++6-11.3.0-1
+  libticcutils9-0.32-1bl1
+  libtimbl-devel-6.8.2-1bl1
+  libtimbl7-6.8.2-1bl1
+  libtimblserver-devel-1.16-1bl1
+  libtimblserver5-1.16-1bl1
+  libxml2-2.9.12-2
+  libxml2-devel-2.9.12-2
+  pkg-config-1.9.4-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.40-1
+  cygport-0.36.1-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libticcutils-devel-0.32-1bl1
+  libtimbl-devel-6.8.2-1bl1
+  libtool-2.4.7-1
+  libxml2-devel-2.9.12-2
+  make-4.4.1-1
+
+Canonical website:
+  https://github.com/LanguageMachines/timblserver
+
+Canonical download:
+  https://github.com/LanguageMachines/timblserver/archive/refs/tags/v1.16.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack timblserver-1.16-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./timblserver-1.16-X.cygport all
+
+This will create:
+  /usr/src/timblserver-1.16-X-src.tar.xz
+  /usr/src/timblserver-1.16-X.tar.xz
+  /usr/src/libtimblserver5-1.16-X.tar.xz
+  /usr/src/libtimblserver-devel-1.16-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(timblserver)
+  /usr/bin/timblclient.exe
+  /usr/bin/timblserver.exe
+  /usr/share/doc/Cygwin/timblserver.README
+  /usr/share/doc/timblserver/AUTHORS
+  /usr/share/doc/timblserver/COPYING
+  /usr/share/doc/timblserver/NEWS
+  /usr/share/doc/timblserver/README
+  /usr/share/doc/timblserver/TODO
+  /usr/share/doc/timblserver/readme.md
+  /usr/share/man/man1/timblclient.1.gz
+  /usr/share/man/man1/timblserver.1.gz
+
+(libtimblserver5)
+  /usr/bin/cygtimblserver-5.dll
+
+(libtimblserver-devel)
+  /usr/include/timblserver/ClientBase.h
+  /usr/include/timblserver/TimblServer.h
+  /usr/lib/libtimblserver.dll.a
+  /usr/lib/pkgconfig/timblserver.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.16-1bl1 -----
+Version bump.
+
+----- version 1.15-1bl1 -----
+Version bump.
+
+----- version 1.14-1bl1 -----
+Version bump.
+
+----- version 1.13-1bl1 -----
+Version bump.
+
+----- version 1.12-1bl1 -----
+Version bump.
+
+----- version 1.11-1bl2 -----
+Rebuild for libticcutils
+
+----- version 1.11-1bl1 -----
+Version bump.
+
+----- version 1.10+git20160104-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

@@ -1,0 +1,72 @@
+cool-retro-term
+------------------------------------------
+cool-retro-term is a terminal emulator which mimics the look and feel of the
+old cathode tube screens. It has been designed to be eye-candy, customizable,
+and reasonably lightweight.
+
+Runtime requirements:
+  cygwin-3.1.5-1
+  libgcc1-9.3.0-2
+  libQt5Core5-5.9.4-2
+  libQt5Gui5-5.9.4-2
+  libQt5Quick5-5.9.4-1
+  libstdc++6-9.3.0-2
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.34+1git.de9c1b7cfe-1
+  cygport-0.34.0-1
+  gcc-core-9.3.0-2
+  gcc-g++-9.3.0-2
+  libQt5Core-devel-5.9.4-2
+  make-4.3-1
+
+Canonical website:
+  https://github.com/Swordfish90/cool-retro-term
+
+Canonical download:
+  https://github.com/Swordfish90/cool-retro-term/archive/1.1.1.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack cool-retro-term-1.1.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./cool-retro-term-1.1.1-X.cygport all
+
+This will create:
+  /usr/src/cool-retro-term-1.1.1-X-src.tar.xz
+  /usr/src/cool-retro-term-1.1.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(cool-retro-term)
+  /etc/postinstall/cool-retro-term.sh
+  /usr/bin/cool-retro-term.exe
+  /usr/share/applications/cool-retro-term.desktop
+  /usr/share/doc/Cygwin/cool-retro-term.README
+  /usr/share/doc/cool-retro-term/README.md
+  /usr/share/icons/hicolor/128x128/apps/cool-retro-term.png
+  /usr/share/icons/hicolor/256x256/apps/cool-retro-term.png
+  /usr/share/icons/hicolor/32x32/apps/cool-retro-term.png
+  /usr/share/icons/hicolor/64x64/apps/cool-retro-term.png
+
+------------------
+
+Port Notes:
+
+----- version 1.1.1-1bl1 -----
+Version bump.
+
+----- version 1.1.0-1bl1 -----
+Version bump.
+
+----- version 1.0.1-1bl1 -----
+Version bump.
+
+----- version 1.0.0-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

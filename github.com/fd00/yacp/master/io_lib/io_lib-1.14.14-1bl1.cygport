@@ -1,0 +1,42 @@
+HOMEPAGE="https://github.com/jkbonfield/${PN}"
+SRC_URI="https://github.com/jkbonfield/${PN}/releases/download/${P//./-}/${P}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="General purpose library to handle gene sequencing machine trace files"
+DESCRIPTION="The Staden I/O library provides a general purpose interface for reading and
+writing trace files and other bioinformatics experiment files."
+
+BUILD_REQUIRES="libbz2-devel libcurl-devel libhtscodecs-devel liblzma-devel zlib-devel"
+
+CYGCONF_ARGS="
+	--enable-maintainer-mode
+"
+
+DIFF_EXCLUDES="
+	${PN}_config.h
+	*.sam
+	*.test
+"
+
+PKG_NAMES="
+	${PN}
+	libstaden-read14
+	libstaden-read-devel
+"
+io_lib_CONTENTS="
+	usr/bin/*.exe
+	usr/share/doc
+	usr/share/man/man1
+"
+libstaden_read14_CONTENTS="
+	usr/bin/*.dll
+"
+libstaden_read_devel_CONTENTS="
+	usr/bin/${PN}-config
+	usr/include
+	usr/lib
+	usr/share/man/man[34]
+"
+io_lib_SUMMARY="${SUMMARY} (utilities)"
+libstaden_read14_SUMMARY="${SUMMARY} (runtime)"
+libstaden_read_devel_SUMMARY="${SUMMARY} (development)"

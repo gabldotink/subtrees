@@ -1,0 +1,77 @@
+HOMEPAGE="https://www.prelude-siem.org/"
+SRC_URI="https://www.prelude-siem.org/attachments/download/1393/${P}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Abstraction layer upon the type and the format of the database used to store IDMEF alerts"
+DESCRIPTION="The PreludeDB Library provides an abstraction layer upon the type and the
+format of the database used to store IDMEF alerts. It allows developers to use
+the Prelude IDMEF database easily and efficiently without worrying about SQL,
+and to access the database independently of the type/format of the database."
+
+CYGCONF_ARGS="
+	--enable-maintainer-mode
+"
+
+PKG_NAMES="
+	${PN}
+	${PN}7
+	${PN}-devel
+	${PN}cpp2
+	${PN}cpp-devel
+	python27-${PN}
+	python36-${PN}
+	${PN}-plugins-mysql
+	${PN}-plugins-pgsql
+	${PN}-plugins-sqlite3
+"
+libpreludedb_CONTENTS="
+	usr/bin/preludedb-admin
+	usr/share/doc
+	usr/share/man/man1/preludedb-admin.1.gz
+"
+libpreludedb7_CONTENTS="
+	usr/bin/cygpreludedb-*.dll
+"
+libpreludedb_devel_CONTENTS="
+	usr/bin/libpreludedb-config
+	usr/include/${PN}/*.h
+	usr/lib/${PN}.dll.a
+	usr/lib/${PN}/plugins/formats
+	usr/share/aclocal
+	usr/share/man/man1/libpreludedb-config.1*
+"
+libpreludedbcpp2_CONTENTS="
+	usr/bin/cygpreludedbcpp-*.dll
+"
+libpreludedbcpp_devel_CONTENTS="
+	usr/include/${PN}/*.hxx
+	usr/lib/${PN}cpp.dll.a
+"
+python27_libpreludedb_CONTENTS="
+	usr/lib/python2.7
+"
+python36_libpreludedb_CONTENTS="
+	usr/lib/python3.6
+"
+libpreludedb_plugins_mysql_CONTENTS="
+	usr/lib/${PN}/plugins/sql/mysql*
+	usr/share/${PN}/classic/mysql*
+"
+libpreludedb_plugins_pgsql_CONTENTS="
+	usr/lib/${PN}/plugins/sql/pgsql*
+	usr/share/${PN}/classic/pgsql*
+"
+libpreludedb_plugins_sqlite3_CONTENTS="
+	usr/lib/${PN}/plugins/sql/sqlite3*
+	usr/share/${PN}/classic/sqlite*
+"
+libpreludedb_SUMMARY="${SUMMARY} (utilities)"
+libpreludedb7_SUMMARY="${SUMMARY} (runtime)"
+libpreludedb_devel_SUMMARY="${SUMMARY} (development)"
+libpreludedbcpp2_SUMMARY="${SUMMARY} (runtime / c++)"
+libpreludedbcpp_devel_SUMMARY="${SUMMARY} (development / c++)"
+python27_libpreludedb_SUMMARY="${SUMMARY} (Python27 bindings)"
+python36_libpreludedb_SUMMARY="${SUMMARY} (Python36 bindings)"
+libpreludedb_plugins_mysql_SUMMARY="${SUMMARY} (plugin / mysql)"
+libpreludedb_plugins_pgsql_SUMMARY="${SUMMARY} (plugin / pgsql)"
+libpreludedb_plugins_sqlite3_SUMMARY="${SUMMARY} (plugin / sqlite3)"

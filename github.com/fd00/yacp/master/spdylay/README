@@ -1,0 +1,103 @@
+spdylay
+------------------------------------------
+This is an experimental implementation of Google's SPDY protocol in C.
+
+Runtime requirements:
+  cygwin-3.1.5-1
+  libevent2.0_5-2.0.22-1
+  libgcc1-9.3.0-2
+  libspdylay-devel-1.4.0-1bl2
+  libspdylay7-1.4.0-1bl2
+  libssl1.1-1.1.1f-1
+  libstdc++6-9.3.0-2
+  libxml2-2.9.9-2
+  pkg-config-1.6.3-1
+  zlib-devel-1.2.11-1
+  zlib0-1.2.11-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.34+1git.de9c1b7cfe-1
+  cygport-0.34.0-1
+  gcc-core-9.3.0-2
+  gcc-g++-9.3.0-2
+  libtool-2.4.6-7
+  make-4.3-1
+
+Canonical website:
+  http://tatsuhiro-t.github.io/spdylay/
+
+Canonical download:
+  https://github.com/tatsuhiro-t/spdylay/releases/download/v1.4.0/spdylay-1.4.0.tar.xz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack spdylay-1.4.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./spdylay-1.4.0-X.cygport all
+
+This will create:
+  /usr/src/spdylay-1.4.0-X-src.tar.xz
+  /usr/src/spdylay-1.4.0-X.tar.xz
+  /usr/src/libspdylay7-1.4.0-X.tar.xz
+  /usr/src/libspdylay-devel-1.4.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(spdylay)
+  /usr/bin/shrpx.exe
+  /usr/bin/spdycat.exe
+  /usr/share/doc/Cygwin/spdylay.README
+  /usr/share/doc/spdylay/AUTHORS
+  /usr/share/doc/spdylay/COPYING
+  /usr/share/doc/spdylay/ChangeLog
+  /usr/share/doc/spdylay/NEWS
+  /usr/share/doc/spdylay/README
+  /usr/share/doc/spdylay/README.rst
+
+(libspdylay7)
+  /usr/bin/cygspdylay-7.dll
+
+(libspdylay-devel)
+  /usr/include/spdylay/spdylay.h
+  /usr/include/spdylay/spdylayver.h
+  /usr/lib/libspdylay.dll.a
+  /usr/lib/pkgconfig/libspdylay.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.4.0-1bl2 -----
+Rebuild for libssl
+
+----- version 1.4.0-1bl1 -----
+Version bump.
+
+----- version 1.3.2-1bl1 -----
+Version bump.
+
+----- version 1.3.1-1bl1 -----
+Version bump.
+
+----- version 1.2.5-1bl1 -----
+Version bump.
+
+----- version 1.2.3-1bl1 -----
+Version bump.
+
+----- version 1.1.0-1bl1 -----
+Version bump.
+
+----- version 1.0.0-1bl1 -----
+Version bump.
+
+----- version 0.3.8-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://fd0.hatenablog.jp/>

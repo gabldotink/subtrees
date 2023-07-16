@@ -1,0 +1,74 @@
+libgwyfile
+------------------------------------------
+Libgwyfile is a small, embeddable library for reading and writing of Gwyddion
+GWY files as foreign data. This means independently of Gwyddon and without
+adopting its data object model.
+
+Runtime requirements:
+  cygwin-3.1.6-1
+  libgwyfile-devel-1.4-1bl1
+  libgwyfile0-1.4-1bl1
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.34+1git.de9c1b7cfe-1
+  cygport-0.34.0-1
+  gcc-core-9.3.0-2
+  libtool-2.4.6-7
+  make-4.3-1
+
+Canonical website:
+  http://libgwyfile.sf.net/
+
+Canonical download:
+  mirror://sourceforge/libgwyfile/libgwyfile-1.4.tar.xz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libgwyfile-1.4-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libgwyfile-1.4-X.cygport all
+
+This will create:
+  /usr/src/libgwyfile-1.4-X-src.tar.xz
+  /usr/src/libgwyfile-1.4-X.tar.xz
+  /usr/src/libgwyfile0-1.4-X.tar.xz
+  /usr/src/libgwyfile-devel-1.4-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libgwyfile)
+  /usr/share/doc/Cygwin/libgwyfile.README
+  /usr/share/doc/libgwyfile/AUTHORS
+  /usr/share/doc/libgwyfile/COPYING
+  /usr/share/doc/libgwyfile/NEWS
+  /usr/share/doc/libgwyfile/README
+
+(libgwyfile0)
+  /usr/bin/cyggwyfile-0.dll
+
+(libgwyfile-devel)
+  /usr/include/gwyfile/gwyfile.h
+  /usr/lib/libgwyfile.dll.a
+  /usr/lib/pkgconfig/gwyfile.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.4-1bl1 -----
+Version bump.
+
+----- version 1.2-1bl1 -----
+Version bump.
+
+----- version 1.1-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

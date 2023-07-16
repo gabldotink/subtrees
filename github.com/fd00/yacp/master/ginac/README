@@ -1,0 +1,190 @@
+ginac
+------------------------------------------
+GiNaC is a C++ library. It is designed to allow the creation of integrated
+systems that embed symbolic manipulations together with more established areas
+of computer science (like computation- intense numeric applications, graphical
+interfaces, etc.) under one roof. It is distributed under the terms and
+conditions of the GNU general public license (GPL). GiNaC is an iterated and
+recursive acronym for GiNaC is Not a CAS, where CAS stands for Computer Algebra
+System.
+
+Runtime requirements:
+  bash-4.4.12-3
+  cygwin-3.4.3-1
+  libcln-devel-1.3.3-1
+  libcln6-1.3.3-1
+  libgcc1-11.3.0-1
+  libginac-devel-1.8.5-1bl1
+  libginac11-1.8.5-1bl1
+  libreadline7-8.2-2
+  libstdc++6-11.3.0-1
+  pkg-config-1.9.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.39-1
+  cygport-0.35.5-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libcln-devel-1.3.3-1
+  libreadline-devel-8.2-2
+  libtool-2.4.7-1
+  make-4.4-1
+
+Canonical website:
+  https://www.ginac.de/
+
+Canonical download:
+  https://www.ginac.de/ginac-1.8.5.tar.bz2
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack ginac-1.8.5-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./ginac-1.8.5-X.cygport all
+
+This will create:
+  /usr/src/ginac-1.8.5-X-src.tar.xz
+  /usr/src/ginac-1.8.5-X.tar.xz
+  /usr/src/libginac11-1.8.5-X.tar.xz
+  /usr/src/libginac-devel-1.8.5-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(ginac)
+  /usr/bin/ginsh.exe
+  /usr/bin/viewgar.exe
+  /usr/libexec/ginac-excompiler
+  /usr/share/doc/Cygwin/ginac.README
+  /usr/share/doc/ginac/AUTHORS
+  /usr/share/doc/ginac/COPYING
+  /usr/share/doc/ginac/ChangeLog
+  /usr/share/doc/ginac/NEWS
+  /usr/share/doc/ginac/README
+  /usr/share/man/man1/ginsh.1.gz
+  /usr/share/man/man1/viewgar.1.gz
+
+(libginac11)
+  /usr/bin/cygginac-11.dll
+
+(libginac-devel)
+  /usr/include/ginac/add.h
+  /usr/include/ginac/archive.h
+  /usr/include/ginac/assertion.h
+  /usr/include/ginac/basic.h
+  /usr/include/ginac/class_info.h
+  /usr/include/ginac/clifford.h
+  /usr/include/ginac/color.h
+  /usr/include/ginac/compiler.h
+  /usr/include/ginac/constant.h
+  /usr/include/ginac/container.h
+  /usr/include/ginac/ex.h
+  /usr/include/ginac/excompiler.h
+  /usr/include/ginac/expair.h
+  /usr/include/ginac/expairseq.h
+  /usr/include/ginac/exprseq.h
+  /usr/include/ginac/factor.h
+  /usr/include/ginac/fail.h
+  /usr/include/ginac/fderivative.h
+  /usr/include/ginac/flags.h
+  /usr/include/ginac/function.h
+  /usr/include/ginac/ginac.h
+  /usr/include/ginac/hash_map.h
+  /usr/include/ginac/idx.h
+  /usr/include/ginac/indexed.h
+  /usr/include/ginac/inifcns.h
+  /usr/include/ginac/integral.h
+  /usr/include/ginac/integration_kernel.h
+  /usr/include/ginac/lst.h
+  /usr/include/ginac/matrix.h
+  /usr/include/ginac/mul.h
+  /usr/include/ginac/ncmul.h
+  /usr/include/ginac/normal.h
+  /usr/include/ginac/numeric.h
+  /usr/include/ginac/operators.h
+  /usr/include/ginac/parse_context.h
+  /usr/include/ginac/parser.h
+  /usr/include/ginac/power.h
+  /usr/include/ginac/print.h
+  /usr/include/ginac/pseries.h
+  /usr/include/ginac/ptr.h
+  /usr/include/ginac/registrar.h
+  /usr/include/ginac/relational.h
+  /usr/include/ginac/structure.h
+  /usr/include/ginac/symbol.h
+  /usr/include/ginac/symmetry.h
+  /usr/include/ginac/tensor.h
+  /usr/include/ginac/version.h
+  /usr/include/ginac/wildcard.h
+  /usr/lib/libginac.dll.a
+  /usr/lib/pkgconfig/ginac.pc
+  /usr/share/info/ginac-examples.info.gz
+  /usr/share/info/ginac.info.gz
+
+------------------
+
+Port Notes:
+
+----- version 1.8.5-1bl1 -----
+Version bump.
+
+----- version 1.8.3-1bl1 -----
+Version bump.
+
+----- version 1.8.1-1bl1 -----
+Version bump.
+
+----- version 1.8.0-1bl1 -----
+Version bump.
+
+----- version 1.7.11-1bl1 -----
+Version bump.
+
+----- version 1.7.10-1bl1 -----
+Version bump.
+
+----- version 1.7.8-1bl1 -----
+Version bump.
+
+----- version 1.7.6-1bl1 -----
+Version bump.
+
+----- version 1.7.5-1bl1 -----
+Version bump.
+
+----- version 1.7.4-1bl1 -----
+Version bump.
+
+----- version 1.7.0-1bl1 -----
+Version bump.
+
+----- version 1.6.7-1bl1 -----
+Version bump.
+
+----- version 1.6.5-1bl1 -----
+Version bump.
+
+----- version 1.6.4-1bl1 -----
+Version bump.
+
+----- version 1.6.3-1bl1 -----
+Version bump.
+
+----- version 1.6.2-1bl2 -----
+rebuild on x86_64
+
+----- version 1.6.2-1bl1 -----
+Version bump.
+
+----- version 1.6.0-1bl1 -----
+Version bump.
+
+----- version 1.5.8-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

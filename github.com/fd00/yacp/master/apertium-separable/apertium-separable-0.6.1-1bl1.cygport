@@ -1,0 +1,16 @@
+HOMEPAGE="https://github.com/apertium/${PN}"
+SRC_URI="https://github.com/apertium/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Text"
+SUMMARY="Module for reordering separable/discontiguous multiwords"
+DESCRIPTION="Lttoolbox provides a module for reordering separable/discontiguous multiwords
+and processing them in the pipeline. Multiwords are manually written in an
+additional xml-format dictionary."
+
+LICENSE="GPL-3.0-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: GPL-3.0-or-later"
+LICENSE_URI="COPYING"
+
+BUILD_REQUIRES="utf8cpp libicu-devel liblttoolbox-devel libxml2-devel"
+
+export CPPFLAGS="${CPPFLAGS} -I/usr/include/utf8cpp"

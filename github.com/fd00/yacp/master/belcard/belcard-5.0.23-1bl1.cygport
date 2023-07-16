@@ -1,0 +1,44 @@
+HOMEPAGE="https://gitlab.linphone.org/BC/public/${PN}"
+SRC_URI="https://gitlab.linphone.org/BC/public/${PN}/-/archive/${PV}/${P}.tar.bz2"
+
+CATEGORY="Libs"
+SUMMARY="C++ library to manipulate VCard standard format"
+DESCRIPTION="Belcard is a C++ library to manipulate VCard standard format."
+
+BUILD_REQUIRES="libbctoolbox-devel libbelr-devel"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DENABLE_STATIC:BOOL=OFF
+"
+
+src_test()
+{
+	cd ${B}
+	PATH=${B}/src:${PATH} ./tester/belcard_tester.exe --resource-dir ${S}/tester
+}
+
+DOCS="
+	CHANGELOG.md
+"
+
+PKG_NAMES="
+	belcard
+	libbelcard1
+	libbelcard-devel
+"
+belcard_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+libbelcard1_CONTENTS="
+	usr/bin/*.dll
+"
+libbelcard_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+belcard_SUMMARY="${SUMMARY} (utilities)"
+libbelcard1_SUMMARY="${SUMMARY} (runtime)"
+libbelcard_devel_SUMMARY="${SUMMARY} (development)"

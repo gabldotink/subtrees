@@ -1,0 +1,32 @@
+HOMEPAGE="https://git.sailfishos.org/mer-core/${PN}"
+GIT_URI="https://git.sailfishos.org/mer-core/${PN}.git"
+GIT_TAG="${PV}"
+
+CATEGORY="Libs"
+SUMMARY="Client library for non-graphical feedback"
+DESCRIPTION="${SUMMARY}"
+
+BUILD_REQUIRES="check libdbus-glib_1-devel libdbus1-devel libglib2.0-devel"
+
+inherit git
+
+PKG_NAMES="
+	${PN}
+	${PN}0_0.24.0
+	${PN}0-devel
+"
+libngf_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+libngf0_0_24_0_CONTENTS="
+	usr/bin/*.dll
+"
+libngf0_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+
+libngf_SUMMARY="${SUMMARY} (utilities)"
+libngf0_0_24_0_SUMMARY="${SUMMARY} (runtime)"
+libngf0_devel_SUMMARY="${SUMMARY} (development)"

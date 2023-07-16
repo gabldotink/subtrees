@@ -1,0 +1,71 @@
+kivaloo
+------------------------------------------
+Kivaloo (pronounced kee-va-lieu) is a collection of utilities which together
+form a data store associating keys of up to 255 bytes with values of up to 255
+bytes. It was designed to satisfy the needs of the Tarsnap online backup
+service for high-performance key-value storage, although it is not yet being
+used for that purpose.
+
+Runtime requirements:
+  cygwin-3.2.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.36.1-2
+  cygport-0.34.0-1
+  gcc-core-10.2.0-1
+  make-4.3-1
+
+Canonical website:
+  http://www.tarsnap.com/kivaloo.html
+
+Canonical download:
+  http://www.tarsnap.com/kivaloo/kivaloo-1.2.0.tgz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack kivaloo-1.2.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./kivaloo-1.2.0-X.cygport all
+
+This will create:
+  /usr/src/kivaloo-1.2.0-X-src.tar.xz
+  /usr/src/kivaloo-1.2.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(kivaloo)
+  /usr/bin/kivaloo-bulk_extract.exe
+  /usr/bin/kivaloo-bulk_insert.exe
+  /usr/bin/kivaloo-bulk_update.exe
+  /usr/bin/kivaloo-hotspot_read.exe
+  /usr/bin/kivaloo-kvlds.exe
+  /usr/bin/kivaloo-lbs.exe
+  /usr/bin/kivaloo-mkpairs.exe
+  /usr/bin/kivaloo-mux.exe
+  /usr/bin/kivaloo-random_mixed.exe
+  /usr/bin/kivaloo-random_read.exe
+  /usr/share/doc/Cygwin/kivaloo.README
+  /usr/share/doc/kivaloo/CHANGELOG
+  /usr/share/doc/kivaloo/Copyright
+  /usr/share/doc/kivaloo/DESIGN
+  /usr/share/doc/kivaloo/INTERFACES
+  /usr/share/doc/kivaloo/STYLE
+
+------------------
+
+Port Notes:
+
+----- version 1.2.0-1bl3 -----
+Rebuild with gcc-10.2.0
+
+----- version 1.2.0-1bl2 -----
+Rebuild on x86_64
+
+----- version 1.2.0-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://fd0.hatenablog.jp/>

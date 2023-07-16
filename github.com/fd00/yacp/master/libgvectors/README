@@ -1,0 +1,176 @@
+libgvectors
+------------------------------------------
+Libgvectors is a C++ library for visualizing mathematical vectors.
+
+Runtime requirements:
+  cygwin-1.7.14-2
+  libgcc1-4.5.3-3
+  libgfileio0-0.1-1bl3
+  libstdc++6-4.5.3-3
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-10-1
+  automake-4-10
+  binutils-2.22.51-2
+  cygport-0.10.10-1
+  gawk-4.0.1-1
+  gcc4-core-4.5.3-3
+  gcc4-g++-4.5.3-3
+  libtool-2.4-1
+  make-3.82.90-1
+
+Canonical website:
+  http://www.guengel.ch/myapps/libgvectors/
+
+Canonical download:
+  http://www.guengel.ch/myapps/libgvectors/downloads/libgvectors-0.1.tar.bz2
+
+-------------------------------------------
+
+Build instructions:
+  unpack libgvectors-0.1-X-src.tar.bz2
+    if you use setup to install this src package, it will be
+	 unpacked under /usr/src automatically
+  cd /usr/src
+  cygport ./libgvectors-0.1-X.cygport all
+
+This will create:
+  /usr/src/libgvectors-0.1-X-src.tar.bz2
+  /usr/src/libgvectors-0.1-X.tar.bz2
+  /usr/src/libgvectors0-0.1-X.tar.bz2
+  /usr/src/libgvectors-devel-0.1-X.tar.bz2
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libgvectors)
+  /usr/share/doc/Cygwin/libgvectors.README
+  /usr/share/doc/libgvectors/AUTHORS
+  /usr/share/doc/libgvectors/BUGS
+  /usr/share/doc/libgvectors/COPYING
+  /usr/share/doc/libgvectors/ChangeLog
+  /usr/share/doc/libgvectors/NEWS
+  /usr/share/doc/libgvectors/README
+  /usr/share/doc/libgvectors/TODO
+
+(libgvectors0)
+  /usr/bin/cyggvectors-0.dll
+
+(libgvectors-devel)
+  /usr/include/gvectors/binaryfilereader.h
+  /usr/include/gvectors/binaryfilewriter.h
+  /usr/include/gvectors/color.h
+  /usr/include/gvectors/coordinates.h
+  /usr/include/gvectors/drawer.h
+  /usr/include/gvectors/filereader.h
+  /usr/include/gvectors/filewriter.h
+  /usr/include/gvectors/gvector.h
+  /usr/include/gvectors/gvectors-config.h
+  /usr/include/gvectors/gvectors.h
+  /usr/include/gvectors/gvectortypes.h
+  /usr/include/gvectors/gvenums.h
+  /usr/include/gvectors/gvexceptions.h
+  /usr/include/gvectors/gvsupport.h
+  /usr/include/gvectors/matrix.h
+  /usr/include/gvectors/matrix4x1.h
+  /usr/include/gvectors/matrix4x4.h
+  /usr/include/gvectors/rotation.h
+  /usr/include/gvectors/segment.h
+  /usr/include/gvectors/vectorstore.h
+  /usr/include/gvectors/visualvector.h
+  /usr/include/gvectors/vstorefuncs.h
+  /usr/include/gvectors/vstoreid.h
+  /usr/include/gvectors/vstoreitem.h
+  /usr/include/gvectors/xmlfilereader.h
+  /usr/include/gvectors/xmlfilewriter.h
+  /usr/lib/libgvectors.dll.a
+  /usr/lib/libgvectors.la
+  /usr/lib/pkgconfig/libgvectors.pc
+  /usr/share/gvectors/vectorstore1.0.dtd
+  /usr/share/man/man3/GVectors.3.gz
+  /usr/share/man/man3/GVectors_BFileHeaderV_0_1.3.gz
+  /usr/share/man/man3/GVectors_BFileVectorV_0_1.3.gz
+  /usr/share/man/man3/GVectors_BinaryReader.3.gz
+  /usr/share/man/man3/GVectors_BinaryWriter.3.gz
+  /usr/share/man/man3/GVectors_Color.3.gz
+  /usr/share/man/man3/GVectors_Coordinates.3.gz
+  /usr/share/man/man3/GVectors_CountItems.3.gz
+  /usr/share/man/man3/GVectors_Drawer.3.gz
+  /usr/share/man/man3/GVectors_FileReader.3.gz
+  /usr/share/man/man3/GVectors_FileWriter.3.gz
+  /usr/share/man/man3/GVectors_FindTopLevel.3.gz
+  /usr/share/man/man3/GVectors_ForEachMinMax.3.gz
+  /usr/share/man/man3/GVectors_GVEDynCastFailed.3.gz
+  /usr/share/man/man3/GVectors_GVEInvalidMDimension.3.gz
+  /usr/share/man/man3/GVectors_GVEInvalidMatrixIndex.3.gz
+  /usr/share/man/man3/GVectors_GVEItemNotFound.3.gz
+  /usr/share/man/man3/GVectors_GVEStoreCorrupt.3.gz
+  /usr/share/man/man3/GVectors_GVEUnsupported.3.gz
+  /usr/share/man/man3/GVectors_GVEWrongFileVersion.3.gz
+  /usr/share/man/man3/GVectors_GVEXMLFileWrite.3.gz
+  /usr/share/man/man3/GVectors_GVEXMLInvalid.3.gz
+  /usr/share/man/man3/GVectors_GVException.3.gz
+  /usr/share/man/man3/GVectors_GVector.3.gz
+  /usr/share/man/man3/GVectors_GetMinMax.3.gz
+  /usr/share/man/man3/GVectors_Matrix.3.gz
+  /usr/share/man/man3/GVectors_Matrix4x1.3.gz
+  /usr/share/man/man3/GVectors_Matrix4x4.3.gz
+  /usr/share/man/man3/GVectors_Rotation.3.gz
+  /usr/share/man/man3/GVectors_SaveItems.3.gz
+  /usr/share/man/man3/GVectors_Segment.3.gz
+  /usr/share/man/man3/GVectors_SyncLookup.3.gz
+  /usr/share/man/man3/GVectors_VDelete.3.gz
+  /usr/share/man/man3/GVectors_VDraw.3.gz
+  /usr/share/man/man3/GVectors_VRemoveItemByAddress.3.gz
+  /usr/share/man/man3/GVectors_VSetArrowLength.3.gz
+  /usr/share/man/man3/GVectors_VSetOrigin.3.gz
+  /usr/share/man/man3/GVectors_VSetRotation.3.gz
+  /usr/share/man/man3/GVectors_VSetScale.3.gz
+  /usr/share/man/man3/GVectors_VStoreID.3.gz
+  /usr/share/man/man3/GVectors_VStoreItem.3.gz
+  /usr/share/man/man3/GVectors_VectorStore.3.gz
+  /usr/share/man/man3/GVectors_VisualVector.3.gz
+  /usr/share/man/man3/GVectors_XMLReader.3.gz
+  /usr/share/man/man3/GVectors_XMLWriter.3.gz
+  /usr/share/man/man3/gvectors_binaryfilereader.h.3.gz
+  /usr/share/man/man3/gvectors_binaryfilewriter.h.3.gz
+  /usr/share/man/man3/gvectors_color.h.3.gz
+  /usr/share/man/man3/gvectors_coordinates.h.3.gz
+  /usr/share/man/man3/gvectors_drawer.h.3.gz
+  /usr/share/man/man3/gvectors_filereader.h.3.gz
+  /usr/share/man/man3/gvectors_filewriter.h.3.gz
+  /usr/share/man/man3/gvectors_gvector.h.3.gz
+  /usr/share/man/man3/gvectors_gvectors.h.3.gz
+  /usr/share/man/man3/gvectors_gvectortypes.h.3.gz
+  /usr/share/man/man3/gvectors_gvenums.h.3.gz
+  /usr/share/man/man3/gvectors_gvexceptions.h.3.gz
+  /usr/share/man/man3/gvectors_gvsupport.h.3.gz
+  /usr/share/man/man3/gvectors_matrix.h.3.gz
+  /usr/share/man/man3/gvectors_matrix4x1.h.3.gz
+  /usr/share/man/man3/gvectors_matrix4x4.h.3.gz
+  /usr/share/man/man3/gvectors_rotation.h.3.gz
+  /usr/share/man/man3/gvectors_segment.h.3.gz
+  /usr/share/man/man3/gvectors_todo.3.gz
+  /usr/share/man/man3/gvectors_vectorstore.h.3.gz
+  /usr/share/man/man3/gvectors_visualvector.h.3.gz
+  /usr/share/man/man3/gvectors_vstorefuncs.h.3.gz
+  /usr/share/man/man3/gvectors_vstoreid.h.3.gz
+  /usr/share/man/man3/gvectors_vstoreitem.h.3.gz
+  /usr/share/man/man3/gvectors_xmlfilereader.h.3.gz
+  /usr/share/man/man3/gvectors_xmlfilewriter.h.3.gz
+
+------------------
+
+Port Notes:
+
+----- version 0.1-1bl3 -----
+Rebuild with gcc-4.5.3
+
+----- version 0.1-1bl2 -----
+Repackage for licensing & readmes
+
+----- version 0.1-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>
+

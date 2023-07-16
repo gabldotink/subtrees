@@ -1,0 +1,25 @@
+HOMEPAGE="https://freeverb3vst.osdn.jp/sodan/tools/${PN}.html"
+SRC_URI="https://freeverb3vst.osdn.jp/sodan/tools/${P}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="NKF Library"
+DESCRIPTION="Network Kanji code conversion Filter Library"
+
+PKG_NAMES="
+        ${PN}
+        ${PN}0
+        ${PN}-devel
+"
+libnkf_CONTENTS="
+        usr/share
+"
+libnkf0_CONTENTS="
+        usr/bin
+"
+libnkf_devel_CONTENTS="
+        usr/include
+        usr/lib
+"
+libnkf_SUMMARY="${SUMMARY} (licensing & readmes)"
+libnkf0_SUMMARY="${SUMMARY} (runtime)"
+libnkf_devel_SUMMARY="${SUMMARY} (development)"

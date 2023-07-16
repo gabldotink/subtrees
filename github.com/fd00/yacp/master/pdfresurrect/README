@@ -1,0 +1,94 @@
+pdfresurrect
+------------------------------------------
+PDFResurrect is a tool aimed at analyzing PDF documents. The PDF format allows
+for previous document changes to be retained in a more recent version of the
+document, thereby creating a running history of changes for the document. This
+tool attempts to extract all previous versions while also producing a summary
+of changes between versions. This tool can also scrub or write data over the
+original instances of PDF objects that have been modified or deleted, in an
+effort to disguise information from previous versions that might not be
+intended for anyone else to read.
+
+Runtime requirements:
+  cygwin-3.4.2-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.39-1
+  cygport-0.35.5-1
+  gcc-core-11.3.0-1
+  make-4.4-1
+
+Canonical website:
+  https://github.com/enferex/pdfresurrect
+
+Canonical download:
+  https://github.com/enferex/pdfresurrect/archive/refs/tags/v0.23.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack pdfresurrect-0.23-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./pdfresurrect-0.23-X.cygport all
+
+This will create:
+  /usr/src/pdfresurrect-0.23-X-src.tar.xz
+  /usr/src/pdfresurrect-0.23-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(pdfresurrect)
+  /usr/bin/pdfresurrect.exe
+  /usr/share/doc/Cygwin/pdfresurrect.README
+  /usr/share/doc/pdfresurrect/AUTHORS
+  /usr/share/doc/pdfresurrect/ChangeLog
+  /usr/share/doc/pdfresurrect/LICENSE
+  /usr/share/doc/pdfresurrect/README
+  /usr/share/man/man1/pdfresurrect.1.gz
+
+------------------
+
+Port Notes:
+
+----- version 0.23-1bl1 -----
+Version bump.
+
+----- version 0.22-1bl1 -----
+Version bump.
+
+----- version 0.21-1bl1 -----
+Version bump.
+
+----- version 0.20-1bl1 -----
+Version bump.
+
+----- version 0.19-1bl1 -----
+Version bump.
+
+----- version 0.18-1bl1 -----
+Version bump.
+
+----- version 0.15-1bl1 -----
+Version bump.
+
+----- version 0.14-1bl1 -----
+Version bump.
+
+----- version 0.12-1bl1 -----
+Version bump.
+
+----- version 0.10-1bl2 -----
+Rebuild with gcc-4.5.3
+
+----- version 0.10-1bl1 -----
+Version bump.
+
+----- version 0.9-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

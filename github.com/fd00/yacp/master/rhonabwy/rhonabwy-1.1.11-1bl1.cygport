@@ -1,0 +1,49 @@
+HOMEPAGE="https://github.com/babelouest/${PN}"
+SRC_URI="https://github.com/babelouest/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="JWK, JWKS, JWS, JWE and JWT C library"
+DESCRIPTION="Create, modify, parse or export Json Web Keys as defined in the RFC 7517"
+
+LICENSE="LGPL-2.1-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: LGPL-2.1-or-later"
+LICENSE_URI="LICENSE"
+
+BUILD_REQUIRES="libcurl-devel libgmp-devel libgnutls-devel libjansson-devel libnettle-devel liborcania-devel libyder-devel zlib-devel"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DBUILD_RHONABWY_TESTING:BOOL=ON
+"
+
+src_test()
+{
+	cd ${B}
+	ninja_test
+}
+
+DOCS="
+	API.md
+	CHANGELOG.md
+"
+
+PKG_NAMES="
+	rhonabwy
+	librhonabwy${PV[1]}.${PV[2]}
+	librhonabwy-devel
+"
+rhonabwy_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+librhonabwy1_1_CONTENTS="
+	usr/bin/*.dll
+"
+librhonabwy_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+rhonabwy_SUMMARY="${SUMMARY} (utilities)"
+librhonabwy1_1_SUMMARY="${SUMMARY} (runtime)"
+librhonabwy_devel_SUMMARY="${SUMMARY} (development)"

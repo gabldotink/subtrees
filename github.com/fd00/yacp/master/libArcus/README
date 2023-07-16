@@ -1,0 +1,110 @@
+libArcus
+------------------------------------------
+This library contains C++ code and Python3 bindings for creating a socket in a
+thread and using this socket to send and receive messages based on the Protocol
+Buffers library. It is designed to facilitate the communication between Cura
+and its backend and similar code.
+
+Runtime requirements:
+  cygwin-3.3.5-1
+  libArcus-devel-5.0.0-1bl1
+  libArcus5-5.0.0-1bl1
+  libgcc1-11.3.0-1
+  libprotobuf30-3.19.3-1
+  libstdc++6-11.3.0-1
+  pkg-config-1.8.0-1
+  python39-3.9.10-1
+  python39-libArcus-5.0.0-1bl1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.38-1
+  cmake-3.23.2-1
+  cygport-0.35.1-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libprotobuf-devel-3.19.3-1
+  ninja-1.11.0-1
+  python39-3.9.10-1
+  python39-devel-3.9.10-1
+
+Canonical website:
+  https://github.com/Ultimaker/libArcus
+
+Canonical download:
+  https://github.com/Ultimaker/libArcus/archive/refs/tags/5.0.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libArcus-5.0.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libArcus-5.0.0-X.cygport all
+
+This will create:
+  /usr/src/libArcus-5.0.0-X-src.tar.xz
+  /usr/src/libArcus-5.0.0-X.tar.xz
+  /usr/src/libArcus5-5.0.0-X.tar.xz
+  /usr/src/libArcus-devel-5.0.0-X.tar.xz
+  /usr/src/python39-libArcus-5.0.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libArcus)
+  /usr/share/doc/Cygwin/libArcus.README
+  /usr/share/doc/libArcus/LICENSE
+  /usr/share/doc/libArcus/README.md
+  /usr/share/doc/libArcus/TODO.md
+
+(libArcus5)
+  /usr/bin/cygArcus-5.dll
+
+(libArcus-devel)
+  /usr/include/Arcus/ArcusExport.h
+  /usr/include/Arcus/Error.h
+  /usr/include/Arcus/MessageTypeStore.h
+  /usr/include/Arcus/Socket.h
+  /usr/include/Arcus/SocketListener.h
+  /usr/include/Arcus/Types.h
+  /usr/lib/cmake/Arcus/Arcus-targets-release.cmake
+  /usr/lib/cmake/Arcus/Arcus-targets.cmake
+  /usr/lib/cmake/Arcus/ArcusConfig.cmake
+  /usr/lib/cmake/Arcus/ArcusConfigVersion.cmake
+  /usr/lib/libArcus.dll.a
+  /usr/lib/pkgconfig/libArcus.pc
+
+(python39-libArcus)
+  /usr/lib/python3.9/site-packages/pyArcus.pyi
+  /usr/lib/python3.9/site-packages/pyArcus.so
+
+------------------
+
+Port Notes:
+
+----- version 5.0.0-1bl1 -----
+Version bump.
+
+----- version 4.6.1-1bl1 -----
+Version bump.
+
+----- version 4.5.0-1bl1 -----
+Version bump.
+
+----- version 4.4.1-1bl1 -----
+Version bump.
+
+----- version 4.3.0-1bl1 -----
+Version bump.
+
+----- version 4.0.0-1bl1 -----
+Version bump.
+
+----- version 3.5.1-1bl1 -----
+Version bump.
+
+----- version 3.3.0-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

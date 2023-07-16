@@ -1,0 +1,78 @@
+tippecanoe
+------------------------------------------
+The goal of Tippecanoe is to enable making a scale-independent view of your
+data, so that at any level from the entire world to a single building, you can
+see the density and texture of the data rather than a simplification from
+dropping supposedly unimportant features or clustering or aggregating them.
+
+Runtime requirements:
+  cygwin-3.1.7-1
+  libgcc1-10.2.0-1
+  libsqlite3_0-3.32.3-1
+  libstdc++6-10.2.0-1
+  zlib0-1.2.11-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.34+1git.de9c1b7cfe-1
+  cygport-0.34.0-1
+  gcc-core-10.2.0-1
+  gcc-g++-10.2.0-1
+  libprotobuf-devel-3.12.3-1
+  make-4.3-1
+
+Canonical website:
+  https://github.com/mapbox/tippecanoe
+
+Canonical download:
+  https://github.com/mapbox/tippecanoe/archive/1.36.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack tippecanoe-1.36.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./tippecanoe-1.36.0-X.cygport all
+
+This will create:
+  /usr/src/tippecanoe-1.36.0-X-src.tar.xz
+  /usr/src/tippecanoe-1.36.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(tippecanoe)
+  /usr/bin/tile-join.exe
+  /usr/bin/tippecanoe-decode.exe
+  /usr/bin/tippecanoe-enumerate.exe
+  /usr/bin/tippecanoe-json-tool.exe
+  /usr/bin/tippecanoe.exe
+  /usr/share/doc/Cygwin/tippecanoe.README
+  /usr/share/doc/tippecanoe/LICENSE.md
+  /usr/share/doc/tippecanoe/README.md
+  /usr/share/man/man1/tippecanoe.1.gz
+
+------------------
+
+Port Notes:
+
+----- version 1.36.0-1bl1 -----
+Version bump.
+
+----- version 1.35.0-1bl1 -----
+Version bump.
+
+----- version 1.34.3-1bl1 -----
+Version bump.
+
+----- version 1.34.0-1bl1 -----
+Version bump.
+
+----- version 1.30.0-1bl1 -----
+Version bump.
+
+----- version 1.27.9-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

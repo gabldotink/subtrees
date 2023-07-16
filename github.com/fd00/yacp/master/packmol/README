@@ -1,0 +1,82 @@
+packmol
+------------------------------------------
+Packmol creates an initial point for molecular dynamics simulations by packing
+molecules in defined regions of space. The packing guarantees that short range
+repulsive interactions do not disrupt the simulations.
+
+Runtime requirements:
+  cygwin-3.4.5-1
+  libgfortran5-11.3.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.39-1
+  cmake-3.23.2-1
+  cygport-0.36.0-1
+  gcc-core-11.3.0-1
+  gcc-fortran-11.3.0-1
+  ninja-1.11.1-1
+
+Canonical website:
+  https://github.com/m3g/packmol
+
+Canonical download:
+  https://github.com/m3g/packmol/archive/refs/tags/v20.14.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack packmol-20.14.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./packmol-20.14.0-X.cygport all
+
+This will create:
+  /usr/src/packmol-20.14.0-X-src.tar.xz
+  /usr/src/packmol-20.14.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(packmol)
+  /usr/bin/packmol.exe
+  /usr/share/doc/Cygwin/packmol.README
+  /usr/share/doc/packmol/AUTHORS
+  /usr/share/doc/packmol/LICENSE
+  /usr/share/doc/packmol/README.md
+
+------------------
+
+Port Notes:
+
+----- version 20.14.0-1bl1 -----
+Version bump.
+
+----- version 20.11.1-1bl1 -----
+Version bump.
+
+----- version 20.010-1bl1 -----
+Version bump.
+
+----- version 18.169-1bl1 -----
+Version bump.
+
+----- version 18.104-1bl1 -----
+Version bump.
+
+----- version 17.333-1bl1 -----
+Version bump.
+
+----- version 15.217-1bl1 -----
+Version bump.
+
+----- version 13.243-1bl1 -----
+Version bump.
+
+----- version 1.1.2.272-1bl1 -----
+Version bump.
+
+----- version 1.1.2.023-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

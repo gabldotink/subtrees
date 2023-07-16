@@ -1,0 +1,28 @@
+HOMEPAGE="https://bitbucket.org/ptv_claus/${PN}/"
+SRC_URI="https://bitbucket.org/ptv_claus/${PN}/downloads/${P}.zip"
+
+CATEGORY="Utils"
+SUMMARY="Tool for creating Commodore 1541 Floppy disk images in D64, G64, D71 or D81 format"
+DESCRIPTION="This is cc1541, a tool for creating Commodore 1541 Floppy disk images in D64,
+D71 or D81 format with custom sector interleaving etc. Also supports extended
+tracks 35-40 using either SPEED DOS or DOLPHIN DOS BAM-formatting."
+
+LICENSE="MIT"
+LICENSE_SPDX="SPDX-License-Identifier: MIT"
+LICENSE_URI="LICENSE.txt"
+
+BUILD_REQUIRES="asciidoc"
+
+src_compile()
+{
+	cd ${B}
+	lndirs
+	cygmake ENABLE_MAN=1
+}
+
+src_install()
+{
+	cd ${B}
+	dobin ${PN}.exe
+	doman ${PN}.1
+}

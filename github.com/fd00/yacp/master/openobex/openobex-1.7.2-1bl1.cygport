@@ -1,0 +1,34 @@
+HOMEPAGE="https://github.com/zuckschwerdt/${PN}"
+SRC_URI="mirror://sourceforge/${PN}/${P}-Source.tar.gz"
+SRC_DIR="${P}-Source"
+
+CATEGORY="Libs"
+SUMMARY="Free implementation of the Object Exchange protocol"
+DESCRIPTION="${SUMMARY}"
+
+BUILD_REQUIRES="libusb1.0-devel"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DBUILD_DOCUMENTATION:BOOL=OFF
+"
+
+PKG_NAMES="
+	openobex
+	libopenobex2
+	libopenobex-devel
+"
+openobex_CONTENTS="
+	usr/share
+"
+libopenobex2_CONTENTS="
+	usr/bin
+"
+libopenobex_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+openobex_SUMMARY="${SUMMARY} (licensing & readmes)"
+libopenobex2_SUMMARY="${SUMMARY} (runtime)"
+libopenobex_devel_SUMMARY="${SUMMARY} (development)"

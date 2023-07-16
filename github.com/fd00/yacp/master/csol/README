@@ -1,0 +1,92 @@
+csol
+------------------------------------------
+A small collection of solitaire games implemented in C using ncurses.
+
+Runtime requirements:
+  cygwin-3.4.6-1
+  libncursesw10-6.4-3.20230114
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.40-1
+  cmake-3.23.2-1
+  cygport-0.36.1-1
+  gcc-core-11.3.0-1
+  libncurses-devel-6.4-3.20230114
+  make-4.4.1-1
+
+Canonical website:
+  https://github.com/nielssp/csol
+
+Canonical download:
+  https://github.com/nielssp/csol/archive/refs/tags/v1.6.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack csol-1.6.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./csol-1.6.0-X.cygport all
+
+This will create:
+  /usr/src/csol-1.6.0-X-src.tar.xz
+  /usr/src/csol-1.6.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(csol)
+  /etc/xdg/csol/csolrc
+  /etc/xdg/csol/games/eightoff
+  /etc/xdg/csol/games/freecell
+  /etc/xdg/csol/games/golf
+  /etc/xdg/csol/games/klondike
+  /etc/xdg/csol/games/klondikefc
+  /etc/xdg/csol/games/russian
+  /etc/xdg/csol/games/spider1
+  /etc/xdg/csol/games/spider2
+  /etc/xdg/csol/games/spider4
+  /etc/xdg/csol/games/yukon
+  /etc/xdg/csol/games/yukonfc
+  /etc/xdg/csol/themes/ascii
+  /etc/xdg/csol/themes/compact
+  /etc/xdg/csol/themes/compact-ascii
+  /etc/xdg/csol/themes/corners
+  /etc/xdg/csol/themes/cp437
+  /etc/xdg/csol/themes/default
+  /etc/xdg/csol/themes/default-xl
+  /etc/xdg/csol/themes/ultracompact
+  /usr/bin/csol.exe
+  /usr/share/doc/Cygwin/csol.README
+  /usr/share/doc/csol/CHANGES.md
+  /usr/share/doc/csol/LICENSE
+  /usr/share/doc/csol/README.md
+  /usr/share/man/man6/csol.6.gz
+
+------------------
+
+Port Notes:
+
+----- version 1.6.0-1bl1 -----
+Version bump.
+
+----- version 1.5.0-1bl1 -----
+Version bump.
+
+----- version 1.4.1-1bl1 -----
+Version bump.
+
+----- version 1.4.0-1bl1 -----
+Version bump.
+
+----- version 1.3.0-1bl1 -----
+Version bump.
+
+----- version 1.1.0-1bl1 -----
+Version bump.
+
+----- version 1.0.0-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

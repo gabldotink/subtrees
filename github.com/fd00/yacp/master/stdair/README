@@ -1,0 +1,544 @@
+stdair
+------------------------------------------
+StdAir aims at providing a clean API, and the corresponding C++ implementation,
+for the basis of Airline IT and travel distribution Business Object Model
+(BOM), that is, to be used by several other open source projects, including all
+the components of the Travel Market Simulator
+(http://www.travel-market-simulator.com), such as AirRAC, RMOL, AirInv, AvlCal,
+AirTSP, SimFQT, SimLFS, SimCRS, TravelCCM, SEvMgr, TraDemGen, and TvlSim.
+
+Runtime requirements:
+  bash-4.4.12-3
+  cygwin-3.3.5-1
+  libboost_date_time1.66-1.66.0-1
+  libboost_filesystem1.66-1.66.0-1
+  libboost_program_options1.66-1.66.0-1
+  libboost_regex1.66-1.66.0-1
+  libboost_serialization1.66-1.66.0-1
+  libboost_system1.66-1.66.0-1
+  libgcc1-11.3.0-1
+  libsoci_core4.0-4.0.3-1bl1
+  libsoci_mysql4.0-4.0.3-1bl1
+  libstdair-devel-1.00.12-1bl1
+  libstdair1.00-1.00.12-1bl1
+  libstdc++6-11.3.0-1
+  pkg-config-1.8.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.38-1
+  cmake-3.23.2-1
+  cygport-0.35.2-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libboost-devel-1.66.0-1
+  libsoci_core-devel-4.0.3-1bl1
+  libsoci_mysql-devel-4.0.3-1bl1
+  ninja-1.11.0-1
+
+Canonical website:
+  https://github.com/airsim/stdair
+
+Canonical download:
+  https://github.com/airsim/stdair/archive/refs/tags/stdair-1.00.12.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack stdair-1.00.12-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./stdair-1.00.12-X.cygport all
+
+This will create:
+  /usr/src/stdair-1.00.12-X-src.tar.xz
+  /usr/src/stdair-1.00.12-X.tar.xz
+  /usr/src/libstdair1.00-1.00.12-X.tar.xz
+  /usr/src/libstdair-devel-1.00.12-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(stdair)
+  /usr/bin/stdair.exe
+  /usr/libexec/stdair/clean_a_table.sh
+  /usr/libexec/stdair/clean_all_tables.sh
+  /usr/libexec/stdair/count_a_table.sh
+  /usr/libexec/stdair/count_all_tables.sh
+  /usr/libexec/stdair/create_airinv_db.sh
+  /usr/libexec/stdair/create_airinv_user.sh
+  /usr/libexec/stdair/create_tvlsim_db.sh
+  /usr/libexec/stdair/create_tvlsim_user.sh
+  /usr/libexec/stdair/dump_airinv_db_structure.sh
+  /usr/libexec/stdair/dump_tvlsim_db_structure.sh
+  /usr/libexec/stdair/load_airinv_tvlsim_data.sh
+  /usr/libexec/stdair/load_tvlsim_data.sh
+  /usr/share/doc/Cygwin/stdair.README
+  /usr/share/doc/stdair/AUTHORS
+  /usr/share/doc/stdair/COPYING
+  /usr/share/doc/stdair/ChangeLog
+  /usr/share/doc/stdair/NEWS
+  /usr/share/doc/stdair/README.md
+  /usr/share/man/man1/stdair.1.gz
+  /usr/share/stdair/db/data/airlines.csv
+  /usr/share/stdair/db/data/create_airinv_tables.sql
+  /usr/share/stdair/db/data/create_airinv_user.sql
+  /usr/share/stdair/db/data/create_tvlsim_tables.sql
+  /usr/share/stdair/db/data/create_tvlsim_user.sql
+  /usr/share/stdair/db/data/fill_airinv_tables.sql
+  /usr/share/stdair/db/data/fill_tvlsim_tables.sql
+  /usr/share/stdair/samples/HybridForecasting/demand.csv
+  /usr/share/stdair/samples/HybridForecasting/fare.csv
+  /usr/share/stdair/samples/HybridForecasting/schedule.csv
+  /usr/share/stdair/samples/HybridForecasting/yield.csv
+  /usr/share/stdair/samples/IBP_study/demand01.csv
+  /usr/share/stdair/samples/IBP_study/fare01.csv
+  /usr/share/stdair/samples/IBP_study/ond01.csv
+  /usr/share/stdair/samples/IBP_study/schedule01.csv
+  /usr/share/stdair/samples/IBP_study/yield01.csv
+  /usr/share/stdair/samples/NewQFF/instance01/demand.csv
+  /usr/share/stdair/samples/NewQFF/instance01/fare.csv
+  /usr/share/stdair/samples/NewQFF/instance01/schedule.csv
+  /usr/share/stdair/samples/NewQFF/instance01/scheduleA-A.csv
+  /usr/share/stdair/samples/NewQFF/instance01/scheduleA-B.csv
+  /usr/share/stdair/samples/NewQFF/instance01/scheduleA-C.csv
+  /usr/share/stdair/samples/NewQFF/instance01/scheduleA-D.csv
+  /usr/share/stdair/samples/NewQFF/instance01/scheduleA-E.csv
+  /usr/share/stdair/samples/NewQFF/instance01/scheduleB-A.csv
+  /usr/share/stdair/samples/NewQFF/instance01/scheduleB-B.csv
+  /usr/share/stdair/samples/NewQFF/instance01/scheduleB-C.csv
+  /usr/share/stdair/samples/NewQFF/instance01/scheduleB-D.csv
+  /usr/share/stdair/samples/NewQFF/instance01/scheduleB-E.csv
+  /usr/share/stdair/samples/NewQFF/instance01/scheduleC-A.csv
+  /usr/share/stdair/samples/NewQFF/instance01/scheduleC-B.csv
+  /usr/share/stdair/samples/NewQFF/instance01/scheduleC-C.csv
+  /usr/share/stdair/samples/NewQFF/instance01/scheduleC-D.csv
+  /usr/share/stdair/samples/NewQFF/instance01/scheduleC-E.csv
+  /usr/share/stdair/samples/NewQFF/instance01/scheduleD-A.csv
+  /usr/share/stdair/samples/NewQFF/instance01/scheduleD-B.csv
+  /usr/share/stdair/samples/NewQFF/instance01/scheduleD-C.csv
+  /usr/share/stdair/samples/NewQFF/instance01/scheduleD-D.csv
+  /usr/share/stdair/samples/NewQFF/instance01/scheduleD-E.csv
+  /usr/share/stdair/samples/NewQFF/instance01/scheduleE-A.csv
+  /usr/share/stdair/samples/NewQFF/instance01/scheduleE-B.csv
+  /usr/share/stdair/samples/NewQFF/instance01/scheduleE-C.csv
+  /usr/share/stdair/samples/NewQFF/instance01/scheduleE-D.csv
+  /usr/share/stdair/samples/NewQFF/instance01/scheduleE-E.csv
+  /usr/share/stdair/samples/NewQFF/instance01/yield.csv
+  /usr/share/stdair/samples/NewQFF/instance02/demand.csv
+  /usr/share/stdair/samples/NewQFF/instance02/fare.csv
+  /usr/share/stdair/samples/NewQFF/instance02/scheduleA-A-A.csv
+  /usr/share/stdair/samples/NewQFF/instance02/scheduleA-A-B.csv
+  /usr/share/stdair/samples/NewQFF/instance02/scheduleA-A-C.csv
+  /usr/share/stdair/samples/NewQFF/instance02/scheduleA-A.csv
+  /usr/share/stdair/samples/NewQFF/instance02/scheduleA-B-A.csv
+  /usr/share/stdair/samples/NewQFF/instance02/scheduleA-B-B.csv
+  /usr/share/stdair/samples/NewQFF/instance02/scheduleA-B-C.csv
+  /usr/share/stdair/samples/NewQFF/instance02/scheduleA-C-A.csv
+  /usr/share/stdair/samples/NewQFF/instance02/scheduleA-C-B.csv
+  /usr/share/stdair/samples/NewQFF/instance02/scheduleA-C-C.csv
+  /usr/share/stdair/samples/NewQFF/instance02/scheduleB-A-A.csv
+  /usr/share/stdair/samples/NewQFF/instance02/scheduleB-A-B.csv
+  /usr/share/stdair/samples/NewQFF/instance02/scheduleB-A-C.csv
+  /usr/share/stdair/samples/NewQFF/instance02/scheduleB-B-A.csv
+  /usr/share/stdair/samples/NewQFF/instance02/scheduleB-B-B.csv
+  /usr/share/stdair/samples/NewQFF/instance02/scheduleB-B-C.csv
+  /usr/share/stdair/samples/NewQFF/instance02/scheduleB-B.csv
+  /usr/share/stdair/samples/NewQFF/instance02/scheduleB-C-A.csv
+  /usr/share/stdair/samples/NewQFF/instance02/scheduleB-C-B.csv
+  /usr/share/stdair/samples/NewQFF/instance02/scheduleB-C-C.csv
+  /usr/share/stdair/samples/NewQFF/instance02/scheduleC-A-A.csv
+  /usr/share/stdair/samples/NewQFF/instance02/scheduleC-A-B.csv
+  /usr/share/stdair/samples/NewQFF/instance02/scheduleC-A-C.csv
+  /usr/share/stdair/samples/NewQFF/instance02/scheduleC-B-A.csv
+  /usr/share/stdair/samples/NewQFF/instance02/scheduleC-B-B.csv
+  /usr/share/stdair/samples/NewQFF/instance02/scheduleC-B-C.csv
+  /usr/share/stdair/samples/NewQFF/instance02/scheduleC-C-A.csv
+  /usr/share/stdair/samples/NewQFF/instance02/scheduleC-C-B.csv
+  /usr/share/stdair/samples/NewQFF/instance02/scheduleC-C-C.csv
+  /usr/share/stdair/samples/NewQFF/instance02/scheduleC-C.csv
+  /usr/share/stdair/samples/NewQFF/instance02/scheduleD-D.csv
+  /usr/share/stdair/samples/NewQFF/instance02/scheduleE-E.csv
+  /usr/share/stdair/samples/NewQFF/instance02/yield.csv
+  /usr/share/stdair/samples/OldQFF/instance01/demand.csv
+  /usr/share/stdair/samples/OldQFF/instance01/fare.csv
+  /usr/share/stdair/samples/OldQFF/instance01/schedule.csv
+  /usr/share/stdair/samples/OldQFF/instance01/scheduleA-A.csv
+  /usr/share/stdair/samples/OldQFF/instance01/scheduleA-B.csv
+  /usr/share/stdair/samples/OldQFF/instance01/scheduleA-C.csv
+  /usr/share/stdair/samples/OldQFF/instance01/scheduleA-D.csv
+  /usr/share/stdair/samples/OldQFF/instance01/scheduleA-E.csv
+  /usr/share/stdair/samples/OldQFF/instance01/scheduleA-F.csv
+  /usr/share/stdair/samples/OldQFF/instance01/scheduleB-A.csv
+  /usr/share/stdair/samples/OldQFF/instance01/scheduleB-B.csv
+  /usr/share/stdair/samples/OldQFF/instance01/scheduleB-C.csv
+  /usr/share/stdair/samples/OldQFF/instance01/scheduleB-D.csv
+  /usr/share/stdair/samples/OldQFF/instance01/scheduleB-E.csv
+  /usr/share/stdair/samples/OldQFF/instance01/scheduleB-F.csv
+  /usr/share/stdair/samples/OldQFF/instance01/scheduleC-A.csv
+  /usr/share/stdair/samples/OldQFF/instance01/scheduleC-B.csv
+  /usr/share/stdair/samples/OldQFF/instance01/scheduleC-C.csv
+  /usr/share/stdair/samples/OldQFF/instance01/scheduleC-D.csv
+  /usr/share/stdair/samples/OldQFF/instance01/scheduleC-E.csv
+  /usr/share/stdair/samples/OldQFF/instance01/scheduleC-F.csv
+  /usr/share/stdair/samples/OldQFF/instance01/scheduleD-A.csv
+  /usr/share/stdair/samples/OldQFF/instance01/scheduleD-B.csv
+  /usr/share/stdair/samples/OldQFF/instance01/scheduleD-C.csv
+  /usr/share/stdair/samples/OldQFF/instance01/scheduleD-D.csv
+  /usr/share/stdair/samples/OldQFF/instance01/scheduleD-E.csv
+  /usr/share/stdair/samples/OldQFF/instance01/scheduleD-F.csv
+  /usr/share/stdair/samples/OldQFF/instance01/scheduleE-A.csv
+  /usr/share/stdair/samples/OldQFF/instance01/scheduleE-B.csv
+  /usr/share/stdair/samples/OldQFF/instance01/scheduleE-C.csv
+  /usr/share/stdair/samples/OldQFF/instance01/scheduleE-D.csv
+  /usr/share/stdair/samples/OldQFF/instance01/scheduleE-E.csv
+  /usr/share/stdair/samples/OldQFF/instance01/scheduleE-F.csv
+  /usr/share/stdair/samples/OldQFF/instance01/yield.csv
+  /usr/share/stdair/samples/OldQFF/instance02/demand.csv
+  /usr/share/stdair/samples/OldQFF/instance02/fare.csv
+  /usr/share/stdair/samples/OldQFF/instance02/scheduleB-A-A.csv
+  /usr/share/stdair/samples/OldQFF/instance02/scheduleB-A-C.csv
+  /usr/share/stdair/samples/OldQFF/instance02/scheduleB-A-E.csv
+  /usr/share/stdair/samples/OldQFF/instance02/scheduleB-C-A.csv
+  /usr/share/stdair/samples/OldQFF/instance02/scheduleB-C-C.csv
+  /usr/share/stdair/samples/OldQFF/instance02/scheduleB-C-E.csv
+  /usr/share/stdair/samples/OldQFF/instance02/scheduleB-E-A.csv
+  /usr/share/stdair/samples/OldQFF/instance02/scheduleB-E-C.csv
+  /usr/share/stdair/samples/OldQFF/instance02/scheduleB-E-E.csv
+  /usr/share/stdair/samples/OldQFF/instance02/scheduleC-A-A.csv
+  /usr/share/stdair/samples/OldQFF/instance02/scheduleC-A-C.csv
+  /usr/share/stdair/samples/OldQFF/instance02/scheduleC-A-E.csv
+  /usr/share/stdair/samples/OldQFF/instance02/scheduleC-C-A.csv
+  /usr/share/stdair/samples/OldQFF/instance02/scheduleC-C-C.csv
+  /usr/share/stdair/samples/OldQFF/instance02/scheduleC-C-E.csv
+  /usr/share/stdair/samples/OldQFF/instance02/scheduleC-E-A.csv
+  /usr/share/stdair/samples/OldQFF/instance02/scheduleC-E-C.csv
+  /usr/share/stdair/samples/OldQFF/instance02/scheduleC-E-E.csv
+  /usr/share/stdair/samples/OldQFF/instance02/scheduleD-A-A.csv
+  /usr/share/stdair/samples/OldQFF/instance02/scheduleD-A-C.csv
+  /usr/share/stdair/samples/OldQFF/instance02/scheduleD-A-E.csv
+  /usr/share/stdair/samples/OldQFF/instance02/scheduleD-C-A.csv
+  /usr/share/stdair/samples/OldQFF/instance02/scheduleD-C-C.csv
+  /usr/share/stdair/samples/OldQFF/instance02/scheduleD-C-E.csv
+  /usr/share/stdair/samples/OldQFF/instance02/scheduleD-E-A.csv
+  /usr/share/stdair/samples/OldQFF/instance02/scheduleD-E-C.csv
+  /usr/share/stdair/samples/OldQFF/instance02/scheduleD-E-E.csv
+  /usr/share/stdair/samples/OldQFF/instance02/yield.csv
+  /usr/share/stdair/samples/QForecasting/demand.csv
+  /usr/share/stdair/samples/QForecasting/fare.csv
+  /usr/share/stdair/samples/QForecasting/schedule.csv
+  /usr/share/stdair/samples/QForecasting/yield.csv
+  /usr/share/stdair/samples/demand01.csv
+  /usr/share/stdair/samples/fare01.csv
+  /usr/share/stdair/samples/fareError01.csv
+  /usr/share/stdair/samples/fareError02.csv
+  /usr/share/stdair/samples/fareError03.csv
+  /usr/share/stdair/samples/fareError04.csv
+  /usr/share/stdair/samples/fareError05.csv
+  /usr/share/stdair/samples/fareError06.csv
+  /usr/share/stdair/samples/fareError07.csv
+  /usr/share/stdair/samples/ffDisutility.csv
+  /usr/share/stdair/samples/frat5.csv
+  /usr/share/stdair/samples/invdump01.csv
+  /usr/share/stdair/samples/invdump02.csv
+  /usr/share/stdair/samples/ond01.csv
+  /usr/share/stdair/samples/rds01/demand.csv
+  /usr/share/stdair/samples/rds01/demand02.csv
+  /usr/share/stdair/samples/rds01/demand03.csv
+  /usr/share/stdair/samples/rds01/demand05.csv
+  /usr/share/stdair/samples/rds01/fare.csv
+  /usr/share/stdair/samples/rds01/fare02.csv
+  /usr/share/stdair/samples/rds01/schedule.csv
+  /usr/share/stdair/samples/rds01/schedule03.csv
+  /usr/share/stdair/samples/rds01/schedule05.csv
+  /usr/share/stdair/samples/rds01/yield.csv
+  /usr/share/stdair/samples/rds01/yield03.csv
+  /usr/share/stdair/samples/rm01.csv
+  /usr/share/stdair/samples/rm02.csv
+  /usr/share/stdair/samples/rm03.csv
+  /usr/share/stdair/samples/rm04.csv
+  /usr/share/stdair/samples/rm05.csv
+  /usr/share/stdair/samples/rm06.csv
+  /usr/share/stdair/samples/rm07.csv
+  /usr/share/stdair/samples/rm08.csv
+  /usr/share/stdair/samples/rm09.csv
+  /usr/share/stdair/samples/rm10.csv
+  /usr/share/stdair/samples/rm11.csv
+  /usr/share/stdair/samples/schedule01.csv
+  /usr/share/stdair/samples/schedule02.csv
+  /usr/share/stdair/samples/schedule03.csv
+  /usr/share/stdair/samples/schedule04.csv
+  /usr/share/stdair/samples/schedule05.csv
+  /usr/share/stdair/samples/schedule06.csv
+  /usr/share/stdair/samples/schedule07.csv
+  /usr/share/stdair/samples/scheduleError01.csv
+  /usr/share/stdair/samples/scheduleError02.csv
+  /usr/share/stdair/samples/scheduleError03.csv
+  /usr/share/stdair/samples/yieldstore01.csv
+  /usr/share/stdair/samples/yieldstoreError01.csv
+
+(libstdair1.00)
+  /usr/bin/cygstdair-1.00.dll
+  /usr/bin/cygstdairuicl-1.00.dll
+
+(libstdair-devel)
+  /usr/bin/stdair-config
+  /usr/include/stdair/STDAIR_Service.hpp
+  /usr/include/stdair/basic/BasChronometer.hpp
+  /usr/include/stdair/basic/BasConst_BomDisplay.hpp
+  /usr/include/stdair/basic/BasConst_BookingClass.hpp
+  /usr/include/stdair/basic/BasConst_DefaultObject.hpp
+  /usr/include/stdair/basic/BasConst_Event.hpp
+  /usr/include/stdair/basic/BasConst_General.hpp
+  /usr/include/stdair/basic/BasConst_Inventory.hpp
+  /usr/include/stdair/basic/BasConst_Period_BOM.hpp
+  /usr/include/stdair/basic/BasConst_Request.hpp
+  /usr/include/stdair/basic/BasConst_SellUpCurves.hpp
+  /usr/include/stdair/basic/BasConst_TravelSolution.hpp
+  /usr/include/stdair/basic/BasConst_Yield.hpp
+  /usr/include/stdair/basic/BasDBParams.hpp
+  /usr/include/stdair/basic/BasFileMgr.hpp
+  /usr/include/stdair/basic/BasLogParams.hpp
+  /usr/include/stdair/basic/BasParserHelperTypes.hpp
+  /usr/include/stdair/basic/BasParserTypes.hpp
+  /usr/include/stdair/basic/BasTypes.hpp
+  /usr/include/stdair/basic/ContinuousAttributeLite.hpp
+  /usr/include/stdair/basic/DemandGenerationMethod.hpp
+  /usr/include/stdair/basic/DictionaryManager.hpp
+  /usr/include/stdair/basic/EventType.hpp
+  /usr/include/stdair/basic/ForecastingMethod.hpp
+  /usr/include/stdair/basic/JSonCommand.hpp
+  /usr/include/stdair/basic/OptimisationMethod.hpp
+  /usr/include/stdair/basic/PartnershipTechnique.hpp
+  /usr/include/stdair/basic/PassengerChoiceModel.hpp
+  /usr/include/stdair/basic/PassengerType.hpp
+  /usr/include/stdair/basic/PreOptimisationMethod.hpp
+  /usr/include/stdair/basic/ProgressStatus.hpp
+  /usr/include/stdair/basic/ProgressStatusSet.hpp
+  /usr/include/stdair/basic/RandomGeneration.hpp
+  /usr/include/stdair/basic/SampleType.hpp
+  /usr/include/stdair/basic/ServiceInitialisationType.hpp
+  /usr/include/stdair/basic/StructAbstract.hpp
+  /usr/include/stdair/basic/UnconstrainingMethod.hpp
+  /usr/include/stdair/basic/YieldRange.hpp
+  /usr/include/stdair/basic/float_utils.hpp
+  /usr/include/stdair/basic/float_utils_google.hpp
+  /usr/include/stdair/bom/AirlineClassList.hpp
+  /usr/include/stdair/bom/AirlineClassListKey.hpp
+  /usr/include/stdair/bom/AirlineClassListTypes.hpp
+  /usr/include/stdair/bom/AirlineFeature.hpp
+  /usr/include/stdair/bom/AirlineFeatureKey.hpp
+  /usr/include/stdair/bom/AirlineFeatureTypes.hpp
+  /usr/include/stdair/bom/AirlineStruct.hpp
+  /usr/include/stdair/bom/AirportPair.hpp
+  /usr/include/stdair/bom/AirportPairKey.hpp
+  /usr/include/stdair/bom/AirportPairTypes.hpp
+  /usr/include/stdair/bom/BomAbstract.hpp
+  /usr/include/stdair/bom/BomArchive.hpp
+  /usr/include/stdair/bom/BomDisplay.hpp
+  /usr/include/stdair/bom/BomHolder.hpp
+  /usr/include/stdair/bom/BomHolderKey.hpp
+  /usr/include/stdair/bom/BomID.hpp
+  /usr/include/stdair/bom/BomIDTypes.hpp
+  /usr/include/stdair/bom/BomINIImport.hpp
+  /usr/include/stdair/bom/BomJSONExport.hpp
+  /usr/include/stdair/bom/BomJSONImport.hpp
+  /usr/include/stdair/bom/BomKeyManager.hpp
+  /usr/include/stdair/bom/BomManager.hpp
+  /usr/include/stdair/bom/BomRetriever.hpp
+  /usr/include/stdair/bom/BomRoot.hpp
+  /usr/include/stdair/bom/BomRootKey.hpp
+  /usr/include/stdair/bom/BookingClass.hpp
+  /usr/include/stdair/bom/BookingClassKey.hpp
+  /usr/include/stdair/bom/BookingClassTypes.hpp
+  /usr/include/stdair/bom/BookingRequestStruct.hpp
+  /usr/include/stdair/bom/BookingRequestTypes.hpp
+  /usr/include/stdair/bom/BreakPointStruct.hpp
+  /usr/include/stdair/bom/BreakPointTypes.hpp
+  /usr/include/stdair/bom/Bucket.hpp
+  /usr/include/stdair/bom/BucketKey.hpp
+  /usr/include/stdair/bom/BucketTypes.hpp
+  /usr/include/stdair/bom/CancellationStruct.hpp
+  /usr/include/stdair/bom/CancellationTypes.hpp
+  /usr/include/stdair/bom/ClassAvailabilityStruct.hpp
+  /usr/include/stdair/bom/ConfigHolderStruct.hpp
+  /usr/include/stdair/bom/ConfigHolderTypes.hpp
+  /usr/include/stdair/bom/DatePeriod.hpp
+  /usr/include/stdair/bom/DatePeriodKey.hpp
+  /usr/include/stdair/bom/DatePeriodTypes.hpp
+  /usr/include/stdair/bom/DoWStruct.hpp
+  /usr/include/stdair/bom/EventStruct.hpp
+  /usr/include/stdair/bom/EventTypes.hpp
+  /usr/include/stdair/bom/FFDisutilityCurveHolderStruct.hpp
+  /usr/include/stdair/bom/FRAT5CurveHolderStruct.hpp
+  /usr/include/stdair/bom/FareFamily.hpp
+  /usr/include/stdair/bom/FareFamilyKey.hpp
+  /usr/include/stdair/bom/FareFamilyTypes.hpp
+  /usr/include/stdair/bom/FareFeatures.hpp
+  /usr/include/stdair/bom/FareFeaturesKey.hpp
+  /usr/include/stdair/bom/FareFeaturesTypes.hpp
+  /usr/include/stdair/bom/FareOptionStruct.hpp
+  /usr/include/stdair/bom/FareOptionTypes.hpp
+  /usr/include/stdair/bom/FlightDate.hpp
+  /usr/include/stdair/bom/FlightDateKey.hpp
+  /usr/include/stdair/bom/FlightDateTypes.hpp
+  /usr/include/stdair/bom/FlightPeriod.hpp
+  /usr/include/stdair/bom/FlightPeriodKey.hpp
+  /usr/include/stdair/bom/FlightPeriodTypes.hpp
+  /usr/include/stdair/bom/Inventory.hpp
+  /usr/include/stdair/bom/InventoryKey.hpp
+  /usr/include/stdair/bom/InventoryTypes.hpp
+  /usr/include/stdair/bom/KeyAbstract.hpp
+  /usr/include/stdair/bom/LegCabin.hpp
+  /usr/include/stdair/bom/LegCabinKey.hpp
+  /usr/include/stdair/bom/LegCabinTypes.hpp
+  /usr/include/stdair/bom/LegDate.hpp
+  /usr/include/stdair/bom/LegDateKey.hpp
+  /usr/include/stdair/bom/LegDateTypes.hpp
+  /usr/include/stdair/bom/NestingNode.hpp
+  /usr/include/stdair/bom/NestingNodeKey.hpp
+  /usr/include/stdair/bom/NestingNodeTypes.hpp
+  /usr/include/stdair/bom/NestingStructureKey.hpp
+  /usr/include/stdair/bom/OnDDate.hpp
+  /usr/include/stdair/bom/OnDDateKey.hpp
+  /usr/include/stdair/bom/OnDDateTypes.hpp
+  /usr/include/stdair/bom/OptimisationNotificationStruct.hpp
+  /usr/include/stdair/bom/OptimisationNotificationTypes.hpp
+  /usr/include/stdair/bom/ParsedKey.hpp
+  /usr/include/stdair/bom/PeriodStruct.hpp
+  /usr/include/stdair/bom/Policy.hpp
+  /usr/include/stdair/bom/PolicyKey.hpp
+  /usr/include/stdair/bom/PolicyTypes.hpp
+  /usr/include/stdair/bom/PosChannel.hpp
+  /usr/include/stdair/bom/PosChannelKey.hpp
+  /usr/include/stdair/bom/PosChannelTypes.hpp
+  /usr/include/stdair/bom/RMEventStruct.hpp
+  /usr/include/stdair/bom/RMEventTypes.hpp
+  /usr/include/stdair/bom/SegmentCabin.hpp
+  /usr/include/stdair/bom/SegmentCabinKey.hpp
+  /usr/include/stdair/bom/SegmentCabinTypes.hpp
+  /usr/include/stdair/bom/SegmentDate.hpp
+  /usr/include/stdair/bom/SegmentDateKey.hpp
+  /usr/include/stdair/bom/SegmentDateTypes.hpp
+  /usr/include/stdair/bom/SegmentPeriod.hpp
+  /usr/include/stdair/bom/SegmentPeriodKey.hpp
+  /usr/include/stdair/bom/SegmentPeriodTypes.hpp
+  /usr/include/stdair/bom/SegmentSnapshotTable.hpp
+  /usr/include/stdair/bom/SegmentSnapshotTableKey.hpp
+  /usr/include/stdair/bom/SegmentSnapshotTableTypes.hpp
+  /usr/include/stdair/bom/SimpleNestingStructure.hpp
+  /usr/include/stdair/bom/SimpleNestingStructureTypes.hpp
+  /usr/include/stdair/bom/SnapshotStruct.hpp
+  /usr/include/stdair/bom/SnapshotTypes.hpp
+  /usr/include/stdair/bom/TimePeriod.hpp
+  /usr/include/stdair/bom/TimePeriodKey.hpp
+  /usr/include/stdair/bom/TimePeriodTypes.hpp
+  /usr/include/stdair/bom/TravelSolutionStruct.hpp
+  /usr/include/stdair/bom/TravelSolutionTypes.hpp
+  /usr/include/stdair/bom/VirtualClassStruct.hpp
+  /usr/include/stdair/bom/VirtualClassTypes.hpp
+  /usr/include/stdair/bom/YieldFeatures.hpp
+  /usr/include/stdair/bom/YieldFeaturesKey.hpp
+  /usr/include/stdair/bom/YieldFeaturesTypes.hpp
+  /usr/include/stdair/bom/YieldStore.hpp
+  /usr/include/stdair/bom/YieldStoreKey.hpp
+  /usr/include/stdair/bom/YieldStoreTypes.hpp
+  /usr/include/stdair/bom/key_types.hpp
+  /usr/include/stdair/command/CmdAbstract.hpp
+  /usr/include/stdair/command/CmdBomManager.hpp
+  /usr/include/stdair/command/CmdBomSerialiser.hpp
+  /usr/include/stdair/command/CmdCloneBomManager.hpp
+  /usr/include/stdair/command/DBManagerForAirlines.hpp
+  /usr/include/stdair/dbadaptor/DbaAbstract.hpp
+  /usr/include/stdair/dbadaptor/DbaAirline.hpp
+  /usr/include/stdair/factory/FacAbstract.hpp
+  /usr/include/stdair/factory/FacBom.hpp
+  /usr/include/stdair/factory/FacBomManager.hpp
+  /usr/include/stdair/factory/FacCloneBom.hpp
+  /usr/include/stdair/service/DBSessionManager.hpp
+  /usr/include/stdair/service/FacSTDAIRServiceContext.hpp
+  /usr/include/stdair/service/FacServiceAbstract.hpp
+  /usr/include/stdair/service/FacSupervisor.hpp
+  /usr/include/stdair/service/Logger.hpp
+  /usr/include/stdair/service/STDAIR_ServiceContext.hpp
+  /usr/include/stdair/service/ServiceAbstract.hpp
+  /usr/include/stdair/stdair_basic_types.hpp
+  /usr/include/stdair/stdair_date_time_types.hpp
+  /usr/include/stdair/stdair_db.hpp
+  /usr/include/stdair/stdair_demand_types.hpp
+  /usr/include/stdair/stdair_event_types.hpp
+  /usr/include/stdair/stdair_exceptions.hpp
+  /usr/include/stdair/stdair_fare_types.hpp
+  /usr/include/stdair/stdair_file.hpp
+  /usr/include/stdair/stdair_inventory_types.hpp
+  /usr/include/stdair/stdair_json.hpp
+  /usr/include/stdair/stdair_log.hpp
+  /usr/include/stdair/stdair_maths_types.hpp
+  /usr/include/stdair/stdair_rm_types.hpp
+  /usr/include/stdair/stdair_service_types.hpp
+  /usr/include/stdair/stdair_types.hpp
+  /usr/include/stdair/ui/cmdline/SReadline.hpp
+  /usr/lib/cmake/stdair/stdair-config-version.cmake
+  /usr/lib/cmake/stdair/stdair-config.cmake
+  /usr/lib/cmake/stdair/stdair-library-depends-release.cmake
+  /usr/lib/cmake/stdair/stdair-library-depends.cmake
+  /usr/lib/libstdair.dll.a
+  /usr/lib/libstdairuicl.dll.a
+  /usr/lib/pkgconfig/stdair.pc
+  /usr/share/aclocal/stdair.m4
+  /usr/share/man/man1/stdair-config.1.gz
+  /usr/share/man/man3/stdair-library.3.gz
+
+------------------
+
+Port Notes:
+
+----- version 1.00.12-1bl1 -----
+Version bump.
+
+----- version 1.00.11-1bl1 -----
+Version bump.
+
+----- version 1.00.10-1bl1 -----
+Version bump.
+
+----- version 1.00.8-1bl2 -----
+Rebuild for libsoci
+
+----- version 1.00.8-1bl1 -----
+Version bump.
+
+----- version 1.00.7-1bl1 -----
+Version bump.
+
+----- version 1.00.6-1bl2 -----
+Rebuild for libboost
+
+----- version 1.00.6-1bl1 -----
+Version bump.
+
+----- version 1.00.2-1bl2 -----
+Rebuild with gcc-5.4.0
+
+----- version 1.00.2-1bl1 -----
+Version bump.
+
+----- version 1.00.1-1bl5 -----
+Rebuild for libboost
+
+----- version 1.00.1-1bl4 -----
+Rebuild on x86_64
+
+----- version 1.00.1-1bl3 -----
+Rebuild for soci
+
+----- version 1.00.1-1bl2 -----
+Rebuild for libboost
+
+----- version 1.00.1-1bl1 -----
+Version bump.
+
+----- version 0.45.1-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

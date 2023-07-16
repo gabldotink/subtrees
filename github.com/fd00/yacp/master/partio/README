@@ -1,0 +1,140 @@
+partio
+------------------------------------------
+This is the initial source code release of partio a tool we used for particle
+reading/writing. It started out as an abstraction for the commonalities in
+particle models (i.e. accessing many attributes associated with an index or
+entity).
+
+Runtime requirements:
+  cygwin-3.2.0-1
+  libGL1-19.1.6-1
+  libGLU1-9.0.2-1
+  libgcc1-11.2.0-1
+  libglut3-3.2.1-1
+  libgtest0-1.11.0-1bl1
+  libpartio-devel-1.14.6-1bl1
+  libpartio1-1.14.6-1bl1
+  libstdc++6-11.2.0-1
+  pkg-config-1.6.3-1
+  python38-3.8.10-1
+  python38-partio-1.14.6-1bl1
+  python38-pytest-6.2.1-1
+  zlib0-1.2.11-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.37-1
+  cmake-3.20.0-1
+  cygport-0.34.0-1
+  gcc-core-11.2.0-1
+  gcc-g++-11.2.0-1
+  libGL-devel-19.1.6-1
+  libGLU-devel-9.0.2-1
+  libglut-devel-3.2.1-1
+  libgtest-devel-1.11.0-1bl1
+  make-4.3-1
+  ninja-1.10.2-1
+  python27-2.7.18-4
+  python38-3.8.10-1
+  python38-devel-3.8.10-1
+  zlib-devel-1.2.11-1
+
+Canonical website:
+  https://github.com/wdas/partio
+
+Canonical download:
+  https://github.com/wdas/partio/archive/refs/tags/v1.14.6.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack partio-1.14.6-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./partio-1.14.6-X.cygport all
+
+This will create:
+  /usr/src/partio-1.14.6-X-src.tar.xz
+  /usr/src/partio-1.14.6-X.tar.xz
+  /usr/src/libpartio1-1.14.6-X.tar.xz
+  /usr/src/libpartio-devel-1.14.6-X.tar.xz
+  /usr/src/python38-partio-1.14.6-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(partio)
+  /usr/bin/partattr.exe
+  /usr/bin/partconvert.exe
+  /usr/bin/partedit
+  /usr/bin/partinfo.exe
+  /usr/bin/partinspect
+  /usr/bin/partjson
+  /usr/bin/partview.exe
+  /usr/share/doc/Cygwin/partio.README
+  /usr/share/doc/partio/LICENSE
+  /usr/share/doc/partio/README.md
+  /usr/share/partio/test/makecircle.exe
+  /usr/share/partio/test/makeline.exe
+  /usr/share/partio/test/testcache.exe
+  /usr/share/partio/test/testclonecopy.exe
+  /usr/share/partio/test/testcluster.exe
+  /usr/share/partio/test/testio.exe
+  /usr/share/partio/test/testiterator.exe
+  /usr/share/partio/test/testkdtree.exe
+  /usr/share/partio/test/testmerge.exe
+  /usr/share/partio/test/testpartio
+  /usr/share/partio/test/testpartjson
+  /usr/share/partio/test/teststr.exe
+
+(libpartio1)
+  /usr/bin/cygpartio-1.dll
+
+(libpartio-devel)
+  /usr/include/Partio.h
+  /usr/include/PartioAttribute.h
+  /usr/include/PartioIterator.h
+  /usr/include/PartioVec3.h
+  /usr/lib/libpartio.dll.a
+  /usr/lib/pkgconfig/partio.pc
+  /usr/share/swig/partio.i
+
+(python38-partio)
+  /usr/lib/python3.8/site-packages/__pycache__/partedit.cpython-38.opt-1.pyc
+  /usr/lib/python3.8/site-packages/__pycache__/partedit.cpython-38.opt-2.pyc
+  /usr/lib/python3.8/site-packages/__pycache__/partedit.cpython-38.pyc
+  /usr/lib/python3.8/site-packages/__pycache__/partinspect.cpython-38.opt-1.pyc
+  /usr/lib/python3.8/site-packages/__pycache__/partinspect.cpython-38.opt-2.pyc
+  /usr/lib/python3.8/site-packages/__pycache__/partinspect.cpython-38.pyc
+  /usr/lib/python3.8/site-packages/__pycache__/partio.cpython-38.opt-1.pyc
+  /usr/lib/python3.8/site-packages/__pycache__/partio.cpython-38.opt-2.pyc
+  /usr/lib/python3.8/site-packages/__pycache__/partio.cpython-38.pyc
+  /usr/lib/python3.8/site-packages/__pycache__/partjson.cpython-38.opt-1.pyc
+  /usr/lib/python3.8/site-packages/__pycache__/partjson.cpython-38.opt-2.pyc
+  /usr/lib/python3.8/site-packages/__pycache__/partjson.cpython-38.pyc
+  /usr/lib/python3.8/site-packages/_partio.dll
+  /usr/lib/python3.8/site-packages/partedit.py
+  /usr/lib/python3.8/site-packages/partinspect.py
+  /usr/lib/python3.8/site-packages/partio.py
+  /usr/lib/python3.8/site-packages/partjson.py
+
+------------------
+
+Port Notes:
+
+----- version 1.14.6-1bl1 -----
+Version bump.
+
+----- version 1.14.0-1bl1 -----
+Version bump.
+
+----- version 1.13.0-1bl1 -----
+Version bump.
+
+----- version 1.10.1-1bl1 -----
+Version bump.
+
+----- version 1.1.0-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

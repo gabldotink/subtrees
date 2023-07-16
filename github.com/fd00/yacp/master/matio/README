@@ -1,0 +1,149 @@
+matio
+------------------------------------------
+matio is an C library for reading and writing Matlab MAT files.
+
+Runtime requirements:
+  cygwin-3.3.5-1
+  libhdf5-devel-1.12.1-1
+  libhdf5_200-1.12.1-1
+  libmatio-devel-1.5.23-1bl1
+  libmatio11-1.5.23-1bl1
+  pkg-config-1.8.0-1
+  zlib-devel-1.2.12-1
+  zlib0-1.2.12-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.38-1
+  cmake-3.20.0-1
+  cygport-0.35.1-1
+  gcc-core-11.3.0-1
+  gcc-objc-11.3.0-1
+  libhdf5-devel-1.12.1-1
+  libtool-2.4.7-1
+  make-4.3-1
+  zlib-devel-1.2.12-1
+
+Canonical website:
+  https://sourceforge.net/projects/matio/
+
+Canonical download:
+  mirror://sourceforge/matio/matio-1.5.23.7z
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack matio-1.5.23-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./matio-1.5.23-X.cygport all
+
+This will create:
+  /usr/src/matio-1.5.23-X-src.tar.xz
+  /usr/src/matio-1.5.23-X.tar.xz
+  /usr/src/libmatio11-1.5.23-X.tar.xz
+  /usr/src/libmatio-devel-1.5.23-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(matio)
+  /usr/bin/matdump.exe
+  /usr/share/doc/Cygwin/matio.README
+  /usr/share/doc/matio/COPYING
+  /usr/share/doc/matio/NEWS
+  /usr/share/doc/matio/README
+
+(libmatio11)
+  /usr/bin/cygmatio-11.dll
+
+(libmatio-devel)
+  /usr/include/matio.h
+  /usr/include/matio_pubconf.h
+  /usr/lib/libmatio.dll.a
+  /usr/lib/pkgconfig/matio.pc
+  /usr/share/man/man3/Mat_Close.3.gz
+  /usr/share/man/man3/Mat_CreateVer.3.gz
+  /usr/share/man/man3/Mat_GetDir.3.gz
+  /usr/share/man/man3/Mat_GetFilename.3.gz
+  /usr/share/man/man3/Mat_GetHeader.3.gz
+  /usr/share/man/man3/Mat_GetLibraryVersion.3.gz
+  /usr/share/man/man3/Mat_GetVersion.3.gz
+  /usr/share/man/man3/Mat_Open.3.gz
+  /usr/share/man/man3/Mat_Rewind.3.gz
+  /usr/share/man/man3/Mat_VarAddStructField.3.gz
+  /usr/share/man/man3/Mat_VarCreate.3.gz
+  /usr/share/man/man3/Mat_VarCreateStruct.3.gz
+  /usr/share/man/man3/Mat_VarDelete.3.gz
+  /usr/share/man/man3/Mat_VarFree.3.gz
+  /usr/share/man/man3/Mat_VarGetNumberOfFields.3.gz
+  /usr/share/man/man3/Mat_VarGetSize.3.gz
+  /usr/share/man/man3/Mat_VarGetStructFieldnames.3.gz
+  /usr/share/man/man3/Mat_VarGetStructs.3.gz
+  /usr/share/man/man3/Mat_VarGetStructsLinear.3.gz
+  /usr/share/man/man3/Mat_VarPrint.3.gz
+  /usr/share/man/man3/Mat_VarRead.3.gz
+  /usr/share/man/man3/Mat_VarReadInfo.3.gz
+  /usr/share/man/man3/Mat_VarReadNext.3.gz
+  /usr/share/man/man3/Mat_VarReadNextInfo.3.gz
+  /usr/share/man/man3/Mat_VarWrite.3.gz
+  /usr/share/man/man3/Mat_VarWriteAppend.3.gz
+
+------------------
+
+Port Notes:
+
+----- version 1.5.23-1bl1 -----
+Version bump.
+
+----- version 1.5.21-1bl1 -----
+Version bump.
+
+----- version 1.5.19-1bl1 -----
+Version bump.
+
+----- version 1.5.18-1bl1 -----
+Version bump.
+
+----- version 1.5.17-1bl2 -----
+Rebuild for libhdf5
+
+----- version 1.5.17-1bl1 -----
+Version bump.
+
+----- version 1.5.16-1bl1 -----
+Version bump.
+
+----- version 1.5.15-1bl1 -----
+Version bump.
+
+----- version 1.5.13-1bl1 -----
+Version bump.
+
+----- version 1.5.12-1bl2 -----
+Rebuild with gcc-7.3.0
+
+----- version 1.5.12-1bl1 -----
+Version bump.
+
+----- version 1.5.11-1bl1 -----
+Version bump.
+
+----- version 1.5.10-1bl1 -----
+Version bump.
+
+----- version 1.5.9-1bl1 -----
+Version bump.
+
+----- version 1.5.2-1bl2 -----
+Rebuild for libhdf5
+
+----- version 1.5.2-1bl1 -----
+Version bump.
+
+----- version 1.5.0-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

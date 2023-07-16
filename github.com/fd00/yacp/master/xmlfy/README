@@ -1,0 +1,66 @@
+xmlfy
+------------------------------------------
+The xmlfy command is a powerful yet lightweight tool that primarily caters for
+converting ASCII, UTF-8, UTF-16 or UTF-32 based output into XML format on the
+fly and dealing with common issues associated with this kind of transformation.
+xmlfy can be invoked from the command line or from within a shell script to
+transform data quickly, easily and reliably.
+
+Runtime requirements:
+  cygwin-3.1.2-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.29-1
+  cygport-0.33.1-1
+  gcc-core-7.4.0-1
+  make-4.2.1-2
+  ruby-2.6.4-1
+
+Canonical website:
+  http://xmlfy.sf.net/
+
+Canonical download:
+  mirror://sourceforge/xmlfy/xmlfy-1.5.7-src.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack xmlfy-1.5.7-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./xmlfy-1.5.7-X.cygport all
+
+This will create:
+  /usr/src/xmlfy-1.5.7-X-src.tar.xz
+  /usr/src/xmlfy-1.5.7-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(xmlfy)
+  /usr/bin/xmlfy.exe
+  /usr/share/doc/Cygwin/xmlfy.README
+  /usr/share/doc/xmlfy/AUTHORS
+  /usr/share/doc/xmlfy/COPYING
+  /usr/share/doc/xmlfy/LICENSE
+  /usr/share/doc/xmlfy/README
+  /usr/share/man/man1/xmlfy.1.gz
+
+------------------
+
+Port Notes:
+
+----- version 1.5.7-1bl1 -----
+Version bump.
+
+----- version 1.5.6-1bl1 -----
+Version bump.
+
+----- version 1.5.5-1bl2 -----
+Rebuild on x86_64
+
+----- version 1.5.5-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

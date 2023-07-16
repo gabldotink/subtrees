@@ -1,0 +1,52 @@
+HOMEPAGE="https://github.com/airsim/${PN}"
+SRC_URI="https://github.com/airsim/${PN}/archive/refs/tags/${P}.tar.gz"
+SRC_DIR="${PN}-${P}"
+
+CATEGORY="Libs"
+SUMMARY="C++ Simulated Revenue Accounting (RAC) System Library"
+DESCRIPTION="AirRAC is a C++ library of airline revenue accounting classes and functions,
+mainly targeting simulation purposes."
+
+LICENSE="LGPL-2.1-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: LGPL-2.1-or-later"
+LICENSE_URI="COPYING"
+
+BUILD_REQUIRES="libboost-devel libstdair-devel"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DINSTALL_DOC:BOOL=OFF
+"
+
+src_test()
+{
+	cd ${B}
+	PATH=${B}/${PN}:${PATH} ninja_test
+}
+
+PKG_NAMES="
+	${PN}
+	lib${PN}1.00
+	lib${PN}-devel
+"
+airrac_CONTENTS="
+	usr/bin/*.exe
+	usr/share/doc/Cygwin
+	usr/share/doc/${PN}
+	usr/share/man/man1/${PN}.1*
+"
+libairrac1_00_CONTENTS="
+	usr/bin/*.dll
+"
+libairrac_devel_CONTENTS="
+	usr/bin/${PN}-config
+	usr/include
+	usr/lib
+	usr/share/aclocal
+	usr/share/man/man1/${PN}-config.1*
+	usr/share/man/man3
+"
+airrac_SUMMARY="${SUMMARY} (utilities)"
+libairrac1_00_SUMMARY="${SUMMARY} (runtime)"
+libairrac_devel_SUMMARY="${SUMMARY} (development)"

@@ -1,0 +1,11 @@
+--- origsrc/ulfius-2.7.13/CMakeLists.txt	2023-02-08 21:33:30.000000000 +0900
++++ src/ulfius-2.7.13/CMakeLists.txt	2023-03-13 16:16:12.943777500 +0900
+@@ -19,7 +19,7 @@ cmake_minimum_required(VERSION 3.5)
+ project(ulfius C)
+ 
+ set(CMAKE_C_STANDARD 99)
+-if (NOT MSVC)
++if (NOT MSVC AND NOT CYGWIN)
+     set(CMAKE_C_FLAGS "-Wall -Werror ${CMAKE_C_FLAGS}")
+ endif()
+ 

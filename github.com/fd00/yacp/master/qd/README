@@ -1,0 +1,113 @@
+qd
+------------------------------------------
+This package provides numeric types of twice the precision of IEEE double (106
+mantissa bits, or approximately 32 decimal digits) and four times the precision
+of IEEE double (212 mantissa bits, or approximately 64 decimal digits). Due to
+features such as operator and function overloading, these facilities can be
+utilized with only minor modifications to conventional C++ and Fortran-90
+programs.
+
+Runtime requirements:
+  bash-4.4.12-3
+  cygwin-3.3.5-1
+  libgcc1-11.3.0-1
+  libgfortran5-11.3.0-1
+  libqd-devel-2.3.23-1bl1
+  libqd0-2.3.23-1bl1
+  libstdc++6-11.3.0-1
+  pkg-config-1.8.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.38-1
+  cygport-0.35.1-1
+  gcc-core-11.3.0-1
+  gcc-fortran-11.3.0-1
+  gcc-g++-11.3.0-1
+  libtool-2.4.7-1
+  make-4.3-1
+
+Canonical website:
+  https://www.davidhbailey.com/dhbsoftware/
+
+Canonical download:
+  https://www.davidhbailey.com/dhbsoftware/qd-2.3.23.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack qd-2.3.23-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./qd-2.3.23-X.cygport all
+
+This will create:
+  /usr/src/qd-2.3.23-X-src.tar.xz
+  /usr/src/qd-2.3.23-X.tar.xz
+  /usr/src/libqd0-2.3.23-X.tar.xz
+  /usr/src/libqd-devel-2.3.23-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(qd)
+  /usr/share/doc/Cygwin/qd.README
+  /usr/share/doc/qd/AUTHORS
+  /usr/share/doc/qd/COPYING
+  /usr/share/doc/qd/NEWS
+  /usr/share/doc/qd/README
+  /usr/share/doc/qd/TODO
+  /usr/share/doc/qd/qd.pdf
+
+(libqd0)
+  /usr/bin/cygqd-0.dll
+  /usr/bin/cygqdmod-0.dll
+
+(libqd-devel)
+  /usr/bin/qd-config
+  /usr/include/qd/bits.h
+  /usr/include/qd/c_dd.h
+  /usr/include/qd/c_qd.h
+  /usr/include/qd/dd_inline.h
+  /usr/include/qd/dd_real.h
+  /usr/include/qd/ddext.mod
+  /usr/include/qd/ddmodule.mod
+  /usr/include/qd/fpu.h
+  /usr/include/qd/inline.h
+  /usr/include/qd/qd_config.h
+  /usr/include/qd/qd_inline.h
+  /usr/include/qd/qd_real.h
+  /usr/include/qd/qdext.mod
+  /usr/include/qd/qdmodule.mod
+  /usr/lib/libqd.dll.a
+  /usr/lib/libqdmod.dll.a
+  /usr/lib/pkgconfig/qd.pc
+
+------------------
+
+Port Notes:
+
+----- version 2.3.23-1bl1 -----
+Version bump.
+
+----- version 2.3.22-1bl1 -----
+Version bump.
+
+----- version 2.3.20-1bl1 -----
+Version bump.
+
+----- version 2.3.18-1bl1 -----
+Version bump.
+
+----- version 2.3.17-1bl1 -----
+Version bump.
+
+----- version 2.3.15-1bl1 -----
+Version bump.
+
+----- version 2.3.14-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

@@ -1,0 +1,121 @@
+libsigrok
+------------------------------------------
+libsigrok is a shared library written in C, which provides the basic hardware
+access drivers for logic analyzers and other supported devices, as well as
+input/output file format support.
+
+Runtime requirements:
+  cygwin-3.3.5-1
+  libftdi1-1.4-2
+  libftdi1-devel-1.4-2
+  libgcc1-11.3.0-1
+  libglib2.0-devel-2.54.3-1
+  libglib2.0_0-2.54.3-1
+  libglibmm2.4-devel-2.54.1-2
+  libglibmm2.4_1-2.54.1-2
+  libhidapi-devel-0.8.0-rc1-1
+  libhidapi0-0.8.0-rc1-1
+  libieee1284_3-0.2.11-1bl1
+  libserialport-devel-0.1.1-1bl3
+  libserialport0-0.1.1-1bl3
+  libsigrok-devel-0.5.2-1bl1
+  libsigrok4-0.5.2-1bl1
+  libsigrokcxx-devel-0.5.2-1bl1
+  libsigrokcxx4-0.5.2-1bl1
+  libstdc++6-11.3.0-1
+  libusb1.0-1.0.21-1
+  libusb1.0-devel-1.0.21-1
+  libvisa-devel-0.0.20130812-1bl1
+  libvisa0-0.0.20130812-1bl1
+  libzip-devel-1.5.1-1
+  libzip5-1.5.1-1
+  pkg-config-1.8.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.38-1
+  cygport-0.35.2-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libftdi1-devel-1.4-2
+  libglib2.0-devel-2.54.3-1
+  libglibmm2.4-devel-2.54.1-2
+  libhidapi-devel-0.8.0-rc1-1
+  libieee1284-devel-0.2.11-1bl1
+  libserialport-devel-0.1.1-1bl3
+  libtool-2.4.7-1
+  libusb1.0-devel-1.0.21-1
+  libvisa-devel-0.0.20130812-1bl1
+  libzip-devel-1.5.1-1
+  make-4.3-1
+
+Canonical website:
+  https://sigrok.org/wiki/Libsigrok
+
+Canonical download:
+  https://sigrok.org/download/source/libsigrok/libsigrok-0.5.2.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libsigrok-0.5.2-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libsigrok-0.5.2-X.cygport all
+
+This will create:
+  /usr/src/libsigrok-0.5.2-X-src.tar.xz
+  /usr/src/libsigrok-0.5.2-X.tar.xz
+  /usr/src/libsigrok4-0.5.2-X.tar.xz
+  /usr/src/libsigrok-devel-0.5.2-X.tar.xz
+  /usr/src/libsigrokcxx4-0.5.2-X.tar.xz
+  /usr/src/libsigrokcxx-devel-0.5.2-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libsigrok)
+  /etc/postinstall/libsigrok.sh
+  /usr/share/doc/Cygwin/libsigrok.README
+  /usr/share/doc/libsigrok/AUTHORS
+  /usr/share/doc/libsigrok/COPYING
+  /usr/share/doc/libsigrok/ChangeLog
+  /usr/share/doc/libsigrok/HACKING
+  /usr/share/doc/libsigrok/NEWS
+  /usr/share/doc/libsigrok/README
+  /usr/share/icons/hicolor/48x48/mimetypes/libsigrok.png
+  /usr/share/icons/hicolor/scalable/mimetypes/libsigrok.svg
+  /usr/share/mime/packages/vnd.sigrok.session.xml
+
+(libsigrok4)
+  /usr/bin/cygsigrok-4.dll
+
+(libsigrok-devel)
+  /usr/include/libsigrok/libsigrok.h
+  /usr/include/libsigrok/proto.h
+  /usr/include/libsigrok/version.h
+  /usr/lib/libsigrok.dll.a
+  /usr/lib/pkgconfig/libsigrok.pc
+
+(libsigrokcxx4)
+  /usr/bin/cygsigrokcxx-4.dll
+
+(libsigrokcxx-devel)
+  /usr/include/libsigrokcxx/enums.hpp
+  /usr/include/libsigrokcxx/libsigrokcxx.hpp
+  /usr/lib/libsigrokcxx.dll.a
+  /usr/lib/pkgconfig/libsigrokcxx.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.5.2-1bl1 -----
+Version bump.
+
+----- version 0.5.0-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

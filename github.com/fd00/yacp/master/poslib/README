@@ -1,0 +1,120 @@
+poslib
+------------------------------------------
+Poslib is the C++ library for applications using the Domain Name System that
+is used by all Posadis tools, including the Posadis DNS server and the
+Zoneedit and Dnsquery tools. It consists of a library for creating client
+applications using DNS, and a server library for DNS servers.
+
+Runtime requirements:
+  bash-4.1.17-9
+  cygwin-1.7.32-1
+  libgcc1-4.9.2-1
+  libposlib0-1.0.6-1bl4
+  libposserver0-1.0.6-1bl4
+  libstdc++6-4.9.2-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-9-1
+  binutils-2.24.51-6
+  cygport-0.17.0-1
+  gcc-core-4.9.2-1
+  gcc-g++-4.9.2-1
+  libtool-2.4.2-5
+  make-4.0-2
+
+Canonical website:
+  http://posadis.sf.net/poslib
+
+Canonical download:
+  mirror://sourceforge/posadis/poslib-1.0.6.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  unpack poslib-1.0.6-X-src.tar.xz
+    if you use setup to install this src package, it will be
+        unpacked under /usr/src automatically
+  cd /usr/src
+  cygport ./poslib-1.0.6-X.cygport all
+
+This will create:
+  /usr/src/poslib-1.0.6-X-src.tar.xz
+  /usr/src/poslib-1.0.6-X.tar.xz
+  /usr/src/libposlib0-1.0.6-X.tar.xz
+  /usr/src/libposlib-devel-1.0.6-X.tar.xz
+  /usr/src/libposserver0-1.0.6-X.tar.xz
+  /usr/src/libposserver-devel-1.0.6-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(poslib)
+  /usr/share/doc/Cygwin/poslib.README
+  /usr/share/doc/poslib/AUTHORS
+  /usr/share/doc/poslib/COPYING
+  /usr/share/doc/poslib/ChangeLog
+  /usr/share/doc/poslib/NEWS
+  /usr/share/doc/poslib/README
+  /usr/share/doc/poslib/TODO
+
+(libposlib0)
+  /usr/bin/cygposlib-0.dll
+
+(libposlib-devel)
+  /usr/bin/poslib-config
+  /usr/include/poslib-1.0.6/poslib/bits.h
+  /usr/include/poslib-1.0.6/poslib/dnsdefs.h
+  /usr/include/poslib-1.0.6/poslib/dnsmessage.h
+  /usr/include/poslib-1.0.6/poslib/domainfn.h
+  /usr/include/poslib-1.0.6/poslib/exception.h
+  /usr/include/poslib-1.0.6/poslib/lexfn.h
+  /usr/include/poslib-1.0.6/poslib/masterfile.h
+  /usr/include/poslib-1.0.6/poslib/poslib.h
+  /usr/include/poslib-1.0.6/poslib/postime.h
+  /usr/include/poslib-1.0.6/poslib/random.h
+  /usr/include/poslib-1.0.6/poslib/resolver.h
+  /usr/include/poslib-1.0.6/poslib/rr.h
+  /usr/include/poslib-1.0.6/poslib/socket.h
+  /usr/include/poslib-1.0.6/poslib/syssocket.h
+  /usr/include/poslib-1.0.6/poslib/sysstl.h
+  /usr/include/poslib-1.0.6/poslib/sysstring.h
+  /usr/include/poslib-1.0.6/poslib/types.h
+  /usr/include/poslib-1.0.6/poslib/vsnprintf.h
+  /usr/include/poslib-1.0.6/poslib/w32poll.h
+  /usr/lib/libposlib.dll.a
+  /usr/lib/poslib-1.0.6/include/poslib-config.h
+
+(libposserver0)
+  /usr/bin/cygposserver-0.dll
+
+(libposserver-devel)
+  /usr/include/poslib-1.0.6/poslib/server/configuration.h
+  /usr/include/poslib-1.0.6/poslib/server/handlequery.h
+  /usr/include/poslib-1.0.6/poslib/server/log.h
+  /usr/include/poslib-1.0.6/poslib/server/pending.h
+  /usr/include/poslib-1.0.6/poslib/server/posthreads.h
+  /usr/include/poslib-1.0.6/poslib/server/requestid.h
+  /usr/include/poslib-1.0.6/poslib/server/server.h
+  /usr/include/poslib-1.0.6/poslib/server/serverthread.h
+  /usr/include/poslib-1.0.6/poslib/server/srvresolver.h
+  /usr/lib/libposserver.dll.a
+
+------------------
+
+Port Notes:
+
+----- version 1.0.6-1bl4 -----
+Rebuild on x86_64
+
+----- version 1.0.6-1bl3 -----
+Rebuild with gcc-4.5.3
+
+----- version 1.0.6-1bl2 -----
+Repackage for licensing & readmes
+
+----- version 1.0.6-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>
+

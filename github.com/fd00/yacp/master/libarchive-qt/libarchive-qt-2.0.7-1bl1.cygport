@@ -1,0 +1,37 @@
+HOMEPAGE="https://gitlab.com/marcusbritanicus/${PN}"
+SRC_URI="https://gitlab.com/marcusbritanicus/${PN}/-/archive/v${PV}/${PN}-v${PV}.tar.bz2"
+SRC_DIR="${PN}-v${PV}"
+
+CATEGORY="Libs"
+SUMMARY="Qt based archiving solution with libarchive backend"
+DESCRIPTION="${SUMMARY}"
+
+BUILD_REQUIRES="libarchive-devel libbz2-devel liblzma-devel libQt5Core-devel zlib-devel"
+
+export CPPFLAGS="${CPPFLAGS} -D_GNU_SOURCE"
+
+inherit meson
+
+CYGMESON_ARGS="
+	-Dinstall_static=false
+"
+
+PKG_NAMES="
+	libarchive-qt
+	libarchiveqt5_2
+	libarchiveqt5-devel
+"
+libarchive_qt_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+libarchiveqt5_2_CONTENTS="
+	usr/bin/*.dll
+"
+libarchiveqt5_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+libarchive_qt_SUMMARY="${SUMMARY} (utilities)"
+libarchiveqt5_2_SUMMARY="${SUMMARY} (runtime)"
+libarchiveqt5_devel_SUMMARY="${SUMMARY} (development)"

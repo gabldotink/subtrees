@@ -1,0 +1,75 @@
+libonvif
+------------------------------------------
+Client side implementation of the ONVIF specification
+
+Runtime requirements:
+  cygwin-3.4.5-1
+  libgcc1-11.3.0-1
+  libonvif-devel-1.4.4-1bl1
+  libonvif1-1.4.4-1bl1
+  libstdc++6-11.3.0-1
+  libxml2-2.9.12-2
+  pkg-config-1.9.4-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.39-1
+  cmake-3.23.2-1
+  cygport-0.36.0-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libxml2-devel-2.9.12-2
+  ninja-1.11.1-1
+
+Canonical website:
+  https://github.com/sr99622/libonvif
+
+Canonical download:
+  https://github.com/sr99622/libonvif/archive/refs/tags/v1.4.4.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libonvif-1.4.4-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libonvif-1.4.4-X.cygport all
+
+This will create:
+  /usr/src/libonvif-1.4.4-X-src.tar.xz
+  /usr/src/libonvif-1.4.4-X.tar.xz
+  /usr/src/libonvif1-1.4.4-X.tar.xz
+  /usr/src/libonvif-devel-1.4.4-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libonvif)
+  /usr/bin/onvif-util.exe
+  /usr/share/doc/Cygwin/libonvif.README
+  /usr/share/doc/libonvif/COPYING
+  /usr/share/doc/libonvif/README.md
+  /usr/share/man/man1/onvif-util.1.gz
+
+(libonvif1)
+  /usr/bin/cygonvif-1.dll
+
+(libonvif-devel)
+  /usr/include/onvif.h
+  /usr/lib/libonvif.dll.a
+  /usr/lib/pkgconfig/libonvif.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.4.4-1bl1 -----
+Version bump.
+
+----- version 1.4.1-1bl1 -----
+Version bump.
+
+----- version 1.1.1-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

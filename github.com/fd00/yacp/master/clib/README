@@ -1,0 +1,109 @@
+clib
+------------------------------------------
+Package manager for the C programming language.
+
+Runtime requirements:
+  cygwin-3.4.6-1
+  libcurl4-8.0.1-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.40-1
+  cygport-0.36.1-1
+  gcc-core-11.3.0-1
+  libcurl-devel-8.0.1-1
+  make-4.4.1-1
+
+Canonical website:
+  https://github.com/clibs/clib
+
+Canonical download:
+  https://github.com/clibs/clib/archive/refs/tags/2.8.3.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack clib-2.8.3-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./clib-2.8.3-X.cygport all
+
+This will create:
+  /usr/src/clib-2.8.3-X-src.tar.xz
+  /usr/src/clib-2.8.3-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(clib)
+  /usr/bin/clib-build.exe
+  /usr/bin/clib-configure.exe
+  /usr/bin/clib-init.exe
+  /usr/bin/clib-install.exe
+  /usr/bin/clib-search.exe
+  /usr/bin/clib-uninstall.exe
+  /usr/bin/clib-update.exe
+  /usr/bin/clib-upgrade.exe
+  /usr/bin/clib.exe
+  /usr/share/doc/Cygwin/clib.README
+  /usr/share/doc/clib/BEST_PRACTICE.md
+  /usr/share/doc/clib/HISTORY.md
+  /usr/share/doc/clib/LICENSE
+  /usr/share/doc/clib/README.md
+
+------------------
+
+Port Notes:
+
+----- version 2.8.3-1bl1 -----
+Version bump.
+
+----- version 2.8.2-1bl1 -----
+Version bump.
+
+----- version 2.8.1-1bl1 -----
+Version bump.
+
+----- version 2.8.0-1bl1 -----
+Version bump.
+
+----- version 2.7.0-1bl1 -----
+Version bump.
+
+----- version 2.5.0-1bl1 -----
+Version bump.
+
+----- version 2.4.1-1bl1 -----
+Version bump.
+
+----- version 2.2.0-1bl1 -----
+Version bump.
+
+----- version 1.11.2-1bl1 -----
+Version bump.
+
+----- version 1.8.1-1bl1 -----
+Version bump.
+
+----- version 1.8.0-1bl1 -----
+Version bump.
+
+----- version 1.7.0-1bl1 -----
+Version bump.
+
+----- version 1.5.0-1bl1 -----
+Version bump.
+
+----- version 1.4.2-1bl1 -----
+Version bump.
+
+----- version 1.4.1-1bl1 -----
+Version bump.
+
+----- version 1.2.3-1bl1 -----
+Version bump.
+
+----- version 1.2.2-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

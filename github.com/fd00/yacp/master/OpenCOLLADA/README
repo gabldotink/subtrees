@@ -1,0 +1,476 @@
+OpenCOLLADA
+------------------------------------------
+COLLADAMax and COLLADAMaya are new implementation of a 3ds Max or Maya plug-ins
+to export scene or parts of it to a COLLADA file, released under an
+MIT-license.
+
+Runtime requirements:
+  cygwin-3.3.5-1
+  libOpenCOLLADA0.4-1.6.70-1bl1
+  libgcc1-11.3.0-1
+  libpcre1-8.45-1
+  libstdc++6-11.3.0-1
+  libxml2-2.9.12-2
+  zlib0-1.2.12-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.38-1
+  cmake-3.20.0-1
+  cygport-0.35.1-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libpcre-devel-8.45-1
+  libtool-2.4.7-1
+  libxml2-devel-2.9.12-2
+  ninja-1.11.0-1
+  zlib-devel-1.2.12-1
+
+Canonical website:
+  https://github.com/RemiArnaud/OpenCOLLADA/
+
+Canonical download:
+  https://github.com/RemiArnaud/OpenCOLLADA/archive/refs/tags/v1.6.70-maya.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack OpenCOLLADA-1.6.70-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./OpenCOLLADA-1.6.70-X.cygport all
+
+This will create:
+  /usr/src/OpenCOLLADA-1.6.70-X-src.tar.xz
+  /usr/src/OpenCOLLADA-1.6.70-X.tar.xz
+  /usr/src/libOpenCOLLADA0.4-1.6.70-X.tar.xz
+  /usr/src/libOpenCOLLADA-devel-1.6.70-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(OpenCOLLADA)
+  /usr/bin/DAEValidator.exe
+  /usr/bin/OpenCOLLADAValidator.exe
+  /usr/share/doc/Cygwin/OpenCOLLADA.README
+  /usr/share/doc/OpenCOLLADA/AUTHORS
+  /usr/share/doc/OpenCOLLADA/LICENSE
+  /usr/share/doc/OpenCOLLADA/README
+  /usr/share/doc/OpenCOLLADA/README.COLLADAStreamWriter
+  /usr/share/doc/OpenCOLLADA/readme.md
+
+(libOpenCOLLADA0.4)
+  /usr/bin/cygGeneratedSaxParser-0.4.dll
+  /usr/bin/cygMathMLSolver-0.4.dll
+  /usr/bin/cygOpenCOLLADABaseUtils-0.4.dll
+  /usr/bin/cygOpenCOLLADAFramework-0.4.dll
+  /usr/bin/cygOpenCOLLADASaxFrameworkLoader-0.4.dll
+  /usr/bin/cygOpenCOLLADAStreamWriter-0.4.dll
+  /usr/bin/cygUTF-0.4.dll
+  /usr/bin/cygbuffer-0.4.dll
+  /usr/bin/cygftoa-0.4.dll
+
+(libOpenCOLLADA-devel)
+  /usr/include/OpenCOLLADA/COLLADABaseUtils/COLLADABU.h
+  /usr/include/OpenCOLLADA/COLLADABaseUtils/COLLADABUException.h
+  /usr/include/OpenCOLLADA/COLLADABaseUtils/COLLADABUHashFunctions.h
+  /usr/include/OpenCOLLADA/COLLADABaseUtils/COLLADABUIDList.h
+  /usr/include/OpenCOLLADA/COLLADABaseUtils/COLLADABUNativeString.h
+  /usr/include/OpenCOLLADA/COLLADABaseUtils/COLLADABUPcreCompiledPattern.h
+  /usr/include/OpenCOLLADA/COLLADABaseUtils/COLLADABUPlatform.h
+  /usr/include/OpenCOLLADA/COLLADABaseUtils/COLLADABUPrerequisites.h
+  /usr/include/OpenCOLLADA/COLLADABaseUtils/COLLADABUStableHeaders.h
+  /usr/include/OpenCOLLADA/COLLADABaseUtils/COLLADABUStringUtils.h
+  /usr/include/OpenCOLLADA/COLLADABaseUtils/COLLADABUURI.h
+  /usr/include/OpenCOLLADA/COLLADABaseUtils/COLLADABUUtils.h
+  /usr/include/OpenCOLLADA/COLLADABaseUtils/COLLADABUhash_map.h
+  /usr/include/OpenCOLLADA/COLLADABaseUtils/Math/COLLADABUMathMatrix3.h
+  /usr/include/OpenCOLLADA/COLLADABaseUtils/Math/COLLADABUMathMatrix4.h
+  /usr/include/OpenCOLLADA/COLLADABaseUtils/Math/COLLADABUMathPrerequisites.h
+  /usr/include/OpenCOLLADA/COLLADABaseUtils/Math/COLLADABUMathQuaternion.h
+  /usr/include/OpenCOLLADA/COLLADABaseUtils/Math/COLLADABUMathUtils.h
+  /usr/include/OpenCOLLADA/COLLADABaseUtils/Math/COLLADABUMathVector3.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFW.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWAnimatable.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWAnimatableFloat.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWAnimation.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWAnimationClip.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWAnimationCurve.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWAnimationList.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWAnnotate.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWArray.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWArrayPrimitiveType.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWAxisInfo.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWCamera.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWCode.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWColor.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWColorOrTexture.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWConstants.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWController.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWEdge.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWEffect.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWEffectCommon.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWException.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWFileInfo.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWFloatOrDoubleArray.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWFloatOrParam.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWFormula.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWFormulaNewParam.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWFormulas.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWGeometry.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWHashFunctions.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWILoader.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWIWriter.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWImage.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWImageSource.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWInclude.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWIndexList.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWInstanceBase.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWInstanceBindingBase.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWInstanceCamera.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWInstanceController.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWInstanceGeometry.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWInstanceKinematicsScene.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWInstanceLight.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWInstanceNode.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWInstanceSceneGraph.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWInstanceVisualScene.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWJoint.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWJointPrimitive.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWKinematicsController.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWKinematicsModel.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWKinematicsScene.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWLibraryNodes.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWLight.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWLines.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWLinestrips.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWLoaderUtils.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWLookat.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWMaterial.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWMaterialBinding.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWMatrix.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWMesh.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWMeshPrimitive.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWMeshPrimitiveWithFaceVertexCount.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWMeshVertexData.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWModifier.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWMorphController.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWMotionProfile.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWNewParam.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWNode.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWObject.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWParam.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWPass.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWPassClear.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWPassOutput.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWPassTarget.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWPointerArray.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWPolygons.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWPrerequisites.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWRenderDraw.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWRenderState.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWRenderStateStatic.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWRoot.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWRotate.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWSampler.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWScale.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWScene.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWSemantic.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWSetParam.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWShader.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWShaderBlinn.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWShaderConstantFX.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWShaderElement.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWShaderLambert.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWShaderPhong.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWShear.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWSkew.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWSkinController.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWSkinControllerData.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWSpline.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWStableHeaders.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWTarget.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWTargetableValue.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWTechnique.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWTexture.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWTextureCoordinateBinding.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWTransformation.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWTranslate.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWTriangles.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWTrifans.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWTristrips.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWTypes.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWUniqueId.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWValidate.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWValueType.h
+  /usr/include/OpenCOLLADA/COLLADAFramework/COLLADAFWVisualScene.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLAccessor.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLArrayElement.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLAssetLoader.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLCOLLADACsymbol.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLDocumentProcessor.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLException.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLExtraDataElementHandler.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLExtraDataLoader.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLFileLoader.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLFilePartLoader.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLFormulasLinker.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLFormulasLoader.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLGeometryLoader.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLGeometryMaterialIdInfo.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLHelperLoaderBase.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLIError.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLIErrorHandler.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLIExtraDataCallbackHandler.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLIFilePartLoader.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLIParserImpl.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLIParserImpl14.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLIParserImpl15.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLInputShared.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLInputUnshared.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLInstanceArticulatedSystemLoader.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLInstanceKinematicsModelLoader.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLIntermediateTargetable.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLInterpolationTypeSource.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLJointsLoader.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLKinematicsIntermediateData.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLKinematicsSceneCreator.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLLibraryAnimationClipsLoader.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLLibraryAnimationsLoader.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLLibraryArticulatedSystemsLoader.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLLibraryCamerasLoader.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLLibraryControllersLoader.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLLibraryEffectsLoader.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLLibraryFormulasLoader.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLLibraryImagesLoader.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLLibraryJointsLoader.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLLibraryKinematicsModelsLoader.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLLibraryKinematicsScenesLoader.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLLibraryLightsLoader.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLLibraryMaterialsLoader.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLLibraryNodesLoader.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLLoader.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLMeshLoader.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLMeshPrimitiveInputList.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLNodeLoader.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLPHElement.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLPolygons.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLPostProcessor.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLPrerequisites.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLPrimitiveBase.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLRootParser14.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLRootParser15.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLSaxFWLError.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLSaxParserError.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLSaxParserErrorHandler.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLSceneLoader.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLSidAddress.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLSidTreeNode.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLSource.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLSourceArrayLoader.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLSplineLoader.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLStableHeaders.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLTechniqueCommon.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLTransformationLoader.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLTypes.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLUtils.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLVersionParser.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLVertices.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLVisualSceneLoader.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/COLLADASaxFWLXmlTypes.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/generated14/COLLADASaxFWLAssetLoader14.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/generated14/COLLADASaxFWLColladaParserAutoGen14.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/generated14/COLLADASaxFWLColladaParserAutoGen14Attributes.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/generated14/COLLADASaxFWLColladaParserAutoGen14Enums.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/generated14/COLLADASaxFWLColladaParserAutoGen14FunctionMapFactory.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/generated14/COLLADASaxFWLColladaParserAutoGen14Private.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/generated14/COLLADASaxFWLColladaParserAutoGen14ValidationData.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/generated14/COLLADASaxFWLGeometryLoader14.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/generated14/COLLADASaxFWLLibraryAnimationClipsLoader14.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/generated14/COLLADASaxFWLLibraryAnimationsLoader14.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/generated14/COLLADASaxFWLLibraryCamerasLoader14.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/generated14/COLLADASaxFWLLibraryControllersLoader14.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/generated14/COLLADASaxFWLLibraryEffectsLoader14.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/generated14/COLLADASaxFWLLibraryImagesLoader14.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/generated14/COLLADASaxFWLLibraryLightsLoader14.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/generated14/COLLADASaxFWLLibraryMaterialsLoader14.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/generated14/COLLADASaxFWLLibraryNodesLoader14.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/generated14/COLLADASaxFWLMeshLoader14.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/generated14/COLLADASaxFWLNodeLoader14.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/generated14/COLLADASaxFWLSceneLoader14.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/generated14/COLLADASaxFWLSourceArrayLoader14.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/generated14/COLLADASaxFWLSplineLoader14.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/generated14/COLLADASaxFWLVisualSceneLoader14.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/generated15/COLLADASaxFWLAssetLoader15.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/generated15/COLLADASaxFWLColladaParserAutoGen15.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/generated15/COLLADASaxFWLColladaParserAutoGen15Attributes.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/generated15/COLLADASaxFWLColladaParserAutoGen15Enums.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/generated15/COLLADASaxFWLColladaParserAutoGen15FunctionMapFactory.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/generated15/COLLADASaxFWLColladaParserAutoGen15Private.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/generated15/COLLADASaxFWLColladaParserAutoGen15ValidationData.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/generated15/COLLADASaxFWLFormulasLoader15.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/generated15/COLLADASaxFWLGeometryLoader15.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/generated15/COLLADASaxFWLLibraryAnimationClipsLoader15.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/generated15/COLLADASaxFWLLibraryAnimationsLoader15.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/generated15/COLLADASaxFWLLibraryArticulatedSystemsLoader15.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/generated15/COLLADASaxFWLLibraryCamerasLoader15.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/generated15/COLLADASaxFWLLibraryControllersLoader15.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/generated15/COLLADASaxFWLLibraryEffectsLoader15.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/generated15/COLLADASaxFWLLibraryFormulasLoader15.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/generated15/COLLADASaxFWLLibraryImagesLoader15.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/generated15/COLLADASaxFWLLibraryJointsLoader15.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/generated15/COLLADASaxFWLLibraryKinematicsModelsLoader15.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/generated15/COLLADASaxFWLLibraryKinematicsScenesLoader15.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/generated15/COLLADASaxFWLLibraryLightsLoader15.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/generated15/COLLADASaxFWLLibraryMaterialsLoader15.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/generated15/COLLADASaxFWLLibraryNodesLoader15.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/generated15/COLLADASaxFWLMeshLoader15.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/generated15/COLLADASaxFWLNodeLoader15.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/generated15/COLLADASaxFWLSceneLoader15.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/generated15/COLLADASaxFWLSourceArrayLoader15.h
+  /usr/include/OpenCOLLADA/COLLADASaxFrameworkLoader/generated15/COLLADASaxFWLVisualSceneLoader15.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWAnnotation.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWAsset.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWBaseElement.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWBaseInputElement.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWBindMaterial.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWBuffer.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWCamera.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWCameraOptic.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWCode.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWColor.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWColorOrTexture.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWConstants.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWControlVertices.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWEffectProfile.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWElementWriter.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWException.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWExtra.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWExtraTechnique.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWFormatHint.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWImage.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWInclude.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWInputList.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWInstanceCamera.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWInstanceController.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWInstanceEffect.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWInstanceGeometry.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWInstanceLight.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWInstanceMaterial.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWInstanceNode.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWLibrary.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWLibraryAnimationClips.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWLibraryAnimations.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWLibraryCameras.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWLibraryControllers.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWLibraryEffects.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWLibraryGeometries.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWLibraryImages.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWLibraryLights.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWLibraryMaterials.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWLibraryVisualScenes.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWLight.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWNode.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWOpenGLConstants.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWParamBase.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWParamTemplate.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWPass.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWPlatform.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWPrerequisites.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWPrimitves.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWRenderState.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWRenderStateStatic.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWSampler.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWScene.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWShader.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWSource.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWStreamWriter.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWSurfaceInitOption.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWTechnique.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWTechniqueFX.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWTexture.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWValueType.h
+  /usr/include/OpenCOLLADA/COLLADAStreamWriter/COLLADASWVertices.h
+  /usr/include/OpenCOLLADA/GeneratedSaxParser/GeneratedSaxParser.h
+  /usr/include/OpenCOLLADA/GeneratedSaxParser/GeneratedSaxParserCoutErrorHandler.h
+  /usr/include/OpenCOLLADA/GeneratedSaxParser/GeneratedSaxParserExpatSaxParser.h
+  /usr/include/OpenCOLLADA/GeneratedSaxParser/GeneratedSaxParserIErrorHandler.h
+  /usr/include/OpenCOLLADA/GeneratedSaxParser/GeneratedSaxParserINamespaceHandler.h
+  /usr/include/OpenCOLLADA/GeneratedSaxParser/GeneratedSaxParserIUnknownElementHandler.h
+  /usr/include/OpenCOLLADA/GeneratedSaxParser/GeneratedSaxParserLibxmlSaxParser.h
+  /usr/include/OpenCOLLADA/GeneratedSaxParser/GeneratedSaxParserNamespaceStack.h
+  /usr/include/OpenCOLLADA/GeneratedSaxParser/GeneratedSaxParserParser.h
+  /usr/include/OpenCOLLADA/GeneratedSaxParser/GeneratedSaxParserParserError.h
+  /usr/include/OpenCOLLADA/GeneratedSaxParser/GeneratedSaxParserParserTemplate.h
+  /usr/include/OpenCOLLADA/GeneratedSaxParser/GeneratedSaxParserParserTemplateBase.h
+  /usr/include/OpenCOLLADA/GeneratedSaxParser/GeneratedSaxParserPrerequisites.h
+  /usr/include/OpenCOLLADA/GeneratedSaxParser/GeneratedSaxParserRawUnknownElementHandler.h
+  /usr/include/OpenCOLLADA/GeneratedSaxParser/GeneratedSaxParserSaxParser.h
+  /usr/include/OpenCOLLADA/GeneratedSaxParser/GeneratedSaxParserStackMemoryManager.h
+  /usr/include/OpenCOLLADA/GeneratedSaxParser/GeneratedSaxParserTypes.h
+  /usr/include/OpenCOLLADA/GeneratedSaxParser/GeneratedSaxParserUtils.h
+  /usr/include/OpenCOLLADA/MathMLSolver/AST/MathMLASTArithmeticExpression.h
+  /usr/include/OpenCOLLADA/MathMLSolver/AST/MathMLASTBinaryComparisionExpression.h
+  /usr/include/OpenCOLLADA/MathMLSolver/AST/MathMLASTConstantExpression.h
+  /usr/include/OpenCOLLADA/MathMLSolver/AST/MathMLASTFragmentExpression.h
+  /usr/include/OpenCOLLADA/MathMLSolver/AST/MathMLASTFunctionExpression.h
+  /usr/include/OpenCOLLADA/MathMLSolver/AST/MathMLASTLogicExpression.h
+  /usr/include/OpenCOLLADA/MathMLSolver/AST/MathMLASTNode.h
+  /usr/include/OpenCOLLADA/MathMLSolver/AST/MathMLASTStringVisitor.h
+  /usr/include/OpenCOLLADA/MathMLSolver/AST/MathMLASTUnaryArithmeticExpression.h
+  /usr/include/OpenCOLLADA/MathMLSolver/AST/MathMLASTVariableExpression.h
+  /usr/include/OpenCOLLADA/MathMLSolver/AST/MathMLASTVisitor.h
+  /usr/include/OpenCOLLADA/MathMLSolver/MathMLError.h
+  /usr/include/OpenCOLLADA/MathMLSolver/MathMLEvaluatorVisitor.h
+  /usr/include/OpenCOLLADA/MathMLSolver/MathMLParser.h
+  /usr/include/OpenCOLLADA/MathMLSolver/MathMLParserConstants.h
+  /usr/include/OpenCOLLADA/MathMLSolver/MathMLPlatform.h
+  /usr/include/OpenCOLLADA/MathMLSolver/MathMLSerializationUtil.h
+  /usr/include/OpenCOLLADA/MathMLSolver/MathMLSerializationVisitor.h
+  /usr/include/OpenCOLLADA/MathMLSolver/MathMLSingleton.h
+  /usr/include/OpenCOLLADA/MathMLSolver/MathMLSolverFunctionExtensions.h
+  /usr/include/OpenCOLLADA/MathMLSolver/MathMLSolverPrerequisites.h
+  /usr/include/OpenCOLLADA/MathMLSolver/MathMLSolverStableHeaders.h
+  /usr/include/OpenCOLLADA/MathMLSolver/MathMLStreamParser.h
+  /usr/include/OpenCOLLADA/MathMLSolver/MathMLStreamParserHandler.h
+  /usr/include/OpenCOLLADA/MathMLSolver/MathMLString.h
+  /usr/include/OpenCOLLADA/MathMLSolver/MathMLSymbolTable.h
+  /usr/lib/cmake/OpenCOLLADA/OpenCOLLADAConfig.cmake
+  /usr/lib/cmake/OpenCOLLADA/OpenCOLLADAConfigVersion.cmake
+  /usr/lib/cmake/OpenCOLLADA/OpenCOLLADATargets-release.cmake
+  /usr/lib/cmake/OpenCOLLADA/OpenCOLLADATargets.cmake
+  /usr/lib/libGeneratedSaxParser.dll.a
+  /usr/lib/libMathMLSolver.dll.a
+  /usr/lib/libOpenCOLLADABaseUtils.dll.a
+  /usr/lib/libOpenCOLLADAFramework.dll.a
+  /usr/lib/libOpenCOLLADASaxFrameworkLoader.dll.a
+  /usr/lib/libOpenCOLLADAStreamWriter.dll.a
+  /usr/lib/libUTF.dll.a
+  /usr/lib/libbuffer.dll.a
+  /usr/lib/libftoa.dll.a
+
+------------------
+
+Port Notes:
+
+----- version 1.6.70-1bl1 -----
+Version bump.
+
+----- version 1.6.68-1bl1 -----
+Version bump.
+
+----- version 1.6.63-1bl1 -----
+Version bump.
+
+----- version 1.6.62-1bl1 -----
+Version bump.
+
+----- version 0+svn869-1bl1 -----
+Version bump.
+
+----- version 0+svn868-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

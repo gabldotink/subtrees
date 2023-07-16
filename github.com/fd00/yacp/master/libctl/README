@@ -1,0 +1,131 @@
+libctl
+------------------------------------------
+libctl is a free Guile-based library implementing flexible control files for
+scientific simulations. It was written to support our MIT Photonic Bands and
+Meep software, but has proven useful in other programs too.
+
+Runtime requirements:
+  bash-4.4.12-3
+  cygwin-3.3.5-1
+  libctl7-4.5.1-1bl1
+  libgcc1-11.3.0-1
+  libguile3.0_1-3.0.7-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.38-1
+  cygport-0.35.0-1
+  gcc-core-11.3.0-1
+  libguile3.0-devel-3.0.7-1
+  libtool-2.4.7-1
+  make-4.3-1
+
+Canonical website:
+  https://github.com/NanoComp/libctl
+
+Canonical download:
+  https://github.com/NanoComp/libctl/archive/refs/tags/v4.5.1.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libctl-4.5.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libctl-4.5.1-X.cygport all
+
+This will create:
+  /usr/src/libctl-4.5.1-X-src.tar.xz
+  /usr/src/libctl-4.5.1-X.tar.xz
+  /usr/src/libctl7-4.5.1-X.tar.xz
+  /usr/src/libctl-devel-4.5.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libctl)
+  /usr/share/doc/Cygwin/libctl.README
+  /usr/share/doc/libctl/AUTHORS
+  /usr/share/doc/libctl/COPYING
+  /usr/share/doc/libctl/Copyright
+  /usr/share/doc/libctl/NEWS.md
+  /usr/share/doc/libctl/README.md
+
+(libctl7)
+  /usr/bin/cygctl-7.dll
+  /usr/bin/cygctlgeom-7.dll
+
+(libctl-devel)
+  /usr/bin/gen-ctl-io
+  /usr/include/ctl-math.h
+  /usr/include/ctl.h
+  /usr/include/ctlgeom-types.h
+  /usr/include/ctlgeom.h
+  /usr/lib/libctl.dll.a
+  /usr/lib/libctlgeom.dll.a
+  /usr/share/libctl/base/class.scm
+  /usr/share/libctl/base/ctl.scm
+  /usr/share/libctl/base/extern-funcs.scm
+  /usr/share/libctl/base/help.scm
+  /usr/share/libctl/base/include.scm
+  /usr/share/libctl/base/interaction.scm
+  /usr/share/libctl/base/io-vars.scm
+  /usr/share/libctl/base/main.c
+  /usr/share/libctl/base/math-utils.scm
+  /usr/share/libctl/base/matrix3x3.scm
+  /usr/share/libctl/base/simplex.scm
+  /usr/share/libctl/base/utils.scm
+  /usr/share/libctl/base/vector3.scm
+  /usr/share/libctl/utils/ctl-io.scm
+  /usr/share/libctl/utils/geom.c
+  /usr/share/libctl/utils/geom.scm
+  /usr/share/libctl/utils/nlopt-constants.scm
+  /usr/share/libctl/utils/nlopt.c
+  /usr/share/man/man1/gen-ctl-io.1.gz
+
+------------------
+
+Port Notes:
+
+----- version 4.5.1-1bl1 -----
+Version bump.
+
+----- version 4.5.0-1bl1 -----
+Version bump.
+
+----- version 4.4.0-1bl1 -----
+Version bump.
+
+----- version 4.3.0-1bl1 -----
+Version bump.
+
+----- version 4.2.0-1bl1 -----
+Version bump.
+
+----- version 4.1.2-1bl1 -----
+Version bump.
+
+----- version 4.1.0-1bl1 -----
+Version bump.
+
+----- version 4.0.0-1bl1 -----
+Version bump.
+
+----- version 3.2.2-1bl1 -----
+Version bump.
+
+----- version 3.2.1-1bl1 -----
+Version bump.
+
+----- version 3.2-1bl1 -----
+Version bump.
+
+----- version 3.1-1bl2 -----
+Rebuild with gcc-4.5.2
+
+----- version 3.1-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

@@ -1,0 +1,70 @@
+libbubblemon
+------------------------------------------
+This is a library for making bubbling meters like the original bubbling load
+monitor.
+
+Runtime requirements:
+  cygwin-3.1.7-1
+  libbubblemon-devel-1.0-1bl2
+  libbubblemon0-1.0-1bl2
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.34+1git.de9c1b7cfe-1
+  cygport-0.34.0-1
+  gcc-core-10.2.0-1
+  libtool-2.4.6-7
+  make-4.3-1
+
+Canonical website:
+  https://www.nongnu.org/libbubblemon/
+
+Canonical download:
+  mirror://savannah/libbubblemon/libbubblemon-1.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libbubblemon-1.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libbubblemon-1.0-X.cygport all
+
+This will create:
+  /usr/src/libbubblemon-1.0-X-src.tar.xz
+  /usr/src/libbubblemon-1.0-X.tar.xz
+  /usr/src/libbubblemon0-1.0-X.tar.xz
+  /usr/src/libbubblemon-devel-1.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libbubblemon)
+  /usr/share/doc/Cygwin/libbubblemon.README
+  /usr/share/doc/libbubblemon/AUTHORS
+  /usr/share/doc/libbubblemon/COPYING
+  /usr/share/doc/libbubblemon/README
+  /usr/share/doc/libbubblemon/TODO
+
+(libbubblemon0)
+  /usr/bin/cygbubblemon-1.dll
+
+(libbubblemon-devel)
+  /usr/include/bubblemon.h
+  /usr/lib/libbubblemon.dll.a
+  /usr/lib/pkgconfig/libbubblemon.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.0-1bl2 -----
+Rebuild with gcc-10.2.0
+
+----- version 1.0-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

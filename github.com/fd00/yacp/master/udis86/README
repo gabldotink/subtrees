@@ -1,0 +1,88 @@
+udis86
+------------------------------------------
+Udis86 is a disassembler engine that decodes a stream of binary machine code
+bytes as opcodes defined in the x86 and x86-64 class of Instruction Set
+Archictures. The core component of this project is the C library libudis86
+which provides a clean and simple interface to disassemble binary code, and to
+inspect the disassembly to various degrees of details. The library is designed
+to aid software projects that entail analysis and manipulation of all flavors
+of x86 binary code.
+
+Runtime requirements:
+  cygwin-2.10.0-1
+  libudis86-devel-1.7.2-1bl2
+  libudis86_0-1.7.2-1bl2
+  pkg-config-0.29.1-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-10-1
+  binutils-2.29-1
+  cygport-0.31.1-1
+  gcc-core-7.3.0-2
+  libtool-2.4.6-6
+  make-4.2.1-2
+  python-2.7.14-1
+
+Canonical website:
+  http://udis86.sf.net/
+
+Canonical download:
+  mirror://sourceforge/udis86/udis86-1.7.2.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack udis86-1.7.2-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./udis86-1.7.2-X.cygport all
+
+This will create:
+  /usr/src/udis86-1.7.2-X-src.tar.xz
+  /usr/src/udis86-1.7.2-X.tar.xz
+  /usr/src/libudis86_0-1.7.2-X.tar.xz
+  /usr/src/libudis86-devel-1.7.2-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(udis86)
+  /usr/bin/udcli.exe
+  /usr/share/doc/Cygwin/udis86.README
+  /usr/share/doc/udis86/README
+  /usr/share/docs/udis86/x86/optable.xml
+  /usr/share/docs/udis86/x86/optable.xsl
+
+(libudis86_0)
+  /usr/bin/cygudis86-0.dll
+
+(libudis86-devel)
+  /usr/include/libudis86/extern.h
+  /usr/include/libudis86/itab.h
+  /usr/include/libudis86/types.h
+  /usr/include/udis86.h
+  /usr/lib/libudis86.dll.a
+  /usr/lib/pkgconfig/udis86.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.7.2-1bl2 -----
+Rebuild with gcc-7.3.0
+
+----- version 1.7.2-1bl1 -----
+Version bump.
+
+----- version 1.7.1-1bl1 -----
+Version bump.
+
+----- version 1.7-1bl2 -----
+Rebuild with gcc-4.5.3
+
+----- version 1.7-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

@@ -1,0 +1,64 @@
+inherit gnome2
+
+HOMEPAGE="https://wiki.gnome.org/action/show/Projects/Aravis"
+SRC_URI="https://github.com/AravisProject/${PN}/archive/refs/tags/${PV}.tar.gz"
+
+CATEGORY="Video"
+SUMMARY="Library for video acquisition using Genicam cameras"
+DESCRIPTION="Aravis is a glib/gobject based library for video acquisition using Genicam
+cameras. It currently only implements an ethernet camera protocol used for
+industrial cameras."
+
+LICENSE="LGPL-2.1-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: LGPL-2.1-or-later"
+LICENSE_URI="COPYING"
+
+BUILD_REQUIRES="libglib2.0-devel libgstreamer1.0-devel libintl-devel libusb1.0-devel libxml2-devel zlib-devel"
+
+inherit meson
+
+CYGMESON_ARGS="
+	-Ddocumentation=disabled
+	-Dpacket-socket=disabled
+"
+
+PKG_IGNORE="
+	usr/lib/gstreamer-1.0/libgstaravis.0.8.dll.a
+"
+
+PKG_NAMES="
+	${PN}
+	lib${PN}0.8_0
+	lib${PN}0.8-devel
+	girepository-Aravis0.8
+	gstreamer1.0-plugins-${PN}
+"
+aravis_CONTENTS="
+	etc
+	usr/bin/*.exe
+	usr/share/applications
+	usr/share/doc
+	usr/share/icons
+	usr/share/locale
+	usr/share/metainfo
+"
+libaravis0_8_0_CONTENTS="
+	usr/bin/*.dll
+"
+libaravis0_8_devel_CONTENTS="
+	usr/include
+	usr/lib/lib${PN}*
+	usr/lib/pkgconfig
+"
+girepository_Aravis0_8_CONTENTS="
+	usr/lib/girepository-1.0
+	usr/share/gir-1.0
+"
+gstreamer1_0_plugins_aravis_CONTENTS="
+	usr/lib/gstreamer-1.0/*.dll
+"
+aravis_SUMMARY="${SUMMARY} (utilities)"
+libaravis0_8_0_SUMMARY="${SUMMARY} (runtime)"
+libaravis0_8_devel_SUMMARY="${SUMMARY} (development)"
+girepository_Aravis0_8_SUMMARY="${SUMMARY} (GObject Introspection data)"
+gstreamer1_0_plugins_aravis_SUMMARY="GStreamer 1.0 aravis plugin"

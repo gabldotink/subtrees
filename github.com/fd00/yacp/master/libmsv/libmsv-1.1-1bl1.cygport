@@ -1,0 +1,29 @@
+HOMEPAGE="http://floss.scru.org/${PN}/"
+SRC_URI="http://floss.scru.org/${PN}/tarballs/${P}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Monkeysphere validation library"
+DESCRIPTION="${SUMMARY}"
+
+CYGCONF_ARGS="
+	--enable-maintainer-mode
+"
+
+PKG_NAMES="
+	${PN}
+	${PN}1
+	${PN}-devel
+"
+libmsv_CONTENTS="
+	usr/share
+"
+libmsv1_CONTENTS="
+	usr/bin
+"
+libmsv_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+libmsv_SUMMARY="${SUMMARY} (licensing & readmes)"
+libmsv1_SUMMARY="${SUMMARY} (runtime)"
+libmsv_devel_SUMMARY="${SUMMARY} (development)"

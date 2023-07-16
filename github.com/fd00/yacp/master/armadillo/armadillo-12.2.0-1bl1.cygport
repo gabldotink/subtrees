@@ -1,0 +1,60 @@
+HOMEPAGE="https://sourceforge.net/projects/arma/"
+SRC_URI="mirror://sourceforge/arma/${P}.tar.xz"
+
+CATEGORY="Libs"
+SUMMARY="C++ linear algebra library"
+DESCRIPTION="Armadillo is a C++ linear algebra library (matrix maths) aiming towards a
+good balance between speed and ease of use. Integer, floating point and
+complex numbers are supported, as well as a subset of trigonometric and
+statistics functions."
+
+LICENSE="Apache-2.0"
+LICENSE_SPDX="SPDX-License-Identifier: Apache-2.0"
+LICENSE_URI="LICENSE.txt"
+
+BUILD_REQUIRES="libarpack-devel liblapack-devel libsuperlu-devel"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DARMADILLO_CMAKE_DIR:STRING=lib/cmake/${PN}
+	-DBUILD_SMOKE_TEST:BOOL=ON
+	-DDETECT_HDF5:BOOL=ON
+"
+
+src_test()
+{
+	cd ${B}
+	PATH=${B}:${PATH} ninja_test
+}
+
+DOCS="
+	*.pdf
+	*.png
+"
+HTMLDOCS="
+	*.html
+"
+
+DIFF_EXCLUDES="
+	Makefile
+"
+
+PKG_NAMES="
+	${PN}
+	lib${PN}${PV[1]}
+	lib${PN}-devel
+"
+armadillo_CONTENTS="
+	usr/share/doc
+"
+libarmadillo12_CONTENTS="
+	usr/bin
+"
+libarmadillo_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+armadillo_SUMMARY="${SUMMARY} (licensing & readmes)"
+libarmadillo12_SUMMARY="${SUMMARY} (runtime)"
+libarmadillo_devel_SUMMARY="${SUMMARY} (development)"

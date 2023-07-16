@@ -1,0 +1,60 @@
+HOMEPAGE="https://github.com/Tencent/${PN}"
+SRC_URI="https://github.com/Tencent/${PN}/archive/refs/tags/${PV}.tar.gz"
+
+CATEGORY="Science"
+SUMMARY="High-performance neural network inference framework optimized for the mobile platform"
+DESCRIPTION="ncnn is a high-performance neural network inference computing framework
+optimized for mobile platforms. ncnn is deeply considerate about deployment
+and uses on mobile phones from the beginning of design. ncnn does not have
+third party dependencies. it is cross-platform, and runs faster than all known
+open source frameworks on mobile phone cpu. Developers can easily deploy deep
+learning algorithm models to the mobile platform by using efficient ncnn
+implementation, create intelligent APPs, and bring the artificial intelligence
+to your fingertips. ncnn is currently being used in many Tencent applications,
+such as QQ, Qzone, WeChat, Pitu and so on."
+
+LICENSE="BSD-3-Clause"
+LICENSE_SPDX="SPDX-License-Identifier: BSD-3-Clause"
+LICENSE_URI="LICENSE.txt"
+
+BUILD_REQUIRES="libprotobuf-devel"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DNCNN_BUILD_TESTS:BOOL=ON
+	-DNCNN_SHARED_LIB:BOOL=ON
+	-DVERSION:STRING=${PV}
+"
+
+src_install()
+{
+	cd ${B}
+	ninja_install
+
+	dobin tools/*.exe tools/*/*.exe
+}
+
+DOCS="
+	CONTRIBUTING.md
+"
+
+PKG_NAMES="
+	ncnn
+	libncnn1
+	libncnn-devel
+"
+ncnn_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+libncnn1_CONTENTS="
+	usr/bin/*.dll
+"
+libncnn_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+ncnn_SUMMARY="${SUMMARY} (utilities)"
+libncnn1_SUMMARY="${SUMMARY} (runtime)"
+libncnn_devel_SUMMARY="${SUMMARY} (development)"

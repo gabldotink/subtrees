@@ -1,0 +1,75 @@
+libllcp
+------------------------------------------
+Libllcp is an implementation of NFC Logical Link Control Protocol (LLCP) for
+libnfc.
+
+Runtime requirements:
+  cygwin-1.7.34-6
+  libllcp-devel-0.1.0+git20130407-1bl1
+  libllcp0-0.1.0+git20130407-1bl1
+  libnfc5-1.7.1-1bl1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-9-1
+  binutils-2.25-1
+  cygport-0.17.1-1
+  gcc-core-4.9.2-2
+  libtool-2.4.6-1
+  make-4.1-1
+
+Canonical website:
+  https://code.google.com/p/libllcp/
+
+Canonical download:
+  https://code.google.com/p/libllcp
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libllcp-0.1.0+git20130407-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libllcp-0.1.0+git20130407-X.cygport all
+
+This will create:
+  /usr/src/libllcp-0.1.0+git20130407-X-src.tar.xz
+  /usr/src/libllcp-0.1.0+git20130407-X.tar.xz
+  /usr/src/libllcp0-0.1.0+git20130407-X.tar.xz
+  /usr/src/libllcp-devel-0.1.0+git20130407-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libllcp)
+  /usr/share/doc/Cygwin/libllcp.README
+  /usr/share/doc/libllcp/AUTHORS
+  /usr/share/doc/libllcp/COPYING
+  /usr/share/doc/libllcp/HACKING
+
+(libllcp0)
+  /usr/bin/cygllcp-0.dll
+
+(libllcp-devel)
+  /usr/include/nfc/llc_connection.h
+  /usr/include/nfc/llc_link.h
+  /usr/include/nfc/llc_service.h
+  /usr/include/nfc/llcp.h
+  /usr/include/nfc/llcp_pdu.h
+  /usr/include/nfc/mac.h
+  /usr/lib/libllcp.dll.a
+  /usr/lib/pkgconfig/libllcp.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.1.0+git20130407-1bl1 -----
+Version bump.
+
+----- version 0.1.0+git20130405-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>
+

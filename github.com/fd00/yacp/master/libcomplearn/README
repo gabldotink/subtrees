@@ -1,0 +1,130 @@
+libcomplearn
+------------------------------------------
+An open-source data mining package using data compression.
+
+Runtime requirements:
+  check-0.10.0-1
+  cygwin-2.10.0-1
+  cygwin-devel-2.10.0-1
+  libbz2-devel-1.0.6-3
+  libbz2_1-1.0.6-3
+  libcomplearn-gomp-devel-1.1.7-1bl3
+  libcomplearn-gomp1-1.1.7-1bl3
+  libglib2.0-devel-2.54.3-1
+  libglib2.0_0-2.54.3-1
+  libgomp1-7.3.0-3
+  libgsl-devel-2.3-2
+  libgsl19-2.3-2
+  libiconv-devel-1.14-3
+  libintl-devel-0.19.8.1-2
+  libintl8-0.19.8.1-2
+  liblzma-devel-5.2.3-1
+  libxml2-2.9.4-2
+  libxml2-devel-2.9.4-2
+  pkg-config-0.29.1-1
+  zlib-devel-1.2.11-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-10-1
+  binutils-2.29-1
+  cygport-0.31.1-1
+  gcc-core-7.3.0-3
+  libtool-2.4.6-6
+  make-4.2.1-2
+
+Canonical website:
+  http://complearn.org/
+
+Canonical download:
+  http://complearn.org/downloads/libcomplearn-1.1.7.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libcomplearn-1.1.7-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libcomplearn-1.1.7-X.cygport all
+
+This will create:
+  /usr/src/libcomplearn-1.1.7-X-src.tar.xz
+  /usr/src/libcomplearn-1.1.7-X.tar.xz
+  /usr/src/libcomplearn-gomp1-1.1.7-X.tar.xz
+  /usr/src/libcomplearn-gomp-devel-1.1.7-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libcomplearn)
+  /usr/bin/anycompress.exe
+  /usr/bin/anydecompress.exe
+  /usr/bin/ncd.exe
+  /usr/share/doc/Cygwin/libcomplearn.README
+  /usr/share/doc/libcomplearn/AUTHORS
+  /usr/share/doc/libcomplearn/COPYING
+  /usr/share/doc/libcomplearn/ChangeLog
+  /usr/share/doc/libcomplearn/NEWS
+  /usr/share/doc/libcomplearn/README
+  /usr/share/doc/libcomplearn/THANKS
+  /usr/share/man/man1/anycompress.1.gz
+  /usr/share/man/man1/anydecompress.1.gz
+  /usr/share/man/man1/complearn-config.1.gz
+  /usr/share/man/man1/ncd.1.gz
+  /usr/share/man/man5/complearn.5.gz
+
+(libcomplearn-gomp1)
+  /usr/bin/cygcomplearn-gomp-1.dll
+  /usr/share/locale/de/LC_MESSAGES/libcomplearn.mo
+  /usr/share/locale/ru/LC_MESSAGES/libcomplearn.mo
+
+(libcomplearn-gomp-devel)
+  /usr/bin/complearn-config.exe
+  /usr/include/complearn-1.0/complearn.h
+  /usr/include/complearn-1.0/complearn/clconfig.h
+  /usr/include/complearn-1.0/complearn/cloutput.h
+  /usr/include/complearn-1.0/complearn/complearn-compressor-driver-private.h
+  /usr/include/complearn-1.0/complearn/complearn-compressor-driver.h
+  /usr/include/complearn-1.0/complearn/complearn-environment-private.h
+  /usr/include/complearn-1.0/complearn/complearn-environment.h
+  /usr/include/complearn-1.0/complearn/complearn-external-compressor-private.h
+  /usr/include/complearn-1.0/complearn/complearn-external-compressor.h
+  /usr/include/complearn-1.0/complearn/complearn-external-file-compressor-private.h
+  /usr/include/complearn-1.0/complearn/complearn-external-file-compressor.h
+  /usr/include/complearn-1.0/complearn/complearn-ncd-private.h
+  /usr/include/complearn-1.0/complearn/complearn-ncd.h
+  /usr/include/complearn-1.0/complearn/complearn-rcbzip-private.h
+  /usr/include/complearn-1.0/complearn/complearn-rcbzip.h
+  /usr/include/complearn-1.0/complearn/complearn-rcbzlib-private.h
+  /usr/include/complearn-1.0/complearn/complearn-rcbzlib.h
+  /usr/include/complearn-1.0/complearn/complearn-rcgzip-private.h
+  /usr/include/complearn-1.0/complearn/complearn-rcgzip.h
+  /usr/include/complearn-1.0/complearn/complearn-rczlib-private.h
+  /usr/include/complearn-1.0/complearn/complearn-rczlib.h
+  /usr/include/complearn-1.0/complearn/complearn-real-compressor-adaptor-private.h
+  /usr/include/complearn-1.0/complearn/complearn-real-compressor-adaptor.h
+  /usr/include/complearn-1.0/complearn/complearn-vcblocksort-private.h
+  /usr/include/complearn-1.0/complearn/complearn-vcblocksort.h
+  /usr/include/complearn-1.0/complearn/complearn.h
+  /usr/include/complearn-1.0/complearn/newcomplearn.h
+  /usr/include/complearn-1.0/complearn/real-compressor.h
+  /usr/include/complearn-1.0/complearn/util.h
+  /usr/lib/libcomplearn-gomp.dll.a
+  /usr/lib/pkgconfig/complearn-gomp.pc
+  /usr/share/aclocal/complearn.m4
+
+------------------
+
+Port Notes:
+
+----- version 1.1.7-1bl3 -----
+Rebuild for libgsl
+
+----- version 1.1.7-1bl2 -----
+Rebuild on x86_64
+
+----- version 1.1.7-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

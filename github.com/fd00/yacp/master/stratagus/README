@@ -1,0 +1,100 @@
+stratagus
+------------------------------------------
+Stratagus is a free cross-platform real-time strategy gaming engine. It
+includes support for playing over the internet/LAN, or playing a computer
+opponent. The engine is configurable and can be used to create games with a
+wide-range of features specific to your needs.
+
+Runtime requirements:
+  cygwin-3.3.5-1
+  libSDL2_2.0_0-2.0.7-1
+  libSDL2_image2.0_0-2.0.2-1
+  libSDL2_mixer2.0_0-2.0.2-1
+  libbz2_1-1.0.8-1
+  libgcc1-11.3.0-1
+  libgomp1-11.3.0-1
+  libmng2-2.0.3-1
+  libogg0-1.3.1-1
+  libpng16-1.6.37-1
+  libstdc++6-11.3.0-1
+  libtheora0-1.1.1-2
+  libtoluapp0-1.0.93-1bl2
+  libvorbis0-1.3.6-1
+  lua5.1-5.1.5-3
+  zlib0-1.2.12-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.38-1
+  cmake-3.23.2-1
+  cygport-0.35.2-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libSDL2-devel-2.0.7-1
+  libSDL2_image-devel-2.0.2-1
+  libSDL2_mixer-devel-2.0.2-1
+  libbz2-devel-1.0.8-1
+  libmng-devel-2.0.3-1
+  libogg-devel-1.3.1-1
+  libpng-devel-1.6.37-1
+  libtheora-devel-1.1.1-2
+  libtoluapp-devel-1.0.93-1bl2
+  libvorbis-devel-1.3.6-1
+  lua5.1-devel-5.1.5-3
+  ninja-1.11.0-1
+  zlib-devel-1.2.12-1
+
+Canonical website:
+  https://github.com/Wargus/stratagus/
+
+Canonical download:
+  https://github.com/Wargus/stratagus/archive/refs/tags/v3.3.1.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack stratagus-3.3.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./stratagus-3.3.1-X.cygport all
+
+This will create:
+  /usr/src/stratagus-3.3.1-X-src.tar.xz
+  /usr/src/stratagus-3.3.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(stratagus)
+  /usr/bin/png2stratagus.exe
+  /usr/bin/stratagus.exe
+  /usr/share/doc/Cygwin/stratagus.README
+  /usr/share/doc/stratagus/COPYING
+  /usr/share/doc/stratagus/README.md
+
+------------------
+
+Port Notes:
+
+----- version 3.3.1-1bl1 -----
+Version bump.
+
+----- version 3.2.0-1bl1 -----
+Version bump.
+
+----- version 3.1.2-1bl1 -----
+Version bump.
+
+----- version 3.0.0-1bl1 -----
+Version bump.
+
+----- version 2.4.3-1bl1 -----
+Version bump.
+
+----- version 2.3.0-1bl1 -----
+Version bump.
+
+----- version 2.2.5.5-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

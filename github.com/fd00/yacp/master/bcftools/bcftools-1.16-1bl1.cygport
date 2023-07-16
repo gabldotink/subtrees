@@ -1,0 +1,22 @@
+HOMEPAGE="https://github.com/samtools/${PN}"
+SRC_URI="https://github.com/samtools/${PN}/archive/refs/tags/${PV}.tar.gz"
+
+CATEGORY="Science"
+SUMMARY="Faster replacement for most of the perl VCFtools commands"
+DESCRIPTION="${SUMMARY}"
+
+LICENSE="GPL-3.0-or-later OR MIT"
+LICENSE_SPDX="SPDX-License-Identifier: GPL-3.0-or-later OR MIT"
+LICENSE_URI="LICENSE"
+
+BUILD_REQUIRES="libhts-devel zlib-devel"
+
+src_compile()
+{
+	CYGCONF_SOURCE=${B}
+	cd ${B}
+	lndirs
+	cygautoreconf
+	cygconf
+	cygmake
+}

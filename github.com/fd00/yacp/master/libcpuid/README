@@ -1,0 +1,99 @@
+libcpuid
+------------------------------------------
+libcpuid provides CPU identification for the x86 (and x86_64). For details
+about the programming API, you might want to take a look at the project's
+website on sourceforge (https://libcpuid.sourceforge.net/). There you'd find a
+short tutorial, as well as the full API reference.
+
+Runtime requirements:
+  cygwin-3.4.6-1
+  libcpuid-devel-0.6.3-1bl1
+  libcpuid16-0.6.3-1bl1
+  libgcc1-11.3.0-1
+  pkg-config-1.9.4-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.40-1
+  cygport-0.36.1-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libtool-2.4.7-1
+  make-4.4.1-1
+
+Canonical website:
+  https://github.com/anrieff/libcpuid
+
+Canonical download:
+  https://github.com/anrieff/libcpuid/archive/refs/tags/v0.6.3.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libcpuid-0.6.3-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libcpuid-0.6.3-X.cygport all
+
+This will create:
+  /usr/src/libcpuid-0.6.3-X-src.tar.xz
+  /usr/src/libcpuid-0.6.3-X.tar.xz
+  /usr/src/libcpuid16-0.6.3-X.tar.xz
+  /usr/src/libcpuid-devel-0.6.3-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libcpuid)
+  /usr/bin/cpuid_tool.exe
+  /usr/share/doc/Cygwin/libcpuid.README
+  /usr/share/doc/libcpuid/AUTHORS
+  /usr/share/doc/libcpuid/COPYING
+  /usr/share/doc/libcpuid/ChangeLog
+  /usr/share/doc/libcpuid/README
+  /usr/share/doc/libcpuid/readme.md
+
+(libcpuid16)
+  /usr/bin/cygcpuid-16.dll
+
+(libcpuid-devel)
+  /usr/include/libcpuid/libcpuid.h
+  /usr/include/libcpuid/libcpuid_constants.h
+  /usr/include/libcpuid/libcpuid_types.h
+  /usr/lib/libcpuid.dll.a
+  /usr/lib/pkgconfig/libcpuid.pc
+  /usr/share/man/man3/cpu_id_t.3.gz
+  /usr/share/man/man3/cpu_list_t.3.gz
+  /usr/share/man/man3/cpu_mark_t.3.gz
+  /usr/share/man/man3/cpu_raw_data_t.3.gz
+  /usr/share/man/man3/cpuid_tool.3.gz
+  /usr/share/man/man3/libcpuid.3.gz
+
+------------------
+
+Port Notes:
+
+----- version 0.6.3-1bl1 -----
+Version bump.
+
+----- version 0.6.2-1bl1 -----
+Version bump.
+
+----- version 0.6.0-1bl1 -----
+Version bump.
+
+----- version 0.5.1-1bl1 -----
+Version bump.
+
+----- version 0.5.0-1bl1 -----
+Version bump.
+
+----- version 0.4.1-1bl1 -----
+Version bump.
+
+----- version 0.4.0-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

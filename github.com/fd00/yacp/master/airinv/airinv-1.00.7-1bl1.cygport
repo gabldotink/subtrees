@@ -1,0 +1,54 @@
+HOMEPAGE="https://github.com/airsim/${PN}"
+SRC_URI="https://github.com/airsim/${PN}/archive/refs/tags/${P}.tar.gz"
+SRC_DIR="${PN}-${P}"
+
+CATEGORY="Libs"
+SUMMARY="C++ Simulation Airline Inventory Management Library"
+DESCRIPTION="AirInv is a C++ library of airline inventory management classes and functions,
+mainly targeting simulation purposes."
+
+LICENSE="LGPL-2.1-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: LGPL-2.1-or-later"
+LICENSE_URI="COPYING"
+
+BUILD_REQUIRES="libairrac-devel libboost-devel libreadline-devel librmol-devel libsevmgr-devel libstdair-devel libzmq-devel"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DINSTALL_DOC:BOOL=OFF
+"
+
+src_test()
+{
+	cd ${B}
+	PATH=${B}/${PN}:${PATH} ninja_test
+}
+
+PKG_NAMES="
+	${PN}
+	lib${PN}1.00
+	lib${PN}-devel
+"
+airinv_CONTENTS="
+	usr/bin/*.exe
+	usr/share/doc/Cygwin
+	usr/share/doc/${PN}
+	usr/share/man/man1/AirInv*.1*
+	usr/share/man/man1/${PN}.1*
+	usr/share/man/man1/${PN}_*.1*
+"
+libairinv1_00_CONTENTS="
+	usr/bin/*.dll
+"
+libairinv_devel_CONTENTS="
+	usr/bin/${PN}-config
+	usr/include
+	usr/lib
+	usr/share/aclocal
+	usr/share/man/man1/${PN}-config.1*
+	usr/share/man/man3
+"
+airinv_SUMMARY="${SUMMARY} (utilities)"
+libairinv1_00_SUMMARY="${SUMMARY} (runtime)"
+libairinv_devel_SUMMARY="${SUMMARY} (development)"

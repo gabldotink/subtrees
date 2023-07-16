@@ -1,0 +1,36 @@
+HOMEPAGE="https://www.gnu.org/software/osip/"
+SRC_URI="mirror://gnu/osip/${P}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Implementation of SIP"
+DESCRIPTION="oSIP is an LGPL implementation of SIP. It's stable, portable, flexible and
+compliant! -may be more-! It is used mostly with eXosip2 stack (GPL) which
+provides simpler API for User-Agent implementation."
+
+LICENSE="LGPL-3.0-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: LGPL-3.0-or-later"
+LICENSE_URI="COPYING"
+
+CYGCONF_ARGS="
+	--enable-test
+"
+
+PKG_NAMES="
+	${PN}
+	${PN}_15
+	${PN}-devel
+"
+libosip2_CONTENTS="
+	usr/share/doc
+"
+libosip2_15_CONTENTS="
+	usr/bin
+"
+libosip2_devel_CONTENTS="
+	usr/include
+	usr/lib
+	usr/share/man
+"
+libosip2_SUMMARY="${SUMMARY} (licensing & readmes)"
+libosip2_15_SUMMARY="${SUMMARY} (runtime)"
+libosip2_devel_SUMMARY="${SUMMARY} (development)"

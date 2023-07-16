@@ -1,0 +1,78 @@
+msktutil
+------------------------------------------
+Msktutil creates user or computer accounts in Active Directory, creates
+Kerberos keytabs on Unix/Linux systems, adds and removes principals to and from
+keytabs and changes the user or computer account's password.
+
+Runtime requirements:
+  cygwin-3.3.5-1
+  libcom_err2-1.44.5-1
+  libgcc1-11.3.0-1
+  libk5crypto3-1.15.2-2
+  libkrb5_3-1.15.2-2
+  libopenldap2-2.6.2-1
+  libstdc++6-11.3.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  binutils-2.38-1
+  cygport-0.35.1-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libcom_err-devel-1.44.5-1
+  libkrb5-devel-1.15.2-2
+  make-4.3-1
+  openldap-devel-2.6.2-1
+
+Canonical website:
+  https://github.com/msktutil/msktutil
+
+Canonical download:
+  https://github.com/msktutil/msktutil/archive/refs/tags/v1.2.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack msktutil-1.2-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./msktutil-1.2-X.cygport all
+
+This will create:
+  /usr/src/msktutil-1.2-X-src.tar.xz
+  /usr/src/msktutil-1.2-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(msktutil)
+  /usr/bin/msktutil.exe
+  /usr/sbin/msktutil
+  /usr/share/doc/Cygwin/msktutil.README
+  /usr/share/doc/msktutil/ChangeLog
+  /usr/share/doc/msktutil/LICENSE
+  /usr/share/doc/msktutil/README
+  /usr/share/doc/msktutil/windows-salt.txt
+  /usr/share/man/man1/msktutil.1.gz
+
+------------------
+
+Port Notes:
+
+----- version 1.2-1bl1 -----
+Version bump.
+
+----- version 1.1-1bl1 -----
+Version bump.
+
+----- version 1.0-1bl1 -----
+Version bump.
+
+----- version 0.5.1-1bl1 -----
+Version bump.
+
+----- version 0.5-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://fd0.hatenablog.jp/>

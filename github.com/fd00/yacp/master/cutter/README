@@ -1,0 +1,282 @@
+cutter
+------------------------------------------
+Cutter is a Unit Testing Framework for C and C++. Cutter's interface is easy to
+write, easy to debug your code and fun to run tests.
+
+Runtime requirements:
+  bash-4.4.12-3
+  cygwin-3.1.7-1
+  libcairo2-1.16.0-1
+  libcppcutter-devel-1.2.8-1bl1
+  libcppcutter0-1.2.8-1bl1
+  libcutter-devel-1.2.8-1bl1
+  libcutter0-1.2.8-1bl1
+  libgcc1-10.2.0-1
+  libgdkcutter-pixbuf-devel-1.2.8-1bl1
+  libgdkcutter-pixbuf0-1.2.8-1bl1
+  libgdk_pixbuf2.0-devel-2.36.11-1
+  libgdk_pixbuf2.0_0-2.36.11-1
+  libglib2.0-devel-2.54.3-1
+  libglib2.0_0-2.54.3-1
+  libgoffice0.8_8-0.8.17-1
+  libgstreamer1.0_0-1.12.5-1
+  libgtk2.0_0-2.24.32-1
+  libintl8-0.19.8.1-2
+  libpango1.0_0-1.40.14-1
+  libsoup2.4-devel-2.60.3-1
+  libsoup2.4_1-2.60.3-1
+  libsoupcutter-devel-1.2.8-1bl1
+  libsoupcutter0-1.2.8-1bl1
+  libstdc++6-10.2.0-1
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.34+1git.de9c1b7cfe-1
+  cygport-0.34.0-1
+  gcc-core-10.2.0-1
+  gcc-g++-10.2.0-1
+  libtool-2.4.6-7
+  make-4.3-1
+  ruby-2.6.4-1
+
+Canonical website:
+  https://github.com/clear-code/cutter
+
+Canonical download:
+  https://github.com/clear-code/cutter/archive/1.2.8.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack cutter-1.2.8-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./cutter-1.2.8-X.cygport all
+
+This will create:
+  /usr/src/cutter-1.2.8-X-src.tar.xz
+  /usr/src/cutter-1.2.8-X.tar.xz
+  /usr/src/libcutter0-1.2.8-X.tar.xz
+  /usr/src/libcutter-devel-1.2.8-X.tar.xz
+  /usr/src/libcppcutter0-1.2.8-X.tar.xz
+  /usr/src/libcppcutter-devel-1.2.8-X.tar.xz
+  /usr/src/libgdkcutter-pixbuf0-1.2.8-X.tar.xz
+  /usr/src/libgdkcutter-pixbuf-devel-1.2.8-X.tar.xz
+  /usr/src/libsoupcutter0-1.2.8-X.tar.xz
+  /usr/src/libsoupcutter-devel-1.2.8-X.tar.xz
+  /usr/src/gstreamer1.0-plugins-cutter-1.2.8-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(cutter)
+  /usr/bin/cut-diff.exe
+  /usr/bin/cutter.exe
+  /usr/share/cutter/icons/kinotan/default.png
+  /usr/share/cutter/icons/kinotan/failure.png
+  /usr/share/cutter/icons/kinotan/pass.png
+  /usr/share/cutter/icons/kinotan/pending.png
+  /usr/share/cutter/license/fdl-1.3.txt
+  /usr/share/cutter/license/gpl-3.txt
+  /usr/share/cutter/license/lgpl-3.txt
+  /usr/share/cutter/ui/gtk-menu.ui
+  /usr/share/doc/Cygwin/cutter.README
+  /usr/share/doc/cutter/FEATURES
+  /usr/share/doc/cutter/FEATURES.ja
+  /usr/share/doc/cutter/NEWS
+  /usr/share/doc/cutter/NEWS.ja
+  /usr/share/doc/cutter/README
+  /usr/share/doc/cutter/TODO
+  /usr/share/doc/cutter/TUTORIAL
+  /usr/share/doc/cutter/TUTORIAL.ja
+  /usr/share/doc/cutter/USERS
+  /usr/share/doc/cutter/USERS.ja
+
+(libcutter0)
+  /usr/bin/cygcutter-0.dll
+  /usr/lib/cutter/module/factory/loader-customizer/cpp-integration-factory.dll
+  /usr/lib/cutter/module/factory/report/pdf_factory.dll
+  /usr/lib/cutter/module/factory/report/xml_factory.dll
+  /usr/lib/cutter/module/factory/stream/xml_factory.dll
+  /usr/lib/cutter/module/factory/ui/console_factory.dll
+  /usr/lib/cutter/module/factory/ui/gtk_factory.dll
+  /usr/lib/cutter/module/loader-customizer/cpp-integration.dll
+  /usr/lib/cutter/module/report/pdf.dll
+  /usr/lib/cutter/module/report/xml.dll
+  /usr/lib/cutter/module/stream/xml.dll
+  /usr/lib/cutter/module/ui/console.dll
+  /usr/lib/cutter/module/ui/gtk.dll
+  /usr/share/locale/ja/LC_MESSAGES/cutter.mo
+
+(libcutter-devel)
+  /usr/include/cutter/cutter.h
+  /usr/include/cutter/cutter/cut-analyzer.h
+  /usr/include/cutter/cutter/cut-assertions-helper.h
+  /usr/include/cutter/cutter/cut-assertions.h
+  /usr/include/cutter/cutter/cut-backtrace-entry.h
+  /usr/include/cutter/cutter/cut-colorize-differ.h
+  /usr/include/cutter/cutter/cut-config.h
+  /usr/include/cutter/cutter/cut-console-diff-writer.h
+  /usr/include/cutter/cutter/cut-console.h
+  /usr/include/cutter/cutter/cut-contractor.h
+  /usr/include/cutter/cutter/cut-diff-writer.h
+  /usr/include/cutter/cutter/cut-differ.h
+  /usr/include/cutter/cutter/cut-enum-types.h
+  /usr/include/cutter/cutter/cut-experimental.h
+  /usr/include/cutter/cutter/cut-factory-builder.h
+  /usr/include/cutter/cutter/cut-features.h
+  /usr/include/cutter/cutter/cut-file-stream-reader.h
+  /usr/include/cutter/cutter/cut-helper.h
+  /usr/include/cutter/cutter/cut-iterated-test.h
+  /usr/include/cutter/cutter/cut-listener.h
+  /usr/include/cutter/cutter/cut-loader-customizer-factory-builder.h
+  /usr/include/cutter/cutter/cut-loader-customizer.h
+  /usr/include/cutter/cutter/cut-logger.h
+  /usr/include/cutter/cutter/cut-macros.h
+  /usr/include/cutter/cutter/cut-main.h
+  /usr/include/cutter/cutter/cut-module-factory-utils.h
+  /usr/include/cutter/cutter/cut-module-factory.h
+  /usr/include/cutter/cutter/cut-multi-process.h
+  /usr/include/cutter/cutter/cut-pipeline.h
+  /usr/include/cutter/cutter/cut-private.h
+  /usr/include/cutter/cutter/cut-process.h
+  /usr/include/cutter/cutter/cut-public.h
+  /usr/include/cutter/cutter/cut-readable-differ.h
+  /usr/include/cutter/cutter/cut-report-factory-builder.h
+  /usr/include/cutter/cutter/cut-report.h
+  /usr/include/cutter/cutter/cut-run-context.h
+  /usr/include/cutter/cutter/cut-runner.h
+  /usr/include/cutter/cutter/cut-stream-factory-builder.h
+  /usr/include/cutter/cutter/cut-stream-parser.h
+  /usr/include/cutter/cutter/cut-stream-reader.h
+  /usr/include/cutter/cutter/cut-stream.h
+  /usr/include/cutter/cutter/cut-string-diff-writer.h
+  /usr/include/cutter/cutter/cut-sub-process-group.h
+  /usr/include/cutter/cutter/cut-sub-process.h
+  /usr/include/cutter/cutter/cut-test-case.h
+  /usr/include/cutter/cutter/cut-test-container.h
+  /usr/include/cutter/cutter/cut-test-context.h
+  /usr/include/cutter/cutter/cut-test-data.h
+  /usr/include/cutter/cutter/cut-test-iterator.h
+  /usr/include/cutter/cutter/cut-test-result.h
+  /usr/include/cutter/cutter/cut-test-runner.h
+  /usr/include/cutter/cutter/cut-test-suite.h
+  /usr/include/cutter/cutter/cut-test-utils-helper.h
+  /usr/include/cutter/cutter/cut-test-utils.h
+  /usr/include/cutter/cutter/cut-test.h
+  /usr/include/cutter/cutter/cut-types.h
+  /usr/include/cutter/cutter/cut-ui-factory-builder.h
+  /usr/include/cutter/cutter/cut-ui.h
+  /usr/include/cutter/cutter/cut-unified-differ.h
+  /usr/include/cutter/cutter/cut-verbose-level.h
+  /usr/include/cutter/cutter/cut-version.h
+  /usr/include/cutter/gcutter.h
+  /usr/include/cutter/gcutter/gcut-assertions-helper.h
+  /usr/include/cutter/gcutter/gcut-assertions.h
+  /usr/include/cutter/gcutter/gcut-data-helper.h
+  /usr/include/cutter/gcutter/gcut-data.h
+  /usr/include/cutter/gcutter/gcut-dynamic-data.h
+  /usr/include/cutter/gcutter/gcut-egg.h
+  /usr/include/cutter/gcutter/gcut-enum.h
+  /usr/include/cutter/gcutter/gcut-error.h
+  /usr/include/cutter/gcutter/gcut-event-loop.h
+  /usr/include/cutter/gcutter/gcut-glib-event-loop.h
+  /usr/include/cutter/gcutter/gcut-hash-table.h
+  /usr/include/cutter/gcutter/gcut-inspect.h
+  /usr/include/cutter/gcutter/gcut-io.h
+  /usr/include/cutter/gcutter/gcut-key-file.h
+  /usr/include/cutter/gcutter/gcut-list.h
+  /usr/include/cutter/gcutter/gcut-main.h
+  /usr/include/cutter/gcutter/gcut-object.h
+  /usr/include/cutter/gcutter/gcut-process.h
+  /usr/include/cutter/gcutter/gcut-public.h
+  /usr/include/cutter/gcutter/gcut-string-io-channel.h
+  /usr/include/cutter/gcutter/gcut-string.h
+  /usr/include/cutter/gcutter/gcut-test-utils.h
+  /usr/include/cutter/gcutter/gcut-types.h
+  /usr/include/cutter/gcutter/gcut-value-equal.h
+  /usr/lib/libcutter.dll.a
+  /usr/lib/pkgconfig/cutter.pc
+  /usr/lib/pkgconfig/gcutter.pc
+  /usr/lib/pkgconfig/libcutter.pc
+  /usr/share/aclocal/cutter.m4
+  /usr/share/cutter/stack/Makefile.am
+  /usr/share/cutter/stack/autogen.sh
+  /usr/share/cutter/stack/configure.ac
+  /usr/share/cutter/stack/src/Makefile.am
+  /usr/share/cutter/stack/src/stack.c
+  /usr/share/cutter/stack/src/stack.h
+  /usr/share/cutter/stack/test/Makefile.am
+  /usr/share/cutter/stack/test/run-test.sh
+  /usr/share/cutter/stack/test/test-stack.c
+
+(libcppcutter0)
+  /usr/bin/cygcppcutter-0.dll
+
+(libcppcutter-devel)
+  /usr/include/cutter/cppcutter.h
+  /usr/include/cutter/cppcutter/cppcut-assertions-helper.h
+  /usr/include/cutter/cppcutter/cppcut-assertions.h
+  /usr/include/cutter/cppcutter/cppcut-macros.h
+  /usr/include/cutter/cppcutter/cppcut-message.h
+  /usr/lib/libcppcutter.dll.a
+  /usr/lib/pkgconfig/cppcutter.pc
+
+(libgdkcutter-pixbuf0)
+  /usr/bin/cyggdkcutter-pixbuf-0.dll
+
+(libgdkcutter-pixbuf-devel)
+  /usr/include/cutter/gdkcutter-pixbuf.h
+  /usr/include/cutter/gdkcutter-pixbuf/gdkcut-pixbuf-assertions-helper.h
+  /usr/include/cutter/gdkcutter-pixbuf/gdkcut-pixbuf-assertions.h
+  /usr/include/cutter/gdkcutter-pixbuf/gdkcut-pixbuf.h
+  /usr/lib/libgdkcutter-pixbuf.dll.a
+  /usr/lib/pkgconfig/gdkcutter-pixbuf.pc
+
+(libsoupcutter0)
+  /usr/bin/cygsoupcutter-0.dll
+
+(libsoupcutter-devel)
+  /usr/include/cutter/soupcutter.h
+  /usr/include/cutter/soupcutter/soupcut-assertions-helper.h
+  /usr/include/cutter/soupcutter/soupcut-assertions.h
+  /usr/include/cutter/soupcutter/soupcut-client.h
+  /usr/include/cutter/soupcutter/soupcut-server.h
+  /usr/lib/libsoupcutter.dll.a
+  /usr/lib/pkgconfig/soupcutter.pc
+
+(gstreamer1.0-plugins-cutter)
+  /usr/lib/gstreamer-1.0/cyggstcuttertest.dll
+
+------------------
+
+Port Notes:
+
+----- version 1.2.8-1bl1 -----
+Version bump.
+
+----- version 1.2.7-1bl1 -----
+Version bump.
+
+----- version 1.2.6-1bl1 -----
+Version bump.
+
+----- version 1.2.5-1bl1 -----
+Version bump.
+
+----- version 1.2.4-1bl1 -----
+Version bump.
+
+----- version 1.2.3-1bl1 -----
+Version bump.
+
+----- version 1.2.2-1bl1 -----
+Version bump.
+
+----- version 1.2.0-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

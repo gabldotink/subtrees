@@ -1,0 +1,113 @@
+--- origsrc/mfem-4.4/CMakeLists.txt	2022-03-22 08:19:37.000000000 +0900
++++ src/mfem-4.4/CMakeLists.txt	2022-06-02 09:13:36.583686400 +0900
+@@ -484,6 +484,9 @@ if (OPENMP_FOUND)
+   endif()
+ endif()
+ 
++find_package(pkgconfig)
++pkg_check_modules(TINYXML2 tinyxml2)
++
+ message(STATUS "MFEM build type: CMAKE_BUILD_TYPE = ${CMAKE_BUILD_TYPE}")
+ message(STATUS "MFEM version: v${MFEM_VERSION_STRING}")
+ message(STATUS "MFEM git string: ${MFEM_GIT_STRING}")
+@@ -526,6 +529,9 @@ target_link_libraries(mfem PUBLIC ${TPL_
+ if (MINGW)
+   target_link_libraries(mfem PRIVATE ws2_32)
+ endif()
++if (TINYXML2_FOUND)
++  target_link_libraries(mfem PUBLIC ${TINYXML2_LIBRARIES})
++endif()
+ set_target_properties(mfem PROPERTIES VERSION "${mfem_VERSION}")
+ set_target_properties(mfem PROPERTIES SOVERSION "${mfem_VERSION}")
+ 
+@@ -662,7 +668,8 @@ set(CMAKE_INSTALL_DEFAULT_COMPONENT_NAME
+ # Install the library
+ install(TARGETS ${PROJECT_NAME}
+   EXPORT ${PROJECT_NAME_UC}Targets
+-  DESTINATION ${INSTALL_LIB_DIR})
++  RUNTIME DESTINATION bin
++  ARCHIVE DESTINATION ${INSTALL_LIB_DIR})
+ 
+ # Install the master headers
+ foreach(Header mfem.hpp mfem-performance.hpp)
+@@ -762,3 +769,12 @@ install(EXPORT ${PROJECT_NAME_UC}Targets
+ #-------------------------------------------------------------------------------
+ 
+ mfem_export_mk_files()
++
++if (CYGWIN)
++  set(prefix ${CMAKE_INSTALL_PREFIX})
++  set(exec_prefix ${CMAKE_INSTALL_PREFIX})
++  set(libdir ${CMAKE_INSTALL_PREFIX}/lib)
++  set(includedir ${CMAKE_INSTALL_PREFIX}/include)
++  configure_file(${CMAKE_SOURCE_DIR}/mfem.pc.in ${CMAKE_BINARY_DIR}/mfem.pc @ONLY)
++  install(FILES ${CMAKE_BINARY_DIR}/mfem.pc DESTINATION ${CMAKE_INSTALL_PREFIX}/lib/pkgconfig)
++endif()
+--- origsrc/mfem-4.4/fem/coefficient.hpp	2022-03-22 08:19:37.000000000 +0900
++++ src/mfem-4.4/fem/coefficient.hpp	2022-06-02 09:12:04.612069700 +0900
+@@ -19,6 +19,10 @@
+ #include "intrules.hpp"
+ #include "eltrans.hpp"
+ 
++#if defined(_B)
++#undef _B
++#endif
++
+ namespace mfem
+ {
+ 
+--- origsrc/mfem-4.4/general/CMakeLists.txt	2022-03-22 08:19:37.000000000 +0900
++++ src/mfem-4.4/general/CMakeLists.txt	2022-06-02 09:12:04.616131500 +0900
+@@ -28,7 +28,6 @@ list(APPEND SRCS
+   stable3d.cpp
+   table.cpp
+   tic_toc.cpp
+-  tinyxml2.cpp
+   version.cpp
+   hip.cpp
+   )
+@@ -59,12 +58,16 @@ list(APPEND HDRS
+   table.hpp
+   tassign.hpp
+   tic_toc.hpp
+-  tinyxml2.h
+   text.hpp
+   version.hpp
+   hip.hpp
+   )
+ 
++if (NOT TINYXML2_FOUND)
++  list(APPEND SRCS tinyxml2.cpp)
++  list(APPEND HDRS tinyxml2.h)
++endif()
++
+ if (MFEM_USE_MPI)
+   list(APPEND SRCS communication.cpp)
+   # If this list (HDRS -> HEADERS) is used for install, we probably want the
+--- origsrc/mfem-4.4/linalg/hypre.hpp	2022-03-22 08:19:37.000000000 +0900
++++ src/mfem-4.4/linalg/hypre.hpp	2022-06-02 09:12:04.621125600 +0900
+@@ -28,9 +28,11 @@
+ #include "temp_multivector.h"
+ #include "../general/globals.hpp"
+ 
++#if !defined(__CYGWIN__)
+ #ifdef HYPRE_COMPLEX
+ #error "MFEM does not work with HYPRE's complex numbers support"
+ #endif
++#endif
+ 
+ #if defined(HYPRE_USING_GPU) && \
+     !(defined(HYPRE_USING_CUDA) || defined(HYPRE_USING_HIP))
+--- origsrc/mfem-4.4/mfem.pc.in	1970-01-01 09:00:00.000000000 +0900
++++ src/mfem-4.4/mfem.pc.in	2022-06-02 09:12:04.623133800 +0900
+@@ -0,0 +1,10 @@
++prefix=@prefix@
++exec_prefix=@exec_prefix@
++libdir=@libdir@
++includedir=@includedir@
++
++Name: mfem
++Description: Lightweight, general, scalable C++ library for finite element methods
++Version: @mfem_VERSION@
++Libs: -L${libdir} -lmfem
++Cflags: -I${includedir}

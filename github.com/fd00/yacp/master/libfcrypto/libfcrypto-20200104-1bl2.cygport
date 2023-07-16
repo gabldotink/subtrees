@@ -1,0 +1,45 @@
+HOMEPAGE="https://github.com/libyal/${PN}"
+SRC_URI="https://github.com/libyal/${PN}/archive/refs/tags/${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Library for encryption formats"
+DESCRIPTION="libfcrypto is a library for encryption formats."
+
+BUILD_REQUIRES="libcerror-devel"
+
+src_test()
+{
+	cd ${B}
+	pushd tests
+		for sh in ${S}/tests/*.sh
+		do
+			ln -fs ${sh} .
+		done
+	popd
+	cygtest
+	rm tests/*.sh
+}
+
+DOCS="
+	COPYING.LESSER
+"
+
+PKG_NAMES="
+	${PN}
+	${PN}1
+	${PN}-devel
+"
+libfcrypto_CONTENTS="
+	usr/share/doc
+"
+libfcrypto1_CONTENTS="
+	usr/bin
+"
+libfcrypto_devel_CONTENTS="
+	usr/include
+	usr/lib
+	usr/share/man
+"
+libfcrypto_SUMMARY="${SUMMARY} (licensing & readmes)"
+libfcrypto1_SUMMARY="${SUMMARY} (runtime)"
+libfcrypto_devel_SUMMARY="${SUMMARY} (development)"

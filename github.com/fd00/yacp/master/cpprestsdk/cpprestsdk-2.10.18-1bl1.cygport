@@ -1,0 +1,48 @@
+HOMEPAGE="https://github.com/Microsoft/${PN}"
+SRC_URI="https://github.com/Microsoft/${PN}/archive/${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="C++ libraries for cloud-based client-server communication"
+DESCRIPTION="The C++ REST SDK is a Microsoft project for cloud-based client-server
+communication in native code using a modern asynchronous C++ API design. This
+project aims to help C++ developers connect to and interact with services."
+
+export CPPFLAGS="${CPPFLAGS} -D_GNU_SOURCE"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DCPPREST_EXPORT_DIR:STRING=cmake/${PN}
+	-DVERSION:STRING=${PV}
+	-DWERROR:BOOL=OFF
+"
+
+src_test()
+{
+	cd ${B}
+	ninja_test
+}
+
+DOCS="
+	ThirdPartyNotices.txt
+	changelog.md
+"
+
+PKG_NAMES="
+	cpprestsdk
+	libcpprest${PV[1]}.${PV[2]}
+	libcpprest-devel
+"
+cpprestsdk_CONTENTS="
+	usr/share
+"
+libcpprest2_10_CONTENTS="
+	usr/bin
+"
+libcpprest_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+cpprestsdk_SUMMARY="${SUMMARY} (licensing & readmes)"
+libcpprest2_10_SUMMARY="${SUMMARY} (runtime)"
+libcpprest_devel_SUMMARY="${SUMMARY} (development)"

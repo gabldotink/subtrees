@@ -1,0 +1,75 @@
+MicroJSON
+------------------------------------------
+MicroJSON is a small library giving you ability to generate and parse JSON
+data structures in C++.
+
+The library was developed to simplify JSON manipulation. According to this you
+don't need to create hundreds of enumerating/temporary/names-values variables.
+When parsing you can only use one. When generating use minimum.
+
+MicroJSON is using UTF8 Strings widely so you instantly get native support of
+UTF8.
+
+Runtime requirements:
+  cygwin-1.7.33-1
+  libgcc1-4.9.2-1
+  libMicroJSON0-0.3.2-1bl1
+  libstdc++6-4.9.2-1
+  libUTF8Strings1-1.14.0-1bl1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.24.51-6
+  cmake-2.8.12.2-3
+  cygport-0.17.1-1
+  gcc-core-4.9.2-1
+  gcc-g++-4.9.2-1
+  make-4.0-2
+
+Canonical website:
+  http://grigory.info/MicroJSON.About.html
+
+Canonical download:
+  http://grigory.info/distfiles/MicroJSON-0.3.2.tar.bz2
+
+-------------------------------------------
+
+Build instructions:
+  unpack MicroJSON-0.3.2-X-src.tar.xz
+    if you use setup to install this src package, it will be
+        unpacked under /usr/src automatically
+  cd /usr/src
+  cygport ./MicroJSON-0.3.2-X.cygport all
+
+This will create:
+  /usr/src/MicroJSON-0.3.2-X-src.tar.xz
+  /usr/src/MicroJSON-0.3.2-X.tar.xz
+  /usr/src/libMicroJSON0-0.3.2-X.tar.xz
+  /usr/src/libMicroJSON-devel-0.3.2-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(MicroJSON)
+  /usr/share/doc/Cygwin/MicroJSON.README
+  /usr/share/doc/MicroJSON/ChangeLog.txt
+
+(libMicroJSON0)
+  /usr/bin/cygMicroJSON-0.dll
+
+(libMicroJSON-devel)
+  /usr/include/MicroJSON-0/Exception.h
+  /usr/include/MicroJSON-0/Node.h
+  /usr/lib/libMicroJSON-0.dll.a
+
+------------------
+
+Port Notes:
+
+----- version 0.3.2-1bl1 -----
+Version bump.
+
+----- version 0.2.0-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://fd0.hatenablog.jp/>
+

@@ -1,0 +1,98 @@
+libiscsi
+------------------------------------------
+Libiscsi is a client-side library to implement the iSCSI protocol that can be
+used to access the resources of an iSCSI target.
+
+Runtime requirements:
+  CUnit-2.1.3-1
+  cygwin-3.0.7-1
+  libgcrypt20-1.8.2-1
+  libiscsi-devel-1.19.0-1bl1
+  libiscsi9-1.19.0-1bl1
+  pkg-config-1.6.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.29-1
+  cygport-0.33.1-1
+  gcc-core-7.4.0-1
+  libtool-2.4.6-7
+  make-4.2.1-2
+
+Canonical website:
+  https://github.com/sahlberg/libiscsi
+
+Canonical download:
+  https://github.com/sahlberg/libiscsi/archive/1.19.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libiscsi-1.19.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libiscsi-1.19.0-X.cygport all
+
+This will create:
+  /usr/src/libiscsi-1.19.0-X-src.tar.xz
+  /usr/src/libiscsi-1.19.0-X.tar.xz
+  /usr/src/libiscsi9-1.19.0-X.tar.xz
+  /usr/src/libiscsi-devel-1.19.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libiscsi)
+  /usr/bin/iscsi-dd.exe
+  /usr/bin/iscsi-inq.exe
+  /usr/bin/iscsi-ls.exe
+  /usr/bin/iscsi-perf.exe
+  /usr/bin/iscsi-readcapacity16.exe
+  /usr/bin/iscsi-swp.exe
+  /usr/bin/iscsi-test-cu.exe
+  /usr/bin/iscsiclient.exe
+  /usr/share/doc/Cygwin/libiscsi.README
+  /usr/share/doc/libiscsi/COPYING
+  /usr/share/doc/libiscsi/LICENCE-GPL-2.txt
+  /usr/share/doc/libiscsi/LICENCE-LGPL-2.1.txt
+  /usr/share/doc/libiscsi/README
+  /usr/share/doc/libiscsi/TODO
+  /usr/share/man/man1/iscsi-inq.1.gz
+  /usr/share/man/man1/iscsi-ls.1.gz
+  /usr/share/man/man1/iscsi-swp.1.gz
+  /usr/share/man/man1/iscsi-test-cu.1.gz
+
+(libiscsi9)
+  /usr/bin/cygiscsi-9.dll
+
+(libiscsi-devel)
+  /usr/include/iscsi/iscsi.h
+  /usr/include/iscsi/scsi-lowlevel.h
+  /usr/lib/libiscsi.dll.a
+  /usr/lib/pkgconfig/libiscsi.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.19.0-1bl1 -----
+Version bump.
+
+----- version 1.18.0-1bl1 -----
+Version bump.
+
+----- version 1.15.0-1bl1 -----
+Version bump.
+
+----- version 1.10.0-1bl1 -----
+Version bump.
+
+----- version 1.9.0-1bl1 -----
+Version bump.
+
+----- version 1.7.0-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://fd0.hatenablog.jp/>

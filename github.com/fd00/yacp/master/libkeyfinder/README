@@ -1,0 +1,100 @@
+libkeyfinder
+------------------------------------------
+libKeyFinder can be used to estimate the musical key of digital recordings.
+
+Runtime requirements:
+  cygwin-3.3.5-1
+  libfftw3-devel-3.3.10-1
+  libfftw3_3-3.3.10-1
+  libgcc1-11.3.0-1
+  libkeyfinder-devel-2.2.7-1bl1
+  libkeyfinder2-2.2.7-1bl1
+  libstdc++6-11.3.0-1
+  pkg-config-1.8.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.38-1
+  cmake-3.23.2-1
+  cygport-0.35.2-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libfftw3-devel-3.3.10-1
+  ninja-1.11.0-1
+
+Canonical website:
+  https://github.com/mixxxdj/libkeyfinder
+
+Canonical download:
+  https://github.com/mixxxdj/libkeyfinder/archive/refs/tags/2.2.7.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libkeyfinder-2.2.7-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libkeyfinder-2.2.7-X.cygport all
+
+This will create:
+  /usr/src/libkeyfinder-2.2.7-X-src.tar.xz
+  /usr/src/libkeyfinder-2.2.7-X.tar.xz
+  /usr/src/libkeyfinder2-2.2.7-X.tar.xz
+  /usr/src/libkeyfinder-devel-2.2.7-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libkeyfinder)
+  /usr/share/doc/Cygwin/libkeyfinder.README
+  /usr/share/doc/libkeyfinder/LICENSE
+  /usr/share/doc/libkeyfinder/README.md
+
+(libkeyfinder2)
+  /usr/bin/cygkeyfinder-2.dll
+
+(libkeyfinder-devel)
+  /usr/include/keyfinder/audiodata.h
+  /usr/include/keyfinder/binode.h
+  /usr/include/keyfinder/chromagram.h
+  /usr/include/keyfinder/chromatransform.h
+  /usr/include/keyfinder/chromatransformfactory.h
+  /usr/include/keyfinder/constants.h
+  /usr/include/keyfinder/exception.h
+  /usr/include/keyfinder/fftadapter.h
+  /usr/include/keyfinder/keyclassifier.h
+  /usr/include/keyfinder/keyfinder.h
+  /usr/include/keyfinder/lowpassfilter.h
+  /usr/include/keyfinder/lowpassfilterfactory.h
+  /usr/include/keyfinder/spectrumanalyser.h
+  /usr/include/keyfinder/temporalwindowfactory.h
+  /usr/include/keyfinder/toneprofiles.h
+  /usr/include/keyfinder/windowfunctions.h
+  /usr/include/keyfinder/workspace.h
+  /usr/lib/cmake/KeyFinder/KeyFinderConfig.cmake
+  /usr/lib/cmake/KeyFinder/KeyFinderConfigVersion.cmake
+  /usr/lib/cmake/KeyFinder/KeyFinderTargets-release.cmake
+  /usr/lib/cmake/KeyFinder/KeyFinderTargets.cmake
+  /usr/lib/libkeyfinder.dll.a
+  /usr/lib/pkgconfig/libkeyfinder.pc
+
+------------------
+
+Port Notes:
+
+----- version 2.2.7-1bl1 -----
+Version bump.
+
+----- version 2.2.6-1bl1 -----
+Version bump.
+
+----- version 2.2.5-1bl1 -----
+Version bump.
+
+----- version 2.2.2-1bl1 -----
+Version bump.
+
+----- version 2.2.1-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

@@ -1,0 +1,11 @@
+--- origsrc/gnulib/gnulib-tool	2022-01-25 14:19:24.000000000 +0900
++++ src/gnulib/gnulib-tool	2022-01-25 14:24:42.601525000 +0900
+@@ -486,7 +486,7 @@ func_gnulib_dir ()
+       * ) self_abspathname=`echo "$self_abspathname" | sed -e 's,/[^/]*$,,'`/"$linkval" ;;
+     esac
+   done
+-  gnulib_dir=`echo "$self_abspathname" | sed -e 's,/[^/]*$,,'`
++  gnulib_dir=/usr/share/gnulib
+ }
+ 
+ # func_tmpdir

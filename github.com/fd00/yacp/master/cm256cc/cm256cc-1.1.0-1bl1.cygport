@@ -1,0 +1,36 @@
+HOMEPAGE="https://github.com/f4exb/${PN}"
+SRC_URI="https://github.com/f4exb/${PN}/archive/v${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Fast GF(256) Cauchy MDS Block Erasure Codec in C++"
+DESCRIPTION="${SUMMARY}"
+
+export CPPFLAGS="${CPPFLAGS} -D_GNU_SOURCE"
+
+inherit cmake
+
+src_test()
+{
+	cd ${B}
+	./cm256_test.exe
+}
+
+PKG_NAMES="
+	cm256cc
+	libcm256cc1
+	libcm256cc-devel
+"
+cm256cc_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+libcm256cc1_CONTENTS="
+	usr/bin/*.dll
+"
+libcm256cc_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+cm256cc_SUMMARY="${SUMMARY} (utilities)"
+libcm256cc1_SUMMARY="${SUMMARY} (runtime)"
+libcm256cc_devel_SUMMARY="${SUMMARY} (development)"

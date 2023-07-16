@@ -1,0 +1,79 @@
+libdnsres
+------------------------------------------
+Libdnsres provides a non-blocking thread-safe API for resolving DNS names. It
+requires that your main application is built on top of libevent. Libdnsres'API
+essentially mirrors the traditional gethostbyname and getaddrinfo interfaces.
+All return values have been replaced by callbacks instead.
+
+Runtime requirements:
+  cygwin-3.1.7-1
+  libdnsres-devel-0.1a-1bl4
+  libdnsres0-0.1a-1bl4
+  libevent-devel-2.0.22-1
+  libevent2.0_5-2.0.22-1
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.34+1git.de9c1b7cfe-1
+  cygport-0.34.0-1
+  gcc-core-10.2.0-1
+  libtool-2.4.6-7
+  make-4.3-1
+
+Canonical website:
+  https://monkey.org/~provos/libdnsres/
+
+Canonical download:
+  https://monkey.org/~provos/libdnsres-0.1a.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libdnsres-0.1a-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libdnsres-0.1a-X.cygport all
+
+This will create:
+  /usr/src/libdnsres-0.1a-X-src.tar.xz
+  /usr/src/libdnsres-0.1a-X.tar.xz
+  /usr/src/libdnsres0-0.1a-X.tar.xz
+  /usr/src/libdnsres-devel-0.1a-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libdnsres)
+  /usr/share/doc/Cygwin/libdnsres.README
+  /usr/share/doc/libdnsres/LICENSE
+  /usr/share/doc/libdnsres/README
+
+(libdnsres0)
+  /usr/bin/cygdnsres-0.dll
+
+(libdnsres-devel)
+  /usr/include/dnsres.h
+  /usr/lib/libdnsres.dll.a
+  /usr/lib/pkgconfig/libdnsres.pc
+  /usr/share/man/man3/dnsres.3.gz
+
+------------------
+
+Port Notes:
+
+----- version 0.1a-1bl4 -----
+Rebuild with gcc-10.2.0
+
+----- version 0.1a-1bl3 -----
+Rebuild on x86_64
+
+----- version 0.1a-1bl2 -----
+Rebuild for libevent.
+
+----- version 0.1a-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

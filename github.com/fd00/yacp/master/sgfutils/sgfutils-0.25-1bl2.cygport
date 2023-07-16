@@ -1,0 +1,19 @@
+HOMEPAGE="https://homepages.cwi.nl/~aeb/go/${PN}/html/${PN}.html"
+SRC_URI="https://homepages.cwi.nl/~aeb/go/${PN}/${P}.tgz"
+
+CATEGORY="Utils"
+SUMMARY="Collection of command-line utilities to work with SGF files"
+DESCRIPTION="${SUMMARY}"
+
+src_compile()
+{
+	cd ${B}
+	lndirs
+	cygmake all LDLIBS=-liconv
+}
+
+src_install()
+{
+	cd ${B}
+	dobin *.exe
+}

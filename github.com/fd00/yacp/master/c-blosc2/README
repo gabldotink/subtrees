@@ -1,0 +1,122 @@
+c-blosc2
+------------------------------------------
+C-Blosc2 is the new major version of C-Blosc, and tries hard to be backward
+compatible with both the C-Blosc1 API and its in-memory format. However, the
+reverse thing is generally not true; buffers generated with C-Blosc2 are not
+format-compatible with C-Blosc1 (i.e. forward compatibility is not supported).
+
+Runtime requirements:
+  cygwin-3.4.6-1
+  libblosc2-devel-2.9.1-1bl1
+  libblosc2_2-2.9.1-1bl1
+  liblz4_1-1.9.4-1
+  libz-ng2-2.0.6-1bl1
+  libzstd1-1.5.5-1
+  pkg-config-1.9.5-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.40-1
+  cmake-3.23.2-1
+  cygport-0.36.4-1
+  gcc-core-11.3.0-1
+  liblz4-devel-1.9.4-1
+  libz-ng-devel-2.0.6-1bl1
+  libzstd-devel-1.5.5-1
+  ninja-1.11.1-1
+
+Canonical website:
+  https://github.com/Blosc/c-blosc2
+
+Canonical download:
+  https://github.com/Blosc/c-blosc2/archive/refs/tags/v2.9.1.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack c-blosc2-2.9.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./c-blosc2-2.9.1-X.cygport all
+
+This will create:
+  /usr/src/c-blosc2-2.9.1-X-src.tar.xz
+  /usr/src/c-blosc2-2.9.1-X.tar.xz
+  /usr/src/libblosc2_2-2.9.1-X.tar.xz
+  /usr/src/libblosc2-devel-2.9.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(c-blosc2)
+  /usr/share/doc/Cygwin/c-blosc2.README
+  /usr/share/doc/c-blosc2/ANNOUNCE.md
+  /usr/share/doc/c-blosc2/BITSHUFFLE.txt
+  /usr/share/doc/c-blosc2/COMPILING_WITH_WHEELS.rst
+  /usr/share/doc/c-blosc2/CONTRIBUTING.rst
+  /usr/share/doc/c-blosc2/DEVELOPING-GUIDE.rst
+  /usr/share/doc/c-blosc2/FAQ.md
+  /usr/share/doc/c-blosc2/FASTLZ.txt
+  /usr/share/doc/c-blosc2/LICENSE.txt
+  /usr/share/doc/c-blosc2/LZ4.txt
+  /usr/share/doc/c-blosc2/README.rst
+  /usr/share/doc/c-blosc2/README_ARM.rst
+  /usr/share/doc/c-blosc2/README_B2ND_METALAYER.rst
+  /usr/share/doc/c-blosc2/README_CFRAME_FORMAT.rst
+  /usr/share/doc/c-blosc2/README_CHUNK_FORMAT.rst
+  /usr/share/doc/c-blosc2/README_SFRAME_FORMAT.rst
+  /usr/share/doc/c-blosc2/README_THREADED.rst
+  /usr/share/doc/c-blosc2/RELEASING.rst
+  /usr/share/doc/c-blosc2/ROADMAP.rst
+  /usr/share/doc/c-blosc2/SNAPPY.txt
+  /usr/share/doc/c-blosc2/STDINT.txt
+  /usr/share/doc/c-blosc2/THANKS.rst
+  /usr/share/doc/c-blosc2/ZLIB.txt
+
+(libblosc2_2)
+  /usr/bin/cygblosc2-2.dll
+
+(libblosc2-devel)
+  /usr/include/b2nd.h
+  /usr/include/blosc2.h
+  /usr/include/blosc2/blosc2-common.h
+  /usr/include/blosc2/blosc2-export.h
+  /usr/include/blosc2/blosc2-stdio.h
+  /usr/lib/libblosc2.dll.a
+  /usr/lib/pkgconfig/blosc2.pc
+
+------------------
+
+Port Notes:
+
+----- version 2.9.1-1bl1 -----
+Version bump.
+
+----- version 2.7.1-1bl1 -----
+Version bump.
+
+----- version 2.6.1-1bl1 -----
+Version bump.
+
+----- version 2.6.0-1bl1 -----
+Version bump.
+
+----- version 2.4.1-1bl1 -----
+Version bump.
+
+----- version 2.2.0-1bl1 -----
+Version bump.
+
+----- version 2.1.1-1bl1 -----
+Version bump.
+
+----- version 2.1.0-1bl1 -----
+Version bump.
+
+----- version 2.0.4-1bl1 -----
+Version bump.
+
+----- version 2.0.3-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

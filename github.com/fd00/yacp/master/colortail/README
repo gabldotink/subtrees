@@ -1,0 +1,70 @@
+colortail
+------------------------------------------
+Colortail is basically tail but with support for colors. With the help of
+color config files you define what part of the output to print in which color.
+
+Runtime requirements:
+  cygwin-2.4.1-1
+  libgcc1-5.3.0-3
+  libstdc++6-5.3.0-3
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-9-1
+  binutils-2.25-4
+  cygport-0.20.2-1
+  gcc-core-5.3.0-3
+  gcc-g++-5.3.0-3
+  make-4.1-1
+
+Canonical website:
+  http://joakimandersson.se/projects/colortail/
+
+Canonical download:
+  https://github.com/joakim666/colortail/releases/download/0.3.3/colortail-0.3.3.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack colortail-0.3.3-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./colortail-0.3.3-X.cygport all
+
+This will create:
+  /usr/src/colortail-0.3.3-X-src.tar.xz
+  /usr/src/colortail-0.3.3-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(colortail)
+  /usr/bin/colortail.exe
+  /usr/share/colortail/conf.daemon
+  /usr/share/colortail/conf.kernel
+  /usr/share/colortail/conf.messages
+  /usr/share/colortail/conf.secure
+  /usr/share/colortail/conf.xferlog
+  /usr/share/doc/Cygwin/colortail.README
+  /usr/share/doc/colortail/AUTHORS
+  /usr/share/doc/colortail/BUGS
+  /usr/share/doc/colortail/COPYING
+  /usr/share/doc/colortail/ChangeLog
+  /usr/share/doc/colortail/README
+  /usr/share/doc/colortail/TODO
+
+------------------
+
+Port Notes:
+
+----- version 0.3.3-1bl3 -----
+Rebuild on x86_64
+
+----- version 0.3.3-1bl2 -----
+Rebuild with gcc-4.5.3
+
+----- version 0.3.3-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

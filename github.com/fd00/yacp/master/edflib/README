@@ -1,0 +1,89 @@
+edflib
+------------------------------------------
+EDFlib is a programming library for C/C++ to read/write EDF+/BDF+ files. (It
+also reads old-type EDF/BDF files.)
+
+Runtime requirements:
+  cygwin-3.3.5-1
+  libedf-devel-1.21-1bl1
+  libedf0-1.21-1bl1
+  pkg-config-1.8.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.38-1
+  cygport-0.35.0-1
+  gcc-core-11.3.0-1
+  libtool-2.4.7-1
+  make-4.3-1
+
+Canonical website:
+  https://www.teuniz.net/edflib/
+
+Canonical download:
+  https://www.teuniz.net/edflib/edflib_121.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack edflib-1.21-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./edflib-1.21-X.cygport all
+
+This will create:
+  /usr/src/edflib-1.21-X-src.tar.xz
+  /usr/src/edflib-1.21-X.tar.xz
+  /usr/src/libedf0-1.21-X.tar.xz
+  /usr/src/libedf-devel-1.21-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(edflib)
+  /usr/share/doc/Cygwin/edflib.README
+  /usr/share/doc/edflib/LICENSE
+  /usr/share/doc/edflib/README.md
+
+(libedf0)
+  /usr/bin/cygedf-0.dll
+
+(libedf-devel)
+  /usr/include/edflib.h
+  /usr/lib/libedf.dll.a
+  /usr/lib/pkgconfig/edflib.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.21-1bl1 -----
+Version bump.
+
+----- version 1.20-1bl1 -----
+Version bump.
+
+----- version 1.19-1bl1 -----
+Version bump.
+
+----- version 1.18-1bl1 -----
+Version bump.
+
+----- version 1.16-1bl1 -----
+Version bump.
+
+----- version 1.15-1bl1 -----
+Version bump.
+
+----- version 1.13-1bl1 -----
+Version bump.
+
+----- version 1.12-1bl1 -----
+Version bump.
+
+----- version 1.11-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

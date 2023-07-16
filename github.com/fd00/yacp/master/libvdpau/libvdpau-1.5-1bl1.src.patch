@@ -1,0 +1,54 @@
+--- origsrc/libvdpau-1.5/src/vdpau_wrapper.c	2022-03-07 14:13:23.000000000 +0900
++++ src/libvdpau-1.5/src/vdpau_wrapper.c	2022-05-27 06:40:08.956202100 +0900
+@@ -69,8 +69,13 @@ static void _vdp_wrapper_error_breakpoin
+ 
+ #endif
+ 
++#if defined(__CYGWIN__)
++#define DRIVER_FALLBACK_LIB_FORMAT "libvdpau_%s.dll"
++#define DRIVER_LIB_FORMAT "%s/cygvdpau_%s-1.dll"
++#else
+ #define DRIVER_FALLBACK_LIB_FORMAT "libvdpau_%s.so"
+ #define DRIVER_LIB_FORMAT "%s/libvdpau_%s.so.1"
++#endif
+ 
+ static char * _vdp_get_driver_name_from_dri2(
+     Display *             display,
+@@ -184,9 +189,13 @@ static VdpStatus _vdp_open_driver(
+     vdpau_trace = secure_getenv("VDPAU_TRACE");
+     if (vdpau_trace && atoi(vdpau_trace)) {
+         SetDllHandle * set_dll_handle;
+-
++#if defined(__CYGWIN__)
++        _vdp_trace_dll = dlopen(VDPAU_MODULEDIR "/cygvdpau_trace-1.dll",
++                                RTLD_NOW | RTLD_GLOBAL);
++#else
+         _vdp_trace_dll = dlopen(VDPAU_MODULEDIR "/libvdpau_trace.so.1",
+                                 RTLD_NOW | RTLD_GLOBAL);
++#endif
+         if (!_vdp_trace_dll) {
+             fprintf(stderr, "Failed to open VDPAU trace library %s\n", dlerror());
+             _VDP_ERROR_BREAKPOINT();
+--- origsrc/libvdpau-1.5/test/dlclose.c	2022-03-07 14:13:23.000000000 +0900
++++ src/libvdpau-1.5/test/dlclose.c	2022-05-27 06:40:08.965039500 +0900
+@@ -30,6 +30,8 @@ static int countOpenFDs(void)
+ 
+ #if defined(__sun)
+ static const char libXext_so[] = "libXext.so.0";
++#elif defined(__CYGWIN__)
++static const char libXext_so[] = "cygXext-6.dll";
+ #else
+ static const char libXext_so[] = "libXext.so.6";
+ #endif
+@@ -41,7 +43,11 @@ int main(void)
+     // is trying to test for.
+     int nOpenFDs = countOpenFDs();
+     void *libXext = dlopen(libXext_so, RTLD_LAZY);
++#if defined(__CYGWIN__)
++    void *libvdpau = dlopen("src/cygvdpau-1.dll", RTLD_LAZY);
++#else
+     void *libvdpau = dlopen("src/libvdpau.so", RTLD_LAZY);
++#endif
+     Display *dpy = XOpenDisplay(NULL);
+     VdpDeviceCreateX11 *pvdp_device_create_x11;
+     VdpDevice device;

@@ -1,0 +1,38 @@
+HOMEPAGE="https://github.com/LanguageMachines/${PN}"
+SRC_URI="https://github.com/LanguageMachines/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Utils"
+SUMMARY="Tools for working with the Format for Linguistic Annotation (FoLiA)"
+DESCRIPTION="Command-line utilities for working with the Format for Linguistic Annotation
+(FoLiA), powered by libfolia (C++), written by Ko van der Sloot (TiCC, Tilburg
+University)"
+
+LICENSE="GPL-3.0-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: GPL-3.0-or-later"
+LICENSE_URI="COPYING"
+
+BUILD_REQUIRES="libfolia-devel libicu-devel libticcutils-devel libucto-devel libxml2-devel"
+
+DIFF_EXCLUDES="
+	*.m4
+"
+
+PKG_NAMES="
+	${PN}
+	lib${PN}1
+	lib${PN}-devel
+"
+foliautils_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+libfoliautils1_CONTENTS="
+	usr/bin/*-1.dll
+"
+libfoliautils_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+foliautils_SUMMARY="${SUMMARY} (utilities)"
+libfoliautils1_SUMMARY="${SUMMARY} (runtime)"
+libfoliautils_devel_SUMMARY="${SUMMARY} (development)"

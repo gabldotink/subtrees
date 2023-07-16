@@ -1,0 +1,38 @@
+HOMEPAGE="https://github.com/jeromerobert/${PN}"
+SRC_URI="https://github.com/jeromerobert/${PN}/archive/${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Hierarchical matrix C/C++ library"
+DESCRIPTION="A hierarchical matrix C/C++ library including a LU solver."
+
+BUILD_REQUIRES="liblapack-devel"
+
+export CPPFLAGS="${CPPFLAGS} -D_GNU_SOURCE"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DBUILD_EXAMPLES:BOOL=ON
+	-DHMAT_INSTALL_DIR:STRING=/usr/bin
+	-DINSTALL_EXAMPLES:BOOL=ON
+"
+
+PKG_NAMES="
+	hmat-oss
+	libhmat2
+	libhmat-devel
+"
+hmat_oss_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+libhmat2_CONTENTS="
+	usr/bin/*.dll
+"
+libhmat_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+hmat_oss_SUMMARY="${SUMMARY} (utilities)"
+libhmat2_SUMMARY="${SUMMARY} (runtime)"
+libhmat_devel_SUMMARY="${SUMMARY} (development)"

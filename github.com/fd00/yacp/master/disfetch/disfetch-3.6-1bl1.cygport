@@ -1,0 +1,24 @@
+HOMEPAGE="https://github.com/q60/${PN}"
+SRC_URI="https://github.com/q60/${PN}/archive/refs/tags/${PV}.tar.gz"
+
+CATEGORY="Utils"
+SUMMARY="Yet another *nix distro fetching program, but less complex"
+DESCRIPTION="${SUMMARY}"
+
+src_compile()
+{
+	cd ${B}
+	lndirs
+}
+
+src_test()
+{
+	cd ${B}
+	./${PN}
+}
+
+src_install()
+{
+	cd ${B}
+	dobin ${PN}
+}

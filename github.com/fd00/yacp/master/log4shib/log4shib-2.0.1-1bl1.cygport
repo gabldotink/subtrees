@@ -1,0 +1,33 @@
+HOMEPAGE="https://shibboleth.atlassian.net/wiki/spaces/OpenSAML/pages/1573290030/${PN}"
+SRC_URI="https://shibboleth.net/downloads/${PN}/${PV}/${P}.tar.bz2"
+
+CATEGORY="Libs"
+SUMMARY="Forked version of log4cpp"
+DESCRIPTION="Log4shib is a forked version of log4cpp that has been created for the
+Shibboleth project to ensure a consistent, working snapshot that builds
+reliably on the necessary platforms. Not every project can afford to devote
+resources to every platform, but unfortunately maintaining every other project
+just to maintain your own is also not realistic."
+
+CYGCONF_ARGS="
+	--disable-doxygen
+"
+
+PKG_NAMES="
+	${PN}
+	lib${PN}2
+	lib${PN}-devel
+"
+log4shib_CONTENTS="
+	usr/share
+"
+liblog4shib2_CONTENTS="
+	usr/bin
+"
+liblog4shib_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+log4shib_SUMMARY="${SUMMARY} (licensing & readmes)"
+liblog4shib2_SUMMARY="${SUMMARY} (runtime)"
+liblog4shib_devel_SUMMARY="${SUMMARY} (development)"

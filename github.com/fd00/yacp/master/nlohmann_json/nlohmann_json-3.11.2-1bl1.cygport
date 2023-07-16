@@ -1,0 +1,18 @@
+HOMEPAGE="https://github.com/nlohmann/json"
+SRC_URI="https://github.com/nlohmann/json/archive/refs/tags/v${PV}.tar.gz"
+SRC_DIR="json-${PV}"
+
+CATEGORY="Devel"
+SUMMARY="JSON for Modern C++"
+DESCRIPTION="${SUMMARY}"
+
+LICENSE="MIT"
+LICENSE_SPDX="SPDX-License-Identifier: MIT"
+LICENSE_URI="LICENSE.MIT"
+
+inherit meson
+
+DOCS="
+	*.md
+	LICENSE.MIT
+"

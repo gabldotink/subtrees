@@ -1,0 +1,48 @@
+HOMEPAGE="https://github.com/open-quantum-safe/${PN}"
+SRC_URI="https://github.com/open-quantum-safe/${PN}/archive/refs/tags/${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="C library for prototyping and experimenting with quantum-resistant cryptography"
+DESCRIPTION="${SUMMARY}"
+
+LICENSE="MIT"
+LICENSE_SPDX="SPDX-License-Identifier: MIT"
+LICENSE_URI="LICENSE.txt"
+
+BUILD_REQUIRES="libssl-devel"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DBUILD_SHARED_LIBS:BOOL=ON
+"
+
+src_test()
+{
+	cd ${B}
+	cygninja run_tests
+}
+
+DIFF_EXCLUDES="
+	.pytest_cache
+	tmp
+"
+
+PKG_NAMES="
+	liboqs
+	liboqs2
+	liboqs-devel
+"
+liboqs_CONTENTS="
+	usr/share
+"
+liboqs2_CONTENTS="
+	usr/bin
+"
+liboqs_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+liboqs_SUMMARY="${SUMMARY} (licensing & readmes)"
+liboqs2_SUMMARY="${SUMMARY} (runtime)"
+liboqs_devel_SUMMARY="${SUMMARY} (development)"

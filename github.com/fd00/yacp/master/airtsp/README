@@ -1,0 +1,128 @@
+airtsp
+------------------------------------------
+AirTSP is a C++ library of classes and functions modeling airline schedules,
+for instance allowing to retrieve all the flight-based travel solutions
+corresponding to a given pair of origin and destination points. AirTSP mainly
+targets simulation purposes.
+
+Runtime requirements:
+  bash-4.4.12-3
+  cygwin-3.3.5-1
+  libairtsp-devel-1.01.9-1bl1
+  libairtsp1.01-1.01.9-1bl1
+  libboost_date_time1.66-1.66.0-1
+  libboost_program_options1.66-1.66.0-1
+  libboost_serialization1.66-1.66.0-1
+  libgcc1-11.3.0-1
+  libstdair1.00-1.00.12-1bl1
+  libstdc++6-11.3.0-1
+  pkg-config-1.8.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.38-1
+  cmake-3.23.2-1
+  cygport-0.35.2-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libboost-devel-1.66.0-1
+  libstdair-devel-1.00.12-1bl1
+  ninja-1.11.0-1
+
+Canonical website:
+  https://github.com/airsim/airtsp
+
+Canonical download:
+  https://github.com/airsim/airtsp/archive/refs/tags/airtsp-1.01.9.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack airtsp-1.01.9-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./airtsp-1.01.9-X.cygport all
+
+This will create:
+  /usr/src/airtsp-1.01.9-X-src.tar.xz
+  /usr/src/airtsp-1.01.9-X.tar.xz
+  /usr/src/libairtsp1.01-1.01.9-X.tar.xz
+  /usr/src/libairtsp-devel-1.01.9-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(airtsp)
+  /usr/bin/airtsp.exe
+  /usr/share/doc/Cygwin/airtsp.README
+  /usr/share/doc/airtsp/AUTHORS
+  /usr/share/doc/airtsp/COPYING
+  /usr/share/doc/airtsp/ChangeLog
+  /usr/share/doc/airtsp/NEWS
+  /usr/share/doc/airtsp/README.md
+  /usr/share/man/man1/airtsp.1.gz
+
+(libairtsp1.01)
+  /usr/bin/cygairtsp-1.01.dll
+
+(libairtsp-devel)
+  /usr/bin/airtsp-config
+  /usr/include/airtsp/AIRTSP_Service.hpp
+  /usr/include/airtsp/AIRTSP_Types.hpp
+  /usr/lib/cmake/airtsp/airtsp-config-version.cmake
+  /usr/lib/cmake/airtsp/airtsp-config.cmake
+  /usr/lib/cmake/airtsp/airtsp-library-depends-release.cmake
+  /usr/lib/cmake/airtsp/airtsp-library-depends.cmake
+  /usr/lib/libairtsp.dll.a
+  /usr/lib/pkgconfig/airtsp.pc
+  /usr/share/aclocal/airtsp.m4
+  /usr/share/man/man1/airtsp-config.1.gz
+  /usr/share/man/man3/airtsp-library.3.gz
+
+------------------
+
+Port Notes:
+
+----- version 1.01.9-1bl1 -----
+Version bump.
+
+----- version 1.01.8-1bl1 -----
+Version bump.
+
+----- version 1.01.7-1bl1 -----
+Version bump.
+
+----- version 1.01.6-1bl1 -----
+Version bump.
+
+----- version 1.01.5-1bl1 -----
+Version bump.
+
+----- version 1.01.4-1bl1 -----
+Version bump.
+
+----- version 1.01.3-1bl2 -----
+Rebuild for libboost
+
+----- version 1.01.3-1bl1 -----
+Version bump.
+
+----- version 1.01.1-1bl1 -----
+Version bump.
+
+----- version 1.01.0-1bl2 -----
+Rebuild for libboost
+
+----- version 1.01.0-1bl1 -----
+Version bump.
+
+----- version 1.00.0-1bl2 -----
+Rebuild for libboost
+
+----- version 1.00.0-1bl1 -----
+Version bump.
+
+----- version 0.1.4-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

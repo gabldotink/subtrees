@@ -1,0 +1,36 @@
+HOMEPAGE="https://taku910.github.io/${PN}/"
+SRC_URI="https://googledrive.com/host/0B4y35FiV1wh7cGRCUUJHVTNJRnM/${P}.tar.bz2"
+
+CATEGORY="Text"
+SUMMARY="Yet Another Japanese Dependency Structure Analyzer"
+DESCRIPTION="${SUMMARY}"
+
+CYGCONF_ARGS="
+	--enable-maintainer-mode
+	--enable-utf8-only
+"
+
+PKG_NAMES="
+	${PN}
+	lib${PN}5
+	lib${PN}-devel
+"
+cabocha_CONTENTS="
+	etc
+	usr/bin/*.exe
+	usr/lib/${PN}
+	usr/libexec
+	usr/share
+"
+libcabocha5_CONTENTS="
+	usr/bin/*.dll
+"
+libcabocha_devel_CONTENTS="
+	usr/bin/${PN}-config
+	usr/include
+	usr/lib/lib${PN}*
+	usr/lib/pkgconfig
+"
+cabocha_SUMMARY="${SUMMARY} (utilities)"
+libcabocha5_SUMMARY="${SUMMARY} (runtime)"
+libcabocha_devel_SUMMARY="${SUMMARY} (development)"

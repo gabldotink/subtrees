@@ -1,0 +1,156 @@
+ngt
+------------------------------------------
+NGT provides commands and a library for performing high-speed approximate
+nearest neighbor searches against a large volume of data (several million to
+several 10 million items of data) in high dimensional vector data space
+(several ten to several thousand dimensions).
+
+Runtime requirements:
+  cygwin-3.4.5-1
+  libgcc1-11.3.0-1
+  libgomp1-11.3.0-1
+  liblapack0-3.10.1-1
+  libngt-devel-2.0.9-1bl1
+  libngt2-2.0.9-1bl1
+  libopenblas-0.3.20-1
+  libstdc++6-11.3.0-1
+  pkg-config-1.9.4-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.39-1
+  cmake-3.23.2-1
+  cygport-0.36.0-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  liblapack-devel-3.10.1-1
+  ninja-1.11.1-1
+
+Canonical website:
+  https://github.com/yahoojapan/NGT
+
+Canonical download:
+  https://github.com/yahoojapan/NGT/archive/refs/tags/v2.0.9.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack ngt-2.0.9-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./ngt-2.0.9-X.cygport all
+
+This will create:
+  /usr/src/ngt-2.0.9-X-src.tar.xz
+  /usr/src/ngt-2.0.9-X.tar.xz
+  /usr/src/libngt2-2.0.9-X.tar.xz
+  /usr/src/libngt-devel-2.0.9-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(ngt)
+  /usr/bin/ngt.exe
+  /usr/bin/qbg.exe
+  /usr/share/doc/Cygwin/ngt.README
+  /usr/share/doc/ngt/LICENSE
+  /usr/share/doc/ngt/README-jp.md
+  /usr/share/doc/ngt/README.jp
+  /usr/share/doc/ngt/README.md
+  /usr/share/doc/ngt/fashion-mnist-784-euclidean.png
+  /usr/share/doc/ngt/gist-960-euclidean.png
+  /usr/share/doc/ngt/glove-100-angular.png
+  /usr/share/doc/ngt/glove-25-angular.png
+  /usr/share/doc/ngt/glove-50-angular.png
+  /usr/share/doc/ngt/logo.png
+  /usr/share/doc/ngt/logo.svg
+  /usr/share/doc/ngt/nytimes-256-angular.png
+  /usr/share/doc/ngt/sift-128-euclidean.png
+
+(libngt2)
+  /usr/bin/cygngt-2.dll
+
+(libngt-devel)
+  /usr/include/NGT/ArrayFile.h
+  /usr/include/NGT/Capi.h
+  /usr/include/NGT/Clustering.h
+  /usr/include/NGT/Command.h
+  /usr/include/NGT/Common.h
+  /usr/include/NGT/Graph.h
+  /usr/include/NGT/GraphOptimizer.h
+  /usr/include/NGT/GraphReconstructor.h
+  /usr/include/NGT/HashBasedBooleanSet.h
+  /usr/include/NGT/Index.h
+  /usr/include/NGT/MmapManager.h
+  /usr/include/NGT/MmapManagerDefs.h
+  /usr/include/NGT/MmapManagerException.h
+  /usr/include/NGT/MmapManagerImpl.hpp
+  /usr/include/NGT/NGTQ/Capi.h
+  /usr/include/NGT/NGTQ/HierarchicalKmeans.h
+  /usr/include/NGT/NGTQ/Matrix.h
+  /usr/include/NGT/NGTQ/ObjectFile.h
+  /usr/include/NGT/NGTQ/Optimizer.h
+  /usr/include/NGT/NGTQ/QbgCli.h
+  /usr/include/NGT/NGTQ/QuantizedBlobGraph.h
+  /usr/include/NGT/NGTQ/QuantizedGraph.h
+  /usr/include/NGT/NGTQ/Quantizer.h
+  /usr/include/NGT/Node.h
+  /usr/include/NGT/ObjectRepository.h
+  /usr/include/NGT/ObjectSpace.h
+  /usr/include/NGT/ObjectSpaceRepository.h
+  /usr/include/NGT/Optimizer.h
+  /usr/include/NGT/PrimitiveComparator.h
+  /usr/include/NGT/SharedMemoryAllocator.h
+  /usr/include/NGT/Thread.h
+  /usr/include/NGT/Tree.h
+  /usr/include/NGT/Version.h
+  /usr/include/NGT/defines.h
+  /usr/include/NGT/half.hpp
+  /usr/include/NGT/version_defs.h
+  /usr/lib/libngt.dll.a
+  /usr/lib/pkgconfig/ngt.pc
+
+------------------
+
+Port Notes:
+
+----- version 2.0.9-1bl1 -----
+Version bump.
+
+----- version 2.0.7-1bl1 -----
+Version bump.
+
+----- version 2.0.4-1bl1 -----
+Version bump.
+
+----- version 1.14.5-1bl1 -----
+Version bump.
+
+----- version 1.13.5-1bl1 -----
+Version bump.
+
+----- version 1.12.1-1bl1 -----
+Version bump.
+
+----- version 1.11.6-1bl1 -----
+Version bump.
+
+----- version 1.9.1-1bl1 -----
+Version bump.
+
+----- version 1.9.0-1bl1 -----
+Version bump.
+
+----- version 1.8.4-1bl1 -----
+Version bump.
+
+----- version 1.8.3-1bl1 -----
+Version bump.
+
+----- version 1.3.2-1bl1 -----
+Version bump.
+
+----- version 0.0.1-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

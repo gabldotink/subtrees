@@ -1,0 +1,47 @@
+HOMEPAGE="https://github.com/jklimke/${PN}"
+SRC_URI="https://github.com/jklimke/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="C++ CityGML parser for 3D applications"
+DESCRIPTION="CityGML (City Geography Markup Language) is an XML-based schema for the
+modelling and exchange of georeferenced 3D city and landscape models that is
+quickly being adopted on an international level."
+
+LICENSE="LGPL-2.1-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: LGPL-2.1-or-later"
+LICENSE_URI="LICENSE"
+
+BUILD_REQUIRES="libgdal-devel libGLU-devel libxerces-c-devel"
+
+inherit cmake
+
+src_test()
+{
+	cd ${B}/bin
+	PATH=${B}/lib:${PATH} ./citygmltest.exe -log ${S}/data/berlin_open_data_sample_data.citygml
+}
+
+DIFF_EXCLUDES="
+	citygml_api.h
+	citygml_export.h
+"
+
+PKG_NAMES="
+	${PN}
+	${PN}2
+	${PN}-devel
+"
+libcitygml_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+libcitygml2_CONTENTS="
+	usr/bin/*-2.dll
+"
+libcitygml_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+libcitygml_SUMMARY="${SUMMARY} (utilities)"
+libcitygml2_SUMMARY="${SUMMARY} (runtime)"
+libcitygml_devel_SUMMARY="${SUMMARY} (development)"

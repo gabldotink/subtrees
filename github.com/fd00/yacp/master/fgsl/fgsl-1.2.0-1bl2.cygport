@@ -1,0 +1,27 @@
+HOMEPAGE="https://github.com/reinh-bader/${PN}/"
+SRC_URI="https://github.com/reinh-bader/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Fortran interface to the GNU Scientific Library"
+DESCRIPTION="FGSL: A Fortran interface to the GNU Scientific Library"
+
+BUILD_REQUIRES="libgsl-devel"
+
+PKG_NAMES="
+	${PN}
+	lib${PN}1
+	lib${PN}-devel
+"
+fgsl_CONTENTS="
+	usr/share
+"
+libfgsl1_CONTENTS="
+	usr/bin
+"
+libfgsl_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+fgsl_SUMMARY="${SUMMARY} (licensing & readmes)"
+libfgsl1_SUMMARY="${SUMMARY} (runtime)"
+libfgsl_devel_SUMMARY="${SUMMARY} (development)"

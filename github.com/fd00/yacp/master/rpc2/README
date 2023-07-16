@@ -1,0 +1,104 @@
+rpc2
+------------------------------------------
+RPC2 is a portable and extensible remote procedure call package built on top of
+the IP/UDP network protocol.
+
+Runtime requirements:
+  cygwin-2.8.2-1
+  liblwp-devel-2.8-1bl1
+  liblwp2-2.8-1bl1
+  librpc2-devel-2.14-1bl1
+  librpc2_5-2.14-1bl1
+  lua-5.2.4-1
+  pkg-config-0.29.1-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-9-1
+  binutils-2.25-4
+  bison-3.0.4-1
+  cygport-0.24.1-1
+  flex-2.6.4-1
+  gcc-core-5.4.0-1
+  libtool-2.4.6-4
+  lua-5.2.4-1
+  make-4.2.1-2
+
+Canonical website:
+  http://www.coda.cs.cmu.edu/
+
+Canonical download:
+  http://www.coda.cs.cmu.edu/pub/rpc2/src/rpc2-2.14.tar.xz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack rpc2-2.14-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./rpc2-2.14-X.cygport all
+
+This will create:
+  /usr/src/rpc2-2.14-X-src.tar.xz
+  /usr/src/rpc2-2.14-X.tar.xz
+  /usr/src/librpc2_5-2.14-X.tar.xz
+  /usr/src/librpc2-devel-2.14-X.tar.xz
+  /usr/src/lua-rpc2-2.14-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(rpc2)
+  /usr/share/doc/Cygwin/rpc2.README
+  /usr/share/doc/rpc2/COPYING
+  /usr/share/doc/rpc2/NEWS
+  /usr/share/doc/rpc2/README.ipv6
+
+(librpc2_5)
+  /usr/bin/cygrpc2-5.dll
+  /usr/bin/cygse-5.dll
+
+(librpc2-devel)
+  /usr/bin/rp2gen.exe
+  /usr/include/rpc2/errors.h
+  /usr/include/rpc2/multi.h
+  /usr/include/rpc2/pack_helper.h
+  /usr/include/rpc2/rpc2.h
+  /usr/include/rpc2/rpc2_addrinfo.h
+  /usr/include/rpc2/se.h
+  /usr/include/rpc2/secure.h
+  /usr/include/rpc2/sftp.h
+  /usr/lib/librpc2.dll.a
+  /usr/lib/libse.dll.a
+  /usr/lib/pkgconfig/rpc2.pc
+
+(lua-rpc2)
+  /usr/share/rpc2/rpc2-fail.lua
+  /usr/share/rpc2/rpc2-rtt-adaptive.lua
+  /usr/share/rpc2/rpc2-rtt-fixed.lua
+  /usr/share/rpc2/rpc2-rtt-vj.lua
+
+------------------
+
+Port Notes:
+
+----- version 2.14-1bl1 -----
+Version bump.
+
+----- version 2.10-1bl3 -----
+Rebuild with gcc-4.5.3
+
+----- version 2.10-1bl2 -----
+Repackage for licensing & readmes
+
+----- version 2.10-1bl1 -----
+Version bump.
+
+----- version 2.8-1bl2 -----
+Rebuild with gcc-4 by fd0 <http://d.hatena.ne.jp/fd0/>
+
+----- version 2.8-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

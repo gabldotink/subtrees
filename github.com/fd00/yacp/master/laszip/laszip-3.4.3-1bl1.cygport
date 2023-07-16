@@ -1,0 +1,33 @@
+HOMEPAGE="https://${PN}.org/"
+SRC_URI="https://github.com/LASzip/LASzip/releases/download/${PV}/${PN}-src-${PV}.tar.gz"
+SRC_DIR="${PN}-src-${PV}"
+
+CATEGORY="Archive"
+SUMMARY="Free and lossless LiDAR compression"
+DESCRIPTION="LASzip - a free product of rapidlasso GmbH - quickly turns bulky LAS files
+into compact LAZ files without information loss. Terabytes of LAZ data are
+now available for free download from various agencies making LASzip, winner
+of the 2012 Geospatial World Forum Technology Innovation Award in LiDAR
+Processing and 2nd place winner for innovative product at INTERGEO 2012, the
+de-facto standard for LiDAR compression."
+
+inherit cmake
+
+PKG_NAMES="
+	${PN}
+	lib${PN}8
+	lib${PN}-devel
+"
+laszip_CONTENTS="
+	usr/share
+"
+liblaszip8_CONTENTS="
+	usr/bin
+"
+liblaszip_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+laszip_SUMMARY="${SUMMARY} (licensing & readmes)"
+liblaszip8_SUMMARY="${SUMMARY} (runtime)"
+liblaszip_devel_SUMMARY="${SUMMARY} (development)"

@@ -1,0 +1,360 @@
+pacman
+------------------------------------------
+pacman is a utility which manages software packages in Linux. It uses simple
+compressed files as a package format, and maintains a text-based package
+database (more of a hierarchy), just in case some hand tweaking is necessary.
+
+Runtime requirements:
+  bash-4.4.12-3
+  cygwin-3.2.0-1
+  libalpm-devel-6.0.1-1bl1
+  libalpm13-6.0.1-1bl1
+  libarchive-devel-3.5.2-1
+  libarchive13-3.5.2-1
+  libcurl-devel-7.78.0-1
+  libcurl4-7.78.0-1
+  libgpgme11-1.9.0-1
+  libintl8-0.21-1
+  libssl-devel-1.1.1f-1
+  libssl1.1-1.1.1f-1
+  perl_base-5.32.1-2
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.37-1
+  bsdtar-3.5.2-1
+  cygport-0.34.0-1
+  gcc-core-11.2.0-1
+  libarchive-devel-3.5.2-1
+  libcurl-devel-7.78.0-1
+  libgpgme-devel-1.9.0-1
+  libintl-devel-0.21-1
+  libprotobuf-devel-3.17.3-1
+  libssl-devel-1.1.1f-1
+  meson-0.58.2-1
+  ninja-1.10.2-1
+
+Canonical website:
+  https://archlinux.org/pacman/
+
+Canonical download:
+  https://sources.archlinux.org/other/pacman/pacman-6.0.1.tar.xz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack pacman-6.0.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./pacman-6.0.1-X.cygport all
+
+This will create:
+  /usr/src/pacman-6.0.1-X-src.tar.xz
+  /usr/src/pacman-6.0.1-X.tar.xz
+  /usr/src/libalpm13-6.0.1-X.tar.xz
+  /usr/src/libalpm-devel-6.0.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(pacman)
+  /etc/makepkg.conf
+  /etc/pacman.conf
+  /usr/bin/makepkg
+  /usr/bin/makepkg-template
+  /usr/bin/pacman-conf.exe
+  /usr/bin/pacman-db-upgrade
+  /usr/bin/pacman-key
+  /usr/bin/pacman.exe
+  /usr/bin/repo-add
+  /usr/bin/repo-elephant
+  /usr/bin/repo-remove
+  /usr/bin/testpkg.exe
+  /usr/bin/vercmp.exe
+  /usr/share/bash-completion/completions/makepkg
+  /usr/share/bash-completion/completions/pacman
+  /usr/share/bash-completion/completions/pacman-key
+  /usr/share/doc/Cygwin/pacman.README
+  /usr/share/doc/pacman/AUTHORS
+  /usr/share/doc/pacman/COPYING
+  /usr/share/doc/pacman/HACKING
+  /usr/share/doc/pacman/NEWS
+  /usr/share/doc/pacman/README
+  /usr/share/locale/ar/LC_MESSAGES/pacman.mo
+  /usr/share/locale/ast/LC_MESSAGES/pacman.mo
+  /usr/share/locale/az_AZ/LC_MESSAGES/pacman-scripts.mo
+  /usr/share/locale/az_AZ/LC_MESSAGES/pacman.mo
+  /usr/share/locale/bg/LC_MESSAGES/pacman-scripts.mo
+  /usr/share/locale/bg/LC_MESSAGES/pacman.mo
+  /usr/share/locale/br/LC_MESSAGES/pacman-scripts.mo
+  /usr/share/locale/br/LC_MESSAGES/pacman.mo
+  /usr/share/locale/ca/LC_MESSAGES/pacman-scripts.mo
+  /usr/share/locale/ca/LC_MESSAGES/pacman.mo
+  /usr/share/locale/cs/LC_MESSAGES/pacman-scripts.mo
+  /usr/share/locale/cs/LC_MESSAGES/pacman.mo
+  /usr/share/locale/da/LC_MESSAGES/pacman-scripts.mo
+  /usr/share/locale/da/LC_MESSAGES/pacman.mo
+  /usr/share/locale/de/LC_MESSAGES/pacman-scripts.mo
+  /usr/share/locale/de/LC_MESSAGES/pacman.mo
+  /usr/share/locale/el/LC_MESSAGES/pacman-scripts.mo
+  /usr/share/locale/el/LC_MESSAGES/pacman.mo
+  /usr/share/locale/en_GB/LC_MESSAGES/pacman-scripts.mo
+  /usr/share/locale/en_GB/LC_MESSAGES/pacman.mo
+  /usr/share/locale/eo/LC_MESSAGES/pacman-scripts.mo
+  /usr/share/locale/eo/LC_MESSAGES/pacman.mo
+  /usr/share/locale/es/LC_MESSAGES/pacman-scripts.mo
+  /usr/share/locale/es/LC_MESSAGES/pacman.mo
+  /usr/share/locale/es_419/LC_MESSAGES/pacman-scripts.mo
+  /usr/share/locale/es_419/LC_MESSAGES/pacman.mo
+  /usr/share/locale/eu/LC_MESSAGES/pacman-scripts.mo
+  /usr/share/locale/eu/LC_MESSAGES/pacman.mo
+  /usr/share/locale/eu_ES/LC_MESSAGES/pacman-scripts.mo
+  /usr/share/locale/eu_ES/LC_MESSAGES/pacman.mo
+  /usr/share/locale/fi/LC_MESSAGES/pacman-scripts.mo
+  /usr/share/locale/fi/LC_MESSAGES/pacman.mo
+  /usr/share/locale/fr/LC_MESSAGES/pacman-scripts.mo
+  /usr/share/locale/fr/LC_MESSAGES/pacman.mo
+  /usr/share/locale/gl/LC_MESSAGES/pacman-scripts.mo
+  /usr/share/locale/gl/LC_MESSAGES/pacman.mo
+  /usr/share/locale/hi/LC_MESSAGES/pacman-scripts.mo
+  /usr/share/locale/hi/LC_MESSAGES/pacman.mo
+  /usr/share/locale/hr/LC_MESSAGES/pacman.mo
+  /usr/share/locale/hu/LC_MESSAGES/pacman-scripts.mo
+  /usr/share/locale/hu/LC_MESSAGES/pacman.mo
+  /usr/share/locale/id/LC_MESSAGES/pacman-scripts.mo
+  /usr/share/locale/id/LC_MESSAGES/pacman.mo
+  /usr/share/locale/it/LC_MESSAGES/pacman-scripts.mo
+  /usr/share/locale/it/LC_MESSAGES/pacman.mo
+  /usr/share/locale/ja/LC_MESSAGES/pacman-scripts.mo
+  /usr/share/locale/ja/LC_MESSAGES/pacman.mo
+  /usr/share/locale/ko/LC_MESSAGES/pacman-scripts.mo
+  /usr/share/locale/ko/LC_MESSAGES/pacman.mo
+  /usr/share/locale/lt/LC_MESSAGES/pacman-scripts.mo
+  /usr/share/locale/lt/LC_MESSAGES/pacman.mo
+  /usr/share/locale/nb/LC_MESSAGES/pacman-scripts.mo
+  /usr/share/locale/nb/LC_MESSAGES/pacman.mo
+  /usr/share/locale/nl/LC_MESSAGES/pacman-scripts.mo
+  /usr/share/locale/nl/LC_MESSAGES/pacman.mo
+  /usr/share/locale/pl/LC_MESSAGES/pacman-scripts.mo
+  /usr/share/locale/pl/LC_MESSAGES/pacman.mo
+  /usr/share/locale/pt/LC_MESSAGES/pacman-scripts.mo
+  /usr/share/locale/pt/LC_MESSAGES/pacman.mo
+  /usr/share/locale/pt_BR/LC_MESSAGES/pacman-scripts.mo
+  /usr/share/locale/pt_BR/LC_MESSAGES/pacman.mo
+  /usr/share/locale/ro/LC_MESSAGES/pacman-scripts.mo
+  /usr/share/locale/ro/LC_MESSAGES/pacman.mo
+  /usr/share/locale/ru/LC_MESSAGES/pacman-scripts.mo
+  /usr/share/locale/ru/LC_MESSAGES/pacman.mo
+  /usr/share/locale/sk/LC_MESSAGES/pacman-scripts.mo
+  /usr/share/locale/sk/LC_MESSAGES/pacman.mo
+  /usr/share/locale/sl/LC_MESSAGES/pacman-scripts.mo
+  /usr/share/locale/sl/LC_MESSAGES/pacman.mo
+  /usr/share/locale/sr/LC_MESSAGES/pacman-scripts.mo
+  /usr/share/locale/sr/LC_MESSAGES/pacman.mo
+  /usr/share/locale/sr@latin/LC_MESSAGES/pacman-scripts.mo
+  /usr/share/locale/sr@latin/LC_MESSAGES/pacman.mo
+  /usr/share/locale/sv/LC_MESSAGES/pacman-scripts.mo
+  /usr/share/locale/sv/LC_MESSAGES/pacman.mo
+  /usr/share/locale/tr/LC_MESSAGES/pacman-scripts.mo
+  /usr/share/locale/tr/LC_MESSAGES/pacman.mo
+  /usr/share/locale/uk/LC_MESSAGES/pacman-scripts.mo
+  /usr/share/locale/uk/LC_MESSAGES/pacman.mo
+  /usr/share/locale/zh_CN/LC_MESSAGES/pacman-scripts.mo
+  /usr/share/locale/zh_CN/LC_MESSAGES/pacman.mo
+  /usr/share/locale/zh_TW/LC_MESSAGES/pacman-scripts.mo
+  /usr/share/locale/zh_TW/LC_MESSAGES/pacman.mo
+  /usr/share/makepkg/buildenv.sh
+  /usr/share/makepkg/buildenv/buildflags.sh
+  /usr/share/makepkg/buildenv/compiler.sh
+  /usr/share/makepkg/buildenv/debugflags.sh
+  /usr/share/makepkg/buildenv/lto.sh
+  /usr/share/makepkg/buildenv/makeflags.sh
+  /usr/share/makepkg/executable.sh
+  /usr/share/makepkg/executable/ccache.sh
+  /usr/share/makepkg/executable/checksum.sh
+  /usr/share/makepkg/executable/distcc.sh
+  /usr/share/makepkg/executable/fakeroot.sh
+  /usr/share/makepkg/executable/gpg.sh
+  /usr/share/makepkg/executable/gzip.sh
+  /usr/share/makepkg/executable/pacman.sh
+  /usr/share/makepkg/executable/strip.sh
+  /usr/share/makepkg/executable/sudo.sh
+  /usr/share/makepkg/executable/vcs.sh
+  /usr/share/makepkg/integrity.sh
+  /usr/share/makepkg/integrity/generate_checksum.sh
+  /usr/share/makepkg/integrity/generate_signature.sh
+  /usr/share/makepkg/integrity/verify_checksum.sh
+  /usr/share/makepkg/integrity/verify_signature.sh
+  /usr/share/makepkg/lint_config.sh
+  /usr/share/makepkg/lint_config/ext.sh
+  /usr/share/makepkg/lint_config/paths.sh
+  /usr/share/makepkg/lint_config/source_date_epoch.sh
+  /usr/share/makepkg/lint_config/variable.sh
+  /usr/share/makepkg/lint_package.sh
+  /usr/share/makepkg/lint_package/build_references.sh
+  /usr/share/makepkg/lint_package/dotfiles.sh
+  /usr/share/makepkg/lint_package/file_names.sh
+  /usr/share/makepkg/lint_package/missing_backup.sh
+  /usr/share/makepkg/lint_pkgbuild.sh
+  /usr/share/makepkg/lint_pkgbuild/arch.sh
+  /usr/share/makepkg/lint_pkgbuild/arch_specific.sh
+  /usr/share/makepkg/lint_pkgbuild/backup.sh
+  /usr/share/makepkg/lint_pkgbuild/changelog.sh
+  /usr/share/makepkg/lint_pkgbuild/checkdepends.sh
+  /usr/share/makepkg/lint_pkgbuild/conflicts.sh
+  /usr/share/makepkg/lint_pkgbuild/depends.sh
+  /usr/share/makepkg/lint_pkgbuild/epoch.sh
+  /usr/share/makepkg/lint_pkgbuild/fullpkgver.sh
+  /usr/share/makepkg/lint_pkgbuild/install.sh
+  /usr/share/makepkg/lint_pkgbuild/makedepends.sh
+  /usr/share/makepkg/lint_pkgbuild/optdepends.sh
+  /usr/share/makepkg/lint_pkgbuild/options.sh
+  /usr/share/makepkg/lint_pkgbuild/package_function.sh
+  /usr/share/makepkg/lint_pkgbuild/package_function_variable.sh
+  /usr/share/makepkg/lint_pkgbuild/pkgbase.sh
+  /usr/share/makepkg/lint_pkgbuild/pkglist.sh
+  /usr/share/makepkg/lint_pkgbuild/pkgname.sh
+  /usr/share/makepkg/lint_pkgbuild/pkgrel.sh
+  /usr/share/makepkg/lint_pkgbuild/pkgver.sh
+  /usr/share/makepkg/lint_pkgbuild/provides.sh
+  /usr/share/makepkg/lint_pkgbuild/source.sh
+  /usr/share/makepkg/lint_pkgbuild/util.sh
+  /usr/share/makepkg/lint_pkgbuild/variable.sh
+  /usr/share/makepkg/reproducible.sh
+  /usr/share/makepkg/reproducible/python.sh
+  /usr/share/makepkg/source.sh
+  /usr/share/makepkg/source/bzr.sh
+  /usr/share/makepkg/source/file.sh
+  /usr/share/makepkg/source/fossil.sh
+  /usr/share/makepkg/source/git.sh
+  /usr/share/makepkg/source/hg.sh
+  /usr/share/makepkg/source/local.sh
+  /usr/share/makepkg/source/svn.sh
+  /usr/share/makepkg/srcinfo.sh
+  /usr/share/makepkg/tidy.sh
+  /usr/share/makepkg/tidy/docs.sh
+  /usr/share/makepkg/tidy/emptydirs.sh
+  /usr/share/makepkg/tidy/libtool.sh
+  /usr/share/makepkg/tidy/purge.sh
+  /usr/share/makepkg/tidy/staticlibs.sh
+  /usr/share/makepkg/tidy/strip.sh
+  /usr/share/makepkg/tidy/zipman.sh
+  /usr/share/makepkg/util.sh
+  /usr/share/makepkg/util/compress.sh
+  /usr/share/makepkg/util/config.sh
+  /usr/share/makepkg/util/dirsize.sh
+  /usr/share/makepkg/util/error.sh
+  /usr/share/makepkg/util/message.sh
+  /usr/share/makepkg/util/option.sh
+  /usr/share/makepkg/util/parseopts.sh
+  /usr/share/makepkg/util/pkgbuild.sh
+  /usr/share/makepkg/util/schema.sh
+  /usr/share/makepkg/util/source.sh
+  /usr/share/makepkg/util/util.sh
+  /usr/share/man/man1/makepkg-template.1.gz
+  /usr/share/man/man5/BUILDINFO.5.gz
+  /usr/share/man/man5/PKGBUILD.5.gz
+  /usr/share/man/man5/alpm-hooks.5.gz
+  /usr/share/man/man5/makepkg.conf.5.gz
+  /usr/share/man/man5/pacman-hooks.5.gz
+  /usr/share/man/man5/pacman.conf.5.gz
+  /usr/share/man/man8/makepkg.8.gz
+  /usr/share/man/man8/pacman-conf.8.gz
+  /usr/share/man/man8/pacman-key.8.gz
+  /usr/share/man/man8/pacman.8.gz
+  /usr/share/man/man8/repo-add.8.gz
+  /usr/share/man/man8/repo-remove.8.gz
+  /usr/share/man/man8/vercmp.8.gz
+  /usr/share/pacman/PKGBUILD-split.proto
+  /usr/share/pacman/PKGBUILD-vcs.proto
+  /usr/share/pacman/PKGBUILD.proto
+  /usr/share/pacman/proto.install
+  /usr/share/pkgconfig/libmakepkg.pc
+  /usr/share/zsh/site-functions/_pacman
+
+(libalpm13)
+  /usr/bin/cygalpm-13.dll
+  /usr/share/locale/ar/LC_MESSAGES/libalpm.mo
+  /usr/share/locale/ast/LC_MESSAGES/libalpm.mo
+  /usr/share/locale/az_AZ/LC_MESSAGES/libalpm.mo
+  /usr/share/locale/bg/LC_MESSAGES/libalpm.mo
+  /usr/share/locale/br/LC_MESSAGES/libalpm.mo
+  /usr/share/locale/ca/LC_MESSAGES/libalpm.mo
+  /usr/share/locale/cs/LC_MESSAGES/libalpm.mo
+  /usr/share/locale/da/LC_MESSAGES/libalpm.mo
+  /usr/share/locale/de/LC_MESSAGES/libalpm.mo
+  /usr/share/locale/el/LC_MESSAGES/libalpm.mo
+  /usr/share/locale/en_GB/LC_MESSAGES/libalpm.mo
+  /usr/share/locale/eo/LC_MESSAGES/libalpm.mo
+  /usr/share/locale/es/LC_MESSAGES/libalpm.mo
+  /usr/share/locale/es_419/LC_MESSAGES/libalpm.mo
+  /usr/share/locale/eu/LC_MESSAGES/libalpm.mo
+  /usr/share/locale/eu_ES/LC_MESSAGES/libalpm.mo
+  /usr/share/locale/fi/LC_MESSAGES/libalpm.mo
+  /usr/share/locale/fr/LC_MESSAGES/libalpm.mo
+  /usr/share/locale/gl/LC_MESSAGES/libalpm.mo
+  /usr/share/locale/hi/LC_MESSAGES/libalpm.mo
+  /usr/share/locale/hr/LC_MESSAGES/libalpm.mo
+  /usr/share/locale/hu/LC_MESSAGES/libalpm.mo
+  /usr/share/locale/id/LC_MESSAGES/libalpm.mo
+  /usr/share/locale/it/LC_MESSAGES/libalpm.mo
+  /usr/share/locale/ja/LC_MESSAGES/libalpm.mo
+  /usr/share/locale/kk/LC_MESSAGES/libalpm.mo
+  /usr/share/locale/ko/LC_MESSAGES/libalpm.mo
+  /usr/share/locale/lt/LC_MESSAGES/libalpm.mo
+  /usr/share/locale/nb/LC_MESSAGES/libalpm.mo
+  /usr/share/locale/nl/LC_MESSAGES/libalpm.mo
+  /usr/share/locale/pl/LC_MESSAGES/libalpm.mo
+  /usr/share/locale/pt/LC_MESSAGES/libalpm.mo
+  /usr/share/locale/pt_BR/LC_MESSAGES/libalpm.mo
+  /usr/share/locale/ro/LC_MESSAGES/libalpm.mo
+  /usr/share/locale/ru/LC_MESSAGES/libalpm.mo
+  /usr/share/locale/sk/LC_MESSAGES/libalpm.mo
+  /usr/share/locale/sl/LC_MESSAGES/libalpm.mo
+  /usr/share/locale/sr/LC_MESSAGES/libalpm.mo
+  /usr/share/locale/sr@latin/LC_MESSAGES/libalpm.mo
+  /usr/share/locale/sv/LC_MESSAGES/libalpm.mo
+  /usr/share/locale/tr/LC_MESSAGES/libalpm.mo
+  /usr/share/locale/uk/LC_MESSAGES/libalpm.mo
+  /usr/share/locale/zh_CN/LC_MESSAGES/libalpm.mo
+  /usr/share/locale/zh_TW/LC_MESSAGES/libalpm.mo
+
+(libalpm-devel)
+  /usr/include/alpm.h
+  /usr/include/alpm_list.h
+  /usr/lib/libalpm.dll.a
+  /usr/lib/pkgconfig/libalpm.pc
+
+------------------
+
+Port Notes:
+
+----- version 6.0.1-1bl1 -----
+Version bump.
+
+----- version 6.0.0-1bl1 -----
+Version bump.
+
+----- version 5.2.2-1bl1 -----
+Version bump.
+
+----- version 5.2.1-1bl1 -----
+Version bump.
+
+----- version 5.1.3-1bl1 -----
+Version bump.
+
+----- version 5.1.1-1bl1 -----
+Version bump.
+
+----- version 5.0.2-1bl1 -----
+Version bump.
+
+----- version 5.0.1-1bl1 -----
+Version bump.
+
+----- version 4.2.1-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

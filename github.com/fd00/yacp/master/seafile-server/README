@@ -1,0 +1,110 @@
+seafile-server
+------------------------------------------
+Seafile is an open source cloud storage system with features on privacy
+protection and teamwork. Collections of files are called libraries, and each
+library can be synced separately. A library can also be encrypted with a user
+chosen password. Seafile also allows users to create groups and easily sharing
+files into groups.
+
+Runtime requirements:
+  cygwin-3.0.7-1
+  libarchive13-3.3.2-1
+  libccnet0-6.1.8-1bl1
+  libevent2.0_5-2.0.22-1
+  libevhtp0-1.2.18-1bl2
+  libglib2.0-devel-2.54.3-1
+  libglib2.0_0-2.54.3-1
+  libiconv2-1.14-3
+  libintl-devel-0.19.8.1-2
+  libjansson-devel-2.12-1
+  libjansson4-2.12-1
+  libmariadb3-3.0.9-1
+  libpq5-11.5-1
+  libsearpc-devel-3.1.0-1bl1
+  libsearpc1-3.1.0-1bl1
+  libsqlite3_0-3.30.0-1
+  libssl1.1-1.1.1d-1
+  libuuid1-2.33.1-1
+  pkg-config-1.6.0-1
+  python2-2.7.16-1
+  python2-ccnet-6.1.8-1bl1
+  python2-libsearpc-3.1.0-1bl1
+  python2-seafile-server-7.0.5-1bl1
+  python27-2.7.16-1
+  zlib0-1.2.11-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.29-1
+  cygport-0.33.1-1
+  gcc-core-7.4.0-1
+  libtool-2.4.6-7
+  make-4.2.1-2
+  python27-2.7.16-1
+  vala-0.38.8-1
+
+Canonical website:
+  https://github.com/haiwen/seafile-server
+
+Canonical download:
+  https://github.com/haiwen/seafile-server/archive/v7.0.5-server.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack seafile-server-7.0.5-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./seafile-server-7.0.5-X.cygport all
+
+This will create:
+  /usr/src/seafile-server-7.0.5-X-src.tar.xz
+  /usr/src/seafile-server-7.0.5-X.tar.xz
+  /usr/src/python2-seafile-server-7.0.5-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(seafile-server)
+  /usr/bin/seaf-fsck.exe
+  /usr/bin/seaf-migrate.exe
+  /usr/bin/seaf-server-init.exe
+  /usr/bin/seaf-server.exe
+  /usr/bin/seafile-admin
+  /usr/bin/seafile-controller.exe
+  /usr/bin/seafserv-gc.exe
+  /usr/include/seafile/seafile-object.h
+  /usr/lib/pkgconfig/libseafile.pc
+  /usr/share/doc/Cygwin/seafile-server.README
+  /usr/share/doc/seafile-server/LICENSE.txt
+
+(python2-seafile-server)
+  /usr/lib/python2.7/site-packages/seafile/__init__.py
+  /usr/lib/python2.7/site-packages/seafile/__init__.pyc
+  /usr/lib/python2.7/site-packages/seafile/__init__.pyo
+  /usr/lib/python2.7/site-packages/seafile/rpcclient.py
+  /usr/lib/python2.7/site-packages/seafile/rpcclient.pyc
+  /usr/lib/python2.7/site-packages/seafile/rpcclient.pyo
+  /usr/lib/python2.7/site-packages/seaserv/__init__.py
+  /usr/lib/python2.7/site-packages/seaserv/__init__.pyc
+  /usr/lib/python2.7/site-packages/seaserv/__init__.pyo
+  /usr/lib/python2.7/site-packages/seaserv/api.py
+  /usr/lib/python2.7/site-packages/seaserv/api.pyc
+  /usr/lib/python2.7/site-packages/seaserv/api.pyo
+  /usr/lib/python2.7/site-packages/seaserv/service.py
+  /usr/lib/python2.7/site-packages/seaserv/service.pyc
+  /usr/lib/python2.7/site-packages/seaserv/service.pyo
+
+------------------
+
+Port Notes:
+
+----- version 7.0.5-1bl1 -----
+Version bump.
+
+----- version 6.2.5-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

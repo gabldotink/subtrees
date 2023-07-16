@@ -1,0 +1,89 @@
+primesieve
+------------------------------------------
+primesieve is a program and C/C++ library that generates primes using a highly
+optimized sieve of Eratosthenes implementation. It counts the primes below
+10^10 in just 0.4 seconds on an Intel Core i7-6700 CPU (4 x 3.4 GHz).
+primesieve can generate primes and prime k-tuplets up to 2^64.
+
+Runtime requirements:
+  cygwin-3.4.3-1
+  libgcc1-11.3.0-1
+  libprimesieve-devel-11.0-1bl1
+  libprimesieve11-11.0-1bl1
+  libstdc++6-11.3.0-1
+  pkg-config-1.9.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.39-1
+  cmake-3.23.2-1
+  cygport-0.35.5-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  ninja-1.11.1-1
+
+Canonical website:
+  https://github.com/kimwalisch/primesieve
+
+Canonical download:
+  https://github.com/kimwalisch/primesieve/archive/refs/tags/v11.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack primesieve-11.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./primesieve-11.0-X.cygport all
+
+This will create:
+  /usr/src/primesieve-11.0-X-src.tar.xz
+  /usr/src/primesieve-11.0-X.tar.xz
+  /usr/src/libprimesieve11-11.0-X.tar.xz
+  /usr/src/libprimesieve-devel-11.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(primesieve)
+  /usr/bin/primesieve.exe
+  /usr/share/doc/Cygwin/primesieve.README
+  /usr/share/doc/primesieve/COPYING
+  /usr/share/doc/primesieve/ChangeLog
+  /usr/share/doc/primesieve/README.md
+  /usr/share/man/man1/primesieve.1.gz
+
+(libprimesieve11)
+  /usr/bin/cygprimesieve-11.dll
+
+(libprimesieve-devel)
+  /usr/include/primesieve.h
+  /usr/include/primesieve.hpp
+  /usr/include/primesieve/StorePrimes.hpp
+  /usr/include/primesieve/iterator.h
+  /usr/include/primesieve/iterator.hpp
+  /usr/include/primesieve/primesieve_error.hpp
+  /usr/lib/cmake/primesieve/primesieveConfig.cmake
+  /usr/lib/cmake/primesieve/primesieveConfigVersion.cmake
+  /usr/lib/cmake/primesieve/primesieveShared-release.cmake
+  /usr/lib/cmake/primesieve/primesieveShared.cmake
+  /usr/lib/libprimesieve.dll.a
+  /usr/lib/pkgconfig/primesieve.pc
+
+------------------
+
+Port Notes:
+
+----- version 11.0-1bl1 -----
+Version bump.
+
+----- version 7.9-1bl1 -----
+Version bump.
+
+----- version 7.6-1bl1 -----
+Version bump.
+
+----- version 7.5-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

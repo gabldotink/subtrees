@@ -1,0 +1,87 @@
+asyncplusplus
+------------------------------------------
+Async++ is a lightweight concurrency framework for C++11. The concept was
+inspired by the Microsoft PPL library and the N3428 C++ standard proposal.
+
+Runtime requirements:
+  cygwin-3.1.5-1
+  libasync++-devel-1.1-1bl1
+  libasync++0-1.1-1bl1
+  libgcc1-9.3.0-2
+  libstdc++6-9.3.0-2
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.34+1git.de9c1b7cfe-1
+  cmake-3.14.5-1
+  cygport-0.34.0-1
+  gcc-core-9.3.0-2
+  gcc-g++-9.3.0-2
+  ninja-1.10.0-1
+
+Canonical website:
+  https://github.com/Amanieu/asyncplusplus
+
+Canonical download:
+  https://github.com/Amanieu/asyncplusplus/archive/v1.1.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack asyncplusplus-1.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./asyncplusplus-1.1-X.cygport all
+
+This will create:
+  /usr/src/asyncplusplus-1.1-X-src.tar.xz
+  /usr/src/asyncplusplus-1.1-X.tar.xz
+  /usr/src/libasync++0-1.1-X.tar.xz
+  /usr/src/libasync++-devel-1.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(asyncplusplus)
+  /usr/share/doc/Cygwin/asyncplusplus.README
+  /usr/share/doc/asyncplusplus/LICENSE
+  /usr/share/doc/asyncplusplus/README.md
+
+(libasync++0)
+  /usr/bin/cygasync++-0.dll
+
+(libasync++-devel)
+  /usr/include/async++.h
+  /usr/include/async++/aligned_alloc.h
+  /usr/include/async++/cancel.h
+  /usr/include/async++/continuation_vector.h
+  /usr/include/async++/parallel_for.h
+  /usr/include/async++/parallel_invoke.h
+  /usr/include/async++/parallel_reduce.h
+  /usr/include/async++/partitioner.h
+  /usr/include/async++/range.h
+  /usr/include/async++/ref_count.h
+  /usr/include/async++/scheduler.h
+  /usr/include/async++/scheduler_fwd.h
+  /usr/include/async++/task.h
+  /usr/include/async++/task_base.h
+  /usr/include/async++/traits.h
+  /usr/include/async++/when_all_any.h
+  /usr/lib/cmake/async++/Async++-release.cmake
+  /usr/lib/cmake/async++/Async++.cmake
+  /usr/lib/cmake/async++/Async++Config.cmake
+  /usr/lib/libasync++.dll.a
+  /usr/lib/pkgconfig/async++.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.1-1bl1 -----
+Version bump.
+
+----- version 1.0-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

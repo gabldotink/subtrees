@@ -1,0 +1,30 @@
+HOMEPAGE="https://github.com/claytonotey/${PN}"
+SRC_URI="https://github.com/claytonotey/${PN}/archive/refs/tags/${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Library for high quality time and pitch scale modification"
+DESCRIPTION="libsbsms is a library for high quality time and pitch scale modification. It
+uses octave subband sinusoidal modeling."
+
+CYGCONF_ARGS="
+	--enable-maintainer-mode
+"
+
+PKG_NAMES="
+	${PN}
+	${PN}0
+	${PN}-devel
+"
+libsbsms_CONTENTS="
+	usr/share
+"
+libsbsms0_CONTENTS="
+	usr/bin
+"
+libsbsms_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+libsbsms_SUMMARY="${SUMMARY} (licensing & readmes)"
+libsbsms0_SUMMARY="${SUMMARY} (runtime)"
+libsbsms_devel_SUMMARY="${SUMMARY} (development)"

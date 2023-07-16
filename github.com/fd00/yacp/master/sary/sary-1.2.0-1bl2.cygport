@@ -1,0 +1,57 @@
+HOMEPAGE="http://${PN}.sf.net/index.html.en"
+SRC_URI="http://${PN}.sf.net/${P}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Suffix array library and tools"
+DESCRIPTION="sary is a suffix array library and tools. It provides fast full-text search
+facilities for text files on the order of 10 to 100 MB using a data structure
+called a suffix array. It can also search specific fields in a text file by
+assigning index points to those fields."
+
+CYGPORT_USE_UNSTABLE_API=1
+src_patch_hook()
+{
+	cd ${origsrcdir}/${SRC_DIR}
+	rm -f aclocal.m4 configure ltmain.sh
+	find . -name Makefile.in | xargs rm -f
+}
+
+CYGCONF_ARGS="
+	--enable-maintainer-mode
+"
+
+src_test()
+{
+	cd ${B}
+	ln -fs ${S}/configure .
+	ln -fs ${S}/COPYING .
+	ln -fs ${S}/ChangeLog .
+	pushd tests
+	for f in ${S}/tests/*
+	do
+		ln -fs ${f} .
+	done
+	cygtest
+}
+
+PKG_NAMES="
+	${PN}
+	lib${PN}10
+	lib${PN}-devel
+"
+sary_CONTENTS="
+	usr/bin/*.exe
+	usr/share/doc
+	usr/share/man
+"
+libsary10_CONTENTS="
+	usr/bin/*.dll
+"
+libsary_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+
+sary_SUMMARY="${SUMMARY} (utilities)"
+libsary10_SUMMARY="${SUMMARY} (runtime)"
+libsary_devel_SUMMARY="${SUMMARY} (development)"

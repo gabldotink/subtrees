@@ -1,0 +1,83 @@
+protobuf-c-text
+------------------------------------------
+Python, C++ and Java protobufs support text format but C protobufs did not.
+This is a project that fixed that. It is a supplement to the libprotobuf-c
+library in the protobuf-c project.
+
+Runtime requirements:
+  cygwin-3.3.6-1
+  libprotobuf-c-devel-1.4.1-1bl1
+  libprotobuf-c-text-devel-1.0.0-rc1-1bl2
+  libprotobuf-c-text2-1.0.0-rc1-1bl2
+  libprotobuf-c1-1.4.1-1bl1
+  pkg-config-1.9.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.39-1
+  cygport-0.35.4-1
+  gcc-core-11.3.0-1
+  libprotobuf-c-devel-1.4.1-1bl1
+  libprotobuf-devel-21.9-1
+  libtool-2.4.7-1
+  make-4.3-1
+  protobuf-c-1.4.1-1bl1
+  re2c-3.0-1bl1
+
+Canonical website:
+  https://github.com/protobuf-c/protobuf-c-text
+
+Canonical download:
+  https://github.com/protobuf-c/protobuf-c-text/archive/refs/tags/v1.0.0-rc1.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack protobuf-c-text-1.0.0-rc1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./protobuf-c-text-1.0.0-rc1-X.cygport all
+
+This will create:
+  /usr/src/protobuf-c-text-1.0.0-rc1-X-src.tar.xz
+  /usr/src/protobuf-c-text-1.0.0-rc1-X.tar.xz
+  /usr/src/libprotobuf-c-text2-1.0.0-rc1-X.tar.xz
+  /usr/src/libprotobuf-c-text-devel-1.0.0-rc1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(protobuf-c-text)
+  /usr/share/doc/Cygwin/protobuf-c-text.README
+  /usr/share/doc/protobuf-c-text/AUTHORS
+  /usr/share/doc/protobuf-c-text/COPYING
+  /usr/share/doc/protobuf-c-text/ChangeLog
+  /usr/share/doc/protobuf-c-text/README
+  /usr/share/doc/protobuf-c-text/TODO
+  /usr/share/doc/protobuf-c-text/readme.md
+
+(libprotobuf-c-text2)
+  /usr/bin/cygprotobuf-c-text-2.dll
+
+(libprotobuf-c-text-devel)
+  /usr/include/google/protobuf-c/protobuf-c-text.h
+  /usr/lib/libprotobuf-c-text.dll.a
+  /usr/lib/pkgconfig/libprotobuf-c-text.pc
+  /usr/share/man/man3/libprotobuf-c-text.3.gz
+  /usr/share/man/man3/protobuf_c_text_from_file.3.gz
+  /usr/share/man/man3/protobuf_c_text_from_string.3.gz
+  /usr/share/man/man3/protobuf_c_text_to_string.3.gz
+
+------------------
+
+Port Notes:
+
+----- version 1.0.0-rc1-1bl2 -----
+Rebuild with gcc-11.3.0
+
+----- version 1.0.0-rc1-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

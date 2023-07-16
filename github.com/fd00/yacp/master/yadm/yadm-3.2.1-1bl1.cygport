@@ -1,0 +1,31 @@
+HOMEPAGE="https://${PN}.io/"
+SRC_URI="https://github.com/TheLocehiliosan/${PN}/archive/refs/tags/${PV}.tar.gz"
+
+CATEGORY="Utils"
+SUMMARY="Yet Another Dotfiles Manager"
+DESCRIPTION="When you live in a command line, configurations are a deeply personal thing.
+They are often crafted over years of experience, battles lost, lessons
+learned, advice followed, and ingenuity rewarded. When you are away from your
+own configurations, you are an orphaned refugee in unfamiliar and hostile
+surroundings. You feel clumsy and out of sorts. You are filled with a sense of
+longing to be back in a place you know. A place you built. A place where all
+the short-cuts have been worn bare by your own travels. A place you proudly
+call... HOME."
+
+src_compile()
+{
+	cd ${B}
+	lndirs
+}
+
+src_install()
+{
+	cd ${B}
+	cygmake install PREFIX=${D}/usr
+	insinto /usr/share/bash-completion/completions
+	newins completion/bash/yadm yadm
+	insinto /usr/share/fish/completions
+	newins completion/fish/yadm.fish yadm.fish
+	insinto /usr/share/zsh/site-functions
+	newins completion/zsh/_yadm _yadm
+}

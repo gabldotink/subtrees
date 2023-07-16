@@ -1,0 +1,41 @@
+HOMEPAGE="https://github.com/ebassi/${PN}"
+SRC_URI="https://github.com/ebassi/${PN}/archive/refs/tags/${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Thin layer of graphic data types"
+DESCRIPTION="When creating graphic libraries you most likely end up dealing with points and
+rectangles. If you're particularly unlucky, you may end up dealing with affine
+matrices and 2D transformations. If you're writing a graphic library with 3D
+transformations, though, you are going to hit the jackpot: 4x4 matrices,
+projections, transformations, vectors, and quaternions."
+
+BUILD_REQUIRES="libglib2.0-devel"
+
+inherit meson
+
+PKG_NAMES="
+	${PN}
+	lib${PN}1.0_0
+	lib${PN}1.0-devel
+	girepository-Graphene1.0
+"
+graphene_CONTENTS="
+	usr/share/doc
+"
+libgraphene1_0_0_CONTENTS="
+	usr/bin
+"
+libgraphene1_0_devel_CONTENTS="
+	usr/include
+	usr/lib/${PN}-*
+	usr/lib/lib${PN}*
+	usr/lib/pkgconfig
+"
+girepository_Graphene1_0_CONTENTS="
+	usr/lib/girepository-*
+	usr/share/gir-*
+"
+graphene_SUMMARY="${SUMMARY} (licensing & readmes)"
+libgraphene1_0_0_SUMMARY="${SUMMARY} (runtime)"
+libgraphene1_0_devel_SUMMARY="${SUMMARY} (development)"
+girepository_Graphene1_0_SUMMARY="${SUMMARY} (GObject Introspection data)"

@@ -1,0 +1,54 @@
+HOMEPAGE="https://chromium.googlesource.com/${PN}/${PN}/"
+GIT_URI="https://chromium.googlesource.com/${PN}/${PN}/"
+GIT_BRANCH="main"
+
+CATEGORY="Libs"
+SUMMARY="YUV conversion and scaling functionality"
+DESCRIPTION="This is an open source project that includes YUV conversion and scaling
+functionality. Converts all webcam formats to YUV (I420). Convert YUV to
+formats for rendering/effects. Rotate by 90 degrees to adjust for mobile
+devices in portrait mode. Scale YUV to prepare content for compression, with
+point, bilinear or box filter."
+
+BUILD_REQUIRES="libgtest-devel libjpeg-devel"
+
+export CXXFLAGS="`echo ${CXXFLAGS} | sed -e 's/-ggdb//'` -Wa,-mbig-obj"
+
+inherit cmake
+inherit git
+
+CYGCMAKE_ARGS="
+	-DSOVERSION:STRING=${PV[1]}
+	-DTEST:BOOL=ON
+"
+
+src_test()
+{
+	cd ${B}
+	./${PN}_unittest.exe
+}
+
+DOCS="
+	README.chromium
+	docs/*.md
+"
+
+PKG_NAMES="
+	${PN}
+	${PN}0
+	${PN}-devel
+"
+libyuv_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+libyuv0_CONTENTS="
+	usr/bin/*.dll
+"
+libyuv_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+libyuv_SUMMARY="${SUMMARY} (utilities)"
+libyuv0_SUMMARY="${SUMMARY} (runtime)"
+libyuv_devel_SUMMARY="${SUMMARY} (development)"

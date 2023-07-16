@@ -1,0 +1,80 @@
+bozohttpd
+------------------------------------------
+bozohttpd is a small and secure http version 1.1 server. its main feature is
+the lack of features, reducing the code size and improving verifiability.
+
+Runtime requirements:
+  cygwin-3.3.5-1
+  liblua5.3-5.3.6-4
+  libssl1.1-1.1.1o-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.38-1
+  cygport-0.35.1-1
+  gcc-core-11.3.0-1
+  liblua-devel-5.3.6-4
+  libssl-devel-1.1.1o-1
+  libtool-2.4.7-1
+  lua-5.3.6-4
+  make-4.3-1
+
+Canonical website:
+  http://www.eterna.com.au/bozohttpd/
+
+Canonical download:
+  http://www.eterna.com.au/bozohttpd/bozohttpd-20220517.tar.bz2
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack bozohttpd-20220517-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./bozohttpd-20220517-X.cygport all
+
+This will create:
+  /usr/src/bozohttpd-20220517-X-src.tar.xz
+  /usr/src/bozohttpd-20220517-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(bozohttpd)
+  /usr/sbin/bozohttpd.exe
+  /usr/share/doc/Cygwin/bozohttpd.README
+  /usr/share/doc/bozohttpd/CHANGES
+  /usr/share/man/man8/bozohttpd.8.gz
+
+------------------
+
+Port Notes:
+
+----- version 20220517-1bl1 -----
+Version bump.
+
+----- version 20210227-1bl1 -----
+Version bump.
+
+----- version 20201014-1bl1 -----
+Version bump.
+
+----- version 20190228-1bl1 -----
+Version bump.
+
+----- version 20181215-1bl1 -----
+Version bump.
+
+----- version 20170201-1bl1 -----
+Version bump.
+
+----- version 20160415-1bl1 -----
+Version bump.
+
+----- version 20141225-1bl1 -----
+Version bump.
+
+----- version 20111118-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://fd0.hatenablog.jp/>

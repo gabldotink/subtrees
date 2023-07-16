@@ -1,0 +1,116 @@
+libsc
+------------------------------------------
+The SC Library provides support for parallel scientific applications.
+
+Runtime requirements:
+  cygwin-3.3.5-1
+  libb64_0-1.2.1-1bl2
+  libiniparser1-4.1-1bl1
+  libsc-devel-2.8.3-1bl1
+  libsc0-2.8.3-1bl1
+  pkg-config-1.8.0-1
+  zlib0-1.2.12-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.38-1
+  cmake-3.20.0-1
+  cygport-0.35.1-1
+  gcc-core-11.3.0-1
+  libb64-devel-1.2.1-1bl2
+  libiniparser-devel-4.1-1bl1
+  libtool-2.4.7-1
+  make-4.3-1
+  zlib-devel-1.2.12-1
+
+Canonical website:
+  https://github.com/cburstedde/libsc
+
+Canonical download:
+  https://github.com/cburstedde/libsc/archive/refs/tags/v2.8.3.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libsc-2.8.3-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libsc-2.8.3-X.cygport all
+
+This will create:
+  /usr/src/libsc-2.8.3-X-src.tar.xz
+  /usr/src/libsc-2.8.3-X.tar.xz
+  /usr/src/libsc0-2.8.3-X.tar.xz
+  /usr/src/libsc-devel-2.8.3-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libsc)
+  /usr/bin/sc_function.exe
+  /usr/bin/sc_logging.exe
+  /usr/bin/sc_options.exe
+  /usr/bin/sc_test_shmem.exe
+  /usr/share/doc/Cygwin/libsc.README
+  /usr/share/doc/libsc/AUTHORS
+  /usr/share/doc/libsc/COPYING
+  /usr/share/doc/libsc/NEWS
+  /usr/share/doc/libsc/README
+  /usr/share/libsc/ini/sc_options_example.ini
+  /usr/share/libsc/ini/sc_options_preload.ini
+
+(libsc0)
+  /usr/bin/cygsc-0.dll
+
+(libsc-devel)
+  /etc/Makefile.sc.mk
+  /usr/include/sc.h
+  /usr/include/sc3_mpi_types.h
+  /usr/include/sc_allgather.h
+  /usr/include/sc_amr.h
+  /usr/include/sc_avl.h
+  /usr/include/sc_builtin/getopt.h
+  /usr/include/sc_builtin/getopt_int.h
+  /usr/include/sc_config.h
+  /usr/include/sc_containers.h
+  /usr/include/sc_flops.h
+  /usr/include/sc_functions.h
+  /usr/include/sc_getopt.h
+  /usr/include/sc_io.h
+  /usr/include/sc_keyvalue.h
+  /usr/include/sc_mpi.h
+  /usr/include/sc_notify.h
+  /usr/include/sc_options.h
+  /usr/include/sc_polynom.h
+  /usr/include/sc_private.h
+  /usr/include/sc_random.h
+  /usr/include/sc_ranges.h
+  /usr/include/sc_reduce.h
+  /usr/include/sc_refcount.h
+  /usr/include/sc_search.h
+  /usr/include/sc_shmem.h
+  /usr/include/sc_sort.h
+  /usr/include/sc_statistics.h
+  /usr/include/sc_string.h
+  /usr/include/sc_uint128.h
+  /usr/include/sc_unique_counter.h
+  /usr/include/sc_v4l2.h
+  /usr/lib/libsc.dll.a
+  /usr/lib/pkgconfig/libsc.pc
+
+------------------
+
+Port Notes:
+
+----- version 2.8.3-1bl1 -----
+Version bump.
+
+----- version 2.8.1-1bl1 -----
+Version bump.
+
+----- version 2.8-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

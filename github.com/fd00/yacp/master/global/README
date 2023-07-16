@@ -1,0 +1,287 @@
+global
+------------------------------------------
+GNU GLOBAL is a source code tagging system that works the same way across
+diverse environments (emacs, vi, less, bash, web browser, etc). You can locate
+symbols in source files and move there easily. It is useful for hacking a large
+project containing many sub-directories, many #ifdef and many main() functions.
+It is similar to ctags or etags but is different from them at the point of
+independence of any editor.
+
+Runtime requirements:
+  bash-4.4.12-3
+  cygwin-3.4.3-1
+  libltdl7-2.4.7-1
+  libncursesw10-6.3-1.20220416
+  libsqlite3_0-3.34.0-1
+  perl_base-5.32.1-2
+  python39-pygments-2.10.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.39-1
+  bison-3.8.2-1
+  cygport-0.35.5-1
+  flex-2.6.4-2
+  gcc-core-11.3.0-1
+  libncurses-devel-6.3-1.20220416
+  libsqlite3-devel-3.34.0-1
+  libtool-2.4.7-1
+  make-4.4-1
+
+Canonical website:
+  https://www.gnu.org/software/global/
+
+Canonical download:
+  mirror://gnu/global/global-6.6.9.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack global-6.6.9-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./global-6.6.9-X.cygport all
+
+This will create:
+  /usr/src/global-6.6.9-X-src.tar.xz
+  /usr/src/global-6.6.9-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(global)
+  /usr/bin/global.exe
+  /usr/bin/globash
+  /usr/bin/gozilla.exe
+  /usr/bin/gtags-cscope.exe
+  /usr/bin/gtags.exe
+  /usr/bin/htags-server
+  /usr/bin/htags.exe
+  /usr/lib/gtags/exuberant-ctags.dll
+  /usr/lib/gtags/pygments-parser.dll
+  /usr/lib/gtags/universal-ctags.dll
+  /usr/lib/gtags/user-custom.dll
+  /usr/share/doc/Cygwin/global.README
+  /usr/share/doc/global/AUTHORS
+  /usr/share/doc/global/COPYING
+  /usr/share/doc/global/COPYING.LIB
+  /usr/share/doc/global/ChangeLog
+  /usr/share/doc/global/FAQ
+  /usr/share/doc/global/LICENSE
+  /usr/share/doc/global/NEWS
+  /usr/share/doc/global/README
+  /usr/share/doc/global/THANKS
+  /usr/share/gtags/AUTHORS
+  /usr/share/gtags/BUILD_TOOLS
+  /usr/share/gtags/COPYING
+  /usr/share/gtags/COPYING.LIB
+  /usr/share/gtags/ChangeLog
+  /usr/share/gtags/DONORS
+  /usr/share/gtags/FAQ
+  /usr/share/gtags/INSTALL
+  /usr/share/gtags/LICENSE
+  /usr/share/gtags/NEWS
+  /usr/share/gtags/PLUGIN_HOWTO
+  /usr/share/gtags/PLUGIN_HOWTO.pygments
+  /usr/share/gtags/PLUGIN_HOWTO.universal-ctags
+  /usr/share/gtags/README
+  /usr/share/gtags/README.PATCHES
+  /usr/share/gtags/SERVERSIDE_HOWTO
+  /usr/share/gtags/THANKS
+  /usr/share/gtags/completion.cgi
+  /usr/share/gtags/dot_htaccess
+  /usr/share/gtags/elvis-2.2_0.patch
+  /usr/share/gtags/elvis.rc
+  /usr/share/gtags/geco.rc
+  /usr/share/gtags/global.cgi
+  /usr/share/gtags/globash.rc
+  /usr/share/gtags/gtags-cscope.vim
+  /usr/share/gtags/gtags.conf
+  /usr/share/gtags/gtags.el
+  /usr/share/gtags/gtags.pl
+  /usr/share/gtags/gtags.vim
+  /usr/share/gtags/icons/back.png
+  /usr/share/gtags/icons/bottom.png
+  /usr/share/gtags/icons/c.png
+  /usr/share/gtags/icons/dir.png
+  /usr/share/gtags/icons/first.png
+  /usr/share/gtags/icons/help.png
+  /usr/share/gtags/icons/index.png
+  /usr/share/gtags/icons/last.png
+  /usr/share/gtags/icons/left.png
+  /usr/share/gtags/icons/n_bottom.png
+  /usr/share/gtags/icons/n_first.png
+  /usr/share/gtags/icons/n_last.png
+  /usr/share/gtags/icons/n_left.png
+  /usr/share/gtags/icons/n_right.png
+  /usr/share/gtags/icons/n_top.png
+  /usr/share/gtags/icons/pglobe.png
+  /usr/share/gtags/icons/right.png
+  /usr/share/gtags/icons/text.png
+  /usr/share/gtags/icons/top.png
+  /usr/share/gtags/jquery/images/file.png
+  /usr/share/gtags/jquery/images/folder-closed.png
+  /usr/share/gtags/jquery/images/folder.png
+  /usr/share/gtags/jquery/images/minus.png
+  /usr/share/gtags/jquery/images/plus.png
+  /usr/share/gtags/jquery/images/treeview-black-line.png
+  /usr/share/gtags/jquery/images/treeview-black.png
+  /usr/share/gtags/jquery/images/treeview-default-line.png
+  /usr/share/gtags/jquery/images/treeview-default.png
+  /usr/share/gtags/jquery/images/treeview-famfamfam-line.png
+  /usr/share/gtags/jquery/images/treeview-famfamfam.png
+  /usr/share/gtags/jquery/images/treeview-gray-line.png
+  /usr/share/gtags/jquery/images/treeview-gray.png
+  /usr/share/gtags/jquery/images/treeview-red-line.png
+  /usr/share/gtags/jquery/images/treeview-red.png
+  /usr/share/gtags/jquery/jquery.js
+  /usr/share/gtags/jquery/jquery.suggest.css
+  /usr/share/gtags/jquery/jquery.suggest.js
+  /usr/share/gtags/jquery/jquery.treeview.css
+  /usr/share/gtags/jquery/jquery.treeview.js
+  /usr/share/gtags/jscode_suggest
+  /usr/share/gtags/jscode_treeview
+  /usr/share/gtags/script/elvis-global
+  /usr/share/gtags/script/global-client
+  /usr/share/gtags/script/gtags-client
+  /usr/share/gtags/script/htags-client
+  /usr/share/gtags/script/less-global
+  /usr/share/gtags/script/maps2conf.pl
+  /usr/share/gtags/script/pygments_parser.py
+  /usr/share/gtags/style.css
+  /usr/share/gtags/uctags-scheme.c-diff
+  /usr/share/gtags/vim74-gtags-cscope.patch
+  /usr/share/info/global.info.gz
+  /usr/share/man/man1/global.1.gz
+  /usr/share/man/man1/globash.1.gz
+  /usr/share/man/man1/gozilla.1.gz
+  /usr/share/man/man1/gtags-cscope.1.gz
+  /usr/share/man/man1/gtags.1.gz
+  /usr/share/man/man1/htags-server.1.gz
+  /usr/share/man/man1/htags.1.gz
+  /usr/share/man/man5/gtags.conf.5.gz
+
+------------------
+
+Port Notes:
+
+----- version 6.6.9-1bl1 -----
+Version bump.
+
+----- version 6.6.8-1bl1 -----
+Version bump.
+
+----- version 6.6.7-1bl1 -----
+Version bump.
+
+----- version 6.6.6-1bl1 -----
+Version bump.
+
+----- version 6.6.5-1bl1 -----
+Version bump.
+
+----- version 6.6.4-1bl1 -----
+Version bump.
+
+----- version 6.6.3-1bl1 -----
+Version bump.
+
+----- version 6.6.2-1bl1 -----
+Version bump.
+
+----- version 6.5.7-1bl1 -----
+Version bump.
+
+----- version 6.5.6-1bl1 -----
+Version bump.
+
+----- version 6.5.5-1bl1 -----
+Version bump.
+
+----- version 6.5.4-1bl1 -----
+Version bump.
+
+----- version 6.5.3-1bl1 -----
+Version bump.
+
+----- version 6.5.2-1bl1 -----
+Version bump.
+
+----- version 6.5.1-1bl1 -----
+Version bump.
+
+----- version 6.5-1bl1 -----
+Version bump.
+
+----- version 6.4-1bl1 -----
+Version bump.
+
+----- version 6.3.2-1bl1 -----
+Version bump.
+
+----- version 6.3-1bl1 -----
+Version bump.
+
+----- version 6.2.11-1bl1 -----
+Version bump.
+
+----- version 6.2.9-1bl1 -----
+Version bump.
+
+----- version 6.2.7-1bl1 -----
+Version bump.
+
+----- version 6.2.4-1bl1 -----
+Version bump.
+
+----- version 6.2.2-1bl1 -----
+Version bump.
+
+----- version 6.2-1bl1 -----
+Version bump.
+
+----- version 6.1-1bl1 -----
+Version bump.
+
+----- version 6.0-1bl1 -----
+Version bump.
+
+----- version 5.9.7-1bl1 -----
+Version bump.
+
+----- version 5.9.3-1bl1 -----
+Version bump.
+
+----- version 5.9.2-1bl1 -----
+Version bump.
+
+----- version 5.9.1-1bl1 -----
+Version bump.
+
+----- version 5.8.1-1bl1 -----
+Version bump.
+
+----- version 5.8-1bl1 -----
+Version bump.
+
+----- version 5.7.7-1bl1 -----
+Version bump.
+
+----- version 5.7.5-1bl2 -----
+Rebuild with gcc-4 by fd0 <http://d.hatena.ne.jp/fd0/>
+
+----- version 5.7.5-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0/>
+
+----- version 5.7.3-1bl1 -----
+Version bump.
+
+----- version 5.7.1-1bl1 -----
+Version bump.
+
+----- version 5.6.2-1bl1 -----
+Packaged by fd0 <http://d.hatena.ne.jp/fd0/>

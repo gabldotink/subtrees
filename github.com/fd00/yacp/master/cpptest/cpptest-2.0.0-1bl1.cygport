@@ -1,0 +1,35 @@
+HOMEPAGE="https://github.com/${PN}/${PN}"
+SRC_URI="https://github.com/${PN}/${PN}/archive/${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Powerful, yet simple, C++ unit testing framework"
+DESCRIPTION="${SUMMARY}"
+
+src_test()
+{
+	cd ${B}
+	PATH=${B}/src/.libs:${PATH} ./test/mytest.exe
+}
+
+DIFF_EXCLUDES="
+	README
+"
+
+PKG_NAMES="
+	cpptest
+	libcpptest1
+	libcpptest-devel
+"
+cpptest_CONTENTS="
+	usr/share
+"
+libcpptest1_CONTENTS="
+	usr/bin
+"
+libcpptest_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+cpptest_SUMMARY="${SUMMARY} (licensing & readmes)"
+libcpptest1_SUMMARY="${SUMMARY} (runtime)"
+libcpptest_devel_SUMMARY="${SUMMARY} (development)"

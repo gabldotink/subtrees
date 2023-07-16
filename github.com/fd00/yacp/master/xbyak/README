@@ -1,0 +1,70 @@
+xbyak
+------------------------------------------
+This is a header file which enables dynamically to assemble x86(IA32),
+x64(AMD64, x86-64) mnemonic.
+
+Runtime requirements:
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.37-2
+  cmake-3.20.0-1
+  cygport-0.34.0-1
+  gcc-core-11.2.0-1
+  gcc-g++-11.2.0-1
+  ninja-1.10.2-1
+
+Canonical website:
+  https://github.com/herumi/xbyak
+
+Canonical download:
+  https://github.com/herumi/xbyak/archive/refs/tags/v6.00.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack xbyak-6.00-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./xbyak-6.00-X.cygport all
+
+This will create:
+  /usr/src/xbyak-6.00-X-src.tar.xz
+  /usr/src/xbyak-6.00-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(xbyak)
+  /usr/include/xbyak/xbyak.h
+  /usr/include/xbyak/xbyak_bin2hex.h
+  /usr/include/xbyak/xbyak_mnemonic.h
+  /usr/include/xbyak/xbyak_util.h
+  /usr/lib/cmake/xbyak/xbyak-config-version.cmake
+  /usr/lib/cmake/xbyak/xbyak-config.cmake
+  /usr/lib/cmake/xbyak/xbyak-targets.cmake
+  /usr/share/doc/Cygwin/xbyak.README
+  /usr/share/doc/xbyak/Copyright
+  /usr/share/doc/xbyak/README.md
+  /usr/share/doc/xbyak/readme.txt
+
+------------------
+
+Port Notes:
+
+----- version 6.00-1bl1 -----
+Version bump.
+
+----- version 5.993-1bl1 -----
+Version bump.
+
+----- version 5.941-1bl1 -----
+Version bump.
+
+----- version 5.751-1bl1 -----
+Version bump.
+
+----- version 5.53-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

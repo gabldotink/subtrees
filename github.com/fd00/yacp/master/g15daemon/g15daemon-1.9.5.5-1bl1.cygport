@@ -1,0 +1,48 @@
+HOMEPAGE="https://gitlab.com/menelkir/${PN}"
+SRC_URI="https://gitlab.com/menelkir/${PN}/-/archive/v${PV}/${PN}-v${PV}.tar.bz2"
+SRC_DIR="${PN}-v${PV}"
+
+CATEGORY="Libs"
+SUMMARY="Provides access to extra keys and the LCD available on the logitech G15 keyboard"
+DESCRIPTION="G15Daemon allows users access to all extra keys by decoding them and pushing
+them back into the kernel via the linux UINPUT driver. This driver must be
+loaded before g15daemon can be used for keyboard access."
+
+CYGPORT_USE_UNSTABLE_API=1
+src_patch_hook()
+{
+	cd ${origsrcdir}/${SRC_DIR}
+	rm -f aclocal.m4 configure config.status
+	find . -name Makefile.in | xargs rm -f
+}
+
+DOCS="
+	README.*
+"
+
+DIFF_EXCLUDES="
+	Makefile
+"
+
+PKG_NAMES="
+	${PN}
+	lib${PN}_client1
+	lib${PN}_client-devel
+"
+g15daemon_CONTENTS="
+	usr/sbin
+	usr/share/doc
+	usr/share/${PN}
+	usr/share/man/man1
+"
+libg15daemon_client1_CONTENTS="
+	usr/bin
+"
+libg15daemon_client_devel_CONTENTS="
+	usr/include
+	usr/lib
+	usr/share/man/man3
+"
+g15daemon_SUMMARY="${SUMMARY} (utilities)"
+libg15daemon_client1_SUMMARY="${SUMMARY} (runtime)"
+libg15daemon_client_devel_SUMMARY="${SUMMARY} (development)"

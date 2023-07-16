@@ -1,0 +1,107 @@
+HOMEPAGE="https://github.com/clear-code/${PN}"
+SRC_URI="https://github.com/clear-code/${PN}/archive/${PV}.tar.gz"
+
+CATEGORY="Devel"
+SUMMARY="Unit Testing Framework for C and C++"
+DESCRIPTION="Cutter is a Unit Testing Framework for C and C++. Cutter's interface is easy
+to write, easy to debug your code and fun to run tests."
+
+CYGCONF_ARGS="
+	--enable-maintainer-mode
+"
+
+src_test()
+{
+	cd ${B}
+	cygmake check
+}
+
+DOCS="
+	FEATURES*
+	NEWS.ja
+	TUTORIAL*
+	USERS*
+"
+
+# LICENSE directory is always installed by cygport (no workaround)
+PKG_IGNORE="
+	usr/share/doc/cutter/LICENSE/Makefile.am
+	usr/share/doc/cutter/LICENSE/Makefile.in
+	usr/share/doc/cutter/LICENSE/fdl-1.3.txt
+	usr/share/doc/cutter/LICENSE/gpl-3.txt
+	usr/share/doc/cutter/LICENSE/lgpl-3.txt
+"
+
+PKG_NAMES="
+	${PN}
+	lib${PN}0
+	lib${PN}-devel
+	libcpp${PN}0
+	libcpp${PN}-devel
+	libgdk${PN}-pixbuf0
+	libgdk${PN}-pixbuf-devel
+	libsoup${PN}0
+	libsoup${PN}-devel
+	gstreamer1.0-plugins-cutter
+"
+cutter_CONTENTS="
+	usr/bin/*.exe
+	usr/share/${PN}/icons
+	usr/share/${PN}/license
+	usr/share/${PN}/ui
+	usr/share/doc/Cygwin
+	usr/share/doc/${PN}/[FNRTU]*
+"
+libcutter0_CONTENTS="
+	usr/bin/cyg${PN}-*.dll
+	usr/lib/${PN}/module/*/*.dll
+	usr/lib/${PN}/module/*/*/*.dll
+	usr/share/locale
+"
+libcutter_devel_CONTENTS="
+	usr/include/${PN}/${PN}*
+	usr/include/${PN}/g${PN}*
+	usr/lib/lib${PN}*a
+	usr/lib/pkgconfig/${PN}.pc
+	usr/lib/pkgconfig/g${PN}.pc
+	usr/lib/pkgconfig/lib${PN}.pc
+	usr/share/aclocal
+	usr/share/${PN}/stack
+"
+libcppcutter0_CONTENTS="
+	usr/bin/cygcpp${PN}-*.dll
+"
+libcppcutter_devel_CONTENTS="
+	usr/include/${PN}/cpp${PN}*
+	usr/lib/libcpp${PN}*a
+	usr/lib/pkgconfig/cpp${PN}.pc
+"
+libgdkcutter_pixbuf0_CONTENTS="
+	usr/bin/cyggdk${PN}-pixbuf-*.dll
+"
+libgdkcutter_pixbuf_devel_CONTENTS="
+	usr/include/${PN}/gdk${PN}-pixbuf*
+	usr/lib/libgdk${PN}-pixbuf*a
+	usr/lib/pkgconfig/gdk${PN}-pixbuf.pc
+"
+libsoupcutter0_CONTENTS="
+	usr/bin/cygsoup${PN}-*.dll
+"
+libsoupcutter_devel_CONTENTS="
+	usr/include/${PN}/soup${PN}*
+	usr/lib/libsoup${PN}*a
+	usr/lib/pkgconfig/soup${PN}.pc
+"
+gstreamer1_0_plugins_cutter_CONTENTS="
+	usr/lib/gstreamer-1.0
+"
+cutter_SUMMARY="${SUMMARY} (utilities)"
+libcutter0_SUMMARY="${SUMMARY} (runtime)"
+libcutter_devel_SUMMARY="${SUMMARY} (development)"
+libcppcutter0_SUMMARY="${SUMMARY} (runtime / C++)"
+libcppcutter_devel_SUMMARY="${SUMMARY} (development / C++)"
+libgdkcutter_pixbuf0_SUMMARY="${SUMMARY} (runtime / gdk_pixbuf)"
+libgdkcutter_pixbuf_devel_SUMMARY="${SUMMARY} (development / gdk_pixbuf)"
+libsoupcutter0_SUMMARY="${SUMMARY} (runtime / SOUP)"
+libsoupcutter_devel_SUMMARY="${SUMMARY} (development / SOUP)"
+gstreamer1_0_plugins_cutter_SUMMARY="GStreamer 1.0 ${PN} plugin"

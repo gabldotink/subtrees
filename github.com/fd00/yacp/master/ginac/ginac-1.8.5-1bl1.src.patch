@@ -1,0 +1,16 @@
+--- origsrc/ginac-1.8.5/ginac/Makefile.am	2023-01-01 03:47:20.000000000 +0900
++++ src/ginac-1.8.5/ginac/Makefile.am	2023-01-07 10:32:28.469889000 +0900
+@@ -58,7 +58,7 @@ polynomial/primpart_content.cpp \
+ polynomial/smod_helpers.h \
+ polynomial/debug.h
+ 
+-libginac_la_LDFLAGS = -version-info $(LT_VERSION_INFO)
++libginac_la_LDFLAGS = -no-undefined -version-info $(LT_VERSION_INFO)
+ libginac_la_CPPFLAGS = -DLIBEXECDIR='"$(libexecdir)/"'
+ libginac_la_LIBADD = $(DL_LIBS)
+ ginacincludedir = $(includedir)/ginac
+@@ -81,4 +81,3 @@ $(srcdir)/function.cpp: function.cppy fu
+ 
+ $(srcdir)/function.h: function.hppy function.py
+ 	$(PYTHON) $(srcdir)/function.py -o $@ $<
+-

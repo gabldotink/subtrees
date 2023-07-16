@@ -1,0 +1,80 @@
+RandomX
+------------------------------------------
+RandomX is a proof-of-work (PoW) algorithm that is optimized for
+general-purpose CPUs. RandomX uses random code execution (hence the name)
+together with several memory-hard techniques to minimize the efficiency
+advantage of specialized hardware.
+
+Runtime requirements:
+  cygwin-3.4.6-1
+  libgcc1-11.3.0-1
+  librandomx-devel-1.1.10-1bl1
+  librandomx1-1.1.10-1bl1
+  libstdc++6-11.3.0-1
+  pkg-config-1.9.4-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.40-1
+  cmake-3.23.2-1
+  cygport-0.36.0-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  ninja-1.11.1-1
+
+Canonical website:
+  https://github.com/tevador/RandomX
+
+Canonical download:
+  https://github.com/tevador/RandomX/archive/refs/tags/v1.1.10.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack RandomX-1.1.10-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./RandomX-1.1.10-X.cygport all
+
+This will create:
+  /usr/src/RandomX-1.1.10-X-src.tar.xz
+  /usr/src/RandomX-1.1.10-X.tar.xz
+  /usr/src/librandomx1-1.1.10-X.tar.xz
+  /usr/src/librandomx-devel-1.1.10-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(RandomX)
+  /usr/bin/randomx-benchmark.exe
+  /usr/bin/randomx-codegen.exe
+  /usr/bin/randomx-tests.exe
+  /usr/share/doc/Cygwin/RandomX.README
+  /usr/share/doc/RandomX/LICENSE
+  /usr/share/doc/RandomX/README.md
+  /usr/share/doc/RandomX/configuration.md
+  /usr/share/doc/RandomX/design.md
+  /usr/share/doc/RandomX/specs.md
+
+(librandomx1)
+  /usr/bin/cygrandomx-1.dll
+
+(librandomx-devel)
+  /usr/include/randomx.h
+  /usr/lib/librandomx.dll.a
+  /usr/lib/pkgconfig/RandomX.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.1.10-1bl1 -----
+Version bump.
+
+----- version 1.1.9-1bl1 -----
+Version bump.
+
+----- version 1.1.8-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

@@ -1,0 +1,69 @@
+argdata
+------------------------------------------
+Argdata is a binary serialisation format inspired by YAML, MessagePack and
+nvlists.
+Runtime requirements:
+  cygwin-3.0.4-1
+  libargdata-devel-0.8-1bl1
+  libargdata1-0.8-1bl1
+  pkg-config-1.6.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.29-1
+  cmake-3.6.2-1
+  cygport-0.33.0-1
+  gcc-core-7.4.0-1
+  gcc-g++-7.4.0-1
+  make-4.2.1-2
+  ninja-1.9.0-1
+
+Canonical website:
+  https://github.com/NuxiNL/argdata
+
+Canonical download:
+  https://github.com/NuxiNL/argdata/archive/v0.8.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack argdata-0.8-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./argdata-0.8-X.cygport all
+
+This will create:
+  /usr/src/argdata-0.8-X-src.tar.xz
+  /usr/src/argdata-0.8-X.tar.xz
+  /usr/src/libargdata1-0.8-X.tar.xz
+  /usr/src/libargdata-devel-0.8-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(argdata)
+  /usr/share/doc/Cygwin/argdata.README
+  /usr/share/doc/argdata/CONTRIBUTORS
+  /usr/share/doc/argdata/LICENSE
+  /usr/share/doc/argdata/README.md
+
+(libargdata1)
+  /usr/bin/cygargdata-1.dll
+
+(libargdata-devel)
+  /usr/include/argdata.h
+  /usr/include/argdata.hpp
+  /usr/lib/libargdata.dll.a
+  /usr/lib/pkgconfig/argdata.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.8-1bl1 -----
+Version bump.
+
+----- version 0.7-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

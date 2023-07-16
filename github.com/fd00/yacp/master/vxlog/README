@@ -1,0 +1,87 @@
+vxlog
+------------------------------------------
+vxlog is a C++ library for writing messages to log files. Its main feature is a
+printf-like syntax. Messages can be output to file, the console, and using
+syslog. Output messages and journal modules can be filtered. The library is
+thread-safe.
+
+Runtime requirements:
+  cygwin-3.3.5-1
+  libstdc++6-11.3.0-1
+  libvxlog-devel-1.0.3-1bl4
+  libvxlog1-1.0.3-1bl4
+  pkg-config-1.8.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.38-1
+  cmake-3.20.0-1
+  cygport-0.35.1-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  ninja-1.11.0-1
+
+Canonical website:
+  https://sourceforge.net/projects/vxlog/
+
+Canonical download:
+  mirror://sourceforge/vxlog/vxlog-1.0.3.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack vxlog-1.0.3-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./vxlog-1.0.3-X.cygport all
+
+This will create:
+  /usr/src/vxlog-1.0.3-X-src.tar.xz
+  /usr/src/vxlog-1.0.3-X.tar.xz
+  /usr/src/libvxlog1-1.0.3-X.tar.xz
+  /usr/src/libvxlog-devel-1.0.3-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(vxlog)
+  /usr/share/doc/Cygwin/vxlog.README
+  /usr/share/doc/vxlog/COPYING.txt
+  /usr/share/doc/vxlog/CodingStyle.txt
+
+(libvxlog1)
+  /usr/bin/cygvxlog-1.dll
+
+(libvxlog-devel)
+  /usr/include/vxlog/console-outputter-inl.h
+  /usr/include/vxlog/console-outputter.h
+  /usr/include/vxlog/file-outputter.h
+  /usr/include/vxlog/format-string.h
+  /usr/include/vxlog/level.h
+  /usr/include/vxlog/logger-macros.h
+  /usr/include/vxlog/logger.h
+  /usr/include/vxlog/macros.h
+  /usr/include/vxlog/outputter-holder.h
+  /usr/include/vxlog/outputter-interface.h
+  /usr/include/vxlog/syslog-outputter.h
+  /usr/include/vxlog/type-to-string.h
+  /usr/lib/libvxlog.dll.a
+  /usr/lib/pkgconfig/vxlog.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.0.3-1bl4 -----
+Rebuild with gcc-11.3.0
+
+----- version 1.0.3-1bl3 -----
+Rebuild with gcc-9.3.0
+
+----- version 1.0.3-1bl2 -----
+Rebuild on x86_64
+
+----- version 1.0.3-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

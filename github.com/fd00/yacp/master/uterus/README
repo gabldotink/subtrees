@@ -1,0 +1,118 @@
+uterus
+------------------------------------------
+Set of tools to convert, merge, filter and export tick data files.
+
+Runtime requirements:
+  cygwin-2.11.2-1
+  libexpat1-2.2.6-1
+  libltdl7-2.4.6-6
+  liblzma5-5.2.3-1
+  libpng16-1.6.34-1
+  libuterus-devel-0.2.10-1bl1
+  libuterus0-0.2.10-1bl1
+  pkg-config-0.29.1-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-10-1
+  binutils-2.29-1
+  cygport-0.31.1-1
+  gcc-core-7.3.0-3
+  libtool-2.4.6-6
+  make-4.2.1-2
+
+Canonical website:
+  https://github.com/hroptatyr/uterus
+
+Canonical download:
+  https://github.com/hroptatyr/uterus/archive/v0.2.10.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack uterus-0.2.10-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./uterus-0.2.10-X.cygport all
+
+This will create:
+  /usr/src/uterus-0.2.10-X-src.tar.xz
+  /usr/src/uterus-0.2.10-X.tar.xz
+  /usr/src/libuterus0-0.2.10-X.tar.xz
+  /usr/src/libuterus-devel-0.2.10-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(uterus)
+  /usr/bin/ute.exe
+  /usr/libexec/uterus/ariva.dll
+  /usr/libexec/uterus/dukas.dll
+  /usr/libexec/uterus/forexfactory.dll
+  /usr/libexec/uterus/fxstreet.dll
+  /usr/libexec/uterus/ibhist.dll
+  /usr/libexec/uterus/mat.dll
+  /usr/libexec/uterus/truefx.dll
+  /usr/libexec/uterus/uta.dll
+  /usr/libexec/uterus/ute-anal.exe
+  /usr/libexec/uterus/ute-chndl.exe
+  /usr/libexec/uterus/ute-fsck.exe
+  /usr/libexec/uterus/ute-info.exe
+  /usr/libexec/uterus/ute-mux.exe
+  /usr/libexec/uterus/ute-print.exe
+  /usr/libexec/uterus/ute-shnot.exe
+  /usr/libexec/uterus/ute-slab.exe
+  /usr/libexec/uterus/ute-slut.exe
+  /usr/share/doc/Cygwin/uterus.README
+  /usr/share/doc/uterus/README.md
+  /usr/share/man/man1/ute-chndl.1.gz
+  /usr/share/man/man1/ute-fsck.1.gz
+  /usr/share/man/man1/ute-info.1.gz
+  /usr/share/man/man1/ute-mux.1.gz
+  /usr/share/man/man1/ute-print.1.gz
+  /usr/share/man/man1/ute-shnot.1.gz
+  /usr/share/man/man1/ute-slab.1.gz
+  /usr/share/man/man1/ute-slut.1.gz
+  /usr/share/man/man1/ute.1.gz
+  /usr/share/uterus/uterus.mgc
+
+(libuterus0)
+  /usr/bin/cyguterus-0.dll
+
+(libuterus-devel)
+  /usr/include/uterus/boobs.h
+  /usr/include/uterus/date.h
+  /usr/include/uterus/m30-rela.h
+  /usr/include/uterus/m30.h
+  /usr/include/uterus/m62-rela.h
+  /usr/include/uterus/m62.h
+  /usr/include/uterus/scdl.h
+  /usr/include/uterus/scommon.h
+  /usr/include/uterus/sl1t.h
+  /usr/include/uterus/ssnp.h
+  /usr/include/uterus/tzraw.h
+  /usr/include/uterus/utefile.h
+  /usr/include/uterus/utehdr.h
+  /usr/include/uterus/uterus.h
+  /usr/lib/libuterus.dll.a
+  /usr/lib/pkgconfig/uterus.pc
+  /usr/share/info/uterus.info.gz
+
+------------------
+
+Port Notes:
+
+----- version 0.2.10-1bl1 -----
+Version bump.
+
+----- version 0.2.9-1bl1 -----
+Version bump.
+
+----- version 0.2.8-1bl1 -----
+Version bump.
+
+----- version 0.2.6-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

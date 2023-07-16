@@ -1,0 +1,43 @@
+inherit gnome2
+
+HOMEPAGE="https://wiki.gnome.org/GUPnP/"
+
+CATEGORY="Net"
+SUMMARY="Framework for creating UPnP devices & control points"
+DESCRIPTION="GUPnP is an object-oriented open source framework for creating UPnP
+devices and control points, written in C using GObject and libsoup. The GUPnP
+API is intended to be easy to use, efficient and flexible."
+
+inherit meson
+
+PKG_NAMES="
+	${PN}
+	lib${PN}1.2_0
+	lib${PN}1.2-devel
+	girepository-GUPnP1.2
+	vala-gupnp1.2
+"
+gupnp_CONTENTS="
+	usr/bin/gupnp-binding-tool*
+	usr/share/doc
+"
+libgupnp1_2_0_CONTENTS="
+	usr/bin/*.dll
+"
+libgupnp1_2_devel_CONTENTS="
+	usr/include
+	usr/lib/lib${PN}*
+	usr/lib/pkgconfig
+"
+girepository_GUPnP1_2_CONTENTS="
+	usr/lib/girepository*
+	usr/share/gir*
+"
+vala_gupnp1_2_CONTENTS="
+	usr/share/vala
+"
+gupnp_SUMMARY="${SUMMARY} (utilities)"
+libgupnp1_2_0_SUMMARY="${SUMMARY} (runtime)"
+libgupnp1_2_devel_SUMMARY="${SUMMARY} (development)"
+girepository_GUPnP1_2_SUMMARY="${SUMMARY} (GObject Introspection data)"
+vala_gupnp1_2_SUMMARY="${SUMMARY} (vala bindings)"

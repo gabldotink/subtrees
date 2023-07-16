@@ -1,0 +1,63 @@
+jj
+------------------------------------------
+jj is a simple FIFO and filesystem based Jabber/XMPP client. jj is inspired by
+ii IRC client.
+
+jj is more tool than traditional instant messanger client. It can be easily
+extended with normal unix tools. It is perfect for bots and notifications.
+Interaction with jj is done by writing and reading files from the server
+directory which jj creates.
+
+Runtime requirements:
+  cygwin-2.6.1-1
+  libglib2.0_0-2.46.2-4
+  libloudmouth1_0-1.4.3-11
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.25-4
+  cygport-0.23.0-1
+  gcc-core-5.4.0-1
+  make-4.2.1-1
+
+Canonical website:
+  http://23.fi/jj/
+
+Canonical download:
+  http://23.fi/jj/jj-2.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack jj-2-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./jj-2-X.cygport all
+
+This will create:
+  /usr/src/jj-2-X-src.tar.xz
+  /usr/src/jj-2-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(jj)
+  /usr/bin/jj.exe
+  /usr/share/doc/Cygwin/jj.README
+  /usr/share/doc/jj/GPL.txt
+  /usr/share/doc/jj/README
+
+------------------
+
+Port Notes:
+
+----- version 2-1bl2 -----
+Rebuild with gcc-5.4.0
+
+----- version 2-1bl1 -----
+Version bump.
+
+----- version 1-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://fd0.hatenablog.jp/>

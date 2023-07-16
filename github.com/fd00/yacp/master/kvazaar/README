@@ -1,0 +1,94 @@
+kvazaar
+------------------------------------------
+Open-source HEVC encoder
+
+Runtime requirements:
+  cygwin-3.4.5-1
+  libkvazaar-devel-2.2.0-1bl1
+  libkvazaar7-2.2.0-1bl1
+  pkg-config-1.9.4-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.39-1
+  cygport-0.36.0-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libtool-2.4.7-1
+  make-4.4-1
+
+Canonical website:
+  https://github.com/ultravideo/kvazaar
+
+Canonical download:
+  https://github.com/ultravideo/kvazaar/archive/refs/tags/v2.2.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack kvazaar-2.2.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./kvazaar-2.2.0-X.cygport all
+
+This will create:
+  /usr/src/kvazaar-2.2.0-X-src.tar.xz
+  /usr/src/kvazaar-2.2.0-X.tar.xz
+  /usr/src/libkvazaar7-2.2.0-X.tar.xz
+  /usr/src/libkvazaar-devel-2.2.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(kvazaar)
+  /usr/bin/kvazaar.exe
+  /usr/share/doc/Cygwin/kvazaar.README
+  /usr/share/doc/kvazaar/CREDITS
+  /usr/share/doc/kvazaar/LICENSE
+  /usr/share/doc/kvazaar/LICENSE.EXT.greatest
+  /usr/share/doc/kvazaar/LICENSE.EXT.x264asm
+  /usr/share/doc/kvazaar/README.md
+  /usr/share/man/man1/kvazaar.1.gz
+
+(libkvazaar7)
+  /usr/bin/cygkvazaar-7.dll
+
+(libkvazaar-devel)
+  /usr/include/kvazaar.h
+  /usr/lib/libkvazaar.dll.a
+  /usr/lib/pkgconfig/kvazaar.pc
+
+------------------
+
+Port Notes:
+
+----- version 2.2.0-1bl1 -----
+Version bump.
+
+----- version 2.1.0-1bl1 -----
+Version bump.
+
+----- version 2.0.0-1bl1 -----
+Version bump.
+
+----- version 1.3.0-1bl1 -----
+Version bump.
+
+----- version 1.2.0-1bl1 -----
+Version bump.
+
+----- version 1.1.0-1bl1 -----
+Version bump.
+
+----- version 1.0.0-1bl1 -----
+Version bump.
+
+----- version 0.8.3-1bl1 -----
+Version bump.
+
+----- version 0.8.2-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

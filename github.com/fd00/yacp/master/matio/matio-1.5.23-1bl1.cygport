@@ -1,0 +1,40 @@
+HOMEPAGE="https://sourceforge.net/projects/${PN}/"
+SRC_URI="mirror://sourceforge/${PN}/${P}.7z"
+
+CATEGORY="Libs"
+SUMMARY="Library for reading and writing matlab files"
+DESCRIPTION="matio is an C library for reading and writing Matlab MAT files."
+
+BUILD_REQUIRES="libhdf5-devel zlib-devel"
+
+export CPPFLAGS="${CPPFLAGS} -D_GNU_SOURCE"
+export LT_LDFLAGS="-no-undefined"
+
+CYGCONF_ARGS="
+	--enable-maintainer-mode
+"
+
+DIFF_EXCLUDES="
+	testsuite
+"
+
+PKG_NAMES="
+	${PN}
+	lib${PN}11
+	lib${PN}-devel
+"
+matio_CONTENTS="
+	usr/bin/*.exe
+	usr/share/doc
+"
+libmatio11_CONTENTS="
+	usr/bin/*.dll
+"
+libmatio_devel_CONTENTS="
+	usr/include
+	usr/lib
+	usr/share/man
+"
+matio_SUMMARY="${SUMMARY} (utilities)"
+libmatio11_SUMMARY="${SUMMARY} (runtime)"
+libmatio_devel_SUMMARY="${SUMMARY} (development)"

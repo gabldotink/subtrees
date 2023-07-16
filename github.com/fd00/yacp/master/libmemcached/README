@@ -1,0 +1,274 @@
+libmemcached
+------------------------------------------
+libmemcached-awesome is an open source C/C++ client library and tools for the
+memcached server (http://memcached.org/). It has been designed to be light on
+memory usage, thread safe, and provide full access to server side methods.
+
+Runtime requirements:
+  cygwin-3.4.6-1
+  libevent2.1_7-2.1.12-1
+  libgcc1-11.3.0-1
+  libhashkit2-1.1.4-1bl1
+  libmemcached-devel-1.1.4-1bl1
+  libmemcached11-1.1.4-1bl1
+  libmemcachedprotocol0-1.1.4-1bl1
+  libmemcachedutil-devel-1.1.4-1bl1
+  libmemcachedutil2-1.1.4-1bl1
+  libsasl2-devel-2.1.27-1
+  libsasl2_3-2.1.27-1
+  libstdc++6-11.3.0-1
+  pkg-config-1.9.4-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.40-1
+  bison-3.8.2-1
+  cmake-3.23.2-1
+  cygport-0.36.1-1
+  flex-2.6.4-2
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libevent-devel-2.1.12-1
+  libsasl2-devel-2.1.27-1
+  ninja-1.11.1-1
+
+Canonical website:
+  https://github.com/awesomized/libmemcached/
+
+Canonical download:
+  https://github.com/awesomized/libmemcached/archive/refs/tags/1.1.4.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libmemcached-1.1.4-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libmemcached-1.1.4-X.cygport all
+
+This will create:
+  /usr/src/libmemcached-1.1.4-X-src.tar.xz
+  /usr/src/libmemcached-1.1.4-X.tar.xz
+  /usr/src/libmemcached11-1.1.4-X.tar.xz
+  /usr/src/libmemcached-devel-1.1.4-X.tar.xz
+  /usr/src/libmemcachedprotocol0-1.1.4-X.tar.xz
+  /usr/src/libmemcachedprotocol-devel-1.1.4-X.tar.xz
+  /usr/src/libmemcachedutil2-1.1.4-X.tar.xz
+  /usr/src/libmemcachedutil-devel-1.1.4-X.tar.xz
+  /usr/src/libhashkit2-1.1.4-X.tar.xz
+  /usr/src/libhashkit-devel-1.1.4-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libmemcached)
+  /usr/bin/memaslap.exe
+  /usr/bin/memcapable.exe
+  /usr/bin/memcat.exe
+  /usr/bin/memcp.exe
+  /usr/bin/memdump.exe
+  /usr/bin/memerror.exe
+  /usr/bin/memexist.exe
+  /usr/bin/memflush.exe
+  /usr/bin/memparse.exe
+  /usr/bin/memping.exe
+  /usr/bin/memrm.exe
+  /usr/bin/memslap.exe
+  /usr/bin/memstat.exe
+  /usr/bin/memtouch.exe
+  /usr/share/doc/Cygwin/libmemcached.README
+  /usr/share/doc/libmemcached-awesome/AUTHORS
+  /usr/share/doc/libmemcached-awesome/BUGS.md
+  /usr/share/doc/libmemcached-awesome/CONTRIBUTING.md
+  /usr/share/doc/libmemcached-awesome/COPYING
+  /usr/share/doc/libmemcached-awesome/ChangeLog
+  /usr/share/doc/libmemcached-awesome/ChangeLog-0.md
+  /usr/share/doc/libmemcached-awesome/ChangeLog-1.0.md
+  /usr/share/doc/libmemcached-awesome/ChangeLog-1.1.md
+  /usr/share/doc/libmemcached-awesome/ChangeLog.md
+  /usr/share/doc/libmemcached-awesome/LICENSE
+  /usr/share/doc/libmemcached-awesome/NEWS
+  /usr/share/doc/libmemcached-awesome/README.md
+  /usr/share/doc/libmemcached-awesome/TODO
+  /usr/share/doc/libmemcached/AUTHORS
+  /usr/share/doc/libmemcached/BUGS.md
+  /usr/share/doc/libmemcached/COPYING
+  /usr/share/doc/libmemcached/ChangeLog
+  /usr/share/doc/libmemcached/ChangeLog.md
+  /usr/share/doc/libmemcached/LICENSE
+  /usr/share/doc/libmemcached/NEWS
+  /usr/share/doc/libmemcached/README.md
+  /usr/share/doc/libmemcached/TODO
+  /usr/share/libmemcached-awesome/example.cnf
+
+(libmemcached11)
+  /usr/bin/cygmemcached-11.dll
+
+(libmemcached-devel)
+  /usr/include/libmemcached-1.0/alloc.h
+  /usr/include/libmemcached-1.0/allocators.h
+  /usr/include/libmemcached-1.0/analyze.h
+  /usr/include/libmemcached-1.0/auto.h
+  /usr/include/libmemcached-1.0/basic_string.h
+  /usr/include/libmemcached-1.0/behavior.h
+  /usr/include/libmemcached-1.0/callback.h
+  /usr/include/libmemcached-1.0/callbacks.h
+  /usr/include/libmemcached-1.0/configure.h
+  /usr/include/libmemcached-1.0/defaults.h
+  /usr/include/libmemcached-1.0/delete.h
+  /usr/include/libmemcached-1.0/deprecated_types.h
+  /usr/include/libmemcached-1.0/dump.h
+  /usr/include/libmemcached-1.0/encoding_key.h
+  /usr/include/libmemcached-1.0/error.h
+  /usr/include/libmemcached-1.0/exception.hpp
+  /usr/include/libmemcached-1.0/exist.h
+  /usr/include/libmemcached-1.0/fetch.h
+  /usr/include/libmemcached-1.0/flush.h
+  /usr/include/libmemcached-1.0/flush_buffers.h
+  /usr/include/libmemcached-1.0/get.h
+  /usr/include/libmemcached-1.0/hash.h
+  /usr/include/libmemcached-1.0/limits.h
+  /usr/include/libmemcached-1.0/memcached.h
+  /usr/include/libmemcached-1.0/memcached.hpp
+  /usr/include/libmemcached-1.0/options.h
+  /usr/include/libmemcached-1.0/parse.h
+  /usr/include/libmemcached-1.0/platform.h
+  /usr/include/libmemcached-1.0/quit.h
+  /usr/include/libmemcached-1.0/result.h
+  /usr/include/libmemcached-1.0/return.h
+  /usr/include/libmemcached-1.0/sasl.h
+  /usr/include/libmemcached-1.0/server.h
+  /usr/include/libmemcached-1.0/server_list.h
+  /usr/include/libmemcached-1.0/stats.h
+  /usr/include/libmemcached-1.0/storage.h
+  /usr/include/libmemcached-1.0/strerror.h
+  /usr/include/libmemcached-1.0/struct/allocator.h
+  /usr/include/libmemcached-1.0/struct/analysis.h
+  /usr/include/libmemcached-1.0/struct/callback.h
+  /usr/include/libmemcached-1.0/struct/memcached.h
+  /usr/include/libmemcached-1.0/struct/result.h
+  /usr/include/libmemcached-1.0/struct/sasl.h
+  /usr/include/libmemcached-1.0/struct/server.h
+  /usr/include/libmemcached-1.0/struct/stat.h
+  /usr/include/libmemcached-1.0/struct/string.h
+  /usr/include/libmemcached-1.0/touch.h
+  /usr/include/libmemcached-1.0/triggers.h
+  /usr/include/libmemcached-1.0/types.h
+  /usr/include/libmemcached-1.0/types/behavior.h
+  /usr/include/libmemcached-1.0/types/callback.h
+  /usr/include/libmemcached-1.0/types/connection.h
+  /usr/include/libmemcached-1.0/types/hash.h
+  /usr/include/libmemcached-1.0/types/return.h
+  /usr/include/libmemcached-1.0/types/server_distribution.h
+  /usr/include/libmemcached-1.0/verbosity.h
+  /usr/include/libmemcached-1.0/version.h
+  /usr/include/libmemcached-1.0/visibility.h
+  /usr/include/libmemcached/memcached.h
+  /usr/include/libmemcached/memcached.hpp
+  /usr/include/libmemcached/util.h
+  /usr/lib/cmake/libmemcached-awesome/libmemcached-config.cmake
+  /usr/lib/cmake/libmemcached-awesome/libmemcached-targets-release.cmake
+  /usr/lib/cmake/libmemcached-awesome/libmemcached-targets.cmake
+  /usr/lib/cmake/libmemcached-awesome/libmemcached-version.cmake
+  /usr/lib/libmemcached.dll.a
+  /usr/lib/pkgconfig/libmemcached.pc
+  /usr/share/aclocal/ax_libmemcached.m4
+
+(libmemcachedprotocol0)
+  /usr/bin/cygmemcachedprotocol-0.dll
+
+(libmemcachedprotocol-devel)
+  /usr/include/libmemcachedprotocol-0.0/binary.h
+  /usr/include/libmemcachedprotocol-0.0/callback.h
+  /usr/include/libmemcachedprotocol-0.0/configure.h
+  /usr/include/libmemcachedprotocol-0.0/handler.h
+  /usr/include/libmemcachedprotocol-0.0/vbucket.h
+  /usr/lib/cmake/libmemcached-awesome/libmemcachedprotocol-targets-release.cmake
+  /usr/lib/cmake/libmemcached-awesome/libmemcachedprotocol-targets.cmake
+  /usr/lib/cmake/libmemcached-awesome/libmemcachedprotocol-version.cmake
+  /usr/lib/libmemcachedprotocol.dll.a
+
+(libmemcachedutil2)
+  /usr/bin/cygmemcachedutil-2.dll
+
+(libmemcachedutil-devel)
+  /usr/include/libmemcachedutil-1.0/flush.h
+  /usr/include/libmemcachedutil-1.0/ostream.hpp
+  /usr/include/libmemcachedutil-1.0/pid.h
+  /usr/include/libmemcachedutil-1.0/ping.h
+  /usr/include/libmemcachedutil-1.0/pool.h
+  /usr/include/libmemcachedutil-1.0/util.h
+  /usr/include/libmemcachedutil-1.0/version.h
+  /usr/lib/cmake/libmemcached-awesome/libmemcachedutil-targets-release.cmake
+  /usr/lib/cmake/libmemcached-awesome/libmemcachedutil-targets.cmake
+  /usr/lib/cmake/libmemcached-awesome/libmemcachedutil-version.cmake
+  /usr/lib/libmemcachedutil.dll.a
+
+(libhashkit2)
+  /usr/bin/cyghashkit-2.dll
+
+(libhashkit-devel)
+  /usr/include/libhashkit-1.0/algorithm.h
+  /usr/include/libhashkit-1.0/basic_string.h
+  /usr/include/libhashkit-1.0/behavior.h
+  /usr/include/libhashkit-1.0/configure.h
+  /usr/include/libhashkit-1.0/digest.h
+  /usr/include/libhashkit-1.0/function.h
+  /usr/include/libhashkit-1.0/has.h
+  /usr/include/libhashkit-1.0/hashkit.h
+  /usr/include/libhashkit-1.0/hashkit.hpp
+  /usr/include/libhashkit-1.0/str_algorithm.h
+  /usr/include/libhashkit-1.0/strerror.h
+  /usr/include/libhashkit-1.0/string.h
+  /usr/include/libhashkit-1.0/types.h
+  /usr/include/libhashkit-1.0/visibility.h
+  /usr/include/libhashkit/hashkit.h
+  /usr/lib/cmake/libmemcached-awesome/libhashkit-targets-release.cmake
+  /usr/lib/cmake/libmemcached-awesome/libhashkit-targets.cmake
+  /usr/lib/cmake/libmemcached-awesome/libhashkit-version.cmake
+  /usr/lib/libhashkit.dll.a
+
+------------------
+
+Port Notes:
+
+----- version 1.1.4-1bl1 -----
+Version bump.
+
+----- version 1.0.18-1bl3 -----
+Rebuild with gcc-7.4.0
+
+----- version 1.0.18-1bl2 -----
+Rebuild with gcc-6.4.0
+
+----- version 1.0.18-1bl1 -----
+Version bump.
+
+----- version 1.0.17-1bl1 -----
+Version bump.
+
+----- version 1.0.13-1bl1 -----
+Version bump.
+
+----- version 1.0.7-1bl1 -----
+Version bump.
+
+----- version 1.0.6-1bl1 -----
+Version bump.
+
+----- version 1.0.4-1bl1 -----
+Version bump.
+
+----- version 0.53-1bl1 -----
+Version bump.
+
+----- version 0.51-1bl1 -----
+Version bump.
+
+----- version 0.49-1bl1 -----
+Version bump.
+
+----- version 0.44-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

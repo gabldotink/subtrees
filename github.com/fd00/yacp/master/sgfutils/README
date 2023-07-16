@@ -1,0 +1,74 @@
+sgfutils
+------------------------------------------
+Collection of command-line utilities to work with SGF files
+
+Runtime requirements:
+  cygwin-3.1.2-1
+  libiconv2-1.14-3
+  libssl1.1-1.1.1d-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.29-1
+  cygport-0.33.1-1
+  gcc-core-7.4.0-1
+  make-4.2.1-2
+
+Canonical website:
+  https://homepages.cwi.nl/~aeb/go/sgfutils/html/sgfutils.html
+
+Canonical download:
+  https://homepages.cwi.nl/~aeb/go/sgfutils/sgfutils-0.25.tgz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack sgfutils-0.25-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./sgfutils-0.25-X.cygport all
+
+This will create:
+  /usr/src/sgfutils-0.25-X-src.tar.xz
+  /usr/src/sgfutils-0.25-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(sgfutils)
+  /usr/bin/gib2sgf.exe
+  /usr/bin/ngf2sgf.exe
+  /usr/bin/nip2sgf.exe
+  /usr/bin/nk2sgf.exe
+  /usr/bin/sgf.exe
+  /usr/bin/sgfcharset.exe
+  /usr/bin/sgfcheck.exe
+  /usr/bin/sgfcmp.exe
+  /usr/bin/sgfdb.exe
+  /usr/bin/sgfdbinfo.exe
+  /usr/bin/sgfinfo.exe
+  /usr/bin/sgfmerge.exe
+  /usr/bin/sgfsplit.exe
+  /usr/bin/sgfstrip.exe
+  /usr/bin/sgftf.exe
+  /usr/bin/sgftopng.exe
+  /usr/bin/sgfvarsplit.exe
+  /usr/bin/sgfx.exe
+  /usr/bin/ugi2sgf.exe
+  /usr/share/doc/Cygwin/sgfutils.README
+  /usr/share/doc/sgfutils/README
+
+------------------
+
+Port Notes:
+
+----- version 0.25-1bl2 -----
+Rebuild for libssl
+
+----- version 0.25-1bl1 -----
+Version bump.
+
+----- version 0.22-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

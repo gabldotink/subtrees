@@ -1,0 +1,33 @@
+HOMEPAGE="https://github.com/montsuqi/${PN}"
+GIT_URI="https://github.com/montsuqi/${PN}.git"
+
+CATEGORY="Libs"
+SUMMARY="Common function set for MON-suite"
+DESCRIPTION="This library is common function set for MON-suite. MONDAI: MON Data Access
+Interface."
+
+inherit git
+
+CYGCONF_ARGS="
+	--enable-maintainer-mode
+"
+
+PKG_NAMES="
+	${PN}
+	${PN}3
+	${PN}-devel
+"
+libmondai_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+libmondai3_CONTENTS="
+	usr/bin/*.dll
+"
+libmondai_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+libmondai_SUMMARY="${SUMMARY} (utilities)"
+libmondai3_SUMMARY="${SUMMARY} (runtime)"
+libmondai_devel_SUMMARY="${SUMMARY} (development)"

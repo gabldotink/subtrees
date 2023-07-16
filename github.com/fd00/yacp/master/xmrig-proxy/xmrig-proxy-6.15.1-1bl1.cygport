@@ -1,0 +1,35 @@
+HOMEPAGE="https://github.com/xmrig/${PN}"
+SRC_URI="https://github.com/xmrig/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Net"
+SUMMARY="Monero (XMR) Stratum protocol proxy"
+DESCRIPTION="Extremely high performance Monero (XMR) Stratum protocol proxy, can easily
+handle over 100K connections on cheap \$5 (1024 MB) virtual machine. Reduce
+number of pool connections up to 256 times, 100K workers become just 391
+worker on pool side. Written on C++/libuv same as XMRig miner."
+
+BUILD_REQUIRES="libssl-devel libuv-devel"
+
+inherit cmake
+
+src_test()
+{
+	cd ${B}
+	./${PN}.exe --version
+}
+
+src_install()
+{
+	cd ${B}
+	dobin ${PN}.exe
+
+	cd ${S}
+	insinto /usr/share/${PN}
+	doins src/config.json
+	mkdir -p ${D}/usr/share/doc/${PN}
+	cp -r doc/* ${D}/usr/share/doc/${PN}/
+}
+
+DOCS="
+	CHANGELOG.md
+"

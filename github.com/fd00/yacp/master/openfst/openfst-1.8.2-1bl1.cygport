@@ -1,0 +1,71 @@
+HOMEPAGE="https://www.openfst.org/twiki/bin/view/FST/WebHome"
+SRC_URI="
+	https://www.openfst.org/twiki/pub/FST/FstDownload/${P}.tar.gz
+	https://www.openfst.org/twiki/pub/Contrib/OpenFstBashComp/openfstbc
+"
+
+CATEGORY="Libs"
+SUMMARY="Weighted finite-state transducer library"
+DESCRIPTION="OpenFst is a library for constructing, combining, optimizing, and searching
+weighted finite-state transducers (FSTs). Weighted finite-state transducers
+are automata where each transition has an input label, an output label, and a
+weight. The more familiar finite-state acceptor is represented as a transducer
+with each transition's input and output label equal. Finite-state acceptors
+are used to represent sets of strings (specifically, regular or rational
+sets); finite-state transducers are used to represent binary relations between
+pairs of strings (specifically, rational transductions). The weights can be
+used to represent the cost of taking a particular transition."
+
+LICENSE="Apache-2.0"
+LICENSE_SPDX="SPDX-License-Identifier: Apache-2.0"
+LICENSE_URI="COPYING"
+
+export CPPFLAGS="${CPPFLAGS} -D_GNU_SOURCE"
+
+CYGCONF_ARGS="
+	--enable-bin
+	--enable-compact-fsts
+	--enable-compress
+	--enable-const-fsts
+	--enable-far
+	--enable-grm
+	--enable-linear-fsts
+	--enable-lookahead-fsts
+	--enable-mpdt
+	--enable-ngram-fsts
+	--enable-pdt
+	--disable-python
+	--enable-special
+"
+
+src_install()
+{
+	cd ${B}
+	cyginstall
+
+	cd ${S}
+	insinto /etc/bash_completion.d
+	doins ${PN}bc
+}
+
+PKG_NAMES="
+	${PN}
+	libfst25
+	libfst-devel
+"
+openfst_CONTENTS="
+	etc
+	usr/bin/*.exe
+	usr/share
+"
+libfst25_CONTENTS="
+	usr/bin/*.dll
+	usr/lib/fst/*.dll
+"
+libfst_devel_CONTENTS="
+	usr/include
+	usr/lib/lib*.dll.a
+"
+openfst_SUMMARY="${SUMMARY} (utilities)"
+libfst25_SUMMARY="${SUMMARY} (runtime)"
+libfst_devel_SUMMARY="${SUMMARY} (development)"

@@ -1,0 +1,20 @@
+HOMEPAGE="https://github.com/torognes/${PN}"
+SRC_URI="https://github.com/torognes/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Science"
+SUMMARY="USEARCH-compatible metagenomic sequence tool"
+DESCRIPTION="${SUMMARY}"
+
+CYGCONF_ARGS="
+	--disable-pdfman
+"
+
+src_test()
+{
+	cd ${B}/bin
+	./${PN}.exe --version
+}
+
+DOCS="
+	LICENSE_GNU_GPL3.txt
+"

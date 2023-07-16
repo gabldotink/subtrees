@@ -1,0 +1,41 @@
+HOMEPAGE="https://archlinux.org/${PN}/"
+SRC_URI="https://sources.archlinux.org/other/${PN}/${P}.tar.xz"
+
+CATEGORY="Libs"
+SUMMARY="Simple library-based package manager"
+DESCRIPTION="pacman is a utility which manages software packages in Linux. It uses simple
+compressed files as a package format, and maintains a text-based package
+database (more of a hierarchy), just in case some hand tweaking is necessary."
+
+BUILD_REQUIRES="bsdtar libarchive-devel libcurl-devel libgpgme-devel libintl-devel libssl-devel"
+
+inherit meson
+
+PKG_NAMES="
+	${PN}
+	libalpm13
+	libalpm-devel
+"
+pacman_CONTENTS="
+	etc
+	usr/bin/[mprtv]*
+	usr/share/bash-completion
+	usr/share/doc
+	usr/share/locale/*/*/${PN}*
+	usr/share/makepkg
+	usr/share/man/man[158]
+	usr/share/${PN}
+	usr/share/pkgconfig
+	usr/share/zsh
+"
+libalpm13_CONTENTS="
+	usr/bin/*.dll
+	usr/share/locale/*/*/libalpm*
+"
+libalpm_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+pacman_SUMMARY="${SUMMARY} (utilities)"
+libalpm13_SUMMARY="${SUMMARY} (runtime)"
+libalpm_devel_SUMMARY="${SUMMARY} (development)"

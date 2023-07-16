@@ -1,0 +1,20 @@
+HOMEPAGE="http://${PN}md.org/"
+SRC_URI="https://github.com/${PN}md/${PN}/archive/${PV}.tar.gz"
+
+CATEGORY="Science"
+SUMMARY="Extensible Simulation Package for Research on Soft matter"
+DESCRIPTION="ESPResSo is a highly versatile software package for performing and analyzing
+scientific Molecular Dynamics many-particle simulations of coarse-grained
+atomistic or bead-spring models as they are used in soft-matter research in
+physics, chemistry and molecular biology. It can be used to simulate systems
+such as polymers, liquid crystals, colloids, ferrofluids and biological
+systems, for example DNA and lipid membranes."
+
+CYGCONF_ARGS="
+	--enable-maintainer-mode
+	--without-python-interface
+"
+
+DIFF_EXCLUDES="
+	Makefile
+"

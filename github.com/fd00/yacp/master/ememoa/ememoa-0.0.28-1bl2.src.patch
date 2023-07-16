@@ -1,0 +1,11 @@
+--- origsrc/ememoa-0.0.28/src/lib/ememoa/Makefile.am	2010-04-23 18:51:47.000000000 +0900
++++ src/ememoa-0.0.28/src/lib/ememoa/Makefile.am	2020-11-08 05:58:32.134255800 +0900
+@@ -10,7 +10,7 @@ libememoa_la_SOURCES 	=			\
+ 	mempool_struct.h
+ libememoa_la_CFLAGS	= $(PTHREAD_CFLAGS) @COVERAGE_CFLAGS@
+ libememoa_la_LIBADD     = @COVERAGE_LIBS@
+-libememoa_la_LDFLAGS	= $(PTHREAD_CFLAGS) $(PTHREAD_LIBS) -version-info 0:26:0
++libememoa_la_LDFLAGS	= -no-undefined $(PTHREAD_CFLAGS) $(PTHREAD_LIBS) -version-info 0:26:0
+ CC			= $(PTHREAD_CC)
+ INCLUDES		= -I$(top_srcdir)/include
+ 

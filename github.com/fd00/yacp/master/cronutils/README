@@ -1,0 +1,65 @@
+cronutils
+------------------------------------------
+cronutils is a set of tools to assist the reliable running of periodic and
+batch jobs.
+
+Runtime requirements:
+  cygwin-3.4.6-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.40-1
+  cygport-0.36.1-1
+  gcc-core-11.3.0-1
+  make-4.4.1-1
+
+Canonical website:
+  https://github.com/google/cronutils
+
+Canonical download:
+  https://github.com/google/cronutils/archive/version/1.10.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack cronutils-1.10-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./cronutils-1.10-X.cygport all
+
+This will create:
+  /usr/src/cronutils-1.10-X-src.tar.xz
+  /usr/src/cronutils-1.10-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(cronutils)
+  /usr/bin/runalarm.exe
+  /usr/bin/runlock.exe
+  /usr/bin/runstat.exe
+  /usr/share/doc/Cygwin/cronutils.README
+  /usr/share/doc/cronutils/CONTRIBUTING.md
+  /usr/share/doc/cronutils/LICENSE
+  /usr/share/doc/cronutils/README.md
+  /usr/share/man/man1/runalarm.1.gz
+  /usr/share/man/man1/runlock.1.gz
+  /usr/share/man/man1/runstat.1.gz
+
+------------------
+
+Port Notes:
+
+----- version 1.10-1bl1 -----
+Version bump.
+
+----- version 1.9-1bl1 -----
+Version bump.
+
+----- version 1.8-1bl1 -----
+Version bump.
+
+----- version 1.2-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://fd0.hatenablog.jp/>

@@ -1,0 +1,324 @@
+apertium
+------------------------------------------
+Apertium is a free/open-source machine translation platform, initially aimed at
+related-language pairs but expanded to deal with more divergent language pairs
+(such as English-Catalan).
+
+Runtime requirements:
+  bash-4.4.12-3
+  cygwin-3.4.3-1
+  libapertium-devel-3.8.3-1bl1
+  libapertium3-3.8.3-1bl1
+  libgcc1-11.3.0-1
+  libicu70-70.1-1
+  liblttoolbox3-3.7.1-1bl1
+  libstdc++6-11.3.0-1
+  libxml2-2.9.12-2
+  pkg-config-1.9.3-1
+  python39-3.9.10-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.39-1
+  cygport-0.35.5-1
+  flex-2.6.4-2
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libicu-devel-70.1-1
+  liblttoolbox-devel-3.7.1-1bl1
+  libtool-2.4.7-1
+  libxml2-devel-2.9.12-2
+  make-4.4-1
+  python39-3.9.10-1
+  python39-devel-3.9.10-1
+  utf8cpp-3.2.1-1bl1
+
+Canonical website:
+  https://github.com/apertium/apertium
+
+Canonical download:
+  https://github.com/apertium/apertium/archive/refs/tags/v3.8.3.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack apertium-3.8.3-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./apertium-3.8.3-X.cygport all
+
+This will create:
+  /usr/src/apertium-3.8.3-X-src.tar.xz
+  /usr/src/apertium-3.8.3-X.tar.xz
+  /usr/src/libapertium3-3.8.3-X.tar.xz
+  /usr/src/libapertium-devel-3.8.3-X.tar.xz
+  /usr/src/python39-apertium-3.8.3-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(apertium)
+  /usr/bin/apertium
+  /usr/bin/apertium-adapt-docx.exe
+  /usr/bin/apertium-cleanstream.exe
+  /usr/bin/apertium-deshtml-alt.exe
+  /usr/bin/apertium-deshtml-noent.exe
+  /usr/bin/apertium-deshtml.exe
+  /usr/bin/apertium-deslatex.exe
+  /usr/bin/apertium-desmediawiki.exe
+  /usr/bin/apertium-desodt.exe
+  /usr/bin/apertium-despptx.exe
+  /usr/bin/apertium-desrtf.exe
+  /usr/bin/apertium-destxt.exe
+  /usr/bin/apertium-deswxml.exe
+  /usr/bin/apertium-desxlsx.exe
+  /usr/bin/apertium-desxpresstag.exe
+  /usr/bin/apertium-editdist
+  /usr/bin/apertium-filter-ambiguity.exe
+  /usr/bin/apertium-filter-dix
+  /usr/bin/apertium-filter-rules
+  /usr/bin/apertium-filter-xml
+  /usr/bin/apertium-gen-deformat
+  /usr/bin/apertium-gen-modes.exe
+  /usr/bin/apertium-gen-reformat
+  /usr/bin/apertium-genvdix
+  /usr/bin/apertium-genvldix
+  /usr/bin/apertium-genvrdix
+  /usr/bin/apertium-interchunk.exe
+  /usr/bin/apertium-metalrx
+  /usr/bin/apertium-metalrx-to-lrx
+  /usr/bin/apertium-multiple-translations.exe
+  /usr/bin/apertium-perceptron-trace.exe
+  /usr/bin/apertium-postchunk.exe
+  /usr/bin/apertium-postlatex-raw.exe
+  /usr/bin/apertium-postlatex.exe
+  /usr/bin/apertium-posttransfer.exe
+  /usr/bin/apertium-prelatex.exe
+  /usr/bin/apertium-preprocess-transfer.exe
+  /usr/bin/apertium-pretransfer.exe
+  /usr/bin/apertium-rehtml-alt.exe
+  /usr/bin/apertium-rehtml-noent.exe
+  /usr/bin/apertium-rehtml.exe
+  /usr/bin/apertium-relatex.exe
+  /usr/bin/apertium-remediawiki.exe
+  /usr/bin/apertium-reodt.exe
+  /usr/bin/apertium-repptx.exe
+  /usr/bin/apertium-rertf.exe
+  /usr/bin/apertium-retxt.exe
+  /usr/bin/apertium-rewxml.exe
+  /usr/bin/apertium-rexlsx.exe
+  /usr/bin/apertium-rexpresstag.exe
+  /usr/bin/apertium-tagger-apply-new-rules.exe
+  /usr/bin/apertium-tagger-readwords.exe
+  /usr/bin/apertium-tagger.exe
+  /usr/bin/apertium-tmxbuild.exe
+  /usr/bin/apertium-transfer.exe
+  /usr/bin/apertium-translate-to-default-equivalent
+  /usr/bin/apertium-unformat
+  /usr/bin/apertium-utils-fixlatex
+  /usr/bin/apertium-validate-acx
+  /usr/bin/apertium-validate-dictionary
+  /usr/bin/apertium-validate-interchunk
+  /usr/bin/apertium-validate-modes
+  /usr/bin/apertium-validate-postchunk
+  /usr/bin/apertium-validate-tagger
+  /usr/bin/apertium-validate-transfer
+  /usr/bin/apertium-wblank-attach.exe
+  /usr/bin/apertium-wblank-detach.exe
+  /usr/bin/apertium-wblank-mode.exe
+  /usr/share/apertium/deformat.xsl
+  /usr/share/apertium/filter-dix.xslt
+  /usr/share/apertium/filter-rules.xslt
+  /usr/share/apertium/format.dtd
+  /usr/share/apertium/format.rnc
+  /usr/share/apertium/interchunk.dtd
+  /usr/share/apertium/interchunk.rnc
+  /usr/share/apertium/lexchoice.xsl
+  /usr/share/apertium/lexchoicebil.xsl
+  /usr/share/apertium/metalrx-to-lrx.xslt
+  /usr/share/apertium/modes.dtd
+  /usr/share/apertium/modes.rnc
+  /usr/share/apertium/modes/README
+  /usr/share/apertium/new2old.xsl
+  /usr/share/apertium/postchunk.dtd
+  /usr/share/apertium/postchunk.rnc
+  /usr/share/apertium/reformat.xsl
+  /usr/share/apertium/tagger.dtd
+  /usr/share/apertium/tagger.rnc
+  /usr/share/apertium/transfer.dtd
+  /usr/share/apertium/transfer.rnc
+  /usr/share/apertium/translate-to-default-equivalent.xslt
+  /usr/share/doc/Cygwin/apertium.README
+  /usr/share/doc/apertium/AUTHORS
+  /usr/share/doc/apertium/COPYING
+  /usr/share/doc/apertium/ChangeLog
+  /usr/share/doc/apertium/NEWS
+  /usr/share/doc/apertium/README
+  /usr/share/doc/apertium/readme.md
+  /usr/share/man/man1/apertium-deshtml-alt.1.gz
+  /usr/share/man/man1/apertium-deshtml.1.gz
+  /usr/share/man/man1/apertium-deslatex.1.gz
+  /usr/share/man/man1/apertium-desmediawiki.1.gz
+  /usr/share/man/man1/apertium-desodt.1.gz
+  /usr/share/man/man1/apertium-despptx.1.gz
+  /usr/share/man/man1/apertium-desrtf.1.gz
+  /usr/share/man/man1/apertium-destxt.1.gz
+  /usr/share/man/man1/apertium-deswxml.1.gz
+  /usr/share/man/man1/apertium-desxlsx.1.gz
+  /usr/share/man/man1/apertium-filter-ambiguity.1.gz
+  /usr/share/man/man1/apertium-gen-deformat.1.gz
+  /usr/share/man/man1/apertium-gen-modes.1.gz
+  /usr/share/man/man1/apertium-gen-reformat.1.gz
+  /usr/share/man/man1/apertium-interchunk.1.gz
+  /usr/share/man/man1/apertium-multiple-translations.1.gz
+  /usr/share/man/man1/apertium-postchunk.1.gz
+  /usr/share/man/man1/apertium-postlatex-raw.1.gz
+  /usr/share/man/man1/apertium-postlatex.1.gz
+  /usr/share/man/man1/apertium-prelatex.1.gz
+  /usr/share/man/man1/apertium-preprocess-transfer.1.gz
+  /usr/share/man/man1/apertium-pretransfer.1.gz
+  /usr/share/man/man1/apertium-rehtml.1.gz
+  /usr/share/man/man1/apertium-relatex.1.gz
+  /usr/share/man/man1/apertium-remediawiki.1.gz
+  /usr/share/man/man1/apertium-reodt.1.gz
+  /usr/share/man/man1/apertium-repptx.1.gz
+  /usr/share/man/man1/apertium-rertf.1.gz
+  /usr/share/man/man1/apertium-retxt.1.gz
+  /usr/share/man/man1/apertium-rewxml.1.gz
+  /usr/share/man/man1/apertium-rexlsx.1.gz
+  /usr/share/man/man1/apertium-tagger-apply-new-rules.1.gz
+  /usr/share/man/man1/apertium-tagger.1.gz
+  /usr/share/man/man1/apertium-transfer.1.gz
+  /usr/share/man/man1/apertium-unformat.1.gz
+  /usr/share/man/man1/apertium-utils-fixlatex.1.gz
+  /usr/share/man/man1/apertium-validate-acx.1.gz
+  /usr/share/man/man1/apertium-validate-dictionary.1.gz
+  /usr/share/man/man1/apertium-validate-interchunk.1.gz
+  /usr/share/man/man1/apertium-validate-modes.1.gz
+  /usr/share/man/man1/apertium-validate-postchunk.1.gz
+  /usr/share/man/man1/apertium-validate-tagger.1.gz
+  /usr/share/man/man1/apertium-validate-transfer.1.gz
+  /usr/share/man/man1/apertium.1.gz
+
+(libapertium3)
+  /usr/bin/cygapertium-3.dll
+
+(libapertium-devel)
+  /usr/include/apertium/a.h
+  /usr/include/apertium/align.h
+  /usr/include/apertium/analysis.h
+  /usr/include/apertium/apertium_re.h
+  /usr/include/apertium/collection.h
+  /usr/include/apertium/constant_manager.h
+  /usr/include/apertium/deserialiser.h
+  /usr/include/apertium/endian_double_util.h
+  /usr/include/apertium/exception.h
+  /usr/include/apertium/exception_type.h
+  /usr/include/apertium/feature_vec.h
+  /usr/include/apertium/feature_vec_averager.h
+  /usr/include/apertium/file_morpho_stream.h
+  /usr/include/apertium/file_tagger.h
+  /usr/include/apertium/getopt_long.h
+  /usr/include/apertium/hmm.h
+  /usr/include/apertium/i.h
+  /usr/include/apertium/interchunk.h
+  /usr/include/apertium/interchunk_word.h
+  /usr/include/apertium/latex_accentsmap.h
+  /usr/include/apertium/lemma.h
+  /usr/include/apertium/lexical_unit.h
+  /usr/include/apertium/linebreak.h
+  /usr/include/apertium/lswpost.h
+  /usr/include/apertium/morpheme.h
+  /usr/include/apertium/morpho_stream.h
+  /usr/include/apertium/mtx_reader.h
+  /usr/include/apertium/optional.h
+  /usr/include/apertium/perceptron_spec.h
+  /usr/include/apertium/perceptron_tagger.h
+  /usr/include/apertium/postchunk.h
+  /usr/include/apertium/pretransfer.h
+  /usr/include/apertium/sentence_stream.h
+  /usr/include/apertium/serialiser.h
+  /usr/include/apertium/shell_utils.h
+  /usr/include/apertium/stream.h
+  /usr/include/apertium/stream_tagger.h
+  /usr/include/apertium/streamed_type.h
+  /usr/include/apertium/string_to_wostream.h
+  /usr/include/apertium/tagger.h
+  /usr/include/apertium/tagger_data.h
+  /usr/include/apertium/tagger_data_hmm.h
+  /usr/include/apertium/tagger_data_lsw.h
+  /usr/include/apertium/tagger_data_percep_coarse_tags.h
+  /usr/include/apertium/tagger_flags.h
+  /usr/include/apertium/tagger_utils.h
+  /usr/include/apertium/tagger_word.h
+  /usr/include/apertium/tmx_align_parameters.h
+  /usr/include/apertium/tmx_aligner_tool.h
+  /usr/include/apertium/tmx_alignment.h
+  /usr/include/apertium/tmx_arguments_parser.h
+  /usr/include/apertium/tmx_book_to_matrix.h
+  /usr/include/apertium/tmx_builder.h
+  /usr/include/apertium/tmx_dic_tree.h
+  /usr/include/apertium/tmx_dictionary.h
+  /usr/include/apertium/tmx_quasi_diagonal.h
+  /usr/include/apertium/tmx_serialize_impl.h
+  /usr/include/apertium/tmx_strings_and_streams.h
+  /usr/include/apertium/tmx_trail_postprocessors.h
+  /usr/include/apertium/tmx_translate.h
+  /usr/include/apertium/tmx_words.h
+  /usr/include/apertium/transfer.h
+  /usr/include/apertium/transfer_base.h
+  /usr/include/apertium/transfer_data.h
+  /usr/include/apertium/transfer_instr.h
+  /usr/include/apertium/transfer_mult.h
+  /usr/include/apertium/transfer_regex.h
+  /usr/include/apertium/transfer_token.h
+  /usr/include/apertium/transfer_word.h
+  /usr/include/apertium/trx_reader.h
+  /usr/include/apertium/tsx_reader.h
+  /usr/include/apertium/ttag.h
+  /usr/include/apertium/unigram_tagger.h
+  /usr/include/apertium/unlocked_cstdio.h
+  /usr/include/apertium/utils.h
+  /usr/include/apertium/xml_reader.h
+  /usr/lib/libapertium.dll.a
+  /usr/lib/pkgconfig/apertium.pc
+  /usr/share/aclocal/apertium.m4
+
+(python39-apertium)
+  /usr/lib/python3.9/site-packages/_apertium_core.cpython-39-x86_64-cygwin.dll
+  /usr/lib/python3.9/site-packages/apertium-3.8.3-py3.9.egg-info
+
+------------------
+
+Port Notes:
+
+----- version 3.8.3-1bl1 -----
+Version bump.
+
+----- version 3.8.1-1bl1 -----
+Version bump.
+
+----- version 3.6.3-1bl1 -----
+Version bump.
+
+----- version 3.5.2-1bl1 -----
+Version bump.
+
+----- version 3.5.0-1bl1 -----
+Version bump.
+
+----- version 3.4.2-1bl1 -----
+Version bump.
+
+----- version 3.2.0-1bl3 -----
+Rebuild on x86_64
+
+----- version 3.2.0-1bl2 -----
+Rebuild for libpcre
+
+----- version 3.2.0-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

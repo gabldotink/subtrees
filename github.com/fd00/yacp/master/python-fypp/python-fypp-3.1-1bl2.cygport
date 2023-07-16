@@ -1,0 +1,27 @@
+PYTHON_WHEEL_VERSIONS="3.9"
+inherit python-wheel
+
+HOMEPAGE="https://github.com/aradi/fypp"
+
+CATEGORY="Devel"
+SUMMARY="Python powered Fortran preprocessor"
+DESCRIPTION="Fypp is a Python powered preprocessor. It can be used for any programming
+languages but its primary aim is to offer a Fortran preprocessor, which helps
+to extend Fortran with condititional compiling and template metaprogramming
+capabilities. Instead of introducing its own expression syntax, it uses Python
+expressions in its preprocessor directives, offering the consistency and
+versatility of Python when formulating metaprogramming tasks. It puts strong
+emphasis on robustness and on neat integration into developing toolchains."
+
+LICENSE="BSD-2-Clause"
+LICENSE_SPDX="SPDX-License-Identifier: BSD-2-Clause"
+LICENSE_URI="LICENSE.txt"
+
+src_test()
+{
+    cd ${B}/test
+    ./runtests.sh
+}
+
+python39_fypp_CONTENTS+=" usr/bin"
+PKG_NAMES=${PKG_NAMES//python3-fypp/}

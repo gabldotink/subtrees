@@ -1,0 +1,140 @@
+libburn
+------------------------------------------
+Libburn is a library by which preformatted data get onto optical media: CD, DVD
+and BD (Blu-Ray). It also offers a facility for reading data blocks from its
+drives without using the normal block device I/O, which has advantages and
+disadvantages. It seems appropriate, nevertheless, to do writing and reading
+via same channel. On several Linux systems, the block device driver needs
+reloading of the drive tray in order to make available freshly written data.
+The libburn read function does not need such a reload. The code of libburn is
+independent of cdrecord.
+
+Runtime requirements:
+  cygwin-3.1.7-1
+  libburn-devel-1.5.4-1bl1
+  libburn4-1.5.4-1bl1
+  libcdio18-2.0.0-1
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.35.2-1
+  cygport-0.34.0-1
+  gcc-core-10.2.0-1
+  libtool-2.4.6-7
+  make-4.3-1
+
+Canonical website:
+  https://dev.lovelyhq.com/libburnia/web/wiki
+
+Canonical download:
+  https://files.libburnia-project.org/releases/libburn-1.5.4.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libburn-1.5.4-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libburn-1.5.4-X.cygport all
+
+This will create:
+  /usr/src/libburn-1.5.4-X-src.tar.xz
+  /usr/src/libburn-1.5.4-X.tar.xz
+  /usr/src/libburn4-1.5.4-X.tar.xz
+  /usr/src/libburn-devel-1.5.4-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libburn)
+  /usr/bin/cdrskin.exe
+  /usr/share/doc/Cygwin/libburn.README
+  /usr/share/doc/libburn/AUTHORS
+  /usr/share/doc/libburn/CONTRIBUTORS
+  /usr/share/doc/libburn/COPYING
+  /usr/share/doc/libburn/ChangeLog
+  /usr/share/doc/libburn/Copyright
+  /usr/share/doc/libburn/NEWS
+  /usr/share/doc/libburn/README
+  /usr/share/doc/libburn/cdtext.txt
+  /usr/share/doc/libburn/comments
+  /usr/share/doc/libburn/cookbook.txt
+  /usr/share/doc/libburn/mediainfo.txt
+  /usr/share/man/man1/cdrskin.1.gz
+
+(libburn4)
+  /usr/bin/cygburn-4.dll
+
+(libburn-devel)
+  /usr/include/libburn/libburn.h
+  /usr/lib/libburn.dll.a
+  /usr/lib/pkgconfig/libburn-1.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.5.4-1bl1 -----
+Version bump.
+
+----- version 1.5.2-1bl1 -----
+Version bump.
+
+----- version 1.5.0-1bl1 -----
+Version bump.
+
+----- version 1.4.8-1bl2 -----
+Rebuild for libcdio
+
+----- version 1.4.8-1bl1 -----
+Version bump.
+
+----- version 1.4.6-1bl1 -----
+Version bump.
+
+----- version 1.4.2-1bl1 -----
+Version bump.
+
+----- version 1.4.0-1bl1 -----
+Version bump.
+
+----- version 1.3.8-1bl1 -----
+Version bump.
+
+----- version 1.3.4-1bl1 -----
+Version bump.
+
+----- version 1.3.2-1bl1 -----
+Version bump.
+
+----- version 1.3.0.pl01-1bl1 -----
+Version bump.
+
+----- version 1.2.8-1bl1 -----
+Version bump.
+
+----- version 1.2.6-1bl2 -----
+Rebuild for libcdio
+
+----- version 1.2.6-1bl1 -----
+Version bump.
+
+----- version 1.2.4-1bl1 -----
+Version bump.
+
+----- version 1.2.2-1bl1 -----
+Version bump.
+
+----- version 1.1.8-1bl1 -----
+Version bump.
+
+----- version 1.1.6-1bl1 -----
+Version bump.
+
+----- version 1.1.0.pl01-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

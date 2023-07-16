@@ -1,0 +1,37 @@
+HOMEPAGE="http://www.${PN}.com/"
+SRC_URI="http://www.${PN}.com/files/download/${P}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Fast samples-based log normalization library"
+DESCRIPTION="Briefly described, liblognorm is a tool to normalize log data."
+
+CYGCONF_ARGS="
+	--includedir=/usr/include/${PN}
+	--enable-regexp
+	--enable-advanced-stats
+	--enable-tools
+"
+
+DIFF_EXCLUDES="
+	lognorm-features.h
+"
+
+PKG_NAMES="
+	${PN}
+	${PN}5
+	${PN}-devel
+"
+liblognorm_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+liblognorm5_CONTENTS="
+	usr/bin/*.dll
+"
+liblognorm_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+liblognorm_SUMMARY="${SUMMARY} (utilities)"
+liblognorm5_SUMMARY="${SUMMARY} (runtime)"
+liblognorm_devel_SUMMARY="${SUMMARY} (development)"

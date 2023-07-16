@@ -1,0 +1,119 @@
+libgfileio
+------------------------------------------
+libgfileio is a C++ library that wraps around the standard unbuffered Unix
+file I/O functions write() and read(). Besides those, it provides some other
+wrappers around file related functions. It is type safe and extensively uses
+C++ exceptions for error conditions.
+
+Runtime requirements:
+  cygwin-1.7.14-2
+  libgcc1-4.5.3-3
+  libstdc++6-4.5.3-3
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-10-1
+  automake-4-10
+  binutils-2.22.51-2
+  cygport-0.10.10-1
+  gawk-4.0.1-1
+  gcc4-core-4.5.3-3
+  gcc4-g++-4.5.3-3
+  libtool-2.4-1
+  make-3.82.90-1
+
+Canonical website:
+  http://www.guengel.ch/myapps/libgfileio/
+
+Canonical download:
+  http://www.guengel.ch/myapps/libgfileio/downloads/libgfileio-0.1.tar.bz2
+
+-------------------------------------------
+
+Build instructions:
+  unpack libgfileio-0.1-X-src.tar.bz2
+    if you use setup to install this src package, it will be
+	 unpacked under /usr/src automatically
+  cd /usr/src
+  cygport ./libgfileio-0.1-X.cygport all
+
+This will create:
+  /usr/src/libgfileio-0.1-X-src.tar.bz2
+  /usr/src/libgfileio-0.1-X.tar.bz2
+  /usr/src/libgfileio0-0.1-X.tar.bz2
+  /usr/src/libgfileio-devel-0.1-X.tar.bz2
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libgfileio)
+  /usr/share/doc/Cygwin/libgfileio.README
+  /usr/share/doc/libgfileio/AUTHORS
+  /usr/share/doc/libgfileio/BUGS
+  /usr/share/doc/libgfileio/COPYING
+  /usr/share/doc/libgfileio/ChangeLog
+  /usr/share/doc/libgfileio/NEWS
+  /usr/share/doc/libgfileio/README
+  /usr/share/doc/libgfileio/TODO
+
+(libgfileio0)
+  /usr/bin/cyggfileio-0.dll
+
+(libgfileio-devel)
+  /usr/include/gfileio/gfenums.h
+  /usr/include/gfileio/gfexceptions.h
+  /usr/include/gfileio/gfile.h
+  /usr/include/gfileio/gfileio.h
+  /usr/include/gfileio/mode.h
+  /usr/include/gfileio/oflag.h
+  /usr/lib/libgfileio.dll.a
+  /usr/lib/libgfileio.la
+  /usr/lib/pkgconfig/libgfileio.pc
+  /usr/share/man/man3/GFileIO.3.gz
+  /usr/share/man/man3/GFileIO_GFEAcces.3.gz
+  /usr/share/man/man3/GFileIO_GFEAgain.3.gz
+  /usr/share/man/man3/GFileIO_GFEBadF.3.gz
+  /usr/share/man/man3/GFileIO_GFECanceled.3.gz
+  /usr/share/man/man3/GFileIO_GFEExist.3.gz
+  /usr/share/man/man3/GFileIO_GFEFault.3.gz
+  /usr/share/man/man3/GFileIO_GFEFileClosed.3.gz
+  /usr/share/man/man3/GFileIO_GFEGeneric.3.gz
+  /usr/share/man/man3/GFileIO_GFEIO.3.gz
+  /usr/share/man/man3/GFileIO_GFEInval.3.gz
+  /usr/share/man/man3/GFileIO_GFEIsDir.3.gz
+  /usr/share/man/man3/GFileIO_GFEMFile.3.gz
+  /usr/share/man/man3/GFileIO_GFENFile.3.gz
+  /usr/share/man/man3/GFileIO_GFENameTooLong.3.gz
+  /usr/share/man/man3/GFileIO_GFENoEnt.3.gz
+  /usr/share/man/man3/GFileIO_GFENoMem.3.gz
+  /usr/share/man/man3/GFileIO_GFENoSpc.3.gz
+  /usr/share/man/man3/GFileIO_GFENoSys.3.gz
+  /usr/share/man/man3/GFileIO_GFENotDir.3.gz
+  /usr/share/man/man3/GFileIO_GFEOverflow.3.gz
+  /usr/share/man/man3/GFileIO_GFEPerm.3.gz
+  /usr/share/man/man3/GFileIO_GFEPipe.3.gz
+  /usr/share/man/man3/GFileIO_GFEPremEOF.3.gz
+  /usr/share/man/man3/GFileIO_GFERoFS.3.gz
+  /usr/share/man/man3/GFileIO_GFESPipe.3.gz
+  /usr/share/man/man3/GFileIO_GFile.3.gz
+  /usr/share/man/man3/GFileIO_GFileIOException.3.gz
+  /usr/share/man/man3/GFileIO_Mode.3.gz
+  /usr/share/man/man3/GFileIO_OFlag.3.gz
+  /usr/share/man/man3/gfenums.h.3.gz
+  /usr/share/man/man3/gfexceptions.h.3.gz
+  /usr/share/man/man3/gfile.h.3.gz
+  /usr/share/man/man3/gfileio.h.3.gz
+  /usr/share/man/man3/mode.h.3.gz
+  /usr/share/man/man3/oflag.h.3.gz
+
+------------------
+
+Port Notes:
+
+----- version 0.1-1bl2 -----
+Repackage for licensing & readmes
+
+----- version 0.1-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>
+

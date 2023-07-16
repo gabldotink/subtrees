@@ -1,0 +1,75 @@
+libmonome
+------------------------------------------
+libmonome is a library for easy interaction with monome devices. It currently
+runs on Linux (on which it is primarily developed), OpenBSD, and Darwin/OS X.
+
+Runtime requirements:
+  cygwin-3.3.5-1
+  liblo7-0.31-1bl1
+  libmonome1-1.4.6-1bl1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.38-1
+  cygport-0.35.0-1
+  gcc-core-11.3.0-1
+  liblo-devel-0.31-1bl1
+  python39-3.9.10-1
+
+Canonical website:
+  https://github.com/monome/libmonome
+
+Canonical download:
+  https://github.com/monome/libmonome/archive/refs/tags/v1.4.6.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libmonome-1.4.6-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libmonome-1.4.6-X.cygport all
+
+This will create:
+  /usr/src/libmonome-1.4.6-X-src.tar.xz
+  /usr/src/libmonome-1.4.6-X.tar.xz
+  /usr/src/libmonome1-1.4.6-X.tar.xz
+  /usr/src/libmonome-devel-1.4.6-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libmonome)
+  /usr/bin/monomeserial.exe
+  /usr/share/doc/Cygwin/libmonome.README
+  /usr/share/doc/libmonome/Copyright
+  /usr/share/doc/libmonome/README
+  /usr/share/man/man1/monomeserial.1.gz
+
+(libmonome1)
+  /usr/bin/cygmonome-1.dll
+
+(libmonome-devel)
+  /usr/include/monome.h
+  /usr/lib/libmonome.dll.a
+
+------------------
+
+Port Notes:
+
+----- version 1.4.6-1bl1 -----
+Version bump.
+
+----- version 1.4.4-1bl1 -----
+Version bump.
+
+----- version 1.4.3-1bl1 -----
+Version bump.
+
+----- version 1.4.2-1bl1 -----
+Version bump.
+
+----- version 1.4.0-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

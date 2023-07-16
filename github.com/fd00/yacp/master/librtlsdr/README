@@ -1,0 +1,81 @@
+librtlsdr
+------------------------------------------
+DVB-T dongles based on the Realtek RTL2832U can be used as a cheap SDR, since
+the chip allows transferring the raw I/Q samples to the host, which is
+officially used for DAB/DAB+/FM demodulation.
+
+Runtime requirements:
+  cygwin-3.1.7-1
+  librtlsdr-devel-0.6.0-1bl1
+  librtlsdr0-0.6.0-1bl1
+  libusb1.0-1.0.21-1
+  libusb1.0-devel-1.0.21-1
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.34+1git.de9c1b7cfe-1
+  cmake-3.17.3-2
+  cygport-0.34.0-1
+  gcc-core-10.2.0-1
+  libtool-2.4.6-7
+  make-4.3-1
+
+Canonical website:
+  https://github.com/steve-m/librtlsdr
+
+Canonical download:
+  https://github.com/steve-m/librtlsdr/archive/0.6.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack librtlsdr-0.6.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./librtlsdr-0.6.0-X.cygport all
+
+This will create:
+  /usr/src/librtlsdr-0.6.0-X-src.tar.xz
+  /usr/src/librtlsdr-0.6.0-X.tar.xz
+  /usr/src/librtlsdr0-0.6.0-X.tar.xz
+  /usr/src/librtlsdr-devel-0.6.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(librtlsdr)
+  /usr/bin/rtl_adsb.exe
+  /usr/bin/rtl_eeprom.exe
+  /usr/bin/rtl_fm.exe
+  /usr/bin/rtl_power.exe
+  /usr/bin/rtl_sdr.exe
+  /usr/bin/rtl_tcp.exe
+  /usr/bin/rtl_test.exe
+  /usr/share/doc/Cygwin/librtlsdr.README
+  /usr/share/doc/librtlsdr/AUTHORS
+  /usr/share/doc/librtlsdr/COPYING
+  /usr/share/doc/librtlsdr/README
+
+(librtlsdr0)
+  /usr/bin/cygrtlsdr-0.dll
+
+(librtlsdr-devel)
+  /usr/include/rtl-sdr.h
+  /usr/include/rtl-sdr_export.h
+  /usr/lib/librtlsdr.dll.a
+  /usr/lib/pkgconfig/librtlsdr.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.6.0-1bl1 -----
+Version bump.
+
+----- version 0.5.3-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

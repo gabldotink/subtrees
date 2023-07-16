@@ -1,0 +1,40 @@
+HOMEPAGE="http://www.efficios.com/${PN}"
+SRC_URI="http://www.efficios.com/files/${PN}/${P}.tar.bz2"
+
+CATEGORY="Libs"
+SUMMARY="Trace Viewer and Converter, mainly for the Common Trace Format"
+DESCRIPTION="This project provides trace read and write libraries, as well as a trace
+converter. A plugin can be created for any trace format to allow its conversion
+to/from another trace format."
+
+CYGCONF_ARGS="
+	--enable-maintainer-mode
+	--enable-python-bindings
+	--disable-debug-info
+"
+
+PKG_NAMES="
+	${PN}
+	lib${PN}1
+	lib${PN}-devel
+	python3-${PN}
+"
+babeltrace_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+libbabeltrace1_CONTENTS="
+	usr/bin/*.dll
+"
+libbabeltrace_devel_CONTENTS="
+	usr/include
+	usr/lib/lib${PN}*
+	usr/lib/pkgconfig
+"
+python3_babeltrace_CONTENTS="
+	usr/lib/python*
+"
+babeltrace_SUMMARY="${SUMMARY} (utilities)"
+libbabeltrace1_SUMMARY="${SUMMARY} (runtime)"
+libbabeltrace_devel_SUMMARY="${SUMMARY} (development)"
+python3_babeltrace_SUMMARY="${SUMMARY} (python3 bindings)"

@@ -1,0 +1,177 @@
+fplll
+------------------------------------------
+fplll contains several algorithms on lattices that rely on floating-point
+computations. This includes implementations of the floating-point LLL reduction
+algorithm, offering different speed/guarantees ratios. It contains a wrapper
+choosing the estimated best sequence of variants in order to provide a
+guaranteed output as fast as possible. In the case of the wrapper, the
+succession of variants is oblivious to the user. It also includes a rigorous
+floating-point implementation of the Kannan-Fincke-Pohst algorithm that finds a
+shortest non-zero lattice vector.
+
+Runtime requirements:
+  cygwin-3.4.3-1
+  cygwin-devel-3.4.3-1
+  libfplll-devel-5.4.4-1bl1
+  libfplll8-5.4.4-1bl1
+  libgcc1-11.3.0-1
+  libgmp-devel-6.2.1-2
+  libgmp10-6.2.1-2
+  libmpfr-devel-4.2.0-1
+  libmpfr6-4.2.0-1
+  libqd-devel-2.3.23-1bl1
+  libqd0-2.3.23-1bl1
+  libstdc++6-11.3.0-1
+  pkg-config-1.9.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.39-1
+  cygport-0.35.5-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libgmp-devel-6.2.1-2
+  libmpfr-devel-4.2.0-1
+  libqd-devel-2.3.23-1bl1
+  libtool-2.4.7-1
+  make-4.4-1
+
+Canonical website:
+  https://github.com/fplll/fplll
+
+Canonical download:
+  https://github.com/fplll/fplll/archive/refs/tags/5.4.4.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack fplll-5.4.4-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./fplll-5.4.4-X.cygport all
+
+This will create:
+  /usr/src/fplll-5.4.4-X-src.tar.xz
+  /usr/src/fplll-5.4.4-X.tar.xz
+  /usr/src/libfplll8-5.4.4-X.tar.xz
+  /usr/src/libfplll-devel-5.4.4-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(fplll)
+  /usr/bin/fplll.exe
+  /usr/bin/latticegen.exe
+  /usr/share/doc/Cygwin/fplll.README
+  /usr/share/doc/fplll/CONTRIBUTING.md
+  /usr/share/doc/fplll/COPYING
+  /usr/share/doc/fplll/ChangeLog
+  /usr/share/doc/fplll/NEWS
+  /usr/share/doc/fplll/README.md
+  /usr/share/fplll/strategies/default.json
+
+(libfplll8)
+  /usr/bin/cygfplll-8.dll
+
+(libfplll-devel)
+  /usr/include/fplll.h
+  /usr/include/fplll/bkz.h
+  /usr/include/fplll/bkz_param.h
+  /usr/include/fplll/defs.h
+  /usr/include/fplll/enum/enumerate.h
+  /usr/include/fplll/enum/enumerate_base.h
+  /usr/include/fplll/enum/enumerate_ext.h
+  /usr/include/fplll/enum/enumerate_ext_api.h
+  /usr/include/fplll/enum/evaluator.h
+  /usr/include/fplll/fplll.h
+  /usr/include/fplll/fplll_config.h
+  /usr/include/fplll/gso.h
+  /usr/include/fplll/gso_gram.h
+  /usr/include/fplll/gso_interface.h
+  /usr/include/fplll/hlll.h
+  /usr/include/fplll/householder.h
+  /usr/include/fplll/io/thread_pool.hpp
+  /usr/include/fplll/lll.h
+  /usr/include/fplll/nr/dpe.h
+  /usr/include/fplll/nr/matrix.cpp
+  /usr/include/fplll/nr/matrix.h
+  /usr/include/fplll/nr/nr.h
+  /usr/include/fplll/nr/nr_FP.inl
+  /usr/include/fplll/nr/nr_FP_d.inl
+  /usr/include/fplll/nr/nr_FP_dd.inl
+  /usr/include/fplll/nr/nr_FP_dpe.inl
+  /usr/include/fplll/nr/nr_FP_ld.inl
+  /usr/include/fplll/nr/nr_FP_misc.inl
+  /usr/include/fplll/nr/nr_FP_mpfr.inl
+  /usr/include/fplll/nr/nr_FP_qd.inl
+  /usr/include/fplll/nr/nr_Z.inl
+  /usr/include/fplll/nr/nr_Z_d.inl
+  /usr/include/fplll/nr/nr_Z_l.inl
+  /usr/include/fplll/nr/nr_Z_misc.inl
+  /usr/include/fplll/nr/nr_Z_mpz.inl
+  /usr/include/fplll/nr/nr_rand.inl
+  /usr/include/fplll/nr/numvect.h
+  /usr/include/fplll/pruner/pruner.h
+  /usr/include/fplll/pruner/pruner_simplex.h
+  /usr/include/fplll/svpcvp.h
+  /usr/include/fplll/threadpool.h
+  /usr/include/fplll/util.h
+  /usr/include/fplll/wrapper.h
+  /usr/lib/libfplll.dll.a
+  /usr/lib/pkgconfig/fplll.pc
+
+------------------
+
+Port Notes:
+
+----- version 5.4.4-1bl1 -----
+Version bump.
+
+----- version 5.4.2-1bl1 -----
+Version bump.
+
+----- version 5.4.1-1bl1 -----
+Version bump.
+
+----- version 5.4.0-1bl1 -----
+Version bump.
+
+----- version 5.3.3-1bl1 -----
+Version bump.
+
+----- version 5.3.2-1bl1 -----
+Version bump.
+
+----- version 5.3.1-1bl1 -----
+Version bump.
+
+----- version 5.2.1-1bl1 -----
+Version bump.
+
+----- version 5.2.0-1bl1 -----
+Version bump.
+
+----- version 5.0.3-1bl1 -----
+Version bump.
+
+----- version 4.0.4-1bl2 -----
+Rebuild on x86_64
+
+----- version 4.0.4-1bl1 -----
+Version bump.
+
+----- version 4.0.1-1bl1 -----
+Version bump.
+
+----- version 3.1.2-1bl1 -----
+Version bump.
+
+----- version 3.1.1-1bl1 -----
+Version bump.
+
+----- version 3.0.12-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

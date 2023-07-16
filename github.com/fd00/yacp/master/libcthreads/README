@@ -1,0 +1,90 @@
+libcthreads
+------------------------------------------
+libcthreads is a library for cross-platform C threads functions.
+
+Runtime requirements:
+  cygwin-3.3.4-2
+  libcerror1-20220101-1bl1
+  libcthreads-devel-20220102-1bl1
+  libcthreads1-20220102-1bl1
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.37-2
+  cygport-0.34.2-1
+  gcc-core-11.2.0-1
+  libcerror-devel-20220101-1bl1
+  libtool-2.4.6-8
+  make-4.3-1
+
+Canonical website:
+  https://github.com/libyal/libcthreads
+
+Canonical download:
+  https://github.com/libyal/libcthreads/archive/refs/tags/20220102.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libcthreads-20220102-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libcthreads-20220102-X.cygport all
+
+This will create:
+  /usr/src/libcthreads-20220102-X-src.tar.xz
+  /usr/src/libcthreads-20220102-X.tar.xz
+  /usr/src/libcthreads1-20220102-X.tar.xz
+  /usr/src/libcthreads-devel-20220102-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libcthreads)
+  /usr/share/doc/Cygwin/libcthreads.README
+  /usr/share/doc/libcthreads/AUTHORS
+  /usr/share/doc/libcthreads/COPYING
+  /usr/share/doc/libcthreads/COPYING.LESSER
+  /usr/share/doc/libcthreads/ChangeLog
+  /usr/share/doc/libcthreads/README
+
+(libcthreads1)
+  /usr/bin/cygcthreads-1.dll
+
+(libcthreads-devel)
+  /usr/include/libcthreads.h
+  /usr/include/libcthreads/definitions.h
+  /usr/include/libcthreads/error.h
+  /usr/include/libcthreads/extern.h
+  /usr/include/libcthreads/features.h
+  /usr/include/libcthreads/types.h
+  /usr/lib/libcthreads.dll.a
+  /usr/lib/pkgconfig/libcthreads.pc
+  /usr/share/man/man3/libcthreads.3.gz
+
+------------------
+
+Port Notes:
+
+----- version 20220102-1bl1 -----
+Version bump.
+
+----- version 20200508-1bl1 -----
+Version bump.
+
+----- version 20180724-1bl1 -----
+Version bump.
+
+----- version 20170101-1bl1 -----
+Version bump.
+
+----- version 20160402-1bl1 -----
+Version bump.
+
+----- version 20141014-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

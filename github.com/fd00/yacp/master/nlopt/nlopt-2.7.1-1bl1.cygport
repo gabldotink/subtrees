@@ -1,0 +1,59 @@
+HOMEPAGE="https://github.com/stevengj/${PN}"
+SRC_URI="https://github.com/stevengj/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Math"
+SUMMARY="Non-linear optimization library"
+DESCRIPTION="NLopt is a free/open-source library for nonlinear optimization, providing a
+common interface for a number of different free optimization routines
+available online as well as original implementations of various other
+algorithms."
+
+BUILD_REQUIRES="libguile3.0-devel octave-devel"
+
+export CPPFLAGS="${CPPFLAGS} -D_GNU_SOURCE"
+
+inherit cmake
+
+src_test()
+{
+	cd ${B}
+	PATH=${B}:${PATH} ninja_test
+}
+
+PKG_IGNORE="
+	usr/lib/octave/6.4.0/site/oct/x86_64-pc-cygwin/libnlopt_optimize.dll.a
+"
+
+PKG_NAMES="
+	${PN}
+	lib${PN}0
+	lib${PN}-devel
+	guile-${PN}
+	octave-${PN}
+"
+nlopt_CONTENTS="
+	usr/share/doc
+"
+libnlopt0_CONTENTS="
+	usr/bin
+"
+libnlopt_devel_CONTENTS="
+	usr/include
+	usr/lib/cmake
+	usr/lib/*.dll.a
+	usr/lib/pkgconfig
+	usr/share/man
+"
+guile_nlopt_CONTENTS="
+	usr/lib/guile
+	usr/share/guile
+"
+octave_nlopt_CONTENTS="
+	usr/lib/octave/*/site/oct/*/nlopt_optimize.oct
+	usr/share/octave
+"
+nlopt_SUMMARY="${SUMMARY} (licensing & readmes)"
+libnlopt0_SUMMARY="${SUMMARY} (runtime)"
+libnlopt_devel_SUMMARY="${SUMMARY} (development)"
+guile_nlopt_SUMMARY="${SUMMARY} (guile bindings)"
+octave_nlopt_SUMMARY="${SUMMARY} (octave bindings)"

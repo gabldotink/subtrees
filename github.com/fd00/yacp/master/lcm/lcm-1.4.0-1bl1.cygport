@@ -1,0 +1,57 @@
+HOMEPAGE="https://lcm-proj.github.io/"
+SRC_URI="https://github.com/lcm-proj/${PN}/archive/v${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Lightweight Communications and Marshalling"
+DESCRIPTION="LCM is a set of libraries and tools for message passing and data marshalling,
+targeted at real-time systems where high-bandwidth and low latency are
+critical. It provides a publish/subscribe message passing model and automatic
+marshalling/unmarshalling code generation with bindings for applications in a
+variety of programming languages. It was originally designed and used by the
+MIT DARPA Urban Challenge Team as its message passing system."
+
+inherit cmake
+
+src_test()
+{
+	cd ${B}
+	PATH=${B}/lcm:${PATH} ninja_test
+}
+
+PKG_IGNORE="
+	usr/lib/liblcm.a
+"
+
+PKG_NAMES="
+	${PN}
+	lib${PN}1
+	lib${PN}-devel
+	lua-${PN}
+	python2-${PN}
+"
+lcm_CONTENTS="
+	usr/bin/${PN}*.exe
+	usr/share/doc
+	usr/share/man
+"
+liblcm1_CONTENTS="
+	usr/bin/*.dll
+"
+liblcm_devel_CONTENTS="
+	usr/include
+	usr/lib/cmake
+	usr/lib/lib${PN}.dll.a
+	usr/lib/pkgconfig/${PN}.pc
+	usr/share/aclocal
+"
+lua_lcm_CONTENTS="
+	usr/lib/lua
+"
+python2_lcm_CONTENTS="
+	usr/lib/python*
+"
+lcm_SUMMARY="${SUMMARY} (utilities)"
+liblcm1_SUMMARY="${SUMMARY} (runtime)"
+liblcm_devel_SUMMARY="${SUMMARY} (development)"
+lua_lcm_SUMMARY="${SUMMARY} (lua bindings)"
+python2_lcm_SUMMARY="${SUMMARY} (python2 bindings)"

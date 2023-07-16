@@ -1,0 +1,69 @@
+HOMEPAGE="https://www.nongnu.org/${PN}/"
+SRC_URI="mirror://savannah/${PN}/${P}.tar.gz"
+
+CATEGORY="Security"
+SUMMARY="OATH Toolkit"
+DESCRIPTION="The OATH Toolkit provide components for building one-time password
+authentication systems. It contains shared libraries, command line tools and a
+PAM module. Supported technologies include the event-based HOTP algorithm
+(RFC4226) and the time-based TOTP algorithm (RFC6238). OATH stands for Open
+AuTHentication, which is the organization that specify the algorithms. For
+managing secret key files, the Portable Symmetric Key Container (PSKC) format
+described in RFC6030 is supported."
+
+BUILD_REQUIRES="bison gengetopt libxml2-devel libxmlsec1-devel"
+
+CYGCONF_ARGS="
+	--disable-pam
+"
+
+src_install()
+{
+	cd ${B}
+	cyginstall
+
+	cd ${S}/libpskc/man
+	doman *.3
+}
+
+DIFF_EXCLUDES="
+	.version
+	pskctool-h.txt
+"
+
+PKG_NAMES="
+	${PN}
+	liboath0
+	liboath-devel
+	libpskc0
+	libpskc-devel
+"
+oath_toolkit_CONTENTS="
+	usr/bin/*.exe
+	usr/share/doc
+	usr/share/man/man1
+	usr/share/xml
+"
+liboath0_CONTENTS="
+	usr/bin/cygoath-0.dll
+"
+liboath_devel_CONTENTS="
+	usr/include/liboath
+	usr/lib/liboath*
+	usr/lib/pkgconfig/liboath.pc
+	usr/share/man/man3/oath*
+"
+libpskc0_CONTENTS="
+	usr/bin/cygpskc-0.dll
+"
+libpskc_devel_CONTENTS="
+	usr/include/pskc
+	usr/lib/libpskc*
+	usr/lib/pkgconfig/libpskc.pc
+	usr/share/man/man3/pskc*
+"
+oath_toolkit_SUMMARY="${SUMMARY} (utilities)"
+liboath0_SUMMARY="${SUMMARY} (runtime)"
+liboath_devel_SUMMARY="${SUMMARY} (development)"
+libpskc0_SUMMARY=${liboath0_SUMMARY//OATH/PSKC/}
+libpskc_devel_SUMMARY=${liboath_devel_SUMMARY//OATH/PSKC/}

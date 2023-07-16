@@ -1,0 +1,81 @@
+gupnp-ui
+------------------------------------------
+GUPnP-UI is a collection of helpers for building user interface application
+components for gupnp applications.
+
+Runtime requirements:
+  cygwin-2.10.0-1
+  libglib2.0_0-2.54.3-1
+  libgtk2.0-devel-2.24.32-1
+  libgtk2.0_0-2.24.32-1
+  libgupnp-ui1.0-devel-0.1.1-1bl3
+  libgupnp-ui1.0_0-0.1.1-1bl3
+  libgupnp1.0-devel-1.0.2-1bl1
+  libgupnp1.0_4-1.0.2-1bl1
+  pkg-config-0.29.1-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-10-1
+  binutils-2.29-1
+  cygport-0.31.0-1
+  gcc-core-6.4.0-5
+  libtool-2.4.6-5
+  make-4.2.1-2
+
+Canonical website:
+  https://wiki.gnome.org/Projects/GUPnP
+
+Canonical download:
+  mirror://gnome/sources/gupnp-ui/0.1/gupnp-ui-0.1.1.tar.bz2
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack gupnp-ui-0.1.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./gupnp-ui-0.1.1-X.cygport all
+
+This will create:
+  /usr/src/gupnp-ui-0.1.1-X-src.tar.xz
+  /usr/src/gupnp-ui-0.1.1-X.tar.xz
+  /usr/src/libgupnp-ui1.0_0-0.1.1-X.tar.xz
+  /usr/src/libgupnp-ui1.0-devel-0.1.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(gupnp-ui)
+  /usr/share/doc/Cygwin/gupnp-ui.README
+  /usr/share/doc/gupnp-ui/AUTHORS
+  /usr/share/doc/gupnp-ui/COPYING
+  /usr/share/doc/gupnp-ui/ChangeLog
+  /usr/share/doc/gupnp-ui/NEWS
+  /usr/share/doc/gupnp-ui/README
+
+(libgupnp-ui1.0_0)
+  /usr/bin/cyggupnp-ui-1.0-0.dll
+
+(libgupnp-ui1.0-devel)
+  /usr/include/gupnp-ui-1.0/libgupnp-ui/gupnp-ui-device-store.h
+  /usr/include/gupnp-ui-1.0/libgupnp-ui/gupnp-ui-device-view.h
+  /usr/include/gupnp-ui-1.0/libgupnp-ui/gupnp-ui.h
+  /usr/lib/libgupnp-ui-1.0.dll.a
+  /usr/lib/pkgconfig/gupnp-ui-1.0.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.1.1-1bl3 -----
+Rebuild with gcc-6.4.0
+
+----- version 0.1.1-1bl2 -----
+Rebuild on x86_64
+
+----- version 0.1.1-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

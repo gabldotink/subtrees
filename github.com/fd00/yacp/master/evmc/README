@@ -1,0 +1,111 @@
+evmc
+------------------------------------------
+The EVMC is the low-level ABI between Ethereum Virtual Machines (EVMs) and
+Ethereum Clients. On the EVM-side it supports classic EVM1 and eWASM. On the
+Client-side it defines the interface for EVM implementations to access Ethereum
+environment and state.
+
+Runtime requirements:
+  cygwin-3.4.3-1
+  libevmc10-10.0.0-1bl1
+  libgcc1-11.3.0-1
+  libstdc++6-11.3.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.39-1
+  cmake-3.23.2-1
+  cygport-0.35.5-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  ninja-1.11.1-1
+
+Canonical website:
+  https://github.com/ethereum/evmc
+
+Canonical download:
+  https://github.com/ethereum/evmc/archive/refs/tags/v10.0.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack evmc-10.0.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./evmc-10.0.0-X.cygport all
+
+This will create:
+  /usr/src/evmc-10.0.0-X-src.tar.xz
+  /usr/src/evmc-10.0.0-X.tar.xz
+  /usr/src/libevmc10-10.0.0-X.tar.xz
+  /usr/src/libevmc-devel-10.0.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(evmc)
+  /usr/share/doc/Cygwin/evmc.README
+  /usr/share/doc/evmc/AUTHORS.md
+  /usr/share/doc/evmc/CHANGELOG.md
+  /usr/share/doc/evmc/EVMC.md
+  /usr/share/doc/evmc/EVM_Storage_Change_Status.md
+  /usr/share/doc/evmc/Host_Guide.md
+  /usr/share/doc/evmc/LICENSE
+  /usr/share/doc/evmc/README.md
+  /usr/share/doc/evmc/VM_Guide.md
+  /usr/share/doc/evmc/VM_Tester.md
+
+(libevmc10)
+  /usr/bin/cygevmc-instructions-10.dll
+  /usr/bin/cygevmc-loader-10.dll
+  /usr/bin/cygevmc-tooling-10.dll
+
+(libevmc-devel)
+  /usr/include/evmc/evmc.h
+  /usr/include/evmc/evmc.hpp
+  /usr/include/evmc/filter_iterator.hpp
+  /usr/include/evmc/helpers.h
+  /usr/include/evmc/hex.hpp
+  /usr/include/evmc/instructions.h
+  /usr/include/evmc/loader.h
+  /usr/include/evmc/mocked_host.hpp
+  /usr/include/evmc/tooling.hpp
+  /usr/include/evmc/utils.h
+  /usr/lib/cmake/evmc/EVMC.cmake
+  /usr/lib/cmake/evmc/evmcConfig.cmake
+  /usr/lib/cmake/evmc/evmcConfigVersion.cmake
+  /usr/lib/cmake/evmc/evmcTargets-release.cmake
+  /usr/lib/cmake/evmc/evmcTargets.cmake
+  /usr/lib/libevmc-instructions.dll.a
+  /usr/lib/libevmc-loader.dll.a
+  /usr/lib/libevmc-tooling.dll.a
+
+------------------
+
+Port Notes:
+
+----- version 10.0.0-1bl1 -----
+Version bump.
+
+----- version 9.0.0-1bl1 -----
+Version bump.
+
+----- version 8.0.0-1bl1 -----
+Version bump.
+
+----- version 7.4.0-1bl1 -----
+Version bump.
+
+----- version 7.1.0-1bl1 -----
+Version bump.
+
+----- version 6.1.0-1bl1 -----
+Version bump.
+
+----- version 6.0.1-1bl1 -----
+Version bump.
+
+----- version 0.1.0.dev0+git20180508-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

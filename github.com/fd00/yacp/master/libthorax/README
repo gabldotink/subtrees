@@ -1,0 +1,78 @@
+libthorax
+------------------------------------------
+libthorax is intended to be a programming lingua franca for common and simple
+operations in project8 analysis.  it is written in ANSI C99, with no bells or
+whistles.
+
+Runtime requirements:
+  cygwin-2.10.0-1
+  libgcc1-6.4.0-5
+  libstdc++6-6.4.0-5
+  libthorax-devel-0.3.0-1bl1
+  libthorax0-0.3.0-1bl1
+  pkg-config-0.29.1-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.29-1
+  cmake-3.6.2-1
+  cygport-0.30.1-1
+  gcc-core-6.4.0-5
+  gcc-g++-6.4.0-5
+  make-4.2.1-2
+
+Canonical website:
+  https://github.com/project8/libthorax
+
+Canonical download:
+  https://github.com/project8/libthorax/archive/v0.3.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libthorax-0.3.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libthorax-0.3.0-X.cygport all
+
+This will create:
+  /usr/src/libthorax-0.3.0-X-src.tar.xz
+  /usr/src/libthorax-0.3.0-X.tar.xz
+  /usr/src/libthorax0-0.3.0-X.tar.xz
+  /usr/src/libthorax-devel-0.3.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libthorax)
+  /usr/bin/thorax_cpp_test.exe
+  /usr/bin/thorax_test.exe
+  /usr/share/doc/Cygwin/libthorax.README
+  /usr/share/doc/libthorax/README
+
+(libthorax0)
+  /usr/bin/cygthorax-0.dll
+
+(libthorax-devel)
+  /usr/include/thorax.hh
+  /usr/include/thorax_digital.h
+  /usr/include/thorax_nmr_coordinates.h
+  /usr/include/thorax_time.h
+  /usr/include/thorax_types.h
+  /usr/lib/libthorax.dll.a
+  /usr/lib/pkgconfig/libthorax.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.3.0-1bl1 -----
+Version bump.
+
+----- version 0.2.2-1bl1 -----
+Version bump.
+
+----- version 0.1.0+git20140305-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

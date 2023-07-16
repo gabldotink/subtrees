@@ -1,0 +1,27 @@
+HOMEPAGE="https://github.com/videolabs/${PN}"
+SRC_URI="https://github.com/videolabs/${PN}/archive/${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Minimal mDNS resolver library"
+DESCRIPTION="Minimal mDNS resolver (and announcer) library."
+
+inherit meson
+
+PKG_NAMES="
+	libmicrodns
+	libmicrodns1
+	libmicrodns-devel
+"
+libmicrodns_CONTENTS="
+	usr/share
+"
+libmicrodns1_CONTENTS="
+	usr/bin
+"
+libmicrodns_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+libmicrodns_SUMMARY="${SUMMARY} (licensing & readmes)"
+libmicrodns1_SUMMARY="${SUMMARY} (runtime)"
+libmicrodns_devel_SUMMARY="${SUMMARY} (development)"

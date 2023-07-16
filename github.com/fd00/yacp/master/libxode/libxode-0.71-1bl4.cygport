@@ -1,0 +1,36 @@
+HOMEPAGE="http://${PN}.sf.net/"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="XML library which wraps expat"
+DESCRIPTION="libxode - XML, Memory, Strings... done right. In C even. Well, perhaps right is
+too strong a word. Conveniently is probably the best word. Or perhaps usefully."
+
+CYGPORT_USE_UNSTABLE_API=1
+src_unpack_hook()
+{
+	cd ${origsrcdir}/${SRC_DIR}
+	rm -f aclocal.m4 configure
+	find . -name Makefile.in | xargs rm -f
+}
+
+PKG_NAMES="
+	${PN}
+	${PN}1
+	${PN}-devel"
+
+libxode_CONTENTS="
+	usr/share
+"
+libxode1_CONTENTS="
+	usr/bin/*.dll
+"
+libxode_devel_CONTENTS="
+	usr/bin/${PN}-config
+	usr/include
+	usr/lib
+"
+
+libxode_SUMMARY="${SUMMARY} (licensing & readmes)"
+libxode1_SUMMARY="${SUMMARY} (runtime)"
+libxode_devel_SUMMARY="${SUMMARY} (development)"

@@ -1,0 +1,44 @@
+HOMEPAGE="https://github.com/paolostivanin/${PN}"
+SRC_URI="https://github.com/paolostivanin/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="C library that generates TOTP and HOTP"
+DESCRIPTION="C library that generates TOTP and HOTP according to RFC-6238"
+
+LICENSE="Apache-2.0"
+LICENSE_SPDX="SPDX-License-Identifier: Apache-2.0"
+LICENSE_URI="LICENSE"
+
+BUILD_REQUIRES="libgcrypt-devel"
+
+inherit cmake
+
+# need criterion
+CYGCMAKE_ARGS="
+	-DBUILD_TESTING:BOOL=OFF
+"
+
+src_test()
+{
+	cd ${B}
+	ninja_test
+}
+
+PKG_NAMES="
+	${PN}
+	${PN}2
+	${PN}-devel
+"
+libcotp_CONTENTS="
+	usr/share
+"
+libcotp2_CONTENTS="
+	usr/bin/*-2.dll
+"
+libcotp_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+libcotp_SUMMARY="${SUMMARY} (licensing & readmes)"
+libcotp2_SUMMARY="${SUMMARY} (runtime)"
+libcotp_devel_SUMMARY="${SUMMARY} (development)"

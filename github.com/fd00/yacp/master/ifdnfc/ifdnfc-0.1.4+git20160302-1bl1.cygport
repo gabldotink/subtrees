@@ -1,0 +1,9 @@
+HOMEPAGE="https://github.com/nfc-tools/${PN}"
+GIT_URI="https://github.com/nfc-tools/${PN}.git"
+
+CATEGORY="Utils"
+SUMMARY="PC/SC IFD Handler"
+DESCRIPTION="Aim of this project is to bring PC/SC support for all readers supported by
+libnfc."
+
+inherit git

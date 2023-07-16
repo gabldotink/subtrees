@@ -1,0 +1,194 @@
+libcaer
+------------------------------------------
+Minimal C library to access, configure and get data out of AER sensors, such as
+the Dynamic Vision Sensor (DVS) or DAVIS cameras.
+
+Runtime requirements:
+  cygwin-3.4.6-1
+  libcaer-devel-3.3.15-1bl1
+  libcaer3-3.3.15-1bl1
+  libgcc1-11.3.0-1
+  libopencv3.4-3.4.1-3
+  libserialport-devel-0.1.1-1bl3
+  libserialport0-0.1.1-1bl3
+  libstdc++6-11.3.0-1
+  libusb1.0-1.0.21-1
+  libusb1.0-devel-1.0.21-1
+  pkg-config-1.9.4-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.40-1
+  cmake-3.23.2-1
+  cygport-0.36.1-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libopencv-devel-3.4.1-3
+  libserialport-devel-0.1.1-1bl3
+  libusb1.0-devel-1.0.21-1
+  ninja-1.11.1-1
+
+Canonical website:
+  https://gitlab.com/inivation/dv/libcaer/
+
+Canonical download:
+  https://gitlab.com/inivation/dv/libcaer/-/archive/3.3.15/libcaer-3.3.15.tar.bz2
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libcaer-3.3.15-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libcaer-3.3.15-X.cygport all
+
+This will create:
+  /usr/src/libcaer-3.3.15-X-src.tar.xz
+  /usr/src/libcaer-3.3.15-X.tar.xz
+  /usr/src/libcaer3-3.3.15-X.tar.xz
+  /usr/src/libcaer-devel-3.3.15-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libcaer)
+  /usr/share/caer/examples/davis_cvgui.exe
+  /usr/share/caer/examples/davis_cvgui_filters.exe
+  /usr/share/caer/examples/davis_enable_aer.exe
+  /usr/share/caer/examples/davis_simple.exe
+  /usr/share/caer/examples/davis_simple_2cam.exe
+  /usr/share/caer/examples/davis_simple_cpp.exe
+  /usr/share/caer/examples/davis_text.exe
+  /usr/share/caer/examples/device_discovery.exe
+  /usr/share/caer/examples/dvs128_simple.exe
+  /usr/share/caer/examples/dvs128_simple_cpp.exe
+  /usr/share/caer/examples/dvx_bw_test.exe
+  /usr/share/caer/examples/dvxplorer.exe
+  /usr/share/caer/examples/dynapse_simple.exe
+  /usr/share/caer/examples/edvs_simple.exe
+  /usr/share/caer/examples/edvs_simple_cpp.exe
+  /usr/share/caer/examples/samsung_evk.exe
+  /usr/share/doc/Cygwin/libcaer.README
+  /usr/share/doc/libcaer/ChangeLog
+  /usr/share/doc/libcaer/LICENSE
+  /usr/share/doc/libcaer/README
+
+(libcaer3)
+  /usr/bin/cygcaer-3.dll
+
+(libcaer-devel)
+  /usr/include/libcaer/devices/davis.h
+  /usr/include/libcaer/devices/device.h
+  /usr/include/libcaer/devices/device_discover.h
+  /usr/include/libcaer/devices/dvs128.h
+  /usr/include/libcaer/devices/dvs132s.h
+  /usr/include/libcaer/devices/dvxplorer.h
+  /usr/include/libcaer/devices/dynapse.h
+  /usr/include/libcaer/devices/edvs.h
+  /usr/include/libcaer/devices/imu_support.h
+  /usr/include/libcaer/devices/samsung_evk.h
+  /usr/include/libcaer/devices/serial.h
+  /usr/include/libcaer/devices/usb.h
+  /usr/include/libcaer/events/common.h
+  /usr/include/libcaer/events/frame.h
+  /usr/include/libcaer/events/imu6.h
+  /usr/include/libcaer/events/imu9.h
+  /usr/include/libcaer/events/packetContainer.h
+  /usr/include/libcaer/events/polarity.h
+  /usr/include/libcaer/events/special.h
+  /usr/include/libcaer/events/spike.h
+  /usr/include/libcaer/filters/dvs_noise.h
+  /usr/include/libcaer/frame_utils.h
+  /usr/include/libcaer/libcaer.h
+  /usr/include/libcaer/log.h
+  /usr/include/libcaer/network.h
+  /usr/include/libcaer/portable_endian.h
+  /usr/include/libcaer/ringbuffer.h
+  /usr/include/libcaercpp/devices/davis.hpp
+  /usr/include/libcaercpp/devices/device.hpp
+  /usr/include/libcaercpp/devices/device_discover.hpp
+  /usr/include/libcaercpp/devices/dvs128.hpp
+  /usr/include/libcaercpp/devices/dvs132s.hpp
+  /usr/include/libcaercpp/devices/dvxplorer.hpp
+  /usr/include/libcaercpp/devices/dynapse.hpp
+  /usr/include/libcaercpp/devices/edvs.hpp
+  /usr/include/libcaercpp/devices/samsung_evk.hpp
+  /usr/include/libcaercpp/devices/serial.hpp
+  /usr/include/libcaercpp/devices/usb.hpp
+  /usr/include/libcaercpp/events/common.hpp
+  /usr/include/libcaercpp/events/frame.hpp
+  /usr/include/libcaercpp/events/imu6.hpp
+  /usr/include/libcaercpp/events/imu9.hpp
+  /usr/include/libcaercpp/events/packetContainer.hpp
+  /usr/include/libcaercpp/events/polarity.hpp
+  /usr/include/libcaercpp/events/special.hpp
+  /usr/include/libcaercpp/events/spike.hpp
+  /usr/include/libcaercpp/events/utils.hpp
+  /usr/include/libcaercpp/filters/dvs_noise.hpp
+  /usr/include/libcaercpp/libcaer.hpp
+  /usr/include/libcaercpp/network.hpp
+  /usr/include/libcaercpp/ringbuffer.hpp
+  /usr/lib/cmake/libcaer/caer-base.cmake
+  /usr/lib/cmake/libcaer/libcaer-exports-release.cmake
+  /usr/lib/cmake/libcaer/libcaer-exports.cmake
+  /usr/lib/cmake/libcaer/libcaerConfig.cmake
+  /usr/lib/cmake/libcaer/libcaerConfigVersion.cmake
+  /usr/lib/libcaer.dll.a
+  /usr/lib/pkgconfig/libcaer.pc
+
+------------------
+
+Port Notes:
+
+----- version 3.3.15-1bl1 -----
+Version bump.
+
+----- version 3.3.14-1bl1 -----
+Version bump.
+
+----- version 3.3.13-1bl1 -----
+Version bump.
+
+----- version 3.3.12-1bl1 -----
+Version bump.
+
+----- version 3.3.11-1bl1 -----
+Version bump.
+
+----- version 3.3.10-1bl1 -----
+Version bump.
+
+----- version 3.3.9-1bl1 -----
+Version bump.
+
+----- version 3.3.8-1bl1 -----
+Version bump.
+
+----- version 3.3.7-1bl1 -----
+Version bump.
+
+----- version 3.3.4-1bl1 -----
+Version bump.
+
+----- version 3.3.3-1bl1 -----
+Version bump.
+
+----- version 3.3.2-1bl1 -----
+Version bump.
+
+----- version 3.3.1-1bl1 -----
+Version bump.
+
+----- version 3.2.2-1bl1 -----
+Version bump.
+
+----- version 3.2.0-1bl1 -----
+Version bump.
+
+----- version 2.4.2-1bl1 -----
+Version bump.
+
+----- version 2.3.0-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

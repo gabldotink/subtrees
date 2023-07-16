@@ -1,0 +1,76 @@
+authforce
+------------------------------------------
+Authforce is an HTTP authentication brute forcer. Using various methods, it
+attempts brute force username and password pairs for a site. It has the
+ability to try common username and passwords, username derivations, and
+common username/password pairs. It is used to both test the security of your
+site and to prove the insecurity of HTTP authentication based on the fact that
+users just don342200231t pick good passwords.
+
+Runtime requirements:
+  cygwin-2.10.0-1
+  libcurl4-7.56.1-1
+  libintl8-0.19.8.1-2
+  libreadline7-7.0.3-3
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-10-1
+  binutils-2.29-1
+  cygport-0.30.1-1
+  gcc-core-6.4.0-5
+  make-4.2.1-2
+
+Canonical website:
+  http://www.divineinvasion.net/authforce/
+
+Canonical download:
+  http://www.divineinvasion.net/authforce/authforce-0.9.9.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack authforce-0.9.9-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./authforce-0.9.9-X.cygport all
+
+This will create:
+  /usr/src/authforce-0.9.9-X-src.tar.xz
+  /usr/src/authforce-0.9.9-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(authforce)
+  /usr/bin/authforce.exe
+  /usr/share/authforce/data/blank.lst
+  /usr/share/authforce/data/dummy.lst
+  /usr/share/authforce/data/password.lst
+  /usr/share/authforce/data/username.lst
+  /usr/share/authforce/data/userpass.lst
+  /usr/share/doc/Cygwin/authforce.README
+  /usr/share/doc/authforce/AUTHORS
+  /usr/share/doc/authforce/BUGS
+  /usr/share/doc/authforce/COPYING
+  /usr/share/doc/authforce/ChangeLog
+  /usr/share/doc/authforce/NEWS
+  /usr/share/doc/authforce/README
+  /usr/share/doc/authforce/THANKS
+  /usr/share/doc/authforce/TODO
+  /usr/share/info/authforce.info.gz
+  /usr/share/locale/nl/LC_MESSAGES/authforce.mo
+  /usr/share/man/mang/authforce.1.gz
+
+------------------
+
+Port Notes:
+
+----- version 0.9.9-1bl2 -----
+Rebuild on x86_84
+
+----- version 0.9.9-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://fd0.hatenablog.jp/>

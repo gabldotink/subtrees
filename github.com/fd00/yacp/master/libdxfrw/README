@@ -1,0 +1,96 @@
+libdxfrw
+------------------------------------------
+libdxfrw is a free C++ library to read and write DXF files in both formats,
+ascii and binary form.
+
+Runtime requirements:
+  cygwin-3.1.5-1
+  libdxfrw-devel-1.0.1-1bl1
+  libdxfrw1-1.0.1-1bl1
+  libgcc1-9.3.0-2
+  libstdc++6-9.3.0-2
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.34+1git.de9c1b7cfe-1
+  cmake-3.14.5-1
+  cygport-0.34.0-1
+  gcc-core-9.3.0-2
+  gcc-g++-9.3.0-2
+  libtool-2.4.6-7
+  ninja-1.10.0-1
+
+Canonical website:
+  https://github.com/LibreCAD/libdxfrw
+
+Canonical download:
+  https://github.com/LibreCAD/libdxfrw/archive/1.0.1.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libdxfrw-1.0.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libdxfrw-1.0.1-X.cygport all
+
+This will create:
+  /usr/src/libdxfrw-1.0.1-X-src.tar.xz
+  /usr/src/libdxfrw-1.0.1-X.tar.xz
+  /usr/src/libdxfrw1-1.0.1-X.tar.xz
+  /usr/src/libdxfrw-devel-1.0.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libdxfrw)
+  /usr/bin/dwg2dxf.exe
+  /usr/share/doc/Cygwin/libdxfrw.README
+  /usr/share/doc/libdxfrw/AUTHORS
+  /usr/share/doc/libdxfrw/COPYING
+  /usr/share/doc/libdxfrw/ChangeLog
+  /usr/share/doc/libdxfrw/NEWS
+  /usr/share/doc/libdxfrw/README
+  /usr/share/doc/libdxfrw/TODO
+  /usr/share/doc/libdxfrw/readme.md
+  /usr/share/man/man1/dwg2dxf.1.gz
+
+(libdxfrw1)
+  /usr/bin/cygdxfrw-1.dll
+
+(libdxfrw-devel)
+  /usr/include/libdxfrw/drw_base.h
+  /usr/include/libdxfrw/drw_classes.h
+  /usr/include/libdxfrw/drw_entities.h
+  /usr/include/libdxfrw/drw_header.h
+  /usr/include/libdxfrw/drw_interface.h
+  /usr/include/libdxfrw/drw_objects.h
+  /usr/include/libdxfrw/libdwgr.h
+  /usr/include/libdxfrw/libdxfrw.h
+  /usr/lib/cmake/libdxfrw/libdxfrwConfig.cmake
+  /usr/lib/cmake/libdxfrw/libdxfrwConfigVersion.cmake
+  /usr/lib/cmake/libdxfrw/libdxfrwTargets-release.cmake
+  /usr/lib/cmake/libdxfrw/libdxfrwTargets.cmake
+  /usr/lib/libdxfrw.dll.a
+  /usr/lib/pkgconfig/libdxfrw.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.0.1-1bl1 -----
+Version bump.
+
+----- version 0.6.3-1bl1 -----
+Version bump.
+
+----- version 0.5.11-1bl1 -----
+Version bump.
+
+----- version 0.5.8-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://fd0.hatenablog.jp/>

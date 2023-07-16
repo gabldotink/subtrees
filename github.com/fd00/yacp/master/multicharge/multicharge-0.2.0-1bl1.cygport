@@ -1,0 +1,50 @@
+HOMEPAGE="https://github.com/grimme-lab/${PN}"
+SRC_URI="https://github.com/grimme-lab/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Electronegativity equilibration model for atomic partial charges"
+DESCRIPTION="${SUMMARY}"
+
+BUILD_REQUIRES="liblapack-devel libmctc-lib-devel libmstore-devel"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DBUILD_SHARED_LIBS:BOOL=ON
+"
+
+src_test()
+{
+	cd ${B}
+	ninja_test
+}
+
+PKG_IGNORE="
+	usr/lib/cmake/multicharge/Findcustom-blas.cmake
+	usr/lib/cmake/multicharge/Findcustom-lapack.cmake
+	usr/lib/cmake/multicharge/Findmctc-lib.cmake
+	usr/lib/cmake/multicharge/Findmstore.cmake
+	usr/share/licenses/${PN}/LICENSE
+"
+
+PKG_NAMES="
+	multicharge
+	libmulticharge0
+	libmulticharge-devel
+"
+multicharge_CONTENTS="
+	usr/bin/*.exe
+	usr/share/doc
+"
+libmulticharge0_CONTENTS="
+	usr/bin/*.dll
+"
+libmulticharge_devel_CONTENTS="
+	usr/include
+	usr/lib/cmake/${PN}/${PN}*.cmake
+	usr/lib/lib*.dll.a
+	usr/lib/pkgconfig
+"
+multicharge_SUMMARY="${SUMMARY} (utilities)"
+libmulticharge0_SUMMARY="${SUMMARY} (runtime)"
+libmulticharge_devel_SUMMARY="${SUMMARY} (development)"

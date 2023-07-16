@@ -1,0 +1,27 @@
+HOMEPAGE="http://www.seasip.info/Unix/PSF/"
+SRC_URI="http://www.seasip.info/Unix/PSF/${P}.tar.gz"
+
+CATEGORY="Utils"
+SUMMARY="Tools for simple fixed-width bitmap fonts"
+DESCRIPTION="The PSF Tools are an attempt to do something similar to NetPBM, for simple
+fixed-width bitmap fonts."
+
+PKG_NAMES="
+	${PN}
+	libpsf0
+	libpsf-devel
+"
+psftools_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+libpsf0_CONTENTS="
+	usr/bin/*.dll
+"
+libpsf_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+psftools_SUMMARY="${SUMMARY} (utilities)"
+libpsf0_SUMMARY="${SUMMARY} (runtime)"
+libpsf_devel_SUMMARY="${SUMMARY} (development)"

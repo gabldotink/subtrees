@@ -1,0 +1,60 @@
+highway
+------------------------------------------
+A fast pattern matching tool like pt and ag.
+
+Runtime requirements:
+  cygwin-2.10.0-1
+  libiconv2-1.14-3
+  libonig5-6.8.2-1
+  libtcmalloc4-2.6.1-1bl1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-10-1
+  binutils-2.29-1
+  cygport-0.31.1-1
+  gcc-core-7.3.0-3
+  make-4.2.1-2
+
+Canonical website:
+  https://github.com/tkengo/highway
+
+Canonical download:
+  https://github.com/tkengo/highway/archive/v1.1.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack highway-1.1.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./highway-1.1.0-X.cygport all
+
+This will create:
+  /usr/src/highway-1.1.0-X-src.tar.xz
+  /usr/src/highway-1.1.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(highway)
+  /usr/bin/hw.exe
+  /usr/share/doc/Cygwin/highway.README
+  /usr/share/doc/highway/LICENSE
+  /usr/share/doc/highway/README.md
+
+------------------
+
+Port Notes:
+
+----- version 1.1.0-1bl2 -----
+Rebuild for libonig
+
+----- version 1.1.0-1bl1 -----
+Version bump.
+
+----- version 1.0.0-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

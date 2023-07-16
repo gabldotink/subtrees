@@ -1,0 +1,112 @@
+belcard
+------------------------------------------
+Belcard is a C++ library to manipulate VCard standard format.
+
+Runtime requirements:
+  cygwin-3.2.0-1
+  libbctoolbox1-5.0.23-1bl1
+  libbelcard-devel-5.0.23-1bl1
+  libbelcard1-5.0.23-1bl1
+  libbelr1-5.0.23-1bl1
+  libgcc1-11.2.0-1
+  libstdc++6-11.2.0-1
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.37-1
+  cmake-3.20.0-1
+  cygport-0.34.0-1
+  gcc-core-11.2.0-1
+  gcc-g++-11.2.0-1
+  libbctoolbox-devel-5.0.23-1bl1
+  libbelr-devel-5.0.23-1bl1
+  ninja-1.10.2-1
+
+Canonical website:
+  https://gitlab.linphone.org/BC/public/belcard
+
+Canonical download:
+  https://gitlab.linphone.org/BC/public/belcard/-/archive/5.0.23/belcard-5.0.23.tar.bz2
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack belcard-5.0.23-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./belcard-5.0.23-X.cygport all
+
+This will create:
+  /usr/src/belcard-5.0.23-X-src.tar.xz
+  /usr/src/belcard-5.0.23-X.tar.xz
+  /usr/src/libbelcard1-5.0.23-X.tar.xz
+  /usr/src/libbelcard-devel-5.0.23-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(belcard)
+  /usr/bin/belcard-folder.exe
+  /usr/bin/belcard-parser.exe
+  /usr/bin/belcard-unfolder.exe
+  /usr/bin/belcard_tester.exe
+  /usr/share/belcard/cmake/belcardConfig.cmake
+  /usr/share/belcard/cmake/belcardTargets-release.cmake
+  /usr/share/belcard/cmake/belcardTargets.cmake
+  /usr/share/belcard_tester/vcards/foldtest.vcf
+  /usr/share/belcard_tester/vcards/unfoldtest.vcf
+  /usr/share/belcard_tester/vcards/vcard.vcf
+  /usr/share/belcard_tester/vcards/vcards.vcf
+  /usr/share/belr/grammars/vcard_grammar
+  /usr/share/doc/Cygwin/belcard.README
+  /usr/share/doc/belcard/CHANGELOG.md
+  /usr/share/doc/belcard/LICENSE.txt
+  /usr/share/doc/belcard/README.md
+
+(libbelcard1)
+  /usr/bin/cygbelcard-1.dll
+
+(libbelcard-devel)
+  /usr/include/belcard/belcard.hpp
+  /usr/include/belcard/belcard_addressing.hpp
+  /usr/include/belcard/belcard_calendar.hpp
+  /usr/include/belcard/belcard_communication.hpp
+  /usr/include/belcard/belcard_explanatory.hpp
+  /usr/include/belcard/belcard_general.hpp
+  /usr/include/belcard/belcard_generic.hpp
+  /usr/include/belcard/belcard_geographical.hpp
+  /usr/include/belcard/belcard_identification.hpp
+  /usr/include/belcard/belcard_organizational.hpp
+  /usr/include/belcard/belcard_params.hpp
+  /usr/include/belcard/belcard_parser.hpp
+  /usr/include/belcard/belcard_property.hpp
+  /usr/include/belcard/belcard_rfc6474.hpp
+  /usr/include/belcard/belcard_security.hpp
+  /usr/include/belcard/belcard_utils.hpp
+  /usr/include/belcard/vcard_grammar.hpp
+  /usr/lib/libbelcard.dll.a
+  /usr/lib/pkgconfig/belcard.pc
+
+------------------
+
+Port Notes:
+
+----- version 5.0.23-1bl1 -----
+Version bump.
+
+----- version 4.4.0-1bl1 -----
+Version bump.
+
+----- version 4.3.1-1bl1 -----
+Version bump.
+
+----- version 4.3.0-1bl1 -----
+Version bump.
+
+----- version 1.0.2-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

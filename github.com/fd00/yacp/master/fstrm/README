@@ -1,0 +1,108 @@
+fstrm
+------------------------------------------
+Frame Streams is a light weight, binary clean protocol that allows for the
+transport of arbitrarily encoded data payload sequences with minimal framing
+overhead -- just four bytes per data frame. Frame Streams does not specify an
+encoding format for data frames and can be used with any data serialization
+format that produces byte sequences, such as Protocol Buffers, XML, JSON,
+MessagePack, YAML, etc.
+
+Runtime requirements:
+  cygwin-3.2.0-1
+  libevent2.1_7-2.1.12-1
+  libfstrm-devel-0.6.1-1bl1
+  libfstrm0-0.6.1-1bl1
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.36.1-2
+  cygport-0.34.0-1
+  gcc-core-10.2.0-1
+  libevent-devel-2.1.12-1
+  libtool-2.4.6-7
+  make-4.3-1
+
+Canonical website:
+  https://github.com/farsightsec/fstrm
+
+Canonical download:
+  https://github.com/farsightsec/fstrm/archive/v0.6.1.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack fstrm-0.6.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./fstrm-0.6.1-X.cygport all
+
+This will create:
+  /usr/src/fstrm-0.6.1-X-src.tar.xz
+  /usr/src/fstrm-0.6.1-X.tar.xz
+  /usr/src/libfstrm0-0.6.1-X.tar.xz
+  /usr/src/libfstrm-devel-0.6.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(fstrm)
+  /usr/bin/fstrm_capture.exe
+  /usr/bin/fstrm_dump.exe
+  /usr/bin/fstrm_replay.exe
+  /usr/share/doc/Cygwin/fstrm.README
+  /usr/share/doc/fstrm/ChangeLog
+  /usr/share/doc/fstrm/Copyright
+  /usr/share/doc/fstrm/LICENSE
+  /usr/share/doc/fstrm/README.md
+  /usr/share/man/man1/fstrm_capture.1.gz
+  /usr/share/man/man1/fstrm_dump.1.gz
+  /usr/share/man/man1/fstrm_replay.1.gz
+
+(libfstrm0)
+  /usr/bin/cygfstrm-0.dll
+
+(libfstrm-devel)
+  /usr/include/fstrm.h
+  /usr/include/fstrm/control.h
+  /usr/include/fstrm/file.h
+  /usr/include/fstrm/iothr.h
+  /usr/include/fstrm/rdwr.h
+  /usr/include/fstrm/reader.h
+  /usr/include/fstrm/tcp_writer.h
+  /usr/include/fstrm/unix_writer.h
+  /usr/include/fstrm/writer.h
+  /usr/lib/libfstrm.dll.a
+  /usr/lib/pkgconfig/libfstrm.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.6.1-1bl1 -----
+Version bump.
+
+----- version 0.6.0-1bl1 -----
+Version bump.
+
+----- version 0.5.0-1bl1 -----
+Version bump.
+
+----- version 0.4.0-1bl1 -----
+Version bump.
+
+----- version 0.3.2-1bl1 -----
+Version bump.
+
+----- version 0.3.1-1bl1 -----
+Version bump.
+
+----- version 0.3.0-1bl1 -----
+Version bump.
+
+----- version 0.2.0-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

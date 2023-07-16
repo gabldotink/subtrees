@@ -1,0 +1,14 @@
+HOMEPAGE="https://github.com/m3g/${PN}"
+SRC_URI="https://github.com/m3g/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Science"
+SUMMARY="Packing optimization for molecular dynamics simulations"
+DESCRIPTION="Packmol creates an initial point for molecular dynamics simulations by packing
+molecules in defined regions of space. The packing guarantees that short range
+repulsive interactions do not disrupt the simulations."
+
+LICENSE="MIT"
+LICENSE_SPDX="SPDX-License-Identifier: MIT"
+LICENSE_URI="LICENSE"
+
+inherit cmake

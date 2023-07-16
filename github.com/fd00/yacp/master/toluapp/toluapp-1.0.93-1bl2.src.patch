@@ -1,0 +1,54 @@
+--- origsrc/toluapp-1.0.93/CMakeLists.txt	2012-08-24 10:01:53.000000000 +0900
++++ src/toluapp-1.0.93/CMakeLists.txt	2020-01-04 17:00:48.676294900 +0900
+@@ -8,8 +8,14 @@ project ( toluapp C )
+ cmake_minimum_required ( VERSION 2.8 )
+ include ( cmake/dist.cmake )
+ 
+-find_package ( Lua REQUIRED )
+-include_directories ( include src/lib ${LUA_INCLUDE_DIR} )
++if (CYGWIN)
++  find_package ( PkgConfig )
++  pkg_check_modules ( LUA lua-5.1 )
++  include_directories ( include src/lib ${LUA_INCLUDE_DIRS} )
++else()
++  find_package ( Lua REQUIRED )
++  include_directories ( include src/lib ${LUA_INCLUDE_DIR} )
++endif()
+ 
+ # Build lib
+ file ( GLOB SRC_LIBTOLUAPP src/lib/*.c )
+@@ -20,7 +26,7 @@ endif ( )
+ add_library ( toluapp_lib ${SRC_LIBTOLUAPP} ${DEF_FILE} )
+ target_link_libraries ( toluapp_lib ${LUA_LIBRARIES} )
+ set_target_properties ( toluapp_lib PROPERTIES OUTPUT_NAME toluapp CLEAN_DIRECT_OUTPUT 
+-  1 )
++1 SOVERSION 0)
+ 
+ # Build app
+ include_directories ( src/bin )
+@@ -32,5 +38,10 @@ target_link_libraries ( toluapp toluapp_
+ install_library ( toluapp_lib )
+ install_executable ( toluapp )
+ install_header ( include/ )
+-install_data ( README INSTALL )
+-install_doc ( doc/ )
++
++SET(prefix ${CMAKE_INSTALL_PREFIX})
++SET(exec_prefix ${CMAKE_INSTALL_PREFIX})
++SET(libdir ${CMAKE_INSTALL_PREFIX}/lib)
++SET(includedir ${CMAKE_INSTALL_PREFIX}/include)
++CONFIGURE_FILE(${CMAKE_SOURCE_DIR}/${PROJECT_NAME}.pc.in ${CMAKE_BINARY_DIR}/${PROJECT_NAME}.pc @ONLY)
++INSTALL(FILES ${CMAKE_BINARY_DIR}/${PROJECT_NAME}.pc DESTINATION ${CMAKE_INSTALL_PREFIX}/lib/pkgconfig)
+--- origsrc/toluapp-1.0.93/toluapp.pc.in	1970-01-01 09:00:00.000000000 +0900
++++ src/toluapp-1.0.93/toluapp.pc.in	2020-01-04 16:42:07.199280500 +0900
+@@ -0,0 +1,10 @@
++prefix=@prefix@
++exec_prefix=@exec_prefix@
++libdir=@libdir@
++includedir=@includedir@
++
++Name: toluapp
++Description: Tool to integrate C/Cpp code with Lua
++Version: @VERSION@
++Libs: -L${libdir} -ltoluapp
++Cflags: -I${includedir}

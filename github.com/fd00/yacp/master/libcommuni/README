@@ -1,0 +1,132 @@
+libcommuni
+------------------------------------------
+Communi is a cross-platform IRC framework written with Qt. Communi provides a
+set of tools for enabling IRC connectivity in Qt-based C++ and QML
+applications.
+
+Runtime requirements:
+  cygwin-3.3.5-1
+  libQt5Core5-5.9.4-2
+  libQt5Quick5-5.9.4-1
+  libcommuni3-3.7.0-1bl1
+  libgcc1-11.3.0-1
+  libstdc++6-11.3.0-1
+  libuchardet0-0.0.6-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.38-1
+  cygport-0.35.0-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libQt5Core-devel-5.9.4-2
+  libQt5Quick-devel-5.9.4-1
+  libuchardet-devel-0.0.6-1
+  make-4.3-1
+
+Canonical website:
+  https://github.com/communi/libcommuni
+
+Canonical download:
+  https://github.com/communi/libcommuni/archive/refs/tags/v3.7.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libcommuni-3.7.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libcommuni-3.7.0-X.cygport all
+
+This will create:
+  /usr/src/libcommuni-3.7.0-X-src.tar.xz
+  /usr/src/libcommuni-3.7.0-X.tar.xz
+  /usr/src/libcommuni3-3.7.0-X.tar.xz
+  /usr/src/libcommuni-devel-3.7.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libcommuni)
+  /usr/share/doc/Cygwin/libcommuni.README
+  /usr/share/doc/libcommuni/CHANGELOG.md
+  /usr/share/doc/libcommuni/LICENSE
+  /usr/share/doc/libcommuni/README.md
+
+(libcommuni3)
+  /usr/bin/cygIrcCore-3.dll
+  /usr/bin/cygIrcModel-3.dll
+  /usr/bin/cygIrcUtil-3.dll
+
+(libcommuni-devel)
+  /usr/include/qt5/Communi/IrcCore/Irc
+  /usr/include/qt5/Communi/IrcCore/IrcCommand
+  /usr/include/qt5/Communi/IrcCore/IrcCommandFilter
+  /usr/include/qt5/Communi/IrcCore/IrcConnection
+  /usr/include/qt5/Communi/IrcCore/IrcCore
+  /usr/include/qt5/Communi/IrcCore/IrcGlobal
+  /usr/include/qt5/Communi/IrcCore/IrcMessage
+  /usr/include/qt5/Communi/IrcCore/IrcMessageFilter
+  /usr/include/qt5/Communi/IrcCore/IrcNetwork
+  /usr/include/qt5/Communi/IrcCore/IrcProtocol
+  /usr/include/qt5/Communi/IrcCore/irc.h
+  /usr/include/qt5/Communi/IrcCore/irccommand.h
+  /usr/include/qt5/Communi/IrcCore/ircconnection.h
+  /usr/include/qt5/Communi/IrcCore/irccore.h
+  /usr/include/qt5/Communi/IrcCore/ircfilter.h
+  /usr/include/qt5/Communi/IrcCore/ircglobal.h
+  /usr/include/qt5/Communi/IrcCore/ircmessage.h
+  /usr/include/qt5/Communi/IrcCore/ircnetwork.h
+  /usr/include/qt5/Communi/IrcCore/ircprotocol.h
+  /usr/include/qt5/Communi/IrcModel/IrcBuffer
+  /usr/include/qt5/Communi/IrcModel/IrcBufferModel
+  /usr/include/qt5/Communi/IrcModel/IrcChannel
+  /usr/include/qt5/Communi/IrcModel/IrcModel
+  /usr/include/qt5/Communi/IrcModel/IrcUser
+  /usr/include/qt5/Communi/IrcModel/IrcUserModel
+  /usr/include/qt5/Communi/IrcModel/ircbuffer.h
+  /usr/include/qt5/Communi/IrcModel/ircbuffermodel.h
+  /usr/include/qt5/Communi/IrcModel/ircchannel.h
+  /usr/include/qt5/Communi/IrcModel/ircmodel.h
+  /usr/include/qt5/Communi/IrcModel/ircuser.h
+  /usr/include/qt5/Communi/IrcModel/ircusermodel.h
+  /usr/include/qt5/Communi/IrcUtil/IrcCommandParser
+  /usr/include/qt5/Communi/IrcUtil/IrcCommandQueue
+  /usr/include/qt5/Communi/IrcUtil/IrcCompleter
+  /usr/include/qt5/Communi/IrcUtil/IrcLagTimer
+  /usr/include/qt5/Communi/IrcUtil/IrcPalette
+  /usr/include/qt5/Communi/IrcUtil/IrcTextFormat
+  /usr/include/qt5/Communi/IrcUtil/IrcUtil
+  /usr/include/qt5/Communi/IrcUtil/irccommandparser.h
+  /usr/include/qt5/Communi/IrcUtil/irccommandqueue.h
+  /usr/include/qt5/Communi/IrcUtil/irccompleter.h
+  /usr/include/qt5/Communi/IrcUtil/irclagtimer.h
+  /usr/include/qt5/Communi/IrcUtil/ircpalette.h
+  /usr/include/qt5/Communi/IrcUtil/irctextformat.h
+  /usr/include/qt5/Communi/IrcUtil/ircutil.h
+  /usr/lib/libIrcCore.dll.a
+  /usr/lib/libIrcModel.dll.a
+  /usr/lib/libIrcUtil.dll.a
+  /usr/lib/qt5/mkspecs/features/communi-config.prf
+  /usr/lib/qt5/mkspecs/features/communi.prf
+  /usr/lib/qt5/qml/Communi/cygcommuniplugin.dll
+  /usr/lib/qt5/qml/Communi/plugins.qmltypes
+  /usr/lib/qt5/qml/Communi/qmldir
+
+------------------
+
+Port Notes:
+
+----- version 3.7.0-1bl1 -----
+Version bump.
+
+----- version 3.6.0-1bl1 -----
+Version bump.
+
+----- version 3.5.0-1bl1 -----
+Version bump.
+
+----- version 3.4.0-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

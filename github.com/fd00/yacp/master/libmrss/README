@@ -1,0 +1,85 @@
+libmrss
+------------------------------------------
+mRss is a C library for parsing, writing and creating RSS/ATOM files or
+streams.
+
+Runtime requirements:
+  cygwin-3.3.5-1
+  libcurl4-7.83.1-1
+  libmrss-devel-0.19.2-1bl5
+  libmrss0-0.19.2-1bl5
+  libnxml-devel-0.18.3-1bl1
+  libnxml0-0.18.3-1bl1
+  pkg-config-1.8.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.38-1
+  cygport-0.35.1-1
+  gcc-core-11.3.0-1
+  libcurl-devel-7.83.1-1
+  libnxml-devel-0.18.3-1bl1
+  libtool-2.4.7-1
+  make-4.3-1
+
+Canonical website:
+  https://github.com/bakulf/libmrss
+
+Canonical download:
+  https://www.autistici.org/bakunin/libmrss/libmrss-0.19.2.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libmrss-0.19.2-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libmrss-0.19.2-X.cygport all
+
+This will create:
+  /usr/src/libmrss-0.19.2-X-src.tar.xz
+  /usr/src/libmrss-0.19.2-X.tar.xz
+  /usr/src/libmrss0-0.19.2-X.tar.xz
+  /usr/src/libmrss-devel-0.19.2-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libmrss)
+  /usr/share/doc/Cygwin/libmrss.README
+  /usr/share/doc/libmrss/AUTHORS
+  /usr/share/doc/libmrss/COPYING
+  /usr/share/doc/libmrss/ChangeLog
+  /usr/share/doc/libmrss/NEWS
+  /usr/share/doc/libmrss/README
+
+(libmrss0)
+  /usr/bin/cygmrss-0.dll
+
+(libmrss-devel)
+  /usr/include/mrss.h
+  /usr/lib/libmrss.dll.a
+  /usr/lib/pkgconfig/mrss.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.19.2-1bl5 -----
+Rebuild with gcc-11.3.0
+
+----- version 0.19.2-1bl4 -----
+Rebuild on x86_64
+
+----- version 0.19.2-1bl3 -----
+Rebuild with gcc-4.5.3
+
+----- version 0.19.2-1bl2 -----
+Repackage for licensing & readmes
+
+----- version 0.19.2-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

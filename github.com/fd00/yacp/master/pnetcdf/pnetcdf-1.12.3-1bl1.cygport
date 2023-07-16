@@ -1,0 +1,43 @@
+HOMEPAGE="https://parallel-netcdf.github.io/"
+SRC_URI="https://parallel-netcdf.github.io/Release/${P}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Parallel netCDF"
+DESCRIPTION="Parallel netCDF (PnetCDF), a collaborative work of Argonne National Laboratory
+and Northwestern University, is a parallel I/O library for accessing NetCDF
+files in CDF-1, 2, and 5 formats. The CDF-5 file format, an extension of
+CDF-2, supports more data types and allows users to use 64-bit integers to
+define large dimensions, attributes, variables (> 2B array elements)."
+
+# LICENSE=""
+# LICENSE_SPDX="SPDX-License-Identifier: "
+LICENSE_URI="COPYRIGHT"
+
+BUILD_REQUIRES="libopenmpi-devel"
+
+CYGCONF_ARGS="
+	--enable-maintainer-mode
+"
+
+PKG_NAMES="
+	${PN}
+	libpnetcdf4
+	libpnetcdf-devel
+"
+pnetcdf_CONTENTS="
+	usr/bin/*.exe
+	usr/share/doc
+	usr/share/man/man1
+"
+libpnetcdf4_CONTENTS="
+	usr/bin/*.dll
+"
+libpnetcdf_devel_CONTENTS="
+	usr/bin/*-config
+	usr/include
+	usr/lib
+	usr/share/man/man3
+"
+pnetcdf_SUMMARY="${SUMMARY} (utilities)"
+libpnetcdf4_SUMMARY="${SUMMARY} (runtime)"
+libpnetcdf_devel_SUMMARY="${SUMMARY} (development)"

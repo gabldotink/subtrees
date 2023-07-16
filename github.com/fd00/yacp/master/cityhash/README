@@ -1,0 +1,70 @@
+cityhash
+------------------------------------------
+CityHash provides hash functions for strings.
+
+Runtime requirements:
+  cygwin-1.7.33-1
+  libcityhash0-1.1.1-1bl2
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-9-1
+  binutils-2.24.51-6
+  cygport-0.17.1-1
+  gcc-core-4.9.2-1
+  gcc-g++-4.9.2-1
+  libtool-2.4.2-5
+  make-4.0-2
+
+Canonical website:
+  http://code.google.com/p/cityhash/
+
+Canonical download:
+  http://cityhash.googlecode.com/files/cityhash-1.1.1.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  unpack cityhash-1.1.1-X-src.tar.xz
+    if you use setup to install this src package, it will be
+        unpacked under /usr/src automatically
+  cd /usr/src
+  cygport ./cityhash-1.1.1-X.cygport all
+
+This will create:
+  /usr/src/cityhash-1.1.1-X-src.tar.xz
+  /usr/src/cityhash-1.1.1-X.tar.xz
+  /usr/src/libcityhash0-1.1.1-X.tar.xz
+  /usr/src/libcityhash-devel-1.1.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(cityhash)
+  /usr/share/doc/Cygwin/cityhash.README
+  /usr/share/doc/cityhash/COPYING
+  /usr/share/doc/cityhash/NEWS
+  /usr/share/doc/cityhash/README
+
+(libcityhash0)
+  /usr/bin/cygcityhash-0.dll
+
+(libcityhash-devel)
+  /usr/include/city.h
+  /usr/lib/libcityhash.dll.a
+
+------------------
+
+Port Notes:
+
+----- version 1.1.1-1bl2 -----
+Rebuild on x86_64
+
+----- version 1.1.1-1bl1 -----
+Version bump.
+
+----- version 1.1.0-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://fd0.hatenablog.jp/>
+

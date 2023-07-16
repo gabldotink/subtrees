@@ -1,0 +1,114 @@
+liblscp
+------------------------------------------
+liblscp is an implementation of the LinuxSampler control protocol, proposed as
+a C language API.
+
+Runtime requirements:
+  cygwin-3.4.6-1
+  liblscp-devel-0.9.9-1bl1
+  liblscp6-0.9.9-1bl1
+  pkg-config-1.9.4-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.40-1
+  cmake-3.23.2-1
+  cygport-0.36.1-1
+  gcc-core-11.3.0-1
+  ninja-1.11.1-1
+
+Canonical website:
+  https://linuxsampler.org/
+
+Canonical download:
+  https://www.rncbc.org/archive/liblscp-0.9.9.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack liblscp-0.9.9-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./liblscp-0.9.9-X.cygport all
+
+This will create:
+  /usr/src/liblscp-0.9.9-X-src.tar.xz
+  /usr/src/liblscp-0.9.9-X.tar.xz
+  /usr/src/liblscp6-0.9.9-X.tar.xz
+  /usr/src/liblscp-devel-0.9.9-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(liblscp)
+  /usr/share/doc/Cygwin/liblscp.README
+  /usr/share/doc/liblscp/ChangeLog
+  /usr/share/doc/liblscp/LICENSE
+  /usr/share/doc/liblscp/README
+
+(liblscp6)
+  /usr/bin/cyglscp-6.dll
+
+(liblscp-devel)
+  /usr/include/lscp/client.h
+  /usr/include/lscp/device.h
+  /usr/include/lscp/event.h
+  /usr/include/lscp/socket.h
+  /usr/include/lscp/thread.h
+  /usr/include/lscp/version.h
+  /usr/lib/liblscp.dll.a
+  /usr/lib/pkgconfig/lscp.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.9.9-1bl1 -----
+Version bump.
+
+----- version 0.9.8-1bl1 -----
+Version bump.
+
+----- version 0.9.7-1bl1 -----
+Version bump.
+
+----- version 0.9.6-1bl1 -----
+Version bump.
+
+----- version 0.9.4-1bl1 -----
+Version bump.
+
+----- version 0.9.3-1bl1 -----
+Version bump.
+
+----- version 0.9.2-1bl1 -----
+Version bump.
+
+----- version 0.9.0-1bl1 -----
+Version bump.
+
+----- version 0.6.2-1bl1 -----
+Version bump.
+
+----- version 0.6.0-1bl1 -----
+Version bump.
+
+----- version 0.5.8-1bl1 -----
+Version bump.
+
+----- version 0.5.7-1bl1 -----
+Version bump.
+
+----- version 0.5.6-1bl4 -----
+Rebuild on x86_64
+
+----- version 0.5.6-1bl3 -----
+Rebuild with gcc-4.5.3
+
+----- version 0.5.6-1bl2 -----
+Repackage for licensing & readmes
+
+----- version 0.5.6-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

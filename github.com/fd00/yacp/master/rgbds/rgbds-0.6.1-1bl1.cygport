@@ -1,0 +1,36 @@
+HOMEPAGE="https://github.com/gbdev/${PN}"
+SRC_URI="https://github.com/gbdev/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Devel"
+SUMMARY="Rednex GameBoy Development System"
+DESCRIPTION="RGBDS (Rednex Game Boy Development System) is a free assembler/linker package
+for the Game Boy and Game Boy Color."
+
+LICENSE="MIT"
+LICENSE_SPDX="SPDX-License-Identifier: MIT"
+LICENSE_URI="LICENSE"
+
+BUILD_REQUIRES="bison libpng-devel"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DGIT_REV:STRING=${PV}
+"
+
+src_test()
+{
+	cd ${B}/src
+	./rgbasm.exe -V
+	./rgbfix.exe -V
+	./rgbgfx.exe -V
+	./rgblink.exe -V
+}
+
+DOCS="
+	*.rst
+"
+
+DIFF_EXCLUDES="
+	src
+"

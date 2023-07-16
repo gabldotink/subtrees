@@ -1,0 +1,107 @@
+libxls
+------------------------------------------
+This is libxls, a C library for reading Excel files in the nasty old binary OLE
+format, plus a command-line tool for converting XLS to CSV (named,
+appropriately enough, xls2csv).
+
+Runtime requirements:
+  cygwin-3.1.7-1
+  libiconv2-1.16-2
+  libxlsreader-devel-1.6.2-1bl1
+  libxlsreader8-1.6.2-1bl1
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.35.2-1
+  cygport-0.34.0-1
+  gcc-core-10.2.0-1
+  gcc-g++-10.2.0-1
+  libiconv-devel-1.16-2
+  libtool-2.4.6-7
+  make-4.3-1
+
+Canonical website:
+  https://github.com/libxls/libxls
+
+Canonical download:
+  https://github.com/libxls/libxls/archive/v1.6.2.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libxls-1.6.2-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libxls-1.6.2-X.cygport all
+
+This will create:
+  /usr/src/libxls-1.6.2-X-src.tar.xz
+  /usr/src/libxls-1.6.2-X.tar.xz
+  /usr/src/libxlsreader8-1.6.2-X.tar.xz
+  /usr/src/libxlsreader-devel-1.6.2-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libxls)
+  /usr/bin/libxls2csv.exe
+  /usr/share/doc/Cygwin/libxls.README
+  /usr/share/doc/libxls/AUTHORS
+  /usr/share/doc/libxls/LICENSE
+  /usr/share/doc/libxls/README.md
+  /usr/share/man/man1/libxls2csv.1.gz
+
+(libxlsreader8)
+  /usr/bin/cygxlsreader-8.dll
+
+(libxlsreader-devel)
+  /usr/include/libxls/brdb.c.h
+  /usr/include/libxls/brdb.h
+  /usr/include/libxls/endian.h
+  /usr/include/libxls/locale.h
+  /usr/include/libxls/ole.h
+  /usr/include/libxls/xlsstruct.h
+  /usr/include/libxls/xlstool.h
+  /usr/include/libxls/xlstypes.h
+  /usr/include/xls.h
+  /usr/lib/libxlsreader.dll.a
+  /usr/lib/pkgconfig/libxls.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.6.2-1bl1 -----
+Version bump.
+
+----- version 1.6.1-1bl1 -----
+Version bump.
+
+----- version 1.6.0-1bl1 -----
+Version bump.
+
+----- version 1.5.3-1bl1 -----
+Version bump.
+
+----- version 1.5.2-1bl1 -----
+Version bump.
+
+----- version 1.5.1-1bl1 -----
+Version bump.
+
+----- version 1.4.0-1bl1 -----
+Version bump.
+
+----- version 1.3.4-1bl1 -----
+Version bump.
+
+----- version 1.3.0-1bl1 -----
+Version bump.
+
+----- version 0.2.0-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

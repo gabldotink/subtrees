@@ -1,0 +1,102 @@
+libcnotify
+------------------------------------------
+libcnotify is a library for cross-platform C notification functions.
+
+Runtime requirements:
+  cygwin-3.3.4-2
+  libcerror1-20220101-1bl1
+  libcnotify-devel-20220108-1bl1
+  libcnotify1-20220108-1bl1
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.37-2
+  cygport-0.34.2-1
+  gcc-core-11.2.0-1
+  libcerror-devel-20220101-1bl1
+  libtool-2.4.6-8
+  make-4.3-1
+
+Canonical website:
+  https://github.com/libyal/libcnotify
+
+Canonical download:
+  https://github.com/libyal/libcnotify/archive/refs/tags/20220108.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libcnotify-20220108-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libcnotify-20220108-X.cygport all
+
+This will create:
+  /usr/src/libcnotify-20220108-X-src.tar.xz
+  /usr/src/libcnotify-20220108-X.tar.xz
+  /usr/src/libcnotify1-20220108-X.tar.xz
+  /usr/src/libcnotify-devel-20220108-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libcnotify)
+  /usr/share/doc/Cygwin/libcnotify.README
+  /usr/share/doc/libcnotify/AUTHORS
+  /usr/share/doc/libcnotify/COPYING
+  /usr/share/doc/libcnotify/COPYING.LESSER
+  /usr/share/doc/libcnotify/ChangeLog
+  /usr/share/doc/libcnotify/README
+
+(libcnotify1)
+  /usr/bin/cygcnotify-1.dll
+
+(libcnotify-devel)
+  /usr/include/libcnotify.h
+  /usr/include/libcnotify/definitions.h
+  /usr/include/libcnotify/error.h
+  /usr/include/libcnotify/extern.h
+  /usr/include/libcnotify/features.h
+  /usr/include/libcnotify/types.h
+  /usr/lib/libcnotify.dll.a
+  /usr/lib/pkgconfig/libcnotify.pc
+  /usr/share/man/man3/libcnotify.3.gz
+
+------------------
+
+Port Notes:
+
+----- version 20220108-1bl1 -----
+Version bump.
+
+----- version 20200913-1bl2 -----
+Rebuild with gcc-11.2.0
+
+----- version 20200913-1bl1 -----
+Version bump.
+
+----- version 20200627-1bl2 -----
+Export variable
+
+----- version 20200627-1bl1 -----
+Version bump.
+
+----- version 20191109-1bl1 -----
+Version bump.
+
+----- version 20180102-1bl2 -----
+Rebuild with gcc-7.4.0
+
+----- version 20180102-1bl1 -----
+Version bump.
+
+----- version 20150101-1bl1 -----
+Version bump.
+
+----- version 20141014-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

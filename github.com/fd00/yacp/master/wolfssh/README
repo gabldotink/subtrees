@@ -1,0 +1,96 @@
+wolfssh
+------------------------------------------
+wolfSSH is a small, fast, portable SSH implementation, including support for
+SCP and SFTP.
+
+Runtime requirements:
+  bash-4.4.12-3
+  cygwin-3.3.5-1
+  libwolfssh-devel-1.4.10-1bl1
+  libwolfssh8-1.4.10-1bl1
+  libwolfssl33-5.3.0-1bl1
+  pkg-config-1.8.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.38-1
+  cygport-0.35.1-1
+  gcc-core-11.3.0-1
+  libtool-2.4.7-1
+  libwolfssl-devel-5.3.0-1bl1
+  make-4.3-1
+
+Canonical website:
+  https://github.com/wolfSSL/wolfssh
+
+Canonical download:
+  https://github.com/wolfSSL/wolfssh/archive/refs/tags/v1.4.10-stable.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack wolfssh-1.4.10-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./wolfssh-1.4.10-X.cygport all
+
+This will create:
+  /usr/src/wolfssh-1.4.10-X-src.tar.xz
+  /usr/src/wolfssh-1.4.10-X.tar.xz
+  /usr/src/libwolfssh8-1.4.10-X.tar.xz
+  /usr/src/libwolfssh-devel-1.4.10-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(wolfssh)
+  /usr/share/doc/Cygwin/wolfssh.README
+  /usr/share/doc/wolfssh/ChangeLog.md
+  /usr/share/doc/wolfssh/LICENSING
+  /usr/share/doc/wolfssh/NOTES.md
+  /usr/share/doc/wolfssh/README.md
+
+(libwolfssh8)
+  /usr/bin/cygwolfssh-8.dll
+
+(libwolfssh-devel)
+  /usr/bin/wolfssh-config
+  /usr/include/wolfssh/agent.h
+  /usr/include/wolfssh/certs_test.h
+  /usr/include/wolfssh/error.h
+  /usr/include/wolfssh/keygen.h
+  /usr/include/wolfssh/log.h
+  /usr/include/wolfssh/misc.h
+  /usr/include/wolfssh/port.h
+  /usr/include/wolfssh/settings.h
+  /usr/include/wolfssh/ssh.h
+  /usr/include/wolfssh/test.h
+  /usr/include/wolfssh/version.h
+  /usr/include/wolfssh/visibility.h
+  /usr/include/wolfssh/wolfscp.h
+  /usr/include/wolfssh/wolfsftp.h
+  /usr/lib/libwolfssh.dll.a
+  /usr/lib/pkgconfig/wolfssh.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.4.10-1bl1 -----
+Version bump.
+
+----- version 1.4.7-1bl1 -----
+Version bump.
+
+----- version 1.4.6-1bl1 -----
+Version bump.
+
+----- version 1.4.5-1bl1 -----
+Version bump.
+
+----- version 1.4.4-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

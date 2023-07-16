@@ -1,0 +1,333 @@
+gearmand
+------------------------------------------
+Gearman provides a generic application framework to farm out work to other
+machines or processes that are better suited to do the work. It allows you to
+do work in parallel, to load balance processing, and to call functions between
+languages. It can be used in a variety of applications, from high-availability
+web sites to the transport of database replication events. In other words, it
+is the nervous system for how distributed processing communicates.
+
+Runtime requirements:
+  cygwin-3.4.3-1
+  libboost_program_options1.66-1.66.0-1
+  libevent2.1_7-2.1.12-1
+  libgcc1-11.3.0-1
+  libgearman-devel-1.1.20-1bl1
+  libgearman8-1.1.20-1bl1
+  libhiredis1.0.0-1.0.2-1bl1
+  libmariadb3-3.0.9-1
+  libmemcached11-1.0.18-1bl3
+  libpq5-14.5-1
+  libsqlite3_0-3.34.0-1
+  libssl1.1-1.1.1s-1
+  libstdc++6-11.3.0-1
+  libuuid1-2.33.1-2
+  pkg-config-1.9.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.39-1
+  cygport-0.35.5-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libboost-devel-1.66.0-1
+  libevent-devel-2.1.12-1
+  libhiredis-devel-1.0.2-1bl1
+  libmariadb-devel-3.0.9-1
+  libmemcached-devel-1.0.18-1bl3
+  libpq-devel-14.5-1
+  libsqlite3-devel-3.34.0-1
+  libssl-devel-1.1.1s-1
+  libtool-2.4.7-1
+  libuuid-devel-2.33.1-2
+  make-4.4-1
+
+Canonical website:
+  https://github.com/gearman/gearmand
+
+Canonical download:
+  https://github.com/gearman/gearmand/releases/download/1.1.20/gearmand-1.1.20.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack gearmand-1.1.20-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./gearmand-1.1.20-X.cygport all
+
+This will create:
+  /usr/src/gearmand-1.1.20-X-src.tar.xz
+  /usr/src/gearmand-1.1.20-X.tar.xz
+  /usr/src/libgearman8-1.1.20-X.tar.xz
+  /usr/src/libgearman-devel-1.1.20-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(gearmand)
+  /usr/bin/gearadmin.exe
+  /usr/bin/gearman.exe
+  /usr/sbin/gearmand.exe
+  /usr/share/doc/Cygwin/gearmand.README
+  /usr/share/doc/gearmand/AUTHORS
+  /usr/share/doc/gearmand/COPYING
+  /usr/share/doc/gearmand/ChangeLog
+  /usr/share/doc/gearmand/README.md
+  /usr/share/doc/gearmand/THANKS
+  /usr/share/man/man1/gearadmin.1.gz
+  /usr/share/man/man1/gearman.1.gz
+  /usr/share/man/man8/gearmand.8.gz
+
+(libgearman8)
+  /usr/bin/cyggearman-8.dll
+
+(libgearman-devel)
+  /usr/include/libgearman-1.0/actions.h
+  /usr/include/libgearman-1.0/aggregator.h
+  /usr/include/libgearman-1.0/allocator.h
+  /usr/include/libgearman-1.0/argument.h
+  /usr/include/libgearman-1.0/cancel.h
+  /usr/include/libgearman-1.0/client.h
+  /usr/include/libgearman-1.0/client_callbacks.h
+  /usr/include/libgearman-1.0/configure.h
+  /usr/include/libgearman-1.0/connection.h
+  /usr/include/libgearman-1.0/constants.h
+  /usr/include/libgearman-1.0/core.h
+  /usr/include/libgearman-1.0/execute.h
+  /usr/include/libgearman-1.0/function.h
+  /usr/include/libgearman-1.0/gearman.h
+  /usr/include/libgearman-1.0/interface/client.h
+  /usr/include/libgearman-1.0/interface/job.h
+  /usr/include/libgearman-1.0/interface/status.h
+  /usr/include/libgearman-1.0/interface/task.h
+  /usr/include/libgearman-1.0/interface/worker.h
+  /usr/include/libgearman-1.0/job.h
+  /usr/include/libgearman-1.0/job_handle.h
+  /usr/include/libgearman-1.0/kill.h
+  /usr/include/libgearman-1.0/limits.h
+  /usr/include/libgearman-1.0/ostream.hpp
+  /usr/include/libgearman-1.0/parse.h
+  /usr/include/libgearman-1.0/priority.h
+  /usr/include/libgearman-1.0/protocol.h
+  /usr/include/libgearman-1.0/result.h
+  /usr/include/libgearman-1.0/return.h
+  /usr/include/libgearman-1.0/signal.h
+  /usr/include/libgearman-1.0/status.h
+  /usr/include/libgearman-1.0/strerror.h
+  /usr/include/libgearman-1.0/string.h
+  /usr/include/libgearman-1.0/task.h
+  /usr/include/libgearman-1.0/task_attr.h
+  /usr/include/libgearman-1.0/util.h
+  /usr/include/libgearman-1.0/version.h
+  /usr/include/libgearman-1.0/visibility.h
+  /usr/include/libgearman-1.0/worker.h
+  /usr/include/libgearman/gearman.h
+  /usr/lib/libgearman.dll.a
+  /usr/lib/pkgconfig/gearmand.pc
+  /usr/share/man/man3/gearman_actions_t.3.gz
+  /usr/share/man/man3/gearman_allocator_t.3.gz
+  /usr/share/man/man3/gearman_argument_make.3.gz
+  /usr/share/man/man3/gearman_argument_t.3.gz
+  /usr/share/man/man3/gearman_bugreport.3.gz
+  /usr/share/man/man3/gearman_client_add_options.3.gz
+  /usr/share/man/man3/gearman_client_add_server.3.gz
+  /usr/share/man/man3/gearman_client_add_servers.3.gz
+  /usr/share/man/man3/gearman_client_add_task.3.gz
+  /usr/share/man/man3/gearman_client_add_task_background.3.gz
+  /usr/share/man/man3/gearman_client_add_task_high.3.gz
+  /usr/share/man/man3/gearman_client_add_task_high_background.3.gz
+  /usr/share/man/man3/gearman_client_add_task_low.3.gz
+  /usr/share/man/man3/gearman_client_add_task_low_background.3.gz
+  /usr/share/man/man3/gearman_client_add_task_status.3.gz
+  /usr/share/man/man3/gearman_client_clear_fn.3.gz
+  /usr/share/man/man3/gearman_client_clone.3.gz
+  /usr/share/man/man3/gearman_client_context.3.gz
+  /usr/share/man/man3/gearman_client_create.3.gz
+  /usr/share/man/man3/gearman_client_do.3.gz
+  /usr/share/man/man3/gearman_client_do_background.3.gz
+  /usr/share/man/man3/gearman_client_do_high.3.gz
+  /usr/share/man/man3/gearman_client_do_high_background.3.gz
+  /usr/share/man/man3/gearman_client_do_job_handle.3.gz
+  /usr/share/man/man3/gearman_client_do_low.3.gz
+  /usr/share/man/man3/gearman_client_do_low_background.3.gz
+  /usr/share/man/man3/gearman_client_do_status.3.gz
+  /usr/share/man/man3/gearman_client_echo.3.gz
+  /usr/share/man/man3/gearman_client_errno.3.gz
+  /usr/share/man/man3/gearman_client_error.3.gz
+  /usr/share/man/man3/gearman_client_free.3.gz
+  /usr/share/man/man3/gearman_client_has_option.3.gz
+  /usr/share/man/man3/gearman_client_job_status.3.gz
+  /usr/share/man/man3/gearman_client_options.3.gz
+  /usr/share/man/man3/gearman_client_options_t.3.gz
+  /usr/share/man/man3/gearman_client_remove_options.3.gz
+  /usr/share/man/man3/gearman_client_remove_servers.3.gz
+  /usr/share/man/man3/gearman_client_run_tasks.3.gz
+  /usr/share/man/man3/gearman_client_set_complete_fn.3.gz
+  /usr/share/man/man3/gearman_client_set_context.3.gz
+  /usr/share/man/man3/gearman_client_set_created_fn.3.gz
+  /usr/share/man/man3/gearman_client_set_data_fn.3.gz
+  /usr/share/man/man3/gearman_client_set_exception_fn.3.gz
+  /usr/share/man/man3/gearman_client_set_fail_fn.3.gz
+  /usr/share/man/man3/gearman_client_set_log_fn.3.gz
+  /usr/share/man/man3/gearman_client_set_memory_allocators.3.gz
+  /usr/share/man/man3/gearman_client_set_namespace.3.gz
+  /usr/share/man/man3/gearman_client_set_options.3.gz
+  /usr/share/man/man3/gearman_client_set_status_fn.3.gz
+  /usr/share/man/man3/gearman_client_set_task_context_free_fn.3.gz
+  /usr/share/man/man3/gearman_client_set_timeout.3.gz
+  /usr/share/man/man3/gearman_client_set_warning_fn.3.gz
+  /usr/share/man/man3/gearman_client_set_workload_fn.3.gz
+  /usr/share/man/man3/gearman_client_set_workload_free_fn.3.gz
+  /usr/share/man/man3/gearman_client_set_workload_malloc_fn.3.gz
+  /usr/share/man/man3/gearman_client_st.3.gz
+  /usr/share/man/man3/gearman_client_task_free_all.3.gz
+  /usr/share/man/man3/gearman_client_timeout.3.gz
+  /usr/share/man/man3/gearman_client_wait.3.gz
+  /usr/share/man/man3/gearman_continue.3.gz
+  /usr/share/man/man3/gearman_execute.3.gz
+  /usr/share/man/man3/gearman_failed.3.gz
+  /usr/share/man/man3/gearman_job_free.3.gz
+  /usr/share/man/man3/gearman_job_free_all.3.gz
+  /usr/share/man/man3/gearman_job_function_name.3.gz
+  /usr/share/man/man3/gearman_job_handle.3.gz
+  /usr/share/man/man3/gearman_job_handle_t.3.gz
+  /usr/share/man/man3/gearman_job_send_complete.3.gz
+  /usr/share/man/man3/gearman_job_send_data.3.gz
+  /usr/share/man/man3/gearman_job_send_exception.3.gz
+  /usr/share/man/man3/gearman_job_send_fail.3.gz
+  /usr/share/man/man3/gearman_job_send_status.3.gz
+  /usr/share/man/man3/gearman_job_send_warning.3.gz
+  /usr/share/man/man3/gearman_job_st.3.gz
+  /usr/share/man/man3/gearman_job_take_workload.3.gz
+  /usr/share/man/man3/gearman_job_unique.3.gz
+  /usr/share/man/man3/gearman_job_use_client.3.gz
+  /usr/share/man/man3/gearman_job_workload.3.gz
+  /usr/share/man/man3/gearman_job_workload_size.3.gz
+  /usr/share/man/man3/gearman_log_fn.3.gz
+  /usr/share/man/man3/gearman_parse_servers.3.gz
+  /usr/share/man/man3/gearman_result_boolean.3.gz
+  /usr/share/man/man3/gearman_result_integer.3.gz
+  /usr/share/man/man3/gearman_result_is_null.3.gz
+  /usr/share/man/man3/gearman_result_size.3.gz
+  /usr/share/man/man3/gearman_result_store_integer.3.gz
+  /usr/share/man/man3/gearman_result_store_string.3.gz
+  /usr/share/man/man3/gearman_result_store_value.3.gz
+  /usr/share/man/man3/gearman_result_string.3.gz
+  /usr/share/man/man3/gearman_return_t.3.gz
+  /usr/share/man/man3/gearman_strerror.3.gz
+  /usr/share/man/man3/gearman_string_t.3.gz
+  /usr/share/man/man3/gearman_success.3.gz
+  /usr/share/man/man3/gearman_task_attr_init.3.gz
+  /usr/share/man/man3/gearman_task_attr_init_background.3.gz
+  /usr/share/man/man3/gearman_task_attr_init_epoch.3.gz
+  /usr/share/man/man3/gearman_task_attr_t.3.gz
+  /usr/share/man/man3/gearman_task_context.3.gz
+  /usr/share/man/man3/gearman_task_data.3.gz
+  /usr/share/man/man3/gearman_task_data_size.3.gz
+  /usr/share/man/man3/gearman_task_denominator.3.gz
+  /usr/share/man/man3/gearman_task_error.3.gz
+  /usr/share/man/man3/gearman_task_free.3.gz
+  /usr/share/man/man3/gearman_task_function_name.3.gz
+  /usr/share/man/man3/gearman_task_give_workload.3.gz
+  /usr/share/man/man3/gearman_task_is_known.3.gz
+  /usr/share/man/man3/gearman_task_is_running.3.gz
+  /usr/share/man/man3/gearman_task_job_handle.3.gz
+  /usr/share/man/man3/gearman_task_numerator.3.gz
+  /usr/share/man/man3/gearman_task_recv_data.3.gz
+  /usr/share/man/man3/gearman_task_return.3.gz
+  /usr/share/man/man3/gearman_task_send_workload.3.gz
+  /usr/share/man/man3/gearman_task_set_context.3.gz
+  /usr/share/man/man3/gearman_task_st.3.gz
+  /usr/share/man/man3/gearman_task_take_data.3.gz
+  /usr/share/man/man3/gearman_task_unique.3.gz
+  /usr/share/man/man3/gearman_verbose_name.3.gz
+  /usr/share/man/man3/gearman_verbose_t.3.gz
+  /usr/share/man/man3/gearman_version.3.gz
+  /usr/share/man/man3/gearman_worker_add_function.3.gz
+  /usr/share/man/man3/gearman_worker_add_options.3.gz
+  /usr/share/man/man3/gearman_worker_add_server.3.gz
+  /usr/share/man/man3/gearman_worker_add_servers.3.gz
+  /usr/share/man/man3/gearman_worker_clone.3.gz
+  /usr/share/man/man3/gearman_worker_context.3.gz
+  /usr/share/man/man3/gearman_worker_create.3.gz
+  /usr/share/man/man3/gearman_worker_define_function.3.gz
+  /usr/share/man/man3/gearman_worker_echo.3.gz
+  /usr/share/man/man3/gearman_worker_errno.3.gz
+  /usr/share/man/man3/gearman_worker_error.3.gz
+  /usr/share/man/man3/gearman_worker_free.3.gz
+  /usr/share/man/man3/gearman_worker_function_exist.3.gz
+  /usr/share/man/man3/gearman_worker_grab_job.3.gz
+  /usr/share/man/man3/gearman_worker_options.3.gz
+  /usr/share/man/man3/gearman_worker_register.3.gz
+  /usr/share/man/man3/gearman_worker_remove_options.3.gz
+  /usr/share/man/man3/gearman_worker_remove_servers.3.gz
+  /usr/share/man/man3/gearman_worker_set_context.3.gz
+  /usr/share/man/man3/gearman_worker_set_identifier.3.gz
+  /usr/share/man/man3/gearman_worker_set_log_fn.3.gz
+  /usr/share/man/man3/gearman_worker_set_memory_allocators.3.gz
+  /usr/share/man/man3/gearman_worker_set_namespace.3.gz
+  /usr/share/man/man3/gearman_worker_set_options.3.gz
+  /usr/share/man/man3/gearman_worker_set_timeout.3.gz
+  /usr/share/man/man3/gearman_worker_set_workload_free_fn.3.gz
+  /usr/share/man/man3/gearman_worker_set_workload_malloc_fn.3.gz
+  /usr/share/man/man3/gearman_worker_st.3.gz
+  /usr/share/man/man3/gearman_worker_timeout.3.gz
+  /usr/share/man/man3/gearman_worker_unregister.3.gz
+  /usr/share/man/man3/gearman_worker_unregister_all.3.gz
+  /usr/share/man/man3/gearman_worker_wait.3.gz
+  /usr/share/man/man3/gearman_worker_work.3.gz
+  /usr/share/man/man3/libgearman.3.gz
+
+------------------
+
+Port Notes:
+
+----- version 1.1.20-1bl1 -----
+Version bump.
+
+----- version 1.1.19.1-1bl1 -----
+Version bump.
+
+----- version 1.1.18-1bl2 -----
+Rebuild with gcc-7.4.0
+
+----- version 1.1.18-1bl1 -----
+Version bump.
+
+----- version 1.1.17-1bl1 -----
+Version bump.
+
+----- version 1.1.16-1bl1 -----
+Version bump.
+
+----- version 1.1.14-1bl1 -----
+Version bump.
+
+----- version 1.1.12-1bl2 -----
+Rebuild for libboost
+
+----- version 1.1.12-1bl1 -----
+Version bump.
+
+----- version 1.1.11-1bl1 -----
+Version bump.
+
+----- version 1.1.9-1bl1 -----
+Version bump.
+
+----- version 0.32-1bl1 -----
+Version bump.
+
+----- version 0.29-1bl1 -----
+Version bump.
+
+----- version 0.20-1bl1 -----
+Version bump.
+
+----- version 0.14-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

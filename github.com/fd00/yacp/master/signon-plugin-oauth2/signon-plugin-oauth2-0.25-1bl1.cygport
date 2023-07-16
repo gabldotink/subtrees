@@ -1,0 +1,14 @@
+HOMEPAGE="https://gitlab.com/accounts-sso/${PN}"
+SRC_URI="https://gitlab.com/accounts-sso/${PN}/-/archive/VERSION_${PV}/${PN}-VERSION_${PV}.tar.bz2"
+SRC_DIR="${PN}-VERSION_${PV}"
+
+CATEGORY="Security"
+SUMMARY="OAuth 1.0/2.0 plugin for the SignOn daemon"
+DESCRIPTION="This plugin for the Accounts-SSO SignOn daemon handles the OAuth 1.0 and 2.0
+authentication protocols."
+
+CYGQMAKE5_ARGS="
+	LIBDIR=/usr/lib
+"
+
+inherit qt5-qmake

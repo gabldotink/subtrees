@@ -1,0 +1,94 @@
+libchardet
+------------------------------------------
+libchardet is based on Mozilla Universal Charset Detector library and, detects
+the character set used to encode data.
+
+Runtime requirements:
+  bash-4.4.12-3
+  cygwin-3.2.0-1
+  libchardet-devel-1.0.6-1bl1
+  libchardet1-1.0.6-1bl1
+  libstdc++6-10.2.0-1
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.36.1-2
+  cygport-0.34.0-1
+  gcc-core-10.2.0-1
+  gcc-g++-10.2.0-1
+  libtool-2.4.6-7
+  make-4.3-1
+
+Canonical website:
+  https://github.com/Joungkyun/libchardet
+
+Canonical download:
+  https://github.com/Joungkyun/libchardet/archive/1.0.6.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libchardet-1.0.6-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libchardet-1.0.6-X.cygport all
+
+This will create:
+  /usr/src/libchardet-1.0.6-X-src.tar.xz
+  /usr/src/libchardet-1.0.6-X.tar.xz
+  /usr/src/libchardet1-1.0.6-X.tar.xz
+  /usr/src/libchardet-devel-1.0.6-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libchardet)
+  /usr/share/doc/Cygwin/libchardet.README
+  /usr/share/doc/libchardet/Changelog
+  /usr/share/doc/libchardet/LICENSE
+  /usr/share/doc/libchardet/README.md
+
+(libchardet1)
+  /usr/bin/cygchardet-1.dll
+
+(libchardet-devel)
+  /usr/bin/chardet-config
+  /usr/include/chardet/chardet-config.h
+  /usr/include/chardet/chardet.h
+  /usr/include/chardet/nsUniversalDetector.h
+  /usr/include/chardet/nscore.h
+  /usr/include/chardet/version.h
+  /usr/lib/libchardet.dll.a
+  /usr/lib/pkgconfig/chardet.pc
+  /usr/share/man/ko/man3/detect.3.gz
+  /usr/share/man/ko/man3/detect_destroy.3.gz
+  /usr/share/man/ko/man3/detect_handledata.3.gz
+  /usr/share/man/ko/man3/detect_init.3.gz
+  /usr/share/man/ko/man3/detect_obj_free.3.gz
+  /usr/share/man/ko/man3/detect_obj_init.3.gz
+  /usr/share/man/ko/man3/detect_reset.3.gz
+  /usr/share/man/man3/detect.3.gz
+  /usr/share/man/man3/detect_destroy.3.gz
+  /usr/share/man/man3/detect_handledata.3.gz
+  /usr/share/man/man3/detect_init.3.gz
+  /usr/share/man/man3/detect_obj_free.3.gz
+  /usr/share/man/man3/detect_obj_init.3.gz
+  /usr/share/man/man3/detect_reset.3.gz
+
+------------------
+
+Port Notes:
+
+----- version 1.0.6-1bl1 -----
+Version bump.
+
+----- version 1.0.5-1bl1 -----
+Version bump.
+
+----- version 1.0.4-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

@@ -1,0 +1,83 @@
+exodus
+------------------------------------------
+EXODUS II is a model developed to store and retrieve transient data for finite
+element analyses. It is used for preprocessing, postprocessing, as well as
+code to code data transfer. ExodusII is based on netcdf.
+
+Runtime requirements:
+  cygwin-1.7.33-1
+  libexodus0-6.09-1bl1
+  libnetcdf7-4.3.2-2
+  python-2.7.8-1
+  python-numpy-1.7.2-1
+  python3-3.2.5-4
+  python3-numpy-1.7.2-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.25-1
+  cmake-2.8.12.2-3
+  cygport-0.17.1-1
+  gcc-core-4.9.2-1
+  gcc-fortran-4.9.2-1
+  make-4.0-2
+
+Canonical website:
+  http://exodusii.sf.net/
+
+Canonical download:
+  mirror://sourceforge/exodusii/exodus-6.09.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  unpack exodus-6.09-X-src.tar.xz
+    if you use setup to install this src package, it will be
+        unpacked under /usr/src automatically
+  cd /usr/src
+  cygport ./exodus-6.09-X.cygport all
+
+This will create:
+  /usr/src/exodus-6.09-X-src.tar.xz
+  /usr/src/exodus-6.09-X.tar.xz
+  /usr/src/libexodus0-6.09-X.tar.xz
+  /usr/src/libexodus-devel-6.09-X.tar.xz
+  /usr/src/python-exodus-6.09-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(exodus)
+  /usr/share/doc/Cygwin/exodus.README
+  /usr/share/doc/exodus/ChangeLog
+
+(libexodus0)
+  /usr/bin/cygexoIIv2for-0.dll
+  /usr/bin/cygexodus-0.dll
+
+(libexodus-devel)
+  /usr/include/exodusII.h
+  /usr/include/exodusII_int.h
+  /usr/lib/libexoIIv2for.dll.a
+  /usr/lib/libexodus.dll.a
+  /usr/share/doc/exodus/doc.poly.txt
+  /usr/share/doc/exodus/exodus-face-edge.pdf
+  /usr/share/doc/exodus/exodus.pdf
+
+(python-exodus)
+  /usr/lib/python/site-packages/exodus.py
+
+------------------
+
+Port Notes:
+
+----- version 6.09-1bl1 -----
+Version bump.
+
+----- version 5.22b-1bl1 -----
+Version bump.
+
+----- version 5.16-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>
+

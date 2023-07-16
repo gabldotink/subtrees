@@ -1,0 +1,57 @@
+HOMEPAGE="https://github.com/Yubico/${PN}"
+SRC_URI="https://github.com/Yubico/${PN}/archive/refs/tags/${P}.tar.gz"
+SRC_DIR="${PN}-${P}"
+
+CATEGORY="Security"
+SUMMARY="Command line tool for the YubiKey PIV application"
+DESCRIPTION="The Yubico PIV tool is used for interacting with the Privilege and
+Identification Card (PIV) application on a YubiKey."
+
+BUILD_REQUIRES="help2man libpcsclite-devel libssl-devel"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DBUILD_STATIC_LIB:BOOL=OFF
+"
+
+src_compile()
+{
+	cd ${B}
+	: ${CYGCMAKE_GENERATOR=Ninja}
+	cygcmake
+	PATH=${B}/lib:${PATH} cygninja
+}
+
+src_test()
+{
+	cd ${B}
+	PATH=${B}/lib:${PATH} ninja_test
+}
+
+DIFF_EXCLUDES="
+	*-config.h
+	ykpiv.pc
+	tool
+	ykcs11
+"
+
+PKG_NAMES="
+	yubico-piv-tool
+	libykpiv2
+	libykpiv-devel
+"
+yubico_piv_tool_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+libykpiv2_CONTENTS="
+	usr/bin/*.dll
+"
+libykpiv_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+yubico_piv_tool_SUMMARY="${SUMMARY} (utilities)"
+libykpiv2_SUMMARY="${SUMMARY} (runtime)"
+libykpiv_devel_SUMMARY="${SUMMARY} (development)"

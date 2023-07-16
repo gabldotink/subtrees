@@ -1,0 +1,65 @@
+coinfinder
+------------------------------------------
+Coinfinder is an algorithm and software tool that detects genes which associate
+and dissociate with other genes more often than expected by chance in
+pangenomes. Coinfinder is written primarily in C++ and is a command line tool
+which generates text, gexf, and pdf outputs for the user.
+
+Runtime requirements:
+  cygwin-3.1.7-1
+  libboost_filesystem1.66-1.66.0-1
+  libboost_system1.66-1.66.0-1
+  libgcc1-10.2.0-1
+  libgomp1-10.2.0-1
+  libstdc++6-10.2.0-1
+  python36-3.6.10-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.34+1git.de9c1b7cfe-1
+  cmake-3.17.3-2
+  cygport-0.34.0-1
+  gcc-core-10.2.0-1
+  gcc-g++-10.2.0-1
+  ninja-1.10.1-1
+
+Canonical website:
+  https://github.com/fwhelan/coinfinder
+
+Canonical download:
+  https://github.com/fwhelan/coinfinder/archive/1.0.7.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack coinfinder-1.0.7-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./coinfinder-1.0.7-X.cygport all
+
+This will create:
+  /usr/src/coinfinder-1.0.7-X-src.tar.xz
+  /usr/src/coinfinder-1.0.7-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(coinfinder)
+  /usr/bin/coinfinder.exe
+  /usr/share/doc/Cygwin/coinfinder.README
+  /usr/share/doc/coinfinder/Figure1.png
+  /usr/share/doc/coinfinder/LICENSE.txt
+  /usr/share/doc/coinfinder/README.md
+  /usr/share/doc/coinfinder/coinfinder.png
+
+------------------
+
+Port Notes:
+
+----- version 1.0.7-1bl1 -----
+Version bump.
+
+----- version 1.0.1-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

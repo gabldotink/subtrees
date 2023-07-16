@@ -1,0 +1,31 @@
+HOMEPAGE="https://github.com/Juniper/${PN}"
+SRC_URI="https://github.com/Juniper/${PN}/archive/refs/tags/${PV}.tar.gz"
+
+CATEGORY="Utils"
+SUMMARY="JUNOS User Interface Script Environment"
+DESCRIPTION="The JUISE project (the JUNOS User Interface Scripting Environment) allows
+scripts to be written, debugged, and executed outside the normal JUNOS
+environment. Users can develop scripts in their desktop environment,
+performing the code/test/debug cycle in a more natural way. Tools for
+developers are available, including a debugger, a profiler, a call-flow
+tracing mechanism, and trace files."
+
+BUILD_REQUIRES="libslax-devel libsqlite3-devel libssh2-devel libxml2-devel libxslt-devel"
+
+CYGCONF_ARGS="
+	--enable-clira
+	--enable-mixer
+	--enable-readline
+	--enable-libedit
+	--with-libssh2-prefix=/usr
+"
+
+DOCS="
+	README.md
+	doc/${PN}*
+"
+
+DIFF_EXCLUDES="
+	${PN}config.h
+	lighttpd.conf
+"

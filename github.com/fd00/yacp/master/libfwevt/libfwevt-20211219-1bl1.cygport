@@ -1,0 +1,49 @@
+HOMEPAGE="https://github.com/libyal/${PN}"
+SRC_URI="https://github.com/libyal/${PN}/archive/refs/tags/${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Library for Windows XML Event Log (EVTX) data types"
+DESCRIPTION="libfwevt is a library for Windows XML Event Log (EVTX) data types."
+
+LICENSE="LGPL-3.0-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: LGPL-3.0-or-later"
+LICENSE_URI="COPYING"
+
+BUILD_REQUIRES="libcdata-devel libcerror-devel libfvalue-devel libuna-devel"
+
+src_test()
+{
+	cd ${B}
+	pushd tests
+		for sh in ${S}/tests/*.sh
+		do
+			ln -fs ${sh} .
+		done
+	popd
+	cygtest
+	rm tests/*.sh
+}
+
+DOCS="
+	COPYING.LESSER
+"
+
+PKG_NAMES="
+	${PN}
+	${PN}1
+	${PN}-devel
+"
+libfwevt_CONTENTS="
+	usr/share/doc
+"
+libfwevt1_CONTENTS="
+	usr/bin
+"
+libfwevt_devel_CONTENTS="
+	usr/include
+	usr/lib
+	usr/share/man
+"
+libfwevt_SUMMARY="${SUMMARY} (licensing & readmes)"
+libfwevt1_SUMMARY="${SUMMARY} (runtime)"
+libfwevt_devel_SUMMARY="${SUMMARY} (development)"

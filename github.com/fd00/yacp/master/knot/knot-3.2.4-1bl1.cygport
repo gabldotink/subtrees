@@ -1,0 +1,77 @@
+HOMEPAGE="https://www.${PN}-dns.cz/"
+SRC_URI="https://secure.nic.cz/files/${PN}-dns/${P}.tar.xz"
+
+CATEGORY="Net"
+SUMMARY="High-performance authoritative-only DNS server"
+DESCRIPTION="Knot DNS is a high-performance authoritative-only DNS server which supports
+all key features of the domain name system including zone transfers and
+DNSSEC."
+
+LICENSE="GPL-3.0-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: GPL-3.0-or-later"
+LICENSE_URI="COPYING"
+
+BUILD_REQUIRES="libedit-devel libfstrm-devel libgnutls-devel libidn2-devel liblmdb-devel libmaxminddb-devel libnghttp2-devel libprotobuf-c-devel liburcu-devel protobuf-c"
+
+CYGCONF_ARGS="
+	--enable-dnstap
+"
+
+src_test()
+{
+	cd ${B}
+	make check
+}
+
+DIFF_EXCLUDES="
+	doc
+"
+
+PKG_NAMES="
+	${PN}
+	libdnssec9
+	libdnssec-devel
+	lib${PN}13
+	lib${PN}-devel
+	libzscanner4
+	libzscanner-devel
+"
+knot_CONTENTS="
+	etc
+	usr/bin/*.exe
+	usr/include/${PN}
+	usr/lib/pkgconfig/knotd.pc
+	usr/sbin
+	usr/share
+"
+libdnssec9_CONTENTS="
+	usr/bin/cygdnssec*.dll
+"
+libdnssec_devel_CONTENTS="
+	usr/include/libdnssec
+	usr/lib/libdnssec.dll.a
+	usr/lib/pkgconfig/libdnssec.pc
+"
+libknot13_CONTENTS="
+	usr/bin/cygknot*.dll
+"
+libknot_devel_CONTENTS="
+	usr/include/lib${PN}
+	usr/lib/libknot.dll.a
+	usr/lib/pkgconfig/libknot.pc
+"
+libzscanner4_CONTENTS="
+	usr/bin/cygzscanner*.dll
+"
+libzscanner_devel_CONTENTS="
+	usr/include/libzscanner
+	usr/lib/libzscanner.dll.a
+	usr/lib/pkgconfig/libzscanner.pc
+"
+knot_SUMMARY="${SUMMARY} (utilities)"
+libdnssec9_SUMMARY="${SUMMARY} (runtime / dnssec)"
+libdnssec_devel_SUMMARY="${SUMMARY} (development / dnssec)"
+libknot13_SUMMARY="${SUMMARY} (runtime / knot)"
+libknot_devel_SUMMARY="${SUMMARY} (development / knot)"
+libzscanner4_SUMMARY="${SUMMARY} (runtime / zscanner)"
+libzscanner_devel_SUMMARY="${SUMMARY} (development / zscanner)"

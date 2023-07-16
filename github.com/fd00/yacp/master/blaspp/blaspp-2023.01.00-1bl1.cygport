@@ -1,0 +1,50 @@
+HOMEPAGE="https://github.com/icl-utk-edu/${PN}"
+SRC_URI="https://github.com/icl-utk-edu/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="C++ API for the Basic Linear Algebra Subroutines"
+DESCRIPTION="${SUMMARY}"
+
+LICENSE="BSD-3-Clause"
+LICENSE_SPDX="SPDX-License-Identifier: BSD-3-Clause"
+LICENSE_URI="LICENSE"
+
+BUILD_REQUIRES="liblapack-devel"
+
+export CXXFLAGS="`echo ${CXXFLAGS} | sed -e 's/-Werror=format-security//g'`"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DSOVERSION:STRING=0
+	-Dinstall_configdir:STRING=lib/cmake/${PN}
+"
+
+src_test()
+{
+	cd ${B}
+	PATH=${B}:${B}/_deps/testsweeper-build:${PATH} cygninja check
+}
+
+DOCS="
+	CHANGELOG.md
+"
+
+PKG_NAMES="
+	blaspp
+	libblaspp0
+	libblaspp-devel
+"
+blaspp_CONTENTS="
+	usr/share
+"
+libblaspp0_CONTENTS="
+	usr/bin
+"
+libblaspp_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+blaspp_SUMMARY="${SUMMARY} (licensing & readmes)"
+libblaspp0_SUMMARY="${SUMMARY} (runtime)"
+libblaspp_devel_SUMMARY="${SUMMARY} (development)"

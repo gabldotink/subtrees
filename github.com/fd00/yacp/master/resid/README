@@ -1,0 +1,88 @@
+resid
+------------------------------------------
+C++ library to emulate the C64 SID chip
+
+Runtime requirements:
+  cygwin-3.1.7-1
+  libresid-devel-0.16-p2-1bl4
+  libresid0-0.16-p2-1bl4
+  libstdc++6-10.2.0-1
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.34+1git.de9c1b7cfe-1
+  cygport-0.34.0-1
+  gcc-core-10.2.0-1
+  gcc-g++-10.2.0-1
+  libtool-2.4.6-7
+  make-4.3-1
+
+Canonical website:
+  https://sourceforge.net/projects/sidplay2/
+
+Canonical download:
+  mirror://sourceforge/sidplay2/resid-0.16-p2.tgz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack resid-0.16-p2-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./resid-0.16-p2-X.cygport all
+
+This will create:
+  /usr/src/resid-0.16-p2-X-src.tar.xz
+  /usr/src/resid-0.16-p2-X.tar.xz
+  /usr/src/libresid0-0.16-p2-X.tar.xz
+  /usr/src/libresid-devel-0.16-p2-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(resid)
+  /usr/share/doc/Cygwin/resid.README
+  /usr/share/doc/resid/AUTHORS
+  /usr/share/doc/resid/COPYING
+  /usr/share/doc/resid/ChangeLog
+  /usr/share/doc/resid/NEWS
+  /usr/share/doc/resid/README
+  /usr/share/doc/resid/THANKS
+  /usr/share/doc/resid/TODO
+
+(libresid0)
+  /usr/bin/cygresid-0.dll
+
+(libresid-devel)
+  /usr/include/resid/envelope.h
+  /usr/include/resid/extfilt.h
+  /usr/include/resid/filter.h
+  /usr/include/resid/pot.h
+  /usr/include/resid/sid.h
+  /usr/include/resid/siddefs.h
+  /usr/include/resid/spline.h
+  /usr/include/resid/voice.h
+  /usr/include/resid/wave.h
+  /usr/lib/libresid.dll.a
+  /usr/lib/pkgconfig/resid.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.16-p2-1bl4 -----
+Rebuild with gcc-10.2.0
+
+----- version 0.16-p2-1bl3 -----
+Rebuild with gcc-5.4.0
+
+----- version 0.16-p2-1bl2 -----
+Rebuild on x86_64
+
+----- version 0.16-p2-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

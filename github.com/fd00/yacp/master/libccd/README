@@ -1,0 +1,85 @@
+libccd
+------------------------------------------
+libccd implements variation on Gilbert-Johnson-Keerthi (GJK) algorithm + Expand
+Polytope Algorithm (EPA). It also implements Minkowski Portal Refinement (MPR,
+a.k.a. XenoCollide) algorithm as published in Game Programming Gems 7.
+
+Runtime requirements:
+  cygwin-3.2.0-1
+  cygwin-devel-3.2.0-1
+  libccd-devel-2.1-1bl1
+  libccd2-2.1-1bl1
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.37-1
+  cmake-3.20.0-1
+  cygport-0.34.0-1
+  gcc-core-11.2.0-1
+  ninja-1.10.2-1
+
+Canonical website:
+  https://github.com/danfis/libccd
+
+Canonical download:
+  https://github.com/danfis/libccd/archive/refs/tags/v2.1.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libccd-2.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libccd-2.1-X.cygport all
+
+This will create:
+  /usr/src/libccd-2.1-X-src.tar.xz
+  /usr/src/libccd-2.1-X.tar.xz
+  /usr/src/libccd2-2.1-X.tar.xz
+  /usr/src/libccd-devel-2.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libccd)
+  /usr/share/doc/Cygwin/libccd.README
+  /usr/share/doc/libccd/BSD-LICENSE
+  /usr/share/doc/libccd/README.md
+
+(libccd2)
+  /usr/bin/cygccd-2.dll
+
+(libccd-devel)
+  /usr/include/ccd/ccd.h
+  /usr/include/ccd/ccd_export.h
+  /usr/include/ccd/compiler.h
+  /usr/include/ccd/config.h
+  /usr/include/ccd/quat.h
+  /usr/include/ccd/vec3.h
+  /usr/lib/ccd/ccd-config-version.cmake
+  /usr/lib/ccd/ccd-config.cmake
+  /usr/lib/ccd/ccd-targets-release.cmake
+  /usr/lib/ccd/ccd-targets.cmake
+  /usr/lib/libccd.dll.a
+  /usr/lib/pkgconfig/ccd.pc
+
+------------------
+
+Port Notes:
+
+----- version 2.1-1bl1 -----
+Version bump.
+
+----- version 2.0-1bl2 -----
+Rebuild with gcc-6.4.0
+
+----- version 2.0-1bl1 -----
+Version bump.
+
+----- version 1.4-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://fd0.hatenablog.jp/>

@@ -1,0 +1,186 @@
+lttoolbox
+------------------------------------------
+lttoolbox contains finite state tools for lexical processing, morphological
+analysis and generation of words. Analysis is the process of splitting a word
+like cats into its lemma cat and the grammatical information <n><pl>.
+Generation is the opposite process.
+
+Runtime requirements:
+  cygwin-3.4.3-1
+  libgcc1-11.3.0-1
+  libicu70-70.1-1
+  liblttoolbox-devel-3.7.1-1bl1
+  liblttoolbox3-3.7.1-1bl1
+  libstdc++6-11.3.0-1
+  libxml2-2.9.12-2
+  pkg-config-1.9.3-1
+  python39-3.9.10-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.39-1
+  cygport-0.35.5-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libicu-devel-70.1-1
+  libtool-2.4.7-1
+  libxml2-devel-2.9.12-2
+  make-4.4-1
+  python39-3.9.10-1
+  python39-devel-3.9.10-1
+
+Canonical website:
+  https://github.com/apertium/lttoolbox
+
+Canonical download:
+  https://github.com/apertium/lttoolbox/archive/refs/tags/v3.7.1.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack lttoolbox-3.7.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./lttoolbox-3.7.1-X.cygport all
+
+This will create:
+  /usr/src/lttoolbox-3.7.1-X-src.tar.xz
+  /usr/src/lttoolbox-3.7.1-X.tar.xz
+  /usr/src/liblttoolbox3-3.7.1-X.tar.xz
+  /usr/src/liblttoolbox-devel-3.7.1-X.tar.xz
+  /usr/src/python39-lttoolbox-3.7.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(lttoolbox)
+  /usr/bin/lsx-comp.exe
+  /usr/bin/lt-append.exe
+  /usr/bin/lt-apply-acx.exe
+  /usr/bin/lt-comp.exe
+  /usr/bin/lt-compose.exe
+  /usr/bin/lt-expand.exe
+  /usr/bin/lt-invert.exe
+  /usr/bin/lt-paradigm.exe
+  /usr/bin/lt-print.exe
+  /usr/bin/lt-proc.exe
+  /usr/bin/lt-restrict.exe
+  /usr/bin/lt-tmxcomp.exe
+  /usr/bin/lt-tmxproc.exe
+  /usr/bin/lt-trim.exe
+  /usr/share/doc/Cygwin/lttoolbox.README
+  /usr/share/doc/lttoolbox/AUTHORS
+  /usr/share/doc/lttoolbox/COPYING
+  /usr/share/doc/lttoolbox/ChangeLog
+  /usr/share/doc/lttoolbox/NEWS
+  /usr/share/doc/lttoolbox/README
+  /usr/share/doc/lttoolbox/readme.md
+  /usr/share/lttoolbox/acx.rng
+  /usr/share/lttoolbox/acx.xsd
+  /usr/share/lttoolbox/dix.dtd
+  /usr/share/lttoolbox/dix.rnc
+  /usr/share/lttoolbox/dix.rng
+  /usr/share/lttoolbox/dix.xsd
+  /usr/share/man/man1/lsx-comp.1.gz
+  /usr/share/man/man1/lt-append.1.gz
+  /usr/share/man/man1/lt-comp.1.gz
+  /usr/share/man/man1/lt-compose.1.gz
+  /usr/share/man/man1/lt-expand.1.gz
+  /usr/share/man/man1/lt-paradigm.1.gz
+  /usr/share/man/man1/lt-print.1.gz
+  /usr/share/man/man1/lt-proc.1.gz
+  /usr/share/man/man1/lt-tmxcomp.1.gz
+  /usr/share/man/man1/lt-tmxproc.1.gz
+  /usr/share/man/man1/lt-trim.1.gz
+
+(liblttoolbox3)
+  /usr/bin/cyglttoolbox-3.dll
+
+(liblttoolbox-devel)
+  /usr/include/lttoolbox/acx.h
+  /usr/include/lttoolbox/alphabet.h
+  /usr/include/lttoolbox/att_compiler.h
+  /usr/include/lttoolbox/buffer.h
+  /usr/include/lttoolbox/cli.h
+  /usr/include/lttoolbox/compiler.h
+  /usr/include/lttoolbox/compression.h
+  /usr/include/lttoolbox/deserialiser.h
+  /usr/include/lttoolbox/entry_token.h
+  /usr/include/lttoolbox/exception.h
+  /usr/include/lttoolbox/expander.h
+  /usr/include/lttoolbox/file_utils.h
+  /usr/include/lttoolbox/fst_processor.h
+  /usr/include/lttoolbox/input_file.h
+  /usr/include/lttoolbox/lt_locale.h
+  /usr/include/lttoolbox/match_exe.h
+  /usr/include/lttoolbox/match_node.h
+  /usr/include/lttoolbox/match_state.h
+  /usr/include/lttoolbox/my_stdio.h
+  /usr/include/lttoolbox/node.h
+  /usr/include/lttoolbox/pattern_list.h
+  /usr/include/lttoolbox/regexp_compiler.h
+  /usr/include/lttoolbox/serialiser.h
+  /usr/include/lttoolbox/sorted_vector.h
+  /usr/include/lttoolbox/sorted_vector.hpp
+  /usr/include/lttoolbox/state.h
+  /usr/include/lttoolbox/string_utils.h
+  /usr/include/lttoolbox/tmx_compiler.h
+  /usr/include/lttoolbox/trans_exe.h
+  /usr/include/lttoolbox/transducer.h
+  /usr/include/lttoolbox/ustring.h
+  /usr/include/lttoolbox/xml_parse_util.h
+  /usr/include/lttoolbox/xml_walk_util.h
+  /usr/lib/liblttoolbox.dll.a
+  /usr/lib/pkgconfig/lttoolbox.pc
+
+(python39-lttoolbox)
+  /usr/lib/python3.9/site-packages/__pycache__/lttoolbox.cpython-39.opt-1.pyc
+  /usr/lib/python3.9/site-packages/__pycache__/lttoolbox.cpython-39.opt-2.pyc
+  /usr/lib/python3.9/site-packages/__pycache__/lttoolbox.cpython-39.pyc
+  /usr/lib/python3.9/site-packages/_lttoolbox.cpython-39-x86_64-cygwin.dll
+  /usr/lib/python3.9/site-packages/lttoolbox-3.7.1-py3.9.egg-info
+  /usr/lib/python3.9/site-packages/lttoolbox.py
+
+------------------
+
+Port Notes:
+
+----- version 3.7.1-1bl1 -----
+Version bump.
+
+----- version 3.6.6-1bl1 -----
+Version bump.
+
+----- version 3.5.4-1bl1 -----
+Version bump.
+
+----- version 3.5.3-1bl2 -----
+Rebuild with gcc-11.2.0
+
+----- version 3.5.3-1bl1 -----
+Version bump.
+
+----- version 3.5.2-1bl1 -----
+Version bump.
+
+----- version 3.5.0-1bl1 -----
+Version bump.
+
+----- version 3.4.2-1bl1 -----
+Version bump.
+
+----- version 3.4.0-1bl1 -----
+Version bump.
+
+----- version 3.3.3-1bl1 -----
+Version bump.
+
+----- version 3.2.0-1bl2 -----
+Rebuild on x86_64
+
+----- version 3.2.0-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

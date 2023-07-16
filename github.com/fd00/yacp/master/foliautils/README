@@ -1,0 +1,149 @@
+foliautils
+------------------------------------------
+Command-line utilities for working with the Format for Linguistic Annotation
+(FoLiA), powered by libfolia (C++), written by Ko van der Sloot (TiCC, Tilburg
+University)
+
+Runtime requirements:
+  cygwin-3.4.6-1
+  libfolia18-2.14-1bl1
+  libfoliautils-devel-0.20-1bl1
+  libfoliautils1-0.20-1bl1
+  libgcc1-11.3.0-1
+  libgomp1-11.3.0-1
+  libicu72-72.1-1
+  libstdc++6-11.3.0-1
+  libticcutils9-0.32-1bl1
+  libucto6-0.28.1-1bl1
+  libxml2-2.9.12-2
+  pkg-config-1.9.4-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.40-1
+  cygport-0.36.1-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libfolia-devel-2.14-1bl1
+  libicu-devel-72.1-1
+  libticcutils-devel-0.32-1bl1
+  libtool-2.4.7-1
+  libucto-devel-0.28.1-1bl1
+  libxml2-devel-2.9.12-2
+  make-4.4.1-1
+
+Canonical website:
+  https://github.com/LanguageMachines/foliautils
+
+Canonical download:
+  https://github.com/LanguageMachines/foliautils/archive/refs/tags/v0.20.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack foliautils-0.20-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./foliautils-0.20-X.cygport all
+
+This will create:
+  /usr/src/foliautils-0.20-X-src.tar.xz
+  /usr/src/foliautils-0.20-X.tar.xz
+  /usr/src/libfoliautils1-0.20-X.tar.xz
+  /usr/src/libfoliautils-devel-0.20-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(foliautils)
+  /usr/bin/FoLiA-2text.exe
+  /usr/bin/FoLiA-abby.exe
+  /usr/bin/FoLiA-alto.exe
+  /usr/bin/FoLiA-benchmark.exe
+  /usr/bin/FoLiA-clean.exe
+  /usr/bin/FoLiA-collect.exe
+  /usr/bin/FoLiA-correct.exe
+  /usr/bin/FoLiA-hocr.exe
+  /usr/bin/FoLiA-idf.exe
+  /usr/bin/FoLiA-langcat.exe
+  /usr/bin/FoLiA-page.exe
+  /usr/bin/FoLiA-pm.exe
+  /usr/bin/FoLiA-stats.exe
+  /usr/bin/FoLiA-txt.exe
+  /usr/bin/FoLiA-wordtranslate.exe
+  /usr/share/doc/Cygwin/foliautils.README
+  /usr/share/doc/foliautils/AUTHORS
+  /usr/share/doc/foliautils/COPYING
+  /usr/share/doc/foliautils/MAINTAINERS
+  /usr/share/doc/foliautils/NEWS
+  /usr/share/doc/foliautils/README
+  /usr/share/doc/foliautils/TODO
+  /usr/share/doc/foliautils/readme.md
+  /usr/share/man/man1/FoLiA-2text.1.gz
+  /usr/share/man/man1/FoLiA-abby.1.gz
+  /usr/share/man/man1/FoLiA-alto.1.gz
+  /usr/share/man/man1/FoLiA-clean.1.gz
+  /usr/share/man/man1/FoLiA-collect.1.gz
+  /usr/share/man/man1/FoLiA-correct.1.gz
+  /usr/share/man/man1/FoLiA-hocr.1.gz
+  /usr/share/man/man1/FoLiA-idf.1.gz
+  /usr/share/man/man1/FoLiA-langcat.1.gz
+  /usr/share/man/man1/FoLiA-page.1.gz
+  /usr/share/man/man1/FoLiA-pm.1.gz
+  /usr/share/man/man1/FoLiA-stats.1.gz
+  /usr/share/man/man1/FoLiA-txt.1.gz
+
+(libfoliautils1)
+  /usr/bin/cygfoliautils-1.dll
+
+(libfoliautils-devel)
+  /usr/include/foliautils/common_code.h
+  /usr/lib/libfoliautils.dll.a
+  /usr/lib/pkgconfig/foliautils.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.20-1bl1 -----
+Version bump.
+
+----- version 0.18-1bl1 -----
+Version bump.
+
+----- version 0.17-1bl1 -----
+Version bump.
+
+----- version 0.16-1bl1 -----
+Version bump.
+
+----- version 0.15-1bl1 -----
+Version bump.
+
+----- version 0.14-1bl1 -----
+Version bump.
+
+----- version 0.13-1bl1 -----
+Version bump.
+
+----- version 0.12-1bl1 -----
+Version bump.
+
+----- version 0.10-1bl1 -----
+Version bump.
+
+----- version 0.7-1bl1 -----
+Version bump.
+
+----- version 0.6-1bl1 -----
+Version bump.
+
+----- version 0.4-1bl1 -----
+Version bump.
+
+----- version 0.2+git20160105-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

@@ -1,0 +1,59 @@
+HOMEPAGE="https://www.gnu.org/software/${PN}/"
+SRC_URI="https://github.com/LibreDWG/${PN}/archive/${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Free C library to read and write DWG files"
+DESCRIPTION="GNU LibreDWG is a free C library to handle DWG files. It aims to be a free
+replacement for the OpenDWG libraries. DWG is the native file format of
+AutoCAD."
+
+BUILD_REQUIRES="libpcre2-devel libps-devel libjsmn-devel"
+
+CYGPORT_USE_UNSTABLE_API=1
+src_patch_hook()
+{
+	cd ${origsrcdir}/${SRC_DIR}
+	echo ${PV} > .tarball-version
+}
+
+CYGCONF_ARGS="
+	--enable-python=python3
+"
+
+DIFF_EXCLUDES="
+	.version
+	*.py
+	*.c
+	*.info
+	stamp-vti
+	version.texi
+"
+
+PKG_NAMES="
+	${PN}
+	${PN}0
+	${PN}-devel
+	python38-${PN}
+"
+libredwg_CONTENTS="
+	usr/bin/d*
+	usr/share/doc
+	usr/share/man
+"
+libredwg0_CONTENTS="
+	usr/bin/*.dll
+"
+libredwg_devel_CONTENTS="
+	usr/include
+	usr/lib/${PN}*
+	usr/lib/pkgconfig
+	usr/share/info
+"
+python38_libredwg_CONTENTS="
+	usr/lib/python3*
+	usr/share/${PN}
+"
+libredwg_SUMMARY="${SUMMARY} (utilities)"
+libredwg0_SUMMARY="${SUMMARY} (runtime)"
+libredwg_devel_SUMMARY="${SUMMARY} (development)"
+python38_libredwg_SUMMARY="${SUMMARY} (python38 bindings)"

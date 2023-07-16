@@ -1,0 +1,54 @@
+HOMEPAGE="https://github.com/devernay/${PN}"
+SRC_URI="https://github.com/devernay/${PN}/archive/v${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="C implementation of the MINPACK nonlinear optimization library"
+DESCRIPTION="cminpack is an ISO C99 implementation of the FORTRAN Minpack solver package.
+It is fully re-entrant and thread-safe."
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DBUILD_SHARED_LIBS:BOOL=ON
+	-DVERSION:STRING=${PV}
+"
+
+src_test()
+{
+	cd ${B}
+	PATH=${PWD}:${PATH} ninja_test
+}
+
+src_install()
+{
+	cd ${B}
+	ninja_install
+
+	cd ${S}
+	doman docs/*.3
+}
+
+DOCS="
+	CopyrightMINPACK.txt
+	docs/minpack-documentation.txt
+"
+
+PKG_NAMES="
+	${PN}
+	lib${PN}1
+	lib${PN}-devel
+"
+cminpack_CONTENTS="
+	usr/share/doc
+"
+libcminpack1_CONTENTS="
+	usr/bin
+"
+libcminpack_devel_CONTENTS="
+	usr/include
+	usr/lib
+	usr/share/man
+"
+cminpack_SUMMARY="${SUMMARY} (licensing & readmes)"
+libcminpack1_SUMMARY="${SUMMARY} (runtime)"
+libcminpack_devel_SUMMARY="${SUMMARY} (development)"

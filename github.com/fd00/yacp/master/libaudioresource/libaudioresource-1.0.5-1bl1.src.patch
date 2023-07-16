@@ -1,0 +1,20 @@
+diff -buprN -x CYGWIN-PATCHES -x aclocal.m4~ -x aclocal.m4t -x autom4te.cache -x config.cache -x config.guess -x config.log -x config.status -x config.sub -x '*SlackBuild*' -x '*.egg-info' -x '*.dll' -x '*.exe' -x '*.o' -x '*.gch' -x '*.gem' -x .gitignore -x '*.jpg' -x '*.png' -x '*.qm' -x '*.svgz' -x '*.tif' -x '*.class' -x '*.jlc' -x '*.pyc' -x '*.pyo' -x '*.mo' -x '*.gmo' -x '*.orig' -x '*.rej' -x '*.spec' -x '*.temp' -x '*~' -x '*.stackdump' -x omf.make -x xmldocs.make -x gnome-doc-utils.make -x gnome-doc-utils.m4 -x mate-doc-utils.make -x mate-doc-utils.m4 origsrc/libaudioresource-1.0.5/CMakeLists.txt src/libaudioresource-1.0.5/CMakeLists.txt
+--- origsrc/libaudioresource-1.0.5/CMakeLists.txt	2015-05-07 16:37:54.000000000 +0900
++++ src/libaudioresource-1.0.5/CMakeLists.txt	2015-10-04 22:53:37.233353800 +0900
+@@ -19,7 +19,7 @@ if(NOT LIB_DEST)
+     if(CMAKE_LIBRARY_ARCHITECTURE)
+         set(LIB_DEST "lib/${CMAKE_LIBRARY_ARCHITECTURE}")
+     else()
+-        if (${CMAKE_C_SIZEOF_DATA_PTR} EQUAL 8)
++        if (NOT CYGWIN AND ${CMAKE_C_SIZEOF_DATA_PTR} EQUAL 8)
+             set(LIB_DEST "lib64")
+         else()
+             set(LIB_DEST "lib")
+@@ -39,6 +39,6 @@ target_link_libraries(audioresource ${LI
+ set_target_properties(audioresource PROPERTIES VERSION ${VERSION} SOVERSION ${VERSION_SONAME})
+ 
+ # Installation
+-install(TARGETS audioresource LIBRARY DESTINATION ${LIB_DEST})
++install(TARGETS audioresource RUNTIME DESTINATION bin ARCHIVE DESTINATION ${LIB_DEST})
+ install(FILES include/audioresource.h DESTINATION include/audioresource)
+ install(FILES ${CMAKE_CURRENT_BINARY_DIR}/audioresource.pc DESTINATION ${LIB_DEST}/pkgconfig)

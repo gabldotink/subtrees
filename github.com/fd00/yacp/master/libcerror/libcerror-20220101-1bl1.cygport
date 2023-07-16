@@ -1,0 +1,40 @@
+HOMEPAGE="https://github.com/libyal/${PN}"
+SRC_URI="https://github.com/libyal/${PN}/archive/refs/tags/${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Library for cross-platform C error functions"
+DESCRIPTION="libcerror is a library for cross-platform C error functions."
+
+src_test()
+{
+	cd ${B}
+	pushd tests
+		ln -fs ${S}/tests/test_runner.sh .
+	popd
+	cygtest
+	rm -f tests/test_runner.sh
+}
+
+DOCS="
+	COPYING.LESSER
+"
+
+PKG_NAMES="
+	${PN}
+	${PN}1
+	${PN}-devel
+"
+libcerror_CONTENTS="
+	usr/share/doc
+"
+libcerror1_CONTENTS="
+	usr/bin
+"
+libcerror_devel_CONTENTS="
+	usr/include
+	usr/lib
+	usr/share/man
+"
+libcerror_SUMMARY="${SUMMARY} (licensing & readmes)"
+libcerror1_SUMMARY="${SUMMARY} (runtime)"
+libcerror_devel_SUMMARY="${SUMMARY} (development)"

@@ -1,0 +1,52 @@
+HOMEPAGE="https://github.com/${PN}/${PN}"
+SRC_URI="https://github.com/${PN}/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="ISMRM Raw Data Format"
+DESCRIPTION="A prerequisite for sharing magnetic resonance (imaging) reconstruction
+algorithms and code is a common raw data format. This document describes such
+a common raw data format and attempts to capture the data fields that are
+require to describe enough details about the magnetic resonance experiment to
+reconstruct images from the data. This standard was developed by a
+subcommittee of the ISMRM Sedona 2013 workshop. Please see the ISMRMRD
+Documentation for more information."
+
+BUILD_REQUIRES="libboost-devel libfftw3-devel libhdf5-devel libpugixml-devel"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DUSE_SYSTEM_PUGIXML:BOOL=ON
+"
+
+src_test()
+{
+	cd ${B}
+	PATH=${B}:${PATH} ./tests/test_ismrmrd.exe
+}
+
+PKG_NAMES="
+	${PN}
+	lib${PN}${PV[1]}.${PV[2]}
+	lib${PN}-devel
+	matlab-${PN}
+"
+ismrmrd_CONTENTS="
+	usr/bin/*.exe
+	usr/share/doc
+	usr/share/${PN}/schema
+"
+libismrmrd1_8_CONTENTS="
+	usr/bin/*.dll
+"
+libismrmrd_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+matlab_ismrmrd_CONTENTS="
+	usr/share/${PN}/matlab
+"
+ismrmrd_SUMMARY="${SUMMARY} (utilities)"
+libismrmrd1_8_SUMMARY="${SUMMARY} (runtime)"
+libismrmrd_devel_SUMMARY="${SUMMARY} (development)"
+matlab_ismrmrd_SUMMARY="${SUMMARY} (matlab bindings)"

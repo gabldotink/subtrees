@@ -1,0 +1,48 @@
+HOMEPAGE="https://github.com/fedora-modularity/${PN}"
+SRC_URI="https://github.com/fedora-modularity/${PN}/archive/refs/tags/${P}.tar.gz"
+SRC_DIR="${PN}-${P}"
+
+CATEGORY="Libs"
+SUMMARY="C Library for manipulating module metadata files"
+DESCRIPTION="${SUMMARY}"
+
+BUILD_REQUIRES="libglib2.0-devel libyaml-devel python-gi-devel python38-gi rpm-devel"
+
+inherit meson
+
+CYGMESON_ARGS="
+	-Dwith_docs=false
+"
+
+PKG_NAMES="
+	libmodulemd
+	libmodulemd2
+	libmodulemd-devel
+	girepository-Modulemd2.0
+	python38-libmodulemd
+"
+libmodulemd_CONTENTS="
+	usr/bin/*.exe
+	usr/share/doc
+	usr/share/man
+"
+libmodulemd2_CONTENTS="
+	usr/bin/*.dll
+"
+libmodulemd_devel_CONTENTS="
+	usr/include
+	usr/lib/${PN}.dll.a
+	usr/lib/pkgconfig
+"
+girepository_Modulemd2_0_CONTENTS="
+	usr/lib/girepository-1.0
+	usr/share/gir-1.0
+"
+python38_libmodulemd_CONTENTS="
+	usr/lib/python*
+"
+libmodulemd_SUMMARY="${SUMMARY} (utilities)"
+libmodulemd2_SUMMARY="${SUMMARY} (runtime)"
+libmodulemd_devel_SUMMARY="${SUMMARY} (development)"
+girepository_Modulemd2_0_SUMMARY="${SUMMARY} (GObject Introspection data)"
+python38_libmodulemd_SUMMARY="${SUMMARY} (python38 bindings)"

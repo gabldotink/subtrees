@@ -1,0 +1,49 @@
+HOMEPAGE="https://github.com/libyal/${PN}"
+SRC_URI="https://github.com/libyal/${PN}/archive/refs/tags/${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Library for generic file value functions"
+DESCRIPTION="libfvalue is a library for generic file value functions."
+
+LICENSE="LGPL-3.0-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: LGPL-3.0-or-later"
+LICENSE_URI="COPYING"
+
+BUILD_REQUIRES="libcdata-devel libcerror-devel libcnotify-devel libfdatetime-devel libfguid-devel libfwnt-devel libuna-devel"
+
+src_test()
+{
+	cd ${B}
+	pushd tests
+		for sh in ${S}/tests/*.sh
+		do
+			ln -fs ${sh} .
+		done
+	popd
+	cygtest
+	rm tests/*.sh
+}
+
+DOCS="
+	COPYING.LESSER
+"
+
+PKG_NAMES="
+	${PN}
+	${PN}1
+	${PN}-devel
+"
+libfvalue_CONTENTS="
+	usr/share/doc
+"
+libfvalue1_CONTENTS="
+	usr/bin
+"
+libfvalue_devel_CONTENTS="
+	usr/include
+	usr/lib
+	usr/share/man
+"
+libfvalue_SUMMARY="${SUMMARY} (licensing & readmes)"
+libfvalue1_SUMMARY="${SUMMARY} (runtime)"
+libfvalue_devel_SUMMARY="${SUMMARY} (development)"

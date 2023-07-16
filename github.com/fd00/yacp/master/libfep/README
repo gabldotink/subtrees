@@ -1,0 +1,115 @@
+libfep
+------------------------------------------
+The libfep project aims to provide a server and a library to implement
+input method FEP (front end processor), running on ANSI compliant
+terminals.
+
+Runtime requirements:
+  cygwin-1.7.30-1
+  girepository-GLib2.0-1.38.0-1
+  libfep-devel-0.1.0-1bl1
+  libfep-glib-devel-0.1.0-1bl1
+  libfep-glib0-0.1.0-1bl1
+  libfep0-0.1.0-1bl1
+  libglib2.0-devel-2.38.2-2
+  libglib2.0_0-2.38.2-2
+  libiconv2-1.14-1
+  libncursesw10-5.9-20140524-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-9-1
+  binutils-2.24.51-4
+  cygport-0.16.0-1
+  gcc-core-4.9.0-1
+  gobject-introspection-1.38.0-1
+  libtool-2.4.2-5
+  make-4.0-2
+
+Canonical website:
+  https://github.com/ueno/libfep
+
+Canonical download:
+  https://github.com/ueno/libfep/releases/download/0.1.0/libfep-0.1.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  unpack libfep-0.1.0-X-src.tar.xz
+    if you use setup to install this src package, it will be
+        unpacked under /usr/src automatically
+  cd /usr/src
+  cygport ./libfep-0.1.0-X.cygport all
+
+This will create:
+  /usr/src/libfep-0.1.0-X-src.tar.xz
+  /usr/src/libfep-0.1.0-X.tar.xz
+  /usr/src/libfep0-0.1.0-X.tar.xz
+  /usr/src/libfep-devel-0.1.0-X.tar.xz
+  /usr/src/libfep-glib0-0.1.0-X.tar.xz
+  /usr/src/libfep-glib-devel-0.1.0-X.tar.xz
+  /usr/src/girepository-Fep1.0-0.1.0-X.tar.xz
+  /usr/src/vala-libfep-glib-0.1.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libfep)
+  /usr/bin/fep.exe
+  /usr/bin/fepcli.exe
+  /usr/share/doc/Cygwin/libfep.README
+  /usr/share/doc/libfep/COPYING
+  /usr/share/doc/libfep/README
+  /usr/share/man/man1/fep.1.gz
+  /usr/share/man/man1/fepcli.1.gz
+
+(libfep0)
+  /usr/bin/cygfep-0.dll
+
+(libfep-devel)
+  /usr/include/fep-1.0/libfep/attribute.h
+  /usr/include/fep-1.0/libfep/client.h
+  /usr/include/fep-1.0/libfep/keydefs.h
+  /usr/include/fep-1.0/libfep/libfep.h
+  /usr/include/fep-1.0/libfep/logger.h
+  /usr/lib/libfep.dll.a
+  /usr/lib/pkgconfig/libfep.pc
+
+(libfep-glib0)
+  /usr/bin/cygfep-glib-0.dll
+
+(libfep-glib-devel)
+  /usr/include/fep-1.0/libfep-glib/fepgattribute.h
+  /usr/include/fep-1.0/libfep-glib/fepgclient.h
+  /usr/include/fep-1.0/libfep-glib/fepgenumtypes.h
+  /usr/include/fep-1.0/libfep-glib/fepgevents.h
+  /usr/include/fep-1.0/libfep-glib/libfep-glib.h
+  /usr/lib/libfep-glib.dll.a
+  /usr/lib/pkgconfig/libfep-glib.pc
+
+(girepository-Fep1.0)
+  /usr/lib/girepository-1.0/Fep-1.0.typelib
+  /usr/share/gir-1.0/Fep-1.0.gir
+
+(vala-libfep-glib)
+  /usr/share/vala/vapi/libfep-glib.deps
+  /usr/share/vala/vapi/libfep-glib.vapi
+
+------------------
+
+Port Notes:
+
+----- version 0.1.0-1bl1 -----
+Version bump.
+
+----- version 0.0.9-1bl1 -----
+Version bump.
+
+----- version 0.0.8-1bl1 -----
+Version bump.
+
+----- version 0.0.6-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>
+

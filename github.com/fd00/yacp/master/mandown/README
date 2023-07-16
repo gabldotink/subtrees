@@ -1,0 +1,59 @@
+mandown
+------------------------------------------
+Need to lookup things from README? Or from manual page? Or perhaps just want to
+install something cool...
+
+Runtime requirements:
+  cygwin-3.3.5-1
+  libconfig11-1.7.3-1bl1
+  libncursesw10-6.1-1.20190727
+  libxml2-2.9.12-2
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.38-1
+  cygport-0.35.1-1
+  gcc-core-11.3.0-1
+  libconfig-devel-1.7.3-1bl1
+  libncurses-devel-6.1-1.20190727
+  libxml2-devel-2.9.12-2
+  make-4.3-1
+
+Canonical website:
+  https://github.com/Titor8115/mandown
+
+Canonical download:
+  https://github.com/Titor8115/mandown/archive/refs/tags/v1.0.4.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack mandown-1.0.4-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./mandown-1.0.4-X.cygport all
+
+This will create:
+  /usr/src/mandown-1.0.4-X-src.tar.xz
+  /usr/src/mandown-1.0.4-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(mandown)
+  /usr/bin/mdn.exe
+  /usr/share/doc/Cygwin/mandown.README
+  /usr/share/doc/mandown/LICENSE
+  /usr/share/doc/mandown/README.md
+
+------------------
+
+Port Notes:
+
+----- version 1.0.4-1bl1 -----
+Version bump.
+
+----- version 1.0.1-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

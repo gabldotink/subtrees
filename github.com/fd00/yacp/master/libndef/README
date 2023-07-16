@@ -1,0 +1,83 @@
+libndef
+------------------------------------------
+This is a C++ library for use in reading and writing messages based on NDEF
+(NFC Data Exchange Format) Specification.
+
+Runtime requirements:
+  cygwin-2.8.1-1
+  libgcc1-5.4.0-1
+  libndef-devel-1.2.0-1bl2
+  libndef1-1.2.0-1bl2
+  libQt5Core5-5.6.2-1
+  libQtCore4-devel-4.8.7-4
+  libstdc++6-5.4.0-1
+  pkg-config-0.29.1-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.25-4
+  cygport-0.24.1-1
+  gcc-core-5.4.0-1
+  gcc-g++-5.4.0-1
+  libQt5Core-devel-5.6.2-1
+  make-4.2.1-2
+
+Canonical website:
+  https://github.com/nfc-tools/libndef
+
+Canonical download:
+  https://github.com/nfc-tools/libndef/archive/libndef-1.2.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libndef-1.2.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libndef-1.2.0-X.cygport all
+
+This will create:
+  /usr/src/libndef-1.2.0-X-src.tar.xz
+  /usr/src/libndef-1.2.0-X.tar.xz
+  /usr/src/libndef1-1.2.0-X.tar.xz
+  /usr/src/libndef-devel-1.2.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libndef)
+  /usr/bin/ndef-decode.exe
+  /usr/bin/ndef-encode.exe
+  /usr/share/doc/Cygwin/libndef.README
+  /usr/share/doc/libndef/AUTHORS
+  /usr/share/doc/libndef/ChangeLog
+  /usr/share/doc/libndef/LICENSE
+  /usr/share/doc/libndef/README
+
+(libndef1)
+  /usr/bin/cygndef-1.dll
+
+(libndef-devel)
+  /usr/include/ndef/libndef_global.h
+  /usr/include/ndef/ndefmessage.h
+  /usr/include/ndef/ndefrecord.h
+  /usr/include/ndef/ndefrecordtype.h
+  /usr/include/ndef/tlv.h
+  /usr/lib/libndef.dll.a
+  /usr/lib/libndef.prl
+  /usr/lib/pkgconfig/ndef.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.2.0-1bl2 -----
+Rebuild with gcc-5.4.0
+
+----- version 1.2.0-1bl1 -----
+Version bump.
+
+----- version 1.1.3-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

@@ -1,0 +1,78 @@
+libneurosim
+------------------------------------------
+libneurosim is a general library that provides interfaces and common utility
+code for neuronal simulators.
+
+Runtime requirements:
+  cygwin-3.1.7-1
+  libgcc1-10.2.0-1
+  libneurosim0-1.2.0-1bl1
+  libstdc++6-10.2.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.35.2-1
+  cygport-0.34.0-1
+  gcc-core-10.2.0-1
+  gcc-g++-10.2.0-1
+  libtool-2.4.6-7
+  make-4.3-1
+
+Canonical website:
+  https://github.com/INCF/libneurosim
+
+Canonical download:
+  https://github.com/INCF/libneurosim/archive/v1.2.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libneurosim-1.2.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libneurosim-1.2.0-X.cygport all
+
+This will create:
+  /usr/src/libneurosim-1.2.0-X-src.tar.xz
+  /usr/src/libneurosim-1.2.0-X.tar.xz
+  /usr/src/libneurosim0-1.2.0-X.tar.xz
+  /usr/src/libneurosim-devel-1.2.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libneurosim)
+  /usr/share/doc/Cygwin/libneurosim.README
+  /usr/share/doc/libneurosim/AUTHORS
+  /usr/share/doc/libneurosim/BUGS
+  /usr/share/doc/libneurosim/COPYING
+  /usr/share/doc/libneurosim/NEWS
+  /usr/share/doc/libneurosim/README.md
+  /usr/share/doc/libneurosim/TODO
+
+(libneurosim0)
+  /usr/bin/cygneurosim-0.dll
+  /usr/bin/cygpy3neurosim-0.dll
+
+(libneurosim-devel)
+  /usr/include/neurosim/config.h
+  /usr/include/neurosim/connection_generator.h
+  /usr/include/neurosim/connection_generator_V2_0.h
+  /usr/include/neurosim/pyneurosim.h
+  /usr/include/neurosim/version.h
+  /usr/lib/libneurosim.dll.a
+  /usr/lib/libpy3neurosim.dll.a
+
+------------------
+
+Port Notes:
+
+----- version 1.2.0-1bl1 -----
+Version bump.
+
+----- version 1.0.0+git20181124-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

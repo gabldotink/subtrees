@@ -1,0 +1,36 @@
+HOMEPAGE="https://github.com/${PN}/${PN}"
+SRC_URI="https://github.com/${PN}/${PN}/archive/refs/tags/${PV}.tar.gz"
+
+CATEGORY="Science"
+SUMMARY="Program for aligning DNA sequences"
+DESCRIPTION="LASTZ is a program for aligning DNA sequences, a pairwise aligner. Originally
+designed to handle sequences the size of human chromosomes and from different
+species, it is also useful for sequences produced by NGS sequencing
+technologies such as Roche 454."
+
+LICENSE="MIT"
+LICENSE_SPDX="SPDX-License-Identifier: MIT"
+LICENSE_URI="LICENSE"
+
+src_compile()
+{
+	cd ${B}
+	lndirs
+	cygmake
+}
+
+src_test()
+{
+	cd ${B}
+	cygmake base_tests
+}
+
+src_install()
+{
+	cd ${B}
+	dobin src/*.exe
+}
+
+HTMLDOCS="
+	*.html
+"

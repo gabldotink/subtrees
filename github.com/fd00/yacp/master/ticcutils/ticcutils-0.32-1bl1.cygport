@@ -1,0 +1,39 @@
+HOMEPAGE="https://github.com/LanguageMachines/${PN}"
+SRC_URI="https://github.com/LanguageMachines/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="TiCC Utils Library"
+DESCRIPTION="This module contains useful functions for general use in the TiCC software
+stack and beyond."
+
+LICENSE="GPL-3.0-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: GPL-3.0-or-later"
+LICENSE_URI="COPYING"
+
+BUILD_REQUIRES="libbz2-devel libicu-devel libxml2-devel zlib-devel"
+
+export CPPFLAGS="${CPPFLAGS} -D_GNU_SOURCE"
+
+DIFF_EXCLUDES="
+	*.m4
+"
+
+PKG_NAMES="
+	${PN}
+	lib${PN}9
+	lib${PN}-devel
+"
+ticcutils_CONTENTS="
+	usr/share/doc
+"
+libticcutils9_CONTENTS="
+	usr/bin
+"
+libticcutils_devel_CONTENTS="
+	usr/include
+	usr/lib
+	usr/share/man
+"
+ticcutils_SUMMARY="${SUMMARY} (licensing & readmes)"
+libticcutils9_SUMMARY="${SUMMARY} (runtime)"
+libticcutils_devel_SUMMARY="${SUMMARY} (development)"

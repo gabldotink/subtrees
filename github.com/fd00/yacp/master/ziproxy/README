@@ -1,0 +1,99 @@
+ziproxy
+------------------------------------------
+Ziproxy is a forwarding (non-caching) compressing HTTP proxy server.
+
+Runtime requirements:
+  bash-4.4.12-3
+  cygwin-3.3.5-1
+  libgif7-5.1.4-1
+  libjasper4-2.0.14-1
+  libjpeg8-2.1.3-1
+  libpng16-1.6.37-1
+  libsasl2_3-2.1.27-1
+  zlib0-1.2.12-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.38-1
+  cygport-0.35.1-1
+  gcc-core-11.3.0-1
+  libgif-devel-5.1.4-1
+  libjasper-devel-2.0.14-1
+  libjpeg-devel-2.1.3-1
+  libpng-devel-1.6.37-1
+  libsasl2-devel-2.1.27-1
+  make-4.3-1
+  zlib-devel-1.2.12-1
+
+Canonical website:
+  https://sourceforge.net/projects/ziproxy/
+
+Canonical download:
+  mirror://sourceforge/ziproxy/ziproxy-3.3.2.tar.bz2
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack ziproxy-3.3.2-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./ziproxy-3.3.2-X.cygport all
+
+This will create:
+  /usr/src/ziproxy-3.3.2-X-src.tar.xz
+  /usr/src/ziproxy-3.3.2-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(ziproxy)
+  /etc/rc.d/init.d/ziproxy
+  /etc/xinetd.d/ziproxy
+  /etc/ziproxy/ziproxy.conf
+  /usr/bin/ziproxy.exe
+  /usr/bin/ziproxy_genhtml_stats.sh
+  /usr/bin/ziproxylogtool.exe
+  /usr/share/doc/Cygwin/ziproxy.README
+  /usr/share/doc/ziproxy/COPYING
+  /usr/share/doc/ziproxy/CREDITS
+  /usr/share/doc/ziproxy/ChangeLog
+  /usr/share/doc/ziproxy/JPEG2000.txt
+  /usr/share/doc/ziproxy/README
+  /usr/share/doc/ziproxy/README.tools
+  /usr/share/doc/ziproxy/THANKS
+  /usr/share/man/man1/ziproxy.1.gz
+  /usr/share/man/man1/ziproxylogtool.1.gz
+  /var/lib/ziproxy/error/400.html
+  /var/lib/ziproxy/error/403.html
+  /var/lib/ziproxy/error/404.html
+  /var/lib/ziproxy/error/407.html
+  /var/lib/ziproxy/error/408.html
+  /var/lib/ziproxy/error/409.html
+  /var/lib/ziproxy/error/500.html
+  /var/lib/ziproxy/error/503.html
+
+------------------
+
+Port Notes:
+
+----- version 3.3.2-1bl1 -----
+Version bump.
+
+----- version 3.3.1-1bl3 -----
+Rebuild for libgif
+
+----- version 3.3.1-1bl2 -----
+Rebuild for libjasper
+
+----- version 3.3.1-1bl1 -----
+Version bump.
+
+----- version 3.3.0-1bl1 -----
+Version bump.
+
+----- version 3.2.0-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

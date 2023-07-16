@@ -1,0 +1,74 @@
+termbox
+------------------------------------------
+Termbox is a library that provides minimalistic API which allows the programmer
+to write text-based user interfaces.
+
+Runtime requirements:
+  cygwin-3.3.5-1
+  libtermbox-devel-1.1.4-1bl1
+  libtermbox1-1.1.4-1bl1
+  pkg-config-1.8.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.38-1
+  cygport-0.35.1-1
+  gcc-core-11.3.0-1
+  libtool-2.4.7-1
+  make-4.3-1
+
+Canonical website:
+  https://github.com/termbox/termbox
+
+Canonical download:
+  https://github.com/termbox/termbox/archive/refs/tags/v1.1.4.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack termbox-1.1.4-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./termbox-1.1.4-X.cygport all
+
+This will create:
+  /usr/src/termbox-1.1.4-X-src.tar.xz
+  /usr/src/termbox-1.1.4-X.tar.xz
+  /usr/src/libtermbox1-1.1.4-X.tar.xz
+  /usr/src/libtermbox-devel-1.1.4-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(termbox)
+  /usr/share/doc/Cygwin/termbox.README
+  /usr/share/doc/termbox/COPYING
+  /usr/share/doc/termbox/README.md
+
+(libtermbox1)
+  /usr/bin/cygtermbox-1.dll
+
+(libtermbox-devel)
+  /usr/include/termbox.h
+  /usr/lib/libtermbox.dll.a
+  /usr/lib/pkgconfig/termbox.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.1.4-1bl1 -----
+Version bump.
+
+----- version 1.1.2-1bl1 -----
+Version bump.
+
+----- version 1.1.0-1bl1 -----
+Version bump.
+
+----- version 1.0.1a+git20150622-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

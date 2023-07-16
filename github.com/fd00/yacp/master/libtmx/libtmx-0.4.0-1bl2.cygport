@@ -1,0 +1,43 @@
+HOMEPAGE="https://github.com/jube/${PN}"
+SRC_URI="https://github.com/jube/${PN}/archive/v${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="C++11 library for reading TMX files"
+DESCRIPTION="libtmx is a C++11 library for reading TMX files. TMX is a XML dialect used in
+Tiled, a tile map editor."
+
+BUILD_REQUIRES="libboost-devel libtinyxml2-devel zlib-devel"
+
+inherit cmake
+
+src_compile()
+{
+	cd ${B}
+	: ${CYGCMAKE_GENERATOR=Ninja}
+	CYGCMAKE_SOURCE="${S}/src"
+	cygcmake
+	cygninja
+}
+
+DOCS="
+	*.md
+"
+
+PKG_NAMES="
+	libtmx
+	libtmx0_0
+	libtmx0-devel
+"
+libtmx_CONTENTS="
+	usr/share
+"
+libtmx0_0_CONTENTS="
+	usr/bin
+"
+libtmx0_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+libtmx_SUMMARY="${SUMMARY} (licensing & readmes)"
+libtmx0_0_SUMMARY="${SUMMARY} (runtime)"
+libtmx0_devel_SUMMARY="${SUMMARY} (development)"

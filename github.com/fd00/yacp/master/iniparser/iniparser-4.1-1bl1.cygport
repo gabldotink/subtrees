@@ -1,0 +1,29 @@
+HOMEPAGE="http://ndevilla.free.fr/${PN}/"
+SRC_URI="https://github.com/ndevilla/${PN}/archive/v${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Stand-alone ini Parser library in ANSI C"
+DESCRIPTION="iniparser is a free stand-alone ini file parsing library."
+
+DIFF_EXCLUDES="
+	Makefile
+"
+
+PKG_NAMES="
+	${PN}
+	lib${PN}1
+	lib${PN}-devel
+"
+iniparser_CONTENTS="
+	usr/share
+"
+libiniparser1_CONTENTS="
+	usr/bin
+"
+libiniparser_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+iniparser_SUMMARY="${SUMMARY} (licensing & readmes)"
+libiniparser1_SUMMARY="${SUMMARY} (runtime)"
+libiniparser_devel_SUMMARY="${SUMMARY} (development)"

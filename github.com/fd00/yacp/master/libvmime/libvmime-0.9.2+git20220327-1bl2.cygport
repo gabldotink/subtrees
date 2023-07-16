@@ -1,0 +1,50 @@
+HOMEPAGE="https://www.vmime.org/"
+GIT_URI="https://github.com/kisli/vmime.git"
+
+CATEGORY="Libs"
+SUMMARY="MIME and Mail Library for C++"
+DESCRIPTION="VMime is a powerful C++ class library for working with RFC-822 and MIME
+messages and Internet messaging services like IMAP, POP or SMTP."
+
+LICENSE="GPL-3.0-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: GPL-3.0-or-later"
+LICENSE_URI="COPYING"
+
+BUILD_REQUIRES="libgnutls-devel libgsasl-devel libicu-devel"
+
+export CPPFLAGS="${CPPFLAGS} -D_GNU_SOURCE"
+
+inherit cmake
+inherit git
+
+CYGCMAKE_ARGS="
+	-DVMIME_BUILD_DOCUMENTATION:BOOL=OFF
+	-DVMIME_BUILD_SAMPLES:BOOL=ON
+	-DVMIME_BUILD_STATIC_LIBRARY:BOOL=OFF
+	-DVMIME_BUILD_TESTS:BOOL=OFF
+	-DVMIME_HAVE_MESSAGING_PROTO_SENDMAIL:BOOL=OFF
+"
+
+DIFF_EXCLUDES="
+	config.hpp
+	export-shared.hpp
+"
+
+PKG_NAMES="
+	${PN}
+	${PN}1
+	${PN}-devel
+"
+libvmime_CONTENTS="
+	usr/share
+"
+libvmime1_CONTENTS="
+	usr/bin/*-1.dll
+"
+libvmime_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+libvmime_SUMMARY="${SUMMARY} (licensing & readmes)"
+libvmime1_SUMMARY="${SUMMARY} (runtime)"
+libvmime_devel_SUMMARY="${SUMMARY} (development)"

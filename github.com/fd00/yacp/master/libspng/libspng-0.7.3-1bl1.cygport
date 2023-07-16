@@ -1,0 +1,38 @@
+HOMEPAGE="https://${PN}.org/"
+SRC_URI="https://github.com/randy408/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Simpler, modern libpng alternative"
+DESCRIPTION="libspng is a C library for reading and writing Portable Network Graphics (PNG)
+format files with a focus on security and ease of use."
+
+LICENSE="BSD-2-Clause"
+LICENSE_SPDX="SPDX-License-Identifier: BSD-2-Clause"
+LICENSE_URI="LICENSE"
+
+BUILD_REQUIRES="zlib-devel"
+
+inherit meson
+
+CYGMESON_ARGS="
+	-Ddev_build=true
+"
+
+PKG_NAMES="
+	libspng
+	libspng0
+	libspng-devel
+"
+libspng_CONTENTS="
+	usr/share
+"
+libspng0_CONTENTS="
+	usr/bin
+"
+libspng_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+libspng_SUMMARY="${SUMMARY} (licensing & readmes)"
+libspng0_SUMMARY="${SUMMARY} (runtime)"
+libspng_devel_SUMMARY="${SUMMARY} (development)"

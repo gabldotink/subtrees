@@ -1,0 +1,34 @@
+HOMEPAGE="https://github.com/${PN}/${PN}"
+SRC_URI="https://github.com/${PN}/${PN}/archive/v${PV}.tar.gz"
+
+CATEGORY="Devel"
+SUMMARY="Lightweight unit testing framework for C++"
+DESCRIPTION="UnitTest++ is a lightweight unit testing framework for C++. It was designed to
+do test-driven development on a wide variety of platforms. Simplicity,
+portability, speed, and small footprint are all very important aspects of
+UnitTest++. UnitTest++ is ANSI portable C++ and makes minimal use of advanced
+library and languages features, which means it should be easily portable to
+just about any platform."
+
+DOCS="
+	README.md
+"
+
+PKG_NAMES="
+	${PN}
+	libUnitTest++2
+	libUnitTest++-devel
+"
+unittest_cpp_CONTENTS="
+	usr/share
+"
+libUnitTest__2_CONTENTS="
+	usr/bin
+"
+libUnitTest___devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+unittest_cpp_SUMMARY="${SUMMARY} (licensing & readmes)"
+libUnitTest__2_SUMMARY="${SUMMARY} (runtime)"
+libUnitTest___devel_SUMMARY="${SUMMARY} (development)"

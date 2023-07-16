@@ -1,0 +1,92 @@
+guiloader
+------------------------------------------
+The GuiLoader library allows applications to reconstruct user interfaces from
+GuiXml files. GuiXml interfaces are created and edited by the Crow Designer.
+Access to the GuiLoader functionality for applications in C++ is granted by a
+special auxiliary library, GuiLoader-C++.
+
+Runtime requirements:
+  cygwin-2.5.1-1
+  libatk1.0_0-2.18.0-1
+  libcairo2-1.14.4-1
+  libgdk_pixbuf2.0_0-2.32.2-1
+  libglib2.0-devel-2.46.2-3
+  libglib2.0_0-2.46.2-3
+  libgtk3-devel-3.18.9-1
+  libgtk3_0-3.18.9-1
+  libguiloader-devel-2.99.0-1bl2
+  libguiloader1-2.99.0-1bl2
+  libintl8-0.19.5.1-2
+  libpango1.0_0-1.38.1-1
+  pkg-config-0.29-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-9-1
+  binutils-2.25-4
+  cygport-0.21.1-1
+  gcc-core-5.3.0-5
+  libtool-2.4.6-3
+  make-4.1-1
+
+Canonical website:
+  http://www.crowdesigner.org/
+
+Canonical download:
+  https://nothing-personal.googlecode.com/files/guiloader-2.99.0.tar.xz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack guiloader-2.99.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./guiloader-2.99.0-X.cygport all
+
+This will create:
+  /usr/src/guiloader-2.99.0-X-src.tar.xz
+  /usr/src/guiloader-2.99.0-X.tar.xz
+  /usr/src/libguiloader1-2.99.0-X.tar.xz
+  /usr/src/libguiloader-devel-2.99.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(guiloader)
+  /usr/share/doc/Cygwin/guiloader.README
+  /usr/share/doc/guiloader/authors.txt
+  /usr/share/doc/guiloader/license.txt
+  /usr/share/doc/guiloader/msvc.en.txt
+  /usr/share/doc/guiloader/msvc.ru.txt
+  /usr/share/doc/guiloader/news.en.txt
+  /usr/share/doc/guiloader/news.ru.txt
+  /usr/share/doc/guiloader/readme.en.txt
+  /usr/share/doc/guiloader/readme.ru.txt
+
+(libguiloader1)
+  /usr/bin/cygguiloader-1.dll
+  /usr/share/locale/ru/LC_MESSAGES/guiloader.mo
+
+(libguiloader-devel)
+  /usr/include/guiloader/guiloader.h
+  /usr/lib/libguiloader.dll.a
+  /usr/lib/pkgconfig/guiloader.pc
+
+------------------
+
+Port Notes:
+
+----- version 2.99.0-1bl2 -----
+Rebuild on x86_64
+
+----- version 2.99.0-1bl1 -----
+Version bump.
+
+----- version 2.21.0-1bl1 -----
+Version bump.
+
+----- version 2.15.0-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

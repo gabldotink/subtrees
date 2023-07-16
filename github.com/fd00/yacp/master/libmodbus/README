@@ -1,0 +1,98 @@
+libmodbus
+------------------------------------------
+libmodbus is a C library designed to provide a fast and robust implementation
+of the Modbus protocol. It runs on Linux, Mac OS X, FreeBSD, QNX and Windows.
+
+Runtime requirements:
+  cygwin-3.3.6-1
+  libmodbus-devel-3.1.8-1bl1
+  libmodbus5-3.1.8-1bl1
+  pkg-config-1.9.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.39-1
+  cygport-0.35.4-1
+  gcc-core-11.3.0-1
+  libtool-2.4.7-1
+  make-4.3-1
+
+Canonical website:
+  https://libmodbus.org/
+
+Canonical download:
+  https://github.com/stephane/libmodbus/releases/download/v3.1.8/libmodbus-3.1.8.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libmodbus-3.1.8-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libmodbus-3.1.8-X.cygport all
+
+This will create:
+  /usr/src/libmodbus-3.1.8-X-src.tar.xz
+  /usr/src/libmodbus-3.1.8-X.tar.xz
+  /usr/src/libmodbus5-3.1.8-X.tar.xz
+  /usr/src/libmodbus-devel-3.1.8-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libmodbus)
+  /usr/share/doc/Cygwin/libmodbus.README
+  /usr/share/doc/libmodbus/AUTHORS
+  /usr/share/doc/libmodbus/COPYING.LESSER
+  /usr/share/doc/libmodbus/MIGRATION
+  /usr/share/doc/libmodbus/NEWS
+  /usr/share/doc/libmodbus/README.md
+
+(libmodbus5)
+  /usr/bin/cygmodbus-5.dll
+
+(libmodbus-devel)
+  /usr/include/modbus/modbus-rtu.h
+  /usr/include/modbus/modbus-tcp.h
+  /usr/include/modbus/modbus-version.h
+  /usr/include/modbus/modbus.h
+  /usr/lib/libmodbus.dll.a
+  /usr/lib/pkgconfig/libmodbus.pc
+
+------------------
+
+Port Notes:
+
+----- version 3.1.8-1bl1 -----
+Version bump.
+
+----- version 3.1.7-1bl1 -----
+Version bump.
+
+----- version 3.1.6-1bl1 -----
+Version bump.
+
+----- version 3.1.4-1bl1 -----
+Version bump.
+
+----- version 3.1.1-1bl1 -----
+Version bump.
+
+----- version 3.1.0-1bl1 -----
+Version bump.
+
+----- version 3.0.3-1bl1 -----
+Version bump.
+
+----- version 3.0.2-1bl1 -----
+Version bump.
+
+----- version 3.0.1-1bl1 -----
+Version bump.
+
+----- version 2.9.3-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

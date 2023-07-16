@@ -1,0 +1,139 @@
+libSDL2pp
+------------------------------------------
+This library provides C++11 bindings/wrapper for SDL2 and satellite libraries.
+
+Runtime requirements:
+  cygwin-3.3.5-1
+  libSDL2-devel-2.0.7-1
+  libSDL2_2.0_0-2.0.7-1
+  libSDL2_image-devel-2.0.2-1
+  libSDL2_image2.0_0-2.0.2-1
+  libSDL2_mixer-devel-2.0.2-1
+  libSDL2_mixer2.0_0-2.0.2-1
+  libSDL2_ttf-devel-2.0.14-1
+  libSDL2_ttf2.0_0-2.0.14-1
+  libSDL2pp-devel-0.17.0-1bl1
+  libSDL2pp8-0.17.0-1bl1
+  libgcc1-11.3.0-1
+  libstdc++6-11.3.0-1
+  pkg-config-1.8.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.38-1
+  cmake-3.20.0-1
+  cygport-0.35.1-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libSDL2-devel-2.0.7-1
+  libSDL2_image-devel-2.0.2-1
+  libSDL2_mixer-devel-2.0.2-1
+  libSDL2_ttf-devel-2.0.14-1
+  ninja-1.11.0-1
+
+Canonical website:
+  https://github.com/libSDL2pp/libSDL2pp
+
+Canonical download:
+  https://github.com/libSDL2pp/libSDL2pp/archive/refs/tags/0.17.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libSDL2pp-0.17.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libSDL2pp-0.17.0-X.cygport all
+
+This will create:
+  /usr/src/libSDL2pp-0.17.0-X-src.tar.xz
+  /usr/src/libSDL2pp-0.17.0-X.tar.xz
+  /usr/src/libSDL2pp8-0.17.0-X.tar.xz
+  /usr/src/libSDL2pp-devel-0.17.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libSDL2pp)
+  /usr/share/doc/Cygwin/libSDL2pp.README
+  /usr/share/doc/libSDL2pp/CHANGES.md
+  /usr/share/doc/libSDL2pp/COPYING.txt
+  /usr/share/doc/libSDL2pp/README.md
+
+(libSDL2pp8)
+  /usr/bin/cygSDL2pp-8.dll
+
+(libSDL2pp-devel)
+  /usr/include/SDL2pp/AudioDevice.hh
+  /usr/include/SDL2pp/AudioSpec.hh
+  /usr/include/SDL2pp/Chunk.hh
+  /usr/include/SDL2pp/Color.hh
+  /usr/include/SDL2pp/Config.hh
+  /usr/include/SDL2pp/ContainerRWops.hh
+  /usr/include/SDL2pp/Exception.hh
+  /usr/include/SDL2pp/Export.hh
+  /usr/include/SDL2pp/Font.hh
+  /usr/include/SDL2pp/Mixer.hh
+  /usr/include/SDL2pp/Music.hh
+  /usr/include/SDL2pp/Optional.hh
+  /usr/include/SDL2pp/Point.hh
+  /usr/include/SDL2pp/RWops.hh
+  /usr/include/SDL2pp/Rect.hh
+  /usr/include/SDL2pp/Renderer.hh
+  /usr/include/SDL2pp/SDL.hh
+  /usr/include/SDL2pp/SDL2pp.hh
+  /usr/include/SDL2pp/SDLImage.hh
+  /usr/include/SDL2pp/SDLMixer.hh
+  /usr/include/SDL2pp/SDLTTF.hh
+  /usr/include/SDL2pp/StreamRWops.hh
+  /usr/include/SDL2pp/Surface.hh
+  /usr/include/SDL2pp/Texture.hh
+  /usr/include/SDL2pp/Wav.hh
+  /usr/include/SDL2pp/Window.hh
+  /usr/lib/cmake/SDL2pp/SDL2ppConfig.cmake
+  /usr/lib/cmake/SDL2pp/SDL2ppTargets-release.cmake
+  /usr/lib/cmake/SDL2pp/SDL2ppTargets.cmake
+  /usr/lib/libSDL2pp.dll.a
+  /usr/lib/pkgconfig/sdl2pp.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.17.0-1bl1 -----
+Version bump.
+
+----- version 0.16.1-1bl1 -----
+Version bump.
+
+----- version 0.16.0-1bl1 -----
+Version bump.
+
+----- version 0.15.0-1bl1 -----
+Version bump.
+
+----- version 0.13.0-1bl1 -----
+Version bump.
+
+----- version 0.12.0-1bl1 -----
+Version bump.
+
+----- version 0.11.0-1bl1 -----
+Version bump.
+
+----- version 0.9.0-1bl2 -----
+Reverted incorrect patch
+
+----- version 0.9.0-1bl1 -----
+Version bump.
+
+----- version 0.8.0-1bl1 -----
+Version bump.
+
+----- version 0.7.1-1bl1 -----
+Version bump.
+
+----- version 0.7.0-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

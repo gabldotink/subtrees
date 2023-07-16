@@ -1,0 +1,78 @@
+libvisca
+------------------------------------------
+libVISCA is a library for controlling a VISCA(tm) compliant camera through the
+RS232 port of your PC. VISCA, on its side, is a protocol developed by Sony so
+that a lot of machine vision cameras from Sony are compliant with VISCA.
+Typical cameras include the FCB-IX47 family of camera block for OEMs. Note
+that other devices, such as VCRs, can be controlled. Drop me a line f you know
+other functions that you would like to be implemented and for which you have
+the opcodes.
+
+Runtime requirements:
+  cygwin-1.7.34-6
+  libvisca-devel-1.1.0-1bl2
+  libvisca3-1.1.0-1bl2
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-9-1
+  binutils-2.25-1
+  cygport-0.17.1-1
+  gcc-core-4.9.2-2
+  libtool-2.4.6-1
+  make-4.1-1
+
+Canonical website:
+  http://damien.douxchamps.net/libvisca/
+
+Canonical download:
+  mirror://sourceforge/libvisca/libvisca-1.1.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libvisca-1.1.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libvisca-1.1.0-X.cygport all
+
+This will create:
+  /usr/src/libvisca-1.1.0-X-src.tar.xz
+  /usr/src/libvisca-1.1.0-X.tar.xz
+  /usr/src/libvisca3-1.1.0-X.tar.xz
+  /usr/src/libvisca-devel-1.1.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libvisca)
+  /usr/share/doc/Cygwin/libvisca.README
+  /usr/share/doc/libvisca/AUTHORS
+  /usr/share/doc/libvisca/COPYING
+  /usr/share/doc/libvisca/ChangeLog
+  /usr/share/doc/libvisca/README
+
+(libvisca3)
+  /usr/bin/cygvisca-3.dll
+
+(libvisca-devel)
+  /usr/include/visca/libvisca.h
+  /usr/lib/libvisca.dll.a
+  /usr/lib/pkgconfig/libvisca.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.1.0-1bl2 -----
+Rebuild on x86_64
+
+----- version 1.1.0-1bl1 -----
+Version bump.
+
+----- version 1.0.1-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>
+

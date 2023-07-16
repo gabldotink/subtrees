@@ -1,0 +1,14 @@
+HOMEPAGE="https://github.com/apertium/${PN}"
+SRC_URI="https://github.com/apertium/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Text"
+SUMMARY="Recursive structural transfer module for Apertium"
+DESCRIPTION="${SUMMARY}"
+
+LICENSE="GPL-3.0-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: GPL-3.0-or-later"
+LICENSE_URI="COPYING"
+
+BUILD_REQUIRES="utf8cpp libapertium-devel libicu-devel liblttoolbox-devel libxml2-devel"
+
+export CPPFLAGS="${CPPFLAGS} -D_GNU_SOURCE -I/usr/include/utf8cpp"

@@ -1,0 +1,91 @@
+uptimed
+------------------------------------------
+Uptimed is an uptime record daemon keeping track of the highest uptimes a
+computer system ever had. It uses the system boot time to keep sessions apart
+from each other. Uptimed comes with a console front-end to parse the records,
+which can also easily be used to show your records on a web page.
+
+Runtime requirements:
+  cygwin-3.3.1-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.37-2
+  cygport-0.34.0-1
+  gcc-core-11.2.0-1
+  libtool-2.4.6-7
+  make-4.3-1
+
+Canonical website:
+  https://github.com/rpodgorny/uptimed/
+
+Canonical download:
+  https://github.com/rpodgorny/uptimed/archive/refs/tags/v0.4.5.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack uptimed-0.4.5-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./uptimed-0.4.5-X.cygport all
+
+This will create:
+  /usr/src/uptimed-0.4.5-X-src.tar.xz
+  /usr/src/uptimed-0.4.5-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(uptimed)
+  /etc/rc.d/init.d/uptimed
+  /etc/uptimed.conf-dist
+  /usr/bin/cyguptimed-0.dll
+  /usr/bin/uprecords.exe
+  /usr/lib/libuptimed.dll.a
+  /usr/sbin/uptimed.exe
+  /usr/share/doc/Cygwin/uptimed.README
+  /usr/share/doc/uptimed/AUTHORS
+  /usr/share/doc/uptimed/COPYING
+  /usr/share/doc/uptimed/CREDITS
+  /usr/share/doc/uptimed/ChangeLog
+  /usr/share/doc/uptimed/NEWS
+  /usr/share/doc/uptimed/README.md
+  /usr/share/doc/uptimed/TODO
+  /usr/share/doc/uptimed/sample-cgi/uprecords.conf
+  /usr/share/doc/uptimed/sample-cgi/uprecords.footer
+  /usr/share/doc/uptimed/sample-cgi/uprecords.header
+  /usr/share/man/man1/uprecords.1.gz
+  /usr/share/man/man8/uptimed.8.gz
+
+------------------
+
+Port Notes:
+
+----- version 0.4.5-1bl1 -----
+Version bump.
+
+----- version 0.4.2-1bl1 -----
+Version bump.
+
+----- version 0.4.1-1bl1 -----
+Version bump.
+
+----- version 0.4.0-1bl1 -----
+Version bump.
+
+----- version 0.3.18-1bl1 -----
+Version bump.
+
+----- version 0.3.17-1bl1 -----
+Version bump.
+
+----- version 0.3.16-1bl2 -----
+Rebuild with gcc-4.5.3
+
+----- version 0.3.16-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

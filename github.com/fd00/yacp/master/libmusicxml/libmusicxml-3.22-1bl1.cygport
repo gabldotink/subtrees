@@ -1,0 +1,46 @@
+HOMEPAGE="https://github.com/grame-cncm/${PN}"
+SRC_URI="https://github.com/grame-cncm/${PN}/archive/refs/tags/v.${PV}.tar.gz"
+SRC_DIR="${PN}-v.${PV}"
+
+CATEGORY="Libs"
+SUMMARY="C/C++ library to support the MusicXML format"
+DESCRIPTION="The MusicXML library is a portable C++ library designed close to the MusicXML
+format and intended to facilitate MusicXML support."
+
+inherit cmake
+
+src_compile()
+{
+	cd ${B}
+	: ${CYGCMAKE_GENERATOR=Ninja}
+	CYGCMAKE_SOURCE="${S}/build" cygcmake
+	cygninja
+}
+
+CYGCMAKE_ARGS="
+	-DGENSTATIC:BOOL=OFF
+"
+
+DIFF_EXCLUDES="
+	*.dll.a
+"
+
+PKG_NAMES="
+	libmusicxml
+	libmusicxml3
+	libmusicxml-devel
+"
+libmusicxml_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+libmusicxml3_CONTENTS="
+	usr/bin/*.dll
+"
+libmusicxml_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+libmusicxml_SUMMARY="${SUMMARY} (utilities)"
+libmusicxml3_SUMMARY="${SUMMARY} (runtime)"
+libmusicxml_devel_SUMMARY="${SUMMARY} (development)"

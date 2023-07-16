@@ -1,0 +1,48 @@
+HOMEPAGE="https://github.com/OpenSC/OpenSC"
+SRC_URI="https://github.com/OpenSC/OpenSC/archive/refs/tags/${PV}.tar.gz"
+SRC_DIR="OpenSC-${PV}"
+
+CATEGORY="Libs"
+SUMMARY="Smart card library and applications"
+DESCRIPTION="OpenSC provides a set of libraries and utilities to work with smart cards. Its
+main focus is on cards that support cryptographic operations, and facilitate
+their use in security applications such as authentication, mail encryption and
+digital signatures. OpenSC implements the PKCS#11 API so applications
+supporting this API (such as Mozilla Firefox and Thunderbird) can use it. On
+the card OpenSC implements the PKCS#15 standard and aims to be compatible with
+every software/card that does so, too."
+
+LICENSE="LGPL-2.1-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: LGPL-2.1-or-later"
+LICENSE_URI="COPYING"
+
+BUILD_REQUIRES="libeac-devel libreadline-devel libssl-devel zlib-devel"
+
+CYGCONF_ARGS="
+	--disable-strict
+	--with-pcsc-provider=cygpcsclite-1.dll
+"
+
+PKG_NAMES="
+	opensc
+	libopensc8
+	libopensc-devel
+"
+opensc_CONTENTS="
+	etc
+	usr/bin/*.exe
+	usr/lib/*.dll
+	usr/lib/*/*.dll
+	usr/share
+"
+libopensc8_CONTENTS="
+	usr/bin/*.dll
+"
+libopensc_devel_CONTENTS="
+	usr/include
+	usr/lib/lib*.dll.a
+	usr/lib/pkgconfig
+"
+opensc_SUMMARY="${SUMMARY} (utilities)"
+libopensc8_SUMMARY="${SUMMARY} (runtime)"
+libopensc_devel_SUMMARY="${SUMMARY} (development)"

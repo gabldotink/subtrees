@@ -1,0 +1,48 @@
+HOMEPAGE="https://kiyuko.org/software/${PN}"
+SRC_URI="https://kiyuko.org/software/${PN}/releases/${P}.tar.xz"
+
+CATEGORY="Libs"
+SUMMARY="Toolkit for the Brainfuck programming language"
+DESCRIPTION="Cattle is a toolkit for the Brainfuck programming language."
+
+CYGPORT_USE_UNSTABLE_API=1
+src_patch_hook()
+{
+	cd ${origsrcdir}/${SRC_DIR}
+	gtkdocize
+}
+
+PKG_IGNORE="
+	usr/share/doc/cattle-1.0/AUTHORS.rst
+	usr/share/doc/cattle-1.0/COPYING
+	usr/share/doc/cattle-1.0/NEWS.rst
+	usr/share/doc/cattle-1.0/README.rst
+	usr/share/doc/cattle-1.0/TODO.rst
+"
+
+PKG_NAMES="
+	${PN}
+	lib${PN}1.0_0
+	lib${PN}1.0-devel
+	girepository-Cattle1.0
+"
+cattle_CONTENTS="
+	usr/share/doc/Cygwin
+	usr/share/doc/${PN}
+"
+libcattle1_0_0_CONTENTS="
+	usr/bin
+"
+libcattle1_0_devel_CONTENTS="
+	usr/include
+	usr/lib/lib${PN}*.dll.a
+	usr/lib/pkgconfig
+"
+girepository_Cattle1_0_CONTENTS="
+	usr/lib/girepository*
+	usr/share/gir*
+"
+cattle_SUMMARY="${SUMMARY} (licensing & readmes)"
+libcattle1_0_0_SUMMARY="${SUMMARY} (runtime)"
+libcattle1_0_devel_SUMMARY="${SUMMARY} (development)"
+girepository_Cattle1_0_SUMMARY="${SUMMARY} (GObject Introspection data)"

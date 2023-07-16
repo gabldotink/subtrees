@@ -1,0 +1,143 @@
+libassa
+------------------------------------------
+libASSA is an object-oriented C++ networking library based on Adaptive
+Communication Patterns.
+
+Runtime requirements:
+  cygwin-2.9.0-3
+  libassa3.5-devel-3.5.1-1bl1
+  libassa3.5_5-3.5.1-1bl1
+  libgcc1-6.4.0-1
+  libstdc++6-6.4.0-1
+  libtirpc-devel-1.0.1-1
+  libtirpc3-1.0.1-1
+  pkg-config-0.29.1-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-10-1
+  binutils-2.29-1
+  cygport-0.24.1-1
+  gcc-core-6.4.0-1
+  gcc-g++-6.4.0-1
+  libtool-2.4.6-5
+  make-4.2.1-2
+
+Canonical website:
+  http://libassa.sf.net/
+
+Canonical download:
+  mirror://sourceforge/libassa/libassa-3.5.1.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libassa-3.5.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libassa-3.5.1-X.cygport all
+
+This will create:
+  /usr/src/libassa-3.5.1-X-src.tar.xz
+  /usr/src/libassa-3.5.1-X.tar.xz
+  /usr/src/libassa3.5_5-3.5.1-X.tar.xz
+  /usr/src/libassa3.5-devel-3.5.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libassa)
+  /usr/bin/assa-genesis-3.5.exe
+  /usr/bin/assa-hexdump-3.5.exe
+  /usr/share/doc/Cygwin/libassa.README
+  /usr/share/doc/libassa/AUTHORS
+  /usr/share/doc/libassa/COPYING
+  /usr/share/doc/libassa/ChangeLog
+  /usr/share/doc/libassa/README
+  /usr/share/doc/libassa/TODO
+
+(libassa3.5_5)
+  /usr/bin/cygassa-3.5-5.dll
+
+(libassa3.5-devel)
+  /usr/include/assa-3.5/assa/Acceptor.h
+  /usr/include/assa-3.5/assa/Address.h
+  /usr/include/assa-3.5/assa/Assa.h
+  /usr/include/assa-3.5/assa/Assure.h
+  /usr/include/assa-3.5/assa/AutoPtr.h
+  /usr/include/assa-3.5/assa/CharInBuffer.h
+  /usr/include/assa-3.5/assa/CmdLineOpts.h
+  /usr/include/assa-3.5/assa/CommonUtils.h
+  /usr/include/assa-3.5/assa/ConUDPSocket.h
+  /usr/include/assa-3.5/assa/Connector.h
+  /usr/include/assa-3.5/assa/Destroyer.h
+  /usr/include/assa-3.5/assa/EventHandler.h
+  /usr/include/assa-3.5/assa/FdSet.h
+  /usr/include/assa-3.5/assa/FileLogger.h
+  /usr/include/assa-3.5/assa/Fork.h
+  /usr/include/assa-3.5/assa/GenServer.h
+  /usr/include/assa-3.5/assa/Handlers.h
+  /usr/include/assa-3.5/assa/INETAddress.h
+  /usr/include/assa-3.5/assa/IPv4Socket.h
+  /usr/include/assa-3.5/assa/IdSet.h
+  /usr/include/assa-3.5/assa/IniFile.h
+  /usr/include/assa-3.5/assa/LogMask.h
+  /usr/include/assa-3.5/assa/Logger.h
+  /usr/include/assa-3.5/assa/Logger_Impl.h
+  /usr/include/assa-3.5/assa/MaskSet.h
+  /usr/include/assa-3.5/assa/MemDump.h
+  /usr/include/assa-3.5/assa/PidFileLock.h
+  /usr/include/assa-3.5/assa/Pipe.h
+  /usr/include/assa-3.5/assa/PriorityQueue.h
+  /usr/include/assa-3.5/assa/PriorityQueue_Heap.h
+  /usr/include/assa-3.5/assa/PriorityQueue_Impl.h
+  /usr/include/assa-3.5/assa/PriorityQueue_STLPQ.h
+  /usr/include/assa-3.5/assa/Reactor.h
+  /usr/include/assa-3.5/assa/Regexp.h
+  /usr/include/assa-3.5/assa/RemoteLogger.h
+  /usr/include/assa-3.5/assa/Repository.h
+  /usr/include/assa-3.5/assa/Semaphore.h
+  /usr/include/assa-3.5/assa/ServiceHandler.h
+  /usr/include/assa-3.5/assa/SigAction.h
+  /usr/include/assa-3.5/assa/SigHandler.h
+  /usr/include/assa-3.5/assa/SigHandlers.h
+  /usr/include/assa-3.5/assa/SigHandlersList.h
+  /usr/include/assa-3.5/assa/SigSet.h
+  /usr/include/assa-3.5/assa/Singleton.h
+  /usr/include/assa-3.5/assa/Socket.h
+  /usr/include/assa-3.5/assa/Socketbuf.h
+  /usr/include/assa-3.5/assa/StdOutLogger.h
+  /usr/include/assa-3.5/assa/Streambuf.h
+  /usr/include/assa-3.5/assa/TimeVal.h
+  /usr/include/assa-3.5/assa/Timer.h
+  /usr/include/assa-3.5/assa/TimerCountdown.h
+  /usr/include/assa-3.5/assa/TimerQueue.h
+  /usr/include/assa-3.5/assa/UDPSocket.h
+  /usr/include/assa-3.5/assa/UNIXAddress.h
+  /usr/include/assa-3.5/assa/UnConUDPSocket.h
+  /usr/include/assa-3.5/assa/XDRHack.h
+  /usr/include/assa-3.5/assa/xdrIOBuffer.h
+  /usr/lib/libassa-3.5.dll.a
+  /usr/lib/pkgconfig/assa-3.5.pc
+
+------------------
+
+Port Notes:
+
+----- version 3.5.1-1bl1 -----
+Version bump.
+
+----- version 3.5.0-1bl4 -----
+Rebuild with gcc-5.4.0
+
+----- version 3.5.0-1bl3 -----
+Rebuild on x86_64
+
+----- version 3.5.0-1bl2 -----
+Rebuild with gcc-4.5.3
+
+----- version 3.5.0-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

@@ -1,0 +1,139 @@
+diamond
+------------------------------------------
+DIAMOND is a sequence aligner for protein and translated DNA searches and
+functions as a drop-in replacement for the NCBI BLAST software tools. It is
+suitable for protein-protein search as well as DNA-protein search on short
+reads and longer sequences including contigs and assemblies, providing a
+speedup of BLAST ranging up to x20,000.
+
+Runtime requirements:
+  cygwin-3.4.6-1
+  libgcc1-11.3.0-1
+  libmimalloc2-2.0.9-1bl1
+  libstdc++6-11.3.0-1
+  libzstd1-1.5.4-1
+  zlib0-1.2.13-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.40-1
+  cmake-3.23.2-1
+  cygport-0.36.1-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libmimalloc-devel-2.0.9-1bl1
+  libzstd-devel-1.5.4-1
+  ninja-1.11.1-1
+  zlib-devel-1.2.13-1
+
+Canonical website:
+  https://github.com/bbuchfink/diamond/
+
+Canonical download:
+  https://github.com/bbuchfink/diamond/archive/refs/tags/v2.1.6.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack diamond-2.1.6-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./diamond-2.1.6-X.cygport all
+
+This will create:
+  /usr/src/diamond-2.1.6-X-src.tar.xz
+  /usr/src/diamond-2.1.6-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(diamond)
+  /usr/bin/diamond.exe
+  /usr/share/doc/Cygwin/diamond.README
+  /usr/share/doc/diamond/ChangeLog
+  /usr/share/doc/diamond/LICENSE
+  /usr/share/doc/diamond/README.md
+
+------------------
+
+Port Notes:
+
+----- version 2.1.6-1bl1 -----
+Version bump.
+
+----- version 2.0.15-1bl1 -----
+Version bump.
+
+----- version 2.0.14-1bl1 -----
+Version bump.
+
+----- version 2.0.13-1bl1 -----
+Version bump.
+
+----- version 2.0.12-1bl1 -----
+Version bump.
+
+----- version 2.0.11-1bl1 -----
+Version bump.
+
+----- version 2.0.10-1bl1 -----
+Version bump.
+
+----- version 2.0.9-1bl1 -----
+Version bump.
+
+----- version 2.0.7-1bl1 -----
+Version bump.
+
+----- version 2.0.6-1bl1 -----
+Version bump.
+
+----- version 2.0.4-1bl1 -----
+Version bump.
+
+----- version 2.0.2-1bl1 -----
+Version bump.
+
+----- version 0.9.36-1bl1 -----
+Version bump.
+
+----- version 0.9.30-1bl1 -----
+Version bump.
+
+----- version 0.9.29-1bl1 -----
+Version bump.
+
+----- version 0.9.24-1bl1 -----
+Version bump.
+
+----- version 0.9.21-1bl1 -----
+Version bump.
+
+----- version 0.9.19-1bl1 -----
+Version bump.
+
+----- version 0.9.14-1bl1 -----
+Version bump.
+
+----- version 0.9.13-1bl1 -----
+Version bump.
+
+----- version 0.9.12-1bl1 -----
+Version bump.
+
+----- version 0.9.10-1bl1 -----
+Version bump.
+
+----- version 0.9.9-1bl1 -----
+Version bump.
+
+----- version 0.8.38-1bl1 -----
+Version bump.
+
+----- version 0.7.11-1bl1 -----
+Version bump.
+
+----- version 0.7.9-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

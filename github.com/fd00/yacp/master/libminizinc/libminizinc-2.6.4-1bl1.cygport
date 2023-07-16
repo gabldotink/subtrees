@@ -1,0 +1,42 @@
+HOMEPAGE="https://www.minizinc.org/"
+SRC_URI="https://github.com/MiniZinc/${PN}/archive/refs/tags/${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Medium-level constraint modelling language"
+DESCRIPTION="MiniZinc is a medium-level constraint modelling language. It is high-level
+enough to express most constraint problems easily, but low-level enough that
+it can be mapped onto existing solvers easily and consistently. It is a subset
+of the higher-level language Zinc. We hope it will be adopted as a standard by
+the Constraint Programming community."
+
+LICENSE="MPL-2.0"
+LICENSE_SPDX="SPDX-License-Identifier: MPL-2.0"
+LICENSE_URI="LICENSE.txt"
+
+BUILD_REQUIRES="bison flex"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DBUILD_SHARED_LIBS:BOOL=ON
+"
+
+PKG_NAMES="
+	${PN}
+	libmzn2
+	libmzn-devel
+"
+libminizinc_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+libmzn2_CONTENTS="
+	usr/bin/*.dll
+"
+libmzn_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+libminizinc_SUMMARY="${SUMMARY} (utilities)"
+libmzn2_SUMMARY="${SUMMARY} (runtime)"
+libmzn_devel_SUMMARY="${SUMMARY} (development)"

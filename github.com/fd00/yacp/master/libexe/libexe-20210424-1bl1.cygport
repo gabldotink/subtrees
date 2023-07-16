@@ -1,0 +1,68 @@
+HOMEPAGE="https://github.com/libyal/${PN}"
+SRC_URI="https://github.com/libyal/${PN}/archive/refs/tags/${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Library and tools to access the executable (EXE) format"
+DESCRIPTION="libexe is a library to access the executable (EXE) format."
+
+LICENSE="LGPL-3.0-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: LGPL-3.0-or-later"
+LICENSE_URI="COPYING"
+
+CYGPORT_USE_UNSTABLE_API=1
+src_patch_hook()
+{
+	cd ${origsrcdir}/${SRC_DIR}/tests
+	chmod u+x *.py
+}
+
+BUILD_REQUIRES="libbfio-devel libcdata-devel libcerror-devel libclocale-devel libcnotify-devel libfdata-devel libuna-devel python39-devel"
+
+CYGCONF_ARGS="
+	--enable-python3
+"
+
+src_test()
+{
+	cd ${B}
+	pushd tests
+		for f in ${S}/tests/*.{py,sh}
+		do
+			ln -fs ${f} .
+		done
+	popd
+	cygtest
+	rm tests/*.{py,sh}
+}
+
+DOCS="
+	COPYING.LESSER
+"
+
+PKG_NAMES="
+	${PN}
+	${PN}1
+	${PN}-devel
+	python39-${PN}
+"
+libexe_CONTENTS="
+	usr/bin/*.exe
+	usr/share/doc
+	usr/share/man/man1
+"
+libexe1_CONTENTS="
+	usr/bin/*.dll
+"
+libexe_devel_CONTENTS="
+	usr/include
+	usr/lib/lib*.dll.a
+	usr/lib/pkgconfig
+	usr/share/man/man3
+"
+python39_libexe_CONTENTS="
+	usr/lib/python3*
+"
+libexe_SUMMARY="${SUMMARY} (utilities)"
+libexe1_SUMMARY="${SUMMARY} (runtime)"
+libexe_devel_SUMMARY="${SUMMARY} (development)"
+python39_libexe_SUMMARY="${SUMMARY} (python39 bindings)"

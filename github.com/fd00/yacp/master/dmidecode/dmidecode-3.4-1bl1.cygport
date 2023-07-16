@@ -1,0 +1,36 @@
+HOMEPAGE="https://www.nongnu.org/${PN}/"
+SRC_URI="mirror://savannah/${PN}/${P}.tar.xz"
+
+CATEGORY="Utils"
+SUMMARY="Information about your system's hardware"
+DESCRIPTION="Dmidecode reports information about your system's hardware as described in your
+system BIOS according to the SMBIOS/DMI standard (see a sample output). This
+information typically includes system manufacturer, model name, serial number,
+BIOS version, asset tag as well as a lot of other details of varying level of
+interest and reliability depending on the manufacturer. This will often include
+usage status for the CPU sockets, expansion slots (e.g. AGP, PCI, ISA) and
+memory module slots, and the list of I/O ports (e.g. serial, parallel, USB)."
+
+LICENSE="GPL-2.0-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: GPL-2.0-or-later"
+LICENSE_URI="LICENSE"
+
+src_compile()
+{
+	lndirs
+	cd ${B}
+	cygmake
+}
+
+src_test()
+{
+	cd ${B}
+	./${PN}.exe -V
+}
+
+src_install()
+{
+	cd ${B}
+	dobin *.exe
+	doman man/*.8
+}

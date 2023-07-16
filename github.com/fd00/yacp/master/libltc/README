@@ -1,0 +1,82 @@
+libltc
+------------------------------------------
+Linear (or Longitudinal) Timecode (LTC) is an encoding of timecode data as a
+Manchester-Biphase encoded audio signal. The audio signal is commonly recorded
+on a VTR track or other storage media.
+
+Runtime requirements:
+  cygwin-3.3.6-1
+  cygwin-devel-3.3.6-1
+  libltc-devel-1.3.2-1bl1
+  libltc11-1.3.2-1bl1
+  pkg-config-1.9.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.39-1
+  cygport-0.35.4-1
+  gcc-core-11.3.0-1
+  libtool-2.4.7-1
+  make-4.3-1
+
+Canonical website:
+  https://github.com/x42/libltc
+
+Canonical download:
+  https://github.com/x42/libltc/archive/refs/tags/v1.3.2.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libltc-1.3.2-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libltc-1.3.2-X.cygport all
+
+This will create:
+  /usr/src/libltc-1.3.2-X-src.tar.xz
+  /usr/src/libltc-1.3.2-X.tar.xz
+  /usr/src/libltc11-1.3.2-X.tar.xz
+  /usr/src/libltc-devel-1.3.2-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libltc)
+  /usr/share/doc/Cygwin/libltc.README
+  /usr/share/doc/libltc/AUTHORS
+  /usr/share/doc/libltc/COPYING
+  /usr/share/doc/libltc/ChangeLog
+  /usr/share/doc/libltc/README.md
+
+(libltc11)
+  /usr/bin/cygltc-11.dll
+
+(libltc-devel)
+  /usr/include/ltc.h
+  /usr/lib/libltc.dll.a
+  /usr/lib/pkgconfig/ltc.pc
+  /usr/share/man/man3/ltc.h.3.gz
+
+------------------
+
+Port Notes:
+
+----- version 1.3.2-1bl1 -----
+Version bump.
+
+----- version 1.3.1-1bl1 -----
+Version bump.
+
+----- version 1.3.0-1bl1 -----
+Version bump.
+
+----- version 1.2.0-1bl1 -----
+Version bump.
+
+----- version 1.1.4-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

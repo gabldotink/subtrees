@@ -1,0 +1,87 @@
+streamhtmlparser
+------------------------------------------
+Implementation of an html and javascript context scanner with no lookahead. Its
+purpose is to scan an html document and provide context information at any
+point within the input stream. An example of a user of this scanner would be an
+auto escaping templating system, which would require html context information
+at very specific points within the html stream. The implementation is based on
+a simplified state machine of HTML4.1 and javascript. The code also contains
+C++ and python bindings.
+
+Runtime requirements:
+  cygwin-2.10.0-1
+  libstreamhtmlparser-devel-0.1-1bl2
+  libstreamhtmlparser0-0.1-1bl2
+  pkg-config-0.29.1-1
+  python2-2.7.14-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-10-1
+  binutils-2.29-1
+  cygport-0.31.0-1
+  gcc-core-6.4.0-5
+  gcc-g++-6.4.0-5
+  libtool-2.4.6-5
+  make-4.2.1-2
+  python-2.7.14-1
+
+Canonical website:
+  https://github.com/google/streamhtmlparser
+
+Canonical download:
+  https://github.com/google/streamhtmlparser/archive/streamhtmlparser-0.1.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack streamhtmlparser-0.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./streamhtmlparser-0.1-X.cygport all
+
+This will create:
+  /usr/src/streamhtmlparser-0.1-X-src.tar.xz
+  /usr/src/streamhtmlparser-0.1-X.tar.xz
+  /usr/src/libstreamhtmlparser0-0.1-X.tar.xz
+  /usr/src/libstreamhtmlparser-devel-0.1-X.tar.xz
+  /usr/src/python2-streamhtmlparser-0.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(streamhtmlparser)
+  /usr/share/doc/Cygwin/streamhtmlparser.README
+  /usr/share/doc/streamhtmlparser/AUTHORS
+  /usr/share/doc/streamhtmlparser/COPYING
+  /usr/share/doc/streamhtmlparser/ChangeLog
+  /usr/share/doc/streamhtmlparser/INSTALL
+  /usr/share/doc/streamhtmlparser/NEWS
+  /usr/share/doc/streamhtmlparser/README
+
+(libstreamhtmlparser0)
+  /usr/bin/cygstreamhtmlparser-0.dll
+
+(libstreamhtmlparser-devel)
+  /usr/include/streamhtmlparser/htmlparser.h
+  /usr/include/streamhtmlparser/htmlparser_cpp.h
+  /usr/include/streamhtmlparser/jsparser.h
+  /usr/include/streamhtmlparser/statemachine.h
+  /usr/lib/libstreamhtmlparser.dll.a
+  /usr/lib/pkgconfig/streamhtmlparser.pc
+
+(python2-streamhtmlparser)
+  /usr/lib/python2.7/site-packages/py_streamhtmlparser.dll
+
+------------------
+
+Port Notes:
+
+----- version 0.1-1bl2 -----
+Rebuild with gcc-6.4.0
+
+----- version 0.1-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://fd0.hatenablog.jp/>

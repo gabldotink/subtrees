@@ -1,0 +1,10 @@
+--- origsrc/lwgrp-1.0.5/src/Makefile.am	2022-02-08 04:30:55.000000000 +0900
++++ src/lwgrp-1.0.5/src/Makefile.am	2022-04-25 08:50:12.742166600 +0900
+@@ -29,5 +29,5 @@ liblwgrp_la_SOURCES = \
+   lwgrp_comm.c \
+   lwgrp_comm_split.c
+ liblwgrp_la_CFLAGS = $(INCLUDES)
+-liblwgrp_la_LIBADD =
+-liblwgrp_la_LDFLAGS = -avoid-version
++liblwgrp_la_LIBADD = -lmpi
++liblwgrp_la_LDFLAGS = -no-undefined

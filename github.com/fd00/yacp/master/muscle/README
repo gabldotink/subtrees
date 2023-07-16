@@ -1,0 +1,110 @@
+muscle
+------------------------------------------
+Refactorization of the popular MUSCLE v3.6 alignment software into a
+development library
+
+Runtime requirements:
+  cygwin-2.4.1-1
+  libgcc1-5.3.0-3
+  libgomp1-5.3.0-3
+  libMUSCLE3.7-devel-1.0.0+svn4735-1bl1
+  libMUSCLE3.7_1-1.0.0+svn4735-1bl1
+  libstdc++6-5.3.0-3
+  pkg-config-0.29-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-9-1
+  binutils-2.25-4
+  cygport-0.21.0-1
+  gcc-core-5.3.0-3
+  gcc-g++-5.3.0-3
+  libtool-2.4.6-3
+  make-4.1-1
+
+Canonical website:
+  http://darlinglab.org/mauve/
+
+Canonical download:
+  https://svn.code.sf.net/p/mauve/code/muscle
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack muscle-1.0.0+svn4735-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./muscle-1.0.0+svn4735-X.cygport all
+
+This will create:
+  /usr/src/muscle-1.0.0+svn4735-X-src.tar.xz
+  /usr/src/muscle-1.0.0+svn4735-X.tar.xz
+  /usr/src/libMUSCLE3.7_1-1.0.0+svn4735-X.tar.xz
+  /usr/src/libMUSCLE3.7-devel-1.0.0+svn4735-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(muscle)
+  /usr/bin/muscle.exe
+  /usr/share/doc/Cygwin/muscle.README
+  /usr/share/doc/muscle/AUTHORS
+  /usr/share/doc/muscle/COPYING
+
+(libMUSCLE3.7_1)
+  /usr/bin/cygMUSCLE-3.7-1.dll
+
+(libMUSCLE3.7-devel)
+  /usr/include/libMUSCLE-3.7/libMUSCLE/alpha.h
+  /usr/include/libMUSCLE-3.7/libMUSCLE/clust.h
+  /usr/include/libMUSCLE-3.7/libMUSCLE/cluster.h
+  /usr/include/libMUSCLE-3.7/libMUSCLE/clustset.h
+  /usr/include/libMUSCLE-3.7/libMUSCLE/clustsetdf.h
+  /usr/include/libMUSCLE-3.7/libMUSCLE/clustsetmsa.h
+  /usr/include/libMUSCLE-3.7/libMUSCLE/diaglist.h
+  /usr/include/libMUSCLE-3.7/libMUSCLE/distcalc.h
+  /usr/include/libMUSCLE-3.7/libMUSCLE/distfunc.h
+  /usr/include/libMUSCLE-3.7/libMUSCLE/dpregionlist.h
+  /usr/include/libMUSCLE-3.7/libMUSCLE/dpreglist.h
+  /usr/include/libMUSCLE-3.7/libMUSCLE/edgelist.h
+  /usr/include/libMUSCLE-3.7/libMUSCLE/enumopts.h
+  /usr/include/libMUSCLE-3.7/libMUSCLE/enums.h
+  /usr/include/libMUSCLE-3.7/libMUSCLE/estring.h
+  /usr/include/libMUSCLE-3.7/libMUSCLE/gapscoredimer.h
+  /usr/include/libMUSCLE-3.7/libMUSCLE/gonnet.h
+  /usr/include/libMUSCLE-3.7/libMUSCLE/intmath.h
+  /usr/include/libMUSCLE-3.7/libMUSCLE/msa.h
+  /usr/include/libMUSCLE-3.7/libMUSCLE/msadist.h
+  /usr/include/libMUSCLE-3.7/libMUSCLE/muscle.h
+  /usr/include/libMUSCLE-3.7/libMUSCLE/objscore.h
+  /usr/include/libMUSCLE-3.7/libMUSCLE/params.h
+  /usr/include/libMUSCLE-3.7/libMUSCLE/profile.h
+  /usr/include/libMUSCLE-3.7/libMUSCLE/pwpath.h
+  /usr/include/libMUSCLE-3.7/libMUSCLE/refine.h
+  /usr/include/libMUSCLE-3.7/libMUSCLE/scorehistory.h
+  /usr/include/libMUSCLE-3.7/libMUSCLE/seq.h
+  /usr/include/libMUSCLE-3.7/libMUSCLE/seqvect.h
+  /usr/include/libMUSCLE-3.7/libMUSCLE/textfile.h
+  /usr/include/libMUSCLE-3.7/libMUSCLE/threadstorage.h
+  /usr/include/libMUSCLE-3.7/libMUSCLE/timing.h
+  /usr/include/libMUSCLE-3.7/libMUSCLE/tree.h
+  /usr/include/libMUSCLE-3.7/libMUSCLE/types.h
+  /usr/include/libMUSCLE-3.7/libMUSCLE/unixio.h
+  /usr/lib/libMUSCLE-3.7.dll.a
+  /usr/lib/pkgconfig/libMUSCLE-3.7.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.0.0+svn4735-1bl1 -----
+Version bump.
+
+----- version 1.0.0+svn4657-1bl1 -----
+Version bump.
+
+----- version 1.0.0+svn4634-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

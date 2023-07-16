@@ -1,0 +1,49 @@
+HOMEPAGE="https://github.com/google/${PN}"
+SRC_URI="https://github.com/google/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Memory Efficient Serialization Library"
+DESCRIPTION="FlatBuffers is a serialization library for games and other memory constrained
+apps."
+
+LICENSE="Apache-2.0"
+LICENSE_SPDX="SPDX-License-Identifier: Apache-2.0"
+LICENSE_URI="LICENSE"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+    -DFLATBUFFERS_BUILD_FLATLIB:BOOL=OFF
+    -DFLATBUFFERS_BUILD_SHAREDLIB:BOOL=ON
+    -DFLATBUFFERS_BUILD_TESTS:BOOL=ON
+"
+
+src_test()
+{
+    cd ${B}
+    ninja_test
+}
+
+DOCS="
+    *.md
+"
+
+PKG_NAMES="
+    ${PN}
+    lib${PN}${PV[1]}
+    lib${PN}-devel
+"
+flatbuffers_CONTENTS="
+    usr/bin/*.exe
+    usr/share
+"
+libflatbuffers23_CONTENTS="
+    usr/bin/*.dll
+"
+libflatbuffers_devel_CONTENTS="
+    usr/include
+    usr/lib
+"
+flatbuffers_SUMMARY="${SUMMARY} (utilities)"
+libflatbuffers23_SUMMARY="${SUMMARY} (runtime)"
+libflatbuffers_devel_SUMMARY="${SUMMARY} (development)"

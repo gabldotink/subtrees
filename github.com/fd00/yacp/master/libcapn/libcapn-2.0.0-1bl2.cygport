@@ -1,0 +1,40 @@
+HOMEPAGE="https://github.com/adobkin/${PN}"
+SRC_URI="https://github.com/adobkin/${PN}/archive/${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Simple C Library for interact with the Apple Push Notification Service"
+DESCRIPTION="libcapn is a C Library to interact with the Apple Push Notification Service
+using simple and intuitive API. With the library you can easily send push
+notifications to iOS and OS X (>= 10.8) devices."
+
+export CPPFLAGS="${CPPFLAGS} -I/usr/lib/openssl-1.0/include"
+export LDFLAGS="${LDFLAGS} -L/usr/lib/openssl-1.0/lib"
+
+inherit cmake
+
+src_test()
+{
+	cd ${B}
+	./libcapn-config.exe --version
+}
+
+PKG_NAMES="
+	${PN}
+	${PN}2
+	${PN}-devel
+"
+libcapn_CONTENTS="
+	usr/bin/apn-pusher.exe
+	usr/share
+"
+libcapn2_CONTENTS="
+	usr/bin/*.dll
+"
+libcapn_devel_CONTENTS="
+	usr/bin/${PN}-config.exe
+	usr/include
+	usr/lib
+"
+libcapn_SUMMARY="${SUMMARY} (utilities)"
+libcapn2_SUMMARY="${SUMMARY} (runtime)"
+libcapn_devel_SUMMARY="${SUMMARY} (development)"

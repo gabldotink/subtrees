@@ -1,0 +1,73 @@
+libs3
+------------------------------------------
+C Library API for Amazon S3
+
+Runtime requirements:
+  cygwin-2.2.1-1
+  libcurl4-7.43.0-1
+  libs3-devel-2.0+git20150903-1bl1
+  libs3_2-2.0+git20150903-1bl1
+  libxml2-2.9.2-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-9-1
+  binutils-2.25-2
+  cygport-0.20.2-1
+  gcc-core-4.9.3-1
+  libtool-2.4.6-1
+  make-4.1-1
+
+Canonical website:
+  https://github.com/bji/libs3
+
+Canonical download:
+  git://github.com/bji/libs3.git
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libs3-2.0+git20150903-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libs3-2.0+git20150903-X.cygport all
+
+This will create:
+  /usr/src/libs3-2.0+git20150903-X-src.tar.xz
+  /usr/src/libs3-2.0+git20150903-X.tar.xz
+  /usr/src/libs3_2-2.0+git20150903-X.tar.xz
+  /usr/src/libs3-devel-2.0+git20150903-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libs3)
+  /usr/bin/s3.exe
+  /usr/share/doc/Cygwin/libs3.README
+  /usr/share/doc/libs3/COPYING
+  /usr/share/doc/libs3/ChangeLog
+  /usr/share/doc/libs3/LICENSE
+  /usr/share/doc/libs3/README
+  /usr/share/doc/libs3/TODO
+
+(libs3_2)
+  /usr/bin/cygs3-2.dll
+
+(libs3-devel)
+  /usr/include/libs3.h
+  /usr/lib/libs3.dll.a
+  /usr/lib/pkgconfig/libs3.pc
+
+------------------
+
+Port Notes:
+
+----- version 2.0+git20150903-1bl1 -----
+Version bump.
+
+----- version 2.0-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>
+

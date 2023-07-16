@@ -1,0 +1,110 @@
+zydis
+------------------------------------------
+Fast and lightweight x86/x86_64 disassembler library
+
+Runtime requirements:
+  cygwin-3.4.6-1
+  libZycore-devel-1.4.1-1bl1
+  libZycore1.4-1.4.1-1bl1
+  libZydis-devel-4.0.0-1bl1
+  libZydis4.0-4.0.0-1bl1
+  pkg-config-1.9.4-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.40-1
+  cmake-3.23.2-1
+  cygport-0.36.2-1
+  gcc-core-11.3.0-1
+  libZycore-devel-1.4.1-1bl1
+  ninja-1.11.1-1
+
+Canonical website:
+  https://zydis.re/
+
+Canonical download:
+  https://github.com/zyantific/zydis/archive/refs/tags/v4.0.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack zydis-4.0.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./zydis-4.0.0-X.cygport all
+
+This will create:
+  /usr/src/zydis-4.0.0-X-src.tar.xz
+  /usr/src/zydis-4.0.0-X.tar.xz
+  /usr/src/libZydis4.0-4.0.0-X.tar.xz
+  /usr/src/libZydis-devel-4.0.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(zydis)
+  /usr/bin/ZydisDisasm.exe
+  /usr/bin/ZydisInfo.exe
+  /usr/share/doc/Cygwin/zydis.README
+  /usr/share/doc/zydis/LICENSE
+  /usr/share/doc/zydis/README.md
+
+(libZydis4.0)
+  /usr/bin/cygZydis-4.0.dll
+
+(libZydis-devel)
+  /usr/include/Zydis/Decoder.h
+  /usr/include/Zydis/DecoderTypes.h
+  /usr/include/Zydis/Defines.h
+  /usr/include/Zydis/Disassembler.h
+  /usr/include/Zydis/Encoder.h
+  /usr/include/Zydis/Formatter.h
+  /usr/include/Zydis/FormatterBuffer.h
+  /usr/include/Zydis/Generated/EnumISAExt.h
+  /usr/include/Zydis/Generated/EnumISASet.h
+  /usr/include/Zydis/Generated/EnumInstructionCategory.h
+  /usr/include/Zydis/Generated/EnumMnemonic.h
+  /usr/include/Zydis/Generated/EnumRegister.h
+  /usr/include/Zydis/Internal/DecoderData.h
+  /usr/include/Zydis/Internal/EncoderData.h
+  /usr/include/Zydis/Internal/FormatterATT.h
+  /usr/include/Zydis/Internal/FormatterBase.h
+  /usr/include/Zydis/Internal/FormatterIntel.h
+  /usr/include/Zydis/Internal/SharedData.h
+  /usr/include/Zydis/Internal/String.h
+  /usr/include/Zydis/MetaInfo.h
+  /usr/include/Zydis/Mnemonic.h
+  /usr/include/Zydis/Register.h
+  /usr/include/Zydis/Segment.h
+  /usr/include/Zydis/SharedTypes.h
+  /usr/include/Zydis/ShortString.h
+  /usr/include/Zydis/Status.h
+  /usr/include/Zydis/Utils.h
+  /usr/include/Zydis/Zydis.h
+  /usr/lib/cmake/zydis/zydis-config-version.cmake
+  /usr/lib/cmake/zydis/zydis-config.cmake
+  /usr/lib/cmake/zydis/zydis-targets-release.cmake
+  /usr/lib/cmake/zydis/zydis-targets.cmake
+  /usr/lib/libZydis.dll.a
+  /usr/lib/pkgconfig/zydis.pc
+
+------------------
+
+Port Notes:
+
+----- version 4.0.0-1bl1 -----
+Version bump.
+
+----- version 3.2.1-1bl2 -----
+Rebuild for libZycore
+
+----- version 3.2.1-1bl1 -----
+Version bump.
+
+----- version 3.1.0-1bl1 -----
+Version bump.
+
+----- version 2.0.3-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

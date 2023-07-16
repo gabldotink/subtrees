@@ -1,0 +1,79 @@
+libgfshare
+------------------------------------------
+In simple terms, this package provides a library for implementing the sharing
+of secrets and two tools for simple use-cases of the algorithm. The library
+implements what is known as Shamir's method for secret sharing in the Galois
+Field 2^8. In slightly simpler words, this is N-of-M secret-sharing
+byte-by-byte. Essentially this allows us to split a secret S into any M shares
+S1...SM such that any N of those shares can be used to reconstruct S but any
+less than N shares yields no information whatsoever.
+
+Runtime requirements:
+  cygwin-2.3.1-1
+  libgfshare-devel-2.0.0-1bl1
+  libgfshare2-2.0.0-1bl1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-9-1
+  binutils-2.25-4
+  cygport-0.20.2-1
+  gcc-core-4.9.3-1
+  libtool-2.4.6-2
+  make-4.1-1
+
+Canonical website:
+  http://www.digital-scurf.org/software/libgfshare
+
+Canonical download:
+  http://www.digital-scurf.org/files/libgfshare/libgfshare-2.0.0.tar.bz2
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libgfshare-2.0.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libgfshare-2.0.0-X.cygport all
+
+This will create:
+  /usr/src/libgfshare-2.0.0-X-src.tar.xz
+  /usr/src/libgfshare-2.0.0-X.tar.xz
+  /usr/src/libgfshare2-2.0.0-X.tar.xz
+  /usr/src/libgfshare-devel-2.0.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libgfshare)
+  /usr/bin/gfcombine.exe
+  /usr/bin/gfsplit.exe
+  /usr/share/doc/Cygwin/libgfshare.README
+  /usr/share/doc/libgfshare/AUTHORS
+  /usr/share/doc/libgfshare/COPYRIGHT
+  /usr/share/doc/libgfshare/README
+  /usr/share/man/man1/gfcombine.1.gz
+  /usr/share/man/man1/gfsplit.1.gz
+  /usr/share/man/man7/gfshare.7.gz
+
+(libgfshare2)
+  /usr/bin/cyggfshare-2.dll
+
+(libgfshare-devel)
+  /usr/include/libgfshare.h
+  /usr/lib/libgfshare.dll.a
+  /usr/lib/pkgconfig/libgfshare.pc
+  /usr/share/man/man5/libgfshare.5.gz
+
+------------------
+
+Port Notes:
+
+----- version 2.0.0-1bl1 -----
+Version bump.
+
+----- version 1.0.5-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

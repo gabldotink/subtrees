@@ -1,0 +1,10 @@
+HOMEPAGE="https://www.chiark.greenend.org.uk/~sgtatham/${PN}/"
+SRC_URI="https://www.chiark.greenend.org.uk/~sgtatham/${PN}/${P}/${P}.tar.gz"
+
+CATEGORY="Text"
+SUMMARY="Yet another free document preparation system"
+DESCRIPTION="Halibut is a documentation production system, with elements similar to TeX,
+debiandoc-sgml, TeXinfo, and others. It is primarily targeted at people
+producing software manuals."
+
+inherit cmake

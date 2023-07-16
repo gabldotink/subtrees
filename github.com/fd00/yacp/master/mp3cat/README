@@ -1,0 +1,67 @@
+mp3cat
+------------------------------------------
+mp3cat copies a byte stream, skipping everything except mp3 frames with valid
+headers.
+
+Runtime requirements:
+  bash-4.4.12-3
+  cygwin-3.0.7-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.29-1
+  cygport-0.33.1-1
+  gcc-core-7.4.0-1
+  make-4.2.1-2
+
+Canonical website:
+  https://github.com/tomclegg/mp3cat
+
+Canonical download:
+  https://github.com/tomclegg/mp3cat/archive/0.5.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack mp3cat-0.5-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./mp3cat-0.5-X.cygport all
+
+This will create:
+  /usr/src/mp3cat-0.5-X-src.tar.xz
+  /usr/src/mp3cat-0.5-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(mp3cat)
+  /usr/bin/mp3cat.exe
+  /usr/bin/mp3dirclean
+  /usr/bin/mp3http
+  /usr/bin/mp3log
+  /usr/bin/mp3log-conf
+  /usr/bin/mp3stream-conf
+  /usr/share/doc/Cygwin/mp3cat.README
+  /usr/share/doc/mp3cat/COPYING
+  /usr/share/doc/mp3cat/ChangeLog
+  /usr/share/doc/mp3cat/README.md
+  /usr/share/mp3cat/example.clean
+  /usr/share/mp3cat/example.logger
+  /usr/share/mp3cat/example.mp3stream.sh
+  /usr/share/mp3cat/example.stream
+
+------------------
+
+Port Notes:
+
+----- version 0.5-1bl1 -----
+Version bump.
+
+----- version 0.4-1bl2 -----
+Rebuild on x86_64
+
+----- version 0.4-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

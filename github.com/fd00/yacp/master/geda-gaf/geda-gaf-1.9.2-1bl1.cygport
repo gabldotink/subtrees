@@ -1,0 +1,100 @@
+HOMEPAGE="http://www.geda-project.org/"
+SRC_URI="http://ftp.geda-project.org/geda-gaf/unstable/v${PV[1]}.${PV[2]}/${PV}/${P}.tar.gz"
+
+CATEGORY="Devel"
+SUMMARY="Full GPL'd suite and toolkit of Electronic Design Automation tools"
+DESCRIPTION="The gEDA project has produced and continues working on a full GPL'd suite and
+toolkit of Electronic Design Automation tools. These tools are used for
+electrical circuit design, schematic capture, simulation, prototyping, and
+production. Currently, the gEDA project offers a mature suite of free software
+applications for electronics design, including schematic capture, attribute
+management, bill of materials (BOM) generation, netlisting into over 20
+netlist formats, analog and digital simulation, and printed circuit board
+(PCB) layout."
+
+src_install()
+{
+	cd ${B}
+	cyginstall
+	cd ${S}
+	pushd gattrib
+		docinto gattrib
+		dodoc BUGS ChangeLog* NOTES README ToDos
+		pushd design
+			docinto gattrib/design
+			dodoc gEDA_Structures_updated.png ProgramArchitecture.gnumeric
+		popd
+	popd
+	pushd gnetlist
+		docinto gnetlist
+		dodoc BUGS ChangeLog* TODO
+	popd
+	pushd gschem
+		docinto gschem
+		dodoc BUGS ChangeLog* TODO
+	popd
+	pushd gsymcheck
+		docinto gsymcheck
+		dodoc BUGS ChangeLog* TODO
+	popd
+	pushd libgeda
+		docinto libgeda
+		dodoc BUGS ChangeLog* HACKING TODO
+	popd
+	pushd symbols
+		docinto symbols
+		dodoc AUTHORS ChangeLog* README TODO
+	popd
+	pushd utils
+		docinto utils
+		dodoc AUTHORS ChangeLog* README
+	popd
+}
+
+DIFF_EXCLUDES="
+	geda-scheme.info
+	stamp-vti
+	version.texi
+"
+
+PKG_NAMES="
+	${PN}
+	libgeda45
+	libgeda-devel
+	libgedacairo1
+	libgedacairo-devel
+"
+geda_gaf_CONTENTS="
+	etc
+	usr/bin/[gprst]*
+	usr/share/applications
+	usr/share/doc
+	usr/share/gEDA
+	usr/share/icons
+	usr/share/info
+	usr/share/locale/*/LC_MESSAGES/geda-*.mo
+	usr/share/man
+	usr/share/mime
+"
+libgeda45_CONTENTS="
+	usr/bin/cyggeda-*.dll
+	usr/share/locale/*/LC_MESSAGES/libgeda*.mo
+"
+libgeda_devel_CONTENTS="
+	usr/include/libgeda
+	usr/lib/libgeda.*
+	usr/lib/pkgconfig/libgeda.pc
+"
+libgedacairo1_CONTENTS="
+	usr/bin/cyggedacairo-*.dll
+"
+libgedacairo_devel_CONTENTS="
+	usr/include/libgedacairo
+	usr/lib/libgedacairo.*
+	usr/lib/pkgconfig/libgedacairo.pc
+"
+geda_gaf_SUMMARY="${SUMMARY} (utilities)"
+libgeda45_SUMMARY="${SUMMARY} (runtime)"
+libgeda_devel_SUMMARY="${SUMMARY} (development)"
+libgedacairo1_SUMMARY="${SUMMARY} (runtime / cairo)"
+libgedacairo_devel_SUMMARY="${SUMMARY} (development /cairo)"

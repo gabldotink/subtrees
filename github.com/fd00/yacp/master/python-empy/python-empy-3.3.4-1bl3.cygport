@@ -1,0 +1,31 @@
+PYTHON_WHEEL_VERSIONS="3.9"
+inherit python-wheel
+
+CATEGORY="Python"
+SUMMARY="Powerful and robust templating system for Python"
+DESCRIPTION="EmPy is a system for embedding Python expressions and statements in template
+text; it takes an EmPy source file, processes it, and produces output. This is
+accomplished via expansions, which are special signals to the EmPy system and
+are set off by a special prefix (by default the at sign, @). EmPy can expand
+arbitrary Python expressions and statements in this way, as well as a variety
+of special forms. Textual data not explicitly delimited in this way is sent
+unaffected to the output, allowing Python to be used in effect as a markup
+language. Also supported are callbacks via hooks, recording and playback via
+diversions, and dynamic, chainable filters. The system is highly configurable
+via command line options and embedded commands."
+
+LICENSE="LGPL-2.1-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: LGPL-2.1-or-later"
+# LICENSE_URI="LICENSE"
+
+src_install()
+{
+    cd ${B}
+    python_wheel_install
+
+    insinto /usr/share/doc/Cygwin
+    newins ${C}/README ${PN}.README
+}
+
+python39_empy_CONTENTS+=" usr/share/doc/Cygwin"
+PKG_NAMES=${PKG_NAMES//python3-empy/}

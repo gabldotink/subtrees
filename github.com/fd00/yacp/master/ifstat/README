@@ -1,0 +1,82 @@
+ifstat
+------------------------------------------
+ifstat is a tool to report network interfaces bandwith just like vmstat/iostat
+do for other system counters.
+
+Runtime requirements:
+  bash-4.4.12-3
+  cygwin-2.10.0-1
+  libifstat-devel-1.1-1bl4
+  libifstat0-1.1-1bl4
+  net-snmp-libs-5.7.3-1
+  pkg-config-0.29.1-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-10-1
+  binutils-2.29-1
+  cygport-0.31.1-1
+  gcc-core-7.3.0-3
+  libtool-2.4.6-6
+  make-4.2.1-2
+
+Canonical website:
+  http://gael.roualland.free.fr/ifstat/
+
+Canonical download:
+  http://gael.roualland.free.fr/ifstat/ifstat-1.1.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack ifstat-1.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./ifstat-1.1-X.cygport all
+
+This will create:
+  /usr/src/ifstat-1.1-X-src.tar.xz
+  /usr/src/ifstat-1.1-X.tar.xz
+  /usr/src/libifstat0-1.1-X.tar.xz
+  /usr/src/libifstat-devel-1.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(ifstat)
+  /usr/bin/ifstat.exe
+  /usr/share/doc/Cygwin/ifstat.README
+  /usr/share/doc/ifstat/COPYING
+  /usr/share/doc/ifstat/HISTORY
+  /usr/share/doc/ifstat/README
+  /usr/share/doc/ifstat/TODO
+  /usr/share/man/man1/ifstat.1.gz
+
+(libifstat0)
+  /usr/bin/cygifstat-0.dll
+
+(libifstat-devel)
+  /usr/bin/libifstat-config
+  /usr/include/ifstat/ifstat.h
+  /usr/include/ifstat/snmp.h
+  /usr/lib/libifstat.dll.a
+  /usr/lib/pkgconfig/ifstat.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.1-1bl4 -----
+Rebuild with gcc-7.3.0
+
+----- version 1.1-1bl3 -----
+Rebuild on x86_64
+
+----- version 1.1-1bl2 -----
+Rebuild with gcc-4.5.2
+
+----- version 1.1-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

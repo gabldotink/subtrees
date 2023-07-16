@@ -1,0 +1,51 @@
+HOMEPAGE="https://${PN}.sourceforge.io/"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tgz"
+
+CATEGORY="Libs"
+SUMMARY="Open source DXT compression library"
+DESCRIPTION="The squish library (abbreviated to libsquish) is an open source DXT
+compression library written in C++."
+
+tar()
+{
+  case ${argv[${arg_n}]} in
+    prep|unpack)
+    mkdir -p ${P}
+    cd ${P}
+    ;;
+  esac
+  /usr/bin/tar $*
+}
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DBUILD_SHARED_LIBS:BOOL=ON
+	-DBUILD_SQUISH_EXTRA:BOOL=ON
+"
+
+src_test()
+{
+	cd ${B}
+	./squishtest.exe
+}
+
+PKG_NAMES="
+	${PN}
+	${PN}0.0
+	${PN}-devel
+"
+libsquish_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+libsquish0_0_CONTENTS="
+	usr/bin/*.dll
+"
+libsquish_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+libsquish_SUMMARY="${SUMMARY} (utilities)"
+libsquish0_0_SUMMARY="${SUMMARY} (runtime)"
+libsquish_devel_SUMMARY="${SUMMARY} (development)"

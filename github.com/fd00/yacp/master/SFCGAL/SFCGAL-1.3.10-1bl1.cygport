@@ -1,0 +1,52 @@
+HOMEPAGE="https://github.com/Oslandia/${PN}_CI"
+SRC_URI="https://github.com/Oslandia/${PN}_CI/archive/refs/tags/v${PV}.tar.gz"
+SRC_DIR="${PN}_CI-${PV}"
+
+CATEGORY="Libs"
+SUMMARY="C++ wrapper library around CGAL"
+DESCRIPTION="SFCGAL is a C++ wrapper library around CGAL with the aim of supporting ISO
+19107:2013 and OGC Simple Features Access 1.2 for 3D operations."
+
+BUILD_REQUIRES="libboost-devel libgmp-devel libmpfr-devel"
+
+export CPPFLAGS="${CPPFLAGS} -D_GNU_SOURCE"
+
+CYGCMAKE_ARGS="
+	-DSFCGAL_BUILD_EXAMPLES=ON
+	-DSFCGAL_BUILD_TESTS=ON
+	-DSFCGAL_BUILD_BENCH=OFF
+"
+
+inherit cmake
+
+src_test()
+{
+	cd ${B}
+	PATH=${B}/src:${PATH} ninja_test
+}
+
+DIFF_EXCLUDES="
+	Doxyfile
+	*.h
+"
+
+PKG_NAMES="
+	${PN}
+	lib${PN}1
+	lib${PN}-devel
+"
+SFCGAL_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+libSFCGAL1_CONTENTS="
+	usr/bin/*.dll
+"
+libSFCGAL_devel_CONTENTS="
+	usr/bin/*-config
+	usr/include
+	usr/lib
+"
+SFCGAL_SUMMARY="${SUMMARY} (utilities)"
+libSFCGAL1_SUMMARY="${SUMMARY} (runtime)"
+libSFCGAL_devel_SUMMARY="${SUMMARY} (development)"

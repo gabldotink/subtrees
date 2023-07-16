@@ -1,0 +1,147 @@
+cpputest
+------------------------------------------
+CppUTest is a C /C++ based unit xUnit test framework for unit testing and for
+test-driving your code. It is written in C++ but is used in C and C++ projects
+and frequently used in embedded systems but it works for any C/C++ project.
+
+Runtime requirements:
+  cygwin-3.1.7-1
+  libCppUTest-devel-4.0-1bl1
+  libCppUTest0-4.0-1bl1
+  libgcc1-9.3.0-2
+  libstdc++6-9.3.0-2
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.34+1git.de9c1b7cfe-1
+  cmake-3.17.3-2
+  cygport-0.34.0-1
+  gcc-core-9.3.0-2
+  gcc-g++-9.3.0-2
+  libtool-2.4.6-7
+  make-4.3-1
+  ruby-2.6.4-1
+
+Canonical website:
+  https://github.com/cpputest/cpputest
+
+Canonical download:
+  https://github.com/cpputest/cpputest/archive/v4.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack cpputest-4.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./cpputest-4.0-X.cygport all
+
+This will create:
+  /usr/src/cpputest-4.0-X-src.tar.xz
+  /usr/src/cpputest-4.0-X.tar.xz
+  /usr/src/libCppUTest0-4.0-X.tar.xz
+  /usr/src/libCppUTest-devel-4.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(cpputest)
+  /usr/share/doc/Cygwin/cpputest.README
+  /usr/share/doc/cpputest/AUTHORS
+  /usr/share/doc/cpputest/COPYING
+  /usr/share/doc/cpputest/ChangeLog
+  /usr/share/doc/cpputest/NEWS
+  /usr/share/doc/cpputest/README
+  /usr/share/doc/cpputest/README_CppUTest_for_C.txt
+  /usr/share/doc/cpputest/README_InstallCppUTest.txt
+  /usr/share/doc/cpputest/readme.md
+
+(libCppUTest0)
+  /usr/bin/cygCppUTest-0.dll
+  /usr/bin/cygCppUTestExt-0.dll
+
+(libCppUTest-devel)
+  /usr/include/CppUTest/CommandLineArguments.h
+  /usr/include/CppUTest/CommandLineTestRunner.h
+  /usr/include/CppUTest/CppUTestConfig.h
+  /usr/include/CppUTest/CppUTestGeneratedConfig.h
+  /usr/include/CppUTest/JUnitTestOutput.h
+  /usr/include/CppUTest/MemoryLeakDetector.h
+  /usr/include/CppUTest/MemoryLeakDetectorMallocMacros.h
+  /usr/include/CppUTest/MemoryLeakDetectorNewMacros.h
+  /usr/include/CppUTest/MemoryLeakWarningPlugin.h
+  /usr/include/CppUTest/PlatformSpecificFunctions.h
+  /usr/include/CppUTest/PlatformSpecificFunctions_c.h
+  /usr/include/CppUTest/SimpleMutex.h
+  /usr/include/CppUTest/SimpleString.h
+  /usr/include/CppUTest/SimpleStringInternalCache.h
+  /usr/include/CppUTest/StandardCLibrary.h
+  /usr/include/CppUTest/TeamCityTestOutput.h
+  /usr/include/CppUTest/TestFailure.h
+  /usr/include/CppUTest/TestFilter.h
+  /usr/include/CppUTest/TestHarness.h
+  /usr/include/CppUTest/TestHarness_c.h
+  /usr/include/CppUTest/TestMemoryAllocator.h
+  /usr/include/CppUTest/TestOutput.h
+  /usr/include/CppUTest/TestPlugin.h
+  /usr/include/CppUTest/TestRegistry.h
+  /usr/include/CppUTest/TestResult.h
+  /usr/include/CppUTest/TestTestingFixture.h
+  /usr/include/CppUTest/Utest.h
+  /usr/include/CppUTest/UtestMacros.h
+  /usr/include/CppUTestExt/CodeMemoryReportFormatter.h
+  /usr/include/CppUTestExt/GMock.h
+  /usr/include/CppUTestExt/GTest.h
+  /usr/include/CppUTestExt/GTestConvertor.h
+  /usr/include/CppUTestExt/GTestSupport.h
+  /usr/include/CppUTestExt/IEEE754ExceptionsPlugin.h
+  /usr/include/CppUTestExt/MemoryReportAllocator.h
+  /usr/include/CppUTestExt/MemoryReportFormatter.h
+  /usr/include/CppUTestExt/MemoryReporterPlugin.h
+  /usr/include/CppUTestExt/MockActualCall.h
+  /usr/include/CppUTestExt/MockCheckedActualCall.h
+  /usr/include/CppUTestExt/MockCheckedExpectedCall.h
+  /usr/include/CppUTestExt/MockExpectedCall.h
+  /usr/include/CppUTestExt/MockExpectedCallsList.h
+  /usr/include/CppUTestExt/MockFailure.h
+  /usr/include/CppUTestExt/MockNamedValue.h
+  /usr/include/CppUTestExt/MockSupport.h
+  /usr/include/CppUTestExt/MockSupportPlugin.h
+  /usr/include/CppUTestExt/MockSupport_c.h
+  /usr/include/CppUTestExt/OrderedTest.h
+  /usr/lib/CppUTest/cmake/CppUTestConfig.cmake
+  /usr/lib/CppUTest/cmake/CppUTestConfigVersion.cmake
+  /usr/lib/CppUTest/cmake/CppUTestTargets-relwithdebinfo.cmake
+  /usr/lib/CppUTest/cmake/CppUTestTargets.cmake
+  /usr/lib/CppUTest/cmake/Modules/CppUTestBuildTimeDiscoverTests.cmake
+  /usr/lib/CppUTest/cmake/Scripts/CppUTestBuildTimeDiscoverTests.cmake
+  /usr/lib/libCppUTest.dll.a
+  /usr/lib/libCppUTestExt.dll.a
+  /usr/lib/pkgconfig/cpputest.pc
+
+------------------
+
+Port Notes:
+
+----- version 4.0-1bl1 -----
+Version bump.
+
+----- version 3.8-1bl1 -----
+Version bump.
+
+----- version 3.7.2-1bl1 -----
+Version bump.
+
+----- version 3.6-1bl1 -----
+Version bump.
+
+----- version 3.5-1bl1 -----
+Version bump.
+
+----- version 3.4-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://fd0.hatenablog.jp/>

@@ -1,0 +1,66 @@
+HOMEPAGE="https://github.com/libyal/${PN}"
+SRC_URI="https://github.com/libyal/${PN}/archive/refs/tags/${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Library to access the Windows Shell Item format"
+DESCRIPTION="libfwsi is a library to access the Windows Shell Item format."
+
+LICENSE="LGPL-3.0-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: LGPL-3.0-or-later"
+LICENSE_URI="COPYING"
+
+CYGPORT_USE_UNSTABLE_API=1
+src_patch_hook()
+{
+	cd ${origsrcdir}/${SRC_DIR}/tests
+	chmod u+x *.sh *.py
+}
+
+BUILD_REQUIRES="libcdata-devel libcerror-devel libclocale-devel libfguid-devel libcnotify-devel libuna-devel python39-devel"
+
+CYGCONF_ARGS="
+	--enable-python3
+"
+
+src_test()
+{
+	cd ${B}
+	pushd tests
+		for f in ${S}/tests/*.{py,sh}
+		do
+			ln -fs ${f} .
+		done
+	popd
+	cygtest
+	rm tests/*.{py,sh}
+}
+
+DOCS="
+	COPYING.LESSER
+"
+
+PKG_NAMES="
+	${PN}
+	${PN}1
+	${PN}-devel
+	python39-${PN}
+"
+libfwsi_CONTENTS="
+	usr/share/doc
+"
+libfwsi1_CONTENTS="
+	usr/bin
+"
+libfwsi_devel_CONTENTS="
+	usr/include
+	usr/lib/lib*.dll.a
+	usr/lib/pkgconfig
+	usr/share/man
+"
+python39_libfwsi_CONTENTS="
+	usr/lib/python3*
+"
+libfwsi_SUMMARY="${SUMMARY} (licensing & readmes)"
+libfwsi1_SUMMARY="${SUMMARY} (runtime)"
+libfwsi_devel_SUMMARY="${SUMMARY} (development)"
+python39_libfwsi_SUMMARY="${SUMMARY} (python39 bindings)"

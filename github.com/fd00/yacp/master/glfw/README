@@ -1,0 +1,103 @@
+glfw
+------------------------------------------
+GLFW is a free, Open Source, multi-platform library for OpenGL and OpenGL ES
+application development. It provides a simple, platform-independent API for
+creating windows and contexts, reading input, handling events, etc.
+
+Runtime requirements:
+  cygwin-3.4.3-1
+  libX11-devel-1.8.1-1
+  libX11_6-1.8.1-1
+  libglfw-devel-3.3.8-1bl1
+  libglfw3-3.3.8-1bl1
+  pkg-config-1.9.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.39-1
+  cmake-3.23.2-1
+  cygport-0.35.5-1
+  gcc-core-11.3.0-1
+  libX11-devel-1.8.1-1
+  ninja-1.11.1-1
+
+Canonical website:
+  https://github.com/glfw/glfw
+
+Canonical download:
+  https://github.com/glfw/glfw/archive/refs/tags/3.3.8.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack glfw-3.3.8-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./glfw-3.3.8-X.cygport all
+
+This will create:
+  /usr/src/glfw-3.3.8-X-src.tar.xz
+  /usr/src/glfw-3.3.8-X.tar.xz
+  /usr/src/libglfw3-3.3.8-X.tar.xz
+  /usr/src/libglfw-devel-3.3.8-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(glfw)
+  /usr/share/doc/Cygwin/glfw.README
+  /usr/share/doc/glfw/CONTRIBUTORS.md
+  /usr/share/doc/glfw/LICENSE.md
+  /usr/share/doc/glfw/README.md
+
+(libglfw3)
+  /usr/bin/cygglfw-3.dll
+
+(libglfw-devel)
+  /usr/include/GLFW/glfw3.h
+  /usr/include/GLFW/glfw3native.h
+  /usr/lib/cmake/glfw3/glfw3Config.cmake
+  /usr/lib/cmake/glfw3/glfw3ConfigVersion.cmake
+  /usr/lib/cmake/glfw3/glfw3Targets-release.cmake
+  /usr/lib/cmake/glfw3/glfw3Targets.cmake
+  /usr/lib/libglfw.dll.a
+  /usr/lib/pkgconfig/glfw3.pc
+
+------------------
+
+Port Notes:
+
+----- version 3.3.8-1bl1 -----
+Version bump.
+
+----- version 3.3.7-1bl1 -----
+Version bump.
+
+----- version 3.3.6-1bl1 -----
+Version bump.
+
+----- version 3.3.4-1bl1 -----
+Version bump.
+
+----- version 3.3.3-1bl1 -----
+Version bump.
+
+----- version 3.3.2-1bl1 -----
+Version bump.
+
+----- version 3.3.1-1bl1 -----
+Version bump.
+
+----- version 3.3-1bl1 -----
+Version bump.
+
+----- version 3.2.1-1bl1 -----
+Version bump.
+
+----- version 3.1.1-1bl1 -----
+Version bump.
+
+----- version 3.0.4-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

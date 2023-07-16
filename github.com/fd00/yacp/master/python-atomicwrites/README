@@ -1,0 +1,68 @@
+python-atomicwrites
+------------------------------------------
+Powerful Python library for atomic file writes
+
+Runtime requirements:
+  python39-3.9.10-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  cygport-0.35.4-1
+  make-4.3-1
+  python39-3.9.10-1
+
+Canonical website:
+  https://pypi.org/project/atomicwrites
+
+Canonical download:
+  https://files.pythonhosted.org/packages/source/a/atomicwrites/atomicwrites-1.4.1.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack python-atomicwrites-1.4.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./python-atomicwrites-1.4.1-X.cygport all
+
+This will create:
+  /usr/src/python-atomicwrites-1.4.1-X-src.tar.xz
+  /usr/src/python39-atomicwrites-1.4.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(python39-atomicwrites)
+  /usr/lib/python3.9/site-packages/atomicwrites-1.4.1.dist-info/INSTALLER
+  /usr/lib/python3.9/site-packages/atomicwrites-1.4.1.dist-info/LICENSE
+  /usr/lib/python3.9/site-packages/atomicwrites-1.4.1.dist-info/METADATA
+  /usr/lib/python3.9/site-packages/atomicwrites-1.4.1.dist-info/RECORD
+  /usr/lib/python3.9/site-packages/atomicwrites-1.4.1.dist-info/REQUESTED
+  /usr/lib/python3.9/site-packages/atomicwrites-1.4.1.dist-info/WHEEL
+  /usr/lib/python3.9/site-packages/atomicwrites-1.4.1.dist-info/direct_url.json
+  /usr/lib/python3.9/site-packages/atomicwrites-1.4.1.dist-info/top_level.txt
+  /usr/lib/python3.9/site-packages/atomicwrites/__init__.py
+  /usr/lib/python3.9/site-packages/atomicwrites/__pycache__/__init__.cpython-39.opt-1.pyc
+  /usr/lib/python3.9/site-packages/atomicwrites/__pycache__/__init__.cpython-39.opt-2.pyc
+  /usr/lib/python3.9/site-packages/atomicwrites/__pycache__/__init__.cpython-39.pyc
+  /usr/share/doc/Cygwin/python-atomicwrites.README
+  /usr/share/doc/python39-atomicwrites/LICENSE
+  /usr/share/doc/python39-atomicwrites/README.rst
+
+------------------
+
+Port Notes:
+
+----- version 1.4.1-1bl1 -----
+Version bump.
+
+----- version 1.4.0-1bl2 -----
+Repackage
+
+----- version 1.4.0-1bl1 -----
+Version bump.
+
+----- version 1.1.5-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

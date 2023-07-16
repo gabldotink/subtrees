@@ -1,0 +1,76 @@
+--- origsrc/bcm2835-1.71/Makefile.am	2018-11-29 18:16:01.000000000 +0900
++++ src/bcm2835-1.71/Makefile.am	2021-12-04 13:41:44.461619400 +0900
+@@ -16,4 +16,5 @@ examples/spiram/spiram.h
+ upload:
+ 	rsync -avz @PACKAGE_TARNAME@-@VERSION@.tar.gz doc/html/ www.airspayce.com:public_html/mikem/@PACKAGE_NAME@
+ 
+-
++pkgconfigdir = $(libdir)/pkgconfig
++pkgconfig_DATA = $(PACKAGE).pc
+--- origsrc/bcm2835-1.71/bcm2835.pc.in	1970-01-01 09:00:00.000000000 +0900
++++ src/bcm2835-1.71/bcm2835.pc.in	2021-12-04 13:41:44.464560700 +0900
+@@ -0,0 +1,10 @@
++prefix=@prefix@
++exec_prefix=@exec_prefix@
++libdir=@libdir@
++includedir=@includedir@
++
++Name: bcm2835
++Description: C library for Broadcom BCM 2835 as used in Raspberry Pi
++Version: @VERSION@
++Libs: -L${libdir} -lbcm2835
++Cflags: -I${includedir}
+--- origsrc/bcm2835-1.71/configure.ac	2021-12-01 16:32:07.000000000 +0900
++++ src/bcm2835-1.71/configure.ac	2021-12-04 13:41:44.466564500 +0900
+@@ -15,9 +15,9 @@ AC_CHECK_PROGS([DOXYGEN], [doxygen])
+ if test -z "$DOXYGEN";
+    then AC_MSG_WARN([Doxygen not found - continuing without Doxygen support])
+ fi
+-AC_PROG_RANLIB
++LT_INIT
+ AC_PROG_CC
+ AC_CONFIG_MACRO_DIR([m4])
+ AM_CONDITIONAL([HAVE_DOXYGEN], [test -n "$DOXYGEN"])
+ AM_COND_IF([HAVE_DOXYGEN], [AC_CONFIG_FILES([doc/Doxyfile])])
+-AC_OUTPUT(Makefile src/Makefile doc/Makefile)
++AC_OUTPUT(bcm2835.pc Makefile src/Makefile doc/Makefile)
+--- origsrc/bcm2835-1.71/src/Makefile.am	2015-03-09 07:09:53.000000000 +0900
++++ src/bcm2835-1.71/src/Makefile.am	2021-12-04 13:41:44.471597000 +0900
+@@ -1,9 +1,9 @@
+-lib_LIBRARIES = libbcm2835.a
+-libbcm2835_a_SOURCES = bcm2835.c
++lib_LTLIBRARIES = libbcm2835.la
++libbcm2835_la_SOURCES = bcm2835.c
++libbcm2835_la_LDFLAGS = -no-undefined
+ include_HEADERS = bcm2835.h
+ check_PROGRAMS = test
+ test_SOURCES = test.c
+-test_LDADD = ./libbcm2835.a
++test_LDADD = ./libbcm2835.la
+ TESTS = $(check_PROGRAMS)
+ CLEANFILES = *~
+-
+--- origsrc/bcm2835-1.71/src/bcm2835.h	2021-12-01 16:46:46.000000000 +0900
++++ src/bcm2835-1.71/src/bcm2835.h	2021-12-04 13:41:44.476558100 +0900
+@@ -715,6 +715,7 @@
+ /*! Base address of the SMI registers */
+ #define BCM2835_SMI_BASE                0x600000
+ 
++#include <stdio.h>
+ #include <stdlib.h>
+ 
+ /*! Physical address and size of the peripherals block
+--- origsrc/bcm2835-1.71/src/test.c	2020-01-11 14:07:17.000000000 +0900
++++ src/bcm2835-1.71/src/test.c	2021-12-04 13:41:44.479561100 +0900
+@@ -15,7 +15,11 @@
+ 
+ int main(int argc, char **argv)
+ {
++#if defined(__CYGWIN__)
++    if (1)
++#else
+     if (geteuid() == 0 && !getenv("FAKEROOTKEY"))
++#endif
+     {
+ 	if (!bcm2835_init())
+ 	    return 1;

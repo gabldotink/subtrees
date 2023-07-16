@@ -1,0 +1,45 @@
+HOMEPAGE="https://github.com/ros/${PN}"
+SRC_URI="https://github.com/ros/${PN}/archive/refs/tags/${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="ROS-independent package for logging that seamlessly pipes into rosconsole/rosout for ROS-dependent packages"
+DESCRIPTION="A ROS-independent package for logging that seamlessly pipes into
+rosconsole/rosout for ROS-dependent packages"
+
+BUILD_REQUIRES="libgtest-devel"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DBUILD_TESTING:BOOL=ON
+"
+
+src_test()
+{
+	cd ${B}
+	ninja_test
+}
+
+DOCS="
+	CONTRIBUTING.md
+	QUALITY_DECLARATION.md
+"
+
+PKG_NAMES="
+	${PN}
+	lib${PN}${PV[1]}.${PV[2]}
+	lib${PN}-devel
+"
+console_bridge_CONTENTS="
+	usr/share
+"
+libconsole_bridge1_0_CONTENTS="
+	usr/bin/
+"
+libconsole_bridge_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+console_bridge_SUMMARY="${SUMMARY} (licensing & readmes)"
+libconsole_bridge1_0_SUMMARY="${SUMMARY} (runtime)"
+libconsole_bridge_devel_SUMMARY="${SUMMARY} (development)"

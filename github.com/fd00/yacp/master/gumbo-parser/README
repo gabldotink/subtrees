@@ -1,0 +1,77 @@
+gumbo-parser
+------------------------------------------
+Gumbo is an implementation of the HTML5 parsing algorithm implemented as a pure
+C99 library with no outside dependencies. It's designed to serve as a building
+block for other tools and libraries such as linters, validators, templating
+languages, and refactoring and analysis tools.
+
+Runtime requirements:
+  cygwin-3.3.5-1
+  libgumbo-devel-0.10.1-1bl2
+  libgumbo1-0.10.1-1bl2
+  pkg-config-1.8.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.38-1
+  cygport-0.35.2-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libtool-2.4.7-1
+  make-4.3-1
+  ragel-7.0.0.11-3
+
+Canonical website:
+  https://github.com/google/gumbo-parser
+
+Canonical download:
+  https://github.com/google/gumbo-parser/archive/refs/tags/v0.10.1.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack gumbo-parser-0.10.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./gumbo-parser-0.10.1-X.cygport all
+
+This will create:
+  /usr/src/gumbo-parser-0.10.1-X-src.tar.xz
+  /usr/src/gumbo-parser-0.10.1-X.tar.xz
+  /usr/src/libgumbo1-0.10.1-X.tar.xz
+  /usr/src/libgumbo-devel-0.10.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(gumbo-parser)
+  /usr/share/doc/Cygwin/gumbo-parser.README
+  /usr/share/doc/gumbo-parser/CHANGES.md
+  /usr/share/doc/gumbo-parser/CONTRIBUTING.md
+  /usr/share/doc/gumbo-parser/COPYING
+  /usr/share/doc/gumbo-parser/DEBUGGING.md
+  /usr/share/doc/gumbo-parser/README.md
+  /usr/share/doc/gumbo-parser/THANKS
+
+(libgumbo1)
+  /usr/bin/cyggumbo-1.dll
+
+(libgumbo-devel)
+  /usr/include/gumbo.h
+  /usr/include/tag_enum.h
+  /usr/lib/libgumbo.dll.a
+  /usr/lib/pkgconfig/gumbo.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.10.1-1bl2 -----
+Rebuild with gcc-11.3.0
+
+----- version 0.10.1-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

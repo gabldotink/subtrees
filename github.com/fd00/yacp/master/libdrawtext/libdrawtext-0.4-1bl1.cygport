@@ -1,0 +1,31 @@
+HOMEPAGE="https://github.com/jtsiomb/${PN}"
+SRC_URI="https://github.com/jtsiomb/${PN}/archive/release_${PV}.tar.gz"
+SRC_DIR="${PN}-release_${PV}"
+
+CATEGORY="Libs"
+SUMMARY="OpenGL text rendering library"
+DESCRIPTION="libdrawtext is a simple library for fast anti-aliased text rendering in OpenGL."
+
+DOCS="
+	COPYING.LESSER
+"
+
+PKG_NAMES="
+	${PN}
+	${PN}0
+	${PN}-devel
+"
+libdrawtext_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+libdrawtext0_CONTENTS="
+	usr/bin/*.dll
+"
+libdrawtext_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+libdrawtext_SUMMARY="${SUMMARY} (utilities)"
+libdrawtext0_SUMMARY="${SUMMARY} (runtime)"
+libdrawtext_devel_SUMMARY="${SUMMARY} (development)"

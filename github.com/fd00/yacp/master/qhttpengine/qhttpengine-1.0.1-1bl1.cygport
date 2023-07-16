@@ -1,0 +1,41 @@
+HOMEPAGE="https://github.com/nitroshare/${PN}"
+SRC_URI="https://github.com/nitroshare/${PN}/archive/${PV}.tar.gz"
+
+CATEGORY="Net"
+SUMMARY="HTTP server for Qt applications"
+DESCRIPTION="Simple set of classes for developing HTTP server applications in Qt."
+
+CYGCMAKE_ARGS="
+	-DBUILD_EXAMPLES:BOOL=ON
+	-DBUILD_TESTS:BOOL=ON
+"
+
+inherit cmake
+
+src_test()
+{
+	cd ${B}
+	PATH=${B}/src:${PATH} cygtest
+}
+
+PKG_NAMES="
+	${PN}
+	lib${PN}1
+	lib${PN}-devel
+"
+qhttpengine_CONTENTS="
+	usr/lib/qhttpengine
+	usr/share
+"
+libqhttpengine1_CONTENTS="
+	usr/bin/*.dll
+"
+libqhttpengine_devel_CONTENTS="
+	usr/include
+	usr/lib/cmake
+	usr/lib/lib*
+	usr/lib/pkgconfig
+"
+qhttpengine_SUMMARY="${SUMMARY} (licensing & readmes)"
+libqhttpengine1_SUMMARY="${SUMMARY} (runtime)"
+libqhttpengine_devel_SUMMARY="${SUMMARY} (development)"

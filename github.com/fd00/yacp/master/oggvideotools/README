@@ -1,0 +1,91 @@
+oggvideotools
+------------------------------------------
+The Ogg Video Tools is a toolbox for manipulating Ogg video files, which
+usually consist of a video stream (Theora) and an audio stream (Vorbis). It
+includes a number of handy command line tools for creating an manipulating
+these video files, such as for splitting the different streams.
+
+Runtime requirements:
+  cygwin-2.9.0-3
+  libgcc1-6.4.0-4
+  libgd3-2.2.5-1
+  libstdc++6-6.4.0-4
+  libtheoradec1-1.1.1-2
+  libtheoraenc1-1.1.1-2
+  libvorbis0-1.3.5-1
+  libvorbisenc2-1.3.5-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.29-1
+  cmake-3.6.2-1
+  cygport-0.25.0-1
+  gcc-core-6.4.0-4
+  gcc-g++-6.4.0-4
+  make-4.2.1-2
+
+Canonical website:
+  http://dev.streamnik.de/oggvideotools.html
+
+Canonical download:
+  mirror://sourceforge/oggvideotools/oggvideotools-0.9.1.tar.bz2
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack oggvideotools-0.9.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./oggvideotools-0.9.1-X.cygport all
+
+This will create:
+  /usr/src/oggvideotools-0.9.1-X-src.tar.xz
+  /usr/src/oggvideotools-0.9.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(oggvideotools)
+  /usr/bin/oggCat.exe
+  /usr/bin/oggCut.exe
+  /usr/bin/oggDump.exe
+  /usr/bin/oggJoin.exe
+  /usr/bin/oggLength.exe
+  /usr/bin/oggSilence.exe
+  /usr/bin/oggSlideshow.exe
+  /usr/bin/oggSplit.exe
+  /usr/bin/oggThumb.exe
+  /usr/bin/oggTranscode.exe
+  /usr/sbin/mkThumbs
+  /usr/share/doc/Cygwin/oggvideotools.README
+  /usr/share/doc/oggvideotools/AUTHORS
+  /usr/share/doc/oggvideotools/COPYING
+  /usr/share/doc/oggvideotools/ChangeLog
+  /usr/share/doc/oggvideotools/README
+  /usr/share/doc/oggvideotools/TODO
+  /usr/share/man/man1/mkThumbs.1.gz
+  /usr/share/man/man1/oggCat.1.gz
+  /usr/share/man/man1/oggCut.1.gz
+  /usr/share/man/man1/oggDump.1.gz
+  /usr/share/man/man1/oggJoin.1.gz
+  /usr/share/man/man1/oggLength.1.gz
+  /usr/share/man/man1/oggSilence.1.gz
+  /usr/share/man/man1/oggSlideshow.1.gz
+  /usr/share/man/man1/oggSplit.1.gz
+  /usr/share/man/man1/oggThumb.1.gz
+  /usr/share/man/man1/oggTranscode.1.gz
+
+------------------
+
+Port Notes:
+
+----- version 0.9.1-1bl1 -----
+Version bump.
+
+----- version 0.8a-1bl2 -----
+Rebuild on x86_64
+
+----- version 0.8a-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

@@ -1,0 +1,105 @@
+NHI1
+------------------------------------------
+The line from the evolution in computer-science up to the computer hardware
+development speed and the internet global computer network lead to the
+possibility to create the first Non Human Intelligence until 2040. The
+question is not if this will happen, the question is only if this intelligence
+will be open (controlled by the entire mankind) or will be closed (controlled
+by a single company or by a single government).
+
+The NHI1 project will create an open intelligence.
+
+Runtime requirements:
+  cygwin-1.7.35-1
+  libccmsgque22-0.17-1bl1
+  libgcc1-4.9.2-3
+  libmsgque22-0.17-1bl1
+  libsqlite3_0-3.8.9-1
+  libstdc++6-4.9.2-3
+  python3-3.2.5-4
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-9-1
+  binutils-2.25-1
+  cygport-0.18.1-1
+  gcc-core-4.9.2-3
+  gcc-g++-4.9.2-3
+  libtool-2.4.6-1
+  make-4.1-1
+  ruby-2.0.0-p598-1
+
+Canonical website:
+  http://sf.net/projects/nhi1.berlios/
+
+Canonical download:
+  mirror://sourceforge/nhi1.berlios/NHI1-0.17.tar.bz2
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack NHI1-0.17-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./NHI1-0.17-X.cygport all
+
+This will create:
+  /usr/src/NHI1-0.17-X-src.tar.xz
+  /usr/src/NHI1-0.17-X.tar.xz
+  /usr/src/libmsgque22-0.17-X.tar.xz
+  /usr/src/libmsgque-devel-0.17-X.tar.xz
+  /usr/src/libccmsgque22-0.17-X.tar.xz
+  /usr/src/libccmsgque-devel-0.17-X.tar.xz
+  /usr/src/python-NHI1-0.17-X.tar.xz
+  /usr/src/tcl-NHI1-0.17-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(NHI1)
+  /usr/bin/abrain.exe
+  /usr/bin/aguard.exe
+  /usr/bin/atool.exe
+  /usr/bin/atrans.exe
+  /usr/share/doc/Cygwin/NHI1.README
+  /usr/share/doc/NHI1/AUTHORS
+  /usr/share/doc/NHI1/COPYING
+  /usr/share/doc/NHI1/ChangeLog
+  /usr/share/doc/NHI1/NEWS
+  /usr/share/doc/NHI1/README
+  /usr/share/doc/NHI1/THANKS
+
+(libmsgque22)
+  /usr/bin/cygmsgque-22.dll
+
+(libmsgque-devel)
+  /usr/include/NHI1/msgque.h
+  /usr/lib/libmsgque.dll.a
+
+(libccmsgque22)
+  /usr/bin/cygccmsgque-22.dll
+
+(libccmsgque-devel)
+  /usr/include/NHI1/ccmsgque.h
+  /usr/lib/libccmsgque.dll.a
+
+(python-NHI1)
+  /usr/lib/NHI1/pymsgque.dll
+
+(tcl-NHI1)
+  /usr/lib/NHI1/pkgIndex.tcl
+  /usr/lib/NHI1/tclmsgque.dll
+
+------------------
+
+Port Notes:
+
+----- version 0.17-1bl1 -----
+Version bump.
+
+----- version 0.16-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>
+

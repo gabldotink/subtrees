@@ -1,0 +1,36 @@
+HOMEPAGE="https://savannah.nongnu.org/projects/eXosip"
+SRC_URI="mirror://savannah/exosip/${P}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="eXtended osip library"
+DESCRIPTION="eXosip is a library that hides the complexity of using the SIP protocol for
+mutlimedia session establishement. This protocol is mainly to be used by VoIP
+telephony applications (endpoints or conference server) but might be also
+usefull for any application that wish to establish sessions like multiplayer
+games."
+
+BUILD_REQUIRES="libcares-devel libosip2-devel libssl-devel"
+
+DOCS="
+	LICENSE.OpenSSL
+"
+
+PKG_NAMES="
+	${PN}
+	${PN}_15
+	${PN}-devel
+"
+libexosip2_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+libexosip2_15_CONTENTS="
+	usr/bin/*.dll
+"
+libexosip2_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+libexosip2_SUMMARY="${SUMMARY} (utilities)"
+libexosip2_15_SUMMARY="${SUMMARY} (runtime)"
+libexosip2_devel_SUMMARY="${SUMMARY} (development)"

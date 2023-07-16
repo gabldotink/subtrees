@@ -1,0 +1,21 @@
+--- origsrc/libgfileio-0.1/src/Makefile.am	2007-08-16 06:17:24.000000000 +0900
++++ src/libgfileio-0.1/src/Makefile.am	2012-04-28 18:58:46.703043400 +0900
+@@ -4,3 +4,4 @@ lib_LTLIBRARIES = libgfileio.la
+ 
+ libgfileio_la_SOURCES = gfexceptions.cc gfile.cc
+ libgfileio_la_CXXFLAGS = -I$(top_srcdir)/gfileio $(AM_CXXFLAGS)
++libgfileio_la_LDFLAGS = -no-undefined
+--- origsrc/libgfileio-0.1/tests/gfile_open.cc	2007-08-22 23:46:25.000000000 +0900
++++ src/libgfileio-0.1/tests/gfile_open.cc	2012-04-28 18:58:46.703043400 +0900
+@@ -51,7 +51,11 @@ int main(int argc, char** argv) {
+     passwd* pwd = getpwuid(getuid());
+     
+     try {
++#if defined(__CYGWIN__)
++	file.fchown(pwd->pw_name, "root");
++#else
+ 	file.fchown(pwd->pw_name, "sys");
++#endif
+     } catch (GFileIO::GFileIOException& e) {
+ 	std::cerr << e.what() << std::endl;
+ 	return 1;

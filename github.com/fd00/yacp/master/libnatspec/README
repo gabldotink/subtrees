@@ -1,0 +1,96 @@
+libnatspec
+------------------------------------------
+LIBNATSPEC is a collection of functions for requiest various charsets and
+locales for host system and for other system. The library allows applications
+to be written that are locale and system independent.
+
+Runtime requirements:
+  cygwin-2.10.0-1
+  libiconv2-1.14-3
+  libnatspec-devel-0.3.1-1bl1
+  libnatspec0-0.3.1-1bl1
+  libpopt0-1.16-2
+  pkg-config-0.29.1-1
+  tcl-8.6.8-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-10-1
+  binutils-2.29-1
+  cygport-0.31.0-1
+  gcc-core-6.4.0-5
+  libtool-2.4.6-5
+  make-4.2.1-2
+  python-2.7.14-1
+
+Canonical website:
+  http://www.freesource.info/wiki/Lokalizacija/NATSPECDescription
+
+Canonical download:
+  https://github.com/vitlav/libnatspec/archive/0.3.1-alt2.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libnatspec-0.3.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libnatspec-0.3.1-X.cygport all
+
+This will create:
+  /usr/src/libnatspec-0.3.1-X-src.tar.xz
+  /usr/src/libnatspec-0.3.1-X.tar.xz
+  /usr/src/libnatspec0-0.3.1-X.tar.xz
+  /usr/src/libnatspec-devel-0.3.1-X.tar.xz
+  /usr/src/python-libnatspec-0.3.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libnatspec)
+  /usr/bin/natspec.exe
+  /usr/share/doc/Cygwin/libnatspec.README
+  /usr/share/doc/libnatspec/AUTHORS
+  /usr/share/doc/libnatspec/COPYING
+  /usr/share/doc/libnatspec/ChangeLog
+  /usr/share/doc/libnatspec/NEWS
+  /usr/share/doc/libnatspec/README
+  /usr/share/doc/libnatspec/TODO
+  /usr/share/man/man1/natspec.1.gz
+
+(libnatspec0)
+  /usr/bin/cygnatspec-0.dll
+
+(libnatspec-devel)
+  /usr/include/natspec.h
+  /usr/lib/libnatspec.dll.a
+  /usr/lib/pkgconfig/libnatspec.pc
+  /usr/share/aclocal/natspec.m4
+
+(python-libnatspec)
+  /usr/lib/python2.7/site-packages/_natspec.dll
+  /usr/lib/python2.7/site-packages/natspec.py
+  /usr/lib/python2.7/site-packages/natspec.pyc
+  /usr/lib/python2.7/site-packages/natspec.pyo
+
+------------------
+
+Port Notes:
+
+----- version 0.3.1-1bl1 -----
+Version bump.
+
+----- version 0.3.0-1bl1 -----
+Version bump.
+
+----- version 0.2.6-1bl3 -----
+Rebuild on x86_64
+
+----- version 0.2.6-1bl2 -----
+Rebuild with gcc-4.5.3
+
+----- version 0.2.6-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

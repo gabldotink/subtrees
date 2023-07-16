@@ -1,0 +1,83 @@
+cpptest
+------------------------------------------
+Powerful, yet simple, C++ unit testing framework
+
+Runtime requirements:
+  cygwin-2.11.2-1
+  libcpptest-devel-2.0.0-1bl1
+  libcpptest1-2.0.0-1bl1
+  libgcc1-7.4.0-1
+  libstdc++6-7.4.0-1
+  pkg-config-0.29.1-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-10-1
+  binutils-2.29-1
+  cygport-0.31.1-1
+  gcc-core-7.4.0-1
+  gcc-g++-7.4.0-1
+  libtool-2.4.6-6
+  make-4.2.1-2
+
+Canonical website:
+  https://github.com/cpptest/cpptest
+
+Canonical download:
+  https://github.com/cpptest/cpptest/archive/2.0.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack cpptest-2.0.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./cpptest-2.0.0-X.cygport all
+
+This will create:
+  /usr/src/cpptest-2.0.0-X-src.tar.xz
+  /usr/src/cpptest-2.0.0-X.tar.xz
+  /usr/src/libcpptest1-2.0.0-X.tar.xz
+  /usr/src/libcpptest-devel-2.0.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(cpptest)
+  /usr/share/doc/Cygwin/cpptest.README
+  /usr/share/doc/cpptest/AUTHORS
+  /usr/share/doc/cpptest/BUGS
+  /usr/share/doc/cpptest/COPYING
+  /usr/share/doc/cpptest/ChangeLog
+  /usr/share/doc/cpptest/NEWS
+  /usr/share/doc/cpptest/README
+
+(libcpptest1)
+  /usr/bin/cygcpptest-1.dll
+
+(libcpptest-devel)
+  /usr/include/cpptest-assert.h
+  /usr/include/cpptest-collectoroutput.h
+  /usr/include/cpptest-compileroutput.h
+  /usr/include/cpptest-htmloutput.h
+  /usr/include/cpptest-output.h
+  /usr/include/cpptest-source.h
+  /usr/include/cpptest-suite.h
+  /usr/include/cpptest-textoutput.h
+  /usr/include/cpptest-time.h
+  /usr/include/cpptest.h
+  /usr/lib/libcpptest.dll.a
+  /usr/lib/pkgconfig/libcpptest.pc
+
+------------------
+
+Port Notes:
+
+----- version 2.0.0-1bl1 -----
+Version bump.
+
+----- version 1.1.2-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

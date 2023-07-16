@@ -1,0 +1,89 @@
+snappystream
+------------------------------------------
+There is snappy compressor from google, but it doesn't have default stream
+realisation. This project aim to release C++ stream for snappy with format,
+compatible with java realisation by Dain Sundstrom. So you can use, for
+example, java realisation for compression and C++ for decompression, or vice
+versa.
+
+Runtime requirements:
+  cygwin-2.11.2-1
+  libgcc1-7.3.0-3
+  libsnappy1-1.1.7-1bl1
+  libsnappystream-devel-1.0.0-1bl1
+  libsnappystream0-1.0.0-1bl1
+  libstdc++6-7.3.0-3
+  pkg-config-0.29.1-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.29-1
+  cmake-3.6.2-1
+  cygport-0.31.1-1
+  gcc-core-7.3.0-3
+  gcc-g++-7.3.0-3
+  make-4.2.1-2
+  ninja-1.8.2-2
+
+Canonical website:
+  https://github.com/hoxnox/snappystream
+
+Canonical download:
+  https://github.com/hoxnox/snappystream/archive/1.0.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack snappystream-1.0.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./snappystream-1.0.0-X.cygport all
+
+This will create:
+  /usr/src/snappystream-1.0.0-X-src.tar.xz
+  /usr/src/snappystream-1.0.0-X.tar.xz
+  /usr/src/libsnappystream0-1.0.0-X.tar.xz
+  /usr/src/libsnappystream-devel-1.0.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(snappystream)
+  /usr/share/doc/Cygwin/snappystream.README
+  /usr/share/doc/snappystream/README.md
+
+(libsnappystream0)
+  /usr/bin/crc32c.exe
+  /usr/bin/cygsnappystream-0.dll
+  /usr/bin/snap.exe
+
+(libsnappystream-devel)
+  /usr/include/snappystream/InputSnappyStreamBoostFilter.hpp
+  /usr/include/snappystream/OutputSnappyStreamBoostFilter.hpp
+  /usr/include/snappystream/isnappystream.hpp
+  /usr/include/snappystream/osnappystream.hpp
+  /usr/include/snappystream/snappystream.hpp
+  /usr/include/snappystream/snappystreamcfg.hpp
+  /usr/lib/libsnappystream.dll.a
+  /usr/lib/pkgconfig/snappystream.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.0.0-1bl1 -----
+Version bump.
+
+----- version 0.2.8-1bl1 -----
+Version bump.
+
+----- version 0.2.7-1bl2 -----
+Rebuild for libsnappy
+
+----- version 0.2.7-1bl1 -----
+Version bump.
+
+----- version 0.2.1-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

@@ -1,0 +1,49 @@
+HOMEPAGE="https://github.com/google/${PN}"
+SRC_URI="https://github.com/google/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Text"
+SUMMARY="Unsupervised text tokenizer for Neural Network-based text generation"
+DESCRIPTION="SentencePiece is an unsupervised text tokenizer and detokenizer mainly for
+Neural Network-based text generation systems where the vocabulary size is
+predetermined prior to the neural model training. SentencePiece implements
+subword units (e.g., byte-pair-encoding (BPE) [Sennrich et al.]) and unigram
+language model [Kudo.]) with the extension of direct training from raw 
+entences. SentencePiece allows us to make a purely end-to-end system that does
+not depend on language-specific pre/postprocessing."
+
+LICENSE="Apache-2.0"
+LICENSE_SPDX="SPDX-License-Identifier: Apache-2.0"
+LICENSE_URI="LICENSE"
+
+BUILD_REQUIRES="libprotobuf-devel libtcmalloc-devel"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DSPM_USE_BUILTIN_PROTOBUF:BOOL=OFF
+"
+
+DOCS="
+	doc/*.md
+"
+
+PKG_NAMES="
+	sentencepiece
+	libsentencepiece0
+	libsentencepiece-devel
+"
+sentencepiece_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+libsentencepiece0_CONTENTS="
+	usr/bin/*.dll
+"
+libsentencepiece_devel_CONTENTS="
+	usr/include
+	usr/lib/*.dll.a
+	usr/lib/pkgconfig
+"
+sentencepiece_SUMMARY="${SUMMARY} (utilities)"
+libsentencepiece0_SUMMARY="${SUMMARY} (runtime)"
+libsentencepiece_devel_SUMMARY="${SUMMARY} (development)"

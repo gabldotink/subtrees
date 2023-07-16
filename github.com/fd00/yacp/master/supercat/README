@@ -1,0 +1,81 @@
+supercat
+------------------------------------------
+Supercat is a program that colorizes text based on matching regular
+expressions/strings/characters. Supercat supports html output as well as
+standard ASCII text. Unlike some text-colorizing programs that exist, Supercat
+does not require you to have to be a programmer to make colorization rules.
+
+Runtime requirements:
+  cygwin-3.3.5-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.38-1
+  cygport-0.35.2-1
+  gcc-core-11.3.0-1
+  make-4.3-1
+
+Canonical website:
+  https://supercat.nosredna.net/
+
+Canonical download:
+  https://supercat.nosredna.net/supercat-0.5.8.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack supercat-0.5.8-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./supercat-0.5.8-X.cygport all
+
+This will create:
+  /usr/src/supercat-0.5.8-X-src.tar.xz
+  /usr/src/supercat-0.5.8-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(supercat)
+  /etc/supercat/spcrc-ChangeLog
+  /etc/supercat/spcrc-access_log
+  /etc/supercat/spcrc-c
+  /etc/supercat/spcrc-diff
+  /etc/supercat/spcrc-emerge
+  /etc/supercat/spcrc-error_log
+  /etc/supercat/spcrc-gentooconfd
+  /etc/supercat/spcrc-patch
+  /etc/supercat/spcrc-py
+  /etc/supercat/spcrc-svn
+  /etc/supercat/spcrc-xorg
+  /usr/bin/spc.exe
+  /usr/share/doc/Cygwin/supercat.README
+  /usr/share/doc/supercat/COPYING
+  /usr/share/doc/supercat/ChangeLog
+  /usr/share/man/man1/spc.1.gz
+
+------------------
+
+Port Notes:
+
+----- version 0.5.8-1bl1 -----
+Version bump.
+
+----- version 0.5.7-1bl1 -----
+Version bump.
+
+----- version 0.5.6-1bl1 -----
+Version bump.
+
+----- version 0.5.5-1bl3 -----
+Rebuild with x86_64
+
+----- version 0.5.5-1bl2 -----
+Rebuild with gcc-4.5.3
+
+----- version 0.5.5-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

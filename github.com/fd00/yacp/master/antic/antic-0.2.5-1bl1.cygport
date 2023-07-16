@@ -1,0 +1,48 @@
+HOMEPAGE="https://github.com/wbhart/${PN}"
+SRC_URI="https://github.com/wbhart/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Algebraic Number Theory In C"
+DESCRIPTION="Antic is an algebraic number theory library."
+
+LICENSE="LGPL-2.1-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: LGPL-2.1-or-later"
+LICENSE_URI="LICENSE"
+
+BUILD_REQUIRES="libflint-devel libgmp-devel libmpfr-devel"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DBUILD_TESTING:BOOL=ON
+"
+
+src_test()
+{
+	cd ${B}
+	ninja_test
+}
+
+DOCS="
+	code_conventions.txt
+	gpl-2.0.txt
+"
+
+PKG_NAMES="
+	antic
+	libantic0
+	libantic-devel
+"
+antic_CONTENTS="
+	usr/share
+"
+libantic0_CONTENTS="
+	usr/bin
+"
+libantic_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+antic_SUMMARY="${SUMMARY} (licensing & readmes)"
+libantic0_SUMMARY="${SUMMARY} (runtime)"
+libantic_devel_SUMMARY="${SUMMARY} (development)"

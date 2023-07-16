@@ -1,0 +1,13 @@
+--- origsrc/sylvan-1.5.0/src/CMakeLists.txt	2019-09-05 18:24:27.000000000 +0900
++++ src/sylvan-1.5.0/src/CMakeLists.txt	2019-12-11 05:53:26.967342200 +0900
+@@ -57,5 +57,9 @@ if(SYLVAN_STATS)
+     set_target_properties(sylvan PROPERTIES COMPILE_DEFINITIONS "SYLVAN_STATS")
+ endif()
+ 
+-install(TARGETS sylvan DESTINATION "${CMAKE_INSTALL_LIBDIR}")
++if(CYGWIN)
++    set_target_properties(sylvan PROPERTIES SOVERSION 0)
++endif()
++
++install(TARGETS sylvan RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}" ARCHIVE DESTINATION "${CMAKE_INSTALL_LIBDIR}")
+ install(FILES ${HEADERS} DESTINATION "${CMAKE_INSTALL_INCLUDEDIR}")

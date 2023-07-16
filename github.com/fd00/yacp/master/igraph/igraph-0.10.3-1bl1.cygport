@@ -1,0 +1,53 @@
+HOMEPAGE="https://${PN}.org/"
+SRC_URI="https://github.com/${PN}/${PN}/releases/download/${PV}/${P}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Creating and manipulating undirected and directed graphs"
+DESCRIPTION="igraph is a free software package for creating and manipulating undirected and
+directed graphs. It includes implementations for classic graph theory problems
+like minimum spanning trees and network flow, and also implements algorithms
+for some recent network analysis methods, like community structure search."
+
+LICENSE="GPL-2.0-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: GPL-2.0-or-later"
+LICENSE_URI="COPYING"
+
+BUILD_REQUIRES="libarpack-devel libglpk-devel libgmp-devel liblapack-devel libxml2-devel"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DBUILD_SHARED_LIBS:BOOL=ON
+"
+
+src_test()
+{
+	cd ${B}
+	PATH=${B}/src:${PATH} ninja_test
+}
+
+DOCS="
+	*.md
+	ONEWS
+"
+
+PKG_NAMES="
+	${PN}
+	lib${PN}3
+	lib${PN}-devel
+"
+igraph_CONTENTS="
+	usr/share
+"
+libigraph3_CONTENTS="
+	usr/bin
+"
+libigraph_devel_CONTENTS="
+	usr/include
+	usr/lib/cmake
+	usr/lib/lib${PN}*
+	usr/lib/pkgconfig
+"
+igraph_SUMMARY="${SUMMARY} (licensing & readmes)"
+libigraph3_SUMMARY="${SUMMARY} (runtime)"
+libigraph_devel_SUMMARY="${SUMMARY} (development)"

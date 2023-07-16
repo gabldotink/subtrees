@@ -1,0 +1,114 @@
+sentencepiece
+------------------------------------------
+SentencePiece is an unsupervised text tokenizer and detokenizer mainly for
+Neural Network-based text generation systems where the vocabulary size is
+predetermined prior to the neural model training. SentencePiece implements
+subword units (e.g., byte-pair-encoding (BPE) [Sennrich et al.]) and unigram
+language model [Kudo.]) with the extension of direct training from raw
+entences. SentencePiece allows us to make a purely end-to-end system that does
+not depend on language-specific pre/postprocessing.
+
+Runtime requirements:
+  cygwin-3.3.6-1
+  libgcc1-11.3.0-1
+  libprotobuf-devel-21.9-1
+  libprotobuf32-21.9-1
+  libsentencepiece-devel-0.1.97-1bl1
+  libsentencepiece0-0.1.97-1bl1
+  libstdc++6-11.3.0-1
+  libtcmalloc4-2.10-1bl1
+  pkg-config-1.9.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.39-1
+  cmake-3.23.2-1
+  cygport-0.35.4-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libprotobuf-devel-21.9-1
+  libtcmalloc-devel-2.10-1bl1
+  ninja-1.11.1-1
+
+Canonical website:
+  https://github.com/google/sentencepiece
+
+Canonical download:
+  https://github.com/google/sentencepiece/archive/refs/tags/v0.1.97.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack sentencepiece-0.1.97-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./sentencepiece-0.1.97-X.cygport all
+
+This will create:
+  /usr/src/sentencepiece-0.1.97-X-src.tar.xz
+  /usr/src/sentencepiece-0.1.97-X.tar.xz
+  /usr/src/libsentencepiece0-0.1.97-X.tar.xz
+  /usr/src/libsentencepiece-devel-0.1.97-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(sentencepiece)
+  /usr/bin/spm_decode.exe
+  /usr/bin/spm_encode.exe
+  /usr/bin/spm_export_vocab.exe
+  /usr/bin/spm_normalize.exe
+  /usr/bin/spm_train.exe
+  /usr/share/doc/Cygwin/sentencepiece.README
+  /usr/share/doc/sentencepiece/LICENSE
+  /usr/share/doc/sentencepiece/README.md
+  /usr/share/doc/sentencepiece/api.md
+  /usr/share/doc/sentencepiece/experiments.md
+  /usr/share/doc/sentencepiece/normalization.md
+  /usr/share/doc/sentencepiece/options.md
+  /usr/share/doc/sentencepiece/special_symbols.md
+
+(libsentencepiece0)
+  /usr/bin/cygsentencepiece-0.dll
+  /usr/bin/cygsentencepiece_train-0.dll
+
+(libsentencepiece-devel)
+  /usr/include/sentencepiece.pb.h
+  /usr/include/sentencepiece_processor.h
+  /usr/include/sentencepiece_trainer.h
+  /usr/lib/libsentencepiece.dll.a
+  /usr/lib/libsentencepiece_train.dll.a
+  /usr/lib/pkgconfig/sentencepiece.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.1.97-1bl1 -----
+Version bump.
+
+----- version 0.1.96-1bl1 -----
+Version bump.
+
+----- version 0.1.95-1bl1 -----
+Version bump.
+
+----- version 0.1.94-1bl1 -----
+Version bump.
+
+----- version 0.1.93-1bl1 -----
+Version bump.
+
+----- version 0.1.92-1bl1 -----
+Version bump.
+
+----- version 0.1.85-1bl1 -----
+Version bump.
+
+----- version 0.1.84-1bl1 -----
+Version bump.
+
+----- version 0.1.83-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

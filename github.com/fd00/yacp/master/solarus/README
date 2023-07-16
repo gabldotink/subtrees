@@ -1,0 +1,397 @@
+solarus
+------------------------------------------
+Solarus is a free and open-source Action-RPG game engine, licensed under GPL,
+and written in C++. It runs quests in Lua, and can work on a great number of
+platforms.
+
+Runtime requirements:
+  cygwin-3.2.0-1
+  libQt5Core5-5.9.4-2
+  libQt5Gui5-5.9.4-2
+  libSDL2_2.0_0-2.0.7-1
+  libSDL2_image2.0_0-2.0.2-1
+  libSDL2_ttf2.0_0-2.0.14-1
+  libgcc1-10.2.0-1
+  libmodplug1-0.8.9.0-2
+  libopenal1-1.18.2-1
+  libphysfs1-3.0.2-1bl1
+  libsolarus1-1.6.5-1bl1
+  libstdc++6-10.2.0-1
+  libvorbis0-1.3.6-1
+  libvorbisfile3-1.3.6-1
+  luajit-2.0.4-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.36.1-2
+  cmake-3.20.0-1
+  cygport-0.34.0-1
+  gcc-core-10.2.0-1
+  gcc-g++-10.2.0-1
+  gcc-objc++-10.2.0-1
+  libQt5Core-devel-5.9.4-2
+  libQt5Gui-devel-5.9.4-2
+  libSDL2-devel-2.0.7-1
+  libSDL2_image-devel-2.0.2-1
+  libSDL2_ttf-devel-2.0.14-1
+  libmodplug-devel-0.8.9.0-2
+  libopenal-devel-1.18.2-1
+  libphysfs-devel-3.0.2-1bl1
+  libvorbis-devel-1.3.6-1
+  lua-5.3.6-1
+  ninja-1.10.2-1
+
+Canonical website:
+  https://solarus-games.org/
+
+Canonical download:
+  https://gitlab.com/solarus-games/solarus/-/archive/v1.6.5/solarus-v1.6.5.tar.bz2
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack solarus-1.6.5-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./solarus-1.6.5-X.cygport all
+
+This will create:
+  /usr/src/solarus-1.6.5-X-src.tar.xz
+  /usr/src/solarus-1.6.5-X.tar.xz
+  /usr/src/libsolarus1-1.6.5-X.tar.xz
+  /usr/src/libsolarus-devel-1.6.5-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(solarus)
+  /etc/postinstall/solarus.sh
+  /usr/bin/solarus-launcher.exe
+  /usr/bin/solarus-run.exe
+  /usr/share/applications/org.solarus_games.solarus.Launcher.desktop
+  /usr/share/doc/Cygwin/solarus.README
+  /usr/share/doc/solarus/LICENSE.txt
+  /usr/share/doc/solarus/README.md
+  /usr/share/doc/solarus/license_gpl.txt
+  /usr/share/icons/hicolor/16x16/apps/org.solarus_games.solarus.Launcher.png
+  /usr/share/icons/hicolor/16x16/apps/org.solarus_games.solarus.Runner.png
+  /usr/share/icons/hicolor/20x20/apps/org.solarus_games.solarus.Launcher.png
+  /usr/share/icons/hicolor/20x20/apps/org.solarus_games.solarus.Runner.png
+  /usr/share/icons/hicolor/24x24/apps/org.solarus_games.solarus.Launcher.png
+  /usr/share/icons/hicolor/24x24/apps/org.solarus_games.solarus.Runner.png
+  /usr/share/icons/hicolor/32x32/apps/org.solarus_games.solarus.Launcher.png
+  /usr/share/icons/hicolor/32x32/apps/org.solarus_games.solarus.Runner.png
+  /usr/share/icons/hicolor/40x40/apps/org.solarus_games.solarus.Launcher.png
+  /usr/share/icons/hicolor/40x40/apps/org.solarus_games.solarus.Runner.png
+  /usr/share/icons/hicolor/48x48/apps/org.solarus_games.solarus.Launcher.png
+  /usr/share/icons/hicolor/48x48/apps/org.solarus_games.solarus.Runner.png
+  /usr/share/icons/hicolor/scalable/apps/org.solarus_games.solarus.Launcher.svg
+  /usr/share/icons/hicolor/scalable/apps/org.solarus_games.solarus.Runner.svg
+  /usr/share/icons/hicolor/symbolic/apps/org.solarus_games.solarus.Launcher-symbolic.svg
+  /usr/share/icons/hicolor/symbolic/apps/org.solarus_games.solarus.Runner-symbolic.svg
+  /usr/share/man/man6/solarus-launcher.6.gz
+  /usr/share/man/man6/solarus-run.6.gz
+  /usr/share/metainfo/org.solarus_games.solarus.appdata.xml
+  /usr/share/pixmaps/org.solarus_games.solarus.Launcher.png
+  /usr/share/pixmaps/org.solarus_games.solarus.Runner.png
+  /usr/share/solarus-gui/translations/solarus_es.qm
+  /usr/share/solarus-gui/translations/solarus_fr.qm
+
+(libsolarus1)
+  /usr/bin/cygsolarus-1.dll
+  /usr/bin/cygsolarus-gui-1.dll
+
+(libsolarus-devel)
+  /usr/include/solarus/audio/ItDecoder.h
+  /usr/include/solarus/audio/Music.h
+  /usr/include/solarus/audio/OggDecoder.h
+  /usr/include/solarus/audio/Sound.h
+  /usr/include/solarus/audio/SpcDecoder.h
+  /usr/include/solarus/containers/Grid.h
+  /usr/include/solarus/containers/Quadtree.h
+  /usr/include/solarus/containers/Quadtree.inl
+  /usr/include/solarus/core/Ability.h
+  /usr/include/solarus/core/AbilityInfo.h
+  /usr/include/solarus/core/AndroidConfig.h
+  /usr/include/solarus/core/AppleInterface.h
+  /usr/include/solarus/core/Arguments.h
+  /usr/include/solarus/core/CommandsEffects.h
+  /usr/include/solarus/core/Common.h
+  /usr/include/solarus/core/CurrentQuest.h
+  /usr/include/solarus/core/Debug.h
+  /usr/include/solarus/core/Dialog.h
+  /usr/include/solarus/core/DialogBoxSystem.h
+  /usr/include/solarus/core/DialogResources.h
+  /usr/include/solarus/core/EnumInfo.h
+  /usr/include/solarus/core/EnumInfo.inl
+  /usr/include/solarus/core/Equipment.h
+  /usr/include/solarus/core/EquipmentItem.h
+  /usr/include/solarus/core/EquipmentItemUsage.h
+  /usr/include/solarus/core/FontResource.h
+  /usr/include/solarus/core/Game.h
+  /usr/include/solarus/core/GameCommand.h
+  /usr/include/solarus/core/GameCommands.h
+  /usr/include/solarus/core/Geometry.h
+  /usr/include/solarus/core/InputEvent.h
+  /usr/include/solarus/core/Logger.h
+  /usr/include/solarus/core/MainLoop.h
+  /usr/include/solarus/core/Map.h
+  /usr/include/solarus/core/MapData.h
+  /usr/include/solarus/core/PerfCounter.h
+  /usr/include/solarus/core/PerfCounter.inl
+  /usr/include/solarus/core/PixelBits.h
+  /usr/include/solarus/core/Point.h
+  /usr/include/solarus/core/Point.inl
+  /usr/include/solarus/core/QuestDatabase.h
+  /usr/include/solarus/core/QuestFiles.h
+  /usr/include/solarus/core/QuestProperties.h
+  /usr/include/solarus/core/Random.h
+  /usr/include/solarus/core/Rectangle.h
+  /usr/include/solarus/core/Rectangle.inl
+  /usr/include/solarus/core/ResourceProvider.h
+  /usr/include/solarus/core/ResourceType.h
+  /usr/include/solarus/core/Savegame.h
+  /usr/include/solarus/core/SavegameConverterV1.h
+  /usr/include/solarus/core/Scale.h
+  /usr/include/solarus/core/Scale.inl
+  /usr/include/solarus/core/Settings.h
+  /usr/include/solarus/core/Size.h
+  /usr/include/solarus/core/Size.inl
+  /usr/include/solarus/core/SolarusFatal.h
+  /usr/include/solarus/core/String.h
+  /usr/include/solarus/core/StringResources.h
+  /usr/include/solarus/core/System.h
+  /usr/include/solarus/core/Timer.h
+  /usr/include/solarus/core/TimerPtr.h
+  /usr/include/solarus/core/Transform.h
+  /usr/include/solarus/core/Transform.inl
+  /usr/include/solarus/core/Treasure.h
+  /usr/include/solarus/core/config.h
+  /usr/include/solarus/core/config.h.in
+  /usr/include/solarus/entities/AnimatedTilePattern.h
+  /usr/include/solarus/entities/Arrow.h
+  /usr/include/solarus/entities/Block.h
+  /usr/include/solarus/entities/Bomb.h
+  /usr/include/solarus/entities/Boomerang.h
+  /usr/include/solarus/entities/BorderKind.h
+  /usr/include/solarus/entities/BorderSet.h
+  /usr/include/solarus/entities/Camera.h
+  /usr/include/solarus/entities/CameraPtr.h
+  /usr/include/solarus/entities/CarriedObject.h
+  /usr/include/solarus/entities/Chest.h
+  /usr/include/solarus/entities/CollisionMode.h
+  /usr/include/solarus/entities/Crystal.h
+  /usr/include/solarus/entities/CrystalBlock.h
+  /usr/include/solarus/entities/CustomEntity.h
+  /usr/include/solarus/entities/Destination.h
+  /usr/include/solarus/entities/Destructible.h
+  /usr/include/solarus/entities/Door.h
+  /usr/include/solarus/entities/DynamicTile.h
+  /usr/include/solarus/entities/Enemy.h
+  /usr/include/solarus/entities/EnemyAttack.h
+  /usr/include/solarus/entities/EnemyReaction.h
+  /usr/include/solarus/entities/Entities.h
+  /usr/include/solarus/entities/Entity.h
+  /usr/include/solarus/entities/EntityData.h
+  /usr/include/solarus/entities/EntityPtr.h
+  /usr/include/solarus/entities/EntityState.h
+  /usr/include/solarus/entities/EntityType.h
+  /usr/include/solarus/entities/EntityTypeInfo.h
+  /usr/include/solarus/entities/Explosion.h
+  /usr/include/solarus/entities/Fire.h
+  /usr/include/solarus/entities/Ground.h
+  /usr/include/solarus/entities/GroundInfo.h
+  /usr/include/solarus/entities/Hero.h
+  /usr/include/solarus/entities/HeroPtr.h
+  /usr/include/solarus/entities/Hookshot.h
+  /usr/include/solarus/entities/Jumper.h
+  /usr/include/solarus/entities/NonAnimatedRegions.h
+  /usr/include/solarus/entities/Npc.h
+  /usr/include/solarus/entities/ParallaxScrollingTilePattern.h
+  /usr/include/solarus/entities/Pickable.h
+  /usr/include/solarus/entities/SelfScrollingTilePattern.h
+  /usr/include/solarus/entities/Sensor.h
+  /usr/include/solarus/entities/Separator.h
+  /usr/include/solarus/entities/SeparatorPtr.h
+  /usr/include/solarus/entities/ShopTreasure.h
+  /usr/include/solarus/entities/SimpleTilePattern.h
+  /usr/include/solarus/entities/Stairs.h
+  /usr/include/solarus/entities/StartingLocationMode.h
+  /usr/include/solarus/entities/Stream.h
+  /usr/include/solarus/entities/StreamAction.h
+  /usr/include/solarus/entities/Switch.h
+  /usr/include/solarus/entities/Teletransporter.h
+  /usr/include/solarus/entities/Tile.h
+  /usr/include/solarus/entities/TileInfo.h
+  /usr/include/solarus/entities/TilePattern.h
+  /usr/include/solarus/entities/TilePtr.h
+  /usr/include/solarus/entities/Tileset.h
+  /usr/include/solarus/entities/TilesetData.h
+  /usr/include/solarus/entities/TraversableInfo.h
+  /usr/include/solarus/entities/Wall.h
+  /usr/include/solarus/graphics/BlendMode.h
+  /usr/include/solarus/graphics/BlendModeInfo.h
+  /usr/include/solarus/graphics/Color.h
+  /usr/include/solarus/graphics/Color.inl
+  /usr/include/solarus/graphics/DefaultShaders.h
+  /usr/include/solarus/graphics/DrawProxies.h
+  /usr/include/solarus/graphics/Drawable.h
+  /usr/include/solarus/graphics/DrawablePtr.h
+  /usr/include/solarus/graphics/Hq2xFilter.h
+  /usr/include/solarus/graphics/Hq3xFilter.h
+  /usr/include/solarus/graphics/Hq4xFilter.h
+  /usr/include/solarus/graphics/Renderer.h
+  /usr/include/solarus/graphics/SDLPtrs.h
+  /usr/include/solarus/graphics/Scale2xFilter.h
+  /usr/include/solarus/graphics/Shader.h
+  /usr/include/solarus/graphics/ShaderData.h
+  /usr/include/solarus/graphics/ShaderPtr.h
+  /usr/include/solarus/graphics/SoftwarePixelFilter.h
+  /usr/include/solarus/graphics/SoftwareVideoMode.h
+  /usr/include/solarus/graphics/SolarusGl.h
+  /usr/include/solarus/graphics/Sprite.h
+  /usr/include/solarus/graphics/SpriteAnimation.h
+  /usr/include/solarus/graphics/SpriteAnimationDirection.h
+  /usr/include/solarus/graphics/SpriteAnimationSet.h
+  /usr/include/solarus/graphics/SpriteData.h
+  /usr/include/solarus/graphics/SpritePtr.h
+  /usr/include/solarus/graphics/Surface.h
+  /usr/include/solarus/graphics/SurfaceImpl.h
+  /usr/include/solarus/graphics/SurfacePtr.h
+  /usr/include/solarus/graphics/TextSurface.h
+  /usr/include/solarus/graphics/Transition.h
+  /usr/include/solarus/graphics/TransitionFade.h
+  /usr/include/solarus/graphics/TransitionImmediate.h
+  /usr/include/solarus/graphics/TransitionScrolling.h
+  /usr/include/solarus/graphics/VertexArray.h
+  /usr/include/solarus/graphics/VertexArrayPtr.h
+  /usr/include/solarus/graphics/Video.h
+  /usr/include/solarus/graphics/glrenderer/GlRenderer.h
+  /usr/include/solarus/graphics/glrenderer/GlShader.h
+  /usr/include/solarus/graphics/glrenderer/GlTexture.h
+  /usr/include/solarus/graphics/quest_icon.h
+  /usr/include/solarus/graphics/sdlrenderer/SDLRenderer.h
+  /usr/include/solarus/graphics/sdlrenderer/SDLShader.h
+  /usr/include/solarus/graphics/sdlrenderer/SDLSurfaceImpl.h
+  /usr/include/solarus/gui/about_dialog.h
+  /usr/include/solarus/gui/console.h
+  /usr/include/solarus/gui/console_line_edit.h
+  /usr/include/solarus/gui/gui_common.h
+  /usr/include/solarus/gui/gui_tools.h
+  /usr/include/solarus/gui/main_window.h
+  /usr/include/solarus/gui/quest_runner.h
+  /usr/include/solarus/gui/quests_item_delegate.h
+  /usr/include/solarus/gui/quests_model.h
+  /usr/include/solarus/gui/quests_view.h
+  /usr/include/solarus/gui/settings.h
+  /usr/include/solarus/gui/ui_about_dialog.h
+  /usr/include/solarus/gui/ui_console.h
+  /usr/include/solarus/gui/ui_main_window.h
+  /usr/include/solarus/hero/BackToSolidGroundState.h
+  /usr/include/solarus/hero/BoomerangState.h
+  /usr/include/solarus/hero/BowState.h
+  /usr/include/solarus/hero/CarryingState.h
+  /usr/include/solarus/hero/CustomState.h
+  /usr/include/solarus/hero/FallingState.h
+  /usr/include/solarus/hero/ForcedWalkingState.h
+  /usr/include/solarus/hero/FreeState.h
+  /usr/include/solarus/hero/FrozenState.h
+  /usr/include/solarus/hero/GrabbingState.h
+  /usr/include/solarus/hero/HeroSprites.h
+  /usr/include/solarus/hero/HeroState.h
+  /usr/include/solarus/hero/HookshotState.h
+  /usr/include/solarus/hero/HurtState.h
+  /usr/include/solarus/hero/JumpingState.h
+  /usr/include/solarus/hero/LiftingState.h
+  /usr/include/solarus/hero/PlayerMovementState.h
+  /usr/include/solarus/hero/PlungingState.h
+  /usr/include/solarus/hero/PullingState.h
+  /usr/include/solarus/hero/PushingState.h
+  /usr/include/solarus/hero/RunningState.h
+  /usr/include/solarus/hero/SpinAttackState.h
+  /usr/include/solarus/hero/StairsState.h
+  /usr/include/solarus/hero/SwimmingState.h
+  /usr/include/solarus/hero/SwordLoadingState.h
+  /usr/include/solarus/hero/SwordSwingingState.h
+  /usr/include/solarus/hero/SwordTappingState.h
+  /usr/include/solarus/hero/TreasureState.h
+  /usr/include/solarus/hero/UsingItemState.h
+  /usr/include/solarus/hero/VictoryState.h
+  /usr/include/solarus/lua/ExportableToLua.h
+  /usr/include/solarus/lua/ExportableToLuaPtr.h
+  /usr/include/solarus/lua/LuaContext.h
+  /usr/include/solarus/lua/LuaData.h
+  /usr/include/solarus/lua/LuaException.h
+  /usr/include/solarus/lua/LuaTools.h
+  /usr/include/solarus/lua/LuaTools.inl
+  /usr/include/solarus/lua/ScopedLuaRef.h
+  /usr/include/solarus/movements/CircleMovement.h
+  /usr/include/solarus/movements/FallingHeight.h
+  /usr/include/solarus/movements/FallingOnFloorMovement.h
+  /usr/include/solarus/movements/JumpMovement.h
+  /usr/include/solarus/movements/Movement.h
+  /usr/include/solarus/movements/PathFinding.h
+  /usr/include/solarus/movements/PathFindingMovement.h
+  /usr/include/solarus/movements/PathMovement.h
+  /usr/include/solarus/movements/PixelMovement.h
+  /usr/include/solarus/movements/PlayerMovement.h
+  /usr/include/solarus/movements/RandomMovement.h
+  /usr/include/solarus/movements/RandomPathMovement.h
+  /usr/include/solarus/movements/RelativeMovement.h
+  /usr/include/solarus/movements/StraightMovement.h
+  /usr/include/solarus/movements/TargetMovement.h
+  /usr/include/solarus/third_party/KHR/khrplatform.h
+  /usr/include/solarus/third_party/glad/glad.h
+  /usr/include/solarus/third_party/hqx/common.h
+  /usr/include/solarus/third_party/hqx/hqx.h
+  /usr/include/solarus/third_party/snes_spc/SNES_SPC.h
+  /usr/include/solarus/third_party/snes_spc/SPC_CPU.h
+  /usr/include/solarus/third_party/snes_spc/SPC_DSP.h
+  /usr/include/solarus/third_party/snes_spc/SPC_Filter.h
+  /usr/include/solarus/third_party/snes_spc/blargg_common.h
+  /usr/include/solarus/third_party/snes_spc/blargg_config.h
+  /usr/include/solarus/third_party/snes_spc/blargg_endian.h
+  /usr/include/solarus/third_party/snes_spc/blargg_source.h
+  /usr/include/solarus/third_party/snes_spc/dsp.h
+  /usr/include/solarus/third_party/snes_spc/spc.h
+  /usr/lib/libsolarus-gui.dll.a
+  /usr/lib/libsolarus.dll.a
+
+------------------
+
+Port Notes:
+
+----- version 1.6.5-1bl1 -----
+Version bump.
+
+----- version 1.6.4-1bl1 -----
+Version bump.
+
+----- version 1.6.2-1bl1 -----
+Version bump.
+
+----- version 1.6.0-1bl1 -----
+Version bump.
+
+----- version 1.5.3-1bl1 -----
+Version bump.
+
+----- version 1.5.1-1bl1 -----
+Version bump.
+
+----- version 1.4.5-1bl1 -----
+Version bump.
+
+----- version 1.3.1-1bl1 -----
+Version bump.
+
+----- version 1.2.0-1bl1 -----
+Version bump.
+
+----- version 1.1.1-1bl1 -----
+Version bump.
+
+----- version 1.1.0-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

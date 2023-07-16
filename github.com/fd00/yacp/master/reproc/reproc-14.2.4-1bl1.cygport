@@ -1,0 +1,62 @@
+HOMEPAGE="https://github.com/DaanDeMeyer/${PN}"
+SRC_URI="https://github.com/DaanDeMeyer/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Cross-platform (C99/C++11) process library"
+DESCRIPTION="Reproc (Redirected Process) is cross-platform library that starts external
+processes from within a C or C++ application, reads/writes to their
+stdin/stdout/stderr streams and waits for them to exit or forcefully stops
+them."
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DBUILD_SHARED_LIBS:BOOL=ON
+	-DREPROC++:BOOL=ON
+	-DREPROC_TEST:BOOL=ON
+	-DREPROC_EXAMPLES:BOOL=ON
+"
+
+src_test()
+{
+	cd ${B}
+	PATH=${B}/${PN}/lib:${B}/${PN}++/lib:${PATH} ninja_test
+}
+
+DOCS="
+	CHANGELOG.md
+"
+
+PKG_NAMES="
+	reproc
+	libreproc14
+	libreproc-devel
+	libreproc++14
+	libreproc++-devel
+"
+reproc_CONTENTS="
+	usr/share
+"
+libreproc14_CONTENTS="
+	usr/bin/cygreproc-*.dll
+"
+libreproc_devel_CONTENTS="
+	usr/include/reproc
+	usr/lib/cmake/reproc
+	usr/lib/libreproc.dll.a
+	usr/lib/pkgconfig/reproc.pc
+"
+libreproc__14_CONTENTS="
+	usr/bin/cygreproc++-*.dll
+"
+libreproc___devel_CONTENTS="
+	usr/include/reproc++
+	usr/lib/cmake/reproc++
+	usr/lib/libreproc++.dll.a
+	usr/lib/pkgconfig/reproc++.pc
+"
+reproc_SUMMARY="${SUMMARY} (licensing & readmes)"
+libreproc14_SUMMARY="${SUMMARY} (runtime)"
+libreproc_devel_SUMMARY="${SUMMARY} (development)"
+libreproc__14_SUMMARY="${SUMMARY} (runtime / c++)"
+libreproc___devel_SUMMARY="${SUMMARY} (development / c++)"

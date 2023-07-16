@@ -1,0 +1,33 @@
+HOMEPAGE="https://github.com/frankmorgner/${PN}"
+SRC_URI="https://github.com/frankmorgner/${PN}/archive/refs/tags/${PV}.tar.gz"
+
+CATEGORY="Security"
+SUMMARY="Cryptographic library for EAC version 2"
+DESCRIPTION="OpenPACE implements Extended Access Control (EAC) version 2 as specified in
+BSI TR-03110."
+
+BUILD_REQUIRES="help2man libssl-devel"
+
+PKG_NAMES="
+	openpace
+	libeac3
+	libeac-devel
+"
+openpace_CONTENTS="
+	etc
+	usr/bin/*.exe
+	usr/share/doc/Cygwin
+	usr/share/doc/${PN}/[CR]*
+	usr/share/man
+"
+libeac3_CONTENTS="
+	usr/bin/*.dll
+"
+libeac_devel_CONTENTS="
+	usr/include
+	usr/lib
+	usr/share/doc/${PN}/html
+"
+openpace_SUMMARY="${SUMMARY} (utilities)"
+libeac3_SUMMARY="${SUMMARY} (runtime)"
+libeac_devel_SUMMARY="${SUMMARY} (development)"

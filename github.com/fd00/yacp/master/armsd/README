@@ -1,0 +1,68 @@
+armsd
+------------------------------------------
+ARMS service daemon for Unix
+
+Runtime requirements:
+  bash-4.4.12-3
+  cygwin-2.9.0-3
+  libarms0-6.00-1bl1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  binutils-2.29-1
+  cygport-0.25.0-1
+  gcc-core-6.4.0-4
+  make-4.2.1-2
+
+Canonical website:
+  https://dev.smf.jp/libarms/
+
+Canonical download:
+  https://dev.smf.jp/dl/armsd-1.1.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack armsd-1.1.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./armsd-1.1.0-X.cygport all
+
+This will create:
+  /usr/src/armsd-1.1.0-X-src.tar.xz
+  /usr/src/armsd-1.1.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(armsd)
+  /etc/armsd/armsd.conf
+  /usr/sbin/armsd.exe
+  /usr/share/armsd/app-event
+  /usr/share/armsd/clear
+  /usr/share/armsd/command
+  /usr/share/armsd/line
+  /usr/share/armsd/mac2sacode.awk
+  /usr/share/armsd/post-pull
+  /usr/share/armsd/reboot
+  /usr/share/armsd/reconfig
+  /usr/share/armsd/start
+  /usr/share/armsd/state-changed
+  /usr/share/armsd/status
+  /usr/share/armsd/stop
+  /usr/share/doc/Cygwin/armsd.README
+  /usr/share/doc/armsd/COPYING
+  /usr/share/doc/armsd/README.md
+
+------------------
+
+Port Notes:
+
+----- version 1.1.0-1bl1 -----
+Version bump.
+
+----- version 0.9.0-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

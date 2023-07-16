@@ -1,0 +1,84 @@
+sparkey
+------------------------------------------
+Sparkey is a simple constant key/value storage library. It is mostly suited for
+read heavy systems with infrequent large bulk inserts. It includes both a C
+library for working with sparkey index and log files (libsparkey), and a
+command line utility for getting info about and reading values from a sparkey
+index/log (sparkey).
+
+Runtime requirements:
+  cygwin-3.1.2-1
+  libsnappy1-1.1.7-1
+  libsparkey-devel-1.0.0-1bl1
+  libsparkey0-1.0.0-1bl1
+  pkg-config-1.6.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.29-1
+  cygport-0.33.1-1
+  gcc-core-7.4.0-1
+  libtool-2.4.6-7
+  make-4.2.1-2
+
+Canonical website:
+  https://github.com/spotify/sparkey
+
+Canonical download:
+  https://github.com/spotify/sparkey/archive/sparkey-1.0.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack sparkey-1.0.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./sparkey-1.0.0-X.cygport all
+
+This will create:
+  /usr/src/sparkey-1.0.0-X-src.tar.xz
+  /usr/src/sparkey-1.0.0-X.tar.xz
+  /usr/src/libsparkey0-1.0.0-X.tar.xz
+  /usr/src/libsparkey-devel-1.0.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(sparkey)
+  /usr/bin/sparkey-bench.exe
+  /usr/bin/sparkey.exe
+  /usr/share/doc/Cygwin/sparkey.README
+  /usr/share/doc/sparkey/LICENSE
+  /usr/share/doc/sparkey/NOTICE
+  /usr/share/doc/sparkey/README.md
+
+(libsparkey0)
+  /usr/bin/cygsparkey-0.dll
+
+(libsparkey-devel)
+  /usr/include/sparkey/sparkey.h
+  /usr/lib/libsparkey.dll.a
+  /usr/lib/pkgconfig/sparkey.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.0.0-1bl1 -----
+Version bump.
+
+----- version 0.2.0-1bl3 -----
+Rebuild for libsnappy
+
+----- version 0.2.0-1bl2 -----
+Rebuild with gcc-5.4.0
+
+----- version 0.2.0-1bl1 -----
+Version bump.
+
+----- version 0.1.0+git20131117-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

@@ -1,0 +1,91 @@
+nopoll
+------------------------------------------
+Hello! noPoll is a OpenSource WebSocket implementation (RFC 6455), written in
+ansi C, that allows building pure WebSocket solutions or to provide WebSocket
+support to existing TCP oriented applications.
+
+Runtime requirements:
+  cygwin-3.4.3-1
+  libnopoll-devel-0.4.8-1bl1
+  libnopoll0-0.4.8-1bl1
+  libssl1.1-1.1.1s-1
+  pkg-config-1.9.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.39-1
+  cygport-0.35.5-1
+  gcc-core-11.3.0-1
+  libssl-devel-1.1.1s-1
+  libtool-2.4.7-1
+  make-4.4-1
+
+Canonical website:
+  https://github.com/asples/nopoll
+
+Canonical download:
+  https://github.com/ASPLes/nopoll/archive/refs/tags/0.4.8.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack nopoll-0.4.8-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./nopoll-0.4.8-X.cygport all
+
+This will create:
+  /usr/src/nopoll-0.4.8-X-src.tar.xz
+  /usr/src/nopoll-0.4.8-X.tar.xz
+  /usr/src/libnopoll0-0.4.8-X.tar.xz
+  /usr/src/libnopoll-devel-0.4.8-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(nopoll)
+  /usr/share/doc/Cygwin/nopoll.README
+  /usr/share/doc/nopoll/AUTHORS
+  /usr/share/doc/nopoll/COPYING
+  /usr/share/doc/nopoll/ChangeLog
+  /usr/share/doc/nopoll/NEWS
+  /usr/share/doc/nopoll/README
+  /usr/share/doc/nopoll/TODO
+
+(libnopoll0)
+  /usr/bin/cygnopoll-0.dll
+
+(libnopoll-devel)
+  /usr/include/nopoll/nopoll.h
+  /usr/include/nopoll/nopoll_config.h
+  /usr/include/nopoll/nopoll_conn.h
+  /usr/include/nopoll/nopoll_conn_opts.h
+  /usr/include/nopoll/nopoll_ctx.h
+  /usr/include/nopoll/nopoll_decl.h
+  /usr/include/nopoll/nopoll_handlers.h
+  /usr/include/nopoll/nopoll_io.h
+  /usr/include/nopoll/nopoll_listener.h
+  /usr/include/nopoll/nopoll_log.h
+  /usr/include/nopoll/nopoll_loop.h
+  /usr/include/nopoll/nopoll_msg.h
+  /usr/include/nopoll/nopoll_private.h
+  /usr/include/nopoll/nopoll_win32.h
+  /usr/lib/libnopoll.dll.a
+  /usr/lib/pkgconfig/nopoll.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.4.8-1bl1 -----
+Version bump.
+
+----- version 0.4.7-1bl1 -----
+Version bump.
+
+----- version 0.4.6.b400-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

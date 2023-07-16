@@ -1,0 +1,45 @@
+HOMEPAGE="https://github.com/tevador/${PN}"
+SRC_URI="https://github.com/tevador/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Security"
+SUMMARY="Proof of work algorithm based on random code execution"
+DESCRIPTION="RandomX is a proof-of-work (PoW) algorithm that is optimized for
+general-purpose CPUs. RandomX uses random code execution (hence the name)
+together with several memory-hard techniques to minimize the efficiency
+advantage of specialized hardware."
+
+LICENSE="BSD-3-Clause"
+LICENSE_SPDX="SPDX-License-Identifier: BSD-3-Clause"
+LICENSE_URI="LICENSE"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DBUILD_SHARED_LIBS:BOOL=ON
+	-DSOVERSION:STRING=${PV[1]}
+	-DVERSION:STRING=${PV}
+"
+
+DOCS="
+	doc/*.md
+"
+
+PKG_NAMES="
+	RandomX
+	librandomx1
+	librandomx-devel
+"
+RandomX_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+librandomx1_CONTENTS="
+	usr/bin/*.dll
+"
+librandomx_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+RandomX_SUMMARY="${SUMMARY} (utilities)"
+librandomx1_SUMMARY="${SUMMARY} (runtime)"
+librandomx_devel_SUMMARY="${SUMMARY} (development)"

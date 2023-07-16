@@ -1,0 +1,20 @@
+--- origsrc/skyutils-2.8/configure.in	2017-09-07 22:14:30.003631200 +0900
++++ src/skyutils-2.8/configure.in	2017-09-07 22:14:31.050733900 +0900
+@@ -171,7 +171,7 @@ fi
+ 
+ SU_SSL_CFLAGS=""
+ if test "$ssl" = "true"; then
+-  AC_CHECK_LIB(ssl,SSL_library_init,SU_SSL_LIB="-lssl")
++  AC_CHECK_LIB(ssl,SSL_library_init,SU_SSL_LIB="-lssl -lcrypto")
+   if test ! "$SU_SSL_LIB"; then
+     AC_MSG_WARN("Cannot find libssl... ssl code in skyweb will be disabled")
+     ssl=false
+--- origsrc/skyutils-2.8/src/Makefile.am	2004-12-06 23:59:02.000000000 +0900
++++ src/skyutils-2.8/src/Makefile.am	2017-09-07 22:14:31.066145100 +0900
+@@ -22,5 +22,5 @@ libskyutils_la_SOURCES = \
+ 
+ libskyutils_la_LDFLAGS = \
+ 	-version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) \
+-	-release $(LT_RELEASE) \
++	-release $(LT_RELEASE) -no-undefined \
+         @SU_PTHREAD_LIB@

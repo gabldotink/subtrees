@@ -1,0 +1,125 @@
+hkl
+------------------------------------------
+The purpose of the library is to factorize single crystal diffraction angles
+computation for different kind of diffractometer geometries. It is used at the
+SOLEIL, Desy and Alba synchrotron with the Tango control system to pilot
+diffractometers.
+
+Runtime requirements:
+  cygwin-3.3.5-1
+  libglib2.0-devel-2.54.3-1
+  libglib2.0_0-2.54.3-1
+  libgsl-devel-2.3-2
+  libgsl19-2.3-2
+  libgtk3_0-3.22.28-1
+  libhkl-devel-5.0.0.3001-1bl1
+  libhkl5-5.0.0.3001-1bl1
+  pkg-config-1.9.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.39-1
+  cygport-0.35.2-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  gobject-introspection-1.54.1-3
+  libglib2.0-devel-2.54.3-1
+  libgsl-devel-2.3-2
+  libgtk3-devel-3.22.28-1
+  libtool-2.4.7-1
+  make-4.3-1
+
+Canonical website:
+  https://people.debian.org/~picca/hkl/hkl.html
+
+Canonical download:
+  git://repo.or.cz/hkl.git
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack hkl-5.0.0.3001-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./hkl-5.0.0.3001-X.cygport all
+
+This will create:
+  /usr/src/hkl-5.0.0.3001-X-src.tar.xz
+  /usr/src/hkl-5.0.0.3001-X.tar.xz
+  /usr/src/libhkl5-5.0.0.3001-X.tar.xz
+  /usr/src/libhkl-devel-5.0.0.3001-X.tar.xz
+  /usr/src/girepository-Hkl5.0-5.0.0.3001-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(hkl)
+  /usr/bin/ghkl.exe
+  /usr/share/applications/ghkl.desktop
+  /usr/share/doc/Cygwin/hkl.README
+  /usr/share/doc/hkl/AUTHORS
+  /usr/share/doc/hkl/BUGS/issue-66160af59e044b15e5d662aa382c2805d516d7d2.yaml
+  /usr/share/doc/hkl/BUGS/issue-80f8e725bce85678418b7d3601247605d2162982.yaml
+  /usr/share/doc/hkl/BUGS/project.yaml
+  /usr/share/doc/hkl/COPYING
+  /usr/share/doc/hkl/ChangeLog
+  /usr/share/doc/hkl/NEWS
+  /usr/share/doc/hkl/README
+  /usr/share/hkl/ghkl.ui
+  /usr/share/hkl/pseudo.ui
+  /usr/share/man/man1/ghkl.1.gz
+
+(libhkl5)
+  /usr/bin/cyghkl-5.dll
+
+(libhkl-devel)
+  /usr/include/hkl-5/hkl-binoculars.h
+  /usr/include/hkl-5/hkl.h
+  /usr/include/hkl-5/hkl/ccan/ccan_config.h
+  /usr/include/hkl-5/hkl/ccan/darray/darray.h
+  /usr/lib/libhkl-binoculars.a
+  /usr/lib/libhkl.dll.a
+  /usr/lib/pkgconfig/hkl-binoculars.pc
+  /usr/lib/pkgconfig/hkl.pc
+
+(girepository-Hkl5.0)
+  /usr/lib/girepository-1.0/Hkl-5.0.typelib
+  /usr/share/gir-1.0/Hkl-5.0.gir
+
+------------------
+
+Port Notes:
+
+----- version 5.0.0.3001-1bl1 -----
+Version bump.
+
+----- version 5.0.0.2960-1bl1 -----
+Version bump.
+
+----- version 5.0.0.2875-1bl1 -----
+Version bump.
+
+----- version 5.0.0.2816-1bl1 -----
+Version bump.
+
+----- version 5.0.0.2661-1bl1 -----
+Version bump.
+
+----- version 5.0.0.2620-1bl1 -----
+Version bump.
+
+----- version 5.0.0.2569-1bl1 -----
+Version bump.
+
+----- version 5.0.0.2456-1bl1 -----
+Version bump.
+
+----- version 5.0.0.2449-1bl1 -----
+Version bump.
+
+----- version 4.0.0-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

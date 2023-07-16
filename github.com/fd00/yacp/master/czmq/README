@@ -1,0 +1,188 @@
+czmq
+------------------------------------------
+CZMQ - High-level C Binding for ZeroMQ
+
+Runtime requirements:
+  cygwin-3.2.0-1
+  libcurl-devel-7.77.0-1
+  libcurl4-7.77.0-1
+  libczmq-devel-4.2.1-1bl1
+  libczmq4-4.2.1-1bl1
+  liblz4-devel-1.7.5-1
+  liblz4_1-1.7.5-1
+  libmicrohttpd-devel-0.9.73-1bl1
+  libmicrohttpd12-0.9.73-1bl1
+  libuuid-devel-2.33.1-2
+  libuuid1-2.33.1-2
+  libzmq-devel-4.2.3-1
+  libzmq5-4.2.3-1
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  asciidoc-9.0.5-1
+  autoconf-13-1
+  automake-11-1
+  binutils-2.36.1-2
+  cmake-3.20.0-1
+  cygport-0.34.0-1
+  gcc-core-10.2.0-1
+  gcc-g++-10.2.0-1
+  libcurl-devel-7.77.0-1
+  liblz4-devel-1.7.5-1
+  libmicrohttpd-devel-0.9.73-1bl1
+  libtool-2.4.6-7
+  libuuid-devel-2.33.1-2
+  libzmq-devel-4.2.3-1
+  lua-5.3.6-2
+  make-4.3-1
+  ruby-2.6.4-1
+
+Canonical website:
+  http://czmq.zeromq.org/
+
+Canonical download:
+  https://github.com/zeromq/czmq/archive/v4.2.1.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack czmq-4.2.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./czmq-4.2.1-X.cygport all
+
+This will create:
+  /usr/src/czmq-4.2.1-X-src.tar.xz
+  /usr/src/czmq-4.2.1-X.tar.xz
+  /usr/src/libczmq4-4.2.1-X.tar.xz
+  /usr/src/libczmq-devel-4.2.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(czmq)
+  /usr/bin/zmakecert.exe
+  /usr/share/doc/Cygwin/czmq.README
+  /usr/share/doc/czmq/AUTHORS
+  /usr/share/doc/czmq/LICENSE
+  /usr/share/doc/czmq/NEWS
+  /usr/share/doc/czmq/README.md
+  /usr/share/doc/czmq/readme.txt
+
+(libczmq4)
+  /usr/bin/cygczmq-4.dll
+
+(libczmq-devel)
+  /usr/include/czmq/czmq.h
+  /usr/include/czmq/czmq_library.h
+  /usr/include/czmq/czmq_prelude.h
+  /usr/include/czmq/zactor.h
+  /usr/include/czmq/zargs.h
+  /usr/include/czmq/zarmour.h
+  /usr/include/czmq/zauth.h
+  /usr/include/czmq/zbeacon.h
+  /usr/include/czmq/zcert.h
+  /usr/include/czmq/zcertstore.h
+  /usr/include/czmq/zchunk.h
+  /usr/include/czmq/zclock.h
+  /usr/include/czmq/zconfig.h
+  /usr/include/czmq/zdigest.h
+  /usr/include/czmq/zdir.h
+  /usr/include/czmq/zdir_patch.h
+  /usr/include/czmq/zfile.h
+  /usr/include/czmq/zframe.h
+  /usr/include/czmq/zgossip.h
+  /usr/include/czmq/zhash.h
+  /usr/include/czmq/zhashx.h
+  /usr/include/czmq/zhttp_client.h
+  /usr/include/czmq/zhttp_request.h
+  /usr/include/czmq/zhttp_response.h
+  /usr/include/czmq/zhttp_server.h
+  /usr/include/czmq/zhttp_server_options.h
+  /usr/include/czmq/ziflist.h
+  /usr/include/czmq/zlist.h
+  /usr/include/czmq/zlistx.h
+  /usr/include/czmq/zloop.h
+  /usr/include/czmq/zmonitor.h
+  /usr/include/czmq/zmsg.h
+  /usr/include/czmq/zosc.h
+  /usr/include/czmq/zpoller.h
+  /usr/include/czmq/zproc.h
+  /usr/include/czmq/zproxy.h
+  /usr/include/czmq/zrex.h
+  /usr/include/czmq/zsock.h
+  /usr/include/czmq/zstr.h
+  /usr/include/czmq/zsys.h
+  /usr/include/czmq/ztimerset.h
+  /usr/include/czmq/ztrie.h
+  /usr/include/czmq/zuuid.h
+  /usr/lib/libczmq.dll.a
+  /usr/lib/pkgconfig/libczmq.pc
+  /usr/share/zproject/czmq/python_cffi.slurp
+  /usr/share/zproject/czmq/zactor.api
+  /usr/share/zproject/czmq/zargs.api
+  /usr/share/zproject/czmq/zarmour.api
+  /usr/share/zproject/czmq/zcert.api
+  /usr/share/zproject/czmq/zcertstore.api
+  /usr/share/zproject/czmq/zchunk.api
+  /usr/share/zproject/czmq/zclock.api
+  /usr/share/zproject/czmq/zconfig.api
+  /usr/share/zproject/czmq/zdigest.api
+  /usr/share/zproject/czmq/zdir.api
+  /usr/share/zproject/czmq/zdir_patch.api
+  /usr/share/zproject/czmq/zfile.api
+  /usr/share/zproject/czmq/zframe.api
+  /usr/share/zproject/czmq/zgossip_msg.api
+  /usr/share/zproject/czmq/zhash.api
+  /usr/share/zproject/czmq/zhashx.api
+  /usr/share/zproject/czmq/zhttp_client.api
+  /usr/share/zproject/czmq/zhttp_request.api
+  /usr/share/zproject/czmq/zhttp_response.api
+  /usr/share/zproject/czmq/zhttp_server.api
+  /usr/share/zproject/czmq/zhttp_server_options.api
+  /usr/share/zproject/czmq/ziflist.api
+  /usr/share/zproject/czmq/zlist.api
+  /usr/share/zproject/czmq/zlistx.api
+  /usr/share/zproject/czmq/zloop.api
+  /usr/share/zproject/czmq/zmsg.api
+  /usr/share/zproject/czmq/zosc.api
+  /usr/share/zproject/czmq/zpoller.api
+  /usr/share/zproject/czmq/zproc.api
+  /usr/share/zproject/czmq/zsock.api
+  /usr/share/zproject/czmq/zsock_option.api
+  /usr/share/zproject/czmq/zstr.api
+  /usr/share/zproject/czmq/zsys.api
+  /usr/share/zproject/czmq/ztimerset.api
+  /usr/share/zproject/czmq/ztrie.api
+  /usr/share/zproject/czmq/zuuid.api
+
+------------------
+
+Port Notes:
+
+----- version 4.2.1-1bl1 -----
+Version bump.
+
+----- version 4.2.0-1bl1 -----
+Version bump.
+
+----- version 4.1.1-1bl1 -----
+Version bump.
+
+----- version 3.0.2-1bl2 -----
+Rebuild for libzmq
+
+----- version 3.0.2-1bl1 -----
+Version bump.
+
+----- version 3.0.0-rc1-1bl1 -----
+Version bump.
+
+----- version 1.4.1-1bl1 -----
+Version bump.
+
+----- version 1.1.0-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

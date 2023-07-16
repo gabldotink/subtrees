@@ -1,0 +1,73 @@
+dynamips
+------------------------------------------
+Cisco 7200/3600/3725/3745/2600/1700 Router Emulator
+
+Runtime requirements:
+  cygwin-3.4.3-1
+  libelf0-0.8.13-3
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.39-1
+  cmake-3.23.2-1
+  cygport-0.35.5-1
+  gcc-core-11.3.0-1
+  libelf-devel-0.8.13-3
+  ninja-1.11.1-1
+
+Canonical website:
+  https://github.com/GNS3/dynamips
+
+Canonical download:
+  https://github.com/GNS3/dynamips/archive/refs/tags/v0.2.23.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack dynamips-0.2.23-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./dynamips-0.2.23-X.cygport all
+
+This will create:
+  /usr/src/dynamips-0.2.23-X-src.tar.xz
+  /usr/src/dynamips-0.2.23-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(dynamips)
+  /usr/bin/dynamips.exe
+  /usr/bin/nvram_export.exe
+  /usr/share/doc/Cygwin/dynamips.README
+  /usr/share/doc/dynamips/COPYING
+  /usr/share/doc/dynamips/ChangeLog
+  /usr/share/doc/dynamips/MAINTAINERS
+  /usr/share/doc/dynamips/README.hypervisor
+  /usr/share/doc/dynamips/README.md
+  /usr/share/doc/dynamips/RELEASE-NOTES
+  /usr/share/doc/dynamips/TODO
+  /usr/share/man/man1/dynamips.1.gz
+  /usr/share/man/man1/nvram_export.1.gz
+  /usr/share/man/man7/hypervisor_mode.7.gz
+
+------------------
+
+Port Notes:
+
+----- version 0.2.23-1bl1 -----
+Version bump.
+
+----- version 0.2.22-1bl1 -----
+Version bump.
+
+----- version 0.2.21-1bl1 -----
+Version bump.
+
+----- version 0.2.20-1bl1 -----
+Version bump.
+
+----- version 0.2.18-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

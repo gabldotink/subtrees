@@ -1,0 +1,322 @@
+libcouchbase
+------------------------------------------
+The C library provides fast access to documents in Couchbase Server 2.0. With
+JSON documents and Couchbase server 2.0 you have new ways to index and query
+data stored in the cluster through views. This client library, libcouchbase,
+also simplifies requests to Views through its handling of HTTP transport.
+
+Runtime requirements:
+  cygwin-3.3.6-1
+  libcouchbase-devel-3.3.3-1bl1
+  libcouchbase8-3.3.3-1bl1
+  libev4-4.33-1
+  libevent2.1_7-2.1.12-1
+  libgcc1-11.3.0-1
+  libhdr_histogram6-0.11.6-1bl1
+  libsnappy1-1.1.7-1
+  libssl1.1-1.1.1s-1
+  libstdc++6-11.3.0-1
+  libuv1-1.44.2-1
+  pkg-config-1.9.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.39-1
+  cmake-3.23.2-1
+  cygport-0.35.4-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libev-devel-4.33-1
+  libevent-devel-2.1.12-1
+  libhdr_histogram-devel-0.11.6-1bl1
+  libsnappy-devel-1.1.7-1
+  libssl-devel-1.1.1s-1
+  libuv-devel-1.44.2-1
+  ninja-1.11.1-1
+  re2c-3.0-1bl1
+
+Canonical website:
+  https://github.com/couchbase/libcouchbase
+
+Canonical download:
+  https://github.com/couchbase/libcouchbase/archive/refs/tags/3.3.3.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libcouchbase-3.3.3-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libcouchbase-3.3.3-X.cygport all
+
+This will create:
+  /usr/src/libcouchbase-3.3.3-X-src.tar.xz
+  /usr/src/libcouchbase-3.3.3-X.tar.xz
+  /usr/src/libcouchbase8-3.3.3-X.tar.xz
+  /usr/src/libcouchbase8-libev-3.3.3-X.tar.xz
+  /usr/src/libcouchbase8-libevent-3.3.3-X.tar.xz
+  /usr/src/libcouchbase8-libuv-3.3.3-X.tar.xz
+  /usr/src/libcouchbase-devel-3.3.3-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libcouchbase)
+  /usr/bin/cbc-admin
+  /usr/bin/cbc-bucket-create
+  /usr/bin/cbc-bucket-delete
+  /usr/bin/cbc-bucket-flush
+  /usr/bin/cbc-bucket-list
+  /usr/bin/cbc-cat
+  /usr/bin/cbc-collection-id
+  /usr/bin/cbc-collection-manifest
+  /usr/bin/cbc-connstr
+  /usr/bin/cbc-create
+  /usr/bin/cbc-decr
+  /usr/bin/cbc-gen.exe
+  /usr/bin/cbc-hash
+  /usr/bin/cbc-incr
+  /usr/bin/cbc-keygen
+  /usr/bin/cbc-lock
+  /usr/bin/cbc-mcversion
+  /usr/bin/cbc-n1ql
+  /usr/bin/cbc-n1qlback.exe
+  /usr/bin/cbc-observe
+  /usr/bin/cbc-observe-seqno
+  /usr/bin/cbc-pillowfight.exe
+  /usr/bin/cbc-ping
+  /usr/bin/cbc-proxy.exe
+  /usr/bin/cbc-rm
+  /usr/bin/cbc-role-list
+  /usr/bin/cbc-stats
+  /usr/bin/cbc-strerror
+  /usr/bin/cbc-subdoc.exe
+  /usr/bin/cbc-touch
+  /usr/bin/cbc-unlock
+  /usr/bin/cbc-user-delete
+  /usr/bin/cbc-user-list
+  /usr/bin/cbc-user-upsert
+  /usr/bin/cbc-verbosity
+  /usr/bin/cbc-version
+  /usr/bin/cbc-view
+  /usr/bin/cbc-watch
+  /usr/bin/cbc-write-config
+  /usr/bin/cbc.exe
+  /usr/share/doc/Cygwin/libcouchbase.README
+  /usr/share/doc/libcouchbase/CONTRIBUTING.md
+  /usr/share/doc/libcouchbase/LICENSE
+  /usr/share/doc/libcouchbase/README.markdown
+  /usr/share/doc/libcouchbase/RELEASE_NOTES.markdown
+  /usr/share/man/man1/cbc-admin.1.gz
+  /usr/share/man/man1/cbc-bucket-create.1.gz
+  /usr/share/man/man1/cbc-bucket-delete.1.gz
+  /usr/share/man/man1/cbc-cat.1.gz
+  /usr/share/man/man1/cbc-connstr.1.gz
+  /usr/share/man/man1/cbc-cp.1.gz
+  /usr/share/man/man1/cbc-create.1.gz
+  /usr/share/man/man1/cbc-decr.1.gz
+  /usr/share/man/man1/cbc-flush.1.gz
+  /usr/share/man/man1/cbc-hash.1.gz
+  /usr/share/man/man1/cbc-incr.1.gz
+  /usr/share/man/man1/cbc-lock.1.gz
+  /usr/share/man/man1/cbc-mcversion.1.gz
+  /usr/share/man/man1/cbc-n1ql.1.gz
+  /usr/share/man/man1/cbc-n1qlback.1.gz
+  /usr/share/man/man1/cbc-observe.1.gz
+  /usr/share/man/man1/cbc-pillowfight.1.gz
+  /usr/share/man/man1/cbc-ping.1.gz
+  /usr/share/man/man1/cbc-rm.1.gz
+  /usr/share/man/man1/cbc-role-list.1.gz
+  /usr/share/man/man1/cbc-stats.1.gz
+  /usr/share/man/man1/cbc-subdoc.1.gz
+  /usr/share/man/man1/cbc-unlock.1.gz
+  /usr/share/man/man1/cbc-user-delete.1.gz
+  /usr/share/man/man1/cbc-user-list.1.gz
+  /usr/share/man/man1/cbc-user-upsert.1.gz
+  /usr/share/man/man1/cbc-verbosity.1.gz
+  /usr/share/man/man1/cbc-version.1.gz
+  /usr/share/man/man1/cbc-view.1.gz
+  /usr/share/man/man1/cbc-watch.1.gz
+  /usr/share/man/man1/cbc.1.gz
+  /usr/share/man/man4/cbcrc.4.gz
+
+(libcouchbase8)
+  /usr/bin/cygcouchbase-8.dll
+
+(libcouchbase8-libev)
+  /usr/lib/libcouchbase/cygcouchbase_libev.dll
+
+(libcouchbase8-libevent)
+  /usr/lib/libcouchbase/cygcouchbase_libevent.dll
+
+(libcouchbase8-libuv)
+  /usr/lib/libcouchbase/cygcouchbase_libuv.dll
+
+(libcouchbase-devel)
+  /usr/include/libcouchbase/assert.h
+  /usr/include/libcouchbase/auth.h
+  /usr/include/libcouchbase/cntl-private.h
+  /usr/include/libcouchbase/cntl.h
+  /usr/include/libcouchbase/configuration.h
+  /usr/include/libcouchbase/couchbase.h
+  /usr/include/libcouchbase/crypto.h
+  /usr/include/libcouchbase/error.h
+  /usr/include/libcouchbase/iometrics.h
+  /usr/include/libcouchbase/iops.h
+  /usr/include/libcouchbase/ixmgmt.h
+  /usr/include/libcouchbase/kvbuf.h
+  /usr/include/libcouchbase/libev_io_opts.h
+  /usr/include/libcouchbase/libevent_io_opts.h
+  /usr/include/libcouchbase/libuv_io_opts.h
+  /usr/include/libcouchbase/logger.h
+  /usr/include/libcouchbase/metrics.h
+  /usr/include/libcouchbase/pktfwd.h
+  /usr/include/libcouchbase/plugins/io/bsdio-inl.c
+  /usr/include/libcouchbase/plugins/io/libuv/libuv_compat.h
+  /usr/include/libcouchbase/plugins/io/libuv/plugin-internal.h
+  /usr/include/libcouchbase/plugins/io/libuv/plugin-libuv.c
+  /usr/include/libcouchbase/plugins/io/wsaerr-inl.c
+  /usr/include/libcouchbase/plugins/io/wsaerr.h
+  /usr/include/libcouchbase/select_io_opts.h
+  /usr/include/libcouchbase/sysdefs.h
+  /usr/include/libcouchbase/tracing.h
+  /usr/include/libcouchbase/utils.h
+  /usr/include/libcouchbase/vbucket.h
+  /usr/include/libcouchbase/visibility.h
+  /usr/lib/libcouchbase.dll.a
+  /usr/lib/pkgconfig/libcouchbase.pc
+
+------------------
+
+Port Notes:
+
+----- version 3.3.3-1bl1 -----
+Version bump.
+
+----- version 3.3.1-1bl1 -----
+Version bump.
+
+----- version 3.3.0-1bl1 -----
+Version bump.
+
+----- version 3.2.3-1bl1 -----
+Version bump.
+
+----- version 3.2.2-1bl1 -----
+Version bump.
+
+----- version 3.2.1-1bl1 -----
+Version bump.
+
+----- version 3.1.3-1bl1 -----
+Version bump.
+
+----- version 3.1.1-1bl1 -----
+Version bump.
+
+----- version 3.0.7-1bl1 -----
+Version bump.
+
+----- version 3.0.6-1bl1 -----
+Version bump.
+
+----- version 3.0.5-1bl1 -----
+Version bump.
+
+----- version 3.0.4-1bl1 -----
+Version bump.
+
+----- version 3.0.3-1bl1 -----
+Version bump.
+
+----- version 2.10.6-1bl1 -----
+Version bump.
+
+----- version 2.10.5-1bl1 -----
+Version bump.
+
+----- version 2.10.4-1bl1 -----
+Version bump.
+
+----- version 2.10.3-1bl1 -----
+Version bump.
+
+----- version 2.10.0-1bl1 -----
+Version bump.
+
+----- version 2.9.5-1bl1 -----
+Version bump.
+
+----- version 2.9.4-1bl1 -----
+Version bump.
+
+----- version 2.9.3-1bl1 -----
+Version bump.
+
+----- version 2.9.0-1bl1 -----
+Version bump.
+
+----- version 2.8.7-1bl1 -----
+Version bump.
+
+----- version 2.8.6-1bl1 -----
+Version bump.
+
+----- version 2.8.5-1bl1 -----
+Version bump.
+
+----- version 2.8.3-1bl1 -----
+Version bump.
+
+----- version 2.8.1-1bl1 -----
+Version bump.
+
+----- version 2.8.0-1bl1 -----
+Version bump.
+
+----- version 2.7.6-1bl1 -----
+Version bump.
+
+----- version 2.6.4-1bl1 -----
+Version bump.
+
+----- version 2.6.1-1bl1 -----
+Version bump.
+
+----- version 2.5.8-1bl1 -----
+Version bump.
+
+----- version 2.5.3-1bl1 -----
+Version bump.
+
+----- version 2.5.0-1bl1 -----
+Version bump.
+
+----- version 2.4.7-1bl1 -----
+Version bump.
+
+----- version 2.4.3-1bl1 -----
+Version bump.
+
+----- version 2.3.2-1bl1 -----
+Version bump.
+
+----- version 2.3.0-1bl1 -----
+Version bump.
+
+----- version 2.2.0-1bl1 -----
+Version bump.
+
+----- version 2.1.2-1bl1 -----
+Version bump.
+
+----- version 2.0.4-1bl1 -----
+Version bump.
+
+----- version 2.0.2-1bl1 -----
+Version bump.
+
+----- version 1.0.2-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

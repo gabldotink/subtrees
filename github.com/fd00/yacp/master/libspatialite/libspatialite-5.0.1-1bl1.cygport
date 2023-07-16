@@ -1,0 +1,43 @@
+HOMEPAGE="https://www.gaia-gis.it/fossil/${PN}/index"
+SRC_URI="https://www.gaia-gis.it/gaia-sins/${P}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Enables SQLite to support spatial data"
+DESCRIPTION="A library extending the basic SQLite core in order to get a full fledged
+Spatial DBMS, really simple and lightweight, but mostly OGC-SFS compliant."
+
+BUILD_REQUIRES="libfreexl-devel libgeos-devel libiconv-devel libminizip-devel libproj-devel librttopo-devel libsqlite3-devel libxml2-devel zlib-devel"
+
+CYGCONF_ARGS="
+	--enable-maintainer-mode
+	--enable-geocallbacks
+"
+
+HTMLDOCS="
+	*.html
+"
+
+PKG_NAMES="
+	${PN}
+	${PN}7
+	${PN}-devel
+	sqlite3-${PN}
+"
+libspatialite_CONTENTS="
+	usr/share
+"
+libspatialite7_CONTENTS="
+	usr/bin
+"
+libspatialite_devel_CONTENTS="
+	usr/include
+	usr/lib/*.dll.a
+	usr/lib/pkgconfig
+"
+sqlite3_libspatialite_CONTENTS="
+	usr/lib/mod*.dll
+"
+libspatialite_SUMMARY="${SUMMARY} (licensing & readmes)"
+libspatialite7_SUMMARY="${SUMMARY} (runtime)"
+libspatialite_devel_SUMMARY="${SUMMARY} (development)"
+sqlite3_libspatialite_SUMMARY="${SUMMARY} (sqlite3 modules)"

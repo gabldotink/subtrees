@@ -1,0 +1,112 @@
+--- origsrc/libbsb-0.0.7/Makefile.am	2004-12-22 22:01:19.000000000 +0900
++++ src/libbsb-0.0.7/Makefile.am	2015-03-29 01:49:27.005381100 +0900
+@@ -9,8 +9,9 @@ SUBDIRS = . tests
+ valgrind-check:
+ 	cd tests && $(MAKE) $(AM_MAKEFLAGS) $@
+ 
+-lib_LIBRARIES = libbsb.a
+-libbsb_a_SOURCES = bsb_io.c
++lib_LTLIBRARIES = libbsb.la
++libbsb_la_SOURCES = bsb_io.c
++libbsb_la_LDFLAGS = -no-undefined
+ INCLUDES = -I$(top_builddir)
+ include_HEADERS = bsb.h
+ 
+@@ -22,13 +23,14 @@ if HAVE_LIBPNG
+ bin_PROGRAMS += bsb2png
+ endif
+ 
+-LDADD = libbsb.a
+-
+-bsb2tif_LDADD = libbsb.a -ltiff -lm
+-tif2bsb_LDADD = libbsb.a -ltiff -lm
++bsb2ppm_LDADD = libbsb.la
++ppm2bsb_LDADD = libbsb.la
++bsbfix_LDADD = libbsb.la
++bsb2tif_LDADD = libbsb.la $(LIBTIFF_LIBS)
++tif2bsb_LDADD = libbsb.la $(LIBTIFF_LIBS)
+ 
+ # Under MinGW libpng needs -lz (doesn't hurt under other platforms)
+-bsb2png_LDADD = libbsb.a -lpng -lz -lm
++bsb2png_LDADD = libbsb.la $(LIBPNG_LIBS)
+ 
+ if USE_MSVC
+ # The '; true' is necessary to throw away the remaining arguments from the
+@@ -37,3 +39,6 @@ libbsb_a_AR = link.exe -lib -nologo /out
+ else
+ libbsb_a_AR = ar crv
+ endif
++
++pkgconfigdir = $(libdir)/pkgconfig
++pkgconfig_DATA = libbsb.pc
+--- origsrc/libbsb-0.0.7/configure.ac	2004-12-22 22:11:36.000000000 +0900
++++ src/libbsb-0.0.7/configure.ac	2015-03-29 01:49:04.598130700 +0900
+@@ -1,14 +1,13 @@
+ dnl $Id: configure.ac,v 1.23 2004/12/22 13:11:36 stuart_hc Exp $
+ dnl
+ dnl Process this file with autoconf to produce a configure script.
+-AC_INIT(bsb2tif.c)
+-AM_INIT_AUTOMAKE(libbsb, 0.0.7)
++AC_INIT([libbsb], [0.0.7])
++AM_INIT_AUTOMAKE
+ 
+ dnl AC_PROG_CC finds CC and defaults CFLAGS (usually -g -O2)
+ orig_cflags=$CFLAGS
+ AC_PROG_CC
+ 
+-
+ dnl Default CFLAGS for developer's convenience and avoid ranlib with MSVC
+ use_msvc=no
+ case "$CC" in
+@@ -24,29 +23,21 @@ case "$CC" in
+ 		if test x"$orig_cflags" != x"$CFLAGS" ; then
+ 			CFLAGS="-g -O2 -W -Wall -Werror"
+ 		fi
+-		AC_PROG_RANLIB
++		LT_INIT
+ 		;;
+ esac
+ AM_CONDITIONAL(USE_MSVC, test x"$use_msvc" = "xyes")
+ 
+ 
+ dnl If libtiff found, build TIFF programs: tif2bsb, bsb2tif
+-have_libtiff=no
+-AC_CHECK_HEADER([tiff.h],
+-	[AC_CHECK_LIB(tiff, TIFFOpen, [ have_libtiff=yes ],
+-		[], [-lm])]
+-	)
++PKG_CHECK_MODULES([LIBTIFF], [libtiff-4], [have_libtiff=yes], [have_libtiff=no])
+ AM_CONDITIONAL(HAVE_LIBTIFF, test x"$have_libtiff" = "xyes")
+ if test x"$have_libtiff" = "xno" ; then
+ 	AC_MSG_WARN([*** TIFF conversion tools will not be built ***])
+ fi
+ 
+ dnl If libpng found, build PNG programs: tif2png
+-have_libpng=no
+-AC_CHECK_HEADER([png.h],
+-	[AC_CHECK_LIB(png, png_init_io, [ have_libpng=yes ],
+-		[], [-lz -lm])]
+-	)
++PKG_CHECK_MODULES([LIBPNG], [libpng], [have_libpng=yes], [have_libpng=no])
+ AM_CONDITIONAL(HAVE_LIBPNG, test x"$have_libpng" = "xyes")
+ if test x"$have_libpng" = "xno" ; then
+ 	AC_MSG_WARN([*** PNG conversion tools will not be built ***])
+@@ -69,4 +60,4 @@ AC_CONFIG_FILES([tests/Makefile])
+ AC_CONFIG_FILES([tests/at_wrap], [chmod +x tests/at_wrap])
+ AM_MISSING_PROG([AUTOM4TE], [autom4te])
+ 
+-AC_OUTPUT(Makefile)
++AC_OUTPUT([Makefile libbsb.pc])
+--- origsrc/libbsb-0.0.7/libbsb.pc.in	1970-01-01 09:00:00.000000000 +0900
++++ src/libbsb-0.0.7/libbsb.pc.in	2015-03-29 01:48:16.203486100 +0900
+@@ -0,0 +1,10 @@
++prefix=@prefix@
++exec_prefix=@exec_prefix@
++libdir=@libdir@
++includedir=@includedir@
++
++Name: libbsb
++Description: Portable C library for reading and writing BSB format image files
++Version: @VERSION@
++Libs: -L${libdir} -lbsb
++Cflags: -I${includedir}

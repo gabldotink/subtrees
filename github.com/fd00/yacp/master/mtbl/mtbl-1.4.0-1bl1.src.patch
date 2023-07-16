@@ -1,0 +1,10 @@
+--- origsrc/mtbl-tags-v1.4.0/Makefile.am	2021-10-27 04:11:40.000000000 +0900
++++ src/mtbl-tags-v1.4.0/Makefile.am	2021-11-03 22:12:46.675417700 +0900
+@@ -57,6 +57,7 @@ mtbl_libmtbl_la_SOURCES = \
+ 
+ mtbl_libmtbl_la_LIBADD = -lsnappy -lz $(liblz4_LIBS) $(libzstd_LIBS)
+ mtbl_libmtbl_la_LDFLAGS = $(AM_LDFLAGS) \
++	-no-undefined \
+ 	-version-info $(LIBMTBL_VERSION_INFO)
+ if HAVE_LD_VERSION_SCRIPT
+ mtbl_libmtbl_la_LDFLAGS += \

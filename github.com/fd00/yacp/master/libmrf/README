@@ -1,0 +1,71 @@
+libmrf
+------------------------------------------
+Library for manipulating Mapped Read Format (MRF) files
+
+Runtime requirements:
+  cygwin-2.10.0-1
+  libbios-devel-1.0.0+git20131115-1bl2
+  libbios0-1.0.0+git20131115-1bl2
+  libgsl-devel-2.3-2
+  libmrf0-0.7.0+git20131115-1bl2
+  pkg-config-0.29.1-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-10-1
+  binutils-2.29-1
+  cygport-0.31.1-1
+  gcc-core-7.3.0-3
+  libtool-2.4.6-6
+  make-4.2.1-2
+
+Canonical website:
+  https://github.com/sbonerlab/libmrf
+
+Canonical download:
+  https://github.com/sbonerlab/libmrf.git
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libmrf-0.7.0+git20131115-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libmrf-0.7.0+git20131115-X.cygport all
+
+This will create:
+  /usr/src/libmrf-0.7.0+git20131115-X-src.tar.xz
+  /usr/src/libmrf-0.7.0+git20131115-X.tar.xz
+  /usr/src/libmrf0-0.7.0+git20131115-X.tar.xz
+  /usr/src/libmrf-devel-0.7.0+git20131115-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libmrf)
+  /usr/share/doc/Cygwin/libmrf.README
+  /usr/share/doc/libmrf/README
+
+(libmrf0)
+  /usr/bin/cygmrf-0.dll
+
+(libmrf-devel)
+  /usr/include/mrf/mrf.h
+  /usr/include/mrf/mrfUtil.h
+  /usr/include/mrf/sam.h
+  /usr/include/mrf/segmentationUtil.h
+  /usr/lib/libmrf.dll.a
+  /usr/lib/pkgconfig/mrf.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.7.0+git20131115-1bl2 -----
+Rebuild with gcc-7.3.0
+
+----- version 0.7.0+git20131115-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

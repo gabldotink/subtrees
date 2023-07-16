@@ -1,0 +1,95 @@
+console_bridge
+------------------------------------------
+A ROS-independent package for logging that seamlessly pipes into
+rosconsole/rosout for ROS-dependent packages
+
+Runtime requirements:
+  cygwin-3.3.4-2
+  libconsole_bridge-devel-1.0.2-1bl1
+  libconsole_bridge1.0-1.0.2-1bl1
+  libgcc1-11.3.0-1
+  libstdc++6-11.3.0-1
+  pkg-config-1.8.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.38-1
+  cmake-3.20.0-1
+  cygport-0.35.0-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libgtest-devel-1.11.0-1bl1
+  ninja-1.10.2-1
+
+Canonical website:
+  https://github.com/ros/console_bridge
+
+Canonical download:
+  https://github.com/ros/console_bridge/archive/refs/tags/1.0.2.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack console_bridge-1.0.2-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./console_bridge-1.0.2-X.cygport all
+
+This will create:
+  /usr/src/console_bridge-1.0.2-X-src.tar.xz
+  /usr/src/console_bridge-1.0.2-X.tar.xz
+  /usr/src/libconsole_bridge1.0-1.0.2-X.tar.xz
+  /usr/src/libconsole_bridge-devel-1.0.2-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(console_bridge)
+  /usr/share/doc/Cygwin/console_bridge.README
+  /usr/share/doc/console_bridge/CONTRIBUTING.md
+  /usr/share/doc/console_bridge/LICENSE
+  /usr/share/doc/console_bridge/QUALITY_DECLARATION.md
+  /usr/share/doc/console_bridge/README.md
+
+(libconsole_bridge1.0)
+  /usr/bin/cygconsole_bridge-1.0.dll
+
+(libconsole_bridge-devel)
+  /usr/include/console_bridge/console.h
+  /usr/include/console_bridge/console_bridge_export.h
+  /usr/lib/cmake/console_bridge/console_bridge-config-version.cmake
+  /usr/lib/cmake/console_bridge/console_bridge-config.cmake
+  /usr/lib/cmake/console_bridge/console_bridge-targets-release.cmake
+  /usr/lib/cmake/console_bridge/console_bridge-targets.cmake
+  /usr/lib/libconsole_bridge.dll.a
+  /usr/lib/pkgconfig/console_bridge.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.0.2-1bl1 -----
+Version bump.
+
+----- version 1.0.1-1bl1 -----
+Version bump.
+
+----- version 1.0.0-1bl1 -----
+Version bump.
+
+----- version 0.4.4-1bl1 -----
+Version bump.
+
+----- version 0.4.3-1bl1 -----
+Version bump.
+
+----- version 0.4.0-1bl1 -----
+Version bump.
+
+----- version 0.3.2-1bl2 -----
+Rebuild with gcc-5.4.0
+
+----- version 0.3.2-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

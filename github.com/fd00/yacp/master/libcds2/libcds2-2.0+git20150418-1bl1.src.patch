@@ -1,0 +1,50 @@
+--- origsrc/libcds2/Makefile.am	2016-12-31 00:47:48.000000000 +0900
++++ src/libcds2/Makefile.am	2016-12-31 00:48:15.377742900 +0900
+@@ -3,7 +3,7 @@
+ 
+ ACLOCAL_AMFLAGS = -I m4
+ 
+-SUBDIRS = include lib dep tests
++SUBDIRS = include lib tests
+ 
+ pkgconfigdir = $(libdir)/pkgconfig
+ pkgconfig_DATA = cds$(CDS_API_VERSION).pc
+--- origsrc/libcds2/configure.ac	2016-12-31 00:47:49.000000000 +0900
++++ src/libcds2/configure.ac	2016-12-31 00:48:29.793623300 +0900
+@@ -50,5 +50,4 @@ AC_CONFIG_FILES([Makefile
+                  tests/Makefile
+                  include/Makefile
+                  cds${CDS_API_VERSION}.pc:cds.pc.in])
+-AC_CONFIG_SUBDIRS([dep/gtest-1.6.0])
+ AC_OUTPUT
+--- origsrc/libcds2/lib/Makefile.am	2016-12-31 00:47:50.000000000 +0900
++++ src/libcds2/lib/Makefile.am	2016-12-31 00:48:58.872131700 +0900
+@@ -1,9 +1,9 @@
+ # This Makefile builds the libcds library.
+ 
+-AM_CPPFLAGS = -I../include/
++AM_CPPFLAGS = -I$(top_srcdir)/include/
+ 
+ lib_LTLIBRARIES = libcds@CDS_API_VERSION@.la
+-libcds@CDS_API_VERSION@_la_LDFLAGS = -version-info $(CDS_SO_VERSION)
++libcds@CDS_API_VERSION@_la_LDFLAGS = -no-undefined -version-info $(CDS_SO_VERSION)
+ libcds@CDS_API_VERSION@_la_SOURCES = \
+     ../src/basic/array.cpp \
+     ../src/basic/io.cpp \
+--- origsrc/libcds2/tests/Makefile.am	2016-12-31 00:47:51.000000000 +0900
++++ src/libcds2/tests/Makefile.am	2016-12-31 00:49:28.184240600 +0900
+@@ -1,12 +1,12 @@
+ # This Makefile is used to build and execute the tests when "make check"
+ # is run.
+ 
+-AM_CXXFLAGS = $(PTHREAD_CFLAGS) -I../include/ -I../dep/gtest-1.6.0/include/
++AM_CXXFLAGS = $(PTHREAD_CFLAGS) -I$(top_srcdir)/include/
+ AM_LIBS = $(PTHREAD_LIBS)
+ 
+ check_PROGRAMS = test_array test_ioh test_libcdsh test_timeh test_bitsequence test_bitsequenceonelevelrank test_sequence test_mappernone test_codernone test_permutationmrrr test_treelouds test_memorymanager
+ 
+-LDADD = ../dep/gtest-1.6.0/lib/libgtest.la ../lib/libcds$(CDS_API_VERSION).la
++LDADD = -lgtest ../lib/libcds$(CDS_API_VERSION).la
+ test_array_SOURCES                   = test_array.cpp test_main.cpp
+ test_ioh_SOURCES                     = test_ioh.cpp test_main.cpp
+ test_libcdsh_SOURCES                 = test_libcdsh.cpp test_main.cpp

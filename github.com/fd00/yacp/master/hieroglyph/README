@@ -1,0 +1,120 @@
+hieroglyph
+------------------------------------------
+Hieroglyph is a PostScript rendering library with the own PostScript
+interpreter, supporting the pluggable I/O devices and the extensions.
+
+Runtime requirements:
+  cygwin-1.7.31-3
+  libcairo2-1.12.16-1
+  libedit0-20130712-1
+  libgcc1-4.9.0-1
+  libglib2.0-devel-2.38.2-3
+  libglib2.0_0-2.38.2-3
+  libhieroglyph-devel-0.0.1+git20110623-1bl2
+  libhieroglyph0-0.0.1+git20110623-1bl2
+  libX11_6-1.6.2-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-9-1
+  binutils-2.24.51-4
+  cygport-0.16.0-1
+  flex-2.5.39-1
+  gcc-core-4.9.0-1
+  libtool-2.4.2-5
+  make-4.0-2
+  ruby-1.9.3-p545-1
+
+Canonical website:
+  http://cgit.freedesktop.org/hieroglyph/
+
+Canonical download:
+  git://anongit.freedesktop.org/hieroglyph
+
+-------------------------------------------
+
+Build instructions:
+  unpack hieroglyph-0.0.1+git20110623-X-src.tar.xz
+    if you use setup to install this src package, it will be
+        unpacked under /usr/src automatically
+  cd /usr/src
+  cygport ./hieroglyph-0.0.1+git20110623-X.cygport all
+
+This will create:
+  /usr/src/hieroglyph-0.0.1+git20110623-X-src.tar.xz
+  /usr/src/hieroglyph-0.0.1+git20110623-X.tar.xz
+  /usr/src/libhieroglyph0-0.0.1+git20110623-X.tar.xz
+  /usr/src/libhieroglyph-devel-0.0.1+git20110623-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(hieroglyph)
+  /usr/bin/hgs.exe
+  /usr/share/doc/Cygwin/hieroglyph.README
+  /usr/share/doc/hieroglyph/AUTHORS
+  /usr/share/doc/hieroglyph/COPYING
+  /usr/share/doc/hieroglyph/README
+  /usr/share/hieroglyph/0.0/lib/hg_init.ps
+  /usr/share/hieroglyph/0.0/lib/hg_init_l1.ps
+  /usr/share/hieroglyph/0.0/lib/hg_init_l2.ps
+  /usr/share/hieroglyph/0.0/lib/hg_init_l3.ps
+  /usr/share/hieroglyph/0.0/lib/hg_unittest.ps
+
+(libhieroglyph0)
+  /usr/bin/cyghieroglyph-0.dll
+  /usr/lib/hieroglyph/0.0/devices/cyghgdev-cairo.dll
+  /usr/lib/hieroglyph/0.0/plugins/cygext-libedit.dll
+  /usr/lib/hieroglyph/0.0/plugins/cygext-unittest.dll
+
+(libhieroglyph-devel)
+  /usr/include/hieroglyph/hgallocator.h
+  /usr/include/hieroglyph/hgarray.h
+  /usr/include/hieroglyph/hgbool.h
+  /usr/include/hieroglyph/hgdevice.h
+  /usr/include/hieroglyph/hgdict.h
+  /usr/include/hieroglyph/hgencoding.h
+  /usr/include/hieroglyph/hgerror.h
+  /usr/include/hieroglyph/hgfile.h
+  /usr/include/hieroglyph/hggstate.h
+  /usr/include/hieroglyph/hgint.h
+  /usr/include/hieroglyph/hglineedit.h
+  /usr/include/hieroglyph/hgmacros.h
+  /usr/include/hieroglyph/hgmark.h
+  /usr/include/hieroglyph/hgmatrix.h
+  /usr/include/hieroglyph/hgmem.h
+  /usr/include/hieroglyph/hgmessages.h
+  /usr/include/hieroglyph/hgname.h
+  /usr/include/hieroglyph/hgnull.h
+  /usr/include/hieroglyph/hgobject.h
+  /usr/include/hieroglyph/hgoperator.h
+  /usr/include/hieroglyph/hgpath.h
+  /usr/include/hieroglyph/hgplugin.h
+  /usr/include/hieroglyph/hgquark.h
+  /usr/include/hieroglyph/hgreal.h
+  /usr/include/hieroglyph/hgsnapshot.h
+  /usr/include/hieroglyph/hgstack.h
+  /usr/include/hieroglyph/hgstring.h
+  /usr/include/hieroglyph/hgtypes.h
+  /usr/include/hieroglyph/hgutils.h
+  /usr/include/hieroglyph/hgversion.h
+  /usr/include/hieroglyph/hgvm.h
+  /usr/lib/hieroglyph/include/hgconfig.h
+  /usr/lib/libhieroglyph.dll.a
+  /usr/lib/pkgconfig/hieroglyph.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.0.1+git20110623-1bl2 -----
+Rebuild on x86_64
+
+----- version 0.0.1+git20110623-1bl1 -----
+Vrsion bump.
+
+----- version 0.0.1+git20101216-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>
+

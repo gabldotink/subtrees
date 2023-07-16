@@ -1,0 +1,134 @@
+pigment
+------------------------------------------
+Pigment is a 3D scene graph library designed to easily create rich application
+user interfaces.
+
+Runtime requirements:
+  cygwin-1.7.35-1
+  libcairo2-1.12.18-2
+  libEGL1-10.3.7-1
+  libgdk_pixbuf2.0-devel-2.31.1-1
+  libgdk_pixbuf2.0_0-2.31.1-1
+  libgdk_pixbuf_xlib2.0_0-2.31.1-1
+  libGL1-10.3.7-1
+  libGLESv1_CM1-10.3.7-1
+  libglib2.0-devel-2.42.2-1
+  libglib2.0_0-2.42.2-1
+  libgstinterfaces0.10-devel-0.10.36-2
+  libgstinterfaces0.10_0-0.10.36-2
+  libgstreamer0.10-devel-0.10.36-2
+  libgstreamer0.10_0-0.10.36-2
+  libgtk2.0-devel-2.24.27-1
+  libgtk2.0_0-2.24.27-1
+  libpango1.0_0-1.36.8-1
+  libpigment-gtk0.3-devel-0.3.17-1bl2
+  libpigment-gtk0.3_11-0.3.17-1bl2
+  libpigment-imaging0.3-devel-0.3.17-1bl2
+  libpigment-imaging0.3_11-0.3.17-1bl2
+  libpigment0.3-devel-0.3.17-1bl2
+  libpigment0.3_11-0.3.17-1bl2
+  libX11_6-1.6.3-1
+  libXrender1-0.9.8-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-9-1
+  binutils-2.25-1
+  cygport-0.18.1-1
+  gcc-core-4.9.2-3
+  libtool-2.4.6-1
+  make-4.1-1
+
+Canonical website:
+  https://code.fluendo.com/pigment/trac
+
+Canonical download:
+  https://code.fluendo.com/pigment/svn
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack pigment-0.3.17-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./pigment-0.3.17-X.cygport all
+
+This will create:
+  /usr/src/pigment-0.3.17-X-src.tar.xz
+  /usr/src/pigment-0.3.17-X.tar.xz
+  /usr/src/libpigment0.3_11-0.3.17-X.tar.xz
+  /usr/src/libpigment0.3-devel-0.3.17-X.tar.xz
+  /usr/src/libpigment-gtk0.3_11-0.3.17-X.tar.xz
+  /usr/src/libpigment-gtk0.3-devel-0.3.17-X.tar.xz
+  /usr/src/libpigment-imaging0.3_11-0.3.17-X.tar.xz
+  /usr/src/libpigment-imaging0.3-devel-0.3.17-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(pigment)
+  /usr/share/doc/Cygwin/pigment.README
+  /usr/share/doc/pigment/AUTHORS
+  /usr/share/doc/pigment/COPYING
+  /usr/share/doc/pigment/ChangeLog
+  /usr/share/doc/pigment/HACKING
+  /usr/share/doc/pigment/NEWS
+  /usr/share/doc/pigment/README
+  /usr/share/doc/pigment/TODO
+
+(libpigment0.3_11)
+  /usr/bin/cygpigment-0.3-11.dll
+  /usr/lib/pigment-0.3/0.3.17/cygpgmboilerplate.dll
+  /usr/lib/pigment-0.3/0.3.17/cygpgmopengl.dll
+  /usr/lib/pigment-0.3/0.3.17/cygpgmopengles.dll
+
+(libpigment0.3-devel)
+  /usr/include/pigment-0.3/pgm/pgm.h
+  /usr/include/pigment-0.3/pgm/pgmcanvas.h
+  /usr/include/pigment-0.3/pgm/pgmcommon.h
+  /usr/include/pigment-0.3/pgm/pgmdrawable.h
+  /usr/include/pigment-0.3/pgm/pgmenumtypes.h
+  /usr/include/pigment-0.3/pgm/pgmevents.h
+  /usr/include/pigment-0.3/pgm/pgmimage.h
+  /usr/include/pigment-0.3/pgm/pgmimagesink.h
+  /usr/include/pigment-0.3/pgm/pgmkeysyms.h
+  /usr/include/pigment-0.3/pgm/pgmlinearalgebra.h
+  /usr/include/pigment-0.3/pgm/pgmmarshal.h
+  /usr/include/pigment-0.3/pgm/pgmmodule.h
+  /usr/include/pigment-0.3/pgm/pgmplugin.h
+  /usr/include/pigment-0.3/pgm/pgmtext.h
+  /usr/include/pigment-0.3/pgm/pgmversion.h
+  /usr/include/pigment-0.3/pgm/pgmviewport.h
+  /usr/include/pigment-0.3/pgm/pgmviewportfactory.h
+  /usr/lib/libpigment-0.3.dll.a
+  /usr/lib/pkgconfig/pigment-0.3.pc
+
+(libpigment-gtk0.3_11)
+  /usr/bin/cygpigment-gtk-0.3-11.dll
+
+(libpigment-gtk0.3-devel)
+  /usr/include/pigment-0.3/pgm/gtk/pgmgtk.h
+  /usr/lib/libpigment-gtk-0.3.dll.a
+  /usr/lib/pkgconfig/pigment-gtk-0.3.pc
+
+(libpigment-imaging0.3_11)
+  /usr/bin/cygpigment-imaging-0.3-11.dll
+
+(libpigment-imaging0.3-devel)
+  /usr/include/pigment-0.3/pgm/imaging/pgmimaging.h
+  /usr/lib/libpigment-imaging-0.3.dll.a
+  /usr/lib/pkgconfig/pigment-imaging-0.3.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.3.17-1bl2 -----
+Rebuild on x86_64
+
+----- version 0.3.17-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>
+

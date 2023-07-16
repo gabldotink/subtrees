@@ -1,0 +1,108 @@
+cryptominisat
+------------------------------------------
+CryptoMiniSat is a modern, multi-threaded, feature-rich, simplifying SAT
+solver.
+
+Runtime requirements:
+  cygwin-3.4.6-1
+  libboost_program_options1.66-1.66.0-1
+  libcryptominisat5-devel-5.11.4-1bl1
+  libcryptominisat5_5.11-5.11.4-1bl1
+  libgcc1-11.3.0-1
+  libstdc++6-11.3.0-1
+  pkg-config-1.9.4-1
+  zlib0-1.2.13-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.40-1
+  cmake-3.23.2-1
+  cygport-0.36.1-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libboost-devel-1.66.0-1
+  ninja-1.11.1-1
+  zlib-devel-1.2.13-1
+
+Canonical website:
+  https://www.msoos.org/cryptominisat5/
+
+Canonical download:
+  https://github.com/msoos/cryptominisat/archive/refs/tags/5.11.4.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack cryptominisat-5.11.4-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./cryptominisat-5.11.4-X.cygport all
+
+This will create:
+  /usr/src/cryptominisat-5.11.4-X-src.tar.xz
+  /usr/src/cryptominisat-5.11.4-X.tar.xz
+  /usr/src/libcryptominisat5_5.11-5.11.4-X.tar.xz
+  /usr/src/libcryptominisat5-devel-5.11.4-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(cryptominisat)
+  /usr/bin/cryptominisat5.exe
+  /usr/bin/cryptominisat5_simple.exe
+  /usr/share/doc/Cygwin/cryptominisat.README
+  /usr/share/doc/cryptominisat/AUTHORS
+  /usr/share/doc/cryptominisat/LICENSE.txt
+  /usr/share/doc/cryptominisat/README.markdown
+
+(libcryptominisat5_5.11)
+  /usr/bin/cygcryptominisat5-5.11.dll
+
+(libcryptominisat5-devel)
+  /usr/include/cryptominisat5/cryptominisat.h
+  /usr/include/cryptominisat5/cryptominisat_c.h
+  /usr/include/cryptominisat5/dimacsparser.h
+  /usr/include/cryptominisat5/solvertypesmini.h
+  /usr/include/cryptominisat5/streambuffer.h
+  /usr/lib/cmake/cryptominisat5/cryptominisat5Config.cmake
+  /usr/lib/cmake/cryptominisat5/cryptominisat5ConfigVersion.cmake
+  /usr/lib/cmake/cryptominisat5/cryptominisat5Targets-release.cmake
+  /usr/lib/cmake/cryptominisat5/cryptominisat5Targets.cmake
+  /usr/lib/libcryptominisat5.dll.a
+  /usr/lib/pkgconfig/cryptominisat.pc
+
+------------------
+
+Port Notes:
+
+----- version 5.11.4-1bl1 -----
+Version bump.
+
+----- version 5.8.0-1bl1 -----
+Version bump.
+
+----- version 5.6.8-1bl2 -----
+Rebuild for libm4ri
+
+----- version 5.6.8-1bl1 -----
+Version bump.
+
+----- version 5.6.4-1bl1 -----
+Version bump.
+
+----- version 5.0.1-1bl1 -----
+Version bump.
+
+----- version 4.5.3-1bl1 -----
+Version bump.
+
+----- version 2.9.9-1bl1 -----
+Version bump.
+
+----- version 2.9.3-1bl1 -----
+Version bump.
+
+----- version 2.9.2-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

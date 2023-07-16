@@ -1,0 +1,37 @@
+HOMEPAGE="https://gitlab.linphone.org/BC/public/${PN}"
+SRC_URI="https://gitlab.linphone.org/BC/public/${PN}/-/archive/${PV}/${P}.tar.bz2"
+
+CATEGORY="Libs"
+SUMMARY="C library implementing the RTP protocol (rfc3550)"
+DESCRIPTION="oRTP is a GPLv2 licensed C library implementing the RTP protocol (rfc3550)."
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DENABLE_DOC:BOOL=OFF
+	-DENABLE_STATIC:BOOL=OFF
+	-DENABLE_STRICT:BOOL=OFF
+"
+
+DOCS="
+	CHANGELOG.md
+"
+
+PKG_NAMES="
+	${PN}
+	lib${PN}15
+	lib${PN}-devel
+"
+ortp_CONTENTS="
+	usr/share
+"
+libortp15_CONTENTS="
+	usr/bin
+"
+libortp_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+ortp_SUMMARY="${SUMMARY} (licensing & readmes)"
+libortp15_SUMMARY="${SUMMARY} (runtime)"
+libortp_devel_SUMMARY="${SUMMARY} (development)"

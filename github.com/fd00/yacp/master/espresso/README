@@ -1,0 +1,99 @@
+espresso
+------------------------------------------
+ESPResSo is a highly versatile software package for performing and analyzing
+scientific Molecular Dynamics many-particle simulations of coarse-grained
+atomistic or bead-spring models as they are used in soft-matter research in
+physics, chemistry and molecular biology. It can be used to simulate systems
+such as polymers, liquid crystals, colloids, ferrofluids and biological
+systems, for example DNA and lipid membranes.
+
+Runtime requirements:
+  bash-4.3.48-8
+  cygwin-2.6.1-1
+  libfftw3_3-3.3.5-1
+  libgcc1-5.4.0-1
+  libopenmpi12-1.10.4-1
+  libopenmpicxx1-1.10.4-1
+  libstdc++6-5.4.0-1
+  python-2.7.12-1
+  tcl-8.5.18-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-9-1
+  binutils-2.25-4
+  cmake-3.6.2-1
+  cygport-0.23.0-1
+  gcc-core-5.4.0-1
+  gcc-g++-5.4.0-1
+  libtool-2.4.6-4
+  make-4.2.1-1
+
+Canonical website:
+  http://espressomd.org/
+
+Canonical download:
+  https://github.com/espressomd/espresso/archive/3.3.1.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack espresso-3.3.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./espresso-3.3.1-X.cygport all
+
+This will create:
+  /usr/src/espresso-3.3.1-X-src.tar.xz
+  /usr/src/espresso-3.3.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(espresso)
+  /usr/bin/Espresso.exe
+  /usr/share/doc/Cygwin/espresso.README
+  /usr/share/doc/espresso/AUTHORS
+  /usr/share/doc/espresso/COPYING
+  /usr/share/doc/espresso/ChangeLog
+  /usr/share/doc/espresso/NEWS
+  /usr/share/doc/espresso/README
+  /usr/share/espresso/scripts/ABHmath.tcl
+  /usr/share/espresso/scripts/auxiliary.tcl
+  /usr/share/espresso/scripts/blockfile_support.tcl
+  /usr/share/espresso/scripts/bundle.tcl
+  /usr/share/espresso/scripts/countBonds.tcl
+  /usr/share/espresso/scripts/dielectrics.tcl
+  /usr/share/espresso/scripts/gibbs_ghmc.tcl
+  /usr/share/espresso/scripts/init.tcl
+  /usr/share/espresso/scripts/object_in_fluid.tcl
+  /usr/share/espresso/scripts/parallel_tempering.tcl
+  /usr/share/espresso/scripts/pdb.tcl
+  /usr/share/espresso/scripts/polymer.tcl
+  /usr/share/espresso/scripts/statistics.tcl
+  /usr/share/espresso/scripts/vtf.tcl
+  /usr/share/espresso/scripts/vtk.tcl
+  /usr/share/espresso/tools/set_features
+  /usr/share/espresso/tools/trace_memory.py
+  /usr/share/espresso/tools/trace_memory.tcl
+  /usr/share/espresso/tools/uwerr.tcl
+  /usr/share/espresso/tools/vmd_plg.tcl
+
+------------------
+
+Port Notes:
+
+----- version 3.3.1-1bl1 -----
+Version bump.
+
+----- version 3.3.0-1bl1 -----
+Version bump.
+
+----- version 3.2.0-1bl1 -----
+Version bump.
+
+----- version 3.1.2-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://fd0.hatenablog.jp/>

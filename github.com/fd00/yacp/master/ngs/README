@@ -1,0 +1,128 @@
+ngs
+------------------------------------------
+Next Generation Shell is a powerful programming language and a shell designed
+specifically for Ops. Because you deserve better.
+
+Runtime requirements:
+  cygwin-3.3.5-1
+  libffi6-3.2.1-2
+  libgc1-8.0.6-1
+  libjson-c2-0.12-1
+  libpcre1-8.45-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.38-1
+  cmake-3.20.0-1
+  cygport-0.35.1-1
+  gcc-core-11.3.0-1
+  libffi-devel-3.2.1-2
+  libgc-devel-8.0.6-1
+  libjson-c-devel-0.12-1
+  libpcre-devel-8.45-1
+  ninja-1.11.0-1
+  peg-0.1.18-1bl1
+
+Canonical website:
+  https://github.com/ngs-lang/ngs
+
+Canonical download:
+  https://github.com/ngs-lang/ngs/archive/refs/tags/v0.2.14.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack ngs-0.2.14-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./ngs-0.2.14-X.cygport all
+
+This will create:
+  /usr/src/ngs-0.2.14-X-src.tar.xz
+  /usr/src/ngs-0.2.14-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(ngs)
+  /usr/bin/cleanup-vpc-amis.ngs
+  /usr/bin/cloudfront-distros.ngs
+  /usr/bin/cloudfront-invalidations.ngs
+  /usr/bin/ec2din.ngs
+  /usr/bin/ec2ei.ngs
+  /usr/bin/ec2hostsfile.ngs
+  /usr/bin/ec2sgs.ngs
+  /usr/bin/ec2snapshots.ngs
+  /usr/bin/ec2sshfile.ngs
+  /usr/bin/elb-describe-lbs.ngs
+  /usr/bin/hn.ngs
+  /usr/bin/locks.ngs
+  /usr/bin/ngs-code-stats.ngs
+  /usr/bin/ngs-jupyter-connector.ngs
+  /usr/bin/ngs.exe
+  /usr/bin/parse-trust-chain.ngs
+  /usr/bin/rds_subnet_groups.ngs
+  /usr/bin/seq.ngs
+  /usr/bin/show-codebuils.ngs
+  /usr/lib/ngs/autoload/constructors/AnsiTerminal/ItermTerminal.ngs
+  /usr/lib/ngs/autoload/constructors/Terminal/AnsiTerminal.ngs
+  /usr/lib/ngs/autoload/globals/AWS.ngs
+  /usr/lib/ngs/autoload/globals/AWS2.ngs
+  /usr/lib/ngs/autoload/globals/AnsiTerminal.ngs
+  /usr/lib/ngs/autoload/globals/ArgvMatcher.ngs
+  /usr/lib/ngs/autoload/globals/BlockingList.ngs
+  /usr/lib/ngs/autoload/globals/Channel.ngs
+  /usr/lib/ngs/autoload/globals/Cond.ngs
+  /usr/lib/ngs/autoload/globals/Deep.ngs
+  /usr/lib/ngs/autoload/globals/DelimStr.ngs
+  /usr/lib/ngs/autoload/globals/Doc.ngs
+  /usr/lib/ngs/autoload/globals/Enum.ngs
+  /usr/lib/ngs/autoload/globals/Executor.ngs
+  /usr/lib/ngs/autoload/globals/ExpBackIter.ngs
+  /usr/lib/ngs/autoload/globals/FFI.ngs
+  /usr/lib/ngs/autoload/globals/IP.ngs
+  /usr/lib/ngs/autoload/globals/Iter.ngs
+  /usr/lib/ngs/autoload/globals/ItermTerminal.ngs
+  /usr/lib/ngs/autoload/globals/KV.ngs
+  /usr/lib/ngs/autoload/globals/List.ngs
+  /usr/lib/ngs/autoload/globals/MaybeFile.ngs
+  /usr/lib/ngs/autoload/globals/MethodParam.ngs
+  /usr/lib/ngs/autoload/globals/MethodParams.ngs
+  /usr/lib/ngs/autoload/globals/NoTerminal.ngs
+  /usr/lib/ngs/autoload/globals/ProcessFail.ngs
+  /usr/lib/ngs/autoload/globals/Res.ngs
+  /usr/lib/ngs/autoload/globals/Screen.ngs
+  /usr/lib/ngs/autoload/globals/Table.ngs
+  /usr/lib/ngs/autoload/globals/Table2.ngs
+  /usr/lib/ngs/autoload/globals/Terminal.ngs
+  /usr/lib/ngs/autoload/globals/TestsResults.ngs
+  /usr/lib/ngs/autoload/globals/ThreadedExecutor.ngs
+  /usr/lib/ngs/autoload/globals/TmuxTerminal.ngs
+  /usr/lib/ngs/autoload/globals/bootstrap_invoke_main.ngs
+  /usr/lib/ngs/autoload/globals/escape_bash.ngs
+  /usr/lib/ngs/autoload/globals/mysql.ngs
+  /usr/lib/ngs/autoload/globals/test.ngs
+  /usr/lib/ngs/autoload/globals/tr.ngs
+  /usr/lib/ngs/cli.ngs
+  /usr/lib/ngs/experiments/UI.ngs
+  /usr/lib/ngs/lang-tests.ngs
+  /usr/lib/ngs/stdlib.ngs
+  /usr/share/doc/Cygwin/ngs.README
+  /usr/share/doc/ngs/CHANGELOG.md
+  /usr/share/doc/ngs/LICENSE
+  /usr/share/doc/ngs/README.md
+
+------------------
+
+Port Notes:
+
+----- version 0.2.14-1bl1 -----
+Version bump.
+
+----- version 0.2.11-1bl1 -----
+Version bump.
+
+----- version 0.2.8-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

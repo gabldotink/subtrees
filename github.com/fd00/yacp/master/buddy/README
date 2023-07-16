@@ -1,0 +1,88 @@
+buddy
+------------------------------------------
+A Binary Decision Diagram library, with :many highly efficient vectorized BDD
+operations,dynamic variable reordering,automated garbage collection,a C++
+interface with automatic reference counting,and much more.
+
+Runtime requirements:
+  cygwin-3.1.5-1
+  libbdd-devel-2.4-1bl5
+  libbdd0-2.4-1bl5
+  libgcc1-9.3.0-2
+  libstdc++6-9.3.0-2
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.34+1git.de9c1b7cfe-1
+  cygport-0.34.0-1
+  gcc-core-9.3.0-2
+  gcc-g++-9.3.0-2
+  libtool-2.4.6-7
+  make-4.3-1
+
+Canonical website:
+  http://buddy.sf.net/
+
+Canonical download:
+  mirror://sourceforge/buddy/buddy-2.4.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack buddy-2.4-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./buddy-2.4-X.cygport all
+
+This will create:
+  /usr/src/buddy-2.4-X-src.tar.xz
+  /usr/src/buddy-2.4-X.tar.xz
+  /usr/src/libbdd0-2.4-X.tar.xz
+  /usr/src/libbdd-devel-2.4-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(buddy)
+  /usr/share/doc/Cygwin/buddy.README
+  /usr/share/doc/buddy/AUTHORS
+  /usr/share/doc/buddy/ChangeLog
+  /usr/share/doc/buddy/NEWS
+  /usr/share/doc/buddy/README
+  /usr/share/doc/buddy/bddnotes.ps
+  /usr/share/doc/buddy/buddy.ps
+  /usr/share/doc/buddy/tech.txt
+
+(libbdd0)
+  /usr/bin/cygbdd-0.dll
+
+(libbdd-devel)
+  /usr/include/buddy/bdd.h
+  /usr/include/buddy/bvec.h
+  /usr/include/buddy/fdd.h
+  /usr/lib/libbdd.dll.a
+  /usr/lib/pkgconfig/buddy.pc
+
+------------------
+
+Port Notes:
+
+----- version 2.4-1bl5 -----
+Rebuild with gcc-9.3.0
+
+----- version 2.4-1bl4 -----
+Rebuild on x86_64
+
+----- version 2.4-1bl3 -----
+Rebuild with gcc-4.5.3
+
+----- version 2.4-1bl2 -----
+Repackage for licensing & readmes
+
+----- version 2.4-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

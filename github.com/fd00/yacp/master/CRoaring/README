@@ -1,0 +1,122 @@
+CRoaring
+------------------------------------------
+Roaring bitmaps are compressed bitmaps which tend to outperform conventional
+compressed bitmaps such as WAH, EWAH or Concise. In some instances, they can be
+hundreds of times faster and they often offer significantly better compression.
+
+Runtime requirements:
+  cygwin-3.4.6-1
+  libgcc1-11.3.0-1
+  libroaring-devel-0.9.9-1bl1
+  libroaring7-0.9.9-1bl1
+  pkg-config-1.9.4-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.40-1
+  cmake-3.23.2-1
+  cygport-0.36.1-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  ninja-1.11.1-1
+
+Canonical website:
+  https://roaringbitmap.org/
+
+Canonical download:
+  https://github.com/RoaringBitmap/CRoaring/archive/refs/tags/v0.9.9.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack CRoaring-0.9.9-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./CRoaring-0.9.9-X.cygport all
+
+This will create:
+  /usr/src/CRoaring-0.9.9-X-src.tar.xz
+  /usr/src/CRoaring-0.9.9-X.tar.xz
+  /usr/src/libroaring7-0.9.9-X.tar.xz
+  /usr/src/libroaring-devel-0.9.9-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(CRoaring)
+  /usr/share/doc/CRoaring/AUTHORS
+  /usr/share/doc/CRoaring/LICENSE
+  /usr/share/doc/CRoaring/README.md
+  /usr/share/doc/Cygwin/CRoaring.README
+
+(libroaring7)
+  /usr/bin/cygroaring-7.dll
+
+(libroaring-devel)
+  /usr/include/roaring/array_util.h
+  /usr/include/roaring/bitset_util.h
+  /usr/include/roaring/containers/array.h
+  /usr/include/roaring/containers/bitset.h
+  /usr/include/roaring/containers/container_defs.h
+  /usr/include/roaring/containers/containers.h
+  /usr/include/roaring/containers/convert.h
+  /usr/include/roaring/containers/mixed_andnot.h
+  /usr/include/roaring/containers/mixed_equal.h
+  /usr/include/roaring/containers/mixed_intersection.h
+  /usr/include/roaring/containers/mixed_negation.h
+  /usr/include/roaring/containers/mixed_subset.h
+  /usr/include/roaring/containers/mixed_union.h
+  /usr/include/roaring/containers/mixed_xor.h
+  /usr/include/roaring/containers/perfparameters.h
+  /usr/include/roaring/containers/run.h
+  /usr/include/roaring/isadetection.h
+  /usr/include/roaring/memory.h
+  /usr/include/roaring/misc/configreport.h
+  /usr/include/roaring/portability.h
+  /usr/include/roaring/roaring.h
+  /usr/include/roaring/roaring.hh
+  /usr/include/roaring/roaring64map.hh
+  /usr/include/roaring/roaring_array.h
+  /usr/include/roaring/roaring_types.h
+  /usr/include/roaring/roaring_version.h
+  /usr/include/roaring/utilasm.h
+  /usr/lib/cmake/roaring/roaring-config-release.cmake
+  /usr/lib/cmake/roaring/roaring-config.cmake
+  /usr/lib/libroaring.dll.a
+  /usr/lib/pkgconfig/roaring.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.9.9-1bl1 -----
+Version bump.
+
+----- version 0.8.1-1bl1 -----
+Version bump.
+
+----- version 0.8.0-1bl1 -----
+Version bump.
+
+----- version 0.7.1-1bl1 -----
+Version bump.
+
+----- version 0.6.0-1bl1 -----
+Version bump.
+
+----- version 0.5.0-1bl1 -----
+Version bump.
+
+----- version 0.4.0-1bl1 -----
+Version bump.
+
+----- version 0.3.4-1bl1 -----
+Version bump.
+
+----- version 0.3.1-1bl1 -----
+Version bump.
+
+----- version 0.2.66-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

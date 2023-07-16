@@ -1,0 +1,63 @@
+thames
+------------------------------------------
+thames is an ISIS-II emulator, allowing the tools used to build CP/M 3 to be
+run under Unix.
+
+Runtime requirements:
+  cygwin-3.1.6-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.34+1git.de9c1b7cfe-1
+  cygport-0.34.0-1
+  gcc-core-9.3.0-2
+  libtool-2.4.6-7
+  make-4.3-1
+
+Canonical website:
+  http://www.seasip.info/Unix/Thames/
+
+Canonical download:
+  http://www.seasip.info/Unix/Thames/thames-0.1.1.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack thames-0.1.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./thames-0.1.1-X.cygport all
+
+This will create:
+  /usr/src/thames-0.1.1-X-src.tar.xz
+  /usr/src/thames-0.1.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(thames)
+  /usr/bin/thames.exe
+  /usr/share/doc/Cygwin/thames.README
+  /usr/share/doc/thames/COPYING
+  /usr/share/doc/thames/ChangeLog
+  /usr/share/thames/thames.txt
+
+------------------
+
+Port Notes:
+
+----- version 0.1.1-1bl2 -----
+Rebuild with gcc-9.3.0
+
+----- version 0.1.1-1bl1 -----
+Version bump.
+
+----- version 0.1.0-1bl2 -----
+Rebuild on x86_64
+
+----- version 0.1.0-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

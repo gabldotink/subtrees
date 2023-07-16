@@ -1,0 +1,109 @@
+libbitcoin-blockchain
+------------------------------------------
+Bitcoin Blockchain Library
+
+Runtime requirements:
+  cygwin-3.0.7-1
+  libbitcoin-blockchain-devel-3.6.0-1bl1
+  libbitcoin-blockchain0-3.6.0-1bl1
+  libbitcoin-consensus-devel-3.6.0-1bl1
+  libbitcoin-consensus0-3.6.0-1bl1
+  libbitcoin-database-devel-3.6.0-1bl1
+  libbitcoin-database0-3.6.0-1bl1
+  libbitcoin0-3.6.0-1bl1
+  libboost_log1.66-1.66.0-1
+  libboost_system1.66-1.66.0-1
+  libboost_thread1.66-1.66.0-1
+  libgcc1-7.4.0-1
+  libstdc++6-7.4.0-1
+  pkg-config-1.6.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.29-1
+  cygport-0.33.1-1
+  gcc-core-7.4.0-1
+  gcc-g++-7.4.0-1
+  libtool-2.4.6-7
+  make-4.2.1-2
+
+Canonical website:
+  https://github.com/libbitcoin/libbitcoin-blockchain
+
+Canonical download:
+  https://github.com/libbitcoin/libbitcoin-blockchain/archive/v3.6.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libbitcoin-blockchain-3.6.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libbitcoin-blockchain-3.6.0-X.cygport all
+
+This will create:
+  /usr/src/libbitcoin-blockchain-3.6.0-X-src.tar.xz
+  /usr/src/libbitcoin-blockchain-3.6.0-X.tar.xz
+  /usr/src/libbitcoin-blockchain0-3.6.0-X.tar.xz
+  /usr/src/libbitcoin-blockchain-devel-3.6.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libbitcoin-blockchain)
+  /usr/share/doc/Cygwin/libbitcoin-blockchain.README
+  /usr/share/doc/libbitcoin-blockchain/AUTHORS
+  /usr/share/doc/libbitcoin-blockchain/COPYING
+  /usr/share/doc/libbitcoin-blockchain/ChangeLog
+  /usr/share/doc/libbitcoin-blockchain/INSTALL
+  /usr/share/doc/libbitcoin-blockchain/NEWS
+  /usr/share/doc/libbitcoin-blockchain/README
+  /usr/share/doc/libbitcoin-blockchain/README.md
+
+(libbitcoin-blockchain0)
+  /usr/bin/cygbitcoin-blockchain-0.dll
+
+(libbitcoin-blockchain-devel)
+  /usr/include/bitcoin/blockchain.hpp
+  /usr/include/bitcoin/blockchain/define.hpp
+  /usr/include/bitcoin/blockchain/interface/block_chain.hpp
+  /usr/include/bitcoin/blockchain/interface/fast_chain.hpp
+  /usr/include/bitcoin/blockchain/interface/safe_chain.hpp
+  /usr/include/bitcoin/blockchain/pools/block_entry.hpp
+  /usr/include/bitcoin/blockchain/pools/block_organizer.hpp
+  /usr/include/bitcoin/blockchain/pools/block_pool.hpp
+  /usr/include/bitcoin/blockchain/pools/branch.hpp
+  /usr/include/bitcoin/blockchain/pools/transaction_entry.hpp
+  /usr/include/bitcoin/blockchain/pools/transaction_organizer.hpp
+  /usr/include/bitcoin/blockchain/pools/transaction_pool.hpp
+  /usr/include/bitcoin/blockchain/populate/populate_base.hpp
+  /usr/include/bitcoin/blockchain/populate/populate_block.hpp
+  /usr/include/bitcoin/blockchain/populate/populate_chain_state.hpp
+  /usr/include/bitcoin/blockchain/populate/populate_transaction.hpp
+  /usr/include/bitcoin/blockchain/settings.hpp
+  /usr/include/bitcoin/blockchain/validate/validate_block.hpp
+  /usr/include/bitcoin/blockchain/validate/validate_input.hpp
+  /usr/include/bitcoin/blockchain/validate/validate_transaction.hpp
+  /usr/include/bitcoin/blockchain/version.hpp
+  /usr/lib/libbitcoin-blockchain.dll.a
+  /usr/lib/pkgconfig/libbitcoin-blockchain.pc
+
+------------------
+
+Port Notes:
+
+----- version 3.6.0-1bl1 -----
+Version bump.
+
+----- version 3.5.0-1bl1 -----
+Version bump.
+
+----- version 3.4.0-1bl1 -----
+Version bump.
+
+----- version 3.3.0-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

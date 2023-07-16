@@ -1,0 +1,93 @@
+libipt
+------------------------------------------
+The Intel Processor Trace (Intel PT) Decoder Library is Intel's reference
+implementation for decoding Intel PT. It can be used as a standalone library or
+it can be partially or fully integrated into your tool.
+
+Runtime requirements:
+  cygwin-3.3.5-1
+  libipt-sb2-2.0.5-1bl1
+  libipt2-2.0.5-1bl1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.38-1
+  cmake-3.20.0-1
+  cygport-0.35.0-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  ninja-1.11.0-1
+
+Canonical website:
+  https://github.com/intel/libipt
+
+Canonical download:
+  https://github.com/intel/libipt/archive/refs/tags/v2.0.5.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libipt-2.0.5-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libipt-2.0.5-X.cygport all
+
+This will create:
+  /usr/src/libipt-2.0.5-X-src.tar.xz
+  /usr/src/libipt-2.0.5-X.tar.xz
+  /usr/src/libipt2-2.0.5-X.tar.xz
+  /usr/src/libipt-devel-2.0.5-X.tar.xz
+  /usr/src/libipt-sb2-2.0.5-X.tar.xz
+  /usr/src/libipt-sb-devel-2.0.5-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libipt)
+  /usr/bin/ptdump.exe
+  /usr/bin/pttc.exe
+  /usr/share/doc/Cygwin/libipt.README
+  /usr/share/doc/libipt/CONTRIBUTING
+  /usr/share/doc/libipt/LICENSE
+  /usr/share/doc/libipt/README
+
+(libipt2)
+  /usr/bin/cygipt-2.dll
+
+(libipt-devel)
+  /usr/include/intel-pt.h
+  /usr/lib/libipt.dll.a
+
+(libipt-sb2)
+  /usr/bin/cygipt-sb-2.dll
+
+(libipt-sb-devel)
+  /usr/include/libipt-sb.h
+  /usr/lib/libipt-sb.dll.a
+
+------------------
+
+Port Notes:
+
+----- version 2.0.5-1bl1 -----
+Version bump.
+
+----- version 2.0.4-1bl1 -----
+Version bump.
+
+----- version 2.0.3-1bl1 -----
+Version bump.
+
+----- version 2.0.1-1bl1 -----
+Version bump.
+
+----- version 2.0-1bl1 -----
+Version bump.
+
+----- version 1.6.1-1bl1 -----
+Version bump.
+
+----- version 1.4.3-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

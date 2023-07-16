@@ -1,0 +1,51 @@
+HOMEPAGE="https://sourceforge.net/projects/${PN}/"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Some Useful Fortran Routines"
+DESCRIPTION="libSUFR is a library containing Some Useful Fortran Routines that I wrote for
+my own use, but that may also be useful for others. At the moment, it also
+SUFRs from the fact that Fortran module files are compiler-dependent. The
+default installer uses CMake. The code has been used with gfortran (4.4 or
+newer), g95 and Intel Fortran and can be used under the conditions of version
+3 of the GPL."
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DWANT_OPENMP:BOOL=ON
+	-DCREATE_STATICLIB:BOOL=OFF
+"
+
+DOCS="
+	VERSION
+"
+
+DIFF_EXCLUDES="
+	*.mod
+	*.dll.a
+"
+
+PKG_IGNORE="
+	usr/lib/cygSUFR-0.dll
+"
+PKG_NAMES="
+	${PN}
+	libSUFR0
+	libSUFR-devel
+"
+libsufr_CONTENTS="
+	usr/share/doc/Cygwin
+	usr/share/doc/${PN}
+"
+libSUFR0_CONTENTS="
+	usr/bin
+"
+libSUFR_devel_CONTENTS="
+	usr/include
+	usr/lib/libSUFR.dll.a
+	usr/share/man/man3*
+"
+libsufr_SUMMARY="${SUMMARY} (licensing & readmes)"
+libSUFR0_SUMMARY="${SUMMARY} (runtime)"
+libSUFR_devel_SUMMARY="${SUMMARY} (development)"

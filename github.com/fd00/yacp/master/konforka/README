@@ -1,0 +1,91 @@
+konforka
+------------------------------------------
+konforka library is a convenience library which is supposed to soak in some
+code common to our projects. It is not likely that you want to try this out
+unless you need it as a dependency for other project. This is why you should
+not expect a lengthier description here.
+
+Runtime requirements:
+  cygwin-3.1.7-1
+  libgcc1-10.2.0-1
+  libkonforka-devel-0.0+git20070411-1bl3
+  libkonforka0-0.0+git20070411-1bl3
+  libpqxx-devel-4.0.1-1
+  libpqxx4.0-4.0.1-1
+  libstdc++6-10.2.0-1
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.34+1git.de9c1b7cfe-1
+  cygport-0.34.0-1
+  gcc-core-10.2.0-1
+  gcc-g++-10.2.0-1
+  libtool-2.4.6-7
+  make-4.3-1
+
+Canonical website:
+  http://kin.klever.net/konforka/
+
+Canonical download:
+  git://git.klever.net/kin/konforka.git
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack konforka-0.0+git20070411-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./konforka-0.0+git20070411-X.cygport all
+
+This will create:
+  /usr/src/konforka-0.0+git20070411-X-src.tar.xz
+  /usr/src/konforka-0.0+git20070411-X.tar.xz
+  /usr/src/libkonforka0-0.0+git20070411-X.tar.xz
+  /usr/src/libkonforka-devel-0.0+git20070411-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(konforka)
+  /usr/share/doc/Cygwin/konforka.README
+  /usr/share/doc/konforka/AUTHORS
+  /usr/share/doc/konforka/COPYING
+  /usr/share/doc/konforka/NEWS
+
+(libkonforka0)
+  /usr/bin/cygkonforka-0.dll
+
+(libkonforka-devel)
+  /usr/include/konforka/basic_wrapper.h
+  /usr/include/konforka/exception.h
+  /usr/include/konforka/pointer_map.h
+  /usr/include/konforka/pqxx_pile.h
+  /usr/include/konforka/resource_pile.h
+  /usr/include/konforka/responsible_wrapper.h
+  /usr/include/konforka/util.h
+  /usr/lib/libkonforka.dll.a
+  /usr/lib/pkgconfig/konforka.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.0+git20070411-1bl3 -----
+Rebuild with gcc-10.2.0
+
+----- version 0.0+git20070411-1bl2 -----
+Rebuild on x86_64
+
+----- version 0.0+git20070411-1bl1 -----
+Version bump.
+
+----- version 0.0-1bl2 -----
+Repackage for licensing & readmes
+
+----- version 0.0-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

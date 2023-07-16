@@ -1,0 +1,95 @@
+hesiod
+------------------------------------------
+Hesiod is a system which uses existing DNS functionality to provide access
+to databases of information that changes infrequently.  It is often used to
+distribute information kept in the /etc/passwd, /etc/group, and /etc/printcap
+files, among others.
+
+Runtime requirements:
+  cygwin-1.7.35-1
+  cygwin-devel-1.7.35-1
+  libhesiod-devel-3.2.1-1bl2
+  libhesiod0-3.2.1-1bl2
+  libidn-devel-1.29-1
+  libidn11-1.29-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-9-1
+  binutils-2.25-1
+  cygport-0.18.1-1
+  gcc-core-4.9.2-3
+  libtool-2.4.6-1
+  make-4.1-1
+
+Canonical website:
+  ftp://athena-dist.mit.edu/pub/ATHENA/hesiod/
+
+Canonical download:
+  ftp://athena-dist.mit.edu/pub/ATHENA/hesiod/hesiod-3.2.1.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack hesiod-3.2.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./hesiod-3.2.1-X.cygport all
+
+This will create:
+  /usr/src/hesiod-3.2.1-X-src.tar.xz
+  /usr/src/hesiod-3.2.1-X.tar.xz
+  /usr/src/libhesiod0-3.2.1-X.tar.xz
+  /usr/src/libhesiod-devel-3.2.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(hesiod)
+  /usr/bin/hesinfo.exe
+  /usr/share/doc/Cygwin/hesiod.README
+  /usr/share/doc/hesiod/COPYING
+  /usr/share/doc/hesiod/NEWS
+  /usr/share/doc/hesiod/README
+  /usr/share/man/man1/hesinfo.1.gz
+  /usr/share/man/man5/hesiod.conf.5.gz
+
+(libhesiod0)
+  /usr/bin/cyghesiod-0.dll
+
+(libhesiod-devel)
+  /usr/include/hesiod.h
+  /usr/lib/libhesiod.dll.a
+  /usr/lib/pkgconfig/hesiod.pc
+  /usr/share/man/man3/hesiod.3.gz
+  /usr/share/man/man3/hesiod_end.3.gz
+  /usr/share/man/man3/hesiod_free_list.3.gz
+  /usr/share/man/man3/hesiod_free_passwd.3.gz
+  /usr/share/man/man3/hesiod_free_postoffice.3.gz
+  /usr/share/man/man3/hesiod_free_servent.3.gz
+  /usr/share/man/man3/hesiod_free_string.3.gz
+  /usr/share/man/man3/hesiod_getmailhost.3.gz
+  /usr/share/man/man3/hesiod_getpwnam.3.gz
+  /usr/share/man/man3/hesiod_getpwuid.3.gz
+  /usr/share/man/man3/hesiod_getservbyname.3.gz
+  /usr/share/man/man3/hesiod_init.3.gz
+  /usr/share/man/man3/hesiod_parse_result.3.gz
+  /usr/share/man/man3/hesiod_resolve.3.gz
+  /usr/share/man/man3/hesiod_to_bind.3.gz
+
+------------------
+
+Port Notes:
+
+----- version 3.2.1-1bl2 -----
+Rebuild on x86_64
+
+----- version 3.2.1-1bl1 -----
+Version bump.
+
+----- version 3.1.0-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>
+

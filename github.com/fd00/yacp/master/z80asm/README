@@ -1,0 +1,75 @@
+z80asm
+------------------------------------------
+z80asm is an assembler for the Z80 microprocessor. The assembler aims to be
+portable and complete. Of course it assembles all official mnemonics, but it
+also aims to assemble the unofficial mnemonics. The assembler was written with
+the MSX computer in mind as the target platform, but it can be used for any
+system with a Z80 in it. Some header files with labels of MSX specific
+addresses (BIOS, BDOS, system variables) are included.
+
+Runtime requirements:
+  cygwin-3.1.7-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.34+1git.de9c1b7cfe-1
+  cygport-0.34.0-1
+  gcc-core-10.2.0-1
+  make-4.3-1
+
+Canonical website:
+  http://www.nongnu.org/z80asm/
+
+Canonical download:
+  mirror://savannah/z80asm/z80asm-1.8.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack z80asm-1.8-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./z80asm-1.8-X.cygport all
+
+This will create:
+  /usr/src/z80asm-1.8-X-src.tar.xz
+  /usr/src/z80asm-1.8-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(z80asm)
+  /usr/bin/z80asm.exe
+  /usr/share/doc/Cygwin/z80asm.README
+  /usr/share/doc/z80asm/COPYING
+  /usr/share/doc/z80asm/ChangeLog
+  /usr/share/doc/z80asm/GPL3
+  /usr/share/doc/z80asm/TODO
+  /usr/share/doc/z80asm/examples/Makefile
+  /usr/share/doc/z80asm/examples/hello.asm
+  /usr/share/doc/z80asm/examples/macro.asm
+  /usr/share/doc/z80asm/examples/seek.asm
+  /usr/share/man/man1/z80asm.1.gz
+  /usr/share/z80asm/msx-bios.asm
+  /usr/share/z80asm/msx2+-bios.asm
+  /usr/share/z80asm/msx2-bios.asm
+  /usr/share/z80asm/msx2-subrom.asm
+  /usr/share/z80asm/msxturbor-bios.asm
+
+------------------
+
+Port Notes:
+
+----- version 1.8-1bl4 -----
+Rebuild with gcc-10.2.0
+
+----- version 1.8-1bl3 -----
+Rebuild with gcc-6.4.0
+
+----- version 1.8-1bl2 -----
+Rebuild on x86_64
+
+----- version 1.8-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

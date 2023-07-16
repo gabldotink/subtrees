@@ -1,0 +1,42 @@
+HOMEPAGE="https://nheko.im/nheko-reborn/${PN}"
+SRC_URI="https://nheko.im/nheko-reborn/${PN}/-/archive/v${PV}/${PN}-v${PV}.tar.bz2"
+SRC_DIR="${PN}-v${PV}"
+
+CATEGORY="Libs"
+SUMMARY="Simple async wrapper around CURL for C++"
+DESCRIPTION="Simple library to do http requests asynchronously via CURL in C++. (Eventually
+as coroutines, once all the compilers I need to support support them.)"
+
+LICENSE="MIT"
+LICENSE_SPDX="SPDX-License-Identifier: MIT"
+LICENSE_URI="LICENSE"
+
+BUILD_REQUIRES="libcurl-devel libevent-devel libfmt-devel libspdlog-devel"
+
+export CPPFLAGS="${CPPFLAGS} -D_GNU_SOURCE"
+
+inherit meson
+
+CYGMESON_ARGS="
+	-Dexamples=true
+	-Dtests=true
+"
+
+PKG_NAMES="
+	coeurl
+	libcoeurl${PV[1]}.${PV[2]}
+	libcoeurl-devel
+"
+coeurl_CONTENTS="
+	usr/share
+"
+libcoeurl0_3_CONTENTS="
+	usr/bin
+"
+libcoeurl_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+coeurl_SUMMARY="${SUMMARY} (licensing & readmes)"
+libcoeurl0_3_SUMMARY="${SUMMARY} (runtime)"
+libcoeurl_devel_SUMMARY="${SUMMARY} (development)"

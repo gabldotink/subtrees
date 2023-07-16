@@ -1,0 +1,112 @@
+yapet
+------------------------------------------
+YAPET is a text based password manager using the Blowfish encryption algorithm.
+Because of its small footprint and very few library dependencies, it is suited
+for installing on desktop and server systems alike.
+
+Runtime requirements:
+  cygwin-3.3.5-1
+  libargon2_1-20171227-1
+  libgcc1-11.3.0-1
+  libintl8-0.21-1
+  libncursesw10-6.1-1.20190727
+  libssl1.1-1.1.1o-1
+  libstdc++6-11.3.0-1
+  libyacurs0-1.0.2-1bl2
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.38-1
+  cygport-0.35.1-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libargon2-devel-20171227-1
+  libintl-devel-0.21-1
+  libncurses-devel-6.1-1.20190727
+  libssl-devel-1.1.1o-1
+  libtool-2.4.7-1
+  libyacurs-devel-1.0.2-1bl2
+  make-4.3-1
+
+Canonical website:
+  https://github.com/RafaelOstertag/yapet
+
+Canonical download:
+  https://github.com/RafaelOstertag/yapet/archive/refs/tags/v2.6.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack yapet-2.6-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./yapet-2.6-X.cygport all
+
+This will create:
+  /usr/src/yapet-2.6-X-src.tar.xz
+  /usr/src/yapet-2.6-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(yapet)
+  /usr/bin/csv2yapet.exe
+  /usr/bin/yapet.exe
+  /usr/bin/yapet2csv.exe
+  /usr/share/applications/yapet.desktop
+  /usr/share/doc/Cygwin/yapet.README
+  /usr/share/doc/yapet/AUTHORS
+  /usr/share/doc/yapet/BUGS
+  /usr/share/doc/yapet/COPYING
+  /usr/share/doc/yapet/LICENSE
+  /usr/share/doc/yapet/NEWS
+  /usr/share/doc/yapet/README
+  /usr/share/doc/yapet/README.md
+  /usr/share/doc/yapet/html/NEWS.html
+  /usr/share/doc/yapet/html/README.html
+  /usr/share/doc/yapet/html/csv2yapet.html
+  /usr/share/doc/yapet/html/yapet.html
+  /usr/share/doc/yapet/html/yapet2csv.html
+  /usr/share/doc/yapet/html/yapet_colors.html
+  /usr/share/doc/yapet/html/yapet_config.html
+  /usr/share/locale/de/LC_MESSAGES/yapet.mo
+  /usr/share/man/man1/csv2yapet.1.gz
+  /usr/share/man/man1/yapet.1.gz
+  /usr/share/man/man1/yapet2csv.1.gz
+  /usr/share/man/man5/yapet_colors.5.gz
+  /usr/share/man/man5/yapet_config.5.gz
+
+------------------
+
+Port Notes:
+
+----- version 2.6-1bl1 -----
+Version bump.
+
+----- version 2.5-1bl1 -----
+Version bump.
+
+----- version 2.4-1bl1 -----
+Version bump.
+
+----- version 2.3-1bl1 -----
+Version bump.
+
+----- version 1.1-1bl1 -----
+Version bump.
+
+----- version 1.0-1bl1 -----
+Version bump.
+
+----- version 0.8pre2-1bl1 -----
+Version bump.
+
+----- version 0.7-1bl1 -----
+Version bump.
+
+----- version 0.6-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

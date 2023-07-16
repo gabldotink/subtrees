@@ -1,0 +1,81 @@
+libbdplus
+------------------------------------------
+This library is written for the purpose of playing Blu-ray movies. It is
+intended for software that want to support Blu-ray playback (such as VLC and
+MPlayer). We, the authors of this library, do not condone nor endorse piracy.
+
+Runtime requirements:
+  cygwin-3.3.5-1
+  libbdplus-devel-0.2.0-1bl1
+  libbdplus0-0.2.0-1bl1
+  libgcrypt20-1.10.1-1
+  libgpg-error0-1.37-1
+  pkg-config-1.8.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.38-1
+  cygport-0.35.0-1
+  gcc-core-11.3.0-1
+  libgcrypt-devel-1.10.1-1
+  libgpg-error-devel-1.37-1
+  libtool-2.4.7-1
+  make-4.3-1
+
+Canonical website:
+  https://www.videolan.org/developers/libbdplus.html
+
+Canonical download:
+  https://download.videolan.org/pub/videolan/libbdplus/0.2.0/libbdplus-0.2.0.tar.bz2
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libbdplus-0.2.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libbdplus-0.2.0-X.cygport all
+
+This will create:
+  /usr/src/libbdplus-0.2.0-X-src.tar.xz
+  /usr/src/libbdplus-0.2.0-X.tar.xz
+  /usr/src/libbdplus0-0.2.0-X.tar.xz
+  /usr/src/libbdplus-devel-0.2.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libbdplus)
+  /usr/share/doc/Cygwin/libbdplus.README
+  /usr/share/doc/libbdplus/COPYING
+  /usr/share/doc/libbdplus/ChangeLog
+  /usr/share/doc/libbdplus/README.md
+
+(libbdplus0)
+  /usr/bin/cygbdplus-0.dll
+
+(libbdplus-devel)
+  /usr/include/libbdplus/bdplus-version.h
+  /usr/include/libbdplus/bdplus.h
+  /usr/lib/libbdplus.dll.a
+  /usr/lib/pkgconfig/libbdplus.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.2.0-1bl1 -----
+Version bump.
+
+----- version 0.1.2-1bl2 -----
+Rebuild with gcc-5.4.0
+
+----- version 0.1.2-1bl1 -----
+Version bump.
+
+----- version 0.1.0-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

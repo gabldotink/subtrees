@@ -1,0 +1,126 @@
+icecream
+------------------------------------------
+Icecream was created by SUSE based on distcc. Like distcc, Icecream takes
+compile jobs from a build and distributes it among remote machines allowing a
+parallel build. But unlike distcc, Icecream uses a central server that
+dynamically schedules the compile jobs to the fastest free server. This
+advantage pays off mostly for shared computers, if you're the only user on x
+machines, you have full control over them.
+
+Runtime requirements:
+  bash-4.4.12-3
+  cygwin-3.3.4-2
+  libarchive13-3.6.1-1
+  libgcc1-11.2.0-1
+  libicecc-devel-1.4-1bl1
+  libicecc0-1.4-1bl1
+  liblzo2_2-2.10-2
+  libstdc++6-11.2.0-1
+  libzstd1-1.5.2-1
+  pkg-config-1.8.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.37-2
+  cygport-0.34.2-1
+  gcc-core-11.2.0-1
+  gcc-g++-11.2.0-1
+  libarchive-devel-3.6.1-1
+  liblzo2-devel-2.10-2
+  libtool-2.4.7-1
+  libzstd-devel-1.5.2-1
+  make-4.3-1
+
+Canonical website:
+  https://github.com/icecc/icecream
+
+Canonical download:
+  https://github.com/icecc/icecream/archive/refs/tags/1.4.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack icecream-1.4-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./icecream-1.4-X.cygport all
+
+This will create:
+  /usr/src/icecream-1.4-X-src.tar.xz
+  /usr/src/icecream-1.4-X.tar.xz
+  /usr/src/libicecc0-1.4-X.tar.xz
+  /usr/src/libicecc-devel-1.4-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(icecream)
+  /usr/bin/icecc-create-env
+  /usr/bin/icecc-test-env
+  /usr/bin/icecc.exe
+  /usr/bin/icerun
+  /usr/libexec/icecc/bin/c++
+  /usr/libexec/icecc/bin/cc
+  /usr/libexec/icecc/bin/clang
+  /usr/libexec/icecc/bin/clang++
+  /usr/libexec/icecc/bin/g++
+  /usr/libexec/icecc/bin/gcc
+  /usr/libexec/icecc/compilerwrapper.exe
+  /usr/libexec/icecc/icecc-create-env
+  /usr/sbin/icecc-scheduler.exe
+  /usr/sbin/iceccd.exe
+  /usr/share/doc/Cygwin/icecream.README
+  /usr/share/doc/icecream/BENCH
+  /usr/share/doc/icecream/COPYING
+  /usr/share/doc/icecream/NEWS
+  /usr/share/doc/icecream/README
+  /usr/share/doc/icecream/TODO
+  /usr/share/doc/icecream/readme.md
+  /usr/share/man/man1/icecc-create-env.1.gz
+  /usr/share/man/man1/icecc-scheduler.1.gz
+  /usr/share/man/man1/icecc.1.gz
+  /usr/share/man/man1/iceccd.1.gz
+  /usr/share/man/man1/icerun.1.gz
+  /usr/share/man/man7/icecream.7.gz
+
+(libicecc0)
+  /usr/bin/cygicecc-0.dll
+
+(libicecc-devel)
+  /usr/include/icecc/comm.h
+  /usr/include/icecc/job.h
+  /usr/include/icecc/logging.h
+  /usr/lib/libicecc.dll.a
+  /usr/lib/pkgconfig/icecc.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.4-1bl1 -----
+Version bump.
+
+----- version 1.3.1-1bl1 -----
+Version bump.
+
+----- version 1.3-1bl1 -----
+Version bump.
+
+----- version 1.2-1bl1 -----
+Version bump.
+
+----- version 1.1rc2-1bl1 -----
+Version bump.
+
+----- version 1.1rc1-1bl1 -----
+Version bump.
+
+----- version 1.0.1-1bl1 -----
+Version bump.
+
+----- version 1.0.0-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://fd0.hatenablog.jp/>

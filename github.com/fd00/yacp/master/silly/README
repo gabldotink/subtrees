@@ -1,0 +1,100 @@
+silly
+------------------------------------------
+The Simple Image Loading LibrarY is a companion library of the CEGUI project.
+It provides a simple and easy to use library for image loading.
+
+Runtime requirements:
+  cygwin-3.0.7-1
+  libgcc1-7.4.0-1
+  libjpeg8-1.5.3-1
+  libpng16-1.6.34-1
+  libSILLY-devel-0.1.0+hg20140818-1bl2
+  libSILLY1-0.1.0+hg20140818-1bl2
+  libstdc++6-7.4.0-1
+  pkg-config-1.6.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-10-1
+  binutils-2.29-1
+  cygport-0.33.1-1
+  gcc-core-7.4.0-1
+  gcc-g++-7.4.0-1
+  libtool-2.4.6-6
+  lua-5.3.5-1
+  make-4.2.1-2
+
+Canonical website:
+  http://cegui.org.uk/
+
+Canonical download:
+  https://bitbucket.org/cegui/silly
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack silly-0.1.0+hg20140818-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./silly-0.1.0+hg20140818-X.cygport all
+
+This will create:
+  /usr/src/silly-0.1.0+hg20140818-X-src.tar.xz
+  /usr/src/silly-0.1.0+hg20140818-X.tar.xz
+  /usr/src/libSILLY1-0.1.0+hg20140818-X.tar.xz
+  /usr/src/libSILLY-devel-0.1.0+hg20140818-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(silly)
+  /usr/share/doc/Cygwin/silly.README
+  /usr/share/doc/silly/AUTHORS
+  /usr/share/doc/silly/COPYING
+  /usr/share/doc/silly/ChangeLog
+
+(libSILLY1)
+  /usr/bin/cygSILLY-1.dll
+
+(libSILLY-devel)
+  /usr/include/SILLY/SILLY.h
+  /usr/include/SILLY/SILLYBase.h
+  /usr/include/SILLY/SILLYDataSource.h
+  /usr/include/SILLY/SILLYDataSource.icpp
+  /usr/include/SILLY/SILLYFileDataSource.h
+  /usr/include/SILLY/SILLYFileDataSource.icpp
+  /usr/include/SILLY/SILLYImage.h
+  /usr/include/SILLY/SILLYImage.icpp
+  /usr/include/SILLY/SILLYImageContext.h
+  /usr/include/SILLY/SILLYImageContext.icpp
+  /usr/include/SILLY/SILLYImageLoader.h
+  /usr/include/SILLY/SILLYImageLoader.icpp
+  /usr/include/SILLY/SILLYImageLoaderManager.h
+  /usr/include/SILLY/SILLYImageLoaderManager.icpp
+  /usr/include/SILLY/SILLYMemoryDataSource.h
+  /usr/include/SILLY/SILLYMemoryDataSource.icpp
+  /usr/include/SILLY/SILLYOptions.h
+  /usr/lib/libSILLY.dll.a
+  /usr/lib/pkgconfig/SILLY.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.1.0+hg20140818-1bl2 -----
+Rebuild with gcc-7.4.0
+
+----- version 0.1.0+hg20140818-1bl1 -----
+Version bump.
+
+----- version 0.1.0+hg20110208-1bl1 -----
+Version bump.
+
+----- version 0.1.0-1bl2 -----
+Repackage for licensing & readmes
+
+----- version 0.1.0-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

@@ -1,0 +1,116 @@
+wopr
+------------------------------------------
+WOPR is a wrapper around the k-nearest neighbor classifier in TiMBL, offering
+word prediction and language modeling functionalities. Trained on a text
+corpus, WOPR can predict missing words, report perplexities at the word level
+and the text level, and generate spelling correction hypotheses. Read more
+about WOPR in the reference guide offering installation instructions,
+walkthroughs, basic performance measurements (including a comparison to SRILM),
+and an overview of options.
+
+Runtime requirements:
+  cygwin-3.4.6-1
+  libfolia18-2.14-1bl1
+  libgcc1-11.3.0-1
+  libicu72-72.1-1
+  libstdc++6-11.3.0-1
+  libticcutils9-0.32-1bl1
+  libtimbl7-6.8.2-1bl1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.40-1
+  cygport-0.36.1-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libfolia-devel-2.14-1bl1
+  libicu-devel-72.1-1
+  libticcutils-devel-0.32-1bl1
+  libtimbl-devel-6.8.2-1bl1
+  libtool-2.4.7-1
+  make-4.4.1-1
+
+Canonical website:
+  https://github.com/LanguageMachines/wopr
+
+Canonical download:
+  https://github.com/LanguageMachines/wopr/archive/refs/tags/v1.42.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack wopr-1.42-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./wopr-1.42-X.cygport all
+
+This will create:
+  /usr/src/wopr-1.42-X-src.tar.xz
+  /usr/src/wopr-1.42-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(wopr)
+  /usr/bin/wopr.exe
+  /usr/include/wopr/Classifier.h
+  /usr/include/wopr/Config.h
+  /usr/include/wopr/Context.h
+  /usr/include/wopr/Expert.h
+  /usr/include/wopr/MersenneTwister.h
+  /usr/include/wopr/Multi.h
+  /usr/include/wopr/PDT.h
+  /usr/include/wopr/SocketBasics.h
+  /usr/include/wopr/cache.h
+  /usr/include/wopr/elements.h
+  /usr/include/wopr/focus.h
+  /usr/include/wopr/general_test.h
+  /usr/include/wopr/generator.h
+  /usr/include/wopr/lcontext.h
+  /usr/include/wopr/levenshtein.h
+  /usr/include/wopr/ngram_elements.h
+  /usr/include/wopr/ngram_server.h
+  /usr/include/wopr/ngrams.h
+  /usr/include/wopr/prededit.h
+  /usr/include/wopr/qlog.h
+  /usr/include/wopr/runrunrun.h
+  /usr/include/wopr/server.h
+  /usr/include/wopr/tag.h
+  /usr/include/wopr/tinyxml.h
+  /usr/include/wopr/tr.h
+  /usr/include/wopr/util.h
+  /usr/include/wopr/watcher.h
+  /usr/include/wopr/wex.h
+  /usr/share/doc/Cygwin/wopr.README
+  /usr/share/doc/wopr/AUTHORS
+  /usr/share/doc/wopr/COPYING
+  /usr/share/doc/wopr/NEWS
+  /usr/share/doc/wopr/README
+  /usr/share/doc/wopr/TODO
+  /usr/share/man/man1/wopr.1.gz
+
+------------------
+
+Port Notes:
+
+----- version 1.42-1bl2 -----
+Rebuild for libicu
+
+----- version 1.42-1bl1 -----
+Version bump.
+
+----- version 1.40.7-1bl1 -----
+Version bump.
+
+----- version 1.40.5+git20180117-1bl1 -----
+Version bump.
+
+----- version 1.40.5+git20170228-1bl1 -----
+Version bump.
+
+----- version 1.40.5+git20151201-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

@@ -1,0 +1,97 @@
+HOMEPAGE="https://${PN}.org/"
+SRC_URI="https://packages.${PN}.org/source/${PN}/${P}.tar.gz"
+
+CATEGORY="Text"
+SUMMARY="Open-source fulltext search engine and column store"
+DESCRIPTION="Groonga is a fast and accurate full text search engine based on inverted
+index. One of the characteristics of groonga is that a newly registered
+document instantly appears in search results. Also, groonga allows updates
+without read locks. These characteristics result in superior performance on
+real-time applications."
+
+LICENSE="LGPL-2.1-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: LGPL-2.1-or-later"
+LICENSE_URI="COPYING"
+
+BUILD_REQUIRES="libevent-devel libkytea-devel liblz4-devel libmecab-devel libmsgpackc-devel libonigmo-devel libzmq-devel libzstd-devel luajit-devel rubygems zlib-devel"
+
+CYGCONF_ARGS="
+	--enable-groonga-httpd=no
+	--enable-mruby
+	--enable-shared-onigmo=yes
+	--with-munin-plugins=yes
+	--with-package-platform=cygwin
+	--with-onigmo=yes
+"
+
+PKG_IGNORE="
+	usr/share/groonga/COPYING
+"
+
+DIFF_EXCLUDES="
+	${PN}-httpd
+	${PN}-httpd.conf
+	${PN}-httpd.service
+"
+
+PKG_NAMES="
+	${PN}
+	lib${PN}0
+	lib${PN}-devel
+	${PN}-plugin-ruby
+	${PN}-plugin-suggest
+	${PN}-plugin-token-filters
+	${PN}-tokenizer-mecab
+	${PN}-tokenizer-kytea
+	${PN}-munin-plugins
+"
+groonga_CONTENTS="
+	etc
+	usr/bin/*.exe
+	usr/lib/${PN}/scripts
+	usr/lib/systemd
+	usr/share/doc
+	usr/share/${PN}/examples
+	usr/share/${PN}/${PN}-log
+	usr/share/${PN}/html
+	usr/share/${PN}/mruby
+	usr/share/${PN}/tools
+"
+libgroonga0_CONTENTS="
+	usr/bin/*.dll
+	usr/lib/${PN}/plugins/functions
+	usr/lib/${PN}/plugins/query_expanders
+"
+libgroonga_devel_CONTENTS="
+	usr/include
+	usr/lib/lib${PN}*
+	usr/lib/pkgconfig
+"
+groonga_plugin_ruby_CONTENTS="
+	usr/lib/${PN}/plugins/ruby
+	usr/lib/${PN}/plugins/sharding*
+"
+groonga_plugin_suggest_CONTENTS="
+	usr/lib/${PN}/plugins/suggest
+"
+groonga_plugin_token_filters_CONTENTS="
+	usr/lib/${PN}/plugins/token_filters
+"
+groonga_tokenizer_mecab_CONTENTS="
+	usr/lib/${PN}/plugins/tokenizers/mecab*
+"
+groonga_tokenizer_kytea_CONTENTS="
+	usr/lib/${PN}/plugins/tokenizers/kytea*
+"
+groonga_munin_plugins_CONTENTS="
+	usr/share/${PN}/munin
+"
+groonga_SUMMARY="${SUMMARY} (utilities)"
+libgroonga0_SUMMARY="${SUMMARY} (runtime)"
+libgroonga_devel_SUMMARY="${SUMMARY} (development)"
+groonga_plugin_ruby_SUMMARY="${SUMMARY} (ruby plugin)"
+groonga_plugin_suggest_SUMMARY="${SUMMARY} (suggest plugin)"
+groonga_plugin_token_filters_SUMMARY="${SUMMARY} (token filters plugin)"
+groonga_tokenizer_mecab_SUMMARY="${SUMMARY} (mecab tokenizer)"
+groonga_tokenizer_kytea_SUMMARY="${SUMMARY} (kytea tokenizer)"
+groonga_munin_plugins_SUMMARY="${SUMMARY} (munin plugins)"

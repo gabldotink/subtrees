@@ -1,0 +1,48 @@
+HOMEPAGE="https://github.com/jacobwilliams/${PN}"
+GIT_URI="https://github.com/jacobwilliams/${PN}.git"
+GIT_TAG="${PV}"
+
+CATEGORY="Libs"
+SUMMARY="Multidimensional B-Spline Interpolation of Data on a Regular Grid"
+DESCRIPTION="The library provides subroutines for 1D-6D interpolation and extrapolation
+using B-splines. The code is written in modern Fortran (i.e., Fortran 2003+).
+There are two ways to use the module, via a basic subroutine interface and an
+object-oriented interface. Both are thread safe."
+
+inherit cmake
+inherit git
+
+CYGCMAKE_ARGS="
+	-DBSPLINE_TESTS:BOOL=OFF
+	-DSOVERSION:STRING=${PV[1]}
+	-DVERSION:STRING=${PV}
+"
+
+DOCS="
+	${PN}.md
+"
+
+PKG_IGNORE="
+	usr/include/libbspline-fortran.a
+	usr/lib/libbspline-fortran.a
+"
+
+PKG_NAMES="
+	bspline-fortran
+	libbspline-fortran6
+	libbspline-fortran-devel
+"
+bspline_fortran_CONTENTS="
+	usr/share
+"
+libbspline_fortran6_CONTENTS="
+	usr/bin
+"
+libbspline_fortran_devel_CONTENTS="
+	usr/include/*.mod
+	usr/lib/*.dll.a
+	usr/lib/pkgconfig
+"
+bspline_fortran_SUMMARY="${SUMMARY} (licensing & readmes)"
+libbspline_fortran6_SUMMARY="${SUMMARY} (runtime)"
+libbspline_fortran_devel_SUMMARY="${SUMMARY} (development)"

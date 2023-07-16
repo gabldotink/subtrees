@@ -1,0 +1,39 @@
+inherit gnome2
+
+HOMEPAGE="https://wiki.gnome.org/Projects/GUPnP"
+
+PATCH_URI="
+	https://src.fedoraproject.org/rpms/${PN}/raw/f15/f/${PN}-testapp.patch
+	https://src.fedoraproject.org/rpms/${PN}/raw/f15/f/${PN}-fixdso.patch
+"
+
+CATEGORY="Gnome"
+SUMMARY="Collection of helpers for adding ui to upnp apps"
+DESCRIPTION="GUPnP-UI is a collection of helpers for building user interface application
+components for gupnp applications."
+
+export CFLAGS="-ggdb -O2 -pipe -Wall -Wp,-D_FORTIFY_SOURCE=2 -fstack-protector-strong --param=ssp-buffer-size=4"
+
+CYGCONF_ARGS="
+	--enable-maintainer-mode
+	--disable-gtk-doc
+"
+
+PKG_NAMES="
+	${PN}
+	lib${PN}1.0_0
+	lib${PN}1.0-devel
+"
+gupnp_ui_CONTENTS="
+	usr/share
+"
+libgupnp_ui1_0_0_CONTENTS="
+	usr/bin
+"
+libgupnp_ui1_0_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+gupnp_ui_SUMMARY="${SUMMARY} (licensing & readmes)"
+libgupnp_ui1_0_0_SUMMARY="${SUMMARY} (runtime)"
+libgupnp_ui1_0_devel_SUMMARY="${SUMMARY} (development)"

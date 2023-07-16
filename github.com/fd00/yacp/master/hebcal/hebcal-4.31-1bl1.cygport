@@ -1,0 +1,32 @@
+HOMEPAGE="https://github.com/${PN}/${PN}"
+SRC_URI="https://github.com/${PN}/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Utils"
+SUMMARY="Perpetual Jewish Calendar"
+DESCRIPTION="Hebcal is a program which prints out the days in the Jewish calendar for a
+given Gregorian year. Hebcal is fairly flexible in terms of which events in
+the Jewish calendar it displays."
+
+LICENSE="GPL-2.0-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: GPL-2.0-or-later"
+LICENSE_URI="COPYING"
+
+BUILD_REQUIRES="gperf"
+
+src_test()
+{
+	cd ${B}
+	pushd tests
+		ln -fs ${S}/tests/yahrzeit.txt .
+	popd
+	cygtest
+	rm -f tests/yahrzeit.txt
+}
+
+DOCS="
+	README_DE.md
+"
+
+DIFF_EXCLUDES="
+	package.m4
+"

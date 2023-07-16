@@ -1,0 +1,55 @@
+libpthread-stubs
+------------------------------------------
+PThread Stubs for XCB
+
+Runtime requirements:
+  pkg-config-1.6.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-10-1
+  cygport-0.33.0-1
+  make-4.2.1-2
+
+Canonical website:
+  http://xcb.freedesktop.org/
+
+Canonical download:
+  http://xcb.freedesktop.org/dist/libpthread-stubs-0.4.tar.bz2
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libpthread-stubs-0.4-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libpthread-stubs-0.4-X.cygport all
+
+This will create:
+  /usr/src/libpthread-stubs-0.4-X-src.tar.xz
+  /usr/src/libpthread-stubs-0.4-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libpthread-stubs)
+  /usr/lib/pkgconfig/pthread-stubs.pc
+  /usr/share/doc/Cygwin/libpthread-stubs.README
+  /usr/share/doc/libpthread-stubs/COPYING
+  /usr/share/doc/libpthread-stubs/README
+
+------------------
+
+Port Notes:
+
+----- version 0.4-1bl1 -----
+Version bump.
+
+----- version 0.3-1bl2 -----
+Rebuild with gcc-5.4.0
+
+----- version 0.3-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

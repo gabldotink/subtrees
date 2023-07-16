@@ -1,0 +1,76 @@
+bcal
+------------------------------------------
+bcal (Byte CALculator) is a command-line utility for storage, hardware and
+firmware developers who deal with storage-specific numerical calculations,
+expressions, unit conversions or address calculations frequently. If you are
+one and can't calculate the hex address offset for (512 - 16) MiB immediately,
+or the value when the 43rd bit of a 64-bit address is set, bcal is for you.
+
+Runtime requirements:
+  cygwin-3.3.4-2
+  libgcc1-11.2.0-1
+  libreadline7-8.1-2
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.37-2
+  cygport-0.34.2-1
+  gcc-core-11.2.0-1
+  libreadline-devel-8.1-2
+  make-4.3-1
+
+Canonical website:
+  https://github.com/jarun/bcal
+
+Canonical download:
+  https://github.com/jarun/bcal/archive/refs/tags/v2.4.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack bcal-2.4-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./bcal-2.4-X.cygport all
+
+This will create:
+  /usr/src/bcal-2.4-X-src.tar.xz
+  /usr/src/bcal-2.4-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(bcal)
+  /usr/bin/bcal.exe
+  /usr/share/doc/Cygwin/bcal.README
+  /usr/share/doc/bcal/CHANGELOG
+  /usr/share/doc/bcal/LICENSE
+  /usr/share/doc/bcal/README.md
+  /usr/share/man/man1/bcal.1.gz
+
+------------------
+
+Port Notes:
+
+----- version 2.4-1bl1 -----
+Version bump.
+
+----- version 2.3-1bl1 -----
+Version bump.
+
+----- version 2.2-1bl1 -----
+Version bump.
+
+----- version 2.1-1bl1 -----
+Version bump.
+
+----- version 2.0-1bl1 -----
+Version bump.
+
+----- version 1.9-1bl1 -----
+Version bump.
+
+----- version 1.8-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

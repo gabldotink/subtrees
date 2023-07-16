@@ -1,0 +1,85 @@
+ecm
+------------------------------------------
+gmp-ecm is a free implementation of the Elliptic Curve Method (ECM) for integer
+factorization.
+
+Runtime requirements:
+  cygwin-3.3.5-1
+  libecm-devel-7.0.5-1bl1
+  libecm1-7.0.5-1bl1
+  libgmp10-6.2.1-2
+  libgomp1-11.3.0-1
+  pkg-config-1.8.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.38-1
+  cygport-0.35.1-1
+  gcc-core-11.3.0-1
+  libgmp-devel-6.2.1-2
+  libtool-2.4.7-1
+  libxslt-1.1.29-1
+  make-4.3-1
+
+Canonical website:
+  https://gitlab.inria.fr/zimmerma/ecm/
+
+Canonical download:
+  https://gitlab.inria.fr/zimmerma/ecm/-/archive/git-7.0.5/ecm-git-7.0.5.tar.bz2
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack ecm-7.0.5-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./ecm-7.0.5-X.cygport all
+
+This will create:
+  /usr/src/ecm-7.0.5-X-src.tar.xz
+  /usr/src/ecm-7.0.5-X.tar.xz
+  /usr/src/libecm1-7.0.5-X.tar.xz
+  /usr/src/libecm-devel-7.0.5-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(ecm)
+  /usr/bin/ecm.exe
+  /usr/share/doc/Cygwin/ecm.README
+  /usr/share/doc/ecm/AUTHORS
+  /usr/share/doc/ecm/COPYING
+  /usr/share/doc/ecm/COPYING.LIB
+  /usr/share/doc/ecm/ChangeLog
+  /usr/share/doc/ecm/NEWS
+  /usr/share/doc/ecm/README
+  /usr/share/doc/ecm/TODO
+  /usr/share/man/man1/ecm.1.gz
+
+(libecm1)
+  /usr/bin/cygecm-1.dll
+
+(libecm-devel)
+  /usr/include/ecm.h
+  /usr/lib/libecm.dll.a
+  /usr/lib/pkgconfig/ecm.pc
+
+------------------
+
+Port Notes:
+
+----- version 7.0.5-1bl1 -----
+Version bump.
+
+----- version 7.0.4-1bl1 -----
+Version bump.
+
+----- version 6.4.4-1bl2 -----
+Version bump.
+
+----- version 6.4.4-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

@@ -1,0 +1,138 @@
+grive
+------------------------------------------
+Grive can be considered still beta quality. It simply downloads all the files
+in your Google Drive into the current directory.
+
+Runtime requirements:
+  cygwin-3.4.5-1
+  libboost_filesystem1.66-1.66.0-1
+  libboost_program_options1.66-1.66.0-1
+  libboost_regex1.66-1.66.0-1
+  libboost_system1.66-1.66.0-1
+  libcurl4-7.87.0-1
+  libexpat1-2.4.1-1
+  libgcc1-11.3.0-1
+  libgcrypt20-1.10.1-1
+  libgrive-devel-0.5.3-1bl1
+  libgrive0-0.5.3-1bl1
+  libstdc++6-11.3.0-1
+  libyajl2-2.1.0-1
+  pkg-config-1.9.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.39-1
+  cmake-3.23.2-1
+  cygport-0.35.5-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libboost-devel-1.66.0-1
+  libcurl-devel-7.87.0-1
+  libexpat-devel-2.4.1-1
+  libgcrypt-devel-1.10.1-1
+  libyajl-devel-2.1.0-1
+  ninja-1.11.1-1
+
+Canonical website:
+  https://github.com/vitalif/grive2
+
+Canonical download:
+  https://github.com/vitalif/grive2/archive/refs/tags/v0.5.3.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack grive-0.5.3-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./grive-0.5.3-X.cygport all
+
+This will create:
+  /usr/src/grive-0.5.3-X-src.tar.xz
+  /usr/src/grive-0.5.3-X.tar.xz
+  /usr/src/libgrive0-0.5.3-X.tar.xz
+  /usr/src/libgrive-devel-0.5.3-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(grive)
+  /usr/bin/grive.exe
+  /usr/share/doc/Cygwin/grive.README
+  /usr/share/doc/grive/COPYING
+  /usr/share/doc/grive/README.md
+  /usr/share/man/man1/grive.1.gz
+  /usr/share/zsh/site-functions/_grive
+
+(libgrive0)
+  /usr/bin/cyggrive-0.dll
+
+(libgrive-devel)
+  /usr/include/grive/drive2/CommonUri.hh
+  /usr/include/grive/drive2/Entry2.hh
+  /usr/include/grive/drive2/Feed2.hh
+  /usr/include/grive/drive2/Syncer2.hh
+  /usr/include/grive/protocol/AuthAgent.hh
+  /usr/include/grive/protocol/OAuth2.hh
+  /usr/include/grive/util/CArray.hh
+  /usr/include/grive/util/ConcatStream.hh
+  /usr/include/grive/util/Config.hh
+  /usr/include/grive/util/Crypt.hh
+  /usr/include/grive/util/DataStream.hh
+  /usr/include/grive/util/DateTime.hh
+  /usr/include/grive/util/Destroy.hh
+  /usr/include/grive/util/Exception.hh
+  /usr/include/grive/util/File.hh
+  /usr/include/grive/util/FileSystem.hh
+  /usr/include/grive/util/Function.hh
+  /usr/include/grive/util/MemMap.hh
+  /usr/include/grive/util/OS.hh
+  /usr/include/grive/util/Progress.hh
+  /usr/include/grive/util/ProgressBar.hh
+  /usr/include/grive/util/SignalHandler.hh
+  /usr/include/grive/util/StdStream.hh
+  /usr/include/grive/util/StringStream.hh
+  /usr/include/grive/util/Types.hh
+  /usr/include/grive/xml/Error.hh
+  /usr/include/grive/xml/Node.hh
+  /usr/include/grive/xml/NodeSet.hh
+  /usr/include/grive/xml/String.hh
+  /usr/include/grive/xml/TreeBuilder.hh
+  /usr/lib/libgrive.dll.a
+  /usr/lib/pkgconfig/grive.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.5.3-1bl1 -----
+Version bump.
+
+----- version 0.5.1-1bl1 -----
+Version bump.
+
+----- version 0.5.0-1bl2 -----
+Rebuild for libboost
+
+----- version 0.5.0-1bl1 -----
+Version bump.
+
+----- version 0.2.0-1bl6 -----
+Rebuild for libboost, libgcrypt
+
+----- version 0.2.0-1bl5 -----
+Rebuild for libboost
+
+----- version 0.2.0-1bl4 -----
+Rebuild on x86_64
+
+----- version 0.2.0-1bl3 -----
+Rebuild for libjson-c
+
+----- version 0.2.0-1bl2 -----
+Rebuild for libboost
+
+----- version 0.2.0-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://fd0.hatenablog.jp/>

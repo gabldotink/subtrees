@@ -1,0 +1,68 @@
+QGitHubReleaseAPI
+------------------------------------------
+Qt library to receive release information from the GitHub API
+
+Runtime requirements:
+  cygwin-2.5.1-1
+  libgcc1-5.3.0-5
+  libqgithubreleaseapi1-0.7-1bl1
+  libQt5Core5-5.5.1-1
+  libQt5Gui5-5.5.1-1
+  libstdc++6-5.3.0-5
+  pkg-config-0.29-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.25-4
+  cmake-3.3.2-1
+  cygport-0.21.1-1
+  gcc-core-5.3.0-5
+  gcc-g++-5.3.0-5
+  make-4.1-1
+
+Canonical website:
+  https://github.com/velnias75/QGitHubReleaseAPI
+
+Canonical download:
+  https://github.com/velnias75/QGitHubReleaseAPI/archive/V0.7-qt5.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack QGitHubReleaseAPI-0.7-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./QGitHubReleaseAPI-0.7-X.cygport all
+
+This will create:
+  /usr/src/QGitHubReleaseAPI-0.7-X-src.tar.xz
+  /usr/src/QGitHubReleaseAPI-0.7-X.tar.xz
+  /usr/src/libqgithubreleaseapi1-0.7-X.tar.xz
+  /usr/src/libqgithubreleaseapi-devel-0.7-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(QGitHubReleaseAPI)
+  /usr/share/doc/Cygwin/QGitHubReleaseAPI.README
+  /usr/share/doc/QGitHubReleaseAPI/README.md
+
+(libqgithubreleaseapi1)
+  /usr/bin/cygqgithubreleaseapi-1.dll
+
+(libqgithubreleaseapi-devel)
+  /usr/include/qgithubreleaseapi/qgithubreleaseapi.h
+  /usr/lib/libqgithubreleaseapi.dll.a
+  /usr/lib/pkgconfig/qgithubreleaseapi.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.7-1bl1 -----
+Version bump.
+
+----- version 0.6-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

@@ -1,0 +1,106 @@
+libmondai
+------------------------------------------
+This library is common function set for MON-suite. MONDAI: MON Data Access
+Interface.
+
+Runtime requirements:
+  cygwin-3.0.7-1
+  cygwin-devel-3.0.7-1
+  libglib2.0-devel-2.54.3-1
+  libglib2.0_0-2.54.3-1
+  libiconv2-1.14-3
+  libjson-c-devel-0.12-1
+  libjson-c2-0.12-1
+  libmondai-devel-3.0.0+git20190304-1bl1
+  libmondai3-3.0.0+git20190304-1bl1
+  libxml2-2.9.9-2
+  libxml2-devel-2.9.9-2
+  pkg-config-1.6.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-10-1
+  binutils-2.29-1
+  cygport-0.33.1-1
+  gcc-core-7.4.0-1
+  libtool-2.4.6-6
+  make-4.2.1-2
+
+Canonical website:
+  https://github.com/montsuqi/libmondai
+
+Canonical download:
+  https://github.com/montsuqi/libmondai.git
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libmondai-3.0.0+git20190304-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libmondai-3.0.0+git20190304-X.cygport all
+
+This will create:
+  /usr/src/libmondai-3.0.0+git20190304-X-src.tar.xz
+  /usr/src/libmondai-3.0.0+git20190304-X.tar.xz
+  /usr/src/libmondai3-3.0.0+git20190304-X.tar.xz
+  /usr/src/libmondai-devel-3.0.0+git20190304-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libmondai)
+  /usr/bin/monconv.exe
+  /usr/bin/rec2copy.exe
+  /usr/share/doc/Cygwin/libmondai.README
+  /usr/share/doc/libmondai/AUTHORS
+  /usr/share/doc/libmondai/COPYING
+  /usr/share/doc/libmondai/ChangeLog
+  /usr/share/doc/libmondai/README
+  /usr/share/doc/libmondai/TODO
+
+(libmondai3)
+  /usr/bin/cygmondai-3.dll
+
+(libmondai-devel)
+  /usr/include/libmondai/LBSfunc.h
+  /usr/include/libmondai/Lex.h
+  /usr/include/libmondai/Native_v.h
+  /usr/include/libmondai/OpenCOBOL_v.h
+  /usr/include/libmondai/RecParser.h
+  /usr/include/libmondai/Text_v.h
+  /usr/include/libmondai/XML_v.h
+  /usr/include/libmondai/cobolvalue.h
+  /usr/include/libmondai/dotCOBOL_v.h
+  /usr/include/libmondai/fileutils.h
+  /usr/include/libmondai/fixed_v.h
+  /usr/include/libmondai/getset.h
+  /usr/include/libmondai/hash_v.h
+  /usr/include/libmondai/json_v.h
+  /usr/include/libmondai/libmondai.h
+  /usr/include/libmondai/lock.h
+  /usr/include/libmondai/memory_v.h
+  /usr/include/libmondai/misc_v.h
+  /usr/include/libmondai/monstring.h
+  /usr/include/libmondai/numeric.h
+  /usr/include/libmondai/numerici.h
+  /usr/include/libmondai/others.h
+  /usr/include/libmondai/php_v.h
+  /usr/include/libmondai/types.h
+  /usr/include/libmondai/value.h
+  /usr/include/libmondai/valueconv.h
+  /usr/lib/libmondai.dll.a
+  /usr/lib/pkgconfig/libmondai.pc
+
+------------------
+
+Port Notes:
+
+----- version 3.0.0+git20190304-1bl1 -----
+Version bump.
+
+----- version 1.4.8+git20140402-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

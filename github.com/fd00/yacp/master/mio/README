@@ -1,0 +1,76 @@
+mio
+------------------------------------------
+An I/O abstraction layer replicating C file I/O API, supporting both file and
+memory streams. It is meant to ease porting a program using C library file I/O
+layer to allow in-memory operations.
+
+Runtime requirements:
+  cygwin-1.7.34-6
+  libglib2.0-devel-2.42.1-1
+  libglib2.0_0-2.42.1-1
+  libmio-devel-0.1+git20141022-1bl1
+  libmio0-0.1+git20141022-1bl1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-9-1
+  binutils-2.25-1
+  cygport-0.17.1-1
+  gcc-core-4.9.2-2
+  libtool-2.4.2-5
+  make-4.0-2
+
+Canonical website:
+  http://gitorious.org/mio
+
+Canonical download:
+  git://gitorious.org/mio/mio.git
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack mio-0.1+git20141022-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./mio-0.1+git20141022-X.cygport all
+
+This will create:
+  /usr/src/mio-0.1+git20141022-X-src.tar.xz
+  /usr/src/mio-0.1+git20141022-X.tar.xz
+  /usr/src/libmio0-0.1+git20141022-X.tar.xz
+  /usr/src/libmio-devel-0.1+git20141022-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(mio)
+  /usr/share/doc/Cygwin/mio.README
+  /usr/share/doc/mio/COPYING
+
+(libmio0)
+  /usr/bin/cygmio-0.dll
+
+(libmio-devel)
+  /usr/include/mio/mio.h
+  /usr/lib/libmio.dll.a
+  /usr/lib/pkgconfig/mio.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.1+git20141022-1bl1 -----
+Version bump.
+
+----- version 0.1+git20111223-1bl1 -----
+Version bump.
+
+----- version 0.1+git20110312-1bl1 -----
+Version bump.
+
+----- version 0.1+git20100616-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>
+

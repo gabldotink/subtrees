@@ -1,0 +1,96 @@
+pslib
+------------------------------------------
+pslib is a C-library to create PostScript files on the fly. It offers many
+drawing primitives, inclusion of png and eps images and a very sophisticated
+text rendering including hyphenation, kerning and ligatures. It can read
+external Type1 fonts and embed them into the output file. It supports pdfmarks
+which makes it in combination with ghostscript's pdfwriter an alternative for
+libraries creating PDF.
+
+Runtime requirements:
+  cygwin-3.0.7-1
+  libghthash1-0.6.2-1bl7
+  libgif7-5.1.4-1
+  libintl8-0.19.8.1-2
+  libjpeg8-1.5.3-1
+  libpng16-1.6.37-1
+  libps-devel-0.4.6-1bl1
+  libps0-0.4.6-1bl1
+  libtiff6-4.0.9-1
+  pkg-config-1.6.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.29-1
+  cmake-3.14.5-1
+  cygport-0.33.1-1
+  gcc-core-7.4.0-1
+  libtool-2.4.6-7
+  make-4.2.1-2
+
+Canonical website:
+  http://pslib.sf.net/
+
+Canonical download:
+  mirror://sourceforge/pslib/pslib-0.4.6.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack pslib-0.4.6-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./pslib-0.4.6-X.cygport all
+
+This will create:
+  /usr/src/pslib-0.4.6-X-src.tar.xz
+  /usr/src/pslib-0.4.6-X.tar.xz
+  /usr/src/libps0-0.4.6-X.tar.xz
+  /usr/src/libps-devel-0.4.6-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(pslib)
+  /usr/share/doc/Cygwin/pslib.README
+  /usr/share/doc/pslib/AUTHORS
+  /usr/share/doc/pslib/COPYING
+  /usr/share/doc/pslib/ChangeLog
+  /usr/share/doc/pslib/README
+
+(libps0)
+  /usr/bin/cygps-0.dll
+  /usr/share/locale/de/LC_MESSAGES/pslib.mo
+
+(libps-devel)
+  /usr/include/libps/pslib-mp.h
+  /usr/include/libps/pslib.h
+  /usr/include/libps/psversion.h
+  /usr/lib/libps.dll.a
+  /usr/lib/pkgconfig/libps.pc
+  /usr/share/pslib/draft.ps
+  /usr/share/pslib/exectime.ps
+  /usr/share/pslib/grid.ps
+
+------------------
+
+Port Notes:
+
+----- version 0.4.6-1bl1 -----
+Version bump.
+
+----- version 0.4.5-1bl3 -----
+Rebuild with gcc-5.3.0
+
+----- version 0.4.5-1bl2 -----
+Rebuild on x86_64
+
+----- version 0.4.5-1bl1 -----
+Version bump.
+
+----- version 0.4.1-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

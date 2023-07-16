@@ -1,0 +1,88 @@
+vanessa_socket
+------------------------------------------
+vanessa_socket is a library to simplify TCP/IP socket operations. Includes
+code to open a socket to a server as a client, to listen on socket for clients
+as a server and to pipe information between sockets. Includes a sample TCP/IP
+pipe, a user space programme that listens for TCP/IP connections on port on
+the local host and when a client connects makes a connection to a TCP/IP port,
+possibly on another host.
+
+Runtime requirements:
+  cygwin-2.6.0-1
+  libpopt0-1.16-2
+  libvanessa_logger0-0.0.10-1bl3
+  libvanessa_socket2-0.0.13-1bl1
+  pkg-config-0.29.1-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-9-1
+  binutils-2.25-4
+  cygport-0.23.0-1
+  gcc-core-5.4.0-1
+  libtool-2.4.6-4
+  make-4.2.1-1
+
+Canonical website:
+  http://www.vergenet.net/linux/vanessa/
+
+Canonical download:
+  http://www.vergenet.net/linux/vanessa/download/vanessa_socket/0.0.13/vanessa_socket-0.0.13.tar.bz2
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack vanessa_socket-0.0.13-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./vanessa_socket-0.0.13-X.cygport all
+
+This will create:
+  /usr/src/vanessa_socket-0.0.13-X-src.tar.xz
+  /usr/src/vanessa_socket-0.0.13-X.tar.xz
+  /usr/src/libvanessa_socket2-0.0.13-X.tar.xz
+  /usr/src/libvanessa_socket-devel-0.0.13-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(vanessa_socket)
+  /usr/bin/vanessa_socket_pipe.exe
+  /usr/share/doc/Cygwin/vanessa_socket.README
+  /usr/share/doc/vanessa_socket/AUTHORS
+  /usr/share/doc/vanessa_socket/COPYING
+  /usr/share/doc/vanessa_socket/ChangeLog
+  /usr/share/doc/vanessa_socket/NEWS
+  /usr/share/doc/vanessa_socket/README
+  /usr/share/doc/vanessa_socket/TODO
+  /usr/share/man/man1/vanessa_socket_pipe.1.gz
+
+(libvanessa_socket2)
+  /usr/bin/cygvanessa_socket-2.dll
+
+(libvanessa_socket-devel)
+  /usr/include/vanessa_socket.h
+  /usr/lib/libvanessa_socket.dll.a
+  /usr/lib/pkgconfig/vanessa-socket.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.0.13-1bl1 -----
+Version bump.
+
+----- version 0.0.12-1bl3 -----
+Rebuild on x86_64
+
+----- version 0.0.12-1bl2 -----
+Rebuild with gcc-4.5.2
+
+----- version 0.0.12-1bl1 -----
+Version bump.
+
+----- version 0.0.10-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

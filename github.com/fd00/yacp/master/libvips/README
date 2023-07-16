@@ -1,0 +1,307 @@
+libvips
+------------------------------------------
+VIPS is a free image processing system. It is good with large images (images
+larger than the amount of RAM you have available), with many CPUs (see
+Benchmarks for examples of SMP scaling, VIPS is also part of the PARSEC suite),
+for working with colour, for scientific analysis and for general research &
+development. As well as JPEG, TIFF and PNG images, it also supports scientific
+formats like FITS, Matlab, Analyze, PFM, Radiance and OpenSlide.
+
+Runtime requirements:
+  bash-4.4.12-3
+  cygwin-3.3.1-1
+  girepository-GLib2.0-1.54.1-3
+  libIlmImf-devel-2.2.0-1
+  libIlmImf22-2.2.0-1
+  libMagickCore7_7-7.0.10.27-2
+  libcairo-devel-1.17.4-1
+  libcairo2-1.17.4-1
+  libcfitsio-devel-4.0.0-1
+  libcfitsio9-4.0.0-1
+  libexif-devel-0.6.23-1
+  libexif12-0.6.23-1
+  libexpat-devel-2.4.1-1
+  libexpat1-2.4.1-1
+  libfftw3-devel-3.3.9-1
+  libfftw3_3-3.3.9-1
+  libfontconfig-devel-2.13.1-2
+  libfontconfig1-2.13.1-2
+  libgcc1-11.2.0-1
+  libglib2.0-devel-2.54.3-1
+  libglib2.0_0-2.54.3-1
+  libgsf1-devel-1.14.42-1
+  libgsf1_114-1.14.42-1
+  libheif1-1.12.0-1
+  libintl8-0.21-1
+  libjpeg-devel-2.1.1p3-1
+  libjpeg8-2.1.1p3-1
+  liblcms2-devel-2.12-1
+  liblcms2_2-2.12-1
+  libmatio-devel-1.5.21-1bl1
+  libmatio11-1.5.21-1bl1
+  libopenjp2-devel-2.4.0-1
+  libopenjp2_7-2.4.0-1
+  libopenslide0-3.4.1-1bl4
+  liborc0.4-devel-0.4.28-1
+  liborc0.4_0-0.4.28-1
+  libpango1.0-devel-1.40.14-1
+  libpango1.0_0-1.40.14-1
+  libpng-devel-1.6.37-1
+  libpng16-1.6.37-1
+  libpoppler-glib8-21.01.0-1
+  librsvg2-devel-2.40.20-1
+  librsvg2_2-2.40.20-1
+  libspng-devel-0.7.0-1bl1
+  libspng0-0.7.0-1bl1
+  libstdc++6-11.2.0-1
+  libtiff-devel-4.3.0-1
+  libtiff6-4.3.0-1
+  libvips-devel-8.11.4-1bl1
+  libvips42-8.11.4-1bl1
+  libwebp-devel-0.6.1-2
+  libwebp7-0.6.1-2
+  libwebpdemux2-0.6.1-2
+  libwebpmux3-0.6.1-2
+  pkg-config-1.6.3-1
+  python38-cairo-1.19.1-1
+  zlib-devel-1.2.11-1
+  zlib0-1.2.11-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.37-2
+  cygport-0.34.0-1
+  gcc-core-11.2.0-1
+  gcc-g++-11.2.0-1
+  gobject-introspection-1.54.1-3
+  libIlmImf-devel-2.2.0-1
+  libMagick-devel-7.0.10.27-2
+  libcairo-devel-1.17.4-1
+  libcfitsio-devel-4.0.0-1
+  libexif-devel-0.6.23-1
+  libexpat-devel-2.4.1-1
+  libfftw3-devel-3.3.9-1
+  libfontconfig-devel-2.13.1-2
+  libglib2.0-devel-2.54.3-1
+  libgsf1-devel-1.14.42-1
+  libheif-devel-1.12.0-1
+  libintl-devel-0.21-1
+  libjpeg-devel-2.1.1p3-1
+  liblcms2-devel-2.12-1
+  libmatio-devel-1.5.21-1bl1
+  libopenjp2-devel-2.4.0-1
+  libopenslide-devel-3.4.1-1bl4
+  liborc0.4-devel-0.4.28-1
+  libpango1.0-devel-1.40.14-1
+  libpng-devel-1.6.37-1
+  libpoppler-glib-devel-21.01.0-1
+  librsvg2-devel-2.40.20-1
+  libspng-devel-0.7.0-1bl1
+  libtiff-devel-4.3.0-1
+  libtool-2.4.6-7
+  libwebp-devel-0.6.1-2
+  make-4.3-1
+  zlib-devel-1.2.11-1
+
+Canonical website:
+  https://github.com/libvips/libvips
+
+Canonical download:
+  https://github.com/libvips/libvips/archive/refs/tags/v8.11.4.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libvips-8.11.4-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libvips-8.11.4-X.cygport all
+
+This will create:
+  /usr/src/libvips-8.11.4-X-src.tar.xz
+  /usr/src/libvips-8.11.4-X.tar.xz
+  /usr/src/libvips42-8.11.4-X.tar.xz
+  /usr/src/libvips-devel-8.11.4-X.tar.xz
+  /usr/src/girepository-Vips8.0-8.11.4-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libvips)
+  /usr/bin/batch_crop
+  /usr/bin/batch_image_convert
+  /usr/bin/batch_rubber_sheet
+  /usr/bin/light_correct
+  /usr/bin/shrink_width
+  /usr/bin/vips-8.11
+  /usr/bin/vips.exe
+  /usr/bin/vipsedit.exe
+  /usr/bin/vipsheader.exe
+  /usr/bin/vipsprofile
+  /usr/bin/vipsthumbnail.exe
+  /usr/share/doc/Cygwin/libvips.README
+  /usr/share/doc/libvips/AUTHORS
+  /usr/share/doc/libvips/COPYING
+  /usr/share/doc/libvips/ChangeLog
+  /usr/share/doc/libvips/NEWS
+  /usr/share/doc/libvips/README.md
+  /usr/share/doc/libvips/THANKS
+  /usr/share/doc/libvips/html/html/bc_s.png
+  /usr/share/doc/libvips/html/html/bdwn.png
+  /usr/share/doc/libvips/html/html/closed.png
+  /usr/share/doc/libvips/html/html/doc.png
+  /usr/share/doc/libvips/html/html/doxygen.css
+  /usr/share/doc/libvips/html/html/doxygen.svg
+  /usr/share/doc/libvips/html/html/dynsections.js
+  /usr/share/doc/libvips/html/html/folderclosed.png
+  /usr/share/doc/libvips/html/html/folderopen.png
+  /usr/share/doc/libvips/html/html/graph_legend.html
+  /usr/share/doc/libvips/html/html/graph_legend.md5
+  /usr/share/doc/libvips/html/html/graph_legend.png
+  /usr/share/doc/libvips/html/html/index.html
+  /usr/share/doc/libvips/html/html/jquery.js
+  /usr/share/doc/libvips/html/html/menu.js
+  /usr/share/doc/libvips/html/html/menudata.js
+  /usr/share/doc/libvips/html/html/nav_f.png
+  /usr/share/doc/libvips/html/html/nav_g.png
+  /usr/share/doc/libvips/html/html/nav_h.png
+  /usr/share/doc/libvips/html/html/open.png
+  /usr/share/doc/libvips/html/html/search/close.svg
+  /usr/share/doc/libvips/html/html/search/mag_sel.svg
+  /usr/share/doc/libvips/html/html/search/nomatches.html
+  /usr/share/doc/libvips/html/html/search/search.css
+  /usr/share/doc/libvips/html/html/search/search.js
+  /usr/share/doc/libvips/html/html/search/search_l.png
+  /usr/share/doc/libvips/html/html/search/search_m.png
+  /usr/share/doc/libvips/html/html/search/search_r.png
+  /usr/share/doc/libvips/html/html/search/searchdata.js
+  /usr/share/doc/libvips/html/html/splitbar.png
+  /usr/share/doc/libvips/html/html/sync_off.png
+  /usr/share/doc/libvips/html/html/sync_on.png
+  /usr/share/doc/libvips/html/html/tab_a.png
+  /usr/share/doc/libvips/html/html/tab_b.png
+  /usr/share/doc/libvips/html/html/tab_h.png
+  /usr/share/doc/libvips/html/html/tab_s.png
+  /usr/share/doc/libvips/html/html/tabs.css
+  /usr/share/man/man1/batch_crop.1.gz
+  /usr/share/man/man1/batch_image_convert.1.gz
+  /usr/share/man/man1/batch_rubber_sheet.1.gz
+  /usr/share/man/man1/light_correct.1.gz
+  /usr/share/man/man1/vips.1.gz
+  /usr/share/man/man1/vipsedit.1.gz
+  /usr/share/man/man1/vipsheader.1.gz
+  /usr/share/man/man1/vipsprofile.1.gz
+  /usr/share/man/man1/vipsthumbnail.1.gz
+
+(libvips42)
+  /usr/bin/cygvips-42.dll
+  /usr/bin/cygvips-cpp-42.dll
+  /usr/lib/vips-modules-8.11/vips-heif.dll
+  /usr/lib/vips-modules-8.11/vips-magick.dll
+  /usr/lib/vips-modules-8.11/vips-openslide.dll
+  /usr/lib/vips-modules-8.11/vips-poppler.dll
+
+(libvips-devel)
+  /usr/include/vips/VConnection8.h
+  /usr/include/vips/VError8.h
+  /usr/include/vips/VImage8.h
+  /usr/include/vips/VInterpolate8.h
+  /usr/include/vips/almostdeprecated.h
+  /usr/include/vips/arithmetic.h
+  /usr/include/vips/basic.h
+  /usr/include/vips/buf.h
+  /usr/include/vips/colour.h
+  /usr/include/vips/connection.h
+  /usr/include/vips/conversion.h
+  /usr/include/vips/convolution.h
+  /usr/include/vips/create.h
+  /usr/include/vips/dbuf.h
+  /usr/include/vips/debug.h
+  /usr/include/vips/deprecated.h
+  /usr/include/vips/dispatch.h
+  /usr/include/vips/draw.h
+  /usr/include/vips/enumtypes.h
+  /usr/include/vips/error.h
+  /usr/include/vips/foreign.h
+  /usr/include/vips/format.h
+  /usr/include/vips/freqfilt.h
+  /usr/include/vips/gate.h
+  /usr/include/vips/generate.h
+  /usr/include/vips/header.h
+  /usr/include/vips/histogram.h
+  /usr/include/vips/image.h
+  /usr/include/vips/interpolate.h
+  /usr/include/vips/intl.h
+  /usr/include/vips/mask.h
+  /usr/include/vips/memory.h
+  /usr/include/vips/morphology.h
+  /usr/include/vips/mosaicing.h
+  /usr/include/vips/object.h
+  /usr/include/vips/operation.h
+  /usr/include/vips/private.h
+  /usr/include/vips/rect.h
+  /usr/include/vips/region.h
+  /usr/include/vips/resample.h
+  /usr/include/vips/sbuf.h
+  /usr/include/vips/semaphore.h
+  /usr/include/vips/soname.h
+  /usr/include/vips/thread.h
+  /usr/include/vips/threadpool.h
+  /usr/include/vips/transform.h
+  /usr/include/vips/type.h
+  /usr/include/vips/util.h
+  /usr/include/vips/vector.h
+  /usr/include/vips/version.h
+  /usr/include/vips/video.h
+  /usr/include/vips/vips.h
+  /usr/include/vips/vips7compat.h
+  /usr/include/vips/vips8
+  /usr/lib/libvips-cpp.dll.a
+  /usr/lib/libvips.dll.a
+  /usr/lib/pkgconfig/vips-cpp.pc
+  /usr/lib/pkgconfig/vips.pc
+
+(girepository-Vips8.0)
+  /usr/lib/girepository-1.0/Vips-8.0.typelib
+  /usr/share/gir-1.0/Vips-8.0.gir
+
+------------------
+
+Port Notes:
+
+----- version 8.11.4-1bl1 -----
+Version bump.
+
+----- version 8.11.3-1bl1 -----
+Version bump.
+
+----- version 8.11.0-1bl1 -----
+Version bump.
+
+----- version 8.10.5-1bl1 -----
+Version bump.
+
+----- version 8.10.1-1bl2 -----
+Rebuild for libmatio
+
+----- version 8.10.1-1bl1 -----
+Version bump.
+
+----- version 8.10.0-1bl1 -----
+Version bump.
+
+----- version 8.6.3-1bl1 -----
+Version bump.
+
+----- version 8.6.0-1bl1 -----
+Version bump.
+
+----- version 8.5.7-1bl1 -----
+Version bump.
+
+----- version 7.36.1+git20131007-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

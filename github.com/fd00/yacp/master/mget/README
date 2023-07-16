@@ -1,0 +1,81 @@
+mget
+------------------------------------------
+This is a multithreaded Wget-like tool and library written in C.
+
+Runtime requirements:
+  cygwin-2.8.2-1
+  libbz2_1-1.0.6-3
+  libgnutls30-3.5.13-1
+  libiconv2-1.14-3
+  libidn2_0-2.0.2-1
+  libintl8-0.19.8.1-2
+  liblzma5-5.2.3-1
+  libmget0.1_0-0.1.9-1bl2
+  libpsl5-0.17.0-1
+  libunistring2-0.9.6-1
+  pkg-config-0.29.1-1
+  zlib0-1.2.11-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-9-1
+  binutils-2.25-4
+  cygport-0.24.1-1
+  flex-2.6.4-1
+  gcc-core-5.4.0-1
+  libtool-2.4.6-4
+  make-4.2.1-2
+
+Canonical website:
+  https://github.com/rockdaboot/mget
+
+Canonical download:
+  https://github.com/rockdaboot/mget/archive/0.1.9.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack mget-0.1.9-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./mget-0.1.9-X.cygport all
+
+This will create:
+  /usr/src/mget-0.1.9-X-src.tar.xz
+  /usr/src/mget-0.1.9-X.tar.xz
+  /usr/src/libmget0.1_0-0.1.9-X.tar.xz
+  /usr/src/libmget0.1-devel-0.1.9-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(mget)
+  /usr/bin/mget.exe
+  /usr/share/doc/Cygwin/mget.README
+  /usr/share/doc/mget/AUTHORS
+  /usr/share/doc/mget/COPYING
+  /usr/share/doc/mget/NEWS
+  /usr/share/doc/mget/README
+  /usr/share/doc/mget/TODO.txt
+  /usr/share/mget/effective_tld_names.dat
+
+(libmget0.1_0)
+  /usr/bin/cygmget-0.1-0.dll
+
+(libmget0.1-devel)
+  /usr/include/libmget.h
+  /usr/lib/libmget-0.1.dll.a
+  /usr/lib/pkgconfig/libmget-0.1.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.1.9-1bl2 -----
+Rebuild with gcc-5.4.0
+
+----- version 0.1.9-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

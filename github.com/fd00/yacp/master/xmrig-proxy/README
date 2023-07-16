@@ -1,0 +1,96 @@
+xmrig-proxy
+------------------------------------------
+Extremely high performance Monero (XMR) Stratum protocol proxy, can easily
+handle over 100K connections on cheap $5 (1024 MB) virtual machine. Reduce
+number of pool connections up to 256 times, 100K workers become just 391 worker
+on pool side. Written on C++/libuv same as XMRig miner.
+
+Runtime requirements:
+  cygwin-3.2.0-1
+  libssl1.1-1.1.1f-1
+  libuv1-1.41.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.37-2
+  cmake-3.20.0-1
+  cygport-0.34.0-1
+  gcc-core-11.2.0-1
+  gcc-g++-11.2.0-1
+  libssl-devel-1.1.1f-1
+  libuv-devel-1.41.0-1
+  ninja-1.10.2-1
+
+Canonical website:
+  https://github.com/xmrig/xmrig-proxy
+
+Canonical download:
+  https://github.com/xmrig/xmrig-proxy/archive/refs/tags/v6.15.1.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack xmrig-proxy-6.15.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./xmrig-proxy-6.15.1-X.cygport all
+
+This will create:
+  /usr/src/xmrig-proxy-6.15.1-X-src.tar.xz
+  /usr/src/xmrig-proxy-6.15.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(xmrig-proxy)
+  /usr/bin/xmrig-proxy.exe
+  /usr/share/doc/Cygwin/xmrig-proxy.README
+  /usr/share/doc/xmrig-proxy/CHANGELOG.md
+  /usr/share/doc/xmrig-proxy/CHANGELOG_OLD.md
+  /usr/share/doc/xmrig-proxy/LICENSE
+  /usr/share/doc/xmrig-proxy/README.md
+  /usr/share/doc/xmrig-proxy/STRATUM.md
+  /usr/share/doc/xmrig-proxy/STRATUM_EXT.md
+  /usr/share/doc/xmrig-proxy/gpg_keys/xmrig.asc
+  /usr/share/doc/xmrig-proxy/releases/5_0_0/SHA256SUMS
+  /usr/share/doc/xmrig-proxy/releases/5_0_0/SHA256SUMS.sig
+  /usr/share/xmrig-proxy/config.json
+
+------------------
+
+Port Notes:
+
+----- version 6.15.1-1bl1 -----
+Version bump.
+
+----- version 6.15.0-1bl1 -----
+Version bump.
+
+----- version 6.14.0-1bl1 -----
+Version bump.
+
+----- version 6.12.0-1bl1 -----
+Version bump.
+
+----- version 6.4.0-1bl1 -----
+Version bump.
+
+----- version 6.3.0-1bl1 -----
+Version bump.
+
+----- version 5.10.0-1bl1 -----
+Version bump.
+
+----- version 5.9.0-1bl1 -----
+Version bump.
+
+----- version 5.7.0-1bl1 -----
+Version bump.
+
+----- version 5.5.1-1bl1 -----
+Version bump.
+
+----- version 5.5.0-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

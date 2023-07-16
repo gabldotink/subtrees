@@ -1,0 +1,208 @@
+uncrustify
+------------------------------------------
+The goals of this project are simple: Create a highly configurable, easily
+modifiable source code beautifier.
+
+Runtime requirements:
+  cygwin-3.3.5-1
+  libgcc1-11.3.0-1
+  libstdc++6-11.3.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.38-1
+  cmake-3.20.0-1
+  cygport-0.35.1-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  gcc-objc-11.3.0-1
+  gcc-objc++-11.3.0-1
+  ninja-1.11.0-1
+  vala-0.38.8-1
+
+Canonical website:
+  https://github.com/uncrustify/uncrustify
+
+Canonical download:
+  https://github.com/uncrustify/uncrustify/archive/refs/tags/uncrustify-0.75.1.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack uncrustify-0.75.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./uncrustify-0.75.1-X.cygport all
+
+This will create:
+  /usr/src/uncrustify-0.75.1-X-src.tar.xz
+  /usr/src/uncrustify-0.75.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(uncrustify)
+  /usr/bin/uncrustify.exe
+  /usr/share/doc/Cygwin/uncrustify.README
+  /usr/share/doc/uncrustify/AUTHORS
+  /usr/share/doc/uncrustify/BUGS
+  /usr/share/doc/uncrustify/CONTRIBUTING.md
+  /usr/share/doc/uncrustify/COPYING
+  /usr/share/doc/uncrustify/ChangeLog
+  /usr/share/doc/uncrustify/Comments.txt
+  /usr/share/doc/uncrustify/HELP
+  /usr/share/doc/uncrustify/LIMITATIONS.txt
+  /usr/share/doc/uncrustify/NEWS
+  /usr/share/doc/uncrustify/README.md
+  /usr/share/doc/uncrustify/Tracking.txt
+  /usr/share/doc/uncrustify/align-thresholds.txt
+  /usr/share/doc/uncrustify/control_the_spaces.txt
+  /usr/share/doc/uncrustify/dump-steps.txt
+  /usr/share/doc/uncrustify/example.c
+  /usr/share/doc/uncrustify/examples/MS-calling_conventions.cfg
+  /usr/share/doc/uncrustify/examples/amxmodx.cfg
+  /usr/share/doc/uncrustify/examples/ben.cfg
+  /usr/share/doc/uncrustify/examples/ben2.cfg
+  /usr/share/doc/uncrustify/examples/d.cfg
+  /usr/share/doc/uncrustify/examples/defaults.cfg
+  /usr/share/doc/uncrustify/examples/freebsd.cfg
+  /usr/share/doc/uncrustify/examples/gnu-indent.cfg
+  /usr/share/doc/uncrustify/examples/klaus.cfg
+  /usr/share/doc/uncrustify/examples/kr-indent.cfg
+  /usr/share/doc/uncrustify/examples/linux-indent.cfg
+  /usr/share/doc/uncrustify/examples/linux.cfg
+  /usr/share/doc/uncrustify/examples/mono.cfg
+  /usr/share/doc/uncrustify/examples/msvc.cfg
+  /usr/share/doc/uncrustify/examples/objc.cfg
+  /usr/share/doc/uncrustify/examples/sun.cfg
+  /usr/share/doc/uncrustify/examples/xsupplicant.cfg
+  /usr/share/doc/uncrustify/goals.txt
+  /usr/share/doc/uncrustify/how_to_configure_options.txt
+  /usr/share/doc/uncrustify/html/align_typedef.html
+  /usr/share/doc/uncrustify/html/ben.cfg.txt
+  /usr/share/doc/uncrustify/html/config.txt
+  /usr/share/doc/uncrustify/html/configuration.txt
+  /usr/share/doc/uncrustify/html/default.cfg
+  /usr/share/doc/uncrustify/html/examples/c-1.in.c
+  /usr/share/doc/uncrustify/html/examples/c-1.out.c
+  /usr/share/doc/uncrustify/html/examples/example.c
+  /usr/share/doc/uncrustify/html/images/linuxlinks.gif
+  /usr/share/doc/uncrustify/html/index.html
+  /usr/share/doc/uncrustify/html/linux.cfg.txt
+  /usr/share/doc/uncrustify/html/options.html
+  /usr/share/doc/uncrustify/html/options_ASM.html
+  /usr/share/doc/uncrustify/html/options_Align.html
+  /usr/share/doc/uncrustify/html/options_CLI_NET.html
+  /usr/share/doc/uncrustify/html/options_C_sharp.html
+  /usr/share/doc/uncrustify/html/options_D.html
+  /usr/share/doc/uncrustify/html/options_Indenting.html
+  /usr/share/doc/uncrustify/html/options_Java.html
+  /usr/share/doc/uncrustify/html/options_ModifyCode.html
+  /usr/share/doc/uncrustify/html/options_Namespace.html
+  /usr/share/doc/uncrustify/html/options_NewLines.html
+  /usr/share/doc/uncrustify/html/options_Objectiv-C.html
+  /usr/share/doc/uncrustify/html/options_Positioning.html
+  /usr/share/doc/uncrustify/html/options_Preprocessor.html
+  /usr/share/doc/uncrustify/html/options_Space_Assign.html
+  /usr/share/doc/uncrustify/html/options_Space_Byref.html
+  /usr/share/doc/uncrustify/html/options_Space_Case.html
+  /usr/share/doc/uncrustify/html/options_Space_Cast.html
+  /usr/share/doc/uncrustify/html/options_Space_Class.html
+  /usr/share/doc/uncrustify/html/options_Space_Comma.html
+  /usr/share/doc/uncrustify/html/options_Space_Enum.html
+  /usr/share/doc/uncrustify/html/options_Space_For.html
+  /usr/share/doc/uncrustify/html/options_Space_New.html
+  /usr/share/doc/uncrustify/html/options_Space_Operator.html
+  /usr/share/doc/uncrustify/html/options_Space_Paren.html
+  /usr/share/doc/uncrustify/html/options_Space_Template.html
+  /usr/share/doc/uncrustify/html/options_Spaces.html
+  /usr/share/doc/uncrustify/html/project-support.jpg
+  /usr/share/doc/uncrustify/html/uncrustify.css
+  /usr/share/doc/uncrustify/html/uncrustify.html
+  /usr/share/doc/uncrustify/not_a_compiler.txt
+  /usr/share/doc/uncrustify/overview.odt
+  /usr/share/doc/uncrustify/paren_stack.txt
+  /usr/share/doc/uncrustify/preprocessor_indentation.txt
+  /usr/share/doc/uncrustify/theory.txt
+  /usr/share/doc/uncrustify/threads.txt
+  /usr/share/man/man1/uncrustify.1.gz
+  /usr/share/uncrustify/MS-calling_conventions.cfg
+  /usr/share/uncrustify/align_assign.txt
+  /usr/share/uncrustify/amxmodx.cfg
+  /usr/share/uncrustify/ben.cfg
+  /usr/share/uncrustify/ben2.cfg
+  /usr/share/uncrustify/d.cfg
+  /usr/share/uncrustify/defaults.cfg
+  /usr/share/uncrustify/dofiles.sh
+  /usr/share/uncrustify/freebsd.cfg
+  /usr/share/uncrustify/gnu-indent.cfg
+  /usr/share/uncrustify/klaus.cfg
+  /usr/share/uncrustify/kr-indent.cfg
+  /usr/share/uncrustify/linux-indent.cfg
+  /usr/share/uncrustify/linux.cfg
+  /usr/share/uncrustify/mono.cfg
+  /usr/share/uncrustify/msvc.cfg
+  /usr/share/uncrustify/objc.cfg
+  /usr/share/uncrustify/sun.cfg
+  /usr/share/uncrustify/types.txt
+  /usr/share/uncrustify/uigui_uncrustify.ini
+  /usr/share/uncrustify/uncrust-files.sh
+  /usr/share/uncrustify/uncrustify.xml.in
+  /usr/share/uncrustify/xsupplicant.cfg
+
+------------------
+
+Port Notes:
+
+----- version 0.75.1-1bl1 -----
+Version bump.
+
+----- version 0.73.0-1bl1 -----
+Version bump.
+
+----- version 0.72.0-1bl1 -----
+Version bump.
+
+----- version 0.71.0-1bl1 -----
+Version bump.
+
+----- version 0.70.1-1bl1 -----
+Version bump.
+
+----- version 0.69.0-1bl1 -----
+Version bump.
+
+----- version 0.68.1-1bl1 -----
+Version bump.
+
+----- version 0.67-1bl1 -----
+Version bump.
+
+----- version 0.66.1-1bl1 -----
+Version bump.
+
+----- version 0.65-1bl1 -----
+Version bump.
+
+----- version 0.64-1bl1 -----
+Version bump.
+
+----- version 0.62-1bl1 -----
+Version bump.
+
+----- version 0.61-1bl1 -----
+Version bump.
+
+----- version 0.60-1bl1 -----
+Version bump.
+
+----- version 0.58-1bl1 -----
+Version bump.
+
+----- version 0.57-1bl1 -----
+Version bump.
+
+----- version 0.55-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

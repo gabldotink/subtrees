@@ -1,0 +1,53 @@
+HOMEPAGE="https://gitlab.com/ecodis/${PN}"
+SRC_URI="https://gitlab.com/ecodis/${PN}/-/archive/v${PV}/${PN}-v${PV}.tar.bz2"
+SRC_DIR="${PN}-v${PV}"
+
+CATEGORY="Video"
+SUMMARY="Open-source ISO/IEC 23003-3 (USAC, xHE-AAC) encoder"
+DESCRIPTION="exhale, which is an acronym for 'Ecodis eXtended High-efficiency And
+Low-complexity Encoder', is a lightweight library and application to
+encode uncompressed WAVE-format audio files into MPEG-4-format files
+complying with the ISO/IEC 23003-3 (MPEG-D) Unified Speech and Audio
+Coding (USAC, also known as Extended High-Efficiency AAC) standard."
+
+LICENSE="BSD-3-Clause"
+LICENSE_SPDX="SPDX-License-Identifier: BSD-3-Clause"
+LICENSE_URI="include/License.htm"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DBUILD_SHARED_LIBS:BOOL=ON
+	-DSOVERSION:STRING=${PV[1]}
+"
+
+src_test()
+{
+	cd ${B}
+	./src/app/${PN}.exe --version
+}
+
+HTMLDOCS="
+	include/*.htm
+	include/styles.css
+"
+
+PKG_NAMES="
+	exhale
+	libexhale${PV[1]}
+	libexhale-devel
+"
+exhale_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+libexhale1_CONTENTS="
+	usr/bin/*.dll
+"
+libexhale_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+exhale_SUMMARY="${SUMMARY} (utilities)"
+libexhale1_SUMMARY="${SUMMARY} (runtime)"
+libexhale_devel_SUMMARY="${SUMMARY} (development)"

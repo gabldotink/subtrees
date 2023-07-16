@@ -1,0 +1,32 @@
+HOMEPAGE="https://gitlab.com/b0/libqtolm"
+SRC_URI="https://gitlab.com/b0/libqtolm/-/archive/v${PV}/libqtolm-v${PV}.tar.bz2"
+SRC_DIR="libqtolm-v${PV}"
+
+CATEGORY="Libs"
+SUMMARY="Qt wrapper for libolm"
+DESCRIPTION="${SUMMARY}"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DBUILD_SHARED_LIBS:BOOL=ON
+"
+
+PKG_NAMES="
+	libQtOlm
+	libQtOlm3.0
+	libQtOlm-devel
+"
+libQtOlm_CONTENTS="
+	usr/share
+"
+libQtOlm3_0_CONTENTS="
+	usr/bin
+"
+libQtOlm_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+libQtOlm_SUMMARY="${SUMMARY} (licensing & readmes)"
+libQtOlm3_0_SUMMARY="${SUMMARY} (runtime)"
+libQtOlm_devel_SUMMARY="${SUMMARY} (development)"

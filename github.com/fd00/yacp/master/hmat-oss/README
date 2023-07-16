@@ -1,0 +1,86 @@
+hmat-oss
+------------------------------------------
+A hierarchical matrix C/C++ library including a LU solver.
+
+Runtime requirements:
+  cygwin-3.2.0-1
+  libgcc1-10.2.0-1
+  libgomp1-10.2.0-1
+  libhmat-devel-1.7.1-1bl1
+  libhmat2-1.7.1-1bl1
+  liblapack0-3.9.1-1
+  libopenblas-0.3.15-1
+  libstdc++6-10.2.0-1
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.36.1-2
+  cmake-3.20.0-1
+  cygport-0.34.0-1
+  gcc-core-10.2.0-1
+  gcc-g++-10.2.0-1
+  liblapack-devel-3.9.1-1
+  ninja-1.10.2-1
+
+Canonical website:
+  https://github.com/jeromerobert/hmat-oss
+
+Canonical download:
+  https://github.com/jeromerobert/hmat-oss/archive/1.7.1.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack hmat-oss-1.7.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./hmat-oss-1.7.1-X.cygport all
+
+This will create:
+  /usr/src/hmat-oss-1.7.1-X-src.tar.xz
+  /usr/src/hmat-oss-1.7.1-X.tar.xz
+  /usr/src/libhmat2-1.7.1-X.tar.xz
+  /usr/src/libhmat-devel-1.7.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(hmat-oss)
+  /usr/bin/c-cholesky.exe
+  /usr/bin/c-cylinder.exe
+  /usr/bin/c-simple-cylinder.exe
+  /usr/bin/c-simple-kriging.exe
+  /usr/bin/kriging.exe
+  /usr/share/doc/Cygwin/hmat-oss.README
+  /usr/share/doc/hmat-oss/LICENSE.md
+  /usr/share/doc/hmat-oss/README.md
+
+(libhmat2)
+  /usr/bin/cyghmat-2.dll
+
+(libhmat-devel)
+  /usr/include/hmat/config-oss.h
+  /usr/include/hmat/config.h
+  /usr/include/hmat/hmat.h
+  /usr/lib/cmake/hmat/HMATConfig.cmake
+  /usr/lib/cmake/hmat/HMATConfigVersion.cmake
+  /usr/lib/cmake/hmat/HMATTargets-release.cmake
+  /usr/lib/cmake/hmat/HMATTargets.cmake
+  /usr/lib/libhmat.dll.a
+  /usr/lib/pkgconfig/hmat-oss.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.7.1-1bl1 -----
+Version bump.
+
+----- version 1.7.0-1bl1 -----
+Version bump.
+
+----- version 1.6.1-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

@@ -1,0 +1,81 @@
+libhangish
+------------------------------------------
+Hangouts qt library based on Hangish
+
+Runtime requirements:
+  cygwin-3.4.3-1
+  libQt5Core5-5.9.4-2
+  libQt5Script5-5.9.4-1
+  libgcc1-11.3.0-1
+  libhangish-devel-0.1.0+git20151108-1bl2
+  libhangish0.1-0.1.0+git20151108-1bl2
+  libprotobuf32-21.9-1
+  libstdc++6-11.3.0-1
+  pkg-config-1.9.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.39-1
+  cmake-3.23.2-1
+  cygport-0.35.5-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libQt5Core-devel-5.9.4-2
+  libQt5Script-devel-5.9.4-1
+  libprotobuf-devel-21.9-1
+  ninja-1.11.1-1
+
+Canonical website:
+  https://github.com/tiagosh/libhangish
+
+Canonical download:
+  https://github.com/tiagosh/libhangish.git
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libhangish-0.1.0+git20151108-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libhangish-0.1.0+git20151108-X.cygport all
+
+This will create:
+  /usr/src/libhangish-0.1.0+git20151108-X-src.tar.xz
+  /usr/src/libhangish-0.1.0+git20151108-X.tar.xz
+  /usr/src/libhangish0.1-0.1.0+git20151108-X.tar.xz
+  /usr/src/libhangish-devel-0.1.0+git20151108-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libhangish)
+  /usr/share/doc/Cygwin/libhangish.README
+  /usr/share/doc/libhangish/LICENSE
+  /usr/share/doc/libhangish/README.md
+
+(libhangish0.1)
+  /usr/bin/cyghangish-0.1.dll
+
+(libhangish-devel)
+  /usr/include/hangish/authenticator.h
+  /usr/include/hangish/channel.h
+  /usr/include/hangish/hangishclient.h
+  /usr/include/hangish/hangouts.pb.h
+  /usr/include/hangish/types.h
+  /usr/include/hangish/utils.h
+  /usr/lib/cmake/hangish/HangishConfig.cmake
+  /usr/lib/cmake/hangish/HangishConfigVersion.cmake
+  /usr/lib/libhangish.dll.a
+  /usr/lib/pkgconfig/libhangish.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.1.0+git20151108-1bl2 -----
+Rebuild with gcc-11.3.0
+
+----- version 0.1.0+git20151108-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

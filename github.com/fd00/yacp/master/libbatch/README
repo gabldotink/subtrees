@@ -1,0 +1,130 @@
+libbatch
+------------------------------------------
+Generic batch management library
+
+Runtime requirements:
+  cygwin-3.3.3-1
+  libbatch-devel-2.4.5-1bl1
+  libbatch2.4-2.4.5-1bl1
+  libgcc1-11.2.0-1
+  libstdc++6-11.2.0-1
+  pkg-config-1.6.3-1
+  python39-3.9.9-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.37-2
+  cmake-3.20.0-1
+  cygport-0.34.0-1
+  gcc-core-11.2.0-1
+  gcc-g++-11.2.0-1
+  ninja-1.10.2-1
+  python39-3.9.9-1
+
+Canonical website:
+  https://git.salome-platform.org/gitweb/?p=tools/libbatch.git
+
+Canonical download:
+  https://git.salome-platform.org/gitpub/tools/libbatch.git
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libbatch-2.4.5-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libbatch-2.4.5-X.cygport all
+
+This will create:
+  /usr/src/libbatch-2.4.5-X-src.tar.xz
+  /usr/src/libbatch-2.4.5-X.tar.xz
+  /usr/src/libbatch2.4-2.4.5-X.tar.xz
+  /usr/src/libbatch-devel-2.4.5-X.tar.xz
+  /usr/src/python39-libbatch-2.4.5-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libbatch)
+  /usr/share/doc/Cygwin/libbatch.README
+  /usr/share/doc/libbatch/COPYING
+
+(libbatch2.4)
+  /usr/bin/cygbatch-2.4.dll
+
+(libbatch-devel)
+  /usr/include/libbatch/APIInternalFailureException.hxx
+  /usr/include/libbatch/BatchManager.hxx
+  /usr/include/libbatch/BatchManagerCatalog.hxx
+  /usr/include/libbatch/BoolType.hxx
+  /usr/include/libbatch/CommunicationProtocol.hxx
+  /usr/include/libbatch/Constants.hxx
+  /usr/include/libbatch/Couple.hxx
+  /usr/include/libbatch/CoupleType.hxx
+  /usr/include/libbatch/Defines.hxx
+  /usr/include/libbatch/Environnement.hxx
+  /usr/include/libbatch/FactBatchManager.hxx
+  /usr/include/libbatch/GenericException.hxx
+  /usr/include/libbatch/GenericType.hxx
+  /usr/include/libbatch/InvalidArgumentException.hxx
+  /usr/include/libbatch/InvalidKeyException.hxx
+  /usr/include/libbatch/Job.hxx
+  /usr/include/libbatch/JobId.hxx
+  /usr/include/libbatch/JobInfo.hxx
+  /usr/include/libbatch/ListIsFullException.hxx
+  /usr/include/libbatch/LongType.hxx
+  /usr/include/libbatch/MpiImpl.hxx
+  /usr/include/libbatch/NotYetImplementedException.hxx
+  /usr/include/libbatch/ParameterTypeMap.hxx
+  /usr/include/libbatch/Parametre.hxx
+  /usr/include/libbatch/RunTimeException.hxx
+  /usr/include/libbatch/StringType.hxx
+  /usr/include/libbatch/TypeMismatchException.hxx
+  /usr/include/libbatch/Versatile.hxx
+  /usr/lib/cmake/libbatch/LibBatchConfig.cmake
+  /usr/lib/cmake/libbatch/LibBatchConfigVersion.cmake
+  /usr/lib/cmake/libbatch/LibBatchTargets-release.cmake
+  /usr/lib/cmake/libbatch/LibBatchTargets.cmake
+  /usr/lib/libbatch.dll.a
+  /usr/lib/pkgconfig/libbatch.pc
+  /usr/share/aclocal/check_libbatch.m4
+
+(python39-libbatch)
+  /usr/lib/python3.9/site-packages/__pycache__/libbatch.cpython-39.opt-1.pyc
+  /usr/lib/python3.9/site-packages/__pycache__/libbatch.cpython-39.opt-2.pyc
+  /usr/lib/python3.9/site-packages/__pycache__/libbatch.cpython-39.pyc
+  /usr/lib/python3.9/site-packages/_libbatch.dll
+  /usr/lib/python3.9/site-packages/libbatch.py
+
+------------------
+
+Port Notes:
+
+----- version 2.4.5-1bl1 -----
+Version bump.
+
+----- version 2.4.4-1bl1 -----
+Version bump.
+
+----- version 2.4.3-1bl1 -----
+Version bump.
+
+----- version 2.4.2-1bl1 -----
+Version bump.
+
+----- version 2.4.1-1bl1 -----
+Version bump.
+
+----- version 2.4.0-1bl1 -----
+Version bump.
+
+----- version 2.3.2-1bl1 -----
+Version bump.
+
+----- version 2.3.0-1bl1 -----
+Version bump.
+
+----- version 2.1.0-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

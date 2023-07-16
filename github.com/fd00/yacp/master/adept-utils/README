@@ -1,0 +1,77 @@
+adept-utils
+------------------------------------------
+LLNL Utility Libraries
+
+Runtime requirements:
+  cygwin-2.10.0-1
+  libadept-utils0-1.0.1-1bl1
+  libgcc1-7.3.0-2
+  libstdc++6-7.3.0-2
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.29-1
+  cmake-3.6.2-1
+  cygport-0.31.0-1
+  gcc-core-7.3.0-2
+  gcc-g++-7.3.0-2
+  make-4.2.1-2
+  ninja-1.8.2-2
+
+Canonical website:
+  https://github.com/LLNL/adept-utils
+
+Canonical download:
+  https://github.com/LLNL/adept-utils/archive/v1.0.1.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack adept-utils-1.0.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./adept-utils-1.0.1-X.cygport all
+
+This will create:
+  /usr/src/adept-utils-1.0.1-X-src.tar.xz
+  /usr/src/adept-utils-1.0.1-X.tar.xz
+  /usr/src/libadept-utils0-1.0.1-X.tar.xz
+  /usr/src/libadept-utils-devel-1.0.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(adept-utils)
+  /usr/share/doc/Cygwin/adept-utils.README
+
+(libadept-utils0)
+  /usr/bin/cygadept_timing-0.dll
+  /usr/bin/cygadept_utils-0.dll
+
+(libadept-utils-devel)
+  /usr/include/adept-utils-config.h
+  /usr/include/adept-utils/Timer.h
+  /usr/include/adept-utils/io_utils.h
+  /usr/include/adept-utils/matrix_utils.h
+  /usr/include/adept-utils/mpi_utils.h
+  /usr/include/adept-utils/stl_utils.h
+  /usr/include/adept-utils/string_utils.h
+  /usr/include/adept-utils/timing.h
+  /usr/include/adept-utils/two_utils.h
+  /usr/lib/cmake/adept_utils/adept_utils-config.cmake
+  /usr/lib/cmake/adept_utils/adept_utils-libs-release.cmake
+  /usr/lib/cmake/adept_utils/adept_utils-libs.cmake
+  /usr/lib/libadept_timing.dll.a
+  /usr/lib/libadept_utils.dll.a
+
+------------------
+
+Port Notes:
+
+----- version 1.0.1-1bl1 -----
+Version bump.
+
+----- version 1.0-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

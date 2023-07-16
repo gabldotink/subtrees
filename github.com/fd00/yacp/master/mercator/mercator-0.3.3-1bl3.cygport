@@ -1,0 +1,34 @@
+HOMEPAGE="https://github.com/worldforge/${PN}"
+SRC_URI="https://github.com/worldforge/${PN}/archive/${PV}.tar.gz"
+
+CATEGORY="Games"
+SUMMARY="Terrain library for WorldForge client/server"
+DESCRIPTION="Mercator is primarily aimed at terrain for multiplayer online games and forms
+one of the WorldForge core libraries. It is intended to be used as a terrain
+library on the client, while a subset of features are useful on the server."
+
+CYGPORT_USE_UNSTABLE_API=1
+src_patch_hook()
+{
+	cd ${origsrcdir}/${SRC_DIR}
+	mv Doxyfile Doxyfile.in
+}
+
+PKG_NAMES="
+	${PN}
+	lib${PN}0.3_4
+	lib${PN}0.3-devel
+"
+mercator_CONTENTS="
+	usr/share
+"
+libmercator0_3_4_CONTENTS="
+	usr/bin
+"
+libmercator0_3_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+mercator_SUMMARY="${SUMMARY} (licensing & readmes)"
+libmercator0_3_4_SUMMARY="${SUMMARY} (runtime)"
+libmercator0_3_devel_SUMMARY="${SUMMARY} (development)"

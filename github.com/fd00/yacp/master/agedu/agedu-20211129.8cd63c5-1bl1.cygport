@@ -1,0 +1,16 @@
+HOMEPAGE="https://www.chiark.greenend.org.uk/~sgtatham/${PN}/"
+SRC_URI="https://www.chiark.greenend.org.uk/~sgtatham/${PN}/${P}.tar.gz"
+
+CATEGORY="Utils"
+SUMMARY="Unix utility for tracking down wasted disk space"
+DESCRIPTION="${SUMMARY}"
+
+export CPPFLAGS="${CPPFLAGS} -DO_LARGEFILE=0"
+
+inherit cmake
+
+src_test()
+{
+	cd ${B}
+	./${PN}.exe --version
+}

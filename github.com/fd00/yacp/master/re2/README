@@ -1,0 +1,159 @@
+re2
+------------------------------------------
+RE2 is a fast, safe, thread-friendly alternative to backtracking regular
+expression engines like those used in PCRE, Perl, and Python. It is a C++
+library.
+
+Runtime requirements:
+  cygwin-3.4.6-1
+  libgcc1-11.3.0-1
+  libre2-devel-20230301-1bl1
+  libre2_10-20230301-1bl1
+  libstdc++6-11.3.0-1
+  pkg-config-1.9.4-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.40-1
+  cmake-3.23.2-1
+  cygport-0.36.1-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  ninja-1.11.1-1
+
+Canonical website:
+  https://github.com/google/re2
+
+Canonical download:
+  https://github.com/google/re2/archive/refs/tags/2023-03-01.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack re2-20230301-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./re2-20230301-X.cygport all
+
+This will create:
+  /usr/src/re2-20230301-X-src.tar.xz
+  /usr/src/re2-20230301-X.tar.xz
+  /usr/src/libre2_10-20230301-X.tar.xz
+  /usr/src/libre2-devel-20230301-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(re2)
+  /usr/share/doc/Cygwin/re2.README
+  /usr/share/doc/re2/AUTHORS
+  /usr/share/doc/re2/CONTRIBUTORS
+  /usr/share/doc/re2/LICENSE
+  /usr/share/doc/re2/README
+  /usr/share/doc/re2/syntax.html
+  /usr/share/doc/re2/syntax.txt
+
+(libre2_10)
+  /usr/bin/cygre2-10.dll
+
+(libre2-devel)
+  /usr/include/re2/filtered_re2.h
+  /usr/include/re2/re2.h
+  /usr/include/re2/set.h
+  /usr/include/re2/stringpiece.h
+  /usr/lib/cmake/re2/re2Config.cmake
+  /usr/lib/cmake/re2/re2ConfigVersion.cmake
+  /usr/lib/cmake/re2/re2Targets-release.cmake
+  /usr/lib/cmake/re2/re2Targets.cmake
+  /usr/lib/libre2.dll.a
+  /usr/lib/pkgconfig/re2.pc
+
+------------------
+
+Port Notes:
+
+----- version 20230301-1bl1 -----
+Version bump.
+
+----- version 20220601-1bl1 -----
+Version bump.
+
+----- version 20211101-1bl1 -----
+Version bump.
+
+----- version 20210901-1bl1 -----
+Version bump.
+
+----- version 20210601-1bl1 -----
+Version bump.
+
+----- version 20210401-1bl1 -----
+Version bump.
+
+----- version 20201101-1bl1 -----
+Version bump.
+
+----- version 20201001-1bl1 -----
+Version bump.
+
+----- version 20200801-1bl1 -----
+Version bump.
+
+----- version 20200601-1bl1 -----
+Version bump.
+
+----- version 20200401-1bl1 -----
+Version bump.
+
+----- version 20200303-1bl1 -----
+Version bump.
+
+----- version 20200101-1bl1 -----
+Version bump.
+
+----- version 20191201-1bl1 -----
+Version bump.
+
+----- version 20190901-1bl1 -----
+Version bump.
+
+----- version 20190801-1bl1 -----
+Version bump.
+
+----- version 20190701-1bl1 -----
+Version bump.
+
+----- version 20190601-1bl1 -----
+Version bump.
+
+----- version 20190401-1bl1 -----
+Version bump.
+
+----- version 20190301-1bl1 -----
+Version bump.
+
+----- version 20181201-1bl1 -----
+Version bump.
+
+----- version 20180701-1bl1 -----
+Version bump.
+
+----- version 20180401-1bl1 -----
+Version bump.
+
+----- version 20171201-1bl1 -----
+Version bump.
+
+----- version 20170301-1bl1 -----
+Version bump.
+
+----- version 20170101-1bl1 -----
+Version bump.
+
+----- version 20130802-1bl1 -----
+Version bump.
+
+----- version 0+hg20111030-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

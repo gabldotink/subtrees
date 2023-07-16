@@ -1,0 +1,68 @@
+vedis
+------------------------------------------
+Vedis is an embeddable datastore C library built with over 70 commands similar
+in concept to Redis but without the networking layer since Vedis run in the
+same process of the host application.
+
+Runtime requirements:
+  cygwin-2.10.0-1
+  libvedis-devel-1.2.6-1bl2
+  libvedis0-1.2.6-1bl2
+  pkg-config-0.29.1-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-10-1
+  binutils-2.29-1
+  cygport-0.31.0-1
+  gcc-core-6.4.0-5
+  libtool-2.4.6-5
+  make-4.2.1-2
+
+Canonical website:
+  http://vedis.symisc.net/
+
+Canonical download:
+  http://vedis.symisc.net/db/vedis-ds-126.zip
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack vedis-1.2.6-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./vedis-1.2.6-X.cygport all
+
+This will create:
+  /usr/src/vedis-1.2.6-X-src.tar.xz
+  /usr/src/vedis-1.2.6-X.tar.xz
+  /usr/src/libvedis0-1.2.6-X.tar.xz
+  /usr/src/libvedis-devel-1.2.6-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(vedis)
+  /usr/share/doc/Cygwin/vedis.README
+  /usr/share/doc/vedis/LICENSE.txt
+
+(libvedis0)
+  /usr/bin/cygvedis-0.dll
+
+(libvedis-devel)
+  /usr/include/vedis.h
+  /usr/lib/libvedis.dll.a
+  /usr/lib/pkgconfig/vedis.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.2.6-1bl2 -----
+Rebuild with gcc-6.4.0
+
+----- version 1.2.6-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

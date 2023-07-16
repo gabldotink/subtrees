@@ -1,0 +1,87 @@
+zim-tools
+------------------------------------------
+Various ZIM command line tools.
+
+Runtime requirements:
+  cygwin-3.3.6-1
+  file-5.41-2
+  libdocopt0-0.6.3-1bl1
+  libgcc1-11.3.0-1
+  libgumbo1-0.10.1-1bl2
+  libstdc++6-11.3.0-1
+  libzim8-8.0.1-1bl1
+  zlib0-1.2.13-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  Mustache-4.1-1bl1
+  binutils-2.39-1
+  cygport-0.35.4-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libdocopt-devel-0.6.3-1bl1
+  libgumbo-devel-0.10.1-1bl2
+  libzim-devel-8.0.1-1bl1
+  meson-0.62.2-1
+  ninja-1.11.1-1
+  zlib-devel-1.2.13-1
+
+Canonical website:
+  https://github.com/openzim/zim-tools
+
+Canonical download:
+  https://github.com/openzim/zim-tools/archive/refs/tags/3.1.2.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack zim-tools-3.1.2-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./zim-tools-3.1.2-X.cygport all
+
+This will create:
+  /usr/src/zim-tools-3.1.2-X-src.tar.xz
+  /usr/src/zim-tools-3.1.2-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(zim-tools)
+  /usr/bin/zimbench.exe
+  /usr/bin/zimcheck.exe
+  /usr/bin/zimdiff.exe
+  /usr/bin/zimdump.exe
+  /usr/bin/zimpatch.exe
+  /usr/bin/zimrecreate.exe
+  /usr/bin/zimsearch.exe
+  /usr/bin/zimsplit.exe
+  /usr/bin/zimwriterfs.exe
+  /usr/share/doc/Cygwin/zim-tools.README
+  /usr/share/doc/zim-tools/ChangeLog
+  /usr/share/doc/zim-tools/LICENSE
+  /usr/share/doc/zim-tools/README.md
+
+------------------
+
+Port Notes:
+
+----- version 3.1.2-1bl1 -----
+Version bump.
+
+----- version 3.1.1-1bl1 -----
+Version bump.
+
+----- version 3.0.0-1bl1 -----
+Version bump.
+
+----- version 2.1.0-1bl1 -----
+Version bump.
+
+----- version 2.0.0-1bl1 -----
+Version bump.
+
+----- version 1.0.5-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

@@ -1,0 +1,108 @@
+idutils
+------------------------------------------
+An 'ID database' is a binary file containing a list of file names, a list of
+tokens, and a sparse matrix indicating which tokens appear in which files.
+
+Runtime requirements:
+  bash-4.4.12-3
+  cygwin-3.3.2-1
+  libintl8-0.21-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.37-2
+  cygport-0.34.0-1
+  gcc-core-11.2.0-1
+  libintl-devel-0.21-1
+  make-4.3-1
+
+Canonical website:
+  https://www.gnu.org/software/idutils/
+
+Canonical download:
+  mirror://gnu/idutils/idutils-4.6.tar.xz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack idutils-4.6-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./idutils-4.6-X.cygport all
+
+This will create:
+  /usr/src/idutils-4.6-X-src.tar.xz
+  /usr/src/idutils-4.6-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(idutils)
+  /usr/bin/aid.exe
+  /usr/bin/defid
+  /usr/bin/eid.exe
+  /usr/bin/fid.exe
+  /usr/bin/fnid.exe
+  /usr/bin/gid.exe
+  /usr/bin/lid.exe
+  /usr/bin/mkid.exe
+  /usr/bin/xtokid.exe
+  /usr/share/doc/Cygwin/idutils.README
+  /usr/share/doc/idutils/AUTHORS
+  /usr/share/doc/idutils/COPYING
+  /usr/share/doc/idutils/ChangeLog
+  /usr/share/doc/idutils/NEWS
+  /usr/share/doc/idutils/README
+  /usr/share/doc/idutils/THANKS
+  /usr/share/doc/idutils/TODO
+  /usr/share/idutils/id-lang.map
+  /usr/share/info/idutils.info.gz
+  /usr/share/locale/da/LC_MESSAGES/idutils.mo
+  /usr/share/locale/de/LC_MESSAGES/idutils.mo
+  /usr/share/locale/fi/LC_MESSAGES/idutils.mo
+  /usr/share/locale/fr/LC_MESSAGES/idutils.mo
+  /usr/share/locale/ga/LC_MESSAGES/idutils.mo
+  /usr/share/locale/hu/LC_MESSAGES/idutils.mo
+  /usr/share/locale/id/LC_MESSAGES/idutils.mo
+  /usr/share/locale/it/LC_MESSAGES/idutils.mo
+  /usr/share/locale/nl/LC_MESSAGES/idutils.mo
+  /usr/share/locale/pl/LC_MESSAGES/idutils.mo
+  /usr/share/locale/pt_BR/LC_MESSAGES/idutils.mo
+  /usr/share/locale/ro/LC_MESSAGES/idutils.mo
+  /usr/share/locale/ru/LC_MESSAGES/idutils.mo
+  /usr/share/locale/sv/LC_MESSAGES/idutils.mo
+  /usr/share/locale/tr/LC_MESSAGES/idutils.mo
+  /usr/share/locale/vi/LC_MESSAGES/idutils.mo
+  /usr/share/locale/zh_CN/LC_MESSAGES/idutils.mo
+  /usr/share/man/man1/aid.1.gz
+  /usr/share/man/man1/defid.1.gz
+  /usr/share/man/man1/eid.1.gz
+  /usr/share/man/man1/fid.1.gz
+  /usr/share/man/man1/fnid.1.gz
+  /usr/share/man/man1/gid.1.gz
+  /usr/share/man/man1/lid.1.gz
+  /usr/share/man/man1/mkid.1.gz
+  /usr/share/man/man1/xtokid.1.gz
+
+------------------
+
+Port Notes:
+
+----- version 4.6-1bl3 -----
+Rebuild with gcc-11.2.0
+
+----- version 4.6-1bl2 -----
+Rebuild on x86_64
+
+----- version 4.6-1bl1 -----
+Version bump.
+
+----- version 4.5-1bl1 -----
+Version bump.
+
+----- version 4.2-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

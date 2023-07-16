@@ -1,0 +1,116 @@
+simfqt
+------------------------------------------
+SimFQT aims at providing a clean API and a simple implementation, as a C++
+library, of a Travel-oriented fare engine. It corresponds to the simulated
+version of the real-world Fare Quote or pricing system.
+
+Runtime requirements:
+  bash-4.4.12-3
+  cygwin-3.3.5-1
+  libboost_date_time1.66-1.66.0-1
+  libboost_program_options1.66-1.66.0-1
+  libboost_regex1.66-1.66.0-1
+  libgcc1-11.3.0-1
+  libreadline7-8.1-2
+  libsimfqt-devel-1.00.6-1bl1
+  libsimfqt1.00-1.00.6-1bl1
+  libstdair1.00-1.00.12-1bl1
+  libstdc++6-11.3.0-1
+  pkg-config-1.8.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.38-1
+  cmake-3.23.2-1
+  cygport-0.35.2-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libboost-devel-1.66.0-1
+  libreadline-devel-8.1-2
+  libstdair-devel-1.00.12-1bl1
+  ninja-1.11.0-1
+
+Canonical website:
+  https://github.com/airsim/simfqt/
+
+Canonical download:
+  https://github.com/airsim/simfqt/archive/refs/tags/simfqt-1.00.6.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack simfqt-1.00.6-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./simfqt-1.00.6-X.cygport all
+
+This will create:
+  /usr/src/simfqt-1.00.6-X-src.tar.xz
+  /usr/src/simfqt-1.00.6-X.tar.xz
+  /usr/src/libsimfqt1.00-1.00.6-X.tar.xz
+  /usr/src/libsimfqt-devel-1.00.6-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(simfqt)
+  /usr/bin/simfqt.exe
+  /usr/bin/simfqt_parseFareRules.exe
+  /usr/share/doc/Cygwin/simfqt.README
+  /usr/share/doc/simfqt/AUTHORS
+  /usr/share/doc/simfqt/COPYING
+  /usr/share/doc/simfqt/ChangeLog
+  /usr/share/doc/simfqt/NEWS
+  /usr/share/doc/simfqt/README.md
+  /usr/share/man/man1/simfqt.1.gz
+  /usr/share/man/man1/simfqt_parseFareRules.1.gz
+
+(libsimfqt1.00)
+  /usr/bin/cygsimfqt-1.00.dll
+
+(libsimfqt-devel)
+  /usr/bin/simfqt-config
+  /usr/include/simfqt/SIMFQT_Service.hpp
+  /usr/include/simfqt/SIMFQT_Types.hpp
+  /usr/lib/cmake/simfqt/simfqt-config-version.cmake
+  /usr/lib/cmake/simfqt/simfqt-config.cmake
+  /usr/lib/cmake/simfqt/simfqt-library-depends-release.cmake
+  /usr/lib/cmake/simfqt/simfqt-library-depends.cmake
+  /usr/lib/libsimfqt.dll.a
+  /usr/lib/pkgconfig/simfqt.pc
+  /usr/share/aclocal/simfqt.m4
+  /usr/share/man/man1/simfqt-config.1.gz
+  /usr/share/man/man3/simfqt-library.3.gz
+
+------------------
+
+Port Notes:
+
+----- version 1.00.6-1bl1 -----
+Version bump.
+
+----- version 1.00.4-1bl1 -----
+Version bump.
+
+----- version 1.00.3-1bl1 -----
+Version bump.
+
+----- version 1.00.2-1bl1 -----
+Version bump.
+
+----- version 1.00.1-1bl3 -----
+Rebuild for libboost
+
+----- version 1.00.1-1bl2 -----
+Rebuild with gcc-5.4.0
+
+----- version 1.00.1-1bl1 -----
+Version bump.
+
+----- version 1.00.0-1bl2 -----
+Rebuild for libboost
+
+----- version 1.00.0-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://fd0.hatenablog.jp/>

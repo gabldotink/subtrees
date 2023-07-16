@@ -1,0 +1,88 @@
+libdivsufsort
+------------------------------------------
+The libdivsufsort project provides a fast, lightweight, and robust C API
+library to construct the suffix array and the Burrows-Wheeler transformed
+string for any input string of a constant-size alphabet.
+
+Runtime requirements:
+  cygwin-3.3.5-1
+  libdivsufsort-devel-2.0.1-1bl3
+  libdivsufsort3-2.0.1-1bl3
+  libdivsufsort64-devel-2.0.1-1bl3
+  libdivsufsort64_3-2.0.1-1bl3
+  libgomp1-11.3.0-1
+  pkg-config-1.8.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.38-1
+  cmake-3.20.0-1
+  cygport-0.35.1-1
+  gcc-core-11.3.0-1
+  ninja-1.11.0-1
+
+Canonical website:
+  https://github.com/y-256/libdivsufsort
+
+Canonical download:
+  https://github.com/y-256/libdivsufsort/archive/refs/tags/2.0.1.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libdivsufsort-2.0.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libdivsufsort-2.0.1-X.cygport all
+
+This will create:
+  /usr/src/libdivsufsort-2.0.1-X-src.tar.xz
+  /usr/src/libdivsufsort-2.0.1-X.tar.xz
+  /usr/src/libdivsufsort3-2.0.1-X.tar.xz
+  /usr/src/libdivsufsort-devel-2.0.1-X.tar.xz
+  /usr/src/libdivsufsort64_3-2.0.1-X.tar.xz
+  /usr/src/libdivsufsort64-devel-2.0.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libdivsufsort)
+  /usr/share/doc/Cygwin/libdivsufsort.README
+  /usr/share/doc/libdivsufsort/AUTHORS
+  /usr/share/doc/libdivsufsort/COPYING
+  /usr/share/doc/libdivsufsort/ChangeLog
+  /usr/share/doc/libdivsufsort/ChangeLog.old
+  /usr/share/doc/libdivsufsort/NEWS
+  /usr/share/doc/libdivsufsort/README
+  /usr/share/doc/libdivsufsort/VERSION
+
+(libdivsufsort3)
+  /usr/bin/cygdivsufsort-3.dll
+
+(libdivsufsort-devel)
+  /usr/include/divsufsort.h
+  /usr/lib/libdivsufsort.dll.a
+  /usr/lib/pkgconfig/libdivsufsort.pc
+
+(libdivsufsort64_3)
+  /usr/bin/cygdivsufsort64-3.dll
+
+(libdivsufsort64-devel)
+  /usr/include/divsufsort64.h
+  /usr/lib/libdivsufsort64.dll.a
+  /usr/lib/pkgconfig/libdivsufsort64.pc
+
+------------------
+
+Port Notes:
+
+----- version 2.0.1-1bl3 -----
+Rebuild with gcc-11.3.0
+
+----- version 2.0.1-1bl2 -----
+Rebuild on x86_64
+
+----- version 2.0.1-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

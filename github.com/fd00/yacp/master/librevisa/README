@@ -1,0 +1,78 @@
+librevisa
+------------------------------------------
+LibreVISA aims to be a compliant implementation of the VISA standard in a free
+software library.
+
+Runtime requirements:
+  cygwin-3.3.5-1
+  libavahi-client-devel-0.7-1
+  libgcc1-11.3.0-1
+  libstdc++6-11.3.0-1
+  libusb1.0-1.0.21-1
+  libusb1.0-devel-1.0.21-1
+  libvisa-devel-0.0.20130812-1bl1
+  libvisa0-0.0.20130812-1bl1
+  pkg-config-1.8.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.38-1
+  cygport-0.35.2-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libavahi-client-devel-0.7-1
+  libtool-2.4.7-1
+  libusb1.0-devel-1.0.21-1
+  make-4.3-1
+
+Canonical website:
+  https://web.archive.org/web/20210508121637/http://www.librevisa.org/
+
+Canonical download:
+  mirror://debian/pool/main/libr/librevisa/librevisa_0.0.20130812.orig.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack librevisa-0.0.20130812-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./librevisa-0.0.20130812-X.cygport all
+
+This will create:
+  /usr/src/librevisa-0.0.20130812-X-src.tar.xz
+  /usr/src/librevisa-0.0.20130812-X.tar.xz
+  /usr/src/libvisa0-0.0.20130812-X.tar.xz
+  /usr/src/libvisa-devel-0.0.20130812-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(librevisa)
+  /usr/share/doc/Cygwin/librevisa.README
+
+(libvisa0)
+  /usr/bin/cygvisa-0.dll
+
+(libvisa-devel)
+  /usr/include/visa.h
+  /usr/include/visatype.h
+  /usr/lib/libvisa.dll.a
+  /usr/lib/pkgconfig/librevisa.pc
+  /usr/share/man/man3/viClose.3visa.gz
+  /usr/share/man/man3/viOpenDefaultRM.3visa.gz
+  /usr/share/man/man7/visa.7visa.gz
+
+------------------
+
+Port Notes:
+
+----- version 0.0.20130812-1bl1 -----
+Version bump.
+
+----- version 0.0.20130412-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

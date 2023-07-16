@@ -1,0 +1,41 @@
+HOMEPAGE="https://github.com/f4exb/${PN}"
+SRC_URI="https://github.com/f4exb/${PN}/archive/v${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Digital Speech Decoder (DSD) rewritten as a C++ library"
+DESCRIPTION="DSDcc is a complete rewrite from the original DSD (Digital Speech Decoder)
+project."
+
+BUILD_REQUIRES="libmbe-devel"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DUSE_MBELIB:BOOL=ON
+"
+
+src_test()
+{
+	cd ${B}
+	./dsdccx.exe -h
+}
+
+PKG_NAMES="
+	dsdcc
+	libdsdcc1
+	libdsdcc-devel
+"
+dsdcc_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+libdsdcc1_CONTENTS="
+	usr/bin/*.dll
+"
+libdsdcc_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+dsdcc_SUMMARY="${SUMMARY} (utilities)"
+libdsdcc1_SUMMARY="${SUMMARY} (runtime)"
+libdsdcc_devel_SUMMARY="${SUMMARY} (development)"

@@ -1,0 +1,76 @@
+HOMEPAGE="https://apparmor.net/"
+SRC_URI="https://gitlab.com/apparmor/apparmor/-/archive/v${PV}/apparmor-v${PV}.tar.bz2"
+SRC_DIR="apparmor-v${PV}"
+
+CATEGORY="Libs"
+SUMMARY="Effective and easy-to-use Linux application security system"
+DESCRIPTION="AppArmor protects systems from insecure or untrusted processes by
+running them in restricted confinement, while still allowing processes
+to share files, exercise privilege and communicate with other processes.
+AppArmor is a Mandatory Access Control (MAC) mechanism which uses the
+Linux Security Module (LSM) framework. The confinement's restrictions
+are mandatory and are not bound to identity, group membership, or object
+ownership. The protections provided are in addition to the kernel's
+regular access control mechanisms (including DAC) and can be used to
+restrict the superuser."
+
+LICENSE="LGPL-2.1-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: LGPL-2.1-or-later"
+LICENSE_URI="LICENSE"
+
+BUILD_REQUIRES="python39-devel"
+
+export PYTHON=/usr/bin/python3
+export PYTHON_VERSION=3
+export PYTHON_VERSIONS=python3
+
+CYGCONF_ARGS="
+	--with-python=yes
+"
+
+src_compile()
+{
+	PYTHONPATH=${S}/libraries/${PN}/swig/python
+	CYGCONF_SOURCE=${S}/libraries/${PN}
+	cd ${CYGCONF_SOURCE}
+	cygautoreconf
+	cd ${B}
+	cygconf
+	cygmake
+}
+
+DOCS="
+	libraries/${PN}/COPYING.LGPL
+	libraries/${PN}/ChangeLog
+	libraries/${PN}/README
+"
+
+DIFF_EXCLUDES="
+	bar
+"
+
+PKG_NAMES="
+	libapparmor
+	libapparmor1
+	libapparmor-devel
+	python39-libapparmor
+"
+libapparmor_CONTENTS="
+	usr/share/doc
+"
+libapparmor1_CONTENTS="
+	usr/bin
+"
+libapparmor_devel_CONTENTS="
+	usr/include
+	usr/lib/*.dll.a
+	usr/lib/pkgconfig
+	usr/share/man
+"
+python39_libapparmor_CONTENTS="
+	usr/lib/python3*
+"
+libapparmor_SUMMARY="${SUMMARY} (licensing & readmes)"
+libapparmor1_SUMMARY="${SUMMARY} (runtime)"
+libapparmor_devel_SUMMARY="${SUMMARY} (development)"
+python39_libapparmor_SUMMARY="${SUMMARY} (python39 bindings)"

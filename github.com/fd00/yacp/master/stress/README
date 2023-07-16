@@ -1,0 +1,65 @@
+stress
+------------------------------------------
+stress is a deliberately simple workload generator for POSIX systems. It
+imposes a configurable amount of CPU, memory, I/O, and disk stress on the
+system.
+
+Runtime requirements:
+  cygwin-3.3.1-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.37-2
+  cygport-0.34.0-1
+  gcc-core-11.2.0-1
+  make-4.3-1
+
+Canonical website:
+  https://web.archive.org/web/20190702093856/https://people.seas.harvard.edu/~apw/stress/
+
+Canonical download:
+  mirror://debian/pool/main/s/stress/stress_1.0.5.orig.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack stress-1.0.5-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./stress-1.0.5-X.cygport all
+
+This will create:
+  /usr/src/stress-1.0.5-X-src.tar.xz
+  /usr/src/stress-1.0.5-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(stress)
+  /usr/bin/stress.exe
+  /usr/share/doc/Cygwin/stress.README
+  /usr/share/doc/stress/AUTHORS
+  /usr/share/doc/stress/COPYING
+  /usr/share/doc/stress/ChangeLog
+  /usr/share/doc/stress/NEWS
+  /usr/share/doc/stress/README
+  /usr/share/doc/stress/TODO
+  /usr/share/doc/stress/readme.md
+  /usr/share/man/man1/stress.1.gz
+
+------------------
+
+Port Notes:
+
+----- version 1.0.5-1bl1 -----
+Version bump.
+
+----- version 1.0.4-1bl2 -----
+Rebuild on x86_64
+
+----- version 1.0.4-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

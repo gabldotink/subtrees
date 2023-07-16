@@ -1,0 +1,42 @@
+HOMEPAGE="https://github.com/repology/${PN}"
+SRC_URI="https://github.com/repology/${PN}/archive/refs/tags/${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Advanced version string comparison library"
+DESCRIPTION="Advanced version string comparison library."
+
+LICENSE="MIT"
+LICENSE_SPDX="SPDX-License-Identifier: MIT"
+LICENSE_URI="COPYING"
+
+inherit cmake
+
+src_test()
+{
+	cd ${B}
+	PATH=${B}/${PN}:${PATH} ninja_test
+}
+
+DOCS="
+	doc/*
+"
+
+PKG_NAMES="
+	${PN}
+	${PN}1
+	${PN}-devel
+"
+libversion_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+libversion1_CONTENTS="
+	usr/bin/*.dll
+"
+libversion_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+libversion_SUMMARY="${SUMMARY} (utilities)"
+libversion1_SUMMARY="${SUMMARY} (runtime)"
+libversion_devel_SUMMARY="${SUMMARY} (development)"

@@ -1,0 +1,45 @@
+HOMEPAGE="https://yoda.hepforge.org/"
+SRC_URI="https://yoda.hepforge.org/downloads/${P}.tar.bz2"
+
+CATEGORY="Science"
+SUMMARY="Yet more Objects for Data Analysis"
+DESCRIPTION="YODA is a small set of data analysis (specifically histogramming) classes
+being developed by MCnet members as a lightweight common system for MC event
+generator validation analyses, particularly as the core histogramming system
+in Rivet."
+
+LICENSE="GPL-3.0-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: GPL-3.0-or-later"
+LICENSE_URI="COPYING"
+
+BUILD_REQUIRES="libtinyxml-devel libyaml-cpp-devel zlib-devel"
+
+CYGCONF_ARGS="
+	--disable-pyext
+"
+
+DIFF_EXCLUDES="
+	yoda-config
+	yoda.pc
+"
+
+PKG_NAMES="
+	${PN}
+	lib${PN}0
+	lib${PN}-devel
+"
+YODA_CONTENTS="
+	etc
+	usr/share
+"
+libYODA0_CONTENTS="
+	usr/bin/*.dll
+"
+libYODA_devel_CONTENTS="
+	usr/bin/*-config
+	usr/include
+	usr/lib
+"
+YODA_SUMMARY="${SUMMARY} (licensing & readmes)"
+libYODA0_SUMMARY="${SUMMARY} (runtime)"
+libYODA_devel_SUMMARY="${SUMMARY} (development)"

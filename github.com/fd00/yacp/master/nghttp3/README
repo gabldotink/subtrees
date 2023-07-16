@@ -1,0 +1,78 @@
+nghttp3
+------------------------------------------
+nghttp3 is an implementation of HTTP/3 mapping over QUIC and QPACK in C.
+
+Runtime requirements:
+  cygwin-3.4.3-1
+  libgcc1-11.3.0-1
+  libnghttp3-devel-0.8.0-1bl1
+  libnghttp3_3-0.8.0-1bl1
+  pkg-config-1.9.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.39-1
+  cygport-0.35.5-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libtool-2.4.7-1
+  make-4.4-1
+
+Canonical website:
+  https://github.com/ngtcp2/nghttp3
+
+Canonical download:
+  https://github.com/ngtcp2/nghttp3/archive/refs/tags/v0.8.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack nghttp3-0.8.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./nghttp3-0.8.0-X.cygport all
+
+This will create:
+  /usr/src/nghttp3-0.8.0-X-src.tar.xz
+  /usr/src/nghttp3-0.8.0-X.tar.xz
+  /usr/src/libnghttp3_3-0.8.0-X.tar.xz
+  /usr/src/libnghttp3-devel-0.8.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(nghttp3)
+  /usr/share/doc/Cygwin/nghttp3.README
+  /usr/share/doc/nghttp3/AUTHORS
+  /usr/share/doc/nghttp3/COPYING
+  /usr/share/doc/nghttp3/README
+  /usr/share/doc/nghttp3/README.rst
+
+(libnghttp3_3)
+  /usr/bin/cygnghttp3-3.dll
+
+(libnghttp3-devel)
+  /usr/include/nghttp3/nghttp3.h
+  /usr/include/nghttp3/version.h
+  /usr/lib/libnghttp3.dll.a
+  /usr/lib/pkgconfig/libnghttp3.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.8.0-1bl1 -----
+Version bump.
+
+----- version 0.7.1-1bl1 -----
+Version bump.
+
+----- version 0.4.1-1bl1 -----
+Version bump.
+
+----- version 0.1.0+git20200611-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

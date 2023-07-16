@@ -1,0 +1,108 @@
+HOMEPAGE="https://github.com/intel/${PN}"
+SRC_URI="https://github.com/intel/${PN}/archive/refs/tags/${PV}.tar.gz"
+
+CATEGORY="X11"
+SUMMARY="Video Acceleration (VA) API for Linux"
+DESCRIPTION="Video Acceleration API (VA API) is a library (libVA) and API specification
+which enables and provides access to graphics hardware (GPU) acceleration for
+video processing on Linux and UNIX based operating systems. Accelerated
+processing includes video decoding, video encoding, subpicture blending and
+rendering. The specification was originally designed by Intel for its GMA
+(Graphics Media Accelerator) series of GPU hardware, the API is however not
+limited to GPUs or Intel specific hardware, as other hardware and
+manufacturers can also freely use this API for hardware accelerated video
+decoding."
+
+LICENSE="MIT"
+LICENSE_SPDX="SPDX-License-Identifier: MIT"
+LICENSE_URI="COPYING"
+
+BUILD_REQUIRES="libGL-devel libX11-devel libXext-devel libXfixes-devel libdrm-devel"
+
+DOCS="
+	*.md
+"
+
+PKG_NAMES="
+	${PN}
+	${PN}2
+	${PN}-devel
+	${PN}-drm2
+	${PN}-drm-devel
+	${PN}-glx2
+	${PN}-glx-devel
+	${PN}-x11_2
+	${PN}-x11-devel
+"
+libva_CONTENTS="
+	usr/share
+"
+libva2_CONTENTS="
+	usr/bin/cygva-2.dll
+"
+libva_devel_CONTENTS="
+	usr/include/va/va.h
+	usr/include/va/va_backend.h
+	usr/include/va/va_backend_prot.h
+	usr/include/va/va_backend_vpp.h
+	usr/include/va/va_compat.h
+	usr/include/va/va_dec_av1.h
+	usr/include/va/va_dec_hevc.h
+	usr/include/va/va_dec_jpeg.h
+	usr/include/va/va_dec_vp8.h
+	usr/include/va/va_dec_vp9.h
+	usr/include/va/va_drmcommon.h
+	usr/include/va/va_egl.h
+	usr/include/va/va_enc_av1.h
+	usr/include/va/va_enc_h264.h
+	usr/include/va/va_enc_hevc.h
+	usr/include/va/va_enc_jpeg.h
+	usr/include/va/va_enc_mpeg2.h
+	usr/include/va/va_enc_vp8.h
+	usr/include/va/va_enc_vp9.h
+	usr/include/va/va_fei.h
+	usr/include/va/va_fei_h264.h
+	usr/include/va/va_fei_hevc.h
+	usr/include/va/va_prot.h
+	usr/include/va/va_str.h
+	usr/include/va/va_tpi.h
+	usr/include/va/va_version.h
+	usr/include/va/va_vpp.h
+	usr/include/va/va_x11.h
+	usr/lib/libva.dll.a
+	usr/lib/pkgconfig/libva.pc
+"
+libva_drm2_CONTENTS="
+	usr/bin/cygva-drm-2.dll
+"
+libva_drm_devel_CONTENTS="
+	usr/include/va/va_drm.h
+	usr/lib/libva-drm.dll.a
+	usr/lib/pkgconfig/libva-drm.pc
+"
+libva_glx2_CONTENTS="
+	usr/bin/cygva-glx-2.dll
+"
+libva_glx_devel_CONTENTS="
+	usr/include/va/va_glx.h
+	usr/include/va/va_backend_glx.h
+	usr/lib/libva-glx.dll.a
+	usr/lib/pkgconfig/libva-glx.pc
+"
+libva_x11_2_CONTENTS="
+	usr/bin/cygva-x11-2.dll
+"
+libva_x11_devel_CONTENTS="
+	usr/include/va/va_dri*.h
+	usr/lib/libva-x11.dll.a
+	usr/lib/pkgconfig/libva-x11.pc
+"
+libva_SUMMARY="${SUMMARY} (licensing & readmes)"
+libva2_SUMMARY="${SUMMARY} (runtime)"
+libva_devel_SUMMARY="${SUMMARY} (development)"
+libva_drm2_SUMMARY="${SUMMARY} (runtime / drm)"
+libva_drm_devel_SUMMARY="${SUMMARY} (developemnt / drm)"
+libva_glx2_SUMMARY="${SUMMARY} (runtime / glx)"
+libva_glx_devel_SUMMARY="${SUMMARY} (developemnt / glx)"
+libva_x11_2_SUMMARY="${SUMMARY} (runtime / x11)"
+libva_x11_devel_SUMMARY="${SUMMARY} (developemnt / x11)"

@@ -1,0 +1,40 @@
+HOMEPAGE="https://github.com/google/${PN}"
+SRC_URI="https://github.com/google/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="C++ implementation of the Google logging module"
+DESCRIPTION="The glog library implements application-level logging. This library provides
+logging APIs based on C++-style streams and various helper macros."
+
+BUILD_REQUIRES="libgflags-devel"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DWITH_UNWIND:BOOL=OFF
+"
+
+src_test()
+{
+	cd ${B}
+	ninja_test
+}
+
+PKG_NAMES="
+	${PN}
+	lib${PN}1
+	lib${PN}-devel
+"
+glog_CONTENTS="
+	usr/share/doc
+"
+libglog1_CONTENTS="
+	usr/bin
+"
+libglog_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+glog_SUMMARY="${SUMMARY} (licensing & readmes)"
+libglog1_SUMMARY="${SUMMARY} (runtime)"
+libglog_devel_SUMMARY="${SUMMARY} (development)"

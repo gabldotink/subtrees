@@ -1,0 +1,140 @@
+libtimezonemap
+------------------------------------------
+libtimezonemap is a time zone map widget for Gtk+. The widget displays a world
+map with a highlighted region representing the selected time zone, and the
+location can be changed by clicking on the map.
+
+Runtime requirements:
+  cygwin-3.1.2-1
+  cygwin-devel-3.1.2-1
+  girepository-GLib2.0-1.54.1-1
+  girepository-Gtk3.0-3.22.28-1
+  girepository-Json1.0-1.4.2-1
+  libcairo2-1.16.0-1
+  libgdk_pixbuf2.0_0-2.36.11-1
+  libglib2.0-devel-2.54.3-1
+  libglib2.0_0-2.54.3-1
+  libgtk3-devel-3.22.28-1
+  libgtk3_0-3.22.28-1
+  libjson-glib1.0-devel-1.4.2-1
+  libjson-glib1.0_0-1.4.2-1
+  libsoup2.4_1-2.60.3-1
+  libtimezonemap-devel-0.4.6-1bl1
+  libtimezonemap1-0.4.6-1bl1
+  pkg-config-1.6.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.29-1
+  cygport-0.33.1-1
+  gcc-core-7.4.0-1
+  gobject-introspection-1.54.1-1
+  libtool-2.4.6-7
+  make-4.2.1-2
+
+Canonical website:
+  https://launchpad.net/timezonemap
+
+Canonical download:
+  http://archive.ubuntu.com/ubuntu/pool/main/libt/libtimezonemap/libtimezonemap_0.4.6.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libtimezonemap-0.4.6-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libtimezonemap-0.4.6-X.cygport all
+
+This will create:
+  /usr/src/libtimezonemap-0.4.6-X-src.tar.xz
+  /usr/src/libtimezonemap-0.4.6-X.tar.xz
+  /usr/src/libtimezonemap1-0.4.6-X.tar.xz
+  /usr/src/libtimezonemap-devel-0.4.6-X.tar.xz
+  /usr/src/girepository-TimezoneMap1.0-0.4.6-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libtimezonemap)
+  /usr/share/doc/Cygwin/libtimezonemap.README
+  /usr/share/doc/libtimezonemap/COPYING
+  /usr/share/doc/libtimezonemap/ChangeLog
+  /usr/share/doc/libtimezonemap/README
+  /usr/share/doc/libtimezonemap/TODO
+  /usr/share/libtimezonemap/backward
+  /usr/share/libtimezonemap/ui/admin1Codes.txt
+  /usr/share/libtimezonemap/ui/bg.png
+  /usr/share/libtimezonemap/ui/cities15000.txt
+  /usr/share/libtimezonemap/ui/countryInfo.txt
+  /usr/share/libtimezonemap/ui/olsen_map.png
+  /usr/share/libtimezonemap/ui/pin.png
+  /usr/share/libtimezonemap/ui/timezone_-1.png
+  /usr/share/libtimezonemap/ui/timezone_-10.png
+  /usr/share/libtimezonemap/ui/timezone_-11.png
+  /usr/share/libtimezonemap/ui/timezone_-2.png
+  /usr/share/libtimezonemap/ui/timezone_-3.5.png
+  /usr/share/libtimezonemap/ui/timezone_-3.png
+  /usr/share/libtimezonemap/ui/timezone_-4.5.png
+  /usr/share/libtimezonemap/ui/timezone_-4.png
+  /usr/share/libtimezonemap/ui/timezone_-5.png
+  /usr/share/libtimezonemap/ui/timezone_-6.png
+  /usr/share/libtimezonemap/ui/timezone_-7.png
+  /usr/share/libtimezonemap/ui/timezone_-8.png
+  /usr/share/libtimezonemap/ui/timezone_-9.5.png
+  /usr/share/libtimezonemap/ui/timezone_-9.png
+  /usr/share/libtimezonemap/ui/timezone_0.png
+  /usr/share/libtimezonemap/ui/timezone_1.png
+  /usr/share/libtimezonemap/ui/timezone_10.5.png
+  /usr/share/libtimezonemap/ui/timezone_10.png
+  /usr/share/libtimezonemap/ui/timezone_11.png
+  /usr/share/libtimezonemap/ui/timezone_12.75.png
+  /usr/share/libtimezonemap/ui/timezone_12.png
+  /usr/share/libtimezonemap/ui/timezone_13.png
+  /usr/share/libtimezonemap/ui/timezone_2.png
+  /usr/share/libtimezonemap/ui/timezone_3.5.png
+  /usr/share/libtimezonemap/ui/timezone_3.png
+  /usr/share/libtimezonemap/ui/timezone_4.5.png
+  /usr/share/libtimezonemap/ui/timezone_4.png
+  /usr/share/libtimezonemap/ui/timezone_5.5.png
+  /usr/share/libtimezonemap/ui/timezone_5.75.png
+  /usr/share/libtimezonemap/ui/timezone_5.png
+  /usr/share/libtimezonemap/ui/timezone_6.5.png
+  /usr/share/libtimezonemap/ui/timezone_6.png
+  /usr/share/libtimezonemap/ui/timezone_7.png
+  /usr/share/libtimezonemap/ui/timezone_8.5.png
+  /usr/share/libtimezonemap/ui/timezone_8.png
+  /usr/share/libtimezonemap/ui/timezone_9.5.png
+  /usr/share/libtimezonemap/ui/timezone_9.png
+
+(libtimezonemap1)
+  /usr/bin/cygtimezonemap-1.dll
+
+(libtimezonemap-devel)
+  /usr/include/timezonemap/timezonemap/cc-timezone-location.h
+  /usr/include/timezonemap/timezonemap/cc-timezone-map.h
+  /usr/include/timezonemap/timezonemap/timezone-completion.h
+  /usr/include/timezonemap/timezonemap/tz.h
+  /usr/lib/libtimezonemap.dll.a
+  /usr/lib/pkgconfig/timezonemap.pc
+
+(girepository-TimezoneMap1.0)
+  /usr/lib/girepository-1.0/TimezoneMap-1.0.typelib
+  /usr/share/gir-1.0/TimezoneMap-1.0.gir
+
+------------------
+
+Port Notes:
+
+----- version 0.4.6-1bl1 -----
+Version bump.
+
+----- version 0.4.5-1bl1 -----
+Version bump.
+
+----- version 0.4.3-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

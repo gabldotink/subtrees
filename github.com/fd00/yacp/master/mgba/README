@@ -1,0 +1,349 @@
+mgba
+------------------------------------------
+mGBA is an emulator for running Game Boy Advance games. It aims to be faster
+and more accurate than many existing Game Boy Advance emulators, as well as
+adding features that other emulators lack. It also supports Game Boy and Game
+Boy Color games.
+
+Runtime requirements:
+  cygwin-3.4.6-1
+  libQt5Core5-5.9.4-2
+  libQt5Gui5-5.9.4-2
+  libQt5Multimedia5-5.9.4-1
+  libSDL2_2.0_0-2.0.7-1
+  libblip_buf-devel-1.1.1-1bl1
+  libblip_buf0-1.1.1-1bl1
+  libdiscord-rpc0-3.4.0-1bl1
+  libedit-devel-20221030-4
+  libedit0-20221030-4
+  libelf-devel-0.8.13-3
+  libelf0-0.8.13-3
+  libepoxy-devel-1.4.3-1
+  libepoxy0-1.4.3-1
+  libgcc1-11.3.0-1
+  libinih-devel-56-1bl1
+  libinih0-56-1bl1
+  liblua5.3-5.3.6-4
+  libmgba-devel-0.10.1-1bl1
+  libmgba0.10-0.10.1-1bl1
+  libpng-devel-1.6.39-1
+  libpng16-1.6.39-1
+  libsqlite3-devel-3.34.0-1
+  libsqlite3_0-3.34.0-1
+  libstdc++6-11.3.0-1
+  libzip-devel-1.5.1-1
+  libzip5-1.5.1-1
+  pkg-config-1.9.4-1
+  zlib-devel-1.2.13-1
+  zlib0-1.2.13-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.40-1
+  cmake-3.23.2-1
+  cygport-0.36.1-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libQt5Core-devel-5.9.4-2
+  libQt5Gui-devel-5.9.4-2
+  libQt5Multimedia-devel-5.9.4-1
+  libSDL2-devel-2.0.7-1
+  libblip_buf-devel-1.1.1-1bl1
+  libdiscord-rpc-devel-3.4.0-1bl1
+  libedit-devel-20221030-4
+  libelf-devel-0.8.13-3
+  libepoxy-devel-1.4.3-1
+  libinih-devel-56-1bl1
+  libpng-devel-1.6.39-1
+  libsqlite3-devel-3.34.0-1
+  libtool-2.4.7-1
+  libzip-devel-1.5.1-1
+  lua-5.3.6-4
+  ninja-1.11.1-1
+  zlib-devel-1.2.13-1
+
+Canonical website:
+  https://mgba.io/
+
+Canonical download:
+  https://github.com/mgba-emu/mgba/archive/refs/tags/0.10.1.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack mgba-0.10.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./mgba-0.10.1-X.cygport all
+
+This will create:
+  /usr/src/mgba-0.10.1-X-src.tar.xz
+  /usr/src/mgba-0.10.1-X.tar.xz
+  /usr/src/libmgba0.10-0.10.1-X.tar.xz
+  /usr/src/libmgba-devel-0.10.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(mgba)
+  /etc/postinstall/mgba.sh
+  /usr/bin/mgba-fuzz.exe
+  /usr/bin/mgba-qt.exe
+  /usr/bin/mgba-rom-test.exe
+  /usr/bin/mgba.exe
+  /usr/bin/tbl-fuzz.exe
+  /usr/share/applications/io.mgba.mGBA.desktop
+  /usr/share/doc/Cygwin/mgba.README
+  /usr/share/doc/mGBA/CHANGES
+  /usr/share/doc/mGBA/LICENSE
+  /usr/share/doc/mGBA/README.md
+  /usr/share/doc/mGBA/README_DE.md
+  /usr/share/doc/mGBA/README_ES.md
+  /usr/share/doc/mGBA/README_ZH_CN.md
+  /usr/share/doc/mGBA/licenses/blip_buf.txt
+  /usr/share/doc/mGBA/licenses/discord-rpc.txt
+  /usr/share/doc/mGBA/licenses/inih.txt
+  /usr/share/doc/mGBA/licenses/rapidjson.txt
+  /usr/share/icons/hicolor/128x128/apps/io.mgba.mGBA.png
+  /usr/share/icons/hicolor/16x16/apps/io.mgba.mGBA.png
+  /usr/share/icons/hicolor/24x24/apps/io.mgba.mGBA.png
+  /usr/share/icons/hicolor/256x256/apps/io.mgba.mGBA.png
+  /usr/share/icons/hicolor/32x32/apps/io.mgba.mGBA.png
+  /usr/share/icons/hicolor/48x48/apps/io.mgba.mGBA.png
+  /usr/share/icons/hicolor/512x512/apps/io.mgba.mGBA.png
+  /usr/share/icons/hicolor/64x64/apps/io.mgba.mGBA.png
+  /usr/share/icons/hicolor/96x96/apps/io.mgba.mGBA.png
+  /usr/share/man/man6/mgba-qt.6.gz
+  /usr/share/man/man6/mgba.6.gz
+  /usr/share/mgba/nointro.dat
+  /usr/share/mgba/scripts/pokemon.lua
+  /usr/share/mgba/scripts/socketserver.lua
+  /usr/share/mgba/scripts/sockettest.lua
+  /usr/share/mgba/shaders/agb001.shader/agb001.fs
+  /usr/share/mgba/shaders/agb001.shader/manifest.ini
+  /usr/share/mgba/shaders/ags001.shader/ags001-light.fs
+  /usr/share/mgba/shaders/ags001.shader/ags001.fs
+  /usr/share/mgba/shaders/ags001.shader/manifest.ini
+  /usr/share/mgba/shaders/fish.shader/fish.fs
+  /usr/share/mgba/shaders/fish.shader/manifest.ini
+  /usr/share/mgba/shaders/gba-color.shader/gba-color.fs
+  /usr/share/mgba/shaders/gba-color.shader/manifest.ini
+  /usr/share/mgba/shaders/lcd.shader/lcd.fs
+  /usr/share/mgba/shaders/lcd.shader/manifest.ini
+  /usr/share/mgba/shaders/motion_blur.shader/manifest.ini
+  /usr/share/mgba/shaders/motion_blur.shader/motion_blur.fs
+  /usr/share/mgba/shaders/pixelate.shader/manifest.ini
+  /usr/share/mgba/shaders/scale2x.shader/manifest.ini
+  /usr/share/mgba/shaders/scale2x.shader/scale2x.fs
+  /usr/share/mgba/shaders/scale4x.shader/manifest.ini
+  /usr/share/mgba/shaders/scale4x.shader/scale4x.fs
+  /usr/share/mgba/shaders/scanlines.shader/manifest.ini
+  /usr/share/mgba/shaders/scanlines.shader/scanlines.fs
+  /usr/share/mgba/shaders/soften.shader/manifest.ini
+  /usr/share/mgba/shaders/soften.shader/soften.fs
+  /usr/share/mgba/shaders/tv-mode.shader/manifest.ini
+  /usr/share/mgba/shaders/tv-mode.shader/tv.fs
+  /usr/share/mgba/shaders/vba_pixelate.shader/manifest.ini
+  /usr/share/mgba/shaders/vba_pixelate.shader/vba_pixelate.fs
+  /usr/share/mgba/shaders/vignette.shader/manifest.ini
+  /usr/share/mgba/shaders/vignette.shader/vignette.fs
+  /usr/share/mgba/shaders/wiiu.shader/manifest.ini
+  /usr/share/mgba/shaders/wiiu.shader/wiiu.fs
+  /usr/share/mgba/shaders/xbr-lv2.shader/manifest.ini
+  /usr/share/mgba/shaders/xbr-lv2.shader/xbr.fs
+  /usr/share/mgba/shaders/xbr-lv2.shader/xbr.vs
+  /usr/share/mgba/shaders/xbr-lv3.shader/manifest.ini
+  /usr/share/mgba/shaders/xbr-lv3.shader/xbr.fs
+  /usr/share/mgba/shaders/xbr-lv3.shader/xbr.vs
+
+(libmgba0.10)
+  /usr/bin/cygmgba-0.10.dll
+
+(libmgba-devel)
+  /usr/include/mgba-util/circle-buffer.h
+  /usr/include/mgba-util/common.h
+  /usr/include/mgba-util/configuration.h
+  /usr/include/mgba-util/convolve.h
+  /usr/include/mgba-util/crc32.h
+  /usr/include/mgba-util/dllexports.h
+  /usr/include/mgba-util/elf-read.h
+  /usr/include/mgba-util/export.h
+  /usr/include/mgba-util/formatting.h
+  /usr/include/mgba-util/gui.h
+  /usr/include/mgba-util/gui/file-select.h
+  /usr/include/mgba-util/gui/font-metrics.h
+  /usr/include/mgba-util/gui/font.h
+  /usr/include/mgba-util/gui/menu.h
+  /usr/include/mgba-util/hash.h
+  /usr/include/mgba-util/macros.h
+  /usr/include/mgba-util/math.h
+  /usr/include/mgba-util/memory.h
+  /usr/include/mgba-util/patch.h
+  /usr/include/mgba-util/patch/fast.h
+  /usr/include/mgba-util/patch/ips.h
+  /usr/include/mgba-util/patch/ups.h
+  /usr/include/mgba-util/platform/3ds/3ds-vfs.h
+  /usr/include/mgba-util/platform/3ds/threading.h
+  /usr/include/mgba-util/platform/posix/threading.h
+  /usr/include/mgba-util/platform/psp2/sce-vfs.h
+  /usr/include/mgba-util/platform/psp2/threading.h
+  /usr/include/mgba-util/platform/switch/threading.h
+  /usr/include/mgba-util/platform/windows/getopt.h
+  /usr/include/mgba-util/platform/windows/threading.h
+  /usr/include/mgba-util/png-io.h
+  /usr/include/mgba-util/ring-fifo.h
+  /usr/include/mgba-util/socket.h
+  /usr/include/mgba-util/string.h
+  /usr/include/mgba-util/table.h
+  /usr/include/mgba-util/text-codec.h
+  /usr/include/mgba-util/threading.h
+  /usr/include/mgba-util/vector.h
+  /usr/include/mgba-util/vfs.h
+  /usr/include/mgba/core/bitmap-cache.h
+  /usr/include/mgba/core/blip_buf.h
+  /usr/include/mgba/core/cache-set.h
+  /usr/include/mgba/core/cheats.h
+  /usr/include/mgba/core/config.h
+  /usr/include/mgba/core/core.h
+  /usr/include/mgba/core/cpu.h
+  /usr/include/mgba/core/directories.h
+  /usr/include/mgba/core/input.h
+  /usr/include/mgba/core/interface.h
+  /usr/include/mgba/core/library.h
+  /usr/include/mgba/core/lockstep.h
+  /usr/include/mgba/core/log.h
+  /usr/include/mgba/core/map-cache.h
+  /usr/include/mgba/core/mem-search.h
+  /usr/include/mgba/core/rewind.h
+  /usr/include/mgba/core/scripting.h
+  /usr/include/mgba/core/serialize.h
+  /usr/include/mgba/core/sync.h
+  /usr/include/mgba/core/thread.h
+  /usr/include/mgba/core/tile-cache.h
+  /usr/include/mgba/core/timing.h
+  /usr/include/mgba/core/version.h
+  /usr/include/mgba/debugger/debugger.h
+  /usr/include/mgba/feature/commandline.h
+  /usr/include/mgba/feature/thread-proxy.h
+  /usr/include/mgba/feature/updater.h
+  /usr/include/mgba/feature/video-logger.h
+  /usr/include/mgba/flags.h
+  /usr/include/mgba/gb/core.h
+  /usr/include/mgba/gb/interface.h
+  /usr/include/mgba/gba/core.h
+  /usr/include/mgba/gba/interface.h
+  /usr/include/mgba/internal/arm/arm.h
+  /usr/include/mgba/internal/arm/debugger/cli-debugger.h
+  /usr/include/mgba/internal/arm/debugger/debugger.h
+  /usr/include/mgba/internal/arm/debugger/memory-debugger.h
+  /usr/include/mgba/internal/arm/decoder-inlines.h
+  /usr/include/mgba/internal/arm/decoder.h
+  /usr/include/mgba/internal/arm/emitter-arm.h
+  /usr/include/mgba/internal/arm/emitter-inlines.h
+  /usr/include/mgba/internal/arm/emitter-thumb.h
+  /usr/include/mgba/internal/arm/isa-arm.h
+  /usr/include/mgba/internal/arm/isa-inlines.h
+  /usr/include/mgba/internal/arm/isa-thumb.h
+  /usr/include/mgba/internal/arm/macros.h
+  /usr/include/mgba/internal/debugger/cli-debugger.h
+  /usr/include/mgba/internal/debugger/gdb-stub.h
+  /usr/include/mgba/internal/debugger/parser.h
+  /usr/include/mgba/internal/debugger/stack-trace.h
+  /usr/include/mgba/internal/debugger/symbols.h
+  /usr/include/mgba/internal/defines.h
+  /usr/include/mgba/internal/gb/audio.h
+  /usr/include/mgba/internal/gb/cheats.h
+  /usr/include/mgba/internal/gb/debugger/debugger.h
+  /usr/include/mgba/internal/gb/debugger/symbols.h
+  /usr/include/mgba/internal/gb/extra/cli.h
+  /usr/include/mgba/internal/gb/gb.h
+  /usr/include/mgba/internal/gb/input.h
+  /usr/include/mgba/internal/gb/io.h
+  /usr/include/mgba/internal/gb/mbc.h
+  /usr/include/mgba/internal/gb/memory.h
+  /usr/include/mgba/internal/gb/overrides.h
+  /usr/include/mgba/internal/gb/renderers/cache-set.h
+  /usr/include/mgba/internal/gb/renderers/proxy.h
+  /usr/include/mgba/internal/gb/renderers/software.h
+  /usr/include/mgba/internal/gb/serialize.h
+  /usr/include/mgba/internal/gb/sio.h
+  /usr/include/mgba/internal/gb/sio/lockstep.h
+  /usr/include/mgba/internal/gb/sio/printer.h
+  /usr/include/mgba/internal/gb/timer.h
+  /usr/include/mgba/internal/gb/video.h
+  /usr/include/mgba/internal/gba/audio.h
+  /usr/include/mgba/internal/gba/bios.h
+  /usr/include/mgba/internal/gba/cart/ereader.h
+  /usr/include/mgba/internal/gba/cart/gpio.h
+  /usr/include/mgba/internal/gba/cart/matrix.h
+  /usr/include/mgba/internal/gba/cart/vfame.h
+  /usr/include/mgba/internal/gba/cheats.h
+  /usr/include/mgba/internal/gba/dma.h
+  /usr/include/mgba/internal/gba/extra/audio-mixer.h
+  /usr/include/mgba/internal/gba/extra/cli.h
+  /usr/include/mgba/internal/gba/gba.h
+  /usr/include/mgba/internal/gba/input.h
+  /usr/include/mgba/internal/gba/io.h
+  /usr/include/mgba/internal/gba/memory.h
+  /usr/include/mgba/internal/gba/overrides.h
+  /usr/include/mgba/internal/gba/renderers/cache-set.h
+  /usr/include/mgba/internal/gba/renderers/common.h
+  /usr/include/mgba/internal/gba/renderers/gl.h
+  /usr/include/mgba/internal/gba/renderers/proxy.h
+  /usr/include/mgba/internal/gba/renderers/video-software.h
+  /usr/include/mgba/internal/gba/savedata.h
+  /usr/include/mgba/internal/gba/serialize.h
+  /usr/include/mgba/internal/gba/sharkport.h
+  /usr/include/mgba/internal/gba/sio.h
+  /usr/include/mgba/internal/gba/sio/dolphin.h
+  /usr/include/mgba/internal/gba/sio/gbp.h
+  /usr/include/mgba/internal/gba/sio/lockstep.h
+  /usr/include/mgba/internal/gba/timer.h
+  /usr/include/mgba/internal/gba/video.h
+  /usr/include/mgba/internal/script/lua.h
+  /usr/include/mgba/internal/script/socket.h
+  /usr/include/mgba/internal/sm83/debugger/cli-debugger.h
+  /usr/include/mgba/internal/sm83/debugger/debugger.h
+  /usr/include/mgba/internal/sm83/debugger/memory-debugger.h
+  /usr/include/mgba/internal/sm83/decoder.h
+  /usr/include/mgba/internal/sm83/emitter-sm83.h
+  /usr/include/mgba/internal/sm83/isa-sm83.h
+  /usr/include/mgba/internal/sm83/sm83.h
+  /usr/include/mgba/script/context.h
+  /usr/include/mgba/script/macros.h
+  /usr/include/mgba/script/types.h
+  /usr/lib/libmgba.dll.a
+  /usr/lib/pkgconfig/mgba.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.10.1-1bl1 -----
+Version bump.
+
+----- version 0.10.0-1bl1 -----
+Version bump.
+
+----- version 0.9.3-1bl1 -----
+Version bump.
+
+----- version 0.9.2-1bl1 -----
+Version bump.
+
+----- version 0.8.4-1bl1 -----
+Version bump.
+
+----- version 0.8.3-1bl1 -----
+Version bump.
+
+----- version 0.7.3-1bl1 -----
+Version bump.
+
+----- version 0.7.2-1bl1 -----
+Version bump.
+
+----- version 0.6.3-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

@@ -1,0 +1,53 @@
+HOMEPAGE="http://www.gnu.org/software/${PN}/"
+SRC_URI="
+	mirror://gnu/${PN}/${P}.tar.gz
+	https://src.fedoraproject.org/rpms/${PN}/raw/master/f/rec-mode-init.el
+"
+PATCH_URI="
+	https://src.fedoraproject.org/rpms/${PN}/raw/master/f/${PN}-shared-lib-calls-exit.patch
+"
+
+CATEGORY="Utils"
+SUMMARY="Tools and libraries to access recfiles"
+DESCRIPTION="Recutils is a set of tools and libraries to access human-editable, text-based
+databases called recfiles. The data is stored as a sequence of records, each
+record containing an arbitrary number of named fields."
+
+CYGCONF_ARGS="
+	--disable-bash-builtins
+"
+
+src_install()
+{
+	cd ${B}
+	cyginstall
+
+	cd ${S}
+	insinto /usr/share/emacs/site-lisp/
+	doins rec-mode-init.el
+}
+
+PKG_NAMES="
+	${PN}
+	librec1
+	librec-devel
+"
+recutils_CONTENTS="
+	usr/bin/*.exe
+	usr/share/doc
+	usr/share/emacs
+	usr/share/info
+	usr/share/man
+	usr/share/${PN}
+"
+librec1_CONTENTS="
+	usr/bin/*.dll
+	usr/share/locale
+"
+librec_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+recutils_SUMMARY="${SUMMARY} (utilities)"
+librec1_SUMMARY="${SUMMARY} (runtime)"
+librec_devel_SUMMARY="${SUMMARY} (development)"

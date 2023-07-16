@@ -1,0 +1,76 @@
+ctapimkt
+------------------------------------------
+Library and program to read the german health insurance card (KVK) and the
+german electronic health card (eGK) from a certified card reading device on the
+serial port in Linux with kernel 2.6.x.
+
+Runtime requirements:
+  cygwin-3.1.7-1
+  libctapimkt-devel-1.0.1-1bl3
+  libctapimkt0-1.0.1-1bl3
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.34+1git.de9c1b7cfe-1
+  cygport-0.34.0-1
+  gcc-core-10.2.0-1
+  libtool-2.4.6-7
+  make-4.3-1
+
+Canonical website:
+  https://sourceforge.net/projects/ctapi-mkt/
+
+Canonical download:
+  mirror://sourceforge/ctapi-mkt/ctapimkt-1.0.1.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack ctapimkt-1.0.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./ctapimkt-1.0.1-X.cygport all
+
+This will create:
+  /usr/src/ctapimkt-1.0.1-X-src.tar.xz
+  /usr/src/ctapimkt-1.0.1-X.tar.xz
+  /usr/src/libctapimkt0-1.0.1-X.tar.xz
+  /usr/src/libctapimkt-devel-1.0.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(ctapimkt)
+  /usr/bin/mkter.exe
+  /usr/bin/mktlin.exe
+  /usr/share/doc/Cygwin/ctapimkt.README
+  /usr/share/doc/ctapimkt/AUTHORS
+  /usr/share/doc/ctapimkt/COPYING
+  /usr/share/doc/ctapimkt/ChangeLog
+  /usr/share/doc/ctapimkt/README
+
+(libctapimkt0)
+  /usr/bin/cygctapimkt-0.dll
+
+(libctapimkt-devel)
+  /usr/include/ctapi.h
+  /usr/lib/libctapimkt.dll.a
+  /usr/lib/pkgconfig/ctapimkt.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.0.1-1bl3 -----
+Rebuild with gcc-10.2.0
+
+----- version 1.0.1-1bl2 -----
+Rebuild on x86_64
+
+----- version 1.0.1-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

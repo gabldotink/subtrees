@@ -1,0 +1,99 @@
+bitcoin
+------------------------------------------
+Bitcoin is an experimental digital currency that enables instant payments to
+anyone, anywhere in the world. Bitcoin uses peer-to-peer technology to operate
+with no central authority: managing transactions and issuing money are carried
+out collectively by the network. Bitcoin Core is the name of open source
+software which enables the use of this currency.
+
+Runtime requirements:
+  cygwin-3.3.5-1
+  libbitcoinconsensus-devel-23.0-1bl1
+  libbitcoinconsensus0-23.0-1bl1
+  libevent2.1_7-2.1.12-1
+  libgcc1-11.3.0-1
+  libminiupnpc17-2.2.3-1bl1
+  libnatpmp1-20150609-1bl2
+  libsecp256k1_0-0.1+git20220416-1bl1
+  libstdc++6-11.3.0-1
+  libunivalue0-1.1.1-1bl1
+  libzmq5-4.3.4-1
+  pkg-config-1.8.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.38-1
+  cygport-0.35.2-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libevent-devel-2.1.12-1
+  libminiupnpc-devel-2.2.3-1bl1
+  libnatpmp-devel-20150609-1bl2
+  libsecp256k1-devel-0.1+git20220416-1bl1
+  libtool-2.4.7-1
+  libunivalue-devel-1.1.1-1bl1
+  libzmq-devel-4.3.4-1
+  make-4.3-1
+
+Canonical website:
+  https://github.com/bitcoin/bitcoin
+
+Canonical download:
+  https://github.com/bitcoin/bitcoin/archive/refs/tags/v23.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack bitcoin-23.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./bitcoin-23.0-X.cygport all
+
+This will create:
+  /usr/src/bitcoin-23.0-X-src.tar.xz
+  /usr/src/bitcoin-23.0-X.tar.xz
+  /usr/src/libbitcoinconsensus0-23.0-X.tar.xz
+  /usr/src/libbitcoinconsensus-devel-23.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(bitcoin)
+  /usr/bin/bench_bitcoin.exe
+  /usr/bin/bitcoin-cli.exe
+  /usr/bin/bitcoin-tx.exe
+  /usr/bin/bitcoin-util.exe
+  /usr/bin/bitcoind.exe
+  /usr/bin/test_bitcoin.exe
+  /usr/share/doc/Cygwin/bitcoin.README
+  /usr/share/doc/bitcoin/COPYING
+  /usr/share/doc/bitcoin/README.md
+  /usr/share/man/man1/bitcoin-cli.1.gz
+  /usr/share/man/man1/bitcoin-tx.1.gz
+  /usr/share/man/man1/bitcoin-util.1.gz
+  /usr/share/man/man1/bitcoind.1.gz
+
+(libbitcoinconsensus0)
+  /usr/bin/cygbitcoinconsensus-0.dll
+
+(libbitcoinconsensus-devel)
+  /usr/include/bitcoinconsensus.h
+  /usr/lib/libbitcoinconsensus.dll.a
+  /usr/lib/pkgconfig/libbitcoinconsensus.pc
+
+------------------
+
+Port Notes:
+
+----- version 23.0-1bl1 -----
+Version bump.
+
+----- version 22.0-1bl1 -----
+Version bump.
+
+----- version 0.19.0.1-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

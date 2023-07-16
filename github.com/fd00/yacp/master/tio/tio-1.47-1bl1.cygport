@@ -1,0 +1,21 @@
+HOMEPAGE="https://github.com/${PN}/${PN}"
+SRC_URI="https://github.com/${PN}/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Utils"
+SUMMARY="Simple TTY terminal I/O application"
+DESCRIPTION="tio is a simple TTY terminal application which features a straightforward
+commandline interface to easily connect to TTY devices for basic input/output."
+
+LICENSE="GPL-2.0-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: GPL-2.0-or-later"
+LICENSE_URI="LICENSE"
+
+BUILD_REQUIRES="libinih-devel"
+
+inherit meson
+
+src_test()
+{
+	cd ${S}/${CHOST}/src
+	./${PN}.exe --version
+}

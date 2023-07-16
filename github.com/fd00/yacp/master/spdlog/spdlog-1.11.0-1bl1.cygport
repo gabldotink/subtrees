@@ -1,0 +1,47 @@
+HOMEPAGE="https://github.com/gabime/${PN}"
+SRC_URI="https://github.com/gabime/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Fast C++ logging library"
+DESCRIPTION="Very fast, header-only/compiled, C++ logging library."
+
+LICENSE="MIT"
+LICENSE_SPDX="SPDX-License-Identifier: MIT"
+LICENSE_URI="LICENSE"
+
+BUILD_REQUIRES="libfmt-devel"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DSPDLOG_BUILD_ALL:BOOL=ON
+	-DSPDLOG_BUILD_BENCH:BOOL=ON
+	-DSPDLOG_BUILD_SHARED:BOOL=ON
+	-DSPDLOG_BUILD_TESTS:BOOL=ON
+	-DSPDLOG_FMT_EXTERNAL:BOOL=ON
+"
+
+src_test()
+{
+	cd ${B}
+	PATH=${B}:${PATH} ninja_test
+}
+
+PKG_NAMES="
+	spdlog
+	libspdlog${PV[1]}.${PV[2]}
+	libspdlog-devel
+"
+spdlog_CONTENTS="
+	usr/share
+"
+libspdlog1_11_CONTENTS="
+	usr/bin
+"
+libspdlog_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+spdlog_SUMMARY="${SUMMARY} (licensing & readmes)"
+libspdlog1_11_SUMMARY="${SUMMARY} (runtime)"
+libspdlog_devel_SUMMARY="${SUMMARY} (development)"

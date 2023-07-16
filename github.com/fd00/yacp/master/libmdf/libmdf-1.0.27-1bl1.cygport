@@ -1,0 +1,39 @@
+HOMEPAGE="https://millistream.com/"
+SRC_URI="https://packages.millistream.com/source/${P}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Millistream Data Feed C/C++ API"
+DESCRIPTION="${SUMMARY}"
+
+LICENSE="LGPL-3.0-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: LGPL-3.0-or-later"
+LICENSE_URI="COPYING"
+
+BUILD_REQUIRES="libssl-devel zlib-devel"
+
+CYGCONF_ARGS="
+	--enable-maintainer-mode
+"
+
+DIFF_EXCLUDES="
+	version.h
+"
+
+PKG_NAMES="
+	${PN}
+	${PN}0
+	${PN}-devel
+"
+libmdf_CONTENTS="
+	usr/share
+"
+libmdf0_CONTENTS="
+	usr/bin/*-0.dll
+"
+libmdf_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+libmdf_SUMMARY="${SUMMARY} (licensing & readmes)"
+libmdf0_SUMMARY="${SUMMARY} (runtime)"
+libmdf_devel_SUMMARY="${SUMMARY} (development)"

@@ -1,0 +1,111 @@
+libmusicxml
+------------------------------------------
+The MusicXML library is a portable C++ library designed close to the MusicXML
+format and intended to facilitate MusicXML support.
+
+Runtime requirements:
+  cygwin-3.3.5-1
+  libgcc1-11.3.0-1
+  libmusicxml-devel-3.22-1bl1
+  libmusicxml3-3.22-1bl1
+  libstdc++6-11.3.0-1
+  pkg-config-1.8.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.38-1
+  bison-3.8.2-1
+  cmake-3.20.0-1
+  cygport-0.35.1-1
+  flex-2.6.4-2
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  ninja-1.11.0-1
+
+Canonical website:
+  https://github.com/grame-cncm/libmusicxml
+
+Canonical download:
+  https://github.com/grame-cncm/libmusicxml/archive/refs/tags/v.3.22.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libmusicxml-3.22-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libmusicxml-3.22-X.cygport all
+
+This will create:
+  /usr/src/libmusicxml-3.22-X-src.tar.xz
+  /usr/src/libmusicxml-3.22-X.tar.xz
+  /usr/src/libmusicxml3-3.22-X.tar.xz
+  /usr/src/libmusicxml-devel-3.22-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libmusicxml)
+  /usr/bin/xml2guido.exe
+  /usr/bin/xml2midi.exe
+  /usr/bin/xmlread.exe
+  /usr/bin/xmltranspose.exe
+  /usr/bin/xmlversion.exe
+  /usr/share/doc/Cygwin/libmusicxml.README
+  /usr/share/doc/libmusicxml/LICENSE.txt
+  /usr/share/doc/libmusicxml/README.md
+  /usr/share/libmusicxml/doc/libmusicxml2.pdf
+  /usr/share/libmusicxml/schema/3.1/MusicXML.xpr
+  /usr/share/libmusicxml/schema/3.1/README.md
+  /usr/share/libmusicxml/schema/3.1/index.html
+  /usr/share/libmusicxml/schema/3.1/musicxml.spp
+  /usr/share/libmusicxml/schema/3.1/respec.html
+  /usr/share/libmusicxml/schema/3.1/schema/attributes.mod
+  /usr/share/libmusicxml/schema/3.1/schema/barline.mod
+  /usr/share/libmusicxml/schema/3.1/schema/common.mod
+  /usr/share/libmusicxml/schema/3.1/schema/container.dtd
+  /usr/share/libmusicxml/schema/3.1/schema/direction.mod
+  /usr/share/libmusicxml/schema/3.1/schema/identity.mod
+  /usr/share/libmusicxml/schema/3.1/schema/isolat1.ent
+  /usr/share/libmusicxml/schema/3.1/schema/isolat2.ent
+  /usr/share/libmusicxml/schema/3.1/schema/layout.mod
+  /usr/share/libmusicxml/schema/3.1/schema/link.mod
+  /usr/share/libmusicxml/schema/3.1/schema/midixml.dtd
+  /usr/share/libmusicxml/schema/3.1/schema/midixml.xsl
+  /usr/share/libmusicxml/schema/3.1/schema/note.mod
+  /usr/share/libmusicxml/schema/3.1/schema/opus.dtd
+  /usr/share/libmusicxml/schema/3.1/schema/parttime.xsl
+  /usr/share/libmusicxml/schema/3.1/schema/partwise.dtd
+  /usr/share/libmusicxml/schema/3.1/schema/score.mod
+  /usr/share/libmusicxml/schema/3.1/schema/sounds.dtd
+  /usr/share/libmusicxml/schema/3.1/schema/sounds.xml
+  /usr/share/libmusicxml/schema/3.1/schema/timepart.xsl
+  /usr/share/libmusicxml/schema/3.1/schema/timewise.dtd
+  /usr/share/libmusicxml/schema/3.1/schema/to10.xsl
+  /usr/share/libmusicxml/schema/3.1/schema/to11.xsl
+  /usr/share/libmusicxml/schema/3.1/schema/to20.xsl
+  /usr/share/libmusicxml/schema/3.1/schema/to30.xsl
+
+(libmusicxml3)
+  /usr/bin/cygmusicxml-3.dll
+
+(libmusicxml-devel)
+  /usr/include/libmusicxml/exports.h
+  /usr/include/libmusicxml/libmusicxml.h
+  /usr/lib/libmusicxml.dll.a
+  /usr/lib/pkgconfig/libmusicxml.pc
+
+------------------
+
+Port Notes:
+
+----- version 3.22-1bl1 -----
+Version bump.
+
+----- version 3.18-1bl1 -----
+Version bump.
+
+----- version 3.14-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

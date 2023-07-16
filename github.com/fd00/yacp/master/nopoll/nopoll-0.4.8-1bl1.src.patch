@@ -1,0 +1,11 @@
+--- origsrc/nopoll-0.4.8/src/nopoll_conn.c	2022-08-26 20:16:25.000000000 +0900
++++ src/nopoll-0.4.8/src/nopoll_conn.c	2022-12-21 10:57:01.373949700 +0900
+@@ -208,7 +208,7 @@ nopoll_bool                 nopoll_conn_
+ 	/* no local variable here please */
+ 
+ 	if ((NULL != options) && (NULL != options->_interface)) {
+-#if defined(NOPOLL_OS_WIN32) || defined(NOPOLL_OS_WIN64)
++#if defined(NOPOLL_OS_WIN32) || defined(NOPOLL_OS_WIN64) || defined(__CYGWIN__)
+ 		/* Windows still not supported: send us a patch! */ 
+ 		return nopoll_false;
+ #elif defined(__APPLE__) || defined(__FreeBSD__)

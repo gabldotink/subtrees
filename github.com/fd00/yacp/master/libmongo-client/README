@@ -1,0 +1,97 @@
+libmongo-client
+------------------------------------------
+This is an alternative C driver for MongoDB, with slightly different goals
+than the official one:
+
+libmongo-client is meant to be a stable (API, ABI and quality alike), clean,
+well documented and well tested shared library, that strives to make the most
+common use cases as convenient as possible.
+
+Runtime requirements:
+  cygwin-1.7.35-1
+  libglib2.0-devel-2.42.2-1
+  libglib2.0_0-2.42.2-1
+  libmongo-client-devel-0.1.8-1bl1
+  libmongo-client0-0.1.8-1bl1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-9-1
+  binutils-2.25-1
+  cygport-0.18.1-1
+  gcc-core-4.9.2-3
+  libtool-2.4.6-1
+  make-4.1-1
+
+Canonical website:
+  https://github.com/algernon/libmongo-client
+
+Canonical download:
+  https://github.com/algernon/libmongo-client/archive/libmongo-client-0.1.8.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libmongo-client-0.1.8-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libmongo-client-0.1.8-X.cygport all
+
+This will create:
+  /usr/src/libmongo-client-0.1.8-X-src.tar.xz
+  /usr/src/libmongo-client-0.1.8-X.tar.xz
+  /usr/src/libmongo-client0-0.1.8-X.tar.xz
+  /usr/src/libmongo-client-devel-0.1.8-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libmongo-client)
+  /usr/bin/mongo-bson-inspect.exe
+  /usr/bin/mongo-dump.exe
+  /usr/bin/mongo-gridfs.exe
+  /usr/share/doc/Cygwin/libmongo-client.README
+  /usr/share/doc/libmongo-client/LICENSE
+  /usr/share/doc/libmongo-client/NEWS
+  /usr/share/doc/libmongo-client/README.md
+
+(libmongo-client0)
+  /usr/bin/cygmongo-client-0.dll
+
+(libmongo-client-devel)
+  /usr/include/mongo-client/bson.h
+  /usr/include/mongo-client/mongo-client.h
+  /usr/include/mongo-client/mongo-sync-cursor.h
+  /usr/include/mongo-client/mongo-sync-pool.h
+  /usr/include/mongo-client/mongo-sync.h
+  /usr/include/mongo-client/mongo-utils.h
+  /usr/include/mongo-client/mongo-wire.h
+  /usr/include/mongo-client/mongo.h
+  /usr/include/mongo-client/sync-gridfs-chunk.h
+  /usr/include/mongo-client/sync-gridfs-stream.h
+  /usr/include/mongo-client/sync-gridfs.h
+  /usr/lib/libmongo-client.dll.a
+  /usr/lib/pkgconfig/libmongo-client.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.1.8-1bl1 -----
+Version bump.
+
+----- version 0.1.7.1-1bl1 -----
+Version bump.
+
+----- version 0.1.6.1+git20121110-1bl1 -----
+Version bump.
+
+----- version 0.1.5+git20120416-1bl1 -----
+Version bump.
+
+----- version 0.1.4+git20110909-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>
+

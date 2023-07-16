@@ -1,0 +1,89 @@
+libfguid
+------------------------------------------
+libfguid is a library for GUID/UUID data types.
+
+Runtime requirements:
+  cygwin-3.3.4-2
+  libcerror1-20220101-1bl1
+  libfguid-devel-20220113-1bl1
+  libfguid1-20220113-1bl1
+  pkg-config-1.8.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.37-2
+  cygport-0.34.2-1
+  gcc-core-11.2.0-1
+  libcerror-devel-20220101-1bl1
+  libtool-2.4.7-1
+  make-4.3-1
+
+Canonical website:
+  https://github.com/libyal/libfguid
+
+Canonical download:
+  https://github.com/libyal/libfguid/archive/refs/tags/20220113.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libfguid-20220113-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libfguid-20220113-X.cygport all
+
+This will create:
+  /usr/src/libfguid-20220113-X-src.tar.xz
+  /usr/src/libfguid-20220113-X.tar.xz
+  /usr/src/libfguid1-20220113-X.tar.xz
+  /usr/src/libfguid-devel-20220113-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libfguid)
+  /usr/share/doc/Cygwin/libfguid.README
+  /usr/share/doc/libfguid/AUTHORS
+  /usr/share/doc/libfguid/COPYING
+  /usr/share/doc/libfguid/ChangeLog
+  /usr/share/doc/libfguid/README
+
+(libfguid1)
+  /usr/bin/cygfguid-1.dll
+
+(libfguid-devel)
+  /usr/include/libfguid.h
+  /usr/include/libfguid/definitions.h
+  /usr/include/libfguid/error.h
+  /usr/include/libfguid/extern.h
+  /usr/include/libfguid/features.h
+  /usr/include/libfguid/types.h
+  /usr/lib/libfguid.dll.a
+  /usr/lib/pkgconfig/libfguid.pc
+  /usr/share/man/man3/libfguid.3.gz
+
+------------------
+
+Port Notes:
+
+----- version 20220113-1bl1 -----
+Version bump.
+
+----- version 20180724-1bl2 -----
+Rebuild with gcc-9.3.0
+
+----- version 20180724-1bl1 -----
+Version bump.
+
+----- version 20180219-1bl1 -----
+Version bump.
+
+----- version 20150104-1bl1 -----
+Version bump.
+
+----- version 20141018-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

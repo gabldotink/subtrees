@@ -1,0 +1,71 @@
+z80ex
+------------------------------------------
+Z80~Ex is the portable ZiLOG Z80 CPU emulator designed as a library. Goals
+include : precise opcode emulation (documented & undocumented), exact timings
+for each opcode (including I/O operations), multiple CPU contexts.
+disassembler is also included.
+
+Runtime requirements:
+  cygwin-2.2.1-1
+  libz80ex1-1.1.21-1bl2
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.25-2
+  cmake-3.3.2-1
+  cygport-0.20.2-1
+  gcc-core-4.9.3-1
+  make-4.1-1
+
+Canonical website:
+  http://z80ex.sf.net/
+
+Canonical download:
+  mirror://sourceforge/z80ex/z80ex-1.1.21.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack z80ex-1.1.21-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./z80ex-1.1.21-X.cygport all
+
+This will create:
+  /usr/src/z80ex-1.1.21-X-src.tar.xz
+  /usr/src/z80ex-1.1.21-X.tar.xz
+  /usr/src/libz80ex1-1.1.21-X.tar.xz
+  /usr/src/libz80ex-devel-1.1.21-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(z80ex)
+  /usr/share/doc/Cygwin/z80ex.README
+  /usr/share/doc/z80ex/COPYING
+  /usr/share/doc/z80ex/ChangeLog
+  /usr/share/doc/z80ex/README
+  /usr/share/doc/z80ex/TODO
+
+(libz80ex1)
+  /usr/bin/cygz80ex-1.dll
+  /usr/bin/cygz80ex_dasm-1.dll
+
+(libz80ex-devel)
+  /usr/include/z80ex/z80ex.h
+  /usr/include/z80ex/z80ex_common.h
+  /usr/include/z80ex/z80ex_dasm.h
+  /usr/lib/libz80ex.dll.a
+  /usr/lib/libz80ex_dasm.dll.a
+
+------------------
+
+Port Notes:
+
+----- version 1.1.21-1bl2 -----
+Rebuild on x86_64
+
+----- version 1.1.21-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

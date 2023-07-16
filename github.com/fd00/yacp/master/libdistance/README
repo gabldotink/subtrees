@@ -1,0 +1,75 @@
+libdistance
+------------------------------------------
+The distance library is used to compare pieces of data for similarity.
+Specifically, it contains a number of methods to find the edit distance between
+inputs, or the number of differences between them. These differences are
+calculated using various mechanisms. The inputs to these functions can be
+character strings or arbitrary data.
+
+Runtime requirements:
+  cygwin-3.0.1-1
+  libdistance-devel-0.2.3-1bl1
+  libdistance0-0.2.3-1bl1
+  pkg-config-0.29.1-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-10-1
+  binutils-2.29-1
+  cygport-0.32.0-1
+  gcc-core-7.4.0-1
+  libtool-2.4.6-6
+  make-4.2.1-2
+
+Canonical website:
+  https://monkey.org/~jose/software/libdistance/
+
+Canonical download:
+  https://monkey.org/~jose/software/libdistance/libdistance-0.2.3.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libdistance-0.2.3-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libdistance-0.2.3-X.cygport all
+
+This will create:
+  /usr/src/libdistance-0.2.3-X-src.tar.xz
+  /usr/src/libdistance-0.2.3-X.tar.xz
+  /usr/src/libdistance0-0.2.3-X.tar.xz
+  /usr/src/libdistance-devel-0.2.3-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libdistance)
+  /usr/share/doc/Cygwin/libdistance.README
+  /usr/share/doc/libdistance/LICENSE
+  /usr/share/doc/libdistance/README
+
+(libdistance0)
+  /usr/bin/cygdistance-0.dll
+
+(libdistance-devel)
+  /usr/include/distance.h
+  /usr/lib/libdistance.dll.a
+  /usr/lib/pkgconfig/libdistance.pc
+  /usr/share/man/man3/distance.3.gz
+
+------------------
+
+Port Notes:
+
+----- version 0.2.3-1bl1 -----
+Version bump.
+
+----- version 0.2.2-1bl2 -----
+Rebuild with gcc-5.4.0
+
+----- version 0.2.2-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

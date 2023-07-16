@@ -1,0 +1,92 @@
+HOMEPAGE="https://www.${PN}.com/"
+SRC_URI="https://github.com/wolfSSL/${PN}/archive/refs/tags/v${PV}-stable.tar.gz"
+SRC_DIR="${P}-stable"
+
+CATEGORY="Security"
+SUMMARY="Embedded SSL Library"
+DESCRIPTION="The wolfssl embedded SSL library is a lightweight, portable, C-language-based
+SSL/TLS library targeted at embedded and RTOS environments primarily because
+of its size, speed, and feature set. It works seamlessly in regular desktop,
+enterprise, and cloud environments as well. wolfssl supports industry standards
+up to the current TLS 1.2 and DTLS 1.2, is up to 20 times smaller than
+OpenSSL, offers a simple API, an OpenSSL compatibility layer, OCSP and CRL
+support, is backed by the robust wolfCrypt cryptography library, and much
+more."
+
+CYGCONF_ARGS="
+	--enable-dtls
+	--enable-fortress
+	--enable-bump
+	--enable-aesgcm
+	--enable-md2
+	--enable-ripemd
+	--enable-sha512
+	--enable-sessioncerts
+	--enable-keygen
+	--enable-certgen
+	--enable-hc128
+	--enable-psk
+	--enable-ocsp
+	--enable-crl-monitor
+	--enable-testcert
+"
+# --enable-ipv6 : SOCKADDR_IN_T has no member named sin_*
+# --enable-ntru : crypto_ntru.h: No such file or directory
+# --enable-crl : mach or linux only
+# --enable-aesni : bad register name
+# --enable-ecc : undefined reference to ecc_*
+
+src_test()
+{
+	cd ${B}
+	cp -R ${S}/certs .
+	cygtest
+	rm -rf certs
+}
+
+DOCS="
+	doc/README.txt
+"
+
+src_install()
+{
+	cd ${B}
+	cyginstall
+
+	dopkgconfig support/*.pc
+
+	cd ${S}
+	insinto /usr/share/${PN}
+	doins wnr-example.conf
+}
+
+DOCS="
+	LICENSING
+"
+
+DIFF_EXCLUDES="
+	config.in
+"
+
+PKG_NAMES="
+	${PN}
+	lib${PN}33
+	lib${PN}-devel
+"
+wolfssl_CONTENTS="
+	usr/share/doc/Cygwin
+	usr/share/doc/${PN}/[CLRrt]*
+	usr/share/${PN}
+"
+libwolfssl33_CONTENTS="
+	usr/bin/*.dll
+"
+libwolfssl_devel_CONTENTS="
+	usr/bin/*-config
+	usr/include
+	usr/lib
+	usr/share/doc/${PN}/example
+"
+wolfssl_SUMMARY="${SUMMARY} (licensing & readmes)"
+libwolfssl33_SUMMARY="${SUMMARY} (runtime)"
+libwolfssl_devel_SUMMARY="${SUMMARY} (development)"

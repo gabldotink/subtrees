@@ -1,0 +1,44 @@
+HOMEPAGE="https://www.freedesktop.org/wiki/Software/${PN}/"
+SRC_URI="https://www.freedesktop.org/software/${PN}/${P}.tar.xz"
+
+CATEGORY="Libs"
+SUMMARY="QMI modem protocol helper library"
+DESCRIPTION="This package contains the libraries that make it easier to use QMI
+functionality from applications that use glib."
+
+BUILD_REQUIRES="autoconf-archive libglib2.0-devel libmbim-glib-devel"
+
+CYGCONF_ARGS="
+	--enable-maintainer-mode
+	--without-udev
+"
+
+PKG_NAMES="
+	${PN}
+	${PN}-glib5
+	${PN}-glib-devel
+	girepository-Qmi1.0
+"
+libqmi_CONTENTS="
+	usr/bin/qmi*
+	usr/libexec
+	usr/share/bash-completion
+	usr/share/doc
+	usr/share/man
+"
+libqmi_glib5_CONTENTS="
+	usr/bin/*.dll
+"
+libqmi_glib_devel_CONTENTS="
+	usr/include
+	usr/lib/libqmi-glib.dll.a
+	usr/lib/pkgconfig
+"
+girepository_Qmi1_0_CONTENTS="
+	usr/lib/girepository-*
+	usr/share/gir-*
+"
+libqmi_SUMMARY="${SUMMARY} (utilities)"
+libqmi_glib5_SUMMARY="${SUMMARY} (runtime)"
+libqmi_glib_devel_SUMMARY="${SUMMARY} (development)"
+girepository_Qmi1_0_SUMMARY="${SUMMARY} (GObject Introspection data)"

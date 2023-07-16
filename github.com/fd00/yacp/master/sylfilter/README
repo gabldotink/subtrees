@@ -1,0 +1,85 @@
+sylfilter
+------------------------------------------
+Message filter library
+
+Runtime requirements:
+  cygwin-3.0.7-1
+  libglib2.0_0-2.54.3-1
+  libsqlite3_0-3.28.0-1
+  libsylfilter-devel-0.8-1bl2
+  libsylfilter0-0.8-1bl2
+  libsylph1-1.1.0-1bl6
+  pkg-config-1.6.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-10-1
+  binutils-2.29-1
+  cygport-0.33.1-1
+  gcc-core-7.4.0-1
+  libtool-2.4.6-6
+  make-4.2.1-2
+
+Canonical website:
+  http://sylpheed.sraoss.jp/sylfilter/
+
+Canonical download:
+  http://sylpheed.sraoss.jp/sylfilter/src/sylfilter-0.8.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack sylfilter-0.8-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./sylfilter-0.8-X.cygport all
+
+This will create:
+  /usr/src/sylfilter-0.8-X-src.tar.xz
+  /usr/src/sylfilter-0.8-X.tar.xz
+  /usr/src/libsylfilter0-0.8-X.tar.xz
+  /usr/src/libsylfilter-devel-0.8-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(sylfilter)
+  /usr/bin/sylfilter.exe
+  /usr/share/doc/Cygwin/sylfilter.README
+  /usr/share/doc/sylfilter/COPYING
+  /usr/share/doc/sylfilter/ChangeLog
+  /usr/share/doc/sylfilter/NEWS
+  /usr/share/doc/sylfilter/README
+
+(libsylfilter0)
+  /usr/bin/cygsylfilter-0.dll
+
+(libsylfilter-devel)
+  /usr/include/sylfilter/bayes-filter.h
+  /usr/include/sylfilter/blacklist-filter.h
+  /usr/include/sylfilter/filter-kvs-gdbm.h
+  /usr/include/sylfilter/filter-kvs-qdbm.h
+  /usr/include/sylfilter/filter-kvs-sqlite.h
+  /usr/include/sylfilter/filter-kvs.h
+  /usr/include/sylfilter/filter-manager.h
+  /usr/include/sylfilter/filter-utils.h
+  /usr/include/sylfilter/filter.h
+  /usr/include/sylfilter/ngram-filter.h
+  /usr/include/sylfilter/textcontent-filter.h
+  /usr/include/sylfilter/whitelist-filter.h
+  /usr/include/sylfilter/wordsep-filter.h
+  /usr/lib/libsylfilter.dll.a
+  /usr/lib/pkgconfig/sylfilter.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.8-1bl2 -----
+Rebuild with gcc-7.4.0
+
+----- version 0.8-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

@@ -1,0 +1,28 @@
+HOMEPAGE="https://sourceforge.net/projects/${PN}/"
+SRC_URI="mirror://sourceforge/${PN}/${P}r43.tar.gz"
+
+CATEGORY="Video"
+SUMMARY="C library for decoding .smk Smacker Video files"
+DESCRIPTION="libsmacker is a cross-platform C library which can be used for decoding
+Smacker Video files produced by RAD Game Tools. Smacker Video was the king of
+video middleware in the 1990s, and its 256-color compressed video format was
+used in over 2600 software titles."
+
+PKG_NAMES="
+	${PN}
+	${PN}1
+	${PN}-devel
+"
+libsmacker_CONTENTS="
+	usr/share
+"
+libsmacker1_CONTENTS="
+	usr/bin
+"
+libsmacker_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+libsmacker_SUMMARY="${SUMMARY} (licensing & readmes)"
+libsmacker1_SUMMARY="${SUMMARY} (runtime)"
+libsmacker_devel_SUMMARY="${SUMMARY} (development)"

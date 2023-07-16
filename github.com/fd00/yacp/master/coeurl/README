@@ -1,0 +1,86 @@
+coeurl
+------------------------------------------
+Simple library to do http requests asynchronously via CURL in C++. (Eventually
+as coroutines, once all the compilers I need to support support them.)
+
+Runtime requirements:
+  cygwin-3.4.3-1
+  libcoeurl-devel-0.3.0-1bl1
+  libcoeurl0.3-0.3.0-1bl1
+  libcurl-devel-7.87.0-1
+  libcurl4-7.87.0-1
+  libevent-devel-2.1.12-1
+  libevent2.1_7-2.1.12-1
+  libfmt9-9.1.0-1bl1
+  libgcc1-11.3.0-1
+  libspdlog-devel-1.11.0-1bl1
+  libspdlog1.11-1.11.0-1bl1
+  libstdc++6-11.3.0-1
+  pkg-config-1.9.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.39-1
+  cygport-0.35.5-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libcurl-devel-7.87.0-1
+  libevent-devel-2.1.12-1
+  libfmt-devel-9.1.0-1bl1
+  libspdlog-devel-1.11.0-1bl1
+  meson-0.63.3-1
+  ninja-1.11.1-1
+
+Canonical website:
+  https://nheko.im/nheko-reborn/coeurl
+
+Canonical download:
+  https://nheko.im/nheko-reborn/coeurl/-/archive/v0.3.0/coeurl-v0.3.0.tar.bz2
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack coeurl-0.3.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./coeurl-0.3.0-X.cygport all
+
+This will create:
+  /usr/src/coeurl-0.3.0-X-src.tar.xz
+  /usr/src/coeurl-0.3.0-X.tar.xz
+  /usr/src/libcoeurl0.3-0.3.0-X.tar.xz
+  /usr/src/libcoeurl-devel-0.3.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(coeurl)
+  /usr/share/doc/Cygwin/coeurl.README
+  /usr/share/doc/coeurl/LICENSE
+  /usr/share/doc/coeurl/README.md
+
+(libcoeurl0.3)
+  /usr/bin/cygcoeurl-0.3.dll
+
+(libcoeurl-devel)
+  /usr/include/coeurl/client.hpp
+  /usr/include/coeurl/errors.hpp
+  /usr/include/coeurl/headers.hpp
+  /usr/include/coeurl/request.hpp
+  /usr/lib/libcoeurl.dll.a
+  /usr/lib/pkgconfig/coeurl.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.3.0-1bl1 -----
+Version bump.
+
+----- version 0.2.1-1bl1 -----
+Version bump.
+
+----- version 0.2.0-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

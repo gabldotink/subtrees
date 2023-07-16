@@ -1,0 +1,123 @@
+libexosip2
+------------------------------------------
+eXosip is a library that hides the complexity of using the SIP protocol for
+mutlimedia session establishement. This protocol is mainly to be used by VoIP
+telephony applications (endpoints or conference server) but might be also
+usefull for any application that wish to establish sessions like multiplayer
+games.
+
+Runtime requirements:
+  cygwin-3.3.3-1
+  libcares-devel-1.14.0-1
+  libcares2-1.14.0-1
+  libexosip2_15-5.3.0-1bl1
+  libosip2-devel-5.3.0-1bl1
+  libosip2_15-5.3.0-1bl1
+  libssl-devel-1.1.1l-2
+  libssl1.1-1.1.1l-2
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.37-2
+  cygport-0.34.0-1
+  gcc-core-11.2.0-1
+  libcares-devel-1.14.0-1
+  libosip2-devel-5.3.0-1bl1
+  libssl-devel-1.1.1l-2
+  libtool-2.4.6-8
+  make-4.3-1
+
+Canonical website:
+  https://savannah.nongnu.org/projects/eXosip
+
+Canonical download:
+  mirror://savannah/exosip/libexosip2-5.3.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libexosip2-5.3.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libexosip2-5.3.0-X.cygport all
+
+This will create:
+  /usr/src/libexosip2-5.3.0-X-src.tar.xz
+  /usr/src/libexosip2-5.3.0-X.tar.xz
+  /usr/src/libexosip2_15-5.3.0-X.tar.xz
+  /usr/src/libexosip2-devel-5.3.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libexosip2)
+  /usr/bin/sip_monitor.exe
+  /usr/bin/sip_reg.exe
+  /usr/bin/sip_storm.exe
+  /usr/share/doc/Cygwin/libexosip2.README
+  /usr/share/doc/libexosip2/AUTHORS
+  /usr/share/doc/libexosip2/COPYING
+  /usr/share/doc/libexosip2/ChangeLog
+  /usr/share/doc/libexosip2/LICENSE.OpenSSL
+  /usr/share/doc/libexosip2/NEWS
+  /usr/share/doc/libexosip2/README
+
+(libexosip2_15)
+  /usr/bin/cygeXosip2-15.dll
+
+(libexosip2-devel)
+  /usr/include/eXosip2/eX_call.h
+  /usr/include/eXosip2/eX_message.h
+  /usr/include/eXosip2/eX_options.h
+  /usr/include/eXosip2/eX_publish.h
+  /usr/include/eXosip2/eX_register.h
+  /usr/include/eXosip2/eX_setup.h
+  /usr/include/eXosip2/eX_subscribe.h
+  /usr/include/eXosip2/eXosip.h
+  /usr/lib/libeXosip2.dll.a
+  /usr/lib/pkgconfig/libexosip2.pc
+
+------------------
+
+Port Notes:
+
+----- version 5.3.0-1bl1 -----
+Version bump.
+
+----- version 5.2.1-1bl1 -----
+Version bump.
+
+----- version 5.2.0-1bl1 -----
+Version bump.
+
+----- version 5.1.3-1bl1 -----
+Version bump.
+
+----- version 5.1.1-1bl1 -----
+Version bump.
+
+----- version 5.1.0-1bl1 -----
+Version bump.
+
+----- version 5.0.0-1bl1 -----
+Version bump.
+
+----- version 4.1.0-1bl1 -----
+Version bump.
+
+----- version 4.0.0-1bl1 -----
+Version bump.
+
+----- version 3.6.0-1bl1 -----
+Version bump.
+
+----- version 3.5.0-1bl1 -----
+Version bump.
+
+----- version 3.3.0-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

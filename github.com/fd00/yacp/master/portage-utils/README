@@ -1,0 +1,143 @@
+portage-utils
+------------------------------------------
+Portage-utils is a collection of very fast utilities written in C, which are
+meant to offer a faster but more limited alternative to their gentoolkit
+counterparts. Please note that portage-utils is not meant to replace
+gentoolkit. Its utilities are much more efficient than the equivalent ones from
+gentoolkit and might be better suited to be used in scripts that need to call
+Portage repeatedly, but portage-utils does not offer the same functionalities.
+It does not consider eclasses at all and does not provide tools like
+revdep-rebuild and glsa-check.
+
+Runtime requirements:
+  cygwin-3.3.5-1
+  libb2_1-0.98.1-1
+  libgomp1-11.3.0-1
+  libgpgme11-1.9.0-1
+  libssl1.1-1.1.1o-1
+  zlib0-1.2.12-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.38-1
+  cygport-0.35.1-1
+  gcc-core-11.3.0-1
+  libb2-devel-0.98.1-1
+  libgpgme-devel-1.9.0-1
+  libssl-devel-1.1.1o-1
+  libtool-2.4.7-1
+  make-4.3-1
+  zlib-devel-1.2.12-1
+
+Canonical website:
+  https://github.com/gentoo/portage-utils
+
+Canonical download:
+  https://github.com/gentoo/portage-utils/archive/refs/tags/v0.93.2.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack portage-utils-0.93.2-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./portage-utils-0.93.2-X.cygport all
+
+This will create:
+  /usr/src/portage-utils-0.93.2-X-src.tar.xz
+  /usr/src/portage-utils-0.93.2-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(portage-utils)
+  /usr/bin/q.exe
+  /usr/bin/qatom
+  /usr/bin/qcheck
+  /usr/bin/qdepends
+  /usr/bin/qfile
+  /usr/bin/qgrep
+  /usr/bin/qkeyword
+  /usr/bin/qlist
+  /usr/bin/qlop
+  /usr/bin/qmanifest
+  /usr/bin/qmerge
+  /usr/bin/qpkg
+  /usr/bin/qsearch
+  /usr/bin/qsize
+  /usr/bin/qtbz2
+  /usr/bin/qtegrity
+  /usr/bin/quse
+  /usr/bin/qwhich
+  /usr/bin/qxpak
+  /usr/share/doc/Cygwin/portage-utils.README
+  /usr/share/doc/portage-utils/COPYING
+  /usr/share/doc/portage-utils/HACKING.md
+  /usr/share/doc/portage-utils/README.md
+  /usr/share/doc/portage-utils/TODO.md
+  /usr/share/man/man1/q.1.gz
+  /usr/share/man/man1/qatom.1.gz
+  /usr/share/man/man1/qcheck.1.gz
+  /usr/share/man/man1/qdepends.1.gz
+  /usr/share/man/man1/qfile.1.gz
+  /usr/share/man/man1/qgrep.1.gz
+  /usr/share/man/man1/qkeyword.1.gz
+  /usr/share/man/man1/qlist.1.gz
+  /usr/share/man/man1/qlop.1.gz
+  /usr/share/man/man1/qmanifest.1.gz
+  /usr/share/man/man1/qmerge.1.gz
+  /usr/share/man/man1/qpkg.1.gz
+  /usr/share/man/man1/qsearch.1.gz
+  /usr/share/man/man1/qsize.1.gz
+  /usr/share/man/man1/qtbz2.1.gz
+  /usr/share/man/man1/qtegrity.1.gz
+  /usr/share/man/man1/quse.1.gz
+  /usr/share/man/man1/qwhich.1.gz
+  /usr/share/man/man1/qxpak.1.gz
+
+------------------
+
+Port Notes:
+
+----- version 0.93.2-1bl1 -----
+Version bump.
+
+----- version 0.92-1bl1 -----
+Version bump.
+
+----- version 0.91-1bl1 -----
+Version bump.
+
+----- version 0.89-1bl1 -----
+Version bump.
+
+----- version 0.86-1bl1 -----
+Version bump.
+
+----- version 0.84-1bl1 -----
+Version bump.
+
+----- version 0.83-1bl1 -----
+Version bump.
+
+----- version 0.80-1bl1 -----
+Version bump.
+
+----- version 0.74-1bl1 -----
+Version bump.
+
+----- version 0.70-1bl1 -----
+Version bump.
+
+----- version 0.64-1bl1 -----
+Version bump.
+
+----- version 0.56-1bl1 -----
+Version bump.
+
+----- version 0.41-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

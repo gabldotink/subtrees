@@ -1,0 +1,31 @@
+--- origsrc/wrk-4.2.0/Makefile	2021-02-07 16:13:05.000000000 +0900
++++ src/wrk-4.2.0/Makefile	2022-06-20 20:43:39.812688200 +0900
+@@ -24,7 +24,7 @@ VER  ?= $(shell git describe --tags --al
+ 
+ ODIR := obj
+ OBJ  := $(patsubst %.c,$(ODIR)/%.o,$(SRC)) $(ODIR)/bytecode.o $(ODIR)/version.o
+-LIBS := -lluajit-5.1 $(LIBS)
++LIBS := -lluajit-5.1 -llua-5.3 $(LIBS)
+ 
+ DEPS    :=
+ CFLAGS  += -I$(ODIR)/include
+--- origsrc/wrk-4.2.0/src/script.c	2021-02-07 16:13:05.000000000 +0900
++++ src/wrk-4.2.0/src/script.c	2022-06-20 20:43:39.819549700 +0900
+@@ -2,6 +2,7 @@
+ 
+ #include <stdlib.h>
+ #include <string.h>
++#include <netdb.h>
+ #include "script.h"
+ #include "http_parser.h"
+ #include "zmalloc.h"
+--- origsrc/wrk-4.2.0/src/wrk.c	2021-02-07 16:13:05.000000000 +0900
++++ src/wrk-4.2.0/src/wrk.c	2022-06-20 20:43:39.830893100 +0900
+@@ -1,5 +1,7 @@
+ // Copyright (C) 2012 - Will Glozer.  All rights reserved.
+ 
++#include <signal.h>
++
+ #include "wrk.h"
+ #include "script.h"
+ #include "main.h"

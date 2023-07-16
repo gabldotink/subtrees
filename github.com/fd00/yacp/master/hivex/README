@@ -1,0 +1,194 @@
+hivex
+------------------------------------------
+Hive files are the undocumented binary files that Windows uses to store the
+Windows Registry on disk. Hivex is a library that can read and write to these
+files.
+
+Runtime requirements:
+  bash-4.4.12-3
+  cygwin-3.3.4-2
+  libhivex-devel-1.3.21-1bl1
+  libhivex0-1.3.21-1bl1
+  libiconv2-1.16-2
+  libintl8-0.21-1
+  libreadline7-8.1-2
+  libxml2-2.9.12-2
+  ocaml-hivex-1.3.21-1bl1
+  ocaml-runtime-4.10.0-1
+  perl-Hivex-1.3.21-1bl1
+  perl_base-5.32.1-2
+  pkg-config-1.8.0-1
+  python39-3.9.10-1
+  python39-hivex-1.3.21-1bl1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.37-2
+  cygport-0.34.2-1
+  gcc-core-11.2.0-1
+  libiconv-devel-1.16-2
+  libintl-devel-0.21-1
+  libreadline-devel-8.1-2
+  libtool-2.4.7-1
+  libxml2-devel-2.9.12-2
+  make-4.3-1
+  ocaml-4.10.0-1
+  ocaml-findlib-1.8.1-1
+  perl-ExtUtils-MakeMaker-7.64-1
+  perl-IO-stringy-2.113-2
+  perl-Test-More-UTF8-0.05-3
+  python39-3.9.10-1
+  python39-devel-3.9.10-1
+  ruby-2.6.4-1
+
+Canonical website:
+  https://libguestfs.org/
+
+Canonical download:
+  https://download.libguestfs.org/hivex/hivex-1.3.21.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack hivex-1.3.21-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./hivex-1.3.21-X.cygport all
+
+This will create:
+  /usr/src/hivex-1.3.21-X-src.tar.xz
+  /usr/src/hivex-1.3.21-X.tar.xz
+  /usr/src/libhivex0-1.3.21-X.tar.xz
+  /usr/src/libhivex-devel-1.3.21-X.tar.xz
+  /usr/src/ocaml-hivex-1.3.21-X.tar.xz
+  /usr/src/perl-Hivex-1.3.21-X.tar.xz
+  /usr/src/python39-hivex-1.3.21-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(hivex)
+  /usr/bin/hivexget
+  /usr/bin/hivexml.exe
+  /usr/bin/hivexregedit
+  /usr/bin/hivexsh.exe
+  /usr/share/doc/Cygwin/hivex.README
+  /usr/share/doc/hivex/ChangeLog
+  /usr/share/doc/hivex/LICENSE
+  /usr/share/doc/hivex/README
+  /usr/share/doc/hivex/TODO
+  /usr/share/locale/ca/LC_MESSAGES/hivex.mo
+  /usr/share/locale/cs/LC_MESSAGES/hivex.mo
+  /usr/share/locale/de/LC_MESSAGES/hivex.mo
+  /usr/share/locale/es/LC_MESSAGES/hivex.mo
+  /usr/share/locale/eu/LC_MESSAGES/hivex.mo
+  /usr/share/locale/fr/LC_MESSAGES/hivex.mo
+  /usr/share/locale/gu/LC_MESSAGES/hivex.mo
+  /usr/share/locale/hi/LC_MESSAGES/hivex.mo
+  /usr/share/locale/hu/LC_MESSAGES/hivex.mo
+  /usr/share/locale/ja/LC_MESSAGES/hivex.mo
+  /usr/share/locale/kn/LC_MESSAGES/hivex.mo
+  /usr/share/locale/ml/LC_MESSAGES/hivex.mo
+  /usr/share/locale/mr/LC_MESSAGES/hivex.mo
+  /usr/share/locale/nl/LC_MESSAGES/hivex.mo
+  /usr/share/locale/or/LC_MESSAGES/hivex.mo
+  /usr/share/locale/pl/LC_MESSAGES/hivex.mo
+  /usr/share/locale/pt/LC_MESSAGES/hivex.mo
+  /usr/share/locale/pt_BR/LC_MESSAGES/hivex.mo
+  /usr/share/locale/ru/LC_MESSAGES/hivex.mo
+  /usr/share/locale/sr/LC_MESSAGES/hivex.mo
+  /usr/share/locale/uk/LC_MESSAGES/hivex.mo
+  /usr/share/locale/zh_CN/LC_MESSAGES/hivex.mo
+  /usr/share/man/man1/hivexget.1.gz
+  /usr/share/man/man1/hivexml.1.gz
+  /usr/share/man/man1/hivexregedit.1.gz
+  /usr/share/man/man1/hivexsh.1.gz
+
+(libhivex0)
+  /usr/bin/cyghivex-0.dll
+
+(libhivex-devel)
+  /usr/include/hivex.h
+  /usr/lib/libhivex.dll.a
+  /usr/lib/pkgconfig/hivex.pc
+  /usr/share/man/man3/hivex.3.gz
+
+(ocaml-hivex)
+  /usr/lib/ocaml/hivex/META
+  /usr/lib/ocaml/hivex/hivex.cmi
+  /usr/lib/ocaml/hivex/hivex.cmx
+  /usr/lib/ocaml/hivex/hivex.mli
+  /usr/lib/ocaml/hivex/libmlhivex.a
+  /usr/lib/ocaml/hivex/mlhivex.a
+  /usr/lib/ocaml/hivex/mlhivex.cma
+  /usr/lib/ocaml/hivex/mlhivex.cmxa
+  /usr/lib/ocaml/stublibs/dllmlhivex.so
+  /usr/lib/ocaml/stublibs/dllmlhivex.so.owner
+
+(perl-Hivex)
+  /usr/lib/perl5/vendor_perl/5.32/x86_64-cygwin-threads/Win/Hivex.pm
+  /usr/lib/perl5/vendor_perl/5.32/x86_64-cygwin-threads/Win/Hivex/Regedit.pm
+  /usr/lib/perl5/vendor_perl/5.32/x86_64-cygwin-threads/auto/Win/Hivex/Hivex.dll
+  /usr/share/man/man3/Win.Hivex.3pm.gz
+  /usr/share/man/man3/Win.Hivex.Regedit.3pm.gz
+
+(python39-hivex)
+  /usr/lib/python3.9/site-packages/cyghivexmod.cpython-39-x86_64-cygwin.dll
+  /usr/lib/python3.9/site-packages/hivex/__init__.py
+  /usr/lib/python3.9/site-packages/hivex/__pycache__/__init__.cpython-39.opt-1.pyc
+  /usr/lib/python3.9/site-packages/hivex/__pycache__/__init__.cpython-39.opt-2.pyc
+  /usr/lib/python3.9/site-packages/hivex/__pycache__/__init__.cpython-39.pyc
+  /usr/lib/python3.9/site-packages/hivex/__pycache__/hive_types.cpython-39.opt-1.pyc
+  /usr/lib/python3.9/site-packages/hivex/__pycache__/hive_types.cpython-39.opt-2.pyc
+  /usr/lib/python3.9/site-packages/hivex/__pycache__/hive_types.cpython-39.pyc
+  /usr/lib/python3.9/site-packages/hivex/hive_types.py
+
+------------------
+
+Port Notes:
+
+----- version 1.3.21-1bl1 -----
+Version bump.
+
+----- version 1.3.20-1bl1 -----
+Version bump.
+
+----- version 1.3.19-1bl1 -----
+Version bump.
+
+----- version 1.3.18-1bl2 -----
+Rebuild for ocaml
+
+----- version 1.3.18-1bl1 -----
+Version bump.
+
+----- version 1.3.15-1bl1 -----
+Version bump.
+
+----- version 1.3.14-1bl1 -----
+Version bump.
+
+----- version 1.3.13-1bl1 -----
+Version bump.
+
+----- version 1.3.11-1bl1 -----
+Version bump.
+
+----- version 1.3.10-1bl1 -----
+Version bump.
+
+----- version 1.3.8-1bl1 -----
+Version bump.
+
+----- version 1.3.5-1bl1 -----
+Version bump.
+
+----- version 1.3.3-1bl1 -----
+Version bump.
+
+----- version 1.3.1-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

@@ -1,0 +1,40 @@
+HOMEPAGE="https://${PN}.re/"
+SRC_URI="https://github.com/zyantific/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Fast and lightweight x86/x86_64 disassembler library"
+DESCRIPTION="${SUMMARY}"
+
+LICENSE="MIT"
+LICENSE_SPDX="SPDX-License-Identifier: MIT"
+LICENSE_URI="LICENSE"
+
+BUILD_REQUIRES="libZycore-devel"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DZYAN_SYSTEM_ZYCORE:BOOL=ON
+	-DZYDIS_BUILD_DOXYGEN:BOOL=OFF
+	-DZYDIS_BUILD_SHARED_LIB:BOOL=ON
+"
+
+PKG_NAMES="
+	zydis
+	libZydis${PV[1]}.${PV[2]}
+	libZydis-devel
+"
+zydis_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+libZydis4_0_CONTENTS="
+	usr/bin/cyg*-${PV[1]}.${PV[2]}.dll
+"
+libZydis_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+zydis_SUMMARY="${SUMMARY} (utilities)"
+libZydis4_0_SUMMARY="${SUMMARY} (runtime)"
+libZydis_devel_SUMMARY="${SUMMARY} (development)"

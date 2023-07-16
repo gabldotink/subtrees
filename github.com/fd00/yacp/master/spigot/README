@@ -1,0 +1,69 @@
+spigot
+------------------------------------------
+Spigot is a command-line streaming exact real calculator.
+
+Runtime requirements:
+  cygwin-3.3.5-1
+  libgcc1-11.3.0-1
+  libgmp10-6.2.1-2
+  libncursesw10-6.1-1.20190727
+  libstdc++6-11.3.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.38-1
+  cmake-3.20.0-1
+  cygport-0.35.1-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  halibut-1.3-1bl1
+  libgmp-devel-6.2.1-2
+  libncurses-devel-6.1-1.20190727
+  ninja-1.11.0-1
+
+Canonical website:
+  https://www.chiark.greenend.org.uk/~sgtatham/spigot/
+
+Canonical download:
+  https://www.chiark.greenend.org.uk/~sgtatham/spigot/spigot-20220606.eb585f8.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack spigot-20220606-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./spigot-20220606-X.cygport all
+
+This will create:
+  /usr/src/spigot-20220606-X-src.tar.xz
+  /usr/src/spigot-20220606-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(spigot)
+  /usr/bin/spigot.exe
+  /usr/share/doc/Cygwin/spigot.README
+  /usr/share/doc/spigot/LICENCE
+  /usr/share/doc/spigot/TODO.txt
+  /usr/share/doc/spigot/spigot.html
+  /usr/share/man/man1/spigot.1.gz
+
+------------------
+
+Port Notes:
+
+----- version 20220606-1bl1 -----
+Version bump.
+
+----- version 20210527-1bl1 -----
+Version bump.
+
+----- version 20200901-1bl1 -----
+Version bump.
+
+----- version 20200101-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

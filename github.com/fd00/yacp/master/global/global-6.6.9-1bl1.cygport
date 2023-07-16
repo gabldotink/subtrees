@@ -1,0 +1,32 @@
+HOMEPAGE="https://www.gnu.org/software/${PN}/"
+SRC_URI="mirror://gnu/${PN}/${P}.tar.gz"
+
+CATEGORY="Devel"
+SUMMARY="GNU GLOBAL source code tag system"
+DESCRIPTION="GNU GLOBAL is a source code tagging system that works the same way across
+diverse environments (emacs, vi, less, bash, web browser, etc). You can locate
+symbols in source files and move there easily. It is useful for hacking a
+large project containing many sub-directories, many #ifdef and many main()
+functions. It is similar to ctags or etags but is different from them at the
+point of independence of any editor."
+
+LICENSE="GPL-3.0-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: GPL-3.0-or-later"
+LICENSE_URI="COPYING"
+
+BUILD_REQUIRES="libncurses-devel libsqlite3-devel"
+
+export PYTHON=python3
+
+CYGCONF_ARGS="
+	--with-sqlite3=/usr
+"
+
+DIFF_EXCLUDES="
+	config-h.in
+	gtags.conf
+	*.cgi.tmpl
+	libltdl
+	*.m4
+	*.py
+"

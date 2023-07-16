@@ -1,0 +1,45 @@
+HOMEPAGE="http://www.pointclouds.org/"
+SRC_URI="https://github.com/PointCloudLibrary/${PN}/archive/${P}.tar.gz"
+SRC_DIR="${PN}-${P}"
+
+CATEGORY="Libs"
+SUMMARY="Point Cloud Library"
+DESCRIPTION="The Point Cloud Library (PCL) is a standalone, large scale, open project for
+3D point cloud processing."
+
+export CPPFLAGS="${CPPFLAGS} -D_GNU_SOURCE"
+export CXXFLAGS="${CXXFLAGS} -Wa,-mbig-obj"
+export CXXFLAGS=`echo ${CXXFLAGS} | sed -e 's/-ggdb//'`
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DBUILD_apps:BOOL=ON
+	-DBUILD_examples:BOOL=ON
+	-DBUILD_simulation:BOOL=ON
+	-DBUILD_global_tests:BOOL=ON
+"
+
+DOCS="
+	CONTRIBUTING.md
+"
+
+PKG_NAMES="
+	${PN}
+	lib${PN}${PV[1]}.${PV[2]}
+	lib${PN}-devel
+"
+pcl_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+libpcl1_11_CONTENTS="
+	usr/bin/*.dll
+"
+libpcl_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+pcl_SUMMARY="${SUMMARY} (utilities)"
+libpcl1_11_SUMMARY="${SUMMARY} (runtime)"
+libpcl_devel_SUMMARY="${SUMMARY} (development)"

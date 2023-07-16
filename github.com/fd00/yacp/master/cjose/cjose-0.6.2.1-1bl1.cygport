@@ -1,0 +1,35 @@
+HOMEPAGE="https://github.com/zmartzone/${PN}"
+SRC_URI="https://github.com/zmartzone/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="C library implementing the Javascript Object Signing and Encryption"
+DESCRIPTION="${SUMMARY}"
+
+LICENSE="MIT"
+LICENSE_SPDX="SPDX-License-Identifier: MIT"
+LICENSE_URI="LICENSE"
+
+BUILD_REQUIRES="libjansson-devel libssl-devel"
+
+DIFF_EXCLUDES="
+	lib
+"
+
+PKG_NAMES="
+	cjose
+	libcjose0
+	libcjose-devel
+"
+cjose_CONTENTS="
+	usr/share
+"
+libcjose0_CONTENTS="
+	usr/bin
+"
+libcjose_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+cjose_SUMMARY="${SUMMARY} (licensing & readmes)"
+libcjose0_SUMMARY="${SUMMARY} (runtime)"
+libcjose_devel_SUMMARY="${SUMMARY} (development)"

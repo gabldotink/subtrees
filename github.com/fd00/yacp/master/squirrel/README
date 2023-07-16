@@ -1,0 +1,87 @@
+squirrel
+------------------------------------------
+Squirrel is a high level imperative, object-oriented programming language,
+designed to be a light-weight scripting language that fits in the size, memory
+bandwidth, and real-time requirements of applications like video games.
+
+Runtime requirements:
+  cygwin-3.3.5-1
+  libsquirrel0-3.2-1bl1
+  libstdc++6-11.3.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.38-1
+  cmake-3.20.0-1
+  cygport-0.35.1-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  ninja-1.11.0-1
+
+Canonical website:
+  https://sourceforge.net/projects/squirrel/
+
+Canonical download:
+  mirror://sourceforge/squirrel/squirrel_3_2_stable.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack squirrel-3.2-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./squirrel-3.2-X.cygport all
+
+This will create:
+  /usr/src/squirrel-3.2-X-src.tar.xz
+  /usr/src/squirrel-3.2-X.tar.xz
+  /usr/src/libsquirrel0-3.2-X.tar.xz
+  /usr/src/libsquirrel-devel-3.2-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(squirrel)
+  /usr/bin/sq.exe
+  /usr/share/doc/Cygwin/squirrel.README
+  /usr/share/doc/squirrel/Copyright
+  /usr/share/doc/squirrel/HISTORY
+  /usr/share/doc/squirrel/README
+
+(libsquirrel0)
+  /usr/bin/cygsqstdlib-0.dll
+  /usr/bin/cygsquirrel-0.dll
+
+(libsquirrel-devel)
+  /usr/include/sqconfig.h
+  /usr/include/sqstdaux.h
+  /usr/include/sqstdblob.h
+  /usr/include/sqstdio.h
+  /usr/include/sqstdmath.h
+  /usr/include/sqstdstring.h
+  /usr/include/sqstdsystem.h
+  /usr/include/squirrel.h
+  /usr/lib/cmake/squirrel/squirrel-config-version.cmake
+  /usr/lib/cmake/squirrel/squirrel-config.cmake
+  /usr/lib/cmake/squirrel/squirrel-targets-release.cmake
+  /usr/lib/cmake/squirrel/squirrel-targets.cmake
+  /usr/lib/libsqstdlib.dll.a
+  /usr/lib/libsquirrel.dll.a
+
+------------------
+
+Port Notes:
+
+----- version 3.2-1bl1 -----
+Version bump.
+
+----- version 3.0.6-1bl1 -----
+Version bump.
+
+----- version 2.2.5-1bl1 -----
+Version bump.
+
+----- version 2.2.4-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

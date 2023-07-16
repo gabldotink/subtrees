@@ -1,0 +1,27 @@
+HOMEPAGE="https://github.com/lusid1/${PN}"
+SRC_URI="https://github.com/lusid1/${PN}/archive/${PV}.tar.gz"
+
+CATEGORY="Utils"
+SUMMARY="Decrypts PlayStation Vita pkg file and packages to zip archive"
+DESCRIPTION="Utility that decrypts PlayStation Vita pkg file and creates zip package.
+Supported pkg files - main application, DLC, patch and PSM files. Also
+supports PSX and PSP pkg files for use with Adrenaline."
+
+src_compile()
+{
+	cd ${B}
+	lndirs
+	cygmake
+}
+
+src_test()
+{
+	cd ${B}
+	./${PN}.exe || :
+}
+
+src_install()
+{
+	cd ${B}
+	dobin ${PN}.exe
+}

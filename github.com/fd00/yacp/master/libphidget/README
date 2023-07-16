@@ -1,0 +1,82 @@
+libphidget
+------------------------------------------
+Phidgets are a set of plug and play building blocks for low cost USB sensing
+and control from your PC. All the USB complexity is taken care of by the robust
+libphidget API.
+
+Runtime requirements:
+  cygwin-3.1.4-1
+  libiconv2-1.14-3
+  libphidget21-devel-2.1.9.20190409-1bl1
+  libphidget21_0-2.1.9.20190409-1bl1
+  libusb0-1.2.6.0-2
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.34+1git.de9c1b7cfe-1
+  cygport-0.34.0-1
+  gcc-core-9.3.0-2
+  libtool-2.4.6-7
+  make-4.3-1
+
+Canonical website:
+  http://www.phidgets.com/
+
+Canonical download:
+  http://www.phidgets.com/downloads/libraries/libphidget_2.1.9.20190409.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libphidget-2.1.9.20190409-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libphidget-2.1.9.20190409-X.cygport all
+
+This will create:
+  /usr/src/libphidget-2.1.9.20190409-X-src.tar.xz
+  /usr/src/libphidget-2.1.9.20190409-X.tar.xz
+  /usr/src/libphidget21_0-2.1.9.20190409-X.tar.xz
+  /usr/src/libphidget21-devel-2.1.9.20190409-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libphidget)
+  /usr/share/doc/Cygwin/libphidget.README
+  /usr/share/doc/libphidget/AUTHORS
+  /usr/share/doc/libphidget/COPYING
+  /usr/share/doc/libphidget/ChangeLog
+  /usr/share/doc/libphidget/README
+
+(libphidget21_0)
+  /usr/bin/cygphidget21-0.dll
+
+(libphidget21-devel)
+  /usr/include/phidget21.h
+  /usr/lib/libphidget21.dll.a
+  /usr/lib/pkgconfig/libphidget21.pc
+
+------------------
+
+Port Notes:
+
+----- version 2.1.9.20190409-1bl1 -----
+Version bump.
+
+----- version 2.1.8.20151217-1bl1 -----
+Version bump.
+
+----- version 2.1.8.20150410-1bl1 -----
+Version bump.
+
+----- version 2.1.8.20130723-1bl1 -----
+Version bump.
+
+----- version 2.1.8.20130320-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://fd0.hatenablog.jp/>

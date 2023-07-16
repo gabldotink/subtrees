@@ -1,0 +1,90 @@
+libredstone
+------------------------------------------
+*a C library for interfacing with Minecraft file formats and protocols*
+
+Runtime requirements:
+  cygwin-3.1.4-1
+  libredstone1-0.1.0-1bl2
+  python36-3.6.9-1
+  zlib0-1.2.11-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.34-1
+  cygport-0.33.1-1
+  gcc-core-9.2.0-3
+  libtool-2.4.6-7
+  make-4.3-1
+  python36-3.6.9-1
+
+Canonical website:
+  https://github.com/agrif/libredstone
+
+Canonical download:
+  https://github.com/agrif/libredstone/archive/v0.1.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libredstone-0.1.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libredstone-0.1.0-X.cygport all
+
+This will create:
+  /usr/src/libredstone-0.1.0-X-src.tar.xz
+  /usr/src/libredstone-0.1.0-X.tar.xz
+  /usr/src/libredstone1-0.1.0-X.tar.xz
+  /usr/src/libredstone-devel-0.1.0-X.tar.xz
+  /usr/src/python3-libredstone-0.1.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libredstone)
+  /usr/bin/exmaple-trim.exe
+  /usr/bin/mapgen.exe
+  /usr/bin/mcrtool.exe
+  /usr/bin/nbttool.exe
+  /usr/bin/nbtwritetest.exe
+  /usr/bin/setgamemode.exe
+  /usr/bin/setspawn.exe
+  /usr/share/doc/Cygwin/libredstone.README
+  /usr/share/doc/libredstone/COPYING
+  /usr/share/doc/libredstone/README
+
+(libredstone1)
+  /usr/bin/cygredstone-1.dll
+
+(libredstone-devel)
+  /usr/include/libredstone/compression.h
+  /usr/include/libredstone/error.h
+  /usr/include/libredstone/list.h
+  /usr/include/libredstone/memory.h
+  /usr/include/libredstone/nbt.h
+  /usr/include/libredstone/redstone.h
+  /usr/include/libredstone/region.h
+  /usr/include/libredstone/rsendian.h
+  /usr/include/libredstone/tag.h
+  /usr/include/libredstone/util.h
+  /usr/lib/libredstone.dll.a
+
+(python3-libredstone)
+  /usr/lib/python3.6/site-packages/__pycache__/redstone.cpython-36.opt-1.pyc
+  /usr/lib/python3.6/site-packages/__pycache__/redstone.cpython-36.opt-2.pyc
+  /usr/lib/python3.6/site-packages/__pycache__/redstone.cpython-36.pyc
+  /usr/lib/python3.6/site-packages/redstone.py
+
+------------------
+
+Port Notes:
+
+----- version 0.1.0-1bl2 -----
+Rebuild with gcc-9.2.0
+
+----- version 0.1.0-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

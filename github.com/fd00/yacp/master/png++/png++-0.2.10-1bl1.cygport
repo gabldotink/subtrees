@@ -1,0 +1,23 @@
+HOMEPAGE="http://www.nongnu.org/pngpp/"
+SRC_URI="mirror://savannah/pngpp/${P}.tar.gz"
+
+CATEGORY="Devel"
+SUMMARY="C++ wrapper for libpng"
+DESCRIPTION="PNG++ aims to provide simple yet powerful C++ interface to libpng, the PNG
+reference implementation library."
+
+src_compile()
+{
+	cd ${B}
+	lndirs
+}
+
+DOCS="
+	example/*.cpp
+"
+
+src_install()
+{
+	cd ${B}
+	cyginstall PREFIX=${D}/usr
+}

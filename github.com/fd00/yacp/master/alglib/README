@@ -1,0 +1,96 @@
+alglib
+------------------------------------------
+ALGLIB is a cross-platform numerical analysis and data processing library. It
+supports several programming languages (C++, C#, Pascal, VBA) and several
+operating systems (Windows, Linux, Solaris).
+
+Runtime requirements:
+  cygwin-3.4.6-1
+  libalglib-devel-3.20.0-1bl1
+  libalglib3.20-3.20.0-1bl1
+  libgcc1-11.3.0-1
+  libstdc++6-11.3.0-1
+  pkg-config-1.9.4-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.40-1
+  cmake-3.23.2-1
+  cygport-0.36.0-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  ninja-1.11.1-1
+
+Canonical website:
+  https://www.alglib.net/
+
+Canonical download:
+  https://www.alglib.net/translator/re/alglib-3.20.0.cpp.gpl.tgz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack alglib-3.20.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./alglib-3.20.0-X.cygport all
+
+This will create:
+  /usr/src/alglib-3.20.0-X-src.tar.xz
+  /usr/src/alglib-3.20.0-X.tar.xz
+  /usr/src/libalglib3.20-3.20.0-X.tar.xz
+  /usr/src/libalglib-devel-3.20.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(alglib)
+  /usr/share/doc/Cygwin/alglib.README
+  /usr/share/doc/alglib/gpl2.txt
+  /usr/share/doc/alglib/gpl3.txt
+  /usr/share/doc/alglib/html/manual.cpp.html
+
+(libalglib3.20)
+  /usr/bin/cygalglib-3.20.dll
+
+(libalglib-devel)
+  /usr/include/alglib/alglibinternal.h
+  /usr/include/alglib/alglibmisc.h
+  /usr/include/alglib/ap.h
+  /usr/include/alglib/dataanalysis.h
+  /usr/include/alglib/diffequations.h
+  /usr/include/alglib/fasttransforms.h
+  /usr/include/alglib/integration.h
+  /usr/include/alglib/interpolation.h
+  /usr/include/alglib/kernels_avx2.h
+  /usr/include/alglib/kernels_fma.h
+  /usr/include/alglib/kernels_sse2.h
+  /usr/include/alglib/linalg.h
+  /usr/include/alglib/optimization.h
+  /usr/include/alglib/solvers.h
+  /usr/include/alglib/specialfunctions.h
+  /usr/include/alglib/statistics.h
+  /usr/include/alglib/stdafx.h
+  /usr/lib/libalglib.dll.a
+  /usr/lib/pkgconfig/alglib.pc
+
+------------------
+
+Port Notes:
+
+----- version 3.20.0-1bl1 -----
+Version bump.
+
+----- version 3.18.0-1bl1 -----
+Version bump.
+
+----- version 3.17.0-1bl1 -----
+Version bump.
+
+----- version 3.10.0-1bl1 -----
+Version bump.
+
+----- version 3.8.2-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

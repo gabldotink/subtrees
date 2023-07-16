@@ -1,0 +1,102 @@
+libnpa
+------------------------------------------
+libnpa is a free library for manipulating .npa (NitroPlus Archive) files. It
+can also parse and recompile .nsb and .map scripts from nss.npa archive.
+
+Runtime requirements:
+  cygwin-2.11.2-1
+  libboost_filesystem1.66-1.66.0-1
+  libboost_locale1.66-1.66.0-1
+  libboost_system1.66-1.66.0-1
+  libgcc1-7.4.0-1
+  libnpa-devel-0.5.3-1bl1
+  libnpa0-0.5.3-1bl1
+  libstdc++6-7.4.0-1
+  pkg-config-0.29.1-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.29-1
+  bison-3.0.4-1
+  cmake-3.6.2-1
+  cygport-0.31.1-1
+  flex-2.6.4-2
+  gcc-core-7.4.0-1
+  gcc-g++-7.4.0-1
+  make-4.2.1-2
+  ninja-1.8.2-2
+
+Canonical website:
+  https://github.com/FGRE/libnpa
+
+Canonical download:
+  https://github.com/FGRE/libnpa/archive/v0.5.3.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libnpa-0.5.3-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libnpa-0.5.3-X.cygport all
+
+This will create:
+  /usr/src/libnpa-0.5.3-X-src.tar.xz
+  /usr/src/libnpa-0.5.3-X.tar.xz
+  /usr/src/libnpa0-0.5.3-X.tar.xz
+  /usr/src/libnpa-devel-0.5.3-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libnpa)
+  /usr/share/doc/Cygwin/libnpa.README
+  /usr/share/doc/libnpa/LICENSE
+  /usr/share/doc/libnpa/README.md
+
+(libnpa0)
+  /usr/bin/cygnpa-0.dll
+
+(libnpa-devel)
+  /usr/include/libnpa/buffer.hpp
+  /usr/include/libnpa/exefile.hpp
+  /usr/include/libnpa/flex.hpp
+  /usr/include/libnpa/fscommon.hpp
+  /usr/include/libnpa/inipafile.hpp
+  /usr/include/libnpa/inpafile.hpp
+  /usr/include/libnpa/isgfile.hpp
+  /usr/include/libnpa/npafile.hpp
+  /usr/include/libnpa/npaversion.hpp
+  /usr/include/libnpa/nsbconstants.hpp
+  /usr/include/libnpa/nsbmagic.hpp
+  /usr/include/libnpa/onpafile.hpp
+  /usr/include/libnpa/scriptfile.hpp
+  /usr/lib/libnpa.dll.a
+  /usr/lib/pkgconfig/libnpa.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.5.3-1bl1 -----
+Version bump.
+
+----- version 0.5.2-1bl1 -----
+Version bump.
+
+----- version 0.5.1-1bl1 -----
+Version bump.
+
+----- version 0.5.0-1bl2 -----
+Rebuild for libboost
+
+----- version 0.5.0-1bl1 -----
+Version bump.
+
+----- version 0.4.0-1bl1 -----
+Version bump.
+
+----- version 0.1.1-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

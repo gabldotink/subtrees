@@ -1,0 +1,104 @@
+ptex
+------------------------------------------
+Ptex is a texture mapping system developed by Walt Disney Animation Studios for
+production-quality rendering.
+
+Runtime requirements:
+  cygwin-3.4.5-1
+  libPtex-devel-2.4.2-1bl1
+  libPtex2.4-2.4.2-1bl1
+  libgcc1-11.3.0-1
+  libstdc++6-11.3.0-1
+  pkg-config-1.9.4-1
+  zlib-devel-1.2.13-1
+  zlib0-1.2.13-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.39-1
+  cmake-3.23.2-1
+  cygport-0.36.0-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  ninja-1.11.1-1
+  zlib-devel-1.2.13-1
+
+Canonical website:
+  http://github.com/wdas/ptex
+
+Canonical download:
+  http://github.com/wdas/ptex/archive/refs/tags/v2.4.2.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack ptex-2.4.2-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./ptex-2.4.2-X.cygport all
+
+This will create:
+  /usr/src/ptex-2.4.2-X-src.tar.xz
+  /usr/src/ptex-2.4.2-X.tar.xz
+  /usr/src/libPtex2.4-2.4.2-X.tar.xz
+  /usr/src/libPtex-devel-2.4.2-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(ptex)
+  /usr/bin/ptxinfo.exe
+  /usr/share/doc/Cygwin/ptex.README
+  /usr/share/doc/ptex/LICENSE
+  /usr/share/doc/ptex/README.md
+
+(libPtex2.4)
+  /usr/bin/cygPtex-2.4.dll
+
+(libPtex-devel)
+  /usr/include/PtexExports.h
+  /usr/include/PtexHalf.h
+  /usr/include/PtexInt.h
+  /usr/include/PtexPlatform.h
+  /usr/include/PtexUtils.h
+  /usr/include/PtexVersion.h
+  /usr/include/Ptexture.h
+  /usr/lib/cmake/ptex/ptex-config-version.cmake
+  /usr/lib/cmake/ptex/ptex-config.cmake
+  /usr/lib/cmake/ptex/ptex-exports-release.cmake
+  /usr/lib/cmake/ptex/ptex-exports.cmake
+  /usr/lib/libPtex.dll.a
+  /usr/lib/pkgconfig/ptex.pc
+
+------------------
+
+Port Notes:
+
+----- version 2.4.2-1bl1 -----
+Version bump.
+
+----- version 2.3.2-1bl1 -----
+Version bump.
+
+----- version 2.3.1-1bl1 -----
+Version bump.
+
+----- version 2.1.33-1bl1 -----
+Version bump.
+
+----- version 2.1.28-1bl1 -----
+Version bump.
+
+----- version 2.0.62-1bl1 -----
+Version bump.
+
+----- version 2.0.42-1bl1 -----
+Version bump.
+
+----- version 2.0.41-1bl1 -----
+Version bump.
+
+----- version 2.0.32+git20120312-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

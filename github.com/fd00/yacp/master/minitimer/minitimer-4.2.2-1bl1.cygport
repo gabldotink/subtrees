@@ -1,0 +1,34 @@
+HOMEPAGE="https://github.com/ariadnavigo/${PN}"
+SRC_URI="https://github.com/ariadnavigo/${PN}/archive/refs/tags/${PV}.tar.gz"
+
+CATEGORY="Utils"
+SUMMARY="Timer in your terminal"
+DESCRIPTION="Mini Timer is a very simple timer that lives in the terminal of your system.
+It also provides a named pipe which you can pass commands to to control a
+running instance of Mini Timer."
+
+LICENSE="MIT"
+LICENSE_SPDX="SPDX-License-Identifier: MIT"
+LICENSE_URI="LICENSE"
+
+src_compile()
+{
+	cd ${B}
+	lndirs
+	cygmake
+	rm ${PN}.1
+	sed "s/VERSION/${VERSION}/g" ${S}/${PN}.1 > ${B}/${PN}.1
+}
+
+src_test()
+{
+	cd ${B}
+	./${PN}.exe -v
+}
+
+src_install()
+{
+	cd ${B}
+	dobin ${PN}.exe
+	doman ${PN}.1
+}

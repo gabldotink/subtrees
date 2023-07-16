@@ -1,0 +1,48 @@
+HOMEPAGE="https://www.generic-mapping-tools.org/"
+SRC_URI="https://github.com/GenericMappingTools/${PN}/archive/refs/tags/${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Generic Mapping Tools"
+DESCRIPTION="GMT is an open-source collection of command-line tools for manipulating
+geographic and Cartesian data sets (including filtering, trend fitting,
+gridding, projecting, etc.) and producing PostScript illustrations ranging
+from simple x–y plots via contour maps to artificially illuminated surfaces
+and 3D perspective views. It supports many map projections and transformations
+and includes supporting data such as coastlines, rivers, and political
+boundaries and optionally country polygons."
+
+BUILD_REQUIRES="GraphicsMagick libcurl-devel libfftw3-devel libgdal-devel libgeos-devel liblapack-devel libnetcdf-devel libpcre-devel zlib-devel"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DDO_TESTS:BOOL=ON
+	-DGMT_DATADIR:STRING=share/${PN}
+	-DGMT_DOCDIR:STRING=share/doc/${PN}
+	-DGMT_MANDIR:STRING=share/man
+"
+
+PKG_NAMES="
+	gmt
+	libgmt6
+	libgmt-devel
+"
+gmt_CONTENTS="
+	usr/bin/*.exe
+	usr/bin/*.sh
+	usr/bin/gmtswitch
+	usr/bin/isogmt
+	usr/share
+"
+libgmt6_CONTENTS="
+	usr/bin/*.dll
+	usr/lib/${PN}
+"
+libgmt_devel_CONTENTS="
+	usr/bin/gmt-config
+	usr/include
+	usr/lib/lib*
+"
+gmt_SUMMARY="${SUMMARY} (utilities)"
+libgmt6_SUMMARY="${SUMMARY} (runtime)"
+libgmt_devel_SUMMARY="${SUMMARY} (development)"

@@ -1,0 +1,268 @@
+cglm
+------------------------------------------
+cglm is an optimized 3D math library written in C99 (compatible with C89). It
+is similar to the original glm library, except cglm is mainly for C.
+
+Runtime requirements:
+  cygwin-3.4.6-1
+  cygwin-devel-3.4.6-1
+  libcglm-devel-0.9.0-1bl1
+  libcglm0-0.9.0-1bl1
+  pkg-config-1.9.5-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.40-1
+  cygport-0.36.4-1
+  gcc-core-11.3.0-1
+  libtool-2.4.7-1
+  make-4.4.1-2
+
+Canonical website:
+  https://github.com/recp/cglm
+
+Canonical download:
+  https://github.com/recp/cglm/archive/refs/tags/v0.9.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack cglm-0.9.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./cglm-0.9.0-X.cygport all
+
+This will create:
+  /usr/src/cglm-0.9.0-X-src.tar.xz
+  /usr/src/cglm-0.9.0-X.tar.xz
+  /usr/src/libcglm0-0.9.0-X.tar.xz
+  /usr/src/libcglm-devel-0.9.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(cglm)
+  /usr/share/doc/Cygwin/cglm.README
+  /usr/share/doc/cglm/CONTRIBUTING.md
+  /usr/share/doc/cglm/CREDITS
+  /usr/share/doc/cglm/LICENSE
+  /usr/share/doc/cglm/README.md
+
+(libcglm0)
+  /usr/bin/cygcglm-0.dll
+
+(libcglm-devel)
+  /usr/include/cglm/affine-mat.h
+  /usr/include/cglm/affine-post.h
+  /usr/include/cglm/affine-pre.h
+  /usr/include/cglm/affine.h
+  /usr/include/cglm/affine2d.h
+  /usr/include/cglm/applesimd.h
+  /usr/include/cglm/bezier.h
+  /usr/include/cglm/box.h
+  /usr/include/cglm/call.h
+  /usr/include/cglm/call/affine.h
+  /usr/include/cglm/call/affine2d.h
+  /usr/include/cglm/call/bezier.h
+  /usr/include/cglm/call/box.h
+  /usr/include/cglm/call/cam.h
+  /usr/include/cglm/call/clipspace/ortho_lh_no.h
+  /usr/include/cglm/call/clipspace/ortho_lh_zo.h
+  /usr/include/cglm/call/clipspace/ortho_rh_no.h
+  /usr/include/cglm/call/clipspace/ortho_rh_zo.h
+  /usr/include/cglm/call/clipspace/persp_lh_no.h
+  /usr/include/cglm/call/clipspace/persp_lh_zo.h
+  /usr/include/cglm/call/clipspace/persp_rh_no.h
+  /usr/include/cglm/call/clipspace/persp_rh_zo.h
+  /usr/include/cglm/call/clipspace/project_no.h
+  /usr/include/cglm/call/clipspace/project_zo.h
+  /usr/include/cglm/call/clipspace/view_lh_no.h
+  /usr/include/cglm/call/clipspace/view_lh_zo.h
+  /usr/include/cglm/call/clipspace/view_rh_no.h
+  /usr/include/cglm/call/clipspace/view_rh_zo.h
+  /usr/include/cglm/call/curve.h
+  /usr/include/cglm/call/ease.h
+  /usr/include/cglm/call/euler.h
+  /usr/include/cglm/call/frustum.h
+  /usr/include/cglm/call/io.h
+  /usr/include/cglm/call/ivec2.h
+  /usr/include/cglm/call/ivec3.h
+  /usr/include/cglm/call/ivec4.h
+  /usr/include/cglm/call/mat2.h
+  /usr/include/cglm/call/mat3.h
+  /usr/include/cglm/call/mat4.h
+  /usr/include/cglm/call/plane.h
+  /usr/include/cglm/call/project.h
+  /usr/include/cglm/call/quat.h
+  /usr/include/cglm/call/ray.h
+  /usr/include/cglm/call/sphere.h
+  /usr/include/cglm/call/vec2.h
+  /usr/include/cglm/call/vec3.h
+  /usr/include/cglm/call/vec4.h
+  /usr/include/cglm/cam.h
+  /usr/include/cglm/cglm.h
+  /usr/include/cglm/clipspace/ortho_lh_no.h
+  /usr/include/cglm/clipspace/ortho_lh_zo.h
+  /usr/include/cglm/clipspace/ortho_rh_no.h
+  /usr/include/cglm/clipspace/ortho_rh_zo.h
+  /usr/include/cglm/clipspace/persp.h
+  /usr/include/cglm/clipspace/persp_lh_no.h
+  /usr/include/cglm/clipspace/persp_lh_zo.h
+  /usr/include/cglm/clipspace/persp_rh_no.h
+  /usr/include/cglm/clipspace/persp_rh_zo.h
+  /usr/include/cglm/clipspace/project_no.h
+  /usr/include/cglm/clipspace/project_zo.h
+  /usr/include/cglm/clipspace/view_lh.h
+  /usr/include/cglm/clipspace/view_lh_no.h
+  /usr/include/cglm/clipspace/view_lh_zo.h
+  /usr/include/cglm/clipspace/view_rh.h
+  /usr/include/cglm/clipspace/view_rh_no.h
+  /usr/include/cglm/clipspace/view_rh_zo.h
+  /usr/include/cglm/color.h
+  /usr/include/cglm/common.h
+  /usr/include/cglm/curve.h
+  /usr/include/cglm/ease.h
+  /usr/include/cglm/euler.h
+  /usr/include/cglm/frustum.h
+  /usr/include/cglm/io.h
+  /usr/include/cglm/ivec2.h
+  /usr/include/cglm/ivec3.h
+  /usr/include/cglm/ivec4.h
+  /usr/include/cglm/mat2.h
+  /usr/include/cglm/mat3.h
+  /usr/include/cglm/mat4.h
+  /usr/include/cglm/plane.h
+  /usr/include/cglm/project.h
+  /usr/include/cglm/quat.h
+  /usr/include/cglm/ray.h
+  /usr/include/cglm/simd/arm.h
+  /usr/include/cglm/simd/avx/affine.h
+  /usr/include/cglm/simd/avx/mat4.h
+  /usr/include/cglm/simd/intrin.h
+  /usr/include/cglm/simd/neon/affine.h
+  /usr/include/cglm/simd/neon/mat2.h
+  /usr/include/cglm/simd/neon/mat4.h
+  /usr/include/cglm/simd/neon/quat.h
+  /usr/include/cglm/simd/sse2/affine.h
+  /usr/include/cglm/simd/sse2/mat2.h
+  /usr/include/cglm/simd/sse2/mat3.h
+  /usr/include/cglm/simd/sse2/mat4.h
+  /usr/include/cglm/simd/sse2/quat.h
+  /usr/include/cglm/simd/x86.h
+  /usr/include/cglm/sphere.h
+  /usr/include/cglm/struct.h
+  /usr/include/cglm/struct/affine-post.h
+  /usr/include/cglm/struct/affine-pre.h
+  /usr/include/cglm/struct/affine.h
+  /usr/include/cglm/struct/affine2d.h
+  /usr/include/cglm/struct/box.h
+  /usr/include/cglm/struct/cam.h
+  /usr/include/cglm/struct/clipspace/ortho_lh_no.h
+  /usr/include/cglm/struct/clipspace/ortho_lh_zo.h
+  /usr/include/cglm/struct/clipspace/ortho_rh_no.h
+  /usr/include/cglm/struct/clipspace/ortho_rh_zo.h
+  /usr/include/cglm/struct/clipspace/persp_lh_no.h
+  /usr/include/cglm/struct/clipspace/persp_lh_zo.h
+  /usr/include/cglm/struct/clipspace/persp_rh_no.h
+  /usr/include/cglm/struct/clipspace/persp_rh_zo.h
+  /usr/include/cglm/struct/clipspace/project_no.h
+  /usr/include/cglm/struct/clipspace/project_zo.h
+  /usr/include/cglm/struct/clipspace/view_lh_no.h
+  /usr/include/cglm/struct/clipspace/view_lh_zo.h
+  /usr/include/cglm/struct/clipspace/view_rh_no.h
+  /usr/include/cglm/struct/clipspace/view_rh_zo.h
+  /usr/include/cglm/struct/color.h
+  /usr/include/cglm/struct/curve.h
+  /usr/include/cglm/struct/euler.h
+  /usr/include/cglm/struct/frustum.h
+  /usr/include/cglm/struct/io.h
+  /usr/include/cglm/struct/mat2.h
+  /usr/include/cglm/struct/mat3.h
+  /usr/include/cglm/struct/mat4.h
+  /usr/include/cglm/struct/plane.h
+  /usr/include/cglm/struct/project.h
+  /usr/include/cglm/struct/quat.h
+  /usr/include/cglm/struct/sphere.h
+  /usr/include/cglm/struct/vec2-ext.h
+  /usr/include/cglm/struct/vec2.h
+  /usr/include/cglm/struct/vec3-ext.h
+  /usr/include/cglm/struct/vec3.h
+  /usr/include/cglm/struct/vec4-ext.h
+  /usr/include/cglm/struct/vec4.h
+  /usr/include/cglm/types-struct.h
+  /usr/include/cglm/types.h
+  /usr/include/cglm/util.h
+  /usr/include/cglm/vec2-ext.h
+  /usr/include/cglm/vec2.h
+  /usr/include/cglm/vec3-ext.h
+  /usr/include/cglm/vec3.h
+  /usr/include/cglm/vec4-ext.h
+  /usr/include/cglm/vec4.h
+  /usr/include/cglm/version.h
+  /usr/lib/libcglm.dll.a
+  /usr/lib/pkgconfig/cglm.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.9.0-1bl1 -----
+Version bump.
+
+----- version 0.8.9-1bl1 -----
+Version bump.
+
+----- version 0.8.8-1bl1 -----
+Version bump.
+
+----- version 0.8.7-1bl1 -----
+Version bump.
+
+----- version 0.8.5-1bl1 -----
+Version bump.
+
+----- version 0.8.4-1bl1 -----
+Version bump.
+
+----- version 0.8.3-1bl1 -----
+Version bump.
+
+----- version 0.8.2-1bl1 -----
+Version bump.
+
+----- version 0.7.9-1bl1 -----
+Version bump.
+
+----- version 0.7.8-1bl1 -----
+Version bump.
+
+----- version 0.7.6-1bl1 -----
+Version bump.
+
+----- version 0.7.1-1bl1 -----
+Version bump.
+
+----- version 0.7.0-1bl1 -----
+Version bump.
+
+----- version 0.6.2-1bl1 -----
+Version bump.
+
+----- version 0.6.0-1bl1 -----
+Version bump.
+
+----- version 0.5.4-1bl1 -----
+Version bump.
+
+----- version 0.5.3-1bl1 -----
+Version bump.
+
+----- version 0.5.2-1bl1 -----
+Version bump.
+
+----- version 0.5.0-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

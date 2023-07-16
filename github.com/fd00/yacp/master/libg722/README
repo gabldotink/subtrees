@@ -1,0 +1,72 @@
+libg722
+------------------------------------------
+The G.722 module is a bit exact implementation of the ITU G.722 specification
+for all three specified bit rates - 64000bps, 56000bps and 48000bps. It passes
+the ITU tests.
+
+Runtime requirements:
+  cygwin-3.1.5-1
+  libg722-devel-1.0.2-1bl2
+  libg722_0-1.0.2-1bl2
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.34+1git.de9c1b7cfe-1
+  cygport-0.34.0-1
+  gcc-core-9.3.0-2
+  libtool-2.4.6-7
+  make-4.3-1
+
+Canonical website:
+  https://github.com/sippy/libg722
+
+Canonical download:
+  https://github.com/sippy/libg722/archive/v_1_0_2.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libg722-1.0.2-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libg722-1.0.2-X.cygport all
+
+This will create:
+  /usr/src/libg722-1.0.2-X-src.tar.xz
+  /usr/src/libg722-1.0.2-X.tar.xz
+  /usr/src/libg722_0-1.0.2-X.tar.xz
+  /usr/src/libg722-devel-1.0.2-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libg722)
+  /usr/share/doc/Cygwin/libg722.README
+  /usr/share/doc/libg722/LICENSE
+  /usr/share/doc/libg722/README.md
+
+(libg722_0)
+  /usr/bin/cygg722-0.dll
+
+(libg722-devel)
+  /usr/include/g722.h
+  /usr/include/g722_decoder.h
+  /usr/include/g722_encoder.h
+  /usr/include/g722_private.h
+  /usr/lib/libg722.dll.a
+  /usr/lib/pkgconfig/libg722.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.0.2-1bl2 -----
+Rebuild with gcc-9.3.0
+
+----- version 1.0.2-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

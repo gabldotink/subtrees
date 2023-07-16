@@ -1,0 +1,92 @@
+duo_unix
+------------------------------------------
+Duo two-factor authentication for Unix systems
+
+Runtime requirements:
+  cygwin-3.0.7-1
+  libduo-devel-1.11.1-1bl1
+  libduo3-1.11.1-1bl1
+  libssl-devel-1.1.1b-1
+  libssl1.1-1.1.1b-1
+  pkg-config-1.6.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-10-1
+  binutils-2.29-1
+  cygport-0.33.1-1
+  gcc-core-7.4.0-1
+  libtool-2.4.6-6
+  make-4.2.1-2
+
+Canonical website:
+  https://github.com/duosecurity/duo_unix
+
+Canonical download:
+  https://github.com/duosecurity/duo_unix/archive/duo_unix-1.11.1.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack duo_unix-1.11.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./duo_unix-1.11.1-X.cygport all
+
+This will create:
+  /usr/src/duo_unix-1.11.1-X-src.tar.xz
+  /usr/src/duo_unix-1.11.1-X.tar.xz
+  /usr/src/libduo3-1.11.1-X.tar.xz
+  /usr/src/libduo-devel-1.11.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(duo_unix)
+  /usr/sbin/login_duo.exe
+  /usr/share/doc/Cygwin/duo_unix.README
+  /usr/share/doc/duo_unix/AUTHORS
+  /usr/share/doc/duo_unix/CHANGES
+  /usr/share/doc/duo_unix/CONTRIBUTING.md
+  /usr/share/doc/duo_unix/LICENSE
+  /usr/share/doc/duo_unix/README.md
+  /usr/share/man/man8/login_duo.8.gz
+
+(libduo3)
+  /usr/bin/cygduo-3.dll
+
+(libduo-devel)
+  /usr/include/duo/duo.h
+  /usr/include/duo/shell.h
+  /usr/include/duo/util.h
+  /usr/lib/libduo.dll.a
+  /usr/lib/pkgconfig/libduo.pc
+  /usr/share/man/man3/duo.3.gz
+
+------------------
+
+Port Notes:
+
+----- version 1.11.1-1bl1 -----
+Version bump.
+
+----- version 1.11.0-1bl1 -----
+Version bump.
+
+----- version 1.10.4-1bl1 -----
+Version bump.
+
+----- version 1.10.3-1bl1 -----
+Version bump.
+
+----- version 1.10.1-1bl1 -----
+Version bump.
+
+----- version 1.9.16-1bl1 -----
+Version bump.
+
+----- version 1.9.15-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

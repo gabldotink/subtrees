@@ -1,0 +1,104 @@
+bcm2835
+------------------------------------------
+This is a C library for Raspberry Pi (RPi). It provides access to GPIO and
+other IO functions on the Broadcom BCM 2835 chip, allowing access to the GPIO
+pins on the 26 pin IDE plug on the RPi board so you can control and interface
+with various external devices.
+
+Runtime requirements:
+  cygwin-3.3.3-1
+  libbcm2835-devel-1.71-1bl1
+  libbcm2835_0-1.71-1bl1
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.37-2
+  cygport-0.34.0-1
+  gcc-core-11.2.0-1
+  libtool-2.4.6-8
+  make-4.3-1
+
+Canonical website:
+  https://www.airspayce.com/mikem/bcm2835/
+
+Canonical download:
+  https://www.airspayce.com/mikem/bcm2835/bcm2835-1.71.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack bcm2835-1.71-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./bcm2835-1.71-X.cygport all
+
+This will create:
+  /usr/src/bcm2835-1.71-X-src.tar.xz
+  /usr/src/bcm2835-1.71-X.tar.xz
+  /usr/src/libbcm2835_0-1.71-X.tar.xz
+  /usr/src/libbcm2835-devel-1.71-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(bcm2835)
+  /usr/share/doc/Cygwin/bcm2835.README
+  /usr/share/doc/bcm2835/COPYING
+  /usr/share/doc/bcm2835/ChangeLog
+  /usr/share/doc/bcm2835/README
+
+(libbcm2835_0)
+  /usr/bin/cygbcm2835-0.dll
+
+(libbcm2835-devel)
+  /usr/include/bcm2835.h
+  /usr/lib/libbcm2835.dll.a
+  /usr/lib/pkgconfig/bcm2835.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.71-1bl1 -----
+Version bump.
+
+----- version 1.69-1bl1 -----
+Version bump.
+
+----- version 1.68-1bl1 -----
+Version bump.
+
+----- version 1.65-1bl1 -----
+Version bump.
+
+----- version 1.62-1bl1 -----
+Version bump.
+
+----- version 1.60-1bl1 -----
+Version bump.
+
+----- version 1.59-1bl1 -----
+Version bump.
+
+----- version 1.58-1bl1 -----
+Version bump.
+
+----- version 1.56-1bl1 -----
+Version bump.
+
+----- version 1.55-1bl1 -----
+Version bump.
+
+----- version 1.52-1bl1 -----
+Version bump.
+
+----- version 1.50-1bl1 -----
+Version bump.
+
+----- version 1.45-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

@@ -1,0 +1,29 @@
+HOMEPAGE="https://github.com/samr7/${PN}"
+SRC_URI="https://github.com/samr7/${PN}/archive/${PV}.tar.gz"
+
+CATEGORY="Security"
+SUMMARY="Standalone command line vanity address generator"
+DESCRIPTION="${SUMMARY}"
+
+src_compile()
+{
+	cd ${B}
+	lndirs
+	cygmake all
+}
+
+src_test()
+{
+	cd ${B}
+	./${PN}.exe --help
+}
+
+src_install()
+{
+	cd ${B}
+	dobin *.exe
+}
+
+DOCS="
+	CHANGELOG
+"

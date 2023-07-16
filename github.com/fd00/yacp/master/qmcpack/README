@@ -1,0 +1,86 @@
+qmcpack
+------------------------------------------
+Open-source production level many-body ab initio Quantum Monte Carlo code for
+computing the electronic structure of atoms, molecules, and solids.
+
+Runtime requirements:
+  cygwin-3.4.5-1
+  libfftw3_3-3.3.10-1
+  libgcc1-11.3.0-1
+  libgomp1-11.3.0-1
+  libhdf5_200-1.12.2-1
+  liblapack0-3.10.1-1
+  libopenblas-0.3.20-1
+  libopenmpi40-4.1.2-1
+  libstdc++6-11.3.0-1
+  libxml2-2.9.12-2
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.39-1
+  cmake-3.23.2-1
+  cygport-0.36.0-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libfftw3-devel-3.3.10-1
+  libhdf5-devel-1.12.2-1
+  liblapack-devel-3.10.1-1
+  libopenmpi-devel-4.1.2-1
+  libxml2-devel-2.9.12-2
+  ninja-1.11.1-1
+  python39-3.9.10-1
+
+Canonical website:
+  https://github.com/QMCPACK/qmcpack
+
+Canonical download:
+  https://github.com/QMCPACK/qmcpack/archive/refs/tags/v3.16.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack qmcpack-3.16.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./qmcpack-3.16.0-X.cygport all
+
+This will create:
+  /usr/src/qmcpack-3.16.0-X-src.tar.xz
+  /usr/src/qmcpack-3.16.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(qmcpack)
+  /usr/bin/convert4qmc.exe
+  /usr/bin/convertpw4qmc.exe
+  /usr/bin/gpaw4qmcpack.py
+  /usr/bin/ppconvert.exe
+  /usr/bin/qmc-check-affinity.exe
+  /usr/bin/qmc-extract-eshdf-kvectors.exe
+  /usr/bin/qmc-get-supercell.exe
+  /usr/bin/qmcfinitesize.exe
+  /usr/bin/qmcpack.exe
+  /usr/bin/qmcpack.settings
+  /usr/share/doc/Cygwin/qmcpack.README
+  /usr/share/doc/qmcpack/CHANGELOG.md
+  /usr/share/doc/qmcpack/LICENSE
+  /usr/share/doc/qmcpack/README.md
+
+------------------
+
+Port Notes:
+
+----- version 3.16.0-1bl1 -----
+Version bump.
+
+----- version 3.14.0-1bl1 -----
+Version bump.
+
+----- version 3.11.0-1bl1 -----
+Version bump.
+
+----- version 3.8.0-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

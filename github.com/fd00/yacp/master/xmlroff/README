@@ -1,0 +1,130 @@
+xmlroff
+------------------------------------------
+xmlroff is a fast, free, high-quality, multi-platform XSL formatter that aims
+to excel at DocBook formatting and that integrates easily with other programs
+and with scripting languages.
+
+Runtime requirements:
+  cygwin-3.0.7-1
+  libcairo2-1.14.12-1
+  libfo0.6-devel-0.6.3-1bl1
+  libfo0.6_0-0.6.3-1bl1
+  libgdk_pixbuf2.0-devel-2.36.11-1
+  libgdk_pixbuf2.0_0-2.36.11-1
+  libglib2.0-devel-2.54.3-1
+  libglib2.0_0-2.54.3-1
+  libpango1.0_0-1.40.14-1
+  libxml2-2.9.9-2
+  libxml2-devel-2.9.9-2
+  libxslt-1.1.29-1
+  pkg-config-1.6.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-10-1
+  binutils-2.29-1
+  cygport-0.33.1-1
+  gcc-core-7.4.0-1
+  libtool-2.4.6-6
+  make-4.2.1-2
+
+Canonical website:
+  http://xmlroff.org/
+
+Canonical download:
+  https://github.com/xmlroff/xmlroff/archive/v0.6.3.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack xmlroff-0.6.3-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./xmlroff-0.6.3-X.cygport all
+
+This will create:
+  /usr/src/xmlroff-0.6.3-X-src.tar.xz
+  /usr/src/xmlroff-0.6.3-X.tar.xz
+  /usr/src/libfo0.6_0-0.6.3-X.tar.xz
+  /usr/src/libfo0.6-devel-0.6.3-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(xmlroff)
+  /usr/bin/xmlroff.exe
+  /usr/share/doc/Cygwin/xmlroff.README
+  /usr/share/doc/xmlroff/AUTHORS
+  /usr/share/doc/xmlroff/COPYING
+  /usr/share/doc/xmlroff/ChangeLog
+  /usr/share/doc/xmlroff/ChangeLog.pre-0.2
+  /usr/share/doc/xmlroff/ChangeLog.pre-0.3
+  /usr/share/doc/xmlroff/ChangeLog.pre-0.4
+  /usr/share/doc/xmlroff/ChangeLog.pre-0.5
+  /usr/share/doc/xmlroff/ChangeLog.pre-0.6
+  /usr/share/doc/xmlroff/NEWS
+  /usr/share/doc/xmlroff/README
+  /usr/share/doc/xmlroff/TODO
+  /usr/share/xml/libfo-0.6.3/xmlroff.fo
+  /usr/share/xml/libfo-0.6.3/xmlroff.xml
+
+(libfo0.6_0)
+  /usr/bin/cygfo-0.6-0.dll
+
+(libfo0.6-devel)
+  /usr/include/libfo-0.6/libfo/area/fo-area.h
+  /usr/include/libfo-0.6/libfo/datatype/fo-datatype.h
+  /usr/include/libfo-0.6/libfo/datatype/fo-enum.h
+  /usr/include/libfo-0.6/libfo/fo-context.h
+  /usr/include/libfo-0.6/libfo/fo-doc-cairo-private.h
+  /usr/include/libfo-0.6/libfo/fo-doc-cairo.h
+  /usr/include/libfo-0.6/libfo/fo-doc-private.h
+  /usr/include/libfo-0.6/libfo/fo-doc.h
+  /usr/include/libfo-0.6/libfo/fo-font-desc-private.h
+  /usr/include/libfo-0.6/libfo/fo-font-desc.h
+  /usr/include/libfo-0.6/libfo/fo-layout-cairo-private.h
+  /usr/include/libfo-0.6/libfo/fo-layout-cairo.h
+  /usr/include/libfo-0.6/libfo/fo-layout-private.h
+  /usr/include/libfo-0.6/libfo/fo-layout.h
+  /usr/include/libfo-0.6/libfo/fo-libfo-basic.h
+  /usr/include/libfo-0.6/libfo/fo-libfo-context.h
+  /usr/include/libfo-0.6/libfo/fo-libfo-module-private.h
+  /usr/include/libfo-0.6/libfo/fo-libfo-module.h
+  /usr/include/libfo-0.6/libfo/fo-libfo.h
+  /usr/include/libfo-0.6/libfo/fo-node.h
+  /usr/include/libfo-0.6/libfo/fo-object.h
+  /usr/include/libfo-0.6/libfo/fo-utils.h
+  /usr/include/libfo-0.6/libfo/fo-xml-doc-private.h
+  /usr/include/libfo-0.6/libfo/fo-xml-doc.h
+  /usr/include/libfo-0.6/libfo/fo-xml-node-private.h
+  /usr/include/libfo-0.6/libfo/fo-xml-node.h
+  /usr/include/libfo-0.6/libfo/fo-xsl-formatter.h
+  /usr/include/libfo-0.6/libfo/fo-xslt-transformer.h
+  /usr/include/libfo-0.6/libfo/fo/fo-fo.h
+  /usr/include/libfo-0.6/libfo/libfo-compat.h
+  /usr/include/libfo-0.6/libfo/libfo-features.h
+  /usr/include/libfo-0.6/libfo/libfo-version.h
+  /usr/include/libfo-0.6/libfo/property/fo-property.h
+  /usr/include/libfo-0.6/libfo/util/fo-hash-table.h
+  /usr/include/libfo-0.6/libfo/util/fo-image.h
+  /usr/include/libfo-0.6/libfo/util/fo-pixbuf.h
+  /usr/lib/libfo-0.6.dll.a
+  /usr/lib/pkgconfig/libfo-0.6.pc
+  /usr/share/xml/libfo-0.6.3/catalog.xml
+  /usr/share/xml/libfo-0.6.3/libfo-compat.xsl
+
+------------------
+
+Port Notes:
+
+----- version 0.6.3-1bl1 -----
+Version bump.
+
+----- version 0.6.2-1bl2 -----
+Rebuild on x86_64
+
+----- version 0.6.2-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

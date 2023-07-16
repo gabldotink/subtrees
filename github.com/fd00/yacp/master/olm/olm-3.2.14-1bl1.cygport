@@ -1,0 +1,47 @@
+HOMEPAGE="https://gitlab.matrix.org/matrix-org/${PN}"
+SRC_URI="https://gitlab.matrix.org/matrix-org/${PN}/-/archive/${PV}/${P}.tar.bz2"
+
+CATEGORY="Libs"
+SUMMARY="Implementation of the olm and megolm cryptographic ratchets"
+DESCRIPTION="An implementation of the Double Ratchet cryptographic ratchet described by
+https://whispersystems.org/docs/specifications/doubleratchet/, written in C
+and C++11 and exposed as a C API."
+
+LICENSE="Apache-2.0"
+LICENSE_SPDX="SPDX-License-Identifier: Apache-2.0"
+LICENSE_URI="LICENSE"
+
+BUILD_REQUIRES="libcurve25519-donna-devel"
+
+inherit cmake
+
+src_test()
+{
+	cd ${B}
+	ninja_test
+}
+
+DOCS="
+	CHANGELOG.rst
+	CONTRIBUTNG.md
+	docs/*
+"
+
+PKG_NAMES="
+	olm
+	libolm3
+	libolm-devel
+"
+olm_CONTENTS="
+	usr/share
+"
+libolm3_CONTENTS="
+	usr/bin
+"
+libolm_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+olm_SUMMARY="${SUMMARY} (licensing & readmes)"
+libolm3_SUMMARY="${SUMMARY} (runtime)"
+libolm_devel_SUMMARY="${SUMMARY} (development)"

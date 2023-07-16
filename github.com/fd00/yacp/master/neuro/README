@@ -1,0 +1,101 @@
+neuro
+------------------------------------------
+libneuro is an abstraction layer for applications, it is actually a toolkit
+that implements a lot of kits that should be vital for (at least) games. The
+initial use of libneuro was to provide a method to have multi layered (order
+by which images are drawn on screen) drawing which I call : the painter's
+algorithm. By then, it started including various other functionality like
+events handling, abstraction of low libraries (libneuro used to use strictly
+SDL), arguments parsing to support the input of console arguments(to implement
+incredibly easy argument processing on those console applications in a similar
+way as all those POSIX console applications do, i.e : someapp --help), etc.
+
+Runtime requirements:
+  cygwin-1.7.34-6
+  libfreetype6-2.5.5-1
+  libneuro-devel-0.49.42+git20140705-1bl1
+  libneuro0-0.49.42+git20140705-1bl1
+  libSDL1.2_0-1.2.15-2
+  zlib0-1.2.8-3
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-9-1
+  binutils-2.25-1
+  cygport-0.17.1-1
+  gcc-core-4.9.2-2
+  libtool-2.4.2-5
+  make-4.0-2
+
+Canonical website:
+  http://repo.or.cz/w/neuro.git
+
+Canonical download:
+  git://repo.or.cz/neuro.git
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack neuro-0.49.42+git20140705-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./neuro-0.49.42+git20140705-X.cygport all
+
+This will create:
+  /usr/src/neuro-0.49.42+git20140705-X-src.tar.xz
+  /usr/src/neuro-0.49.42+git20140705-X.tar.xz
+  /usr/src/libneuro0-0.49.42+git20140705-X.tar.xz
+  /usr/src/libneuro-devel-0.49.42+git20140705-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(neuro)
+  /usr/share/doc/Cygwin/neuro.README
+  /usr/share/doc/neuro/AUTHORS
+  /usr/share/doc/neuro/COPYING
+  /usr/share/doc/neuro/ChangeLog
+  /usr/share/doc/neuro/TODO
+
+(libneuro0)
+  /usr/bin/cygneuro-0.dll
+  /usr/bin/cygneuronet-0.dll
+
+(libneuro-devel)
+  /usr/include/neuro/NEURO.h
+  /usr/include/neuro/bitmap.h
+  /usr/include/neuro/config.h
+  /usr/include/neuro/debug.h
+  /usr/include/neuro/ebuf.h
+  /usr/include/neuro/epoll.h
+  /usr/include/neuro/events.h
+  /usr/include/neuro/extlib.h
+  /usr/include/neuro/graphics.h
+  /usr/include/neuro/keymap.h
+  /usr/include/neuro/lbuf.h
+  /usr/include/neuro/network.h
+  /usr/include/neuro/neuro_engine.h
+  /usr/include/neuro/neuro_main.h
+  /usr/include/neuro/other.h
+  /usr/include/neuro/packet.h
+  /usr/include/neuro/typedef.h
+  /usr/lib/libneuro.dll.a
+  /usr/lib/libneuronet.dll.a
+  /usr/lib/pkgconfig/neuro.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.49.42+git20140705-1bl1 -----
+Version bump.
+
+----- version 0.49.42+git20110911-1bl1 -----
+Version bump.
+
+----- version 0.49.42+git20100113-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>
+

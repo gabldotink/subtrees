@@ -1,0 +1,98 @@
+libhmac
+------------------------------------------
+libhmac is a library to support various Hash-based Message Authentication Codes
+(HMAC).
+
+Runtime requirements:
+  cygwin-3.3.5-1
+  libcerror1-20220101-1bl1
+  libcfile1-20220106-1bl1
+  libclocale1-20220107-1bl2
+  libcnotify1-20220108-1bl1
+  libcsplit1-20220109-1bl1
+  libhmac-devel-20220425-1bl1
+  libhmac1-20220425-1bl1
+  libssl1.1-1.1.1p-1
+  pkg-config-1.8.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.38-1
+  cygport-0.35.2-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libcerror-devel-20220101-1bl1
+  libcfile-devel-20220106-1bl1
+  libclocale-devel-20220107-1bl2
+  libcnotify-devel-20220108-1bl1
+  libcsplit-devel-20220109-1bl1
+  libssl-devel-1.1.1p-1
+  libtool-2.4.7-1
+  make-4.3-1
+
+Canonical website:
+  https://github.com/libyal/libhmac
+
+Canonical download:
+  https://github.com/libyal/libhmac/archive/refs/tags/20220425.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libhmac-20220425-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libhmac-20220425-X.cygport all
+
+This will create:
+  /usr/src/libhmac-20220425-X-src.tar.xz
+  /usr/src/libhmac-20220425-X.tar.xz
+  /usr/src/libhmac1-20220425-X.tar.xz
+  /usr/src/libhmac-devel-20220425-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libhmac)
+  /usr/bin/hmacsum.exe
+  /usr/share/doc/Cygwin/libhmac.README
+  /usr/share/doc/libhmac/AUTHORS
+  /usr/share/doc/libhmac/COPYING
+  /usr/share/doc/libhmac/COPYING.LESSER
+  /usr/share/doc/libhmac/ChangeLog
+  /usr/share/doc/libhmac/README
+  /usr/share/man/man1/hmacsum.1.gz
+
+(libhmac1)
+  /usr/bin/cyghmac-1.dll
+
+(libhmac-devel)
+  /usr/include/libhmac.h
+  /usr/include/libhmac/definitions.h
+  /usr/include/libhmac/error.h
+  /usr/include/libhmac/extern.h
+  /usr/include/libhmac/features.h
+  /usr/include/libhmac/types.h
+  /usr/lib/libhmac.dll.a
+  /usr/lib/pkgconfig/libhmac.pc
+  /usr/share/man/man3/libhmac.3.gz
+
+------------------
+
+Port Notes:
+
+----- version 20220425-1bl1 -----
+Version bump.
+
+----- version 20200104-1bl1 -----
+Version bump.
+
+----- version 20180731-1bl1 -----
+Version bump.
+
+----- version 20150703-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

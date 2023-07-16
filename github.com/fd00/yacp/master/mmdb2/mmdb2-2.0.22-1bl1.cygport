@@ -1,0 +1,44 @@
+HOMEPAGE="https://launchpad.net/mmdb"
+SRC_URI="https://ftp.ccp4.ac.uk/opensource/${P}.tar.gz"
+# SRC_URI="https://www2.mrc-lmb.cam.ac.uk/personal/pemsley/coot/dependencies/${P}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Macromolecular coordinate library"
+DESCRIPTION="MMDB is CCP4's macromolecular coordinate library, written by Eugene Krissinel
+of the EBI. The Coordinate Library is designed to assist CCP4 developers in
+working with coordinate files. The major source of coordinate information
+remains the PDB files, although more information becomes available in mmCIF
+format."
+
+LICENSE="LGPL-2.1-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: LGPL-2.1-or-later"
+LICENSE_URI="COPYING.LESSER"
+
+export CPPFLAGS="${CPPFLAGS} -D_GNU_SOURCE"
+
+CYGCONF_ARGS="
+	--enable-maintainer-mode
+"
+
+DOCS="
+	COPYING.LESSER
+"
+
+PKG_NAMES="
+	${PN}
+	lib${PN}_0
+	lib${PN}-devel
+"
+mmdb2_CONTENTS="
+	usr/share
+"
+libmmdb2_0_CONTENTS="
+	usr/bin
+"
+libmmdb2_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+mmdb2_SUMMARY="${SUMMARY} (licensing & readmes)"
+libmmdb2_0_SUMMARY="${SUMMARY} (runtime)"
+libmmdb2_devel_SUMMARY="${SUMMARY} (development)"

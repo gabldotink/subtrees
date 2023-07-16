@@ -1,0 +1,102 @@
+zycore-c
+------------------------------------------
+Internal library providing platform independent types, macros and a fallback
+for environments without LibC.
+
+Runtime requirements:
+  cygwin-3.4.6-1
+  libZycore-devel-1.4.1-1bl1
+  libZycore1.4-1.4.1-1bl1
+  pkg-config-1.9.4-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.40-1
+  cmake-3.23.2-1
+  cygport-0.36.2-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  ninja-1.11.1-1
+
+Canonical website:
+  https://github.com/zyantific/zycore-c
+
+Canonical download:
+  https://github.com/zyantific/zycore-c/archive/refs/tags/v1.4.1.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack zycore-c-1.4.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./zycore-c-1.4.1-X.cygport all
+
+This will create:
+  /usr/src/zycore-c-1.4.1-X-src.tar.xz
+  /usr/src/zycore-c-1.4.1-X.tar.xz
+  /usr/src/libZycore1.4-1.4.1-X.tar.xz
+  /usr/src/libZycore-devel-1.4.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(zycore-c)
+  /usr/share/doc/Cygwin/zycore-c.README
+  /usr/share/doc/zycore-c/LICENSE
+  /usr/share/doc/zycore-c/README.md
+
+(libZycore1.4)
+  /usr/bin/cygZycore-1.4.dll
+
+(libZycore-devel)
+  /usr/include/Zycore/API/Memory.h
+  /usr/include/Zycore/API/Process.h
+  /usr/include/Zycore/API/Synchronization.h
+  /usr/include/Zycore/API/Terminal.h
+  /usr/include/Zycore/API/Thread.h
+  /usr/include/Zycore/Allocator.h
+  /usr/include/Zycore/ArgParse.h
+  /usr/include/Zycore/Atomic.h
+  /usr/include/Zycore/Bitset.h
+  /usr/include/Zycore/Comparison.h
+  /usr/include/Zycore/Defines.h
+  /usr/include/Zycore/Format.h
+  /usr/include/Zycore/Internal/AtomicGNU.h
+  /usr/include/Zycore/Internal/AtomicMSVC.h
+  /usr/include/Zycore/LibC.h
+  /usr/include/Zycore/List.h
+  /usr/include/Zycore/Object.h
+  /usr/include/Zycore/Status.h
+  /usr/include/Zycore/String.h
+  /usr/include/Zycore/Types.h
+  /usr/include/Zycore/Vector.h
+  /usr/include/Zycore/Zycore.h
+  /usr/lib/cmake/zycore/zyan-functions.cmake
+  /usr/lib/cmake/zycore/zycore-config-version.cmake
+  /usr/lib/cmake/zycore/zycore-config.cmake
+  /usr/lib/cmake/zycore/zycore-targets-release.cmake
+  /usr/lib/cmake/zycore/zycore-targets.cmake
+  /usr/lib/libZycore.dll.a
+  /usr/lib/pkgconfig/zycore-c.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.4.1-1bl1 -----
+Version bump.
+
+----- version 1.4.0-1bl1 -----
+Version bump.
+
+----- version 1.1.0-1bl1 -----
+Version bump.
+
+----- version 1.0.0.0+git20200903-1bl1 -----
+Version bump.
+
+----- version 1.0.0.0+git20191105-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

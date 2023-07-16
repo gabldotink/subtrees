@@ -1,0 +1,110 @@
+rcssmonitor
+------------------------------------------
+The RoboCup Soccer Simulator Monitor (rcssmonitor) is used to view the
+simulation as it takes place by connecting to the rcssserver or to view the
+playback of a simulation by connecting to the rcsslogplayer.
+
+Runtime requirements:
+  cygwin-3.3.5-1
+  libQt5Core5-5.9.4-2
+  libQt5Gui5-5.9.4-2
+  libgcc1-11.3.0-1
+  librcssrcg-devel-17.0.0-1bl1
+  librcssrcg17-17.0.0-1bl1
+  libstdc++6-11.3.0-1
+  pkg-config-1.8.0-1
+  zlib0-1.2.12-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.38-1
+  cmake-3.20.0-1
+  cygport-0.35.1-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libQt5Core-devel-5.9.4-2
+  libQt5Gui-devel-5.9.4-2
+  ninja-1.11.0-1
+  zlib-devel-1.2.12-1
+
+Canonical website:
+  https://github.com/rcsoccersim/rcssmonitor
+
+Canonical download:
+  https://github.com/rcsoccersim/rcssmonitor/archive/refs/tags/rcssmonitor-17.0.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack rcssmonitor-17.0.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./rcssmonitor-17.0.0-X.cygport all
+
+This will create:
+  /usr/src/rcssmonitor-17.0.0-X-src.tar.xz
+  /usr/src/rcssmonitor-17.0.0-X.tar.xz
+  /usr/src/librcssrcg17-17.0.0-X.tar.xz
+  /usr/src/librcssrcg-devel-17.0.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(rcssmonitor)
+  /usr/bin/rcssmonitor.exe
+  /usr/share/doc/Cygwin/rcssmonitor.README
+  /usr/share/doc/rcssmonitor/AUTHORS
+  /usr/share/doc/rcssmonitor/COPYING
+  /usr/share/doc/rcssmonitor/ChangeLog
+  /usr/share/doc/rcssmonitor/NEWS
+  /usr/share/doc/rcssmonitor/README.md
+
+(librcssrcg17)
+  /usr/bin/cygrcssrcg-17.dll
+
+(librcssrcg-devel)
+  /usr/include/rcss/rcg/handler.h
+  /usr/include/rcss/rcg/parser.h
+  /usr/include/rcss/rcg/parser_v1.h
+  /usr/include/rcss/rcg/parser_v2.h
+  /usr/include/rcss/rcg/parser_v3.h
+  /usr/include/rcss/rcg/parser_v4.h
+  /usr/include/rcss/rcg/types.h
+  /usr/include/rcss/rcg/util.h
+  /usr/lib/librcssrcg.dll.a
+  /usr/lib/pkgconfig/rcssmonitor.pc
+
+------------------
+
+Port Notes:
+
+----- version 17.0.0-1bl1 -----
+Version bump.
+
+----- version 16.0.0-1bl1 -----
+Version bump.
+
+----- version 15.2.1-1bl1 -----
+Version bump.
+
+----- version 15.2.0-1bl1 -----
+Version bump.
+
+----- version 15.1.1-1bl2 -----
+Rebuild for libboost
+
+----- version 15.1.1-1bl1 -----
+Version bump.
+
+----- version 15.1.0-1bl1 -----
+Version bump.
+
+----- version 15.0.0-1bl2 -----
+Rebuild for libboost
+
+----- version 15.0.0-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

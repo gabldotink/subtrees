@@ -1,0 +1,40 @@
+HOMEPAGE="https://www.gnu.org/software/${PN}/"
+SRC_URI="mirror://gnu/${PN}/${P}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Library for generating assembly code on run time"
+DESCRIPTION="GNU lightning is a library to aid in making portable programs
+that compiles assembly code at run time."
+
+LICENSE="LGPL-3.0-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: LGPL-3.0-or-later"
+LICENSE_URI="COPYING"
+
+CYGCONF_ARGS="
+	--disable-disassembler
+"
+
+DIFF_EXCLUDES="
+	stamp-vti
+	version.texi
+"
+
+PKG_NAMES="
+	${PN}
+	lib${PN}2
+	lib${PN}-devel
+"
+lightning_CONTENTS="
+	usr/share/doc
+"
+liblightning2_CONTENTS="
+	usr/bin
+"
+liblightning_devel_CONTENTS="
+	usr/include
+	usr/lib
+	usr/share/info
+"
+lightning_SUMMARY="${SUMMARY} (licensing & readmes)"
+liblightning2_SUMMARY="${SUMMARY} (runtime)"
+liblightning_devel_SUMMARY="${SUMMARY} (development)"

@@ -1,0 +1,70 @@
+HOMEPAGE="https://github.com/libyal/${PN}"
+SRC_URI="https://github.com/libyal/${PN}/archive/refs/tags/${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Library and tools to access LUKS Disk Encryption encrypted volumes"
+DESCRIPTION="libluksde is a library to access LUKS Disk Encryption encrypted volumes."
+
+LICENSE="LGPL-3.0-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: LGPL-3.0-or-later"
+LICENSE_URI="COPYING"
+
+CYGPORT_USE_UNSTABLE_API=1
+src_patch_hook()
+{
+	cd ${origsrcdir}/${SRC_DIR}/tests
+	chmod u+x *.py
+}
+
+BUILD_REQUIRES="libbfio-devel libcaes-devel libcdata-devel libcerror-devel libclocale-devel libcnotify-devel libcthreads-devel libfcache-devel libfcrypto-devel libfdata-devel libfguid-devel libhmac-devel libuna-devel python39-devel"
+
+CYGCONF_ARGS="
+	--enable-python3
+	--enable-wide-character-type
+"
+
+src_test()
+{
+	cd ${B}
+	pushd tests
+		for f in ${S}/tests/*.{py,sh}
+		do
+			ln -fs ${f} .
+		done
+	popd
+	cygtest
+	rm tests/*.{py,sh}
+}
+
+DOCS="
+	COPYING.LESSER
+	documentation/*
+"
+
+PKG_NAMES="
+	${PN}
+	${PN}1
+	${PN}-devel
+	python39-${PN}
+"
+libluksde_CONTENTS="
+	usr/bin/*.exe
+	usr/share/doc
+	usr/share/man/man1
+"
+libluksde1_CONTENTS="
+	usr/bin/*.dll
+"
+libluksde_devel_CONTENTS="
+	usr/include
+	usr/lib/lib*.dll.a
+	usr/lib/pkgconfig
+	usr/share/man/man3
+"
+python39_libluksde_CONTENTS="
+	usr/lib/python3*
+"
+libluksde_SUMMARY="${SUMMARY} (utilities)"
+libluksde1_SUMMARY="${SUMMARY} (runtime)"
+libluksde_devel_SUMMARY="${SUMMARY} (development)"
+python39_libluksde_SUMMARY="${SUMMARY} (python39 bindings)"

@@ -1,0 +1,87 @@
+faxpp
+------------------------------------------
+Faxpp is a small, fast and conformant XML pull parser written in C with an API
+that can return strings in any encoding including UTF-8 and UTF-16.
+
+Runtime requirements:
+  cygwin-3.1.6-1
+  libfaxpp-devel-0.4+svn59-1bl4
+  libfaxpp2-0.4+svn59-1bl4
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.34+1git.de9c1b7cfe-1
+  cygport-0.34.0-1
+  gcc-core-9.3.0-2
+  libtool-2.4.6-7
+  make-4.3-1
+
+Canonical website:
+  http://faxpp.sf.net/
+
+Canonical download:
+  svn://svn.code.sf.net/p/faxpp/code/trunk/faxpp
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack faxpp-0.4+svn59-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./faxpp-0.4+svn59-X.cygport all
+
+This will create:
+  /usr/src/faxpp-0.4+svn59-X-src.tar.xz
+  /usr/src/faxpp-0.4+svn59-X.tar.xz
+  /usr/src/libfaxpp2-0.4+svn59-X.tar.xz
+  /usr/src/libfaxpp-devel-0.4+svn59-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(faxpp)
+  /usr/share/doc/Cygwin/faxpp.README
+  /usr/share/doc/faxpp/ChangeLog
+  /usr/share/doc/faxpp/LICENSE
+  /usr/share/doc/faxpp/TODO
+
+(libfaxpp2)
+  /usr/bin/cygfaxpp-2.dll
+
+(libfaxpp-devel)
+  /usr/include/faxpp/error.h
+  /usr/include/faxpp/event.h
+  /usr/include/faxpp/parser.h
+  /usr/include/faxpp/text.h
+  /usr/include/faxpp/token.h
+  /usr/include/faxpp/tokenizer.h
+  /usr/include/faxpp/transcode.h
+  /usr/lib/libfaxpp.dll.a
+  /usr/lib/pkgconfig/faxpp.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.4+svn59-1bl4 -----
+Rebuild with gcc-9.3.0
+
+----- version 0.4+svn59-1bl3 -----
+Rebuild with gcc-6.4.0
+
+----- version 0.4+svn59-1bl2 -----
+Rebuild on x86_64
+
+----- version 0.4+svn59-1bl1 -----
+Version bump.
+
+----- version 0.4-1bl2 -----
+Repackage for licensing & readmes
+
+----- version 0.4-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

@@ -1,0 +1,81 @@
+--- origsrc/apparmor-v3.1.3/libraries/libapparmor/src/Makefile.am	2023-02-28 10:24:32.000000000 +0900
++++ src/apparmor-v3.1.3/libraries/libapparmor/src/Makefile.am	2023-04-03 10:34:24.217682600 +0900
+@@ -59,7 +59,7 @@ lib_LTLIBRARIES = libapparmor.la
+ noinst_HEADERS = grammar.h parser.h scanner.h af_protos.h private.h PMurHash.h
+ 
+ libapparmor_la_SOURCES = grammar.y libaalogparse.c kernel.c scanner.c private.c features.c kernel_interface.c policy_cache.c PMurHash.c
+-libapparmor_la_LDFLAGS = -version-info $(AA_LIB_CURRENT):$(AA_LIB_REVISION):$(AA_LIB_AGE) -XCClinker -dynamic -pthread \
++libapparmor_la_LDFLAGS = -no-undefined -version-info $(AA_LIB_CURRENT):$(AA_LIB_REVISION):$(AA_LIB_AGE) -XCClinker -dynamic -pthread \
+ 	-Wl,--version-script=$(top_srcdir)/src/libapparmor.map
+ 
+ pkgconfigdir = $(libdir)/pkgconfig
+@@ -72,13 +72,13 @@ CLEANFILES = libapparmor.pc
+ 	$(SHELL) ./config.status --file="src/$@"
+ 
+ tst_aalogmisc_SOURCES = tst_aalogmisc.c
+-tst_aalogmisc_LDADD = .libs/libapparmor.a
++tst_aalogmisc_LDADD = libapparmor.la
+ 
+ tst_features_SOURCES = tst_features.c
+-tst_features_LDADD = .libs/libapparmor.a
++tst_features_LDADD = libapparmor.la
+ 
+ tst_kernel_SOURCES = tst_kernel.c
+-tst_kernel_LDADD = .libs/libapparmor.a
++tst_kernel_LDADD = libapparmor.la
+ tst_kernel_LDFLAGS = -pthread
+ 
+ check_PROGRAMS = tst_aalogmisc tst_features tst_kernel
+--- origsrc/apparmor-v3.1.3/libraries/libapparmor/src/kernel.c	2023-02-28 10:24:32.000000000 +0900
++++ src/apparmor-v3.1.3/libraries/libapparmor/src/kernel.c	2023-04-03 10:34:24.223453100 +0900
+@@ -21,7 +21,9 @@
+ #include <unistd.h>
+ #include <sys/types.h>
+ #include <sys/stat.h>
++#if !defined(__CYGWIN__)
+ #include <sys/syscall.h>
++#endif
+ #include <sys/socket.h>
+ #include <fcntl.h>
+ #include <errno.h>
+@@ -39,10 +41,16 @@
+ # define PATH_MAX 4096
+ #endif
+ 
++#if defined(__ELF__)
+ #define symbol_version(real, name, version) \
+ 		__asm__ (".symver " #real "," #name "@" #version)
+ #define default_symbol_version(real, name, version) \
+ 		__asm__ (".symver " #real "," #name "@@" #version)
++#else
++#define symbol_version(real, name, version)
++#define default_symbol_version(real, name, version)
++#endif
++
+ #define DLLEXPORT __attribute__((visibility("default"),externally_visible))
+ 
+ #define UNCONFINED		"unconfined"
+@@ -1227,6 +1235,12 @@ DLLEXPORT extern typeof((query_label)) _
+ symbol_version(__aa_query_label, aa_query_label, APPARMOR_1.1);
+ default_symbol_version(query_label, aa_query_label, APPARMOR_2.9);
+ 
++#if !defined(__ELF__)
++int aa_query_label(uint32_t mask, char *query, size_t size, int *allowed, int *audited)
++{
++	return query_label(mask, query, size, allowed, audited);
++}
++#endif
+ 
+ /**
+  * aa_query_file_path_len - query access permissions for a file @path
+--- origsrc/apparmor-v3.1.3/libraries/libapparmor/swig/python/Makefile.am	2023-02-28 10:24:32.000000000 +0900
++++ src/apparmor-v3.1.3/libraries/libapparmor/swig/python/Makefile.am	2023-04-03 10:34:24.228408800 +0900
+@@ -17,7 +17,7 @@ all-local: libapparmor_wrap.c setup.py
+ 	CC="$(CC)" CFLAGS="$(PYTHON_CPPFLAGS) $(EXTRA_WARNINGS)" LDSHARED="$(CC) -shared" LDFLAGS="$(PYTHON_LDFLAGS) $(LDFLAGS)" $(PYTHON) setup.py build
+ 
+ install-exec-local:
+-	$(PYTHON) setup.py install --root="/$(DESTDIR)" --prefix="$(prefix)"
++	$(PYTHON) setup.py install --root="$(DESTDIR)" --prefix="$(prefix)"
+ 
+ clean-local:
+ 	if test -x "$(PYTHON)"; then $(PYTHON) setup.py clean; fi

@@ -1,0 +1,39 @@
+HOMEPAGE="http://${PN}.sf.net/"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="General c++ utility library"
+DESCRIPTION="Libgenerics is a c++ library that provides object services to analyse class
+type at runtime sharing the definitions between dynamic modules. It provides
+serialization services abstraction too. It's an absolute generic library."
+
+CYGPORT_USE_UNSTABLE_API=1
+src_patch_hook()
+{
+	cd ${origsrcdir}/${SRC_DIR}
+	make distclean
+}
+
+CYGCONF_ARGS="
+	--enable-examples
+	--disable-doc
+"
+
+PKG_NAMES="
+	${PN}
+	${PN}0
+	${PN}-devel
+"
+libgenerics_CONTENTS="
+	usr/share
+"
+libgenerics0_CONTENTS="
+	usr/bin
+"
+libgenerics_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+libgenerics_SUMMARY="${SUMMARY} (licensing & readmes)"
+libgenerics0_SUMMARY="${SUMMARY} (runtime)"
+libgenerics_devel_SUMMARY="${SUMMARY} (development)"

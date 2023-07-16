@@ -1,0 +1,18 @@
+HOMEPAGE="http://${PN}.sf.net/"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.xz"
+
+CATEGORY="Video"
+SUMMARY="Command line media download tool"
+DESCRIPTION="cclive is a tool for downloading media from YouTube and similar websites. It
+has a low memory footprint compared to other existing tools. cclive works
+closely with the quvi project to work around to the flash technology that is
+being utilized by different media hosts to deliver the content."
+
+CYGPORT_USE_UNSTABLE_API=1
+src_patch_hook()
+{
+	cd ${origsrcdir}/${SRC_DIR}
+    rm -f m4/boost.m4
+}
+
+export CXXFLAGS="${CXXFLAGS} -std=gnu++11"

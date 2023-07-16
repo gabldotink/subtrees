@@ -1,0 +1,73 @@
+asm6809
+------------------------------------------
+asm6809 is a multiple pass 6809 & 6309 cross assembler. Text is read in and
+parsed, then as many passes are made over the parsed source as necessary (up to
+a limit), until symbols are resolved and addresses are stable.
+
+Runtime requirements:
+  cygwin-3.1.1-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.29-1
+  bison-3.0.4-1
+  cygport-0.33.1-1
+  flex-2.6.4-2
+  gcc-core-7.4.0-1
+  make-4.2.1-2
+
+Canonical website:
+  http://www.6809.org.uk/asm6809/
+
+Canonical download:
+  http://www.6809.org.uk/asm6809/dl/asm6809-2.12.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack asm6809-2.12-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./asm6809-2.12-X.cygport all
+
+This will create:
+  /usr/src/asm6809-2.12-X-src.tar.xz
+  /usr/src/asm6809-2.12-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(asm6809)
+  /usr/bin/asm6809.exe
+  /usr/share/doc/Cygwin/asm6809.README
+  /usr/share/doc/asm6809/COPYING.GPL
+  /usr/share/doc/asm6809/ChangeLog
+  /usr/share/doc/asm6809/README
+  /usr/share/doc/asm6809/TODO
+  /usr/share/man/man1/asm6809.1.gz
+
+------------------
+
+Port Notes:
+
+----- version 2.12-1bl1 -----
+Version bump.
+
+----- version 2.11-1bl1 -----
+Version bump.
+
+----- version 2.10-1bl1 -----
+Version bump.
+
+----- version 2.7-1bl1 -----
+Version bump.
+
+----- version 2.5-1bl1 -----
+Version bump.
+
+----- version 2.1-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

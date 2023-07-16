@@ -1,0 +1,77 @@
+farmhash
+------------------------------------------
+FarmHash is a successor to CityHash, and includes many of the same tricks and
+techniques, several of them taken from Austin Appleby's MurmurHash.
+
+Runtime requirements:
+  cygwin-3.2.0-1
+  libfarmhash-devel-1.1.0+git20190514-1bl1
+  libfarmhash0-1.1.0+git20190514-1bl1
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.37-1
+  cygport-0.34.0-1
+  gcc-core-11.2.0-1
+  gcc-g++-11.2.0-1
+  libtool-2.4.6-7
+  make-4.3-1
+
+Canonical website:
+  https://github.com/google/farmhash
+
+Canonical download:
+  https://github.com/google/farmhash.git
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack farmhash-1.1.0+git20190514-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./farmhash-1.1.0+git20190514-X.cygport all
+
+This will create:
+  /usr/src/farmhash-1.1.0+git20190514-X-src.tar.xz
+  /usr/src/farmhash-1.1.0+git20190514-X.tar.xz
+  /usr/src/libfarmhash0-1.1.0+git20190514-X.tar.xz
+  /usr/src/libfarmhash-devel-1.1.0+git20190514-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(farmhash)
+  /usr/share/doc/Cygwin/farmhash.README
+  /usr/share/doc/farmhash/COPYING
+  /usr/share/doc/farmhash/NEWS
+  /usr/share/doc/farmhash/README
+  /usr/share/doc/farmhash/Understanding_Hash_Functions
+
+(libfarmhash0)
+  /usr/bin/cygfarmhash-0.dll
+
+(libfarmhash-devel)
+  /usr/include/farmhash.h
+  /usr/lib/libfarmhash.dll.a
+  /usr/lib/pkgconfig/farmhash.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.1.0+git20190514-1bl1 -----
+Version bump.
+
+----- version 1.1.0+git20170331-1bl1 -----
+Version bump.
+
+----- version 1.1.0+git20161015-1bl1 -----
+Version bump.
+
+----- version 1.0.0+svn2-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

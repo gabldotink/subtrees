@@ -1,0 +1,77 @@
+ekhtml
+------------------------------------------
+El-Kabong is a high-speed, forgiving, sax-style HTML parser. Its aim is to
+provide consumers with a very fast, clean, lightweight library which parses
+HTMLquickly, while forgiving syntactically incorrect tags.
+
+Runtime requirements:
+  cygwin-2.10.0-1
+  libekhtml-devel-0.3.2-1bl3
+  libekhtml0-0.3.2-1bl3
+  pkg-config-0.29.1-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-10-1
+  binutils-2.29-1
+  cygport-0.31.0-1
+  gcc-core-6.4.0-5
+  libtool-2.4.6-5
+  make-4.2.1-2
+  python-2.7.14-1
+
+Canonical website:
+  http://ekhtml.sf.net/
+
+Canonical download:
+  mirror://sourceforge/ekhtml/ekhtml-0.3.2.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack ekhtml-0.3.2-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./ekhtml-0.3.2-X.cygport all
+
+This will create:
+  /usr/src/ekhtml-0.3.2-X-src.tar.xz
+  /usr/src/ekhtml-0.3.2-X.tar.xz
+  /usr/src/libekhtml0-0.3.2-X.tar.xz
+  /usr/src/libekhtml-devel-0.3.2-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(ekhtml)
+  /usr/share/doc/Cygwin/ekhtml.README
+  /usr/share/doc/ekhtml/AUTHORS
+  /usr/share/doc/ekhtml/COPYING
+  /usr/share/doc/ekhtml/ChangeLog
+  /usr/share/doc/ekhtml/NEWS
+  /usr/share/doc/ekhtml/README
+  /usr/share/doc/ekhtml/TODO
+
+(libekhtml0)
+  /usr/bin/cygekhtml-0.dll
+
+(libekhtml-devel)
+  /usr/include/ekhtml.h
+  /usr/lib/libekhtml.dll.a
+  /usr/lib/pkgconfig/ekhtml.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.3.2-1bl3 -----
+Rebuild with gcc-6.4.0
+
+----- version 0.3.2-1bl2 -----
+Rebuild on x86_64
+
+----- version 0.3.2-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

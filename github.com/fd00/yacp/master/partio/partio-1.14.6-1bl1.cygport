@@ -1,0 +1,53 @@
+HOMEPAGE="https://github.com/wdas/${PN}"
+SRC_URI="https://github.com/wdas/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Library for particle IO and manipulation"
+DESCRIPTION="This is the initial source code release of partio a tool we used for particle
+reading/writing. It started out as an abstraction for the commonalities in
+particle models (i.e. accessing many attributes associated with an index or
+entity)."
+
+BUILD_REQUIRES="libGL-devel libGLU-devel libglut-devel libgtest-devel python38-devel zlib-devel"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DCMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT:BOOL=OFF
+	-DCMAKE_CXX_EXTENSIONS:BOOL=ON
+	-DVERSION:STRING=${PV}
+"
+
+src_test()
+{
+	cd ${B}
+	PATH=${B}/src/lib:${PATH} ninja_test
+}
+
+PKG_NAMES="
+	partio
+	libpartio1
+	libpartio-devel
+	python38-partio
+"
+partio_CONTENTS="
+	usr/bin/part*
+	usr/share/doc
+	usr/share/partio
+"
+libpartio1_CONTENTS="
+	usr/bin/*.dll
+"
+libpartio_devel_CONTENTS="
+	usr/include
+	usr/lib/*.dll.a
+	usr/lib/pkgconfig
+	usr/share/swig
+"
+python38_partio_CONTENTS="
+	usr/lib/python*
+"
+partio_SUMMARY="${SUMMARY} (utilities)"
+libpartio1_SUMMARY="${SUMMARY} (runtime)"
+libpartio_devel_SUMMARY="${SUMMARY} (development)"
+python38_partio_SUMMARY="${SUMMARY} (python38 bindings)"

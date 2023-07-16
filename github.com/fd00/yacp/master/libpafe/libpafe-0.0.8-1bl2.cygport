@@ -1,0 +1,27 @@
+HOMEPAGE="http://homepage3.nifty.com/slokar/pasori/${PN}.html"
+SRC_URI="http://homepage3.nifty.com/slokar/pasori/${P}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Library to access FeliCa with SONY PaSoRi"
+DESCRIPTION="${SUMMARY}"
+
+PKG_NAMES="
+	${PN}
+	${PN}0
+	${PN}-devel
+"
+libpafe_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+libpafe0_CONTENTS="
+	usr/bin/*.dll
+"
+libpafe_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+
+libpafe_SUMMARY="${SUMMARY} (utilities)"
+libpafe0_SUMMARY="${SUMMARY} (runtime)"
+libpafe_devel_SUMMARY="${SUMMARY} (development)"

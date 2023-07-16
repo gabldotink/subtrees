@@ -1,0 +1,40 @@
+HOMEPAGE="https://github.com/cisco/${PN}"
+SRC_URI="https://github.com/cisco/${PN}/archive/r${PV}.tar.gz"
+SRC_DIR="${PN}-r${PV}"
+
+CATEGORY="Security"
+SUMMARY="Library that implements RFC 7030 (Enrollment over Secure Transport)"
+DESCRIPTION="This project is a library that implements RFC 7030 (Enrollment over Secure
+Transport). EST is used to provision certificates from a CA or RA. EST is a
+replacement for SCEP, providing several security enhancements and support for
+ECC certificates."
+
+export CPPFLAGS="${CPPFLAGS} -DDISABLE_BACKTRACE"
+
+CYGCONF_ARGS="
+	--enable-maintainer-mode
+"
+
+DOCS="
+	README.brski
+"
+
+PKG_NAMES="
+	${PN}
+	${PN}${PV}p
+	${PN}-devel
+"
+libest_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+libest3_2_0p_CONTENTS="
+	usr/bin/*.dll
+"
+libest_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+libest_SUMMARY="${SUMMARY} (utilities)"
+libest3_2_0p_SUMMARY="${SUMMARY} (runtime)"
+libest_devel_SUMMARY="${SUMMARY} (development)"

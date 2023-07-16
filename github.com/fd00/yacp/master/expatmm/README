@@ -1,0 +1,83 @@
+expatmm
+------------------------------------------
+ExpatMM XML Parser class for C++ based upon Expat.
+
+Runtime requirements:
+  cygwin-3.1.7-1
+  libexpat1-2.2.6-1
+  libexpatmm-devel-1.0.4-1bl1
+  libexpatmm0-1.0.4-1bl1
+  libgcc1-10.2.0-1
+  libstdc++6-10.2.0-1
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.34+1git.de9c1b7cfe-1
+  cygport-0.34.0-1
+  gcc-core-10.2.0-1
+  gcc-g++-10.2.0-1
+  libtool-2.4.6-7
+  make-4.3-1
+
+Canonical website:
+  https://github.com/ckane/expatmm
+
+Canonical download:
+  https://github.com/ckane/expatmm/archive/1.0.4.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack expatmm-1.0.4-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./expatmm-1.0.4-X.cygport all
+
+This will create:
+  /usr/src/expatmm-1.0.4-X-src.tar.xz
+  /usr/src/expatmm-1.0.4-X.tar.xz
+  /usr/src/libexpatmm0-1.0.4-X.tar.xz
+  /usr/src/libexpatmm-devel-1.0.4-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(expatmm)
+  /usr/share/doc/Cygwin/expatmm.README
+  /usr/share/doc/expatmm/COPYING
+  /usr/share/doc/expatmm/ChangeLog
+  /usr/share/doc/expatmm/LICENSE
+  /usr/share/doc/expatmm/README-expatmm
+  /usr/share/doc/expatmm/README.md
+
+(libexpatmm0)
+  /usr/bin/cygexpatmm-0.dll
+
+(libexpatmm-devel)
+  /usr/include/expatmm-1.0/expatmm/ExpatXMLFileParser.h
+  /usr/include/expatmm-1.0/expatmm/ExpatXMLParser.h
+  /usr/include/expatmm-1.0/expatmm/expatmm-libdef.h
+  /usr/include/expatmm-1.0/expatmm/expatmm.h
+  /usr/lib/libexpatmm.dll.a
+  /usr/lib/pkgconfig/expatmm.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.0.4-1bl1 -----
+Version bump.
+
+----- version 1.0.3-1bl1 -----
+Version bump.
+
+----- version 1.0.2-1bl2 -----
+Rebuild on x86_64
+
+----- version 1.0.2-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

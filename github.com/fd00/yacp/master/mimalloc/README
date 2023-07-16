@@ -1,0 +1,93 @@
+mimalloc
+------------------------------------------
+mimalloc (pronounced 'me-malloc') is a general purpose allocator with excellent
+performance characteristics. Initially developed by Daan Leijen for the
+run-time systems of the Koka and Lean languages.
+
+Runtime requirements:
+  cygwin-3.4.5-1
+  libgcc1-11.3.0-1
+  libmimalloc-devel-2.0.9-1bl1
+  libmimalloc2-2.0.9-1bl1
+  pkg-config-1.9.4-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.39-1
+  cmake-3.23.2-1
+  cygport-0.36.0-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  ninja-1.11.1-1
+
+Canonical website:
+  https://github.com/microsoft/mimalloc
+
+Canonical download:
+  https://github.com/microsoft/mimalloc/archive/refs/tags/v2.0.9.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack mimalloc-2.0.9-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./mimalloc-2.0.9-X.cygport all
+
+This will create:
+  /usr/src/mimalloc-2.0.9-X-src.tar.xz
+  /usr/src/mimalloc-2.0.9-X.tar.xz
+  /usr/src/libmimalloc2-2.0.9-X.tar.xz
+  /usr/src/libmimalloc-devel-2.0.9-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(mimalloc)
+  /usr/share/doc/Cygwin/mimalloc.README
+  /usr/share/doc/mimalloc/LICENSE
+  /usr/share/doc/mimalloc/README.md
+
+(libmimalloc2)
+  /usr/bin/cygmimalloc-2.dll
+
+(libmimalloc-devel)
+  /usr/include/mimalloc-new-delete.h
+  /usr/include/mimalloc-override.h
+  /usr/include/mimalloc.h
+  /usr/lib/cmake/mimalloc/mimalloc-config-version.cmake
+  /usr/lib/cmake/mimalloc/mimalloc-config.cmake
+  /usr/lib/cmake/mimalloc/mimalloc-release.cmake
+  /usr/lib/cmake/mimalloc/mimalloc.cmake
+  /usr/lib/libmimalloc.dll.a
+  /usr/lib/pkgconfig/mimalloc.pc
+
+------------------
+
+Port Notes:
+
+----- version 2.0.9-1bl1 -----
+Version bump.
+
+----- version 2.0.7-1bl1 -----
+Version bump.
+
+----- version 2.0.6-1bl1 -----
+Version bump.
+
+----- version 2.0.3-1bl1 -----
+Version bump.
+
+----- version 2.0.2-1bl1 -----
+Version bump.
+
+----- version 1.6.7-1bl1 -----
+Version bump.
+
+----- version 1.6.4-1bl1 -----
+Version bump.
+
+----- version 1.0+git20190627-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

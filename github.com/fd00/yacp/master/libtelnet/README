@@ -1,0 +1,112 @@
+libtelnet
+------------------------------------------
+libtelnet provides safe and correct handling of the core TELNET protocol. In
+addition to the base TELNET protocol, libtelnet also implements the Q method of
+TELNET option negotiation. libtelnet can be used for writing servers, clients,
+or proxies.
+
+Runtime requirements:
+  cygwin-3.0.7-1
+  libtelnet-devel-0.23-1bl1
+  libtelnet2-0.23-1bl1
+  pkg-config-1.6.0-1
+  zlib0-1.2.11-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.29-1
+  cygport-0.33.1-1
+  gcc-core-7.4.0-1
+  libtool-2.4.6-7
+  make-4.2.1-2
+
+Canonical website:
+  https://github.com/seanmiddleditch/libtelnet
+
+Canonical download:
+  https://github.com/seanmiddleditch/libtelnet/archive/0.23.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libtelnet-0.23-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libtelnet-0.23-X.cygport all
+
+This will create:
+  /usr/src/libtelnet-0.23-X-src.tar.xz
+  /usr/src/libtelnet-0.23-X.tar.xz
+  /usr/src/libtelnet2-0.23-X.tar.xz
+  /usr/src/libtelnet-devel-0.23-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libtelnet)
+  /usr/bin/telnet-chatd.exe
+  /usr/bin/telnet-client.exe
+  /usr/bin/telnet-proxy.exe
+  /usr/share/doc/Cygwin/libtelnet.README
+  /usr/share/doc/libtelnet/AUTHORS
+  /usr/share/doc/libtelnet/COPYING
+  /usr/share/doc/libtelnet/ChangeLog
+  /usr/share/doc/libtelnet/NEWS
+  /usr/share/doc/libtelnet/README.md
+  /usr/share/man/man1/telnet-chatd.1.gz
+  /usr/share/man/man1/telnet-client.1.gz
+  /usr/share/man/man1/telnet-proxy.1.gz
+
+(libtelnet2)
+  /usr/bin/cygtelnet-2.dll
+
+(libtelnet-devel)
+  /usr/include/libtelnet.h
+  /usr/lib/libtelnet.dll.a
+  /usr/lib/pkgconfig/libtelnet.pc
+  /usr/share/man/man3/libtelnet.h.3.gz
+  /usr/share/man/man3/telnet_environ_t.3.gz
+  /usr/share/man/man3/telnet_event_t.3.gz
+  /usr/share/man/man3/telnet_event_t_compress_t.3.gz
+  /usr/share/man/man3/telnet_event_t_data_t.3.gz
+  /usr/share/man/man3/telnet_event_t_environ_t.3.gz
+  /usr/share/man/man3/telnet_event_t_error_t.3.gz
+  /usr/share/man/man3/telnet_event_t_iac_t.3.gz
+  /usr/share/man/man3/telnet_event_t_mssp_t.3.gz
+  /usr/share/man/man3/telnet_event_t_negotiate_t.3.gz
+  /usr/share/man/man3/telnet_event_t_subnegotiate_t.3.gz
+  /usr/share/man/man3/telnet_event_t_ttype_t.3.gz
+  /usr/share/man/man3/telnet_event_t_zmp_t.3.gz
+  /usr/share/man/man3/telnet_telopt_t.3.gz
+
+------------------
+
+Port Notes:
+
+----- version 0.23-1bl1 -----
+Version bump.
+
+----- version 0.21-1bl3 -----
+Rebuild with gcc-6.4.0
+
+----- version 0.21-1bl2 -----
+Rebuild on x86_64
+
+----- version 0.21-1bl1 -----
+Version bump.
+
+----- version 0.20+git20110905-1bl1 -----
+Version bump.
+
+----- version 0.20+git20100913-1bl1 -----
+Version bump.
+
+----- version 0.13+git20100122-1bl1 -----
+Version bump.
+
+----- version 0.13+git20091103-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

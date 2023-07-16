@@ -1,0 +1,37 @@
+HOMEPAGE="https://github.com/DarkstarProject/${PN}"
+SRC_URI="https://github.com/DarkstarProject/${PN}/archive/v${PV}.tar.gz"
+
+CATEGORY="Games"
+SUMMARY="FFXI Server Emulator"
+DESCRIPTION="Welcome to the DarkStar project, an emulation server for FFXI. Visit our
+forums and IRC to keep in touch with the latest developments."
+
+export CPPFLAGS="${CPPFLAGS} -D_GNU_SOURCE"
+
+DOCS="
+	documentation/*
+"
+
+src_compile()
+{
+	cd ${S}
+	sh ./gensources.sh
+	cygautoreconf
+	cd ${B}
+	cygconf
+	cygmake
+}
+
+src_install()
+{
+	cd ${B}
+	cyginstall
+
+	cd ${S}
+	dodir /usr/share/${PN}
+	cp -R *.dat conf icons scripts sql ${D}/usr/share/${PN}
+}
+
+DIFF_EXCLUDES="
+	sources.am
+"

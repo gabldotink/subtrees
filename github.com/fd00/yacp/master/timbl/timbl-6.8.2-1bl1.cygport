@@ -1,0 +1,42 @@
+HOMEPAGE="https://github.com/LanguageMachines/${PN}/"
+SRC_URI="https://github.com/LanguageMachines/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Tilburg Memory Based Learner"
+DESCRIPTION="TiMBL is an open source software package implementing several memory-based
+learning algorithms, among which IB1-IG, an implementation of k-nearest
+neighbor classification with feature weighting suitable for symbolic feature
+spaces, and IGTree, a decision-tree approximation of IB1-IG. All implemented
+algorithms have in common that they store some representation of the training
+set explicitly in memory. During testing, new cases are classified by
+extrapolation from the most similar stored cases."
+
+LICENSE="GPL-3.0-only"
+LICENSE_SPDX="SPDX-License-Identifier: GPL-3.0-only"
+LICENSE_URI="COPYING"
+
+BUILD_REQUIRES="libicu-devel libticcutils-devel libxml2-devel"
+
+DIFF_EXCLUDES="
+	*.m4
+"
+
+PKG_NAMES="
+	${PN}
+	lib${PN}7
+	lib${PN}-devel
+"
+timbl_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+libtimbl7_CONTENTS="
+	usr/bin/*.dll
+"
+libtimbl_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+timbl_SUMMARY="${SUMMARY} (utilities)"
+libtimbl7_SUMMARY="${SUMMARY} (runtime)"
+libtimbl_devel_SUMMARY="${SUMMARY} (development)"

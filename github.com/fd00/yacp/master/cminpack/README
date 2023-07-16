@@ -1,0 +1,108 @@
+cminpack
+------------------------------------------
+cminpack is an ISO C99 implementation of the FORTRAN Minpack solver package. It
+is fully re-entrant and thread-safe.
+
+Runtime requirements:
+  cygwin-3.1.7-1
+  libcminpack-devel-1.3.8-1bl1
+  libcminpack1-1.3.8-1bl1
+  libopenblas-0.3.12-1
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.35.2-1
+  cmake-3.17.3-2
+  cygport-0.34.0-1
+  gcc-core-10.2.0-1
+  gcc-fortran-10.2.0-1
+  gcc-g++-10.2.0-1
+  ninja-1.10.2-1
+
+Canonical website:
+  https://github.com/devernay/cminpack
+
+Canonical download:
+  https://github.com/devernay/cminpack/archive/v1.3.8.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack cminpack-1.3.8-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./cminpack-1.3.8-X.cygport all
+
+This will create:
+  /usr/src/cminpack-1.3.8-X-src.tar.xz
+  /usr/src/cminpack-1.3.8-X.tar.xz
+  /usr/src/libcminpack1-1.3.8-X.tar.xz
+  /usr/src/libcminpack-devel-1.3.8-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(cminpack)
+  /usr/share/doc/Cygwin/cminpack.README
+  /usr/share/doc/cminpack/CopyrightMINPACK.txt
+  /usr/share/doc/cminpack/README.md
+  /usr/share/doc/cminpack/minpack-documentation.txt
+  /usr/share/doc/cminpack/readme.txt
+
+(libcminpack1)
+  /usr/bin/cygcminpack-1.dll
+  /usr/bin/cygcminpackld-1.dll
+  /usr/bin/cygcminpacks-1.dll
+
+(libcminpack-devel)
+  /usr/include/cminpack-1/cminpack.h
+  /usr/include/cminpack-1/minpack.h
+  /usr/lib/cmake/cminpack/CMinpackConfig-release.cmake
+  /usr/lib/cmake/cminpack/CMinpackConfig.cmake
+  /usr/lib/libcminpack.dll.a
+  /usr/lib/libcminpackld.dll.a
+  /usr/lib/libcminpacks.dll.a
+  /usr/lib/pkgconfig/cminpack.pc
+  /usr/lib/pkgconfig/cminpackld.pc
+  /usr/lib/pkgconfig/cminpacks.pc
+  /usr/share/man/man3/hybrd1_.3.gz
+  /usr/share/man/man3/hybrd_.3.gz
+  /usr/share/man/man3/hybrj1_.3.gz
+  /usr/share/man/man3/hybrj_.3.gz
+  /usr/share/man/man3/lmder1_.3.gz
+  /usr/share/man/man3/lmder_.3.gz
+  /usr/share/man/man3/lmdif1_.3.gz
+  /usr/share/man/man3/lmdif_.3.gz
+  /usr/share/man/man3/lmstr1_.3.gz
+  /usr/share/man/man3/lmstr_.3.gz
+
+------------------
+
+Port Notes:
+
+----- version 1.3.8-1bl1 -----
+Version bump.
+
+----- version 1.3.7-1bl1 -----
+Version bump.
+
+----- version 1.3.6-1bl1 -----
+Version bump.
+
+----- version 1.3.4-1bl1 -----
+Version bump.
+
+----- version 1.3.2-1bl1 -----
+Version bump.
+
+----- version 1.3.0-1bl1 -----
+Version bump.
+
+----- version 1.2.1-1bl1 -----
+Version bump.
+
+----- version 1.1.3-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

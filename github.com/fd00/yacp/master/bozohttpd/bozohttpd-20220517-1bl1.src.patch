@@ -1,0 +1,20 @@
+--- origsrc/bozohttpd-20220517/Makefile.boot	2022-05-18 09:37:39.000000000 +0900
++++ src/bozohttpd-20220517/Makefile.boot	2022-06-23 18:34:10.541207400 +0900
+@@ -6,14 +6,14 @@
+ CC=	cc
+ OPT=	-O
+ LARGE_CFLAGS=	-D_LARGEFILE_SOURCE -D_FILE_OFFSET_BITS=64
+-LOCAL_CFLAGS=	-DNO_LUA_SUPPORT -DNO_BLOCKLIST_SUPPORT -D_GNU_SOURCE -D_DEFAULT_SOURCE
+-CFLAGS=	$(OPT) $(LARGE_CFLAGS) $(LOCAL_CFLAGS)
++LOCAL_CFLAGS=	-DNO_BLOCKLIST_SUPPORT -D_GNU_SOURCE -D_DEFAULT_SOURCE
++CFLAGS=	$(OPT) $(LARGE_CFLAGS) $(LOCAL_CFLAGS) `pkg-config --cflags lua5.3`
+ 
+ GROFF=	groff -Tascii
+ CRYPTOLIBDIR=	# -L/usr/local/lib
+ CRYPTOLIBS=	$(CRYPTOLIBDIR) -lcrypto -lssl
+ 
+-LIBS=	$(CRYPTOLIBS) $(EXTRALIBS)
++LIBS=	$(CRYPTOLIBS) $(EXTRALIBS) `pkg-config --libs lua5.3`
+ 
+ FILES=	bozohttpd.c auth-bozo.c cgi-bozo.c content-bozo.c daemon-bozo.c \
+ 	dir-index-bozo.c lua-bozo.c ssl-bozo.c tilde-luzah-bozo.c main.c

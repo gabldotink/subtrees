@@ -1,0 +1,64 @@
+nfc-eventd
+------------------------------------------
+Nfc-eventd is a NFC monitor daemon which is able to launch modules (libraries)
+on action (tag inserted or removed)
+
+Runtime requirements:
+  cygwin-1.7.34-6
+  libdbus-glib_1_2-0.102-1
+  libglib2.0_0-2.42.1-2
+  libnfc5-1.7.1-1bl1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-9-1
+  binutils-2.25-1
+  cygport-0.17.1-1
+  gcc-core-4.9.2-2
+  libtool-2.4.6-1
+  make-4.1-1
+
+Canonical website:
+  https://code.google.com/p/nfc-tools/
+
+Canonical download:
+  https://nfc-tools.googlecode.com/files/nfc-eventd-0.1.7.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack nfc-eventd-0.1.7-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./nfc-eventd-0.1.7-X.cygport all
+
+This will create:
+  /usr/src/nfc-eventd-0.1.7-X-src.tar.xz
+  /usr/src/nfc-eventd-0.1.7-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(nfc-eventd)
+  /etc/dbus-1/system.d/nfc-eventd-dbus.conf
+  /etc/nfc-eventd.conf
+  /usr/bin/nfc-eventd.exe
+  /usr/lib/nfc-eventd/modules/nem_dbus.dll
+  /usr/lib/nfc-eventd/modules/nem_execute.dll
+  /usr/share/doc/Cygwin/nfc-eventd.README
+  /usr/share/doc/nfc-eventd/AUTHORS
+  /usr/share/doc/nfc-eventd/COPYING
+
+------------------
+
+Port Notes:
+
+----- version 0.1.7-1bl2 -----
+Rebuild on x86_64
+
+----- version 0.1.7-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>
+

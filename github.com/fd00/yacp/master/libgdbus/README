@@ -1,0 +1,74 @@
+libgdbus
+------------------------------------------
+Library for simple D-Bus integration with GLib
+
+Runtime requirements:
+  cygwin-1.7.32-1
+  libdbus1-devel-1.6.18-1
+  libdbus1_3-1.6.18-1
+  libgdbus-devel-0.2-1bl2
+  libgdbus0-0.2-1bl2
+  libglib2.0-devel-2.38.2-4
+  libglib2.0_0-2.38.2-4
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-9-1
+  binutils-2.24.51-5
+  cygport-0.17.0-1
+  gcc-core-4.9.0-1
+  libtool-2.4.2-5
+  make-4.0-2
+
+Canonical website:
+  http://www.bluez.org/
+
+Canonical download:
+  http://pkgs.fedoraproject.org/repo/pkgs/libgdbus/libgdbus-0.2.tar.bz2/775a41347751d0b0169d6bace03c1361/libgdbus-0.2.tar.bz2
+
+-------------------------------------------
+
+Build instructions:
+  unpack libgdbus-0.2-X-src.tar.xz
+    if you use setup to install this src package, it will be
+        unpacked under /usr/src automatically
+  cd /usr/src
+  cygport ./libgdbus-0.2-X.cygport all
+
+This will create:
+  /usr/src/libgdbus-0.2-X-src.tar.xz
+  /usr/src/libgdbus-0.2-X.tar.xz
+  /usr/src/libgdbus0-0.2-X.tar.xz
+  /usr/src/libgdbus-devel-0.2-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libgdbus)
+  /usr/share/doc/Cygwin/libgdbus.README
+  /usr/share/doc/libgdbus/AUTHORS
+  /usr/share/doc/libgdbus/COPYING
+  /usr/share/doc/libgdbus/COPYING.LIB
+  /usr/share/doc/libgdbus/ChangeLog
+  /usr/share/doc/libgdbus/README
+
+(libgdbus0)
+  /usr/bin/cyggdbus-0.dll
+
+(libgdbus-devel)
+  /usr/include/gdbus.h
+  /usr/lib/libgdbus.dll.a
+  /usr/lib/pkgconfig/gdbus.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.2-1bl2 -----
+Rebuild on x86_64
+
+----- version 0.2-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>
+

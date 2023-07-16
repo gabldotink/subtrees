@@ -1,0 +1,75 @@
+memtester
+------------------------------------------
+memtester is a utility for testing the memory subsystem in a computer to
+determine if it is faulty.
+
+Runtime requirements:
+  cygwin-3.4.5-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.39-1
+  cygport-0.36.0-1
+  gcc-core-11.3.0-1
+  make-4.4-1
+
+Canonical website:
+  https://pyropus.ca./software/memtester/
+
+Canonical download:
+  https://pyropus.ca./software/memtester/old-versions/memtester-4.6.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack memtester-4.6.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./memtester-4.6.0-X.cygport all
+
+This will create:
+  /usr/src/memtester-4.6.0-X-src.tar.xz
+  /usr/src/memtester-4.6.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(memtester)
+  /usr/bin/memtester.exe
+  /usr/share/doc/Cygwin/memtester.README
+  /usr/share/doc/memtester/BUGS
+  /usr/share/doc/memtester/CHANGELOG
+  /usr/share/doc/memtester/COPYING
+  /usr/share/doc/memtester/README
+  /usr/share/doc/memtester/README.tests
+  /usr/share/man/man8/memtester.8.gz
+
+------------------
+
+Port Notes:
+
+----- version 4.6.0-1bl1 -----
+Version bump.
+
+----- version 4.5.1-1bl1 -----
+Version bump.
+
+----- version 4.5.0-1bl1 -----
+Version bump.
+
+----- version 4.3.0-1bl2 -----
+Rebuild on x86_64
+
+----- version 4.3.0-1bl1 -----
+Version bump.
+
+----- version 4.2.2-1bl1 -----
+Version bump.
+
+----- version 4.2.1-1bl1 -----
+Version bump.
+
+----- version 4.2.0-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

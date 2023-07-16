@@ -1,0 +1,77 @@
+libestk
+------------------------------------------
+LibESTK is a utility library ment to make OpenGL ES 2.0 operations easier to
+perform with fewer calls compared to the standard OpenGL library.
+
+Runtime requirements:
+  cygwin-3.3.5-1
+  libGL1-19.1.6-1
+  libSDL2_2.0_0-2.0.7-1
+  libSDL2_image2.0_0-2.0.2-1
+  libSDL2_mixer2.0_0-2.0.2-1
+  libestk6-devel-6.1.0+git20171025-1bl1
+  libestk6_6-6.1.0+git20171025-1bl1
+  pkg-config-1.8.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.38-1
+  cmake-3.20.0-1
+  cygport-0.35.1-1
+  gcc-core-11.3.0-1
+  libGLEW-devel-2.1.0-1
+  libSDL2-devel-2.0.7-1
+  libSDL2_image-devel-2.0.2-1
+  libSDL2_mixer-devel-2.0.2-1
+  ninja-1.11.0-1
+
+Canonical website:
+  https://github.com/carlmartus/libestk
+
+Canonical download:
+  https://github.com/carlmartus/libestk.git
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libestk-6.1.0+git20171025-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libestk-6.1.0+git20171025-X.cygport all
+
+This will create:
+  /usr/src/libestk-6.1.0+git20171025-X-src.tar.xz
+  /usr/src/libestk-6.1.0+git20171025-X.tar.xz
+  /usr/src/libestk6_6-6.1.0+git20171025-X.tar.xz
+  /usr/src/libestk6-devel-6.1.0+git20171025-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libestk)
+  /usr/share/doc/Cygwin/libestk.README
+  /usr/share/doc/libestk/LICENSE.md
+  /usr/share/doc/libestk/README.md
+
+(libestk6_6)
+  /usr/bin/cygestk6-6.dll
+
+(libestk6-devel)
+  /usr/include/estk.h
+  /usr/lib/libestk6.dll.a
+  /usr/lib/pkgconfig/libestk.pc
+
+------------------
+
+Port Notes:
+
+----- version 6.1.0+git20171025-1bl1 -----
+Version bump.
+
+----- version 4.0.0-1bl1 -----
+Version bump.
+
+----- version 3.3.1-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

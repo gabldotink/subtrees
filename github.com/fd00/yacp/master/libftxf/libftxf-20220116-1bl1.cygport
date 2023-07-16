@@ -1,0 +1,45 @@
+HOMEPAGE="https://github.com/libyal/${PN}"
+SRC_URI="https://github.com/libyal/${PN}/archive/refs/tags/${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Library for Transactional NTFS (TxF) data types"
+DESCRIPTION="libftxf is a library for Transactional NTFS (TxF) data types."
+
+LICENSE="LGPL-3.0-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: LGPL-3.0-or-later"
+LICENSE_URI="COPYING"
+
+BUILD_REQUIRES="libcerror-devel libfusn-devel"
+
+src_test()
+{
+	cd ${B}
+	pushd tests
+		for sh in ${S}/tests/*.sh
+		do
+			ln -fs ${sh} .
+		done
+	popd
+	cygtest
+	rm tests/*.sh
+}
+
+PKG_NAMES="
+	${PN}
+	${PN}1
+	${PN}-devel
+"
+libftxf_CONTENTS="
+	usr/share/doc
+"
+libftxf1_CONTENTS="
+	usr/bin
+"
+libftxf_devel_CONTENTS="
+	usr/include
+	usr/lib
+	usr/share/man
+"
+libftxf_SUMMARY="${SUMMARY} (licensing & readmes)"
+libftxf1_SUMMARY="${SUMMARY} (runtime)"
+libftxf_devel_SUMMARY="${SUMMARY} (development)"

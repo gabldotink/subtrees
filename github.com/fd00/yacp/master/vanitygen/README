@@ -1,0 +1,60 @@
+vanitygen
+------------------------------------------
+Standalone command line vanity address generator
+
+Runtime requirements:
+  cygwin-3.1.7-1
+  libcurl4-7.72.0-1
+  libOpenCL1-2.2.12-1
+  libpcre1-8.44-1
+  libssl1.0-1.0.2t-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.34+1git.de9c1b7cfe-1
+  cygport-0.34.0-1
+  gcc-core-10.2.0-1
+  make-4.3-1
+
+Canonical website:
+  https://github.com/samr7/vanitygen
+
+Canonical download:
+  https://github.com/samr7/vanitygen/archive/0.21.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack vanitygen-0.21-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./vanitygen-0.21-X.cygport all
+
+This will create:
+  /usr/src/vanitygen-0.21-X-src.tar.xz
+  /usr/src/vanitygen-0.21-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(vanitygen)
+  /usr/bin/keyconv.exe
+  /usr/bin/oclvanitygen.exe
+  /usr/bin/oclvanityminer.exe
+  /usr/bin/vanitygen.exe
+  /usr/share/doc/Cygwin/vanitygen.README
+  /usr/share/doc/vanitygen/CHANGELOG
+  /usr/share/doc/vanitygen/LICENSE
+  /usr/share/doc/vanitygen/README
+
+------------------
+
+Port Notes:
+
+----- version 0.21-1bl2 -----
+Rebuild for libssl
+
+----- version 0.21-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

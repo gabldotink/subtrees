@@ -1,0 +1,33 @@
+HOMEPAGE="https://github.com/rbsec/${PN}"
+SRC_URI="https://github.com/rbsec/${PN}/archive/refs/tags/${PV}.tar.gz"
+
+CATEGORY="Security"
+SUMMARY="Fast SSL/TLS scanner"
+DESCRIPTION="sslscan tests SSL/TLS enabled services to discover supported
+cipher suites."
+
+LICENSE="GPL-3.0-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: GPL-3.0-or-later"
+LICENSE_URI="LICENSE"
+
+BUILD_REQUIRES="libssl-devel"
+
+src_compile()
+{
+    cd ${B}
+    lndirs
+    cygmake
+}
+
+src_test()
+{
+    cd ${B}
+    ./${PN}.exe google.com
+}
+
+src_install()
+{
+    cd ${B}
+    dobin ${PN}.exe
+    doman ${PN}.1
+}

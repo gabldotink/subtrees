@@ -1,0 +1,30 @@
+HOMEPAGE="https://github.com/${PN}/${PN}"
+SRC_URI="https://github.com/${PN}/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Library for writing text-based user interfaces"
+DESCRIPTION="Termbox is a library that provides minimalistic API which allows the
+programmer to write text-based user interfaces."
+
+DIFF_EXCLUDES="
+	Makefile
+"
+
+PKG_NAMES="
+	${PN}
+	lib${PN}1
+	lib${PN}-devel
+"
+termbox_CONTENTS="
+	usr/share
+"
+libtermbox1_CONTENTS="
+	usr/bin
+"
+libtermbox_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+termbox_SUMMARY="${SUMMARY} (licensing & readmes)"
+libtermbox1_SUMMARY="${SUMMARY} (runtime)"
+libtermbox_devel_SUMMARY="${SUMMARY} (development)"

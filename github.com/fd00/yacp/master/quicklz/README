@@ -1,0 +1,72 @@
+quicklz
+------------------------------------------
+QuickLZ is the world's fastest compression library.
+
+Runtime requirements:
+  cygwin-2.6.1-1
+  libquicklz-devel-1.5.1BETA7-1bl3
+  libquicklz0-1.5.1BETA7-1bl3
+  pkg-config-0.29.1-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-9-1
+  binutils-2.25-4
+  cygport-0.23.0-1
+  gcc-core-5.4.0-1
+  libtool-2.4.6-4
+  make-4.2.1-1
+
+Canonical website:
+  http://www.quicklz.com/
+
+Canonical download:
+  http://www.quicklz.com/beta/quicklz.c
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack quicklz-1.5.1BETA7-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./quicklz-1.5.1BETA7-X.cygport all
+
+This will create:
+  /usr/src/quicklz-1.5.1BETA7-X-src.tar.xz
+  /usr/src/quicklz-1.5.1BETA7-X.tar.xz
+  /usr/src/libquicklz0-1.5.1BETA7-X.tar.xz
+  /usr/src/libquicklz-devel-1.5.1BETA7-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(quicklz)
+  /usr/share/doc/Cygwin/quicklz.README
+  /usr/share/doc/quicklz/manual.html
+
+(libquicklz0)
+  /usr/bin/cygquicklz-0.dll
+
+(libquicklz-devel)
+  /usr/include/quicklz.h
+  /usr/lib/libquicklz.dll.a
+  /usr/lib/pkgconfig/quicklz.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.5.1BETA7-1bl3 -----
+Rebuild with gcc-5.4.0
+
+----- version 1.5.1BETA7-1bl2 -----
+Rebuild on x86_64
+
+----- version 1.5.1BETA7-1bl1 -----
+Version bump.
+
+----- version 1.5.0-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

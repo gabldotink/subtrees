@@ -1,0 +1,21 @@
+--- origsrc/dtcmp-1.1.4/configure.ac	2022-02-05 09:15:38.000000000 +0900
++++ src/dtcmp-1.1.4/configure.ac	2022-05-14 19:57:58.697027200 +0900
+@@ -23,7 +23,7 @@ AC_PROG_CC
+ AM_PROG_CC_C_O
+ AC_PROG_CXX
+ LX_FIND_MPI
+-X_AC_LWGRP
++PKG_CHECK_MODULES([LWGRP], [liblwgrp])
+ 
+ ##
+ # enable libtool
+--- origsrc/dtcmp-1.1.4/src/Makefile.am	2022-02-05 09:15:38.000000000 +0900
++++ src/dtcmp-1.1.4/src/Makefile.am	2022-05-14 19:57:58.709950600 +0900
+@@ -50,5 +50,5 @@ libdtcmp_la_SOURCES = \
+   dtcmp_rankv_sort.c \
+   dtcmp_seg_exscan.c
+ libdtcmp_la_CFLAGS = $(INCLUDES)
+-libdtcmp_la_LIBADD = $(LWGRP_LDFLAGS) $(LWGRP_LIBS)
+-libdtcmp_la_LDFLAGS = -avoid-version
++libdtcmp_la_LIBADD = -lmpi $(LWGRP_LDFLAGS) $(LWGRP_LIBS)
++libdtcmp_la_LDFLAGS = -no-undefined

@@ -1,0 +1,119 @@
+enet
+------------------------------------------
+ENet's purpose is to provide a relatively thin, simple and robust network
+communication layer on top of UDP (User Datagram Protocol). The primary feature
+it provides is optional reliable, in-order delivery of packets.
+
+Runtime requirements:
+  cygwin-3.1.7-1
+  libenet-devel-1.3.17-1bl1
+  libenet7-1.3.17-1bl1
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.34+1git.de9c1b7cfe-1
+  cmake-3.17.3-2
+  cygport-0.34.0-1
+  gcc-core-10.2.0-1
+  libtool-2.4.6-7
+  lua-5.3.5-1
+  make-4.3-1
+
+Canonical website:
+  http://enet.bespin.org/
+
+Canonical download:
+  http://enet.bespin.org/download/enet-1.3.17.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack enet-1.3.17-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./enet-1.3.17-X.cygport all
+
+This will create:
+  /usr/src/enet-1.3.17-X-src.tar.xz
+  /usr/src/enet-1.3.17-X.tar.xz
+  /usr/src/libenet7-1.3.17-X.tar.xz
+  /usr/src/libenet-devel-1.3.17-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(enet)
+  /usr/share/doc/Cygwin/enet.README
+  /usr/share/doc/enet/ChangeLog
+  /usr/share/doc/enet/LICENSE
+  /usr/share/doc/enet/README
+
+(libenet7)
+  /usr/bin/cygenet-7.dll
+
+(libenet-devel)
+  /usr/include/enet/callbacks.h
+  /usr/include/enet/enet.h
+  /usr/include/enet/list.h
+  /usr/include/enet/protocol.h
+  /usr/include/enet/time.h
+  /usr/include/enet/types.h
+  /usr/include/enet/unix.h
+  /usr/include/enet/utility.h
+  /usr/include/enet/win32.h
+  /usr/lib/libenet.dll.a
+  /usr/lib/pkgconfig/libenet.pc
+  /usr/share/doc/enet/FAQ.dox
+  /usr/share/doc/enet/design.dox
+  /usr/share/doc/enet/install.dox
+  /usr/share/doc/enet/license.dox
+  /usr/share/doc/enet/mainpage.dox
+  /usr/share/doc/enet/tutorial.dox
+
+------------------
+
+Port Notes:
+
+----- version 1.3.17-1bl1 -----
+Version bump.
+
+----- version 1.3.16-1bl1 -----
+Version bump.
+
+----- version 1.3.15-1bl1 -----
+Version bump.
+
+----- version 1.3.14-1bl1 -----
+Version bump.
+
+----- version 1.3.13-1bl2 -----
+Rebuild with gcc-5.4.0
+
+----- version 1.3.13-1bl1 -----
+Version bump.
+
+----- version 1.3.12-1bl1 -----
+Version bump.
+
+----- version 1.3.11-1bl1 -----
+Version bump.
+
+----- version 1.3.10-1bl1 -----
+Version bump.
+
+----- version 1.3.9-1bl1 -----
+Version bump.
+
+----- version 1.3.6-1bl1 -----
+Version bump.
+
+----- version 1.3.3-1bl1 -----
+Version bump.
+
+----- version 1.3.0-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

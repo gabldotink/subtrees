@@ -1,0 +1,85 @@
+libest
+------------------------------------------
+This project is a library that implements RFC 7030 (Enrollment over Secure
+Transport). EST is used to provision certificates from a CA or RA. EST is a
+replacement for SCEP, providing several security enhancements and support for
+ECC certificates.
+
+Runtime requirements:
+  cygwin-3.1.7-1
+  libest-devel-3.2.0-1bl1
+  libest3.2.0p-3.2.0-1bl1
+  libssl1.1-1.1.1f-1
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.34+1git.de9c1b7cfe-1
+  cygport-0.34.0-1
+  gcc-core-10.2.0-1
+  libtool-2.4.6-7
+  make-4.3-1
+
+Canonical website:
+  https://github.com/cisco/libest
+
+Canonical download:
+  https://github.com/cisco/libest/archive/r3.2.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libest-3.2.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libest-3.2.0-X.cygport all
+
+This will create:
+  /usr/src/libest-3.2.0-X-src.tar.xz
+  /usr/src/libest-3.2.0-X.tar.xz
+  /usr/src/libest3.2.0p-3.2.0-X.tar.xz
+  /usr/src/libest-devel-3.2.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libest)
+  /usr/bin/estclient.exe
+  /usr/bin/estclient_brski.exe
+  /usr/bin/estclient_simple.exe
+  /usr/bin/estproxy.exe
+  /usr/bin/estserver.exe
+  /usr/share/doc/Cygwin/libest.README
+  /usr/share/doc/libest/AUTHORS
+  /usr/share/doc/libest/COPYING
+  /usr/share/doc/libest/LICENSE
+  /usr/share/doc/libest/README
+  /usr/share/doc/libest/README.brski
+
+(libest3.2.0p)
+  /usr/bin/cygest-3-2-0p.dll
+
+(libest-devel)
+  /usr/include/est/est.h
+  /usr/lib/libest.dll.a
+  /usr/lib/pkgconfig/libest.pc
+
+------------------
+
+Port Notes:
+
+----- version 3.2.0-1bl1 -----
+Version bump.
+
+----- version 1.1.0-1bl2 -----
+Rebuild for libssl
+
+----- version 1.1.0-1bl1 -----
+Version bump.
+
+----- version 1.0.0-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

@@ -1,0 +1,87 @@
+be_scan
+------------------------------------------
+Scanner library for scanning for digital forensic artifacts
+
+Runtime requirements:
+  cygwin-3.3.6-1
+  libbe_scan-devel-0.2.0-1bl2
+  libbe_scan0-0.2.0-1bl2
+  libgcc1-11.3.0-1
+  liblightgrep_wrapper0-0.1.0+git20170912-1bl2
+  libstdc++6-11.3.0-1
+  pkg-config-1.9.3-1
+  python39-3.9.10-1
+  python39-be_scan-0.2.0-1bl2
+  zlib0-1.2.13-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.39-1
+  cygport-0.35.4-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  liblightgrep_wrapper-devel-0.1.0+git20170912-1bl2
+  libtool-2.4.7-1
+  make-4.4-1
+  python39-3.9.10-1
+  python39-devel-3.9.10-1
+  zlib-devel-1.2.13-1
+
+Canonical website:
+  https://github.com/NPS-DEEP/be_scan
+
+Canonical download:
+  https://github.com/NPS-DEEP/be_scan/archive/refs/tags/v0.2.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack be_scan-0.2.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./be_scan-0.2.0-X.cygport all
+
+This will create:
+  /usr/src/be_scan-0.2.0-X-src.tar.xz
+  /usr/src/be_scan-0.2.0-X.tar.xz
+  /usr/src/libbe_scan0-0.2.0-X.tar.xz
+  /usr/src/libbe_scan-devel-0.2.0-X.tar.xz
+  /usr/src/python39-be_scan-0.2.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(be_scan)
+  /usr/share/doc/Cygwin/be_scan.README
+  /usr/share/doc/be_scan/COPYING
+  /usr/share/doc/be_scan/README.md
+
+(libbe_scan0)
+  /usr/bin/cygbe_scan-0.dll
+
+(libbe_scan-devel)
+  /usr/include/be_scan.hpp
+  /usr/lib/libbe_scan.dll.a
+  /usr/lib/pkgconfig/be_scan.pc
+
+(python39-be_scan)
+  /usr/bin/artscan.py
+  /usr/lib/python3.9/site-packages/__pycache__/be_scan.cpython-39.opt-1.pyc
+  /usr/lib/python3.9/site-packages/__pycache__/be_scan.cpython-39.opt-2.pyc
+  /usr/lib/python3.9/site-packages/__pycache__/be_scan.cpython-39.pyc
+  /usr/lib/python3.9/site-packages/_be_scan.dll
+  /usr/lib/python3.9/site-packages/be_scan.py
+
+------------------
+
+Port Notes:
+
+----- version 0.2.0-1bl2 -----
+Rebuild with gcc-11.3.0
+
+----- version 0.2.0-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

@@ -1,0 +1,120 @@
+libcoap
+------------------------------------------
+libcoap implements a lightweight application-protocol for devices that are
+constrained their resources such as computing power, RF range, memory,
+bandwith, or network packet sizes. This protocol, CoAP was standardized in the
+IETF as RFC 7252.
+
+Runtime requirements:
+  cygwin-3.4.5-1
+  libcoap3-gnutls-devel-4.3.1-1bl1
+  libcoap3-gnutls3-4.3.1-1bl1
+  libgnutls30-3.6.9-1
+  pkg-config-1.9.4-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  asciidoc-10.2.0-1
+  autoconf-15-1
+  automake-11-1
+  binutils-2.39-1
+  cygport-0.36.0-1
+  gcc-core-11.3.0-1
+  libgnutls-devel-3.6.9-1
+  libtool-2.4.7-1
+  make-4.4-1
+
+Canonical website:
+  https://github.com/obgm/libcoap
+
+Canonical download:
+  https://github.com/obgm/libcoap.git
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libcoap-4.3.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libcoap-4.3.1-X.cygport all
+
+This will create:
+  /usr/src/libcoap-4.3.1-X-src.tar.xz
+  /usr/src/libcoap-4.3.1-X.tar.xz
+  /usr/src/libcoap3-gnutls3-4.3.1-X.tar.xz
+  /usr/src/libcoap3-gnutls-devel-4.3.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libcoap)
+  /usr/bin/coap-client-gnutls.exe
+  /usr/bin/coap-rd-gnutls.exe
+  /usr/bin/coap-server-gnutls.exe
+  /usr/share/doc/Cygwin/libcoap.README
+  /usr/share/doc/libcoap/AUTHORS
+  /usr/share/doc/libcoap/COPYING
+  /usr/share/doc/libcoap/ChangeLog
+  /usr/share/doc/libcoap/LICENSE
+  /usr/share/doc/libcoap/README
+  /usr/share/doc/libcoap/README.md
+  /usr/share/doc/libcoap/TODO
+
+(libcoap3-gnutls3)
+  /usr/bin/cygcoap-3-gnutls-3.dll
+
+(libcoap3-gnutls-devel)
+  /usr/include/coap3/block.h
+  /usr/include/coap3/coap.h
+  /usr/include/coap3/coap_address.h
+  /usr/include/coap3/coap_async.h
+  /usr/include/coap3/coap_cache.h
+  /usr/include/coap3/coap_debug.h
+  /usr/include/coap3/coap_dtls.h
+  /usr/include/coap3/coap_event.h
+  /usr/include/coap3/coap_forward_decls.h
+  /usr/include/coap3/coap_hashkey.h
+  /usr/include/coap3/coap_io.h
+  /usr/include/coap3/coap_mutex.h
+  /usr/include/coap3/coap_option.h
+  /usr/include/coap3/coap_prng.h
+  /usr/include/coap3/coap_session.h
+  /usr/include/coap3/coap_subscribe.h
+  /usr/include/coap3/coap_time.h
+  /usr/include/coap3/encode.h
+  /usr/include/coap3/libcoap.h
+  /usr/include/coap3/mem.h
+  /usr/include/coap3/net.h
+  /usr/include/coap3/pdu.h
+  /usr/include/coap3/resource.h
+  /usr/include/coap3/str.h
+  /usr/include/coap3/uri.h
+  /usr/lib/libcoap-3-gnutls.dll.a
+  /usr/lib/pkgconfig/libcoap-3-gnutls.pc
+  /usr/share/libcoap/examples/COPYING
+  /usr/share/libcoap/examples/LICENSE
+  /usr/share/libcoap/examples/Makefile
+  /usr/share/libcoap/examples/README
+  /usr/share/libcoap/examples/coap-client.c
+  /usr/share/libcoap/examples/coap-server.c
+
+------------------
+
+Port Notes:
+
+----- version 4.3.1-1bl1 -----
+Version bump.
+
+----- version 4.3.0-1bl1 -----
+Version bump.
+
+----- version 4.1.2-1bl1 -----
+Version bump.
+
+----- version 4.1.1-1bl1 -----
+Version bump.
+
+----- version 4.0.3-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

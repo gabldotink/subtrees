@@ -1,0 +1,44 @@
+--- origsrc/fann-2.2.0/src/CMakeLists.txt	2012-01-26 20:15:00.000000000 +0900
++++ src/fann-2.2.0/src/CMakeLists.txt	2014-12-20 14:22:47.524940900 +0900
+@@ -14,7 +14,7 @@ floatfann.c
+ ADD_LIBRARY(floatfann SHARED ${floatfann_LIB_SRCS})
+ 
+ SET_TARGET_PROPERTIES(floatfann PROPERTIES VERSION ${VERSION} SOVERSION 2 )
+-INSTALL(TARGETS floatfann DESTINATION ${LIB_INSTALL_DIR} )
++INSTALL(TARGETS floatfann RUNTIME DESTINATION bin ARCHIVE DESTINATION ${LIB_INSTALL_DIR} )
+ 
+ 
+ ########### next target ###############
+@@ -26,7 +26,7 @@ doublefann.c
+ ADD_LIBRARY(doublefann SHARED ${doublefann_LIB_SRCS})
+ 
+ SET_TARGET_PROPERTIES(doublefann PROPERTIES VERSION ${VERSION} SOVERSION 2 )
+-INSTALL(TARGETS doublefann DESTINATION ${LIB_INSTALL_DIR} )
++INSTALL(TARGETS doublefann RUNTIME DESTINATION bin ARCHIVE DESTINATION ${LIB_INSTALL_DIR} )
+ 
+ 
+ ########### next target ###############
+@@ -38,7 +38,7 @@ fixedfann.c
+ ADD_LIBRARY(fixedfann SHARED ${fixedfann_LIB_SRCS})
+ 
+ SET_TARGET_PROPERTIES(fixedfann PROPERTIES VERSION ${VERSION} SOVERSION 2 )
+-INSTALL(TARGETS fixedfann DESTINATION ${LIB_INSTALL_DIR} )
++INSTALL(TARGETS fixedfann RUNTIME DESTINATION bin ARCHIVE DESTINATION ${LIB_INSTALL_DIR} )
+ 
+ 
+ ########### next target ###############
+@@ -50,5 +50,5 @@ floatfann.c
+ ADD_LIBRARY(fann SHARED ${fann_LIB_SRCS})
+ 
+ SET_TARGET_PROPERTIES(fann PROPERTIES VERSION ${VERSION} SOVERSION 2 )
+-INSTALL(TARGETS fann DESTINATION ${LIB_INSTALL_DIR} )
++INSTALL(TARGETS fann RUNTIME DESTINATION bin ARCHIVE DESTINATION ${LIB_INSTALL_DIR} )
+ 
+--- origsrc/fann-2.2.0/src/include/CMakeLists.txt	2012-01-26 20:15:00.000000000 +0900
++++ src/fann-2.2.0/src/include/CMakeLists.txt	2014-12-20 14:26:42.724594000 +0900
+@@ -1,4 +1,4 @@
+ ########### install files ###############
+ 
+-INSTALL_FILES( /include FILES  fann.h doublefann.h fann_internal.h floatfann.h fann_data.h fixedfann.h compat_time.h fann_activation.h fann_cascade.h fann_error.h fann_train.h fann_io.h fann_cpp.h )
++INSTALL_FILES( /include/fann FILES  fann.h doublefann.h fann_internal.h floatfann.h fann_data.h fixedfann.h compat_time.h fann_activation.h fann_cascade.h fann_error.h fann_train.h fann_io.h fann_cpp.h )
+ 

@@ -1,0 +1,168 @@
+qxmpp
+------------------------------------------
+QXmpp is a cross-platform C++ XMPP client and server library.
+
+Runtime requirements:
+  cygwin-3.2.0-1
+  libQt5Core5-5.9.4-2
+  libgcc1-10.2.0-1
+  libglib2.0_0-2.54.3-1
+  libgstreamer1.0_0-1.12.5-1
+  libqxmpp-devel-1.4.0-1bl1
+  libqxmpp3-1.4.0-1bl1
+  libstdc++6-10.2.0-1
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.36.1-2
+  cmake-3.20.0-1
+  cygport-0.34.0-1
+  gcc-core-10.2.0-1
+  gcc-g++-10.2.0-1
+  libQt5Core-devel-5.9.4-2
+  libglib2.0-devel-2.54.3-1
+  libgstreamer1.0-devel-1.12.5-1
+  ninja-1.10.2-1
+
+Canonical website:
+  https://github.com/qxmpp-project/qxmpp
+
+Canonical download:
+  https://github.com/qxmpp-project/qxmpp/archive/v1.4.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack qxmpp-1.4.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./qxmpp-1.4.0-X.cygport all
+
+This will create:
+  /usr/src/qxmpp-1.4.0-X-src.tar.xz
+  /usr/src/qxmpp-1.4.0-X.tar.xz
+  /usr/src/libqxmpp3-1.4.0-X.tar.xz
+  /usr/src/libqxmpp-devel-1.4.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(qxmpp)
+  /usr/share/doc/Cygwin/qxmpp.README
+  /usr/share/doc/qxmpp/AUTHORS
+  /usr/share/doc/qxmpp/LICENSE.LGPL
+  /usr/share/doc/qxmpp/README.md
+
+(libqxmpp3)
+  /usr/bin/cygqxmpp-3.dll
+
+(libqxmpp-devel)
+  /usr/include/qxmpp/QXmppArchiveIq.h
+  /usr/include/qxmpp/QXmppArchiveManager.h
+  /usr/include/qxmpp/QXmppAttentionManager.h
+  /usr/include/qxmpp/QXmppBindIq.h
+  /usr/include/qxmpp/QXmppBitsOfBinaryContentId.h
+  /usr/include/qxmpp/QXmppBitsOfBinaryData.h
+  /usr/include/qxmpp/QXmppBitsOfBinaryDataList.h
+  /usr/include/qxmpp/QXmppBitsOfBinaryIq.h
+  /usr/include/qxmpp/QXmppBookmarkManager.h
+  /usr/include/qxmpp/QXmppBookmarkSet.h
+  /usr/include/qxmpp/QXmppByteStreamIq.h
+  /usr/include/qxmpp/QXmppCall.h
+  /usr/include/qxmpp/QXmppCallManager.h
+  /usr/include/qxmpp/QXmppCallStream.h
+  /usr/include/qxmpp/QXmppCarbonManager.h
+  /usr/include/qxmpp/QXmppClient.h
+  /usr/include/qxmpp/QXmppClientExtension.h
+  /usr/include/qxmpp/QXmppConfiguration.h
+  /usr/include/qxmpp/QXmppDataForm.h
+  /usr/include/qxmpp/QXmppDialback.h
+  /usr/include/qxmpp/QXmppDiscoveryIq.h
+  /usr/include/qxmpp/QXmppDiscoveryManager.h
+  /usr/include/qxmpp/QXmppElement.h
+  /usr/include/qxmpp/QXmppEntityTimeIq.h
+  /usr/include/qxmpp/QXmppEntityTimeManager.h
+  /usr/include/qxmpp/QXmppGlobal.h
+  /usr/include/qxmpp/QXmppHttpUploadIq.h
+  /usr/include/qxmpp/QXmppIbbIq.h
+  /usr/include/qxmpp/QXmppIncomingClient.h
+  /usr/include/qxmpp/QXmppIncomingServer.h
+  /usr/include/qxmpp/QXmppInvokable.h
+  /usr/include/qxmpp/QXmppIq.h
+  /usr/include/qxmpp/QXmppJingleIq.h
+  /usr/include/qxmpp/QXmppLogger.h
+  /usr/include/qxmpp/QXmppMamIq.h
+  /usr/include/qxmpp/QXmppMamManager.h
+  /usr/include/qxmpp/QXmppMessage.h
+  /usr/include/qxmpp/QXmppMessageReceiptManager.h
+  /usr/include/qxmpp/QXmppMixInvitation.h
+  /usr/include/qxmpp/QXmppMixIq.h
+  /usr/include/qxmpp/QXmppMixItem.h
+  /usr/include/qxmpp/QXmppMucIq.h
+  /usr/include/qxmpp/QXmppMucManager.h
+  /usr/include/qxmpp/QXmppNonSASLAuth.h
+  /usr/include/qxmpp/QXmppOutgoingClient.h
+  /usr/include/qxmpp/QXmppOutgoingServer.h
+  /usr/include/qxmpp/QXmppPasswordChecker.h
+  /usr/include/qxmpp/QXmppPingIq.h
+  /usr/include/qxmpp/QXmppPresence.h
+  /usr/include/qxmpp/QXmppPubSubIq.h
+  /usr/include/qxmpp/QXmppPubSubItem.h
+  /usr/include/qxmpp/QXmppPushEnableIq.h
+  /usr/include/qxmpp/QXmppRegisterIq.h
+  /usr/include/qxmpp/QXmppRegistrationManager.h
+  /usr/include/qxmpp/QXmppRemoteMethod.h
+  /usr/include/qxmpp/QXmppResultSet.h
+  /usr/include/qxmpp/QXmppRosterIq.h
+  /usr/include/qxmpp/QXmppRosterManager.h
+  /usr/include/qxmpp/QXmppRpcIq.h
+  /usr/include/qxmpp/QXmppRpcManager.h
+  /usr/include/qxmpp/QXmppServer.h
+  /usr/include/qxmpp/QXmppServerExtension.h
+  /usr/include/qxmpp/QXmppServerPlugin.h
+  /usr/include/qxmpp/QXmppSessionIq.h
+  /usr/include/qxmpp/QXmppSocks.h
+  /usr/include/qxmpp/QXmppStanza.h
+  /usr/include/qxmpp/QXmppStartTlsPacket.h
+  /usr/include/qxmpp/QXmppStream.h
+  /usr/include/qxmpp/QXmppStreamFeatures.h
+  /usr/include/qxmpp/QXmppStun.h
+  /usr/include/qxmpp/QXmppTransferManager.h
+  /usr/include/qxmpp/QXmppTransferManager_p.h
+  /usr/include/qxmpp/QXmppUploadRequestManager.h
+  /usr/include/qxmpp/QXmppUtils.h
+  /usr/include/qxmpp/QXmppVCardIq.h
+  /usr/include/qxmpp/QXmppVCardManager.h
+  /usr/include/qxmpp/QXmppVersionIq.h
+  /usr/include/qxmpp/QXmppVersionManager.h
+  /usr/lib/cmake/qxmpp/QXmpp-release.cmake
+  /usr/lib/cmake/qxmpp/QXmpp.cmake
+  /usr/lib/cmake/qxmpp/QXmppConfig.cmake
+  /usr/lib/cmake/qxmpp/QXmppConfigVersion.cmake
+  /usr/lib/libqxmpp.dll.a
+  /usr/lib/pkgconfig/qxmpp.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.4.0-1bl1 -----
+Version bump.
+
+----- version 1.3.1-1bl1 -----
+Version bump.
+
+----- version 1.3.0-1bl1 -----
+Version bump.
+
+----- version 1.2.0-1bl1 -----
+Version bump.
+
+----- version 1.1.0-1bl1 -----
+Version bump.
+
+----- version 1.0.0-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

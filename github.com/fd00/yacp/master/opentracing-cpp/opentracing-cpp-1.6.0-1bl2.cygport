@@ -1,0 +1,42 @@
+HOMEPAGE="https://github.com/opentracing/${PN}"
+SRC_URI="https://github.com/opentracing/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="OpenTracing API for C++"
+DESCRIPTION="C++ implementation of the OpenTracing API"
+
+LICENSE="Apache-2.0"
+LICENSE_SPDX="SPDX-License-Identifier: Apache-2.0"
+LICENSE_URI="LICENSE"
+
+inherit cmake
+
+src_test()
+{
+	cd ${B}
+	ninja_test
+}
+
+CYGCMAKE_ARGS="
+	-DBUILD_DYNAMIC_LOADING:BOOL=OFF
+	-DBUILD_STATIC_LIBS:BOOL=OFF
+"
+
+PKG_NAMES="
+	opentracing-cpp
+	libopentracing1
+	libopentracing-devel
+"
+opentracing_cpp_CONTENTS="
+	usr/share
+"
+libopentracing1_CONTENTS="
+	usr/bin
+"
+libopentracing_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+opentracing_cpp_SUMMARY="${SUMMARY} (licensing & readmes)"
+libopentracing1_SUMMARY="${SUMMARY} (runtime)"
+libopentracing_devel_SUMMARY="${SUMMARY} (development)"

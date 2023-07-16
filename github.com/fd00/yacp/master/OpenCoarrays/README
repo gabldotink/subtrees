@@ -1,0 +1,109 @@
+OpenCoarrays
+------------------------------------------
+OpenCoarrays supports Fortran 2018 compilers by providing a parallel
+application binary interface (ABI) that abstracts away the underlying parallel
+programming model, which can be the Message Passing Interface (MPI) or
+OpenSHMEM. Parallel Fortran 2018 programs may be written and compiled into
+object files once and then linked or re-linked to either MPI or OpenSHMEM
+without modifying or recompiling the Fortran source. Not a single line of
+source code need change to switch parallel programming models. The default
+programming model is MPI because it provides the broadest capability for
+supporting Fortran 2018 features. However, having the option to change parallel
+programming models at link-time may enhance portability and performance (see
+Rouson et al. (2017)).
+
+Runtime requirements:
+  bash-4.4.12-3
+  cygwin-3.4.3-1
+  libcaf_mpi3-2.10.1-1bl1
+  libgfortran5-11.3.0-1
+  libopencoarrays_mod2-2.10.1-1bl1
+  libopenmpi40-4.1.2-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.39-1
+  cmake-3.23.2-1
+  cygport-0.35.5-1
+  gcc-core-11.3.0-1
+  gcc-fortran-11.3.0-1
+  libopenmpi-devel-4.1.2-1
+  ninja-1.11.1-1
+
+Canonical website:
+  https://github.com/sourceryinstitute/OpenCoarrays
+
+Canonical download:
+  https://github.com/sourceryinstitute/OpenCoarrays/archive/refs/tags/2.10.1.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack OpenCoarrays-2.10.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./OpenCoarrays-2.10.1-X.cygport all
+
+This will create:
+  /usr/src/OpenCoarrays-2.10.1-X-src.tar.xz
+  /usr/src/OpenCoarrays-2.10.1-X.tar.xz
+  /usr/src/libcaf_mpi3-2.10.1-X.tar.xz
+  /usr/src/libcaf_mpi-devel-2.10.1-X.tar.xz
+  /usr/src/libopencoarrays_mod2-2.10.1-X.tar.xz
+  /usr/src/libopencoarrays_mod-devel-2.10.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(OpenCoarrays)
+  /usr/bin/caf
+  /usr/bin/cafrun
+  /usr/share/doc/Cygwin/OpenCoarrays.README
+  /usr/share/doc/OpenCoarrays/AUTHORS.md
+  /usr/share/doc/OpenCoarrays/FAQ.md
+  /usr/share/doc/OpenCoarrays/LICENSE
+  /usr/share/doc/OpenCoarrays/README.md
+  /usr/share/man/man1/caf.1.gz
+  /usr/share/man/man1/cafrun.1.gz
+  /usr/share/opencoarrays/install_manifest.SHA256.txt
+
+(libcaf_mpi3)
+  /usr/bin/cygcaf_mpi-3.dll
+
+(libcaf_mpi-devel)
+  /usr/include/libcaf-gfortran-descriptor.h
+  /usr/include/libcaf-version-def.h
+  /usr/include/libcaf.h
+  /usr/lib/cmake/opencoarrays/OpenCoarraysConfig.cmake
+  /usr/lib/cmake/opencoarrays/OpenCoarraysConfigVersion.cmake
+  /usr/lib/cmake/opencoarrays/OpenCoarraysTargets-release.cmake
+  /usr/lib/cmake/opencoarrays/OpenCoarraysTargets.cmake
+  /usr/lib/libcaf_mpi.dll.a
+
+(libopencoarrays_mod2)
+  /usr/bin/cygopencoarrays_mod-2.dll
+
+(libopencoarrays_mod-devel)
+  /usr/include/opencoarrays.mod
+  /usr/lib/libopencoarrays_mod.dll.a
+
+------------------
+
+Port Notes:
+
+----- version 2.10.1-1bl1 -----
+Version bump.
+
+----- version 2.10.0-1bl1 -----
+Version bump.
+
+----- version 2.2.0-1bl1 -----
+Version bump.
+
+----- version 2.1.0-1bl1 -----
+Version bump.
+
+----- version 2.0.0-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

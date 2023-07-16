@@ -1,0 +1,68 @@
+HOMEPAGE="https://github.com/xiaoyeli/${PN}"
+SRC_URI="https://github.com/xiaoyeli/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Science"
+SUMMARY="Sparse LU factorization library"
+DESCRIPTION="SuperLU is a general purpose library for the direct solution of large, sparse,
+nonsymmetric systems of linear equations on high performance machines. The
+library is written in C and is callable from either C or Fortran. The library
+routines will perform an LU decomposition with partial pivoting and triangular
+system solves through forward and back substitution. The LU factorization
+routines can handle non-square matrices but the triangular solves are
+performed only for square matrices. The matrix columns may be preordered
+(before factorization) either through library or user supplied routines. This
+preordering for sparsity is completely separate from the factorization.
+Working precision iterative refinement subroutines are provided for improved
+backward stability. Routines are also provided to equilibrate the system,
+estimate the condition number, calculate the relative backward error, and
+estimate error bounds for the refined solutions."
+
+BUILD_REQUIRES="liblapack-devel"
+
+LICENSE="BSD-3-Clause"
+LICENSE_SPDX="SPDX-License-Identifier: BSD-3-Clause"
+LICENSE_URI="License.txt"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DBUILD_SHARED_LIBS:BOOL=ON
+	-DTPL_BLAS_LIBRARIES:STRING=blas
+	-Denable_internal_blaslib:BOOL=OFF
+"
+
+src_test()
+{
+	cd ${B}
+	ninja_test
+}
+
+DOCS="
+	DOC/ug.pdf
+	License.txt
+"
+
+DIFF_EXCLUDES="
+	make.inc
+"
+
+PKG_NAMES="
+	${PN}
+	lib${PN}${PV[1]}
+	lib${PN}-devel
+"
+superlu_CONTENTS="
+	usr/share/doc/Cygwin
+	usr/share/doc/${PN}/[LR]*
+"
+libsuperlu6_CONTENTS="
+	usr/bin/*-${PV[1]}.dll
+"
+libsuperlu_devel_CONTENTS="
+	usr/include
+	usr/lib
+	usr/share/doc/${PN}/ug.pdf
+"
+superlu_SUMMARY="${SUMMARY} (licensing & readmes)"
+libsuperlu6_SUMMARY="${SUMMARY} (runtime)"
+libsuperlu_devel_SUMMARY="${SUMMARY} (development)"

@@ -1,0 +1,229 @@
+igraph
+------------------------------------------
+igraph is a free software package for creating and manipulating undirected and
+directed graphs. It includes implementations for classic graph theory problems
+like minimum spanning trees and network flow, and also implements algorithms
+for some recent network analysis methods, like community structure search.
+
+Runtime requirements:
+  cygwin-3.4.5-1
+  libarpack0-3.8.0-1
+  libgcc1-11.3.0-1
+  libglpk40-5.0-1
+  libgmp10-6.2.1-2
+  libgomp1-11.3.0-1
+  libigraph-devel-0.10.3-1bl1
+  libigraph3-0.10.3-1bl1
+  liblapack0-3.10.1-1
+  libopenblas-0.3.20-1
+  libstdc++6-11.3.0-1
+  libxml2-2.9.12-2
+  libxml2-devel-2.9.12-2
+  pkg-config-1.9.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.39-1
+  cmake-3.23.2-1
+  cygport-0.35.5-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libarpack-devel-3.8.0-1
+  libglpk-devel-5.0-1
+  libgmp-devel-6.2.1-2
+  liblapack-devel-3.10.1-1
+  libxml2-devel-2.9.12-2
+  ninja-1.11.1-1
+
+Canonical website:
+  https://igraph.org/
+
+Canonical download:
+  https://github.com/igraph/igraph/releases/download/0.10.3/igraph-0.10.3.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack igraph-0.10.3-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./igraph-0.10.3-X.cygport all
+
+This will create:
+  /usr/src/igraph-0.10.3-X-src.tar.xz
+  /usr/src/igraph-0.10.3-X.tar.xz
+  /usr/src/libigraph3-0.10.3-X.tar.xz
+  /usr/src/libigraph-devel-0.10.3-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(igraph)
+  /usr/share/doc/Cygwin/igraph.README
+  /usr/share/doc/igraph/ACKNOWLEDGEMENTS.md
+  /usr/share/doc/igraph/AUTHORS
+  /usr/share/doc/igraph/CHANGELOG.md
+  /usr/share/doc/igraph/CODE_OF_CONDUCT.md
+  /usr/share/doc/igraph/CONTRIBUTING.md
+  /usr/share/doc/igraph/CONTRIBUTORS.md
+  /usr/share/doc/igraph/COPYING
+  /usr/share/doc/igraph/ChangeLog
+  /usr/share/doc/igraph/NEWS
+  /usr/share/doc/igraph/ONEWS
+  /usr/share/doc/igraph/README.md
+  /usr/share/doc/igraph/SUPPORT.md
+
+(libigraph3)
+  /usr/bin/cygigraph-3.dll
+
+(libigraph-devel)
+  /usr/include/igraph/igraph.h
+  /usr/include/igraph/igraph_adjlist.h
+  /usr/include/igraph/igraph_arpack.h
+  /usr/include/igraph/igraph_array.h
+  /usr/include/igraph/igraph_array_pmt.h
+  /usr/include/igraph/igraph_attributes.h
+  /usr/include/igraph/igraph_bipartite.h
+  /usr/include/igraph/igraph_blas.h
+  /usr/include/igraph/igraph_centrality.h
+  /usr/include/igraph/igraph_cliques.h
+  /usr/include/igraph/igraph_cocitation.h
+  /usr/include/igraph/igraph_cohesive_blocks.h
+  /usr/include/igraph/igraph_coloring.h
+  /usr/include/igraph/igraph_community.h
+  /usr/include/igraph/igraph_complex.h
+  /usr/include/igraph/igraph_components.h
+  /usr/include/igraph/igraph_config.h
+  /usr/include/igraph/igraph_constants.h
+  /usr/include/igraph/igraph_constructors.h
+  /usr/include/igraph/igraph_conversion.h
+  /usr/include/igraph/igraph_cycles.h
+  /usr/include/igraph/igraph_datatype.h
+  /usr/include/igraph/igraph_decls.h
+  /usr/include/igraph/igraph_dqueue.h
+  /usr/include/igraph/igraph_dqueue_pmt.h
+  /usr/include/igraph/igraph_eigen.h
+  /usr/include/igraph/igraph_embedding.h
+  /usr/include/igraph/igraph_epidemics.h
+  /usr/include/igraph/igraph_error.h
+  /usr/include/igraph/igraph_eulerian.h
+  /usr/include/igraph/igraph_export.h
+  /usr/include/igraph/igraph_flow.h
+  /usr/include/igraph/igraph_foreign.h
+  /usr/include/igraph/igraph_games.h
+  /usr/include/igraph/igraph_graph_list.h
+  /usr/include/igraph/igraph_graphicality.h
+  /usr/include/igraph/igraph_graphlets.h
+  /usr/include/igraph/igraph_heap.h
+  /usr/include/igraph/igraph_heap_pmt.h
+  /usr/include/igraph/igraph_hrg.h
+  /usr/include/igraph/igraph_interface.h
+  /usr/include/igraph/igraph_interrupt.h
+  /usr/include/igraph/igraph_iterators.h
+  /usr/include/igraph/igraph_lapack.h
+  /usr/include/igraph/igraph_layout.h
+  /usr/include/igraph/igraph_lsap.h
+  /usr/include/igraph/igraph_matching.h
+  /usr/include/igraph/igraph_matrix.h
+  /usr/include/igraph/igraph_matrix_list.h
+  /usr/include/igraph/igraph_matrix_pmt.h
+  /usr/include/igraph/igraph_memory.h
+  /usr/include/igraph/igraph_microscopic_update.h
+  /usr/include/igraph/igraph_mixing.h
+  /usr/include/igraph/igraph_motifs.h
+  /usr/include/igraph/igraph_neighborhood.h
+  /usr/include/igraph/igraph_nongraph.h
+  /usr/include/igraph/igraph_operators.h
+  /usr/include/igraph/igraph_paths.h
+  /usr/include/igraph/igraph_pmt.h
+  /usr/include/igraph/igraph_pmt_off.h
+  /usr/include/igraph/igraph_progress.h
+  /usr/include/igraph/igraph_psumtree.h
+  /usr/include/igraph/igraph_qsort.h
+  /usr/include/igraph/igraph_random.h
+  /usr/include/igraph/igraph_scan.h
+  /usr/include/igraph/igraph_separators.h
+  /usr/include/igraph/igraph_sparsemat.h
+  /usr/include/igraph/igraph_stack.h
+  /usr/include/igraph/igraph_stack_pmt.h
+  /usr/include/igraph/igraph_statusbar.h
+  /usr/include/igraph/igraph_structural.h
+  /usr/include/igraph/igraph_strvector.h
+  /usr/include/igraph/igraph_threading.h
+  /usr/include/igraph/igraph_topology.h
+  /usr/include/igraph/igraph_transitivity.h
+  /usr/include/igraph/igraph_typed_list_pmt.h
+  /usr/include/igraph/igraph_types.h
+  /usr/include/igraph/igraph_vector.h
+  /usr/include/igraph/igraph_vector_list.h
+  /usr/include/igraph/igraph_vector_pmt.h
+  /usr/include/igraph/igraph_vector_ptr.h
+  /usr/include/igraph/igraph_vector_type.h
+  /usr/include/igraph/igraph_version.h
+  /usr/include/igraph/igraph_visitor.h
+  /usr/lib/cmake/igraph/igraph-config-version.cmake
+  /usr/lib/cmake/igraph/igraph-config.cmake
+  /usr/lib/cmake/igraph/igraph-targets-release.cmake
+  /usr/lib/cmake/igraph/igraph-targets.cmake
+  /usr/lib/libigraph.dll.a
+  /usr/lib/pkgconfig/igraph.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.10.3-1bl1 -----
+Version bump.
+
+----- version 0.9.9-1bl1 -----
+Version bump.
+
+----- version 0.9.8-1bl1 -----
+Version bump.
+
+----- version 0.9.7-1bl1 -----
+Version bump.
+
+----- version 0.9.5-1bl1 -----
+Version bump.
+
+----- version 0.9.4-1bl1 -----
+Version bump.
+
+----- version 0.9.0-1bl1 -----
+Version bump.
+
+----- version 0.8.5-1bl1 -----
+Version bump.
+
+----- version 0.8.4-1bl1 -----
+Version bump.
+
+----- version 0.8.3-1bl1 -----
+Version bump.
+
+----- version 0.8.2-1bl1 -----
+Version bump.
+
+----- version 0.8.0-1bl1 -----
+Version bump.
+
+----- version 0.7.1-1bl2 -----
+Rebuild for libglpk
+
+----- version 0.7.1-1bl1 -----
+Version bump.
+
+----- version 0.6.5-1bl3 -----
+Rebuild on x86_64
+
+----- version 0.6.5-1bl2 -----
+Rebuild for libglpk
+
+----- version 0.6.5-1bl1 -----
+Version bump.
+
+----- version 0.5.4-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

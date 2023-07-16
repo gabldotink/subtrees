@@ -1,0 +1,185 @@
+libhandy
+------------------------------------------
+The aim of the Handy library is to help with developing UI for mobile devices
+using GTK/GNOME.
+
+Runtime requirements:
+  cygwin-3.1.7-1
+  girepository-GLib2.0-1.54.1-2
+  girepository-Gtk3.0-3.22.28-1
+  glade-3.20.3-1
+  glade-libhandy1-1.0.2-1bl1
+  libatk1.0_0-2.26.1-1
+  libcairo2-1.16.0-1
+  libgdk_pixbuf2.0_0-2.36.11-1
+  libglib2.0_0-2.54.3-1
+  libgtk3-devel-3.22.28-1
+  libgtk3_0-3.22.28-1
+  libhandy1-devel-1.0.2-1bl1
+  libhandy1_0-1.0.2-1bl1
+  libintl8-0.19.8.1-2
+  libpango1.0_0-1.40.14-1
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.34+1git.de9c1b7cfe-1
+  cygport-0.34.0-1
+  gcc-core-10.2.0-1
+  gobject-introspection-1.54.1-2
+  meson-0.54.3-1
+  ninja-1.10.1-1
+  vala-0.38.8-1
+
+Canonical website:
+  https://gitlab.gnome.org/GNOME/libhandy/
+
+Canonical download:
+  https://gitlab.gnome.org/GNOME/libhandy/-/archive/1.0.2/libhandy-1.0.2.tar.bz2
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libhandy-1.0.2-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libhandy-1.0.2-X.cygport all
+
+This will create:
+  /usr/src/libhandy-1.0.2-X-src.tar.xz
+  /usr/src/libhandy-1.0.2-X.tar.xz
+  /usr/src/libhandy1_0-1.0.2-X.tar.xz
+  /usr/src/libhandy1-devel-1.0.2-X.tar.xz
+  /usr/src/girepository-Handy1-1.0.2-X.tar.xz
+  /usr/src/vala-libhandy1-1.0.2-X.tar.xz
+  /usr/src/glade-libhandy1-1.0.2-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libhandy)
+  /usr/bin/handy-1-demo.exe
+  /usr/share/doc/Cygwin/libhandy.README
+  /usr/share/doc/libhandy/AUTHORS
+  /usr/share/doc/libhandy/COPYING
+  /usr/share/doc/libhandy/HACKING.md
+  /usr/share/doc/libhandy/NEWS
+  /usr/share/doc/libhandy/README.md
+  /usr/share/glade/catalogs/libhandy-1.xml
+  /usr/share/locale/ca/LC_MESSAGES/libhandy.mo
+  /usr/share/locale/en_GB/LC_MESSAGES/libhandy.mo
+  /usr/share/locale/es/LC_MESSAGES/libhandy.mo
+  /usr/share/locale/eu/LC_MESSAGES/libhandy.mo
+  /usr/share/locale/fr/LC_MESSAGES/libhandy.mo
+  /usr/share/locale/fur/LC_MESSAGES/libhandy.mo
+  /usr/share/locale/id/LC_MESSAGES/libhandy.mo
+  /usr/share/locale/pl/LC_MESSAGES/libhandy.mo
+  /usr/share/locale/pt_BR/LC_MESSAGES/libhandy.mo
+  /usr/share/locale/ro/LC_MESSAGES/libhandy.mo
+  /usr/share/locale/sl/LC_MESSAGES/libhandy.mo
+  /usr/share/locale/uk/LC_MESSAGES/libhandy.mo
+
+(libhandy1_0)
+  /usr/bin/cyghandy-1-0.dll
+
+(libhandy1-devel)
+  /usr/include/libhandy-1/handy.h
+  /usr/include/libhandy-1/hdy-action-row.h
+  /usr/include/libhandy-1/hdy-animation.h
+  /usr/include/libhandy-1/hdy-application-window.h
+  /usr/include/libhandy-1/hdy-avatar.h
+  /usr/include/libhandy-1/hdy-carousel-indicator-dots.h
+  /usr/include/libhandy-1/hdy-carousel-indicator-lines.h
+  /usr/include/libhandy-1/hdy-carousel.h
+  /usr/include/libhandy-1/hdy-clamp.h
+  /usr/include/libhandy-1/hdy-combo-row.h
+  /usr/include/libhandy-1/hdy-deck.h
+  /usr/include/libhandy-1/hdy-deprecation-macros.h
+  /usr/include/libhandy-1/hdy-enum-value-object.h
+  /usr/include/libhandy-1/hdy-enums.h
+  /usr/include/libhandy-1/hdy-expander-row.h
+  /usr/include/libhandy-1/hdy-header-bar.h
+  /usr/include/libhandy-1/hdy-header-group.h
+  /usr/include/libhandy-1/hdy-keypad.h
+  /usr/include/libhandy-1/hdy-leaflet.h
+  /usr/include/libhandy-1/hdy-main.h
+  /usr/include/libhandy-1/hdy-navigation-direction.h
+  /usr/include/libhandy-1/hdy-preferences-group.h
+  /usr/include/libhandy-1/hdy-preferences-page.h
+  /usr/include/libhandy-1/hdy-preferences-row.h
+  /usr/include/libhandy-1/hdy-preferences-window.h
+  /usr/include/libhandy-1/hdy-search-bar.h
+  /usr/include/libhandy-1/hdy-squeezer.h
+  /usr/include/libhandy-1/hdy-swipe-group.h
+  /usr/include/libhandy-1/hdy-swipe-tracker.h
+  /usr/include/libhandy-1/hdy-swipeable.h
+  /usr/include/libhandy-1/hdy-title-bar.h
+  /usr/include/libhandy-1/hdy-types.h
+  /usr/include/libhandy-1/hdy-value-object.h
+  /usr/include/libhandy-1/hdy-version.h
+  /usr/include/libhandy-1/hdy-view-switcher-bar.h
+  /usr/include/libhandy-1/hdy-view-switcher-title.h
+  /usr/include/libhandy-1/hdy-view-switcher.h
+  /usr/include/libhandy-1/hdy-window-handle.h
+  /usr/include/libhandy-1/hdy-window.h
+  /usr/lib/libhandy-1.dll.a
+  /usr/lib/pkgconfig/libhandy-1.pc
+
+(girepository-Handy1)
+  /usr/lib/girepository-1.0/Handy-1.typelib
+  /usr/share/gir-1.0/Handy-1.gir
+
+(vala-libhandy1)
+  /usr/share/vala/vapi/libhandy-1.deps
+  /usr/share/vala/vapi/libhandy-1.vapi
+
+(glade-libhandy1)
+  /usr/lib/glade/modules/cygglade-handy-1.dll
+
+------------------
+
+Port Notes:
+
+----- version 1.0.2-1bl1 -----
+Version bump.
+
+----- version 1.0.0-1bl1 -----
+Version bump.
+
+----- version 0.91.0-1bl1 -----
+Version bump.
+
+----- version 0.90.0-1bl1 -----
+Version bump.
+
+----- version 0.81.0-1bl1 -----
+Version bump.
+
+----- version 0.0.13-1bl1 -----
+Version bump.
+
+----- version 0.0.12-1bl1 -----
+Version bump.
+
+----- version 0.0.11-1bl1 -----
+Version bump.
+
+----- version 0.0.10-1bl1 -----
+Version bump.
+
+----- version 0.0.9-1bl1 -----
+Version bump.
+
+----- version 0.0.8-1bl1 -----
+Version bump.
+
+----- version 0.0.7-1bl1 -----
+Version bump.
+
+----- version 0.0.5-1bl1 -----
+Version bump.
+
+----- version 0.0.0+git20180503-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

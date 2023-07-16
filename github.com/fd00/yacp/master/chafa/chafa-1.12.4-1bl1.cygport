@@ -1,0 +1,46 @@
+HOMEPAGE="https://hpjansson.org/${PN}/"
+SRC_URI="https://hpjansson.org/${PN}/releases/${P}.tar.xz"
+
+CATEGORY="Graphics"
+SUMMARY="Versatile and fast Unicode/ASCII/ANSI graphics renderer"
+DESCRIPTION="The premier UX of the 21st century just got a little better: With chafa, you
+can now view very, very reasonable approximations of pictures and animations
+without leaving the comfort of your favorite terminal emulator. The power of
+ANSI X3.64 compels you!"
+
+LICENSE="LGPL-3.0-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: LGPL-3.0-or-later"
+LICENSE_URI="COPYING"
+
+BUILD_REQUIRES="libcairo-devel libfreetype-devel libglib2.0-devel libjpeg-devel libMagick-devel librsvg2-devel libtiff-devel libwebp-devel"
+
+CYGCONF_ARGS="
+	--enable-maintainer-mode
+	--enable-man
+"
+
+src_test()
+{
+	cd ${B}
+	./tools/${PN}/${PN}.exe --version
+}
+
+PKG_NAMES="
+	chafa
+	libchafa0
+	libchafa-devel
+"
+chafa_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+libchafa0_CONTENTS="
+	usr/bin/*.dll
+"
+libchafa_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+chafa_SUMMARY="${SUMMARY} (utilities)"
+libchafa0_SUMMARY="${SUMMARY} (runtime)"
+libchafa_devel_SUMMARY="${SUMMARY} (development)"

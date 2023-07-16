@@ -1,0 +1,32 @@
+HOMEPAGE="https://github.com/ZerBea/${PN}"
+SRC_URI="https://github.com/ZerBea/${PN}/archive/refs/tags/${PV}.tar.gz"
+
+CATEGORY="Security"
+SUMMARY="Small set of tools to generate plainmasterkeys"
+DESCRIPTION="Small set of tools to generate plainmasterkeys (rainbowtables) and hashes for
+the use with latest hashcat and John the Ripper."
+
+BUILD_REQUIRES="libOpenCL-devel libssl-devel"
+
+src_compile()
+{
+	cd ${B}
+	lndirs
+	cygmake
+}
+
+src_test()
+{
+	cd ${B}
+	./wlangenpmk.exe -h
+}
+
+DOCS="
+	changelogs
+"
+
+src_install()
+{
+	cd ${B}
+	dobin *.exe
+}

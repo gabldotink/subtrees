@@ -1,0 +1,81 @@
+wdns
+------------------------------------------
+Low-level DNS library
+
+Runtime requirements:
+  cygwin-3.3.5-1
+  libwdns-devel-0.11.0-1bl1
+  libwdns1-0.11.0-1bl1
+  pkg-config-1.8.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.38-1
+  cygport-0.35.1-1
+  gcc-core-11.3.0-1
+  libtool-2.4.7-1
+  make-4.3-1
+
+Canonical website:
+  https://github.com/farsightsec/wdns
+
+Canonical download:
+  https://github.com/farsightsec/wdns/archive/tags/v0.11.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack wdns-0.11.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./wdns-0.11.0-X.cygport all
+
+This will create:
+  /usr/src/wdns-0.11.0-X-src.tar.xz
+  /usr/src/wdns-0.11.0-X.tar.xz
+  /usr/src/libwdns1-0.11.0-X.tar.xz
+  /usr/src/libwdns-devel-0.11.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(wdns)
+  /usr/bin/wdns-dump-file.exe
+  /usr/bin/wdns-print-version.exe
+  /usr/bin/wdns-test-deserialize-rrset.exe
+  /usr/bin/wdns-test-downcase-rrset.exe
+  /usr/bin/wdns-test-print-message.exe
+  /usr/bin/wdns-test-serialize-rrset.exe
+  /usr/share/doc/Cygwin/wdns.README
+  /usr/share/doc/wdns/ChangeLog
+  /usr/share/doc/wdns/Copyright
+  /usr/share/doc/wdns/LICENSE
+  /usr/share/doc/wdns/README.md
+
+(libwdns1)
+  /usr/bin/cygwdns-1.dll
+
+(libwdns-devel)
+  /usr/include/wdns.h
+  /usr/lib/libwdns.dll.a
+  /usr/lib/pkgconfig/libwdns.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.11.0-1bl1 -----
+Version bump.
+
+----- version 0.10.0-1bl1 -----
+Version bump.
+
+----- version 0.9.1-1bl1 -----
+Version bump.
+
+----- version 0.9.0-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

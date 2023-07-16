@@ -1,0 +1,83 @@
+bip
+------------------------------------------
+Bip is an IRC proxy, which means it keeps connected to your preferred IRC
+servers, can store the logs for you, and even send them back to your IRC
+client(s) upon connection.
+
+Runtime requirements:
+  cygwin-3.3.4-2
+  libssl1.1-1.1.1n-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.37-2
+  bison-3.8.2-1
+  cygport-0.34.2-1
+  flex-2.6.4-2
+  gcc-core-11.2.0-1
+  libssl-devel-1.1.1n-1
+  make-4.3-1
+
+Canonical website:
+  https://bip.milkypond.org/
+
+Canonical download:
+  https://projects.duckcorp.org/attachments/download/146/bip-0.9.3.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack bip-0.9.3-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./bip-0.9.3-X.cygport all
+
+This will create:
+  /usr/src/bip-0.9.3-X-src.tar.xz
+  /usr/src/bip-0.9.3-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(bip)
+  /usr/bin/bip.exe
+  /usr/bin/bipmkpw.exe
+  /usr/share/doc/Cygwin/bip.README
+  /usr/share/doc/bip/AUTHORS
+  /usr/share/doc/bip/BUGS
+  /usr/share/doc/bip/COPYING
+  /usr/share/doc/bip/ChangeLog
+  /usr/share/doc/bip/NEWS
+  /usr/share/doc/bip/README
+  /usr/share/doc/bip/TODO
+  /usr/share/doc/bip/examples/bip.conf
+  /usr/share/doc/bip/examples/bip.vim
+  /usr/share/man/man1/bip.1.gz
+  /usr/share/man/man1/bipmkpw.1.gz
+  /usr/share/man/man5/bip.conf.5.gz
+
+------------------
+
+Port Notes:
+
+----- version 0.9.3-1bl1 -----
+Version bump.
+
+----- version 0.9.2-1bl1 -----
+Version bump.
+
+----- version 0.8.9-1bl2 -----
+Rebuild for libssl
+
+----- version 0.8.9-1bl1 -----
+Version bump.
+
+----- version 0.8.8-1bl2 -----
+rebuild for libopenssl
+
+----- version 0.8.8-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

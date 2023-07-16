@@ -1,0 +1,82 @@
+gtkmaskedentry
+------------------------------------------
+GtkMaskedEntry is a Gtk+'s widget that provides restricted text input.
+
+Runtime requirements:
+  cygwin-3.1.4-1
+  libglib2.0_0-2.54.3-1
+  libgtk2.0-devel-2.24.32-1
+  libgtk2.0_0-2.24.32-1
+  libgtkmaskedentry-devel-0.0.2-1bl5
+  libgtkmaskedentry0-0.0.2-1bl5
+  pkg-config-1.6.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.34-1
+  cygport-0.33.1-1
+  gcc-core-9.2.0-3
+  libtool-2.4.6-7
+  make-4.3-1
+
+Canonical website:
+  http://gtkmaskedentry.sf.net/
+
+Canonical download:
+  mirror://sourceforge/gtkmaskedentry/gtkmaskedentry-0.0.2.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack gtkmaskedentry-0.0.2-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./gtkmaskedentry-0.0.2-X.cygport all
+
+This will create:
+  /usr/src/gtkmaskedentry-0.0.2-X-src.tar.xz
+  /usr/src/gtkmaskedentry-0.0.2-X.tar.xz
+  /usr/src/libgtkmaskedentry0-0.0.2-X.tar.xz
+  /usr/src/libgtkmaskedentry-devel-0.0.2-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(gtkmaskedentry)
+  /usr/share/doc/Cygwin/gtkmaskedentry.README
+  /usr/share/doc/gtkmaskedentry/AUTHORS
+  /usr/share/doc/gtkmaskedentry/COPYING
+  /usr/share/doc/gtkmaskedentry/ChangeLog
+  /usr/share/doc/gtkmaskedentry/TODO
+
+(libgtkmaskedentry0)
+  /usr/bin/cyggtkmaskedentry-0.dll
+
+(libgtkmaskedentry-devel)
+  /usr/include/gtkcellrenderermasked.h
+  /usr/include/gtkmaskedentry.h
+  /usr/lib/libgtkmaskedentry.dll.a
+  /usr/lib/pkgconfig/libgtkmaskedentry.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.0.2-1bl5 -----
+Rebuild with gcc-9.2.0
+
+----- version 0.0.2-1bl4 -----
+Rebuild on x86_64
+
+----- version 0.0.2-1bl3 -----
+Rebuild with gcc-4.5.3
+
+----- version 0.0.2-1bl2 -----
+Repackage for licensing & readmes
+
+----- version 0.0.2-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

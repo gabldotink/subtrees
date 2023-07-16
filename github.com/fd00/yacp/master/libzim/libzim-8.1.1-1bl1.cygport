@@ -1,0 +1,41 @@
+HOMEPAGE="https://github.com/openzim/${PN}"
+SRC_URI="https://github.com/openzim/${PN}/archive/refs/tags/${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Reference implementation of the ZIM specification"
+DESCRIPTION="The ZIM library is the reference implementation for the ZIM file format. It's
+a solution to read and write ZIM files on many systems and architectures."
+
+LICENSE="GPL-2.0-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: GPL-2.0-or-later"
+LICENSE_URI="COPYING"
+
+BUILD_REQUIRES="libgtest-devel libicu-devel liblzma-devel libxapian-devel libzstd-devel"
+
+export CPPFLAGS="${CPPFLAGS} -D_GNU_SOURCE"
+
+inherit meson
+
+CYGMESON_ARGS="
+	-D c_std=gnu17
+	-D cpp_std=gnu++17
+"
+
+PKG_NAMES="
+	libzim
+	libzim${PV[1]}
+	libzim-devel
+"
+libzim_CONTENTS="
+	usr/share
+"
+libzim8_CONTENTS="
+	usr/bin/*-8.dll
+"
+libzim_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+libzim_SUMMARY="${SUMMARY} (licensing & readmes)"
+libzim8_SUMMARY="${SUMMARY} (runtime)"
+libzim_devel_SUMMARY="${SUMMARY} (development)"

@@ -1,0 +1,59 @@
+mp3gain
+------------------------------------------
+Tired of reaching for your volume knob every time your mp3 player changes to a
+new song?
+
+Runtime requirements:
+  cygwin-2.10.0-1
+  libmpg123_0-1.25.10-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.29-1
+  cygport-0.31.1-1
+  gcc-core-7.3.0-2
+  make-4.2.1-2
+
+Canonical website:
+  http://mp3gain.sf.net/
+
+Canonical download:
+  mirror://sourceforge/mp3gain/mp3gain-1_6_2-src.zip
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack mp3gain-1.6.2-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./mp3gain-1.6.2-X.cygport all
+
+This will create:
+  /usr/src/mp3gain-1.6.2-X-src.tar.xz
+  /usr/src/mp3gain-1.6.2-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(mp3gain)
+  /usr/bin/mp3gain.exe
+  /usr/share/doc/Cygwin/mp3gain.README
+  /usr/share/doc/mp3gain/lgpl.txt
+
+------------------
+
+Port Notes:
+
+----- version 1.6.2-1bl1 -----
+Version bump.
+
+----- version 1.6.1-1bl1 -----
+Version bump.
+
+----- version 1.5.2-r2-1bl2 -----
+Rebuild on x86_64
+
+----- version 1.5.2-r2-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

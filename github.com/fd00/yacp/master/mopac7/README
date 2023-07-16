@@ -1,0 +1,82 @@
+mopac7
+------------------------------------------
+MOPAC7 is a semi-empirical quantum-mechanics code written by James J. P.
+Stewart and co-workers. The purpose of this project is to maintain MOPAC7 as a
+stand-alone program as well as a library that provides the functionality of
+MOPAC7 to other programs.
+
+Runtime requirements:
+  bash-4.4.12-3
+  cygwin-2.10.0-1
+  libgcc1-7.3.0-3
+  libgfortran4-7.3.0-3
+  libmopac7-devel-1.15-1bl3
+  libmopac7_1-1.15-1bl3
+  pkg-config-0.29.1-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-10-1
+  binutils-2.29-1
+  cygport-0.31.1-1
+  gcc-core-7.3.0-3
+  gcc-fortran-7.3.0-3
+  libtool-2.4.6-6
+  make-4.2.1-2
+
+Canonical website:
+  http://sf.net/projects/mopac7/
+
+Canonical download:
+  http://www.bioinformatics.org/ghemical/download/current/mopac7-1.15.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack mopac7-1.15-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./mopac7-1.15-X.cygport all
+
+This will create:
+  /usr/src/mopac7-1.15-X-src.tar.xz
+  /usr/src/mopac7-1.15-X.tar.xz
+  /usr/src/libmopac7_1-1.15-X.tar.xz
+  /usr/src/libmopac7-devel-1.15-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(mopac7)
+  /usr/bin/mopac7.exe
+  /usr/bin/run_mopac7
+  /usr/share/doc/Cygwin/mopac7.README
+  /usr/share/doc/mopac7/AUTHORS
+  /usr/share/doc/mopac7/COPYING
+  /usr/share/doc/mopac7/ChangeLog
+  /usr/share/doc/mopac7/NEWS
+  /usr/share/doc/mopac7/README
+
+(libmopac7_1)
+  /usr/bin/cygmopac7-1.dll
+
+(libmopac7-devel)
+  /usr/include/mopac7/libmopac7.h
+  /usr/lib/libmopac7.dll.a
+  /usr/lib/pkgconfig/libmopac7.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.15-1bl3 -----
+Rebuild for libgfortran
+
+----- version 1.15-1bl2 -----
+Rebuild on x86_64
+
+----- version 1.15-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

@@ -1,0 +1,76 @@
+rtpproxy
+------------------------------------------
+The RTPproxy is a high-performance software proxy for RTP streams that can
+work together with SER or OpenSER. Originally created for handling NAT
+scenarios it can also act as a generic media relay as well as gateway RTP
+sessions between IPv4 and IPv6 networks. RTPproxy was developed by Maxim
+Sobolev and now is being actively maintained by the Sippy Software, Inc.
+
+The RTPproxy supports some advanced features, such as remote control mode,
+allowing building scalable distributed SIP VoIP networks. The nathelper module
+included into the SER or OpenSER SIP Proxy software allows using multiple
+RTPproxy instances running on remote machines for fault-tolerance and
+load-balancing purposes.
+
+The software also supports video relaying and RTP session recording.
+
+Runtime requirements:
+  cygwin-2.2.1-1
+  libbcg729_0-1.0.0-1bl1
+  libgsm1-1.0.13-3
+  libsndfile1-1.0.25-2
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-9-1
+  binutils-2.25-2
+  cygport-0.20.2-1
+  gcc-core-4.9.3-1
+  libtool-2.4.6-2
+  make-4.1-1
+
+Canonical website:
+  http://www.rtpproxy.org/
+
+Canonical download:
+  https://github.com/sippy/rtpproxy/archive/v2.0.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack rtpproxy-2.0.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./rtpproxy-2.0.0-X.cygport all
+
+This will create:
+  /usr/src/rtpproxy-2.0.0-X-src.tar.xz
+  /usr/src/rtpproxy-2.0.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(rtpproxy)
+  /etc/rc.d/init.d/rtpproxy
+  /usr/bin/extractaudio.exe
+  /usr/bin/makeann.exe
+  /usr/bin/rtpproxy.exe
+  /usr/bin/rtpproxy_debug.exe
+  /usr/share/doc/Cygwin/rtpproxy.README
+  /usr/share/doc/rtpproxy/AUTHORS
+  /usr/share/doc/rtpproxy/LICENSE
+  /usr/share/doc/rtpproxy/README.remote
+  /usr/share/man/man8/rtpproxy.8.gz
+
+------------------
+
+Port Notes:
+
+----- version 2.0.0-1bl1 -----
+Version bump.
+
+----- version 1.2.1-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://fd0.hatenablog.jp/>

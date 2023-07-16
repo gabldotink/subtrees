@@ -1,0 +1,93 @@
+libcsplit
+------------------------------------------
+libcsplit is a library for cross-platform C split string functions.
+
+Runtime requirements:
+  cygwin-3.3.4-2
+  libcerror1-20220101-1bl1
+  libcsplit-devel-20220109-1bl1
+  libcsplit1-20220109-1bl1
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.37-2
+  cygport-0.34.2-1
+  gcc-core-11.2.0-1
+  libcerror-devel-20220101-1bl1
+  libtool-2.4.6-8
+  make-4.3-1
+
+Canonical website:
+  https://github.com/libyal/libcsplit
+
+Canonical download:
+  https://github.com/libyal/libcsplit/archive/refs/tags/20220109.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libcsplit-20220109-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libcsplit-20220109-X.cygport all
+
+This will create:
+  /usr/src/libcsplit-20220109-X-src.tar.xz
+  /usr/src/libcsplit-20220109-X.tar.xz
+  /usr/src/libcsplit1-20220109-X.tar.xz
+  /usr/src/libcsplit-devel-20220109-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libcsplit)
+  /usr/share/doc/Cygwin/libcsplit.README
+  /usr/share/doc/libcsplit/AUTHORS
+  /usr/share/doc/libcsplit/COPYING
+  /usr/share/doc/libcsplit/COPYING.LESSER
+  /usr/share/doc/libcsplit/ChangeLog
+  /usr/share/doc/libcsplit/README
+
+(libcsplit1)
+  /usr/bin/cygcsplit-1.dll
+
+(libcsplit-devel)
+  /usr/include/libcsplit.h
+  /usr/include/libcsplit/definitions.h
+  /usr/include/libcsplit/error.h
+  /usr/include/libcsplit/extern.h
+  /usr/include/libcsplit/features.h
+  /usr/include/libcsplit/types.h
+  /usr/lib/libcsplit.dll.a
+  /usr/lib/pkgconfig/libcsplit.pc
+  /usr/share/man/man3/libcsplit.3.gz
+
+------------------
+
+Port Notes:
+
+----- version 20220109-1bl1 -----
+Version bump.
+
+----- version 20200703-1bl1 -----
+Version bump.
+
+----- version 20190102-1bl2 -----
+Rebuild with --enable-wide-character-type
+
+----- version 20190102-1bl1 -----
+Version bump.
+
+----- version 20180103-1bl1 -----
+Version bump.
+
+----- version 20150101-1bl1 -----
+Version bump.
+
+----- version 20141014-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

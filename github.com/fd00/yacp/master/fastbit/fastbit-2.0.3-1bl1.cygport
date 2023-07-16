@@ -1,0 +1,51 @@
+HOMEPAGE="https://sdm.lbl.gov/${PN}/"
+SRC_URI="https://codeforge.lbl.gov/frs/download.php/426/${P}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Minimalistic data warehousing engine designed to test ideas on bitmap indexes"
+DESCRIPTION="FastBit is an open-source data processing library following the spirit of
+NoSQL movement. It offers a set of searching functions supported by compressed
+bitmap indexes. It treats user data in the column-oriented manner similar to
+well-known database management systems such as Sybase IQ, MonetDB, and
+Vertica. It is designed to accelerate user's data selection tasks without
+imposing undue requirements. In particular, the user data is NOT required to
+be under the control of FastBit software, which allows the user to continue to
+use their existing data analysis tools."
+
+export CPPFLAGS="${CPPFLAGS} -D_GNU_SOURCE"
+
+CYGCONF_ARGS="
+	--enable-maintainer-mode
+	--with-java=no
+"
+
+DIFF_EXCLUDES="
+	${PN}-config.h
+"
+
+src_test()
+{
+	cd ${B}
+	cygmake check
+}
+
+PKG_NAMES="
+	${PN}
+	lib${PN}1
+	lib${PN}-devel
+"
+fastbit_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+libfastbit1_CONTENTS="
+	usr/bin/*.dll
+"
+libfastbit_devel_CONTENTS="
+	usr/bin/${PN}-config
+	usr/include
+	usr/lib
+"
+fastbit_SUMMARY="${SUMMARY} (utilities)"
+libfastbit1_SUMMARY="${SUMMARY} (runtime)"
+libfastbit_devel_SUMMARY="${SUMMARY} (development)"

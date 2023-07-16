@@ -1,0 +1,76 @@
+mp3plot
+------------------------------------------
+This tool prints out a plot of the bitrate distribution of a VBR MP3 file (it
+will also do it for CBR files although it isn't very meaningful).
+
+Runtime requirements:
+  cygwin-2.9.0-3
+  libboost_program_options1.63-1.63.0-1
+  libboost_system1.63-1.63.0-1
+  libboost_thread1.63-1.63.0-1
+  libgcc1-6.4.0-1
+  libgd3-2.2.5-1
+  libMagickC++6_8-6.9.9.11-3
+  libMagickCore6_5-6.9.9.11-3
+  libstdc++6-6.4.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-10-1
+  binutils-2.29-1
+  boost.m4-0.4+git20161003-1bl1
+  cygport-0.24.1-1
+  gcc-core-6.4.0-1
+  gcc-g++-6.4.0-1
+  libtool-2.4.6-5
+  make-4.2.1-2
+
+Canonical website:
+  http://p.outlyer.net/mp3plot/
+
+Canonical download:
+  http://p.outlyer.net/mp3plot/files/mp3plot-0.6.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack mp3plot-0.6.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./mp3plot-0.6.0-X.cygport all
+
+This will create:
+  /usr/src/mp3plot-0.6.0-X-src.tar.xz
+  /usr/src/mp3plot-0.6.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(mp3plot)
+  /usr/bin/mp3plot.exe
+  /usr/share/doc/Cygwin/mp3plot.README
+  /usr/share/doc/mp3plot/AUTHORS
+  /usr/share/doc/mp3plot/COPYING
+  /usr/share/doc/mp3plot/ChangeLog
+  /usr/share/doc/mp3plot/README
+  /usr/share/doc/mp3plot/TODO
+  /usr/share/man/man1/mp3plot.1.gz
+
+------------------
+
+Port Notes:
+
+----- version 0.6.0-1bl4 -----
+Rebuild for libMagick
+
+----- version 0.6.0-1bl3 -----
+Rebuild with gcc-5.4.0
+
+----- version 0.6.0-1bl2 -----
+Rebuild on x86_64
+
+----- version 0.6.0-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

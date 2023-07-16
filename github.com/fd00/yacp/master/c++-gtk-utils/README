@@ -1,0 +1,182 @@
+c++-gtk-utils
+------------------------------------------
+c++-gtk-utils is a lightweight library containing a number of classes and
+functions for programming GTK+ programs using C++ in POSIX (unix-like)
+environments, where the user does not want to use a full-on wrapper such as
+gtkmm or wxWidgets, or is concerned about exception safety or thread safety of
+the wrapper and their documentation. It is parallel installable for both GTK+2
+and GTK+3. There is also an option to install a subset of the library with only
+glib/gobject/gio support, without GTK+.
+
+Runtime requirements:
+  cygwin-3.1.7-1
+  libatk1.0-devel-2.26.1-1
+  libcairo-devel-1.17.4-1
+  libcairo2-1.17.4-1
+  libcxx-gtk-utils3_2.2-devel-2.2.20-1bl1
+  libcxx-gtk-utils3_2.2_0-2.2.20-1bl1
+  libgcc1-10.2.0-1
+  libgdk_pixbuf2.0-devel-2.36.11-1
+  libglib2.0-devel-2.54.3-1
+  libglib2.0_0-2.54.3-1
+  libgtk3-devel-3.22.28-1
+  libgtk3_0-3.22.28-1
+  libintl-devel-0.19.8.1-2
+  libintl8-0.19.8.1-2
+  libpango1.0-devel-1.40.14-1
+  libpango1.0_0-1.40.14-1
+  libstdc++6-10.2.0-1
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.35.2-1
+  cygport-0.34.0-1
+  gcc-core-10.2.0-1
+  gcc-g++-10.2.0-1
+  libtool-2.4.6-7
+  make-4.3-1
+
+Canonical website:
+  http://cxx-gtk-utils.sf.net/
+
+Canonical download:
+  mirror://sourceforge/cxx-gtk-utils/c++-gtk-utils-2.2.20.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack c++-gtk-utils-2.2.20-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./c++-gtk-utils-2.2.20-X.cygport all
+
+This will create:
+  /usr/src/c++-gtk-utils-2.2.20-X-src.tar.xz
+  /usr/src/c++-gtk-utils-2.2.20-X.tar.xz
+  /usr/src/libcxx-gtk-utils3_2.2_0-2.2.20-X.tar.xz
+  /usr/src/libcxx-gtk-utils3_2.2-devel-2.2.20-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(c++-gtk-utils)
+  /usr/share/doc/Cygwin/c++-gtk-utils.README
+  /usr/share/doc/c++-gtk-utils/BUGS
+  /usr/share/doc/c++-gtk-utils/COPYING
+  /usr/share/doc/c++-gtk-utils/ChangeLog
+  /usr/share/doc/c++-gtk-utils/NEWS
+  /usr/share/doc/c++-gtk-utils/PORTING-TO-2.2
+  /usr/share/doc/c++-gtk-utils/README
+
+(libcxx-gtk-utils3_2.2_0)
+  /usr/bin/cygcxx-gtk-utils-3-2.2-0.dll
+
+(libcxx-gtk-utils3_2.2-devel)
+  /usr/include/c++-gtk-utils-3-2.2/c++-gtk-utils/application.h
+  /usr/include/c++-gtk-utils-3-2.2/c++-gtk-utils/async_channel.h
+  /usr/include/c++-gtk-utils-3-2.2/c++-gtk-utils/async_queue.h
+  /usr/include/c++-gtk-utils-3-2.2/c++-gtk-utils/async_result.h
+  /usr/include/c++-gtk-utils-3-2.2/c++-gtk-utils/callback.h
+  /usr/include/c++-gtk-utils-3-2.2/c++-gtk-utils/cgu_config.h
+  /usr/include/c++-gtk-utils-3-2.2/c++-gtk-utils/convert.h
+  /usr/include/c++-gtk-utils-3-2.2/c++-gtk-utils/do_if.h
+  /usr/include/c++-gtk-utils-3-2.2/c++-gtk-utils/emitter.h
+  /usr/include/c++-gtk-utils-3-2.2/c++-gtk-utils/extension.h
+  /usr/include/c++-gtk-utils-3-2.2/c++-gtk-utils/fdstream.h
+  /usr/include/c++-gtk-utils-3-2.2/c++-gtk-utils/fdstream.tpp
+  /usr/include/c++-gtk-utils-3-2.2/c++-gtk-utils/file_print_manager.h
+  /usr/include/c++-gtk-utils-3-2.2/c++-gtk-utils/future.h
+  /usr/include/c++-gtk-utils-3-2.2/c++-gtk-utils/future.tpp
+  /usr/include/c++-gtk-utils-3-2.2/c++-gtk-utils/gerror_handle.h
+  /usr/include/c++-gtk-utils-3-2.2/c++-gtk-utils/gobj_handle.h
+  /usr/include/c++-gtk-utils-3-2.2/c++-gtk-utils/gstream.h
+  /usr/include/c++-gtk-utils-3-2.2/c++-gtk-utils/gstream.tpp
+  /usr/include/c++-gtk-utils-3-2.2/c++-gtk-utils/gvar_handle.h
+  /usr/include/c++-gtk-utils-3-2.2/c++-gtk-utils/intrusive_ptr.h
+  /usr/include/c++-gtk-utils-3-2.2/c++-gtk-utils/io_watch.h
+  /usr/include/c++-gtk-utils-3-2.2/c++-gtk-utils/mem_fun.h
+  /usr/include/c++-gtk-utils-3-2.2/c++-gtk-utils/mutex.h
+  /usr/include/c++-gtk-utils-3-2.2/c++-gtk-utils/notifier.h
+  /usr/include/c++-gtk-utils-3-2.2/c++-gtk-utils/parallel.h
+  /usr/include/c++-gtk-utils-3-2.2/c++-gtk-utils/param.h
+  /usr/include/c++-gtk-utils-3-2.2/c++-gtk-utils/pipes.h
+  /usr/include/c++-gtk-utils-3-2.2/c++-gtk-utils/prog_present.h
+  /usr/include/c++-gtk-utils-3-2.2/c++-gtk-utils/reassembler.h
+  /usr/include/c++-gtk-utils-3-2.2/c++-gtk-utils/rw_lock.h
+  /usr/include/c++-gtk-utils-3-2.2/c++-gtk-utils/shared_handle.h
+  /usr/include/c++-gtk-utils-3-2.2/c++-gtk-utils/shared_ptr.h
+  /usr/include/c++-gtk-utils-3-2.2/c++-gtk-utils/task_manager.h
+  /usr/include/c++-gtk-utils-3-2.2/c++-gtk-utils/task_manager.tpp
+  /usr/include/c++-gtk-utils-3-2.2/c++-gtk-utils/text_print_manager.h
+  /usr/include/c++-gtk-utils-3-2.2/c++-gtk-utils/thread.h
+  /usr/include/c++-gtk-utils-3-2.2/c++-gtk-utils/timeout.h
+  /usr/include/c++-gtk-utils-3-2.2/c++-gtk-utils/widget.h
+  /usr/include/c++-gtk-utils-3-2.2/c++-gtk-utils/window.h
+  /usr/lib/libcxx-gtk-utils-3-2.2.dll.a
+  /usr/lib/pkgconfig/c++-gtk-utils-3-2.2.pc
+
+------------------
+
+Port Notes:
+
+----- version 2.2.20-1bl1 -----
+Version bump.
+
+----- version 2.2.19-1bl1 -----
+Version bump.
+
+----- version 2.2.18-1bl1 -----
+Version bump.
+
+----- version 2.2.17-1bl1 -----
+Version bump.
+
+----- version 2.2.15-1bl1 -----
+Version bump.
+
+----- version 2.2.14-1bl1 -----
+Version bump.
+
+----- version 2.2.12-1bl1 -----
+Version bump.
+
+----- version 2.2.11-1bl1 -----
+Version bump.
+
+----- version 2.2.7-1bl1 -----
+Version bump.
+
+----- version 2.2.6-1bl1 -----
+Version bump.
+
+----- version 2.0.20-1bl1 -----
+Version bump.
+
+----- version 2.0.18-1bl1 -----
+Version bump.
+
+----- version 2.0.16-1bl1 -----
+Version bump.
+
+----- version 2.0.15-1bl1 -----
+Version bump.
+
+----- version 2.0.14-1bl1 -----
+Version bump.
+
+----- version 2.0.11-1bl1 -----
+Version bump.
+
+----- version 2.0.10-1bl1 -----
+Version bump.
+
+----- version 2.0.9-1bl1 -----
+Version bump.
+
+----- version 2.0.7-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

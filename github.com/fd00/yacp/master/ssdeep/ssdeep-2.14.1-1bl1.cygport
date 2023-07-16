@@ -1,0 +1,33 @@
+HOMEPAGE="https://${PN}-project.github.io/${PN}/"
+SRC_URI="https://github.com/${PN}-project/${PN}/releases/download/release-${PV}/${P}.tar.gz"
+
+CATEGORY="Devel"
+SUMMARY="Fuzzy hashing API and fuzzy hashing tool"
+DESCRIPTION="ssdeep is a program for computing context triggered piecewise hashes (CTPH).
+Also called fuzzy hashes, CTPH can match inputs that have homologies. Such
+inputs have sequences of identical bytes in the same order, although bytes in
+between these sequences may be different in both content and length."
+
+DOCS="
+	FILEFORMAT
+"
+
+PKG_NAMES="
+	${PN}
+	libfuzzy2
+	libfuzzy-devel
+"
+ssdeep_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+libfuzzy2_CONTENTS="
+	usr/bin/*.dll
+"
+libfuzzy_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+ssdeep_SUMMARY="${SUMMARY} (utilities)"
+libfuzzy2_SUMMARY="${SUMMARY} (runtime)"
+libfuzzy_devel_SUMMARY="${SUMMARY} (development)"

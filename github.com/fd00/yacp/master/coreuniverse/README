@@ -1,0 +1,68 @@
+coreuniverse
+------------------------------------------
+Shows releated information of apps from CuboCore Application Suite.
+
+Runtime requirements:
+  cygwin-3.1.7-1
+  libcprime3-3.0.1-1bl1
+  libgcc1-9.3.0-2
+  libQt5Core5-5.9.4-2
+  libQt5Gui5-5.9.4-2
+  libstdc++6-9.3.0-2
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.34+1git.de9c1b7cfe-1
+  cygport-0.34.0-1
+  gcc-core-9.3.0-2
+  gcc-g++-9.3.0-2
+  libQt5Core-devel-5.9.4-2
+  make-4.3-1
+
+Canonical website:
+  https://gitlab.com/cubocore/coreuniverse
+
+Canonical download:
+  https://gitlab.com/cubocore/coreuniverse/-/archive/v3.0.1/coreuniverse-v3.0.1.tar.bz2
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack coreuniverse-3.0.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./coreuniverse-3.0.1-X.cygport all
+
+This will create:
+  /usr/src/coreuniverse-3.0.1-X-src.tar.xz
+  /usr/src/coreuniverse-3.0.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(coreuniverse)
+  /etc/postinstall/coreuniverse.sh
+  /usr/bin/coreuniverse.exe
+  /usr/share/applications/coreuniverse.desktop
+  /usr/share/coreapps/docs/ChangeLog
+  /usr/share/coreapps/docs/License
+  /usr/share/coreapps/docs/ReleaseNotes
+  /usr/share/doc/Cygwin/coreuniverse.README
+  /usr/share/doc/coreuniverse/LICENSE
+  /usr/share/doc/coreuniverse/README.md
+  /usr/share/icons/hicolor/scalable/apps/coreuniverse.svg
+
+------------------
+
+Port Notes:
+
+----- version 3.0.1-1bl1 -----
+Version bump.
+
+----- version 3.0.0-1bl1 -----
+Version bump.
+
+----- version 2.8.0-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

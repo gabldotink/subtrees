@@ -1,0 +1,22 @@
+--- origsrc/libhocr-0.10.18/examples/hocr/Makefile.am	2013-12-04 17:26:50.000000000 +0900
++++ src/libhocr-0.10.18/examples/hocr/Makefile.am	2015-04-30 19:14:21.903787200 +0900
+@@ -24,6 +24,7 @@ hocr_LDADD= \
+         $(tiff_LIBS) \
+         $(fftw_LIBS) \
+         $(libhocr_la_LIBADD) \
+-        $(top_builddir)/src/*.o -lm
++	$(top_builddir)/src/libhocr.la \
++	$(top_builddir)/src/libhocrgtk.la -lm
+ 
+ endif
+--- origsrc/libhocr-0.10.18/src/Makefile.am	2013-12-04 18:47:32.000000000 +0900
++++ src/libhocr-0.10.18/src/Makefile.am	2015-04-30 19:14:21.903787200 +0900
+@@ -34,7 +34,7 @@ libhocr_la_SOURCES = \
+         ho_linguistics.c \
+         ho_layout.c
+      
+-libhocr_la_LDFLAGS = -version-info 0:0:0
++libhocr_la_LDFLAGS = -no-undefined -version-info 0:0:0
+ 
+ libhocr_la_LIBADD = \
+         $(hspell_LIBS) \

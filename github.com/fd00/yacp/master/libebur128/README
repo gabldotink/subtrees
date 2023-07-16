@@ -1,0 +1,96 @@
+libebur128
+------------------------------------------
+libebur128 is a library that implements the EBU R 128 standard for loudness
+normalisation.
+
+Runtime requirements:
+  cygwin-3.2.0-1
+  libebur128-devel-1.2.6-1bl1
+  libebur128_1-1.2.6-1bl1
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.36.1-2
+  cmake-3.20.0-1
+  cygport-0.34.0-1
+  gcc-core-10.2.0-1
+  gcc-g++-10.2.0-1
+  ninja-1.10.2-1
+
+Canonical website:
+  https://github.com/jiixyj/libebur128
+
+Canonical download:
+  https://github.com/jiixyj/libebur128/archive/v1.2.6.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libebur128-1.2.6-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libebur128-1.2.6-X.cygport all
+
+This will create:
+  /usr/src/libebur128-1.2.6-X-src.tar.xz
+  /usr/src/libebur128-1.2.6-X.tar.xz
+  /usr/src/libebur128_1-1.2.6-X.tar.xz
+  /usr/src/libebur128-devel-1.2.6-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libebur128)
+  /usr/share/doc/Cygwin/libebur128.README
+  /usr/share/doc/libebur128/COPYING
+  /usr/share/doc/libebur128/R128Scan.txt
+  /usr/share/doc/libebur128/README.md
+  /usr/share/doc/libebur128/queue.txt
+
+(libebur128_1)
+  /usr/bin/cygebur128-1.dll
+
+(libebur128-devel)
+  /usr/include/ebur128.h
+  /usr/lib/libebur128.dll.a
+  /usr/lib/pkgconfig/libebur128.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.2.6-1bl1 -----
+Version bump.
+
+----- version 1.2.5-1bl1 -----
+Version bump.
+
+----- version 1.2.4-1bl2 -----
+Rebuild with gcc-10.2.0
+
+----- version 1.2.4-1bl1 -----
+Version bump.
+
+----- version 1.2.3-1bl1 -----
+Version bump.
+
+----- version 1.2.2-1bl1 -----
+Version bump.
+
+----- version 1.2.0-1bl1 -----
+Version bump.
+
+----- version 1.1.0-1bl1 -----
+Version bump.
+
+----- version 1.0.3-1bl1 -----
+Version bump.
+
+----- version 1.0.2-1bl1 -----
+Version bump.
+
+----- version 1.0.1-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

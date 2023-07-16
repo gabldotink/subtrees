@@ -1,0 +1,70 @@
+HOMEPAGE="https://people.debian.org/~picca/${PN}/${PN}.html"
+GIT_URI="git://repo.or.cz/${PN}.git"
+GIT_TAG="v${PV}"
+
+CATEGORY="Libs"
+SUMMARY="Diffractometer computation library"
+DESCRIPTION="The purpose of the library is to factorize single crystal diffraction angles
+computation for different kind of diffractometer geometries. It is used at the
+SOLEIL, Desy and Alba synchrotron with the Tango control system to pilot
+diffractometers."
+
+LICENSE="GPL-3.0-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: GPL-3.0-or-later"
+LICENSE_URI="COPYING"
+
+BUILD_REQUIRES="libglib2.0-devel libgsl-devel libgtk3-devel"
+
+# libhdf5-devel does not contain hdf5.pc
+export HDF5_CFLAGS="-I/usr/include"
+export HDF5_LIBS="-L/usr/lib"
+
+inherit git
+
+CYGPORT_USE_UNSTABLE_API=1
+src_patch_hook()
+{
+	cd ${origsrcdir}/${SRC_DIR}
+	mkdir -p m4
+	gtkdocize
+}
+
+CYGCONF_ARGS="
+	--disable-hkl-doc
+"
+
+src_test()
+{
+	cd ${B}
+	cygmake check
+}
+
+PKG_NAMES="
+	${PN}
+	lib${PN}5
+	lib${PN}-devel
+	girepository-Hkl5.0
+"
+hkl_CONTENTS="
+	usr/bin/*.exe
+	usr/share/applications
+	usr/share/doc
+	usr/share/${PN}
+	usr/share/man
+"
+libhkl5_CONTENTS="
+	usr/bin/*.dll
+"
+libhkl_devel_CONTENTS="
+	usr/include
+	usr/lib/lib*.a
+	usr/lib/pkgconfig
+"
+girepository_Hkl5_0_CONTENTS="
+	usr/lib/girepository*
+	usr/share/gir*
+"
+hkl_SUMMARY="${SUMMARY} (utilities)"
+libhkl5_SUMMARY="${SUMMARY} (runtime)"
+libhkl_devel_SUMMARY="${SUMMARY} (development)"
+girepository_Hkl5_0_SUMMARY="${SUMMARY} (GObject Introspection data)"

@@ -1,0 +1,158 @@
+sphinxbase
+------------------------------------------
+This package contains the basic libraries shared by the CMU Sphinx trainer and
+all the Sphinx decoders (Sphinx-II, Sphinx-III, and PocketSphinx), as well as
+some common utilities for manipulating acoustic feature and audio files.
+
+Runtime requirements:
+  cygwin-3.3.6-1
+  cygwin-devel-3.3.6-1
+  liblapack-devel-3.10.1-1
+  liblapack0-3.10.1-1
+  libopenblas-0.3.20-1
+  libsphinxbase-devel-5prealpha-1bl2
+  libsphinxbase3-5prealpha-1bl2
+  pkg-config-1.9.3-1
+  python39-3.9.10-1
+  python39-sphinxbase-5prealpha-1bl2
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.39-1
+  bison-3.8.2-1
+  cygport-0.35.4-1
+  gcc-core-11.3.0-1
+  liblapack-devel-3.10.1-1
+  libtool-2.4.7-1
+  make-4.3-1
+  python39-3.9.10-1
+  python39-devel-3.9.10-1
+
+Canonical website:
+  https://sourceforge.net/projects/cmusphinx/
+
+Canonical download:
+  mirror://sourceforge/cmusphinx/sphinxbase-5prealpha.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack sphinxbase-5prealpha-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./sphinxbase-5prealpha-X.cygport all
+
+This will create:
+  /usr/src/sphinxbase-5prealpha-X-src.tar.xz
+  /usr/src/sphinxbase-5prealpha-X.tar.xz
+  /usr/src/libsphinxbase3-5prealpha-X.tar.xz
+  /usr/src/libsphinxbase-devel-5prealpha-X.tar.xz
+  /usr/src/python39-sphinxbase-5prealpha-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(sphinxbase)
+  /usr/bin/sphinx_cepview.exe
+  /usr/bin/sphinx_cont_seg.exe
+  /usr/bin/sphinx_fe.exe
+  /usr/bin/sphinx_jsgf2fsg.exe
+  /usr/bin/sphinx_lm_convert.exe
+  /usr/bin/sphinx_lm_eval.exe
+  /usr/bin/sphinx_pitch.exe
+  /usr/share/doc/Cygwin/sphinxbase.README
+  /usr/share/doc/sphinxbase/AUTHORS
+  /usr/share/doc/sphinxbase/LICENSE
+  /usr/share/doc/sphinxbase/NEWS
+  /usr/share/doc/sphinxbase/README
+  /usr/share/man/man1/sphinx_cepview.1.gz
+  /usr/share/man/man1/sphinx_cont_seg.1.gz
+  /usr/share/man/man1/sphinx_fe.1.gz
+  /usr/share/man/man1/sphinx_lm_convert.1.gz
+  /usr/share/man/man1/sphinx_lm_eval.1.gz
+  /usr/share/man/man1/sphinx_lm_sort.1.gz
+  /usr/share/man/man1/sphinx_pitch.1.gz
+
+(libsphinxbase3)
+  /usr/bin/cygsphinxad-3.dll
+  /usr/bin/cygsphinxbase-3.dll
+
+(libsphinxbase-devel)
+  /usr/include/sphinxbase/ad.h
+  /usr/include/sphinxbase/agc.h
+  /usr/include/sphinxbase/bio.h
+  /usr/include/sphinxbase/bitarr.h
+  /usr/include/sphinxbase/bitvec.h
+  /usr/include/sphinxbase/byteorder.h
+  /usr/include/sphinxbase/case.h
+  /usr/include/sphinxbase/ckd_alloc.h
+  /usr/include/sphinxbase/clapack_lite.h
+  /usr/include/sphinxbase/cmd_ln.h
+  /usr/include/sphinxbase/cmn.h
+  /usr/include/sphinxbase/err.h
+  /usr/include/sphinxbase/f2c.h
+  /usr/include/sphinxbase/fe.h
+  /usr/include/sphinxbase/feat.h
+  /usr/include/sphinxbase/filename.h
+  /usr/include/sphinxbase/fixpoint.h
+  /usr/include/sphinxbase/fsg_model.h
+  /usr/include/sphinxbase/genrand.h
+  /usr/include/sphinxbase/glist.h
+  /usr/include/sphinxbase/hash_table.h
+  /usr/include/sphinxbase/heap.h
+  /usr/include/sphinxbase/jsgf.h
+  /usr/include/sphinxbase/listelem_alloc.h
+  /usr/include/sphinxbase/logmath.h
+  /usr/include/sphinxbase/matrix.h
+  /usr/include/sphinxbase/mmio.h
+  /usr/include/sphinxbase/ngram_model.h
+  /usr/include/sphinxbase/pio.h
+  /usr/include/sphinxbase/prim_type.h
+  /usr/include/sphinxbase/priority_queue.h
+  /usr/include/sphinxbase/profile.h
+  /usr/include/sphinxbase/sbthread.h
+  /usr/include/sphinxbase/sphinx_config.h
+  /usr/include/sphinxbase/sphinxbase_export.h
+  /usr/include/sphinxbase/strfuncs.h
+  /usr/include/sphinxbase/yin.h
+  /usr/lib/libsphinxad.dll.a
+  /usr/lib/libsphinxbase.dll.a
+  /usr/lib/pkgconfig/sphinxbase.pc
+  /usr/share/sphinxbase/swig/cmd_ln.i
+  /usr/share/sphinxbase/swig/fe.i
+  /usr/share/sphinxbase/swig/feat.i
+  /usr/share/sphinxbase/swig/fsg_model.i
+  /usr/share/sphinxbase/swig/iterators.i
+  /usr/share/sphinxbase/swig/jsgf.i
+  /usr/share/sphinxbase/swig/logmath.i
+  /usr/share/sphinxbase/swig/ngram_model.i
+  /usr/share/sphinxbase/swig/sphinxbase.i
+  /usr/share/sphinxbase/swig/typemaps.i
+
+(python39-sphinxbase)
+  /usr/lib/python3.9/site-packages/sphinxbase/__init__.py
+  /usr/lib/python3.9/site-packages/sphinxbase/__pycache__/__init__.cpython-39.opt-1.pyc
+  /usr/lib/python3.9/site-packages/sphinxbase/__pycache__/__init__.cpython-39.opt-2.pyc
+  /usr/lib/python3.9/site-packages/sphinxbase/__pycache__/__init__.cpython-39.pyc
+  /usr/lib/python3.9/site-packages/sphinxbase/__pycache__/sphinxbase.cpython-39.opt-1.pyc
+  /usr/lib/python3.9/site-packages/sphinxbase/__pycache__/sphinxbase.cpython-39.opt-2.pyc
+  /usr/lib/python3.9/site-packages/sphinxbase/__pycache__/sphinxbase.cpython-39.pyc
+  /usr/lib/python3.9/site-packages/sphinxbase/_sphinxbase.dll
+  /usr/lib/python3.9/site-packages/sphinxbase/sphinxbase.py
+
+------------------
+
+Port Notes:
+
+----- version 5prealpha-1bl2 -----
+Rebuild with gcc-11.3.0
+
+----- version 5prealpha-1bl1 -----
+Version bump.
+
+----- version 0.8-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

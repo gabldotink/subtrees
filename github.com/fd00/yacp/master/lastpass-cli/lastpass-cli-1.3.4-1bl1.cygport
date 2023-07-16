@@ -1,0 +1,45 @@
+HOMEPAGE="https://github.com/lastpass/${PN}"
+SRC_URI="https://github.com/lastpass/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Utils"
+SUMMARY="LastPass command line interface tool"
+DESCRIPTION="Command line interface to LastPass.com."
+
+LICENSE="GPL-2.0-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: GPL-2.0-or-later"
+LICENSE_URI="COPYING"
+
+BUILD_REQUIRES="libcurl-devel libssl-devel libxml2-devel"
+
+inherit cmake
+
+src_compile()
+{
+	cd ${B}
+	: ${CYGCMAKE_GENERATOR=Ninja}
+	cygcmake
+	cygninja
+	cygninja doc-man
+}
+
+src_test()
+{
+	cd ${B}
+	ninja_test
+}
+
+src_install()
+{
+	cd ${B}
+	ninja_install
+
+	doman *.1
+}
+
+DIFF_EXCLUDES="
+	version.h
+"
+
+DOCS="
+	CHANGELOG.md
+"

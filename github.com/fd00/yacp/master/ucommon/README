@@ -1,0 +1,242 @@
+ucommon
+------------------------------------------
+GNU uCommon C++ is meant as a very light-weight C++ library to facilitate using
+C++ design patterns even for very deeply embedded applications, such as for
+systems using uclibc along with posix threading support. For this reason, GNU
+uCommon C++ disables language features that consume memory or introduce runtime
+overhead, such as rtti and exception handling, and assumes one will mostly be
+linking applications with other pure C based libraries rather than using the
+overhead of the standard C++ library and other similar class frameworks.
+
+Runtime requirements:
+  bash-4.4.12-3
+  cygwin-3.1.6-1
+  cygwin-devel-3.1.6-1
+  libcommoncpp-devel-7.0.0-1bl3
+  libcommoncpp8-7.0.0-1bl3
+  libgcc1-9.3.0-2
+  libgnutls-devel-3.6.9-1
+  libgnutls30-3.6.9-1
+  libintl-devel-0.19.8.1-2
+  libintl8-0.19.8.1-2
+  libstdc++6-9.3.0-2
+  libucommon-devel-7.0.0-1bl3
+  libucommon8-7.0.0-1bl3
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.34+1git.de9c1b7cfe-1
+  cmake-3.17.3-2
+  cygport-0.34.0-1
+  gcc-core-9.3.0-2
+  gcc-g++-9.3.0-2
+  libtool-2.4.6-7
+  make-4.3-1
+
+Canonical website:
+  https://www.gnu.org/software/commoncpp/
+
+Canonical download:
+  mirror://gnu/commoncpp/ucommon-7.0.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack ucommon-7.0.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./ucommon-7.0.0-X.cygport all
+
+This will create:
+  /usr/src/ucommon-7.0.0-X-src.tar.xz
+  /usr/src/ucommon-7.0.0-X.tar.xz
+  /usr/src/libucommon8-7.0.0-X.tar.xz
+  /usr/src/libucommon-devel-7.0.0-X.tar.xz
+  /usr/src/libcommoncpp8-7.0.0-X.tar.xz
+  /usr/src/libcommoncpp-devel-7.0.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(ucommon)
+  /usr/bin/args.exe
+  /usr/bin/car.exe
+  /usr/bin/keywait.exe
+  /usr/bin/mdsum.exe
+  /usr/bin/pdetach.exe
+  /usr/bin/scrub-files.exe
+  /usr/bin/sockaddr.exe
+  /usr/bin/urlout.exe
+  /usr/bin/zerofill.exe
+  /usr/share/doc/Cygwin/ucommon.README
+  /usr/share/doc/ucommon/AUTHORS
+  /usr/share/doc/ucommon/COPYING
+  /usr/share/doc/ucommon/COPYING.LESSER
+  /usr/share/doc/ucommon/COPYING.temp
+  /usr/share/doc/ucommon/ChangeLog
+  /usr/share/doc/ucommon/Copyright
+  /usr/share/doc/ucommon/NEWS
+  /usr/share/doc/ucommon/README
+  /usr/share/doc/ucommon/README.secure
+  /usr/share/doc/ucommon/SUPPORT
+  /usr/share/doc/ucommon/TODO
+  /usr/share/man/man1/args.1.gz
+  /usr/share/man/man1/car.1.gz
+  /usr/share/man/man1/keywait.1.gz
+  /usr/share/man/man1/mdsum.1.gz
+  /usr/share/man/man1/pdetach.1.gz
+  /usr/share/man/man1/scrub-files.1.gz
+  /usr/share/man/man1/sockaddr.1.gz
+  /usr/share/man/man1/urlout.1.gz
+  /usr/share/man/man1/zerofill.1.gz
+
+(libucommon8)
+  /usr/bin/cygucommon-8.dll
+  /usr/bin/cygusecure-8.dll
+
+(libucommon-devel)
+  /usr/bin/ucommon-config
+  /usr/include/ucommon/access.h
+  /usr/include/ucommon/arrayref.h
+  /usr/include/ucommon/atomic.h
+  /usr/include/ucommon/condition.h
+  /usr/include/ucommon/counter.h
+  /usr/include/ucommon/cpr.h
+  /usr/include/ucommon/datetime.h
+  /usr/include/ucommon/export.h
+  /usr/include/ucommon/fsys.h
+  /usr/include/ucommon/generics.h
+  /usr/include/ucommon/keydata.h
+  /usr/include/ucommon/linked.h
+  /usr/include/ucommon/mapped.h
+  /usr/include/ucommon/mapref.h
+  /usr/include/ucommon/memory.h
+  /usr/include/ucommon/numbers.h
+  /usr/include/ucommon/object.h
+  /usr/include/ucommon/platform.h
+  /usr/include/ucommon/protocols.h
+  /usr/include/ucommon/reuse.h
+  /usr/include/ucommon/secure.h
+  /usr/include/ucommon/shared.h
+  /usr/include/ucommon/shell.h
+  /usr/include/ucommon/socket.h
+  /usr/include/ucommon/stl.h
+  /usr/include/ucommon/stream.h
+  /usr/include/ucommon/string.h
+  /usr/include/ucommon/temporary.h
+  /usr/include/ucommon/thread.h
+  /usr/include/ucommon/timers.h
+  /usr/include/ucommon/typeref.h
+  /usr/include/ucommon/ucommon.h
+  /usr/include/ucommon/unicode.h
+  /usr/lib/cmake/ucommon/CapeConfig.cmake
+  /usr/lib/cmake/ucommon/CapeMakeTargets.cmake
+  /usr/lib/libucommon.dll.a
+  /usr/lib/libusecure.dll.a
+  /usr/lib/pkgconfig/ucommon.pc
+  /usr/share/man/man1/ucommon-config.1.gz
+
+(libcommoncpp8)
+  /usr/bin/cygcommoncpp-8.dll
+
+(libcommoncpp-devel)
+  /usr/bin/commoncpp-config
+  /usr/include/commoncpp/address.h
+  /usr/include/commoncpp/applog.h
+  /usr/include/commoncpp/commoncpp.h
+  /usr/include/commoncpp/config.h
+  /usr/include/commoncpp/dccp.h
+  /usr/include/commoncpp/exception.h
+  /usr/include/commoncpp/export.h
+  /usr/include/commoncpp/file.h
+  /usr/include/commoncpp/mime.h
+  /usr/include/commoncpp/misc.h
+  /usr/include/commoncpp/numbers.h
+  /usr/include/commoncpp/object.h
+  /usr/include/commoncpp/persist.h
+  /usr/include/commoncpp/pointer.h
+  /usr/include/commoncpp/process.h
+  /usr/include/commoncpp/serial.h
+  /usr/include/commoncpp/slog.h
+  /usr/include/commoncpp/socket.h
+  /usr/include/commoncpp/string.h
+  /usr/include/commoncpp/tcp.h
+  /usr/include/commoncpp/thread.h
+  /usr/include/commoncpp/tokenizer.h
+  /usr/include/commoncpp/udp.h
+  /usr/include/commoncpp/xml.h
+  /usr/lib/libcommoncpp.dll.a
+  /usr/lib/pkgconfig/commoncpp.pc
+  /usr/share/man/man1/commoncpp-config.1.gz
+
+------------------
+
+Port Notes:
+
+----- version 7.0.0-1bl3 -----
+Fix *-config and *.pc
+
+----- version 7.0.0-1bl2 -----
+Rebuild for libgnutls
+
+----- version 7.0.0-1bl1 -----
+Version bump.
+
+----- version 6.3.1-1bl1 -----
+Version bump.
+
+----- version 6.3.0-1bl1 -----
+Version bump.
+
+----- version 6.1.11-1bl1 -----
+Version bump.
+
+----- version 6.1.8-1bl1 -----
+Version bump.
+
+----- version 6.1.4-1bl1 -----
+Version bump.
+
+----- version 6.1.1-1bl1 -----
+Version bump.
+
+----- version 6.0.7-1bl1 -----
+Version bump.
+
+----- version 6.0.6-1bl1 -----
+Version bump.
+
+----- version 6.0.3-1bl1 -----
+Version bump.
+
+----- version 6.0.0-1bl1 -----
+Version bump.
+
+----- version 5.2.2-1bl1 -----
+Version bump.
+
+----- version 5.2.1-1bl1 -----
+Version bump.
+
+----- version 5.0.5-1bl1 -----
+Version bump.
+
+----- version 4.3.3-1bl1 -----
+Version bump.
+
+----- version 4.2.0-1bl1 -----
+Version bump.
+
+----- version 4.1.7-1bl1 -----
+Version bump.
+
+----- version 4.1.1-1bl1 -----
+Version bump.
+
+----- version 4.0.4-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

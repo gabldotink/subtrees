@@ -1,0 +1,74 @@
+libdlo
+------------------------------------------
+A fully open source (GPL) driver which supports all DisplayLink devices to date
+(all DL1xx devices) is in the mainline of the Linux 2.6.38 kernel, and can be
+compiled as a module for certain older kernels. It is called udlfb.
+
+Runtime requirements:
+  cygwin-3.1.7-1
+  libdlo-devel-0.1.2-1bl1
+  libdlo0-0.1.2-1bl1
+  libusb0-1.2.6.0-2
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.34+1git.de9c1b7cfe-1
+  cygport-0.34.0-1
+  gcc-core-10.2.0-1
+  libtool-2.4.6-7
+  make-4.3-1
+
+Canonical website:
+  https://libdlo.freedesktop.org/wiki/
+
+Canonical download:
+  https://people.freedesktop.org/~berniet/libdlo-0.1.2.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libdlo-0.1.2-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libdlo-0.1.2-X.cygport all
+
+This will create:
+  /usr/src/libdlo-0.1.2-X-src.tar.xz
+  /usr/src/libdlo-0.1.2-X.tar.xz
+  /usr/src/libdlo0-0.1.2-X.tar.xz
+  /usr/src/libdlo-devel-0.1.2-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libdlo)
+  /usr/bin/displaylink-test.exe
+  /usr/share/doc/Cygwin/libdlo.README
+  /usr/share/doc/libdlo/AUTHORS
+  /usr/share/doc/libdlo/COPYING
+  /usr/share/doc/libdlo/ChangeLog
+  /usr/share/doc/libdlo/Guide-v104.pdf
+  /usr/share/doc/libdlo/README
+
+(libdlo0)
+  /usr/bin/cygdlo-0.dll
+
+(libdlo-devel)
+  /usr/include/libdlo.h
+  /usr/lib/libdlo.dll.a
+  /usr/lib/pkgconfig/libdlo.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.1.2-1bl1 -----
+Version bump.
+
+----- version 0.1.1+git20090803-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

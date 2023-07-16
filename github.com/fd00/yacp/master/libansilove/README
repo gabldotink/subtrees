@@ -1,0 +1,132 @@
+libansilove
+------------------------------------------
+libansilove is a library to convert ANSi and artscene related file format into
+PNG images.
+
+Runtime requirements:
+  cygwin-3.3.5-1
+  libansilove-devel-1.3.1-1bl1
+  libansilove1-1.3.1-1bl1
+  libgd3-2.3.3-1
+  pkg-config-1.8.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.38-1
+  cmake-3.20.0-1
+  cygport-0.35.0-1
+  gcc-core-11.3.0-1
+  libgd-devel-2.3.3-1
+  ninja-1.10.2-1
+
+Canonical website:
+  https://github.com/ansilove/libansilove
+
+Canonical download:
+  https://github.com/ansilove/libansilove/archive/refs/tags/1.3.1.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libansilove-1.3.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libansilove-1.3.1-X.cygport all
+
+This will create:
+  /usr/src/libansilove-1.3.1-X-src.tar.xz
+  /usr/src/libansilove-1.3.1-X.tar.xz
+  /usr/src/libansilove1-1.3.1-X.tar.xz
+  /usr/src/libansilove-devel-1.3.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libansilove)
+  /usr/share/doc/Cygwin/libansilove.README
+  /usr/share/doc/libansilove/AUTHORS
+  /usr/share/doc/libansilove/ChangeLog
+  /usr/share/doc/libansilove/LICENSE
+  /usr/share/doc/libansilove/README.md
+  /usr/share/doc/libansilove/THANKS
+
+(libansilove1)
+  /usr/bin/cygansilove-1.dll
+
+(libansilove-devel)
+  /usr/include/ansilove.h
+  /usr/lib/libansilove.dll.a
+  /usr/lib/pkgconfig/libansilove.pc
+  /usr/share/man/man3/ansilove_ansi.3.gz
+  /usr/share/man/man3/ansilove_artworx.3.gz
+  /usr/share/man/man3/ansilove_binary.3.gz
+  /usr/share/man/man3/ansilove_clean.3.gz
+  /usr/share/man/man3/ansilove_error.3.gz
+  /usr/share/man/man3/ansilove_icedraw.3.gz
+  /usr/share/man/man3/ansilove_init.3.gz
+  /usr/share/man/man3/ansilove_loadfile.3.gz
+  /usr/share/man/man3/ansilove_pcboard.3.gz
+  /usr/share/man/man3/ansilove_savefile.3.gz
+  /usr/share/man/man3/ansilove_tundra.3.gz
+  /usr/share/man/man3/ansilove_xbin.3.gz
+  /usr/share/man/man3/libansilove.3.gz
+
+------------------
+
+Port Notes:
+
+----- version 1.3.1-1bl1 -----
+Version bump.
+
+----- version 1.3.0-1bl1 -----
+Version bump.
+
+----- version 1.2.8-1bl1 -----
+Version bump.
+
+----- version 1.2.6-1bl1 -----
+Version bump.
+
+----- version 1.2.5-1bl1 -----
+Version bump.
+
+----- version 1.2.4-1bl1 -----
+Version bump.
+
+----- version 1.2.3-1bl1 -----
+Version bump.
+
+----- version 1.2.2-1bl1 -----
+Version bump.
+
+----- version 1.2.1-1bl1 -----
+Version bump.
+
+----- version 1.2.0-1bl1 -----
+Version bump.
+
+----- version 1.1.9-1bl1 -----
+Version bump.
+
+----- version 1.1.7-1bl1 -----
+Version bump.
+
+----- version 1.1.6-1bl1 -----
+Version bump.
+
+----- version 1.1.5-1bl1 -----
+Version bump.
+
+----- version 1.1.4-1bl1 -----
+Version bump.
+
+----- version 1.1.2-1bl1 -----
+Version bump.
+
+----- version 1.1.1-1bl1 -----
+Version bump.
+
+----- version 1.1.0-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

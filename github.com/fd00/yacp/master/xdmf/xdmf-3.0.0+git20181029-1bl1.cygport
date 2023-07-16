@@ -1,0 +1,45 @@
+HOMEPAGE="http://xdmf.org/index.php/Main_Page"
+GIT_URI="https://gitlab.kitware.com/xdmf/xdmf.git"
+
+CATEGORY="Science"
+SUMMARY="eXtensible Data Model and Format"
+DESCRIPTION="The need for a standardized method to exchange scientific data between High
+Performance Computing codes and tools lead to the development of the
+eXtensible Data Model and Format (XDMF) . Uses for XDMF range from a standard
+format used by HPC codes to take advantage of widely used visualization
+programs like ParaView, to a mechanism for performing coupled calculations
+using multiple, previously stand alone codes."
+
+inherit cmake
+inherit git
+
+CYGCMAKE_ARGS="
+	-DBUILD_SHARED_LIBS:BOOL=ON
+	-DXDMF_BUILD_TESTING:BOOL=ON
+	-DXDMF_BUILD_UTILS:BOOL=ON
+"
+
+src_test()
+{
+	cd ${B}
+	ninja_test
+}
+
+PKG_NAMES="
+	${PN}
+	libXdmf3
+	libXdmf-devel
+"
+xdmf_CONTENTS="
+	usr/share
+"
+libXdmf3_CONTENTS="
+	usr/bin
+"
+libXdmf_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+xdmf_SUMMARY="${SUMMARY} (licensing & readmes)"
+libXdmf3_SUMMARY="${SUMMARY} (runtime)"
+libXdmf_devel_SUMMARY="${SUMMARY} (development)"

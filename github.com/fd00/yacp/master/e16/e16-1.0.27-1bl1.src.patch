@@ -1,0 +1,33 @@
+--- origsrc/e16-1.0.27/lib/Makefile.am	2022-05-28 23:15:04.000000000 +0900
++++ src/e16-1.0.27/lib/Makefile.am	2022-12-15 19:26:38.665088200 +0900
+@@ -13,7 +13,7 @@ LIB_HACK = libhack.la
+ libhack_la_SOURCES  = e16_hack.c
+ 
+ libhack_la_LIBADD   = $(DLOPEN_LIBS)
+-libhack_la_LDFLAGS  = -module -avoid-version
++libhack_la_LDFLAGS  = -no-undefined -module -avoid-version
+ 
+ endif
+ 
+@@ -24,7 +24,7 @@ LIB_TRIP = libtrip.la
+ libtrip_la_SOURCES  = e16_trip.c
+ 
+ libtrip_la_LIBADD   = $(DLOPEN_LIBS)
+-libtrip_la_LDFLAGS  = -module -avoid-version
++libtrip_la_LDFLAGS  = -no-undefined -module -avoid-version
+ 
+ endif
+ 
+--- origsrc/e16-1.0.27/src/xwin.h	2022-11-25 06:33:49.000000000 +0900
++++ src/e16-1.0.27/src/xwin.h	2022-12-15 19:26:38.675906600 +0900
+@@ -230,6 +230,10 @@ int                 EQueryPointer(Win wi
+ 
+ unsigned int        EAllocColor(EX_Colormap cmap, unsigned int argb);
+ 
++#if defined(_B)
++#undef _B
++#endif
++
+ #define _A(x)   (((x) >> 24) & 0xff)
+ #define _R(x)   (((x) >> 16) & 0xff)
+ #define _G(x)   (((x) >>  8) & 0xff)

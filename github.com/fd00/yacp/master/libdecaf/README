@@ -1,0 +1,92 @@
+libdecaf
+------------------------------------------
+Ed448-Goldilocks is a new elliptic curve for cryptography.
+
+Runtime requirements:
+  cygwin-3.3.6-1
+  libdecaf-devel-1.0.2-1bl1
+  libdecaf0-1.0.2-1bl1
+  pkg-config-1.9.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.39-1
+  cmake-3.23.2-1
+  cygport-0.35.4-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  ninja-1.11.1-1
+
+Canonical website:
+  https://sourceforge.net/projects/ed448goldilocks/
+
+Canonical download:
+  https://git.code.sf.net/p/ed448goldilocks/code
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libdecaf-1.0.2-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libdecaf-1.0.2-X.cygport all
+
+This will create:
+  /usr/src/libdecaf-1.0.2-X-src.tar.xz
+  /usr/src/libdecaf-1.0.2-X.tar.xz
+  /usr/src/libdecaf0-1.0.2-X.tar.xz
+  /usr/src/libdecaf-devel-1.0.2-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libdecaf)
+  /usr/share/doc/Cygwin/libdecaf.README
+  /usr/share/doc/libdecaf/HISTORY.txt
+  /usr/share/doc/libdecaf/LICENSE.txt
+  /usr/share/doc/libdecaf/README.md
+  /usr/share/doc/libdecaf/TODO.txt
+
+(libdecaf0)
+  /usr/bin/cygdecaf-0.dll
+
+(libdecaf-devel)
+  /usr/include/decaf/decaf.h
+  /usr/include/decaf/decaf.hxx
+  /usr/include/decaf/decaf/common.h
+  /usr/include/decaf/decaf/ed255.h
+  /usr/include/decaf/decaf/ed255.hxx
+  /usr/include/decaf/decaf/ed448.h
+  /usr/include/decaf/decaf/ed448.hxx
+  /usr/include/decaf/decaf/eddsa.hxx
+  /usr/include/decaf/decaf/point_255.h
+  /usr/include/decaf/decaf/point_255.hxx
+  /usr/include/decaf/decaf/point_448.h
+  /usr/include/decaf/decaf/point_448.hxx
+  /usr/include/decaf/decaf/secure_buffer.hxx
+  /usr/include/decaf/decaf/sha512.h
+  /usr/include/decaf/decaf/sha512.hxx
+  /usr/include/decaf/decaf/shake.h
+  /usr/include/decaf/decaf/shake.hxx
+  /usr/include/decaf/decaf/spongerng.h
+  /usr/include/decaf/decaf/spongerng.hxx
+  /usr/lib/cmake/decaf/DecafConfig.cmake
+  /usr/lib/cmake/decaf/DecafTargets-release.cmake
+  /usr/lib/cmake/decaf/DecafTargets.cmake
+  /usr/lib/libdecaf.dll.a
+  /usr/lib/pkgconfig/libdecaf.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.0.2-1bl1 -----
+Version bump.
+
+----- version 1.0.1-1bl1 -----
+Version bump.
+
+----- version 1.0.0-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

@@ -1,0 +1,71 @@
+libpillowfight
+------------------------------------------
+Really simple C Library containing various image processing algorithms. It
+includes Python 3 bindings designed to operate on Pillow images (PIL.Image).
+
+Runtime requirements:
+  cygwin-3.0.7-1
+  libpillowfight-devel-0.3.0-1bl1
+  libpillowfight0-0.3.0-1bl1
+  pkg-config-1.6.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.29-1
+  cmake-3.14.5-1
+  cygport-0.33.1-1
+  gcc-core-7.4.0-1
+  ninja-1.9.0-1
+
+Canonical website:
+  https://gitlab.gnome.org/World/OpenPaperwork/libpillowfight
+
+Canonical download:
+  https://gitlab.gnome.org/World/OpenPaperwork/libpillowfight/-/archive/0.3.0/libpillowfight-0.3.0.tar.bz2
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libpillowfight-0.3.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libpillowfight-0.3.0-X.cygport all
+
+This will create:
+  /usr/src/libpillowfight-0.3.0-X-src.tar.xz
+  /usr/src/libpillowfight-0.3.0-X.tar.xz
+  /usr/src/libpillowfight0-0.3.0-X.tar.xz
+  /usr/src/libpillowfight-devel-0.3.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libpillowfight)
+  /usr/share/doc/Cygwin/libpillowfight.README
+  /usr/share/doc/libpillowfight/ChangeLog
+  /usr/share/doc/libpillowfight/LICENSE
+  /usr/share/doc/libpillowfight/README.md
+
+(libpillowfight0)
+  /usr/bin/cygpillowfight-0.dll
+
+(libpillowfight-devel)
+  /usr/include/pillowfight/pillowfight.h
+  /usr/include/pillowfight/util.h
+  /usr/lib/libpillowfight.dll.a
+  /usr/lib/pkgconfig/libpillowfight.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.3.0-1bl1 -----
+Version bump.
+
+----- version 0.2.4-1bl1 -----
+Version bump.
+
+----- version 0.2.2-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

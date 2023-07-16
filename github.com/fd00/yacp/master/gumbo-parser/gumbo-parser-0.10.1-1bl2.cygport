@@ -1,0 +1,37 @@
+HOMEPAGE="https://github.com/google/${PN}"
+SRC_URI="https://github.com/google/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="HTML5 parsing library in pure C99"
+DESCRIPTION="Gumbo is an implementation of the HTML5 parsing algorithm implemented as a
+pure C99 library with no outside dependencies. It's designed to serve as a
+building block for other tools and libraries such as linters, validators,
+templating languages, and refactoring and analysis tools."
+
+LICENSE="Apache-2.0"
+LICENSE_SPDX="SPDX-License-Identifier: Apache-2.0"
+LICENSE_URI="COPYING"
+
+DOCS="
+	CONTRIBUTING.md
+	DEBUGGING.md
+"
+
+PKG_NAMES="
+	gumbo-parser
+	libgumbo1
+	libgumbo-devel
+"
+gumbo_parser_CONTENTS="
+	usr/share
+"
+libgumbo1_CONTENTS="
+	usr/bin
+"
+libgumbo_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+gumbo_parser_SUMMARY="${SUMMARY} (licensing & readmes)"
+libgumbo1_SUMMARY="${SUMMARY} (runtime)"
+libgumbo_devel_SUMMARY="${SUMMARY} (development)"

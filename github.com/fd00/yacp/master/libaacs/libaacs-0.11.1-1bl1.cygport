@@ -1,0 +1,38 @@
+HOMEPAGE="https://www.videolan.org/developers/${PN}.html"
+SRC_URI="https://download.videolan.org/pub/videolan/${PN}/${PV}/${P}.tar.bz2"
+
+CATEGORY="Libs"
+SUMMARY="Open implentation of AACS specification"
+DESCRIPTION="libaacs is a research project to implement the Advanced Access Content System
+specification."
+
+BUILD_REQUIRES="libgcrypt-devel libgpg-error-devel"
+
+CYGCONF_ARGS="
+	--enable-maintainer-mode
+"
+
+DOCS="
+	KEYDB.cfg
+	README.txt
+"
+
+PKG_NAMES="
+	${PN}
+	${PN}0
+	${PN}-devel
+"
+libaacs_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+libaacs0_CONTENTS="
+	usr/bin/*.dll
+"
+libaacs_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+libaacs_SUMMARY="${SUMMARY} (utilities)"
+libaacs0_SUMMARY="${SUMMARY} (runtime)"
+libaacs_devel_SUMMARY="${SUMMARY} (development)"

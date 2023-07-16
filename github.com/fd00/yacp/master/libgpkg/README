@@ -1,0 +1,90 @@
+libgpkg
+------------------------------------------
+A SQLite 3 extension that provides a minimal OGC GeoPackage implementation.
+
+GeoPackage is an open, standards-based, application and platform independent,
+and self-describing file format for geodata based on SQLite.
+
+Luciad is actively participating in the GeoPackage Standards Working Group to
+define this standard. We are releasing this library under the liberal Apache
+Software License to promote widespread adoption of this new format.
+
+Luciad is using this library in its LuciadLightspeed and LuciadMobile products
+to handle GeoPackage data. Both products provide a rich set of components for
+geospatial situational awareness. See www.luciad.com for more information.
+
+Runtime requirements:
+  cygwin-2.5.0-1
+  libgcc1-5.3.0-5
+  libgeos_c1-3.5.0-1
+  libgpkg-devel-0.9.18-1bl3
+  libgpkg0-0.9.18-1bl3
+  libreadline7-6.3.8-1
+  libsqlite3_0-3.12.1-1
+  pkg-config-0.29-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.25-4
+  cmake-3.3.2-1
+  cygport-0.21.1-1
+  gcc-core-5.3.0-5
+  make-4.1-1
+  ruby-2.2.4-1
+
+Canonical website:
+  https://bitbucket.org/luciad/libgpkg
+
+Canonical download:
+  https://bitbucket.org/luciad/libgpkg
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libgpkg-0.9.18-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libgpkg-0.9.18-X.cygport all
+
+This will create:
+  /usr/src/libgpkg-0.9.18-X-src.tar.xz
+  /usr/src/libgpkg-0.9.18-X.tar.xz
+  /usr/src/libgpkg0-0.9.18-X.tar.xz
+  /usr/src/libgpkg-devel-0.9.18-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libgpkg)
+  /usr/bin/gpkg.exe
+  /usr/share/doc/Cygwin/libgpkg.README
+  /usr/share/doc/libgpkg/ChangeLog
+  /usr/share/doc/libgpkg/LICENSE
+  /usr/share/doc/libgpkg/NOTICE
+  /usr/share/doc/libgpkg/README.md
+
+(libgpkg0)
+  /usr/bin/cyggpkg-0.dll
+
+(libgpkg-devel)
+  /usr/include/gpkg.h
+  /usr/lib/libgpkg.dll.a
+  /usr/lib/pkgconfig/libgpkg.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.9.18-1bl3 -----
+Rebuild for libgeos
+
+----- version 0.9.18-1bl2 -----
+Rebuild for libgeos
+
+----- version 0.9.18-1bl1 -----
+Version bump.
+
+----- version 0.9.17-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

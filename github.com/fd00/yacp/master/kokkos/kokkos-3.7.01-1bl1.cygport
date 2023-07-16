@@ -1,0 +1,61 @@
+HOMEPAGE="https://github.com/${PN}/${PN}"
+SRC_URI="https://github.com/${PN}/${PN}/archive/refs/tags/${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="C++ Performance Portability Programming EcoSystem"
+DESCRIPTION="Kokkos Core implements a programming model in C++ for writing performance
+portable applications targeting all major HPC platforms. For that purpose it
+provides abstractions for both parallel execution of code and data management.
+Kokkos is designed to target complex node architectures with N-level memory
+hierarchies and multiple types of execution resources. It currently can use
+CUDA, HPX, OpenMP and Pthreads as backend programming models with several
+other backends in development."
+
+LICENSE="BSD-3-Clause"
+LICENSE_SPDX="SPDX-License-Identifier: BSD-3-Clause"
+LICENSE_URI="Copyright.txt"
+
+BUILD_REQUIRES="libhwloc-devel"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DBUILD_SHARED_LIBS:BOOL=ON
+	-DCMAKE_INSTALL_INCLUDEDIR:STRING=/usr/include/kokkos
+	-DKokkos_ENABLE_HWLOC:BOOL=ON
+	-DKokkos_ENABLE_TESTS:BOOL=ON
+"
+
+src_test()
+{
+	cd ${B}
+	PATH=${B}/core/src:${B}/containers/src:${PATH} ninja_test
+}
+
+DOCS="
+	*.md
+	HOW_TO_SNAPSHOT
+	doc/*.md
+	doc/*.pdf
+	master_history.txt
+"
+
+PKG_NAMES="
+	kokkos
+	libkokkos${PV[1]}.${PV[2]}
+	libkokkos-devel
+"
+kokkos_CONTENTS="
+	usr/bin/[hkn]*
+	usr/share
+"
+libkokkos3_7_CONTENTS="
+	usr/bin/*.dll
+"
+libkokkos_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+kokkos_SUMMARY="${SUMMARY} (utilities)"
+libkokkos3_7_SUMMARY="${SUMMARY} (runtime)"
+libkokkos_devel_SUMMARY="${SUMMARY} (development)"

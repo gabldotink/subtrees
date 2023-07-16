@@ -1,0 +1,57 @@
+diagrtb
+------------------------------------------
+A fortran program for the calculation of some eigenvectors of a large real,
+symmetrical, matrix.
+
+Runtime requirements:
+  cygwin-3.1.5-1
+  libgfortran5-9.3.0-2
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.34+1git.de9c1b7cfe-1
+  cygport-0.34.0-1
+  gcc-core-9.3.0-2
+  gcc-fortran-9.3.0-2
+
+Canonical website:
+  http://ecole.modelisation.free.fr/modes.html
+
+Canonical download:
+  http://ecole.modelisation.free.fr/rtb2011.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack diagrtb-2.64-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./diagrtb-2.64-X.cygport all
+
+This will create:
+  /usr/src/diagrtb-2.64-X-src.tar.xz
+  /usr/src/diagrtb-2.64-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(diagrtb)
+  /usr/bin/diagrtb.exe
+  /usr/share/doc/Cygwin/diagrtb.README
+  /usr/share/doc/diagrtb/README
+  /usr/share/doc/diagrtb/diagrtb.README
+
+------------------
+
+Port Notes:
+
+----- version 2.64-1bl3 -----
+Rebuild with gcc-9.3.0
+
+----- version 2.64-1bl2 -----
+Rebuild on x86_64
+
+----- version 2.64-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

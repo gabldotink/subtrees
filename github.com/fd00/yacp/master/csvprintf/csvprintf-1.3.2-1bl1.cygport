@@ -1,0 +1,23 @@
+HOMEPAGE="https://github.com/archiecobbs/${PN}"
+SRC_URI="https://github.com/archiecobbs/${PN}/archive/refs/tags/${PV}.tar.gz"
+
+CATEGORY="Utils"
+SUMMARY="Simple CSV file parser for the UNIX command line"
+DESCRIPTION="csvprintf is a simple UNIX command line utility for parsing CSV files."
+
+LICENSE="Apache-2.0"
+LICENSE_SPDX="SPDX-License-Identifier: Apache-2.0"
+LICENSE_URI="COPYING"
+
+BUILD_REQUIRES="libiconv-devel libxslt"
+
+src_test()
+{
+    cd ${B}
+    cp ${S}/csv.xsl .
+    cp -R ${S}/tests .
+    pushd tests
+        ./run.sh
+    popd
+    rm -rf csv.xsl tests
+}

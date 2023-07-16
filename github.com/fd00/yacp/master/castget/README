@@ -1,0 +1,77 @@
+castget
+------------------------------------------
+castget is a simple, command-line based RSS enclosure downloader. It is
+primarily intended for automatic, unattended downloading of podcasts.
+
+Runtime requirements:
+  cygwin-3.2.0-1
+  libcurl4-7.76.1-2
+  libglib2.0_0-2.54.3-1
+  libid3_3.8.3-3.8.3-3
+  libxml2-2.9.10-2
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.36.1-2
+  cygport-0.34.0-1
+  gcc-core-10.2.0-1
+  libcurl-devel-7.76.1-2
+  libglib2.0-devel-2.54.3-1
+  libid3-devel-3.8.3-3
+  libtool-2.4.6-7
+  libxml2-devel-2.9.10-2
+  make-4.3-1
+
+Canonical website:
+  https://castget.johndal.com/
+
+Canonical download:
+  mirror://savannah/castget/castget-2.0.1.tar.bz2
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack castget-2.0.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./castget-2.0.1-X.cygport all
+
+This will create:
+  /usr/src/castget-2.0.1-X-src.tar.xz
+  /usr/src/castget-2.0.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(castget)
+  /usr/bin/castget.exe
+  /usr/share/doc/Cygwin/castget.README
+  /usr/share/doc/castget/AUTHORS
+  /usr/share/doc/castget/CHANGES.md
+  /usr/share/doc/castget/COPYING
+  /usr/share/doc/castget/COPYING.LIB
+  /usr/share/man/man1/castget.1.gz
+  /usr/share/man/man5/castgetrc.5.gz
+
+------------------
+
+Port Notes:
+
+----- version 2.0.1-1bl2 -----
+Rebuild with gcc-10.2.0
+
+----- version 2.0.1-1bl1 -----
+Version bump.
+
+----- version 1.2.4-1bl1 -----
+Version bump.
+
+----- version 1.2.0-1bl2 -----
+Rebuild on x86_64
+
+----- version 1.2.0-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://fd0.hatenablog.jp/>

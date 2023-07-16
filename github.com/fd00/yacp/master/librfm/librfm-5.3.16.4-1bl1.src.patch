@@ -1,0 +1,84 @@
+--- origsrc/librfm5-5.3.16.4/Build/lib/Makefile.am	2015-04-21 00:55:25.000000000 +0900
++++ src/librfm5-5.3.16.4/Build/lib/Makefile.am	2020-09-09 11:30:36.107699100 +0900
+@@ -10,7 +10,7 @@ AUTOMAKE_OPTIONS = subdir-objects
+ AM_CPPFLAGS = \
+         -I$(top_srcdir) \
+         -I$(includedir) \
+-        -I../../primary  \
++        -I$(top_srcdir)/primary  \
+ 	@DBH_CFLAGS@	\
+ 	@LIBXML_CFLAGS@	\
+ 	@GLIB_CFLAGS@	\
+@@ -25,11 +25,9 @@ AM_CPPFLAGS = \
+ 
+ common_ldflags = @DBH_LIBS@ @TUBO_LIBS@ @GMODULE_LIBS@ @GTHREAD_LIBS@ @CAIRO_LIBS@	 @GLIB_LIBS@	 @GTK_LIBS@	 @LIBXML_LIBS@	@LIBZIP_LIBS@
+ 
+-if WINDOZE
+ no_undefined = -no-undefined
+ # List symbols here...
+ #export_symbols = -export-symbols 
+-endif
+ 
+ ## rfm library
+ lib_LTLIBRARIES += librfm.la
+@@ -43,7 +41,7 @@ lib_LTLIBRARIES += librodent.la
+ librodent_la_CFLAGS =  -I../../rodent
+ librodent_la_LDFLAGS = -version-info $(LT_CURRENT):$(LT_REVISION):$(LT_AGE) \
+     -export-dynamic $(no_undefined) $(export_symbols) $(bsd_compat)
+-librodent_la_LIBADD = $(common_ldflags) 
++librodent_la_LIBADD = $(common_ldflags) librfm.la
+ 
+ # sources...
+ librfm_la_SOURCES = \
+--- origsrc/librfm5-5.3.16.4/Build/modules/Makefile.am	2014-11-13 23:38:54.000000000 +0900
++++ src/librfm5-5.3.16.4/Build/modules/Makefile.am	2020-09-09 11:31:40.515099300 +0900
+@@ -21,11 +21,12 @@ common_ldflags = @DBH_LIBS@ @TUBO_LIBS@
+ 
+ 
+ 
+-module_libs = $(rfmlibs) -avoid-version -module	
++module_libs = -no-undefined $(rfmlibs) -avoid-version -module \
++	$(top_builddir)/Build/lib/librfm.la $(top_builddir)/Build/lib/librodent.la
+ AM_CPPFLAGS =  \
+         -I$(top_srcdir) \
+         -I$(includedir) \
+-	-I../../primary\
++	-I$(top_srcdir)/primary\
+ 	@DBH_CFLAGS@	\
+ 	@LIBXML_CFLAGS@	\
+ 	@GLIB_CFLAGS@	\
+--- origsrc/librfm5-5.3.16.4/Build/share/Makefile.am	2014-01-16 00:33:09.000000000 +0900
++++ src/librfm5-5.3.16.4/Build/share/Makefile.am	2020-09-09 11:32:06.825724800 +0900
+@@ -5,7 +5,7 @@ DIST_SUBDIRS =  rfm mime
+ 
+ if INSTALL_IMAGES
+ images_DATA=images/juchi-2007.jpg images/roa153b.jpg
+-imagesdir=$(datadir)/images
++imagesdir=$(datadir)/librfm/images
+ endif
+ 
+ EXTRA_DIST =  $(images_DATA) 
+--- origsrc/librfm5-5.3.16.4/configure.ac	2018-07-11 01:06:27.000000000 +0900
++++ src/librfm5-5.3.16.4/configure.ac	2020-09-09 11:32:40.840654000 +0900
+@@ -373,7 +373,9 @@ AC_CHECK_HEADERS([sys/time.h sys/select.
+ AC_CHECK_HEADERS([mntent.h])
+ 
+ AC_CHECK_HEADERS([fstab.h sys/param.h sys/ucred.h sys/mount.h])
+-AC_CHECK_HEADERS([windows.h])
++if test "$host_os" != "cygwin"; then
++    AC_CHECK_HEADERS([windows.h])
++fi
+ AM_CONDITIONAL(WINDOZE, [test "$ac_cv_header_windows_h" = yes])
+ 
+ AC_SUBST(LARGEFILE) LARGEFILE=yes
+--- origsrc/librfm5-5.3.16.4/include/rfm.h	2018-07-11 01:17:35.000000000 +0900
++++ src/librfm5-5.3.16.4/include/rfm.h	2020-09-09 11:39:15.408320800 +0900
+@@ -10,7 +10,7 @@
+ #include "tubo.h"
+ 
+ // These defines are set by configuration script when librfm is installed.
+-#define RFM_MODULE_DIR "/usr/local/lib/rfm/rmodules"
++#define RFM_MODULE_DIR "/usr/lib/rfm/rmodules"
+ 
+ 
+ # define SHOW_IT(y) if(rfm_get_widget(y)&&GTK_IS_WIDGET(rfm_get_widget(y))) gtk_widget_show_all(rfm_get_widget(y))

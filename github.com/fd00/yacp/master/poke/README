@@ -1,0 +1,188 @@
+poke
+------------------------------------------
+GNU poke is an interactive, extensible editor for binary data. Not limited to
+editing basic entities such as bits and bytes, it provides a full-fledged
+procedural, interactive programming language designed to describe data
+structures and to operate on them.
+
+Runtime requirements:
+  cygwin-3.4.5-1
+  libgc1-8.2.2-1
+  libintl8-0.21.1-2
+  libncursesw10-6.4-3.20230114
+  libpoke-devel-3.0-1bl1
+  libpoke0-3.0-1bl1
+  libreadline7-8.2-2
+  pkg-config-1.9.4-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.40-1
+  bison-3.8.2-1
+  cygport-0.36.0-1
+  dejagnu-1.6.3-1
+  flex-2.6.4-2
+  gcc-core-11.3.0-1
+  libgc-devel-8.2.2-1
+  libintl-devel-0.21.1-2
+  libncurses-devel-6.4-3.20230114
+  libreadline-devel-8.2-2
+  libtool-2.4.7-1
+  make-4.4-1
+
+Canonical website:
+  https://www.jemarch.net/poke
+
+Canonical download:
+  mirror://gnu/poke/poke-3.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack poke-3.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./poke-3.0-X.cygport all
+
+This will create:
+  /usr/src/poke-3.0-X-src.tar.xz
+  /usr/src/poke-3.0-X.tar.xz
+  /usr/src/libpoke0-3.0-X.tar.xz
+  /usr/src/libpoke-devel-3.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(poke)
+  /usr/bin/pk-bin2poke
+  /usr/bin/pk-elfextractor
+  /usr/bin/pk-strings
+  /usr/bin/poke.exe
+  /usr/bin/poked.exe
+  /usr/share/doc/Cygwin/poke.README
+  /usr/share/doc/poke/AUTHORS
+  /usr/share/doc/poke/COPYING
+  /usr/share/doc/poke/ChangeLog
+  /usr/share/doc/poke/NEWS
+  /usr/share/doc/poke/README
+  /usr/share/doc/poke/TODO
+  /usr/share/emacs/site-lisp/poke-map-mode.el
+  /usr/share/emacs/site-lisp/poke-ras-mode.el
+  /usr/share/man/man1/poke.1.gz
+  /usr/share/man/man1/poked.1.gz
+  /usr/share/poke/maps/dwarf.map
+  /usr/share/poke/maps/elf.map
+  /usr/share/poke/maps/mp3.map
+  /usr/share/poke/pickles/argp.pk
+  /usr/share/poke/pickles/asn1-ber.pk
+  /usr/share/poke/pickles/bmp.pk
+  /usr/share/poke/pickles/bpf.pk
+  /usr/share/poke/pickles/btf-dump.pk
+  /usr/share/poke/pickles/btf-ext.pk
+  /usr/share/poke/pickles/btf.pk
+  /usr/share/poke/pickles/coff-aarch64.pk
+  /usr/share/poke/pickles/coff-i386.pk
+  /usr/share/poke/pickles/coff.pk
+  /usr/share/poke/pickles/color.pk
+  /usr/share/poke/pickles/ctf-dump.pk
+  /usr/share/poke/pickles/ctf.pk
+  /usr/share/poke/pickles/diff.pk
+  /usr/share/poke/pickles/dwarf-common.pk
+  /usr/share/poke/pickles/dwarf-expr.pk
+  /usr/share/poke/pickles/dwarf-frame.pk
+  /usr/share/poke/pickles/dwarf-info.pk
+  /usr/share/poke/pickles/dwarf-pubnames.pk
+  /usr/share/poke/pickles/dwarf-types.pk
+  /usr/share/poke/pickles/dwarf.pk
+  /usr/share/poke/pickles/elf-32.pk
+  /usr/share/poke/pickles/elf-64.pk
+  /usr/share/poke/pickles/elf-common.pk
+  /usr/share/poke/pickles/elf.pk
+  /usr/share/poke/pickles/id3v1.pk
+  /usr/share/poke/pickles/id3v2.pk
+  /usr/share/poke/pickles/ieee754.pk
+  /usr/share/poke/pickles/ios.pk
+  /usr/share/poke/pickles/jffs2.pk
+  /usr/share/poke/pickles/leb128.pk
+  /usr/share/poke/pickles/mbr.pk
+  /usr/share/poke/pickles/mcr.pk
+  /usr/share/poke/pickles/openpgp.pk
+  /usr/share/poke/pickles/pcap.pk
+  /usr/share/poke/pickles/pdap.pk
+  /usr/share/poke/pickles/pe-amd64.pk
+  /usr/share/poke/pickles/pe-arm.pk
+  /usr/share/poke/pickles/pe-arm64.pk
+  /usr/share/poke/pickles/pe-debug.pk
+  /usr/share/poke/pickles/pe-i386.pk
+  /usr/share/poke/pickles/pe-ia64.pk
+  /usr/share/poke/pickles/pe-m32r.pk
+  /usr/share/poke/pickles/pe-mips.pk
+  /usr/share/poke/pickles/pe-ppc.pk
+  /usr/share/poke/pickles/pe-riscv.pk
+  /usr/share/poke/pickles/pe-sh3.pk
+  /usr/share/poke/pickles/pe.pk
+  /usr/share/poke/pickles/pk-table.pk
+  /usr/share/poke/pickles/pktest.pk
+  /usr/share/poke/pickles/redoxfs.pk
+  /usr/share/poke/pickles/rgb24.pk
+  /usr/share/poke/pickles/riscv.pk
+  /usr/share/poke/pickles/search.pk
+  /usr/share/poke/pickles/sframe-dump.pk
+  /usr/share/poke/pickles/sframe.pk
+  /usr/share/poke/pickles/time.pk
+  /usr/share/poke/pickles/ustar.pk
+  /usr/share/poke/pickles/uuid.pk
+  /usr/share/poke/pkl-rt.pk
+  /usr/share/poke/poke/nodelist
+  /usr/share/poke/poke/pk-cmd.pk
+  /usr/share/poke/poke/pk-copy.pk
+  /usr/share/poke/poke/pk-diff.pk
+  /usr/share/poke/poke/pk-dump.pk
+  /usr/share/poke/poke/pk-extract.pk
+  /usr/share/poke/poke/pk-help.pk
+  /usr/share/poke/poke/pk-hserver.pk
+  /usr/share/poke/poke/pk-info.pk
+  /usr/share/poke/poke/pk-map.pk
+  /usr/share/poke/poke/pk-save.pk
+  /usr/share/poke/poke/pk-scrabble.pk
+  /usr/share/poke/poke/pk-settings.pk
+  /usr/share/poke/poke/pk-tracer.pk
+  /usr/share/poke/poke/poke-bright.css
+  /usr/share/poke/poke/poke-dark.css
+  /usr/share/poke/poke/poke.pk
+  /usr/share/poke/poke/poke.text
+  /usr/share/poke/poked/pk-dump-minimal.pk
+  /usr/share/poke/poked/poked.pk
+  /usr/share/poke/std-types.pk
+  /usr/share/poke/std.pk
+  /usr/share/vim/vimfiles/ftdetect/poke.vim
+  /usr/share/vim/vimfiles/syntax/poke.vim
+
+(libpoke0)
+  /usr/bin/cygpoke-0.dll
+
+(libpoke-devel)
+  /usr/include/libpoke.h
+  /usr/lib/libpoke.dll.a
+  /usr/lib/pkgconfig/poke.pc
+  /usr/share/info/poke.info-1.gz
+  /usr/share/info/poke.info-2.gz
+  /usr/share/info/poke.info-3.gz
+  /usr/share/info/poke.info.gz
+
+------------------
+
+Port Notes:
+
+----- version 3.0-1bl1 -----
+Version bump.
+
+----- version 2.4-1bl1 -----
+Version bump.
+
+----- version 1.3-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

@@ -1,0 +1,101 @@
+laszip
+------------------------------------------
+LASzip - a free product of rapidlasso GmbH - quickly turns bulky LAS files into
+compact LAZ files without information loss. Terabytes of LAZ data are now
+available for free download from various agencies making LASzip, winner of the
+2012 Geospatial World Forum Technology Innovation Award in LiDAR Processing and
+2nd place winner for innovative product at INTERGEO 2012, the de-facto standard
+for LiDAR compression.
+
+Runtime requirements:
+  cygwin-3.1.0-1
+  libgcc1-7.4.0-1
+  liblaszip8-3.4.3-1bl1
+  libstdc++6-7.4.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.29-1
+  cmake-3.14.5-1
+  cygport-0.33.1-1
+  gcc-core-7.4.0-1
+  gcc-g++-7.4.0-1
+  ninja-1.9.0-1
+
+Canonical website:
+  https://laszip.org/
+
+Canonical download:
+  https://github.com/LASzip/LASzip/releases/download/3.4.3/laszip-src-3.4.3.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack laszip-3.4.3-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./laszip-3.4.3-X.cygport all
+
+This will create:
+  /usr/src/laszip-3.4.3-X-src.tar.xz
+  /usr/src/laszip-3.4.3-X.tar.xz
+  /usr/src/liblaszip8-3.4.3-X.tar.xz
+  /usr/src/liblaszip-devel-3.4.3-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(laszip)
+  /usr/share/doc/Cygwin/laszip.README
+  /usr/share/doc/laszip/AUTHORS
+  /usr/share/doc/laszip/CHANGES.txt
+  /usr/share/doc/laszip/COPYING
+  /usr/share/doc/laszip/ChangeLog
+  /usr/share/doc/laszip/NEWS
+  /usr/share/doc/laszip/README.rst
+
+(liblaszip8)
+  /usr/bin/cyglaszip-8.dll
+  /usr/bin/cyglaszip_api-8.dll
+
+(liblaszip-devel)
+  /usr/include/laszip/laszip_api.h
+  /usr/include/laszip/laszip_api_version.h
+  /usr/lib/liblaszip.dll.a
+  /usr/lib/liblaszip_api.dll.a
+
+------------------
+
+Port Notes:
+
+----- version 3.4.3-1bl1 -----
+Version bump.
+
+----- version 3.4.1-1bl1 -----
+Version bump.
+
+----- version 3.2.9-1bl1 -----
+Version bump.
+
+----- version 3.2.8-1bl1 -----
+Version bump.
+
+----- version 3.2.2-1bl1 -----
+Version bump.
+
+----- version 3.1.0-1bl1 -----
+Version bump.
+
+----- version 2.2.0-1bl3 -----
+Rebuild with gcc-5.4.0
+
+----- version 2.2.0-1bl2 -----
+Rebuild on x86_64
+
+----- version 2.2.0-1bl1 -----
+Version bump.
+
+----- version 2.1.0-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://fd0.hatenablog.jp/>

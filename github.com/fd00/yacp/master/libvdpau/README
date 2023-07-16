@@ -1,0 +1,100 @@
+libvdpau
+------------------------------------------
+VDPAU is the Video Decode and Presentation API for UNIX. It provides an
+interface to video decode acceleration and presentation hardware present in
+modern GPUs.
+
+Runtime requirements:
+  cygwin-3.3.5-1
+  libX11_6-1.8-1
+  libXext6-1.3.4-1
+  libvdpau-devel-1.5-1bl1
+  libvdpau1-1.5-1bl1
+  pkg-config-1.8.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.38-1
+  cygport-0.35.1-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libX11-devel-1.8-1
+  libXext-devel-1.3.4-1
+  meson-0.61.4-1
+  ninja-1.11.0-1
+  xorgproto-2022.1-1
+
+Canonical website:
+  http://freedesktop.org/wiki/Software/VDPAU
+
+Canonical download:
+  https://gitlab.freedesktop.org/vdpau/libvdpau/-/archive/1.5/libvdpau-1.5.tar.bz2
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libvdpau-1.5-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libvdpau-1.5-X.cygport all
+
+This will create:
+  /usr/src/libvdpau-1.5-X-src.tar.xz
+  /usr/src/libvdpau-1.5-X.tar.xz
+  /usr/src/libvdpau1-1.5-X.tar.xz
+  /usr/src/libvdpau-devel-1.5-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libvdpau)
+  /etc/vdpau_wrapper.cfg
+  /usr/share/doc/Cygwin/libvdpau.README
+  /usr/share/doc/libvdpau/AUTHORS
+  /usr/share/doc/libvdpau/COPYING
+
+(libvdpau1)
+  /usr/bin/cygvdpau-1.dll
+  /usr/lib/vdpau/cygvdpau_trace-1.dll
+
+(libvdpau-devel)
+  /usr/include/vdpau/vdpau.h
+  /usr/include/vdpau/vdpau_x11.h
+  /usr/lib/libvdpau.dll.a
+  /usr/lib/pkgconfig/vdpau.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.5-1bl1 -----
+Version bump.
+
+----- version 1.4-1bl1 -----
+Version bump.
+
+----- version 1.3-1bl1 -----
+Version bump.
+
+----- version 1.2-1bl1 -----
+Version bump.
+
+----- version 1.1.1-1bl1 -----
+Version bump.
+
+----- version 1.1-1bl1 -----
+Version bump.
+
+----- version 0.9-1bl1 -----
+Version bump.
+
+----- version 0.7-1bl1 -----
+Version bump.
+
+----- version 0.5-1bl1 -----
+Version bump.
+
+----- version 0.4.1-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

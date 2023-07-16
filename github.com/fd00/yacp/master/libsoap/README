@@ -1,0 +1,103 @@
+libsoap
+------------------------------------------
+csoap is a client/server SOAP library implemented in pure C. It comes with an
+embedded HTTP server called nanohttp. The transfered XML structures are handled
+by libxml2.
+
+Runtime requirements:
+  bash-4.4.12-3
+  cygwin-3.0.7-1
+  libsoap1.1_1-1.1.0-1bl3
+  libssl1.0-1.0.2s-1
+  libxml2-2.9.9-2
+  pkg-config-1.6.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.29-1
+  cygport-0.33.1-1
+  gcc-core-7.4.0-1
+  libtool-2.4.6-7
+  make-4.2.1-2
+
+Canonical website:
+  http://csoap.sf.net/
+
+Canonical download:
+  mirror://sourceforge/csoap/libsoap-1.1.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libsoap-1.1.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libsoap-1.1.0-X.cygport all
+
+This will create:
+  /usr/src/libsoap-1.1.0-X-src.tar.xz
+  /usr/src/libsoap-1.1.0-X.tar.xz
+  /usr/src/libsoap1.1_1-1.1.0-X.tar.xz
+  /usr/src/libsoap-devel-1.1.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libsoap)
+  /usr/bin/soapclient.exe
+  /usr/share/doc/Cygwin/libsoap.README
+  /usr/share/doc/libsoap/AUTHORS
+  /usr/share/doc/libsoap/COPYING
+  /usr/share/doc/libsoap/ChangeLog
+  /usr/share/doc/libsoap/NEWS
+  /usr/share/doc/libsoap/NOTES
+  /usr/share/doc/libsoap/README
+  /usr/share/doc/libsoap/TODO
+
+(libsoap1.1_1)
+  /usr/bin/cygcsoap-1-1-1.dll
+  /usr/bin/cygnanohttp-1-1-1.dll
+
+(libsoap-devel)
+  /usr/bin/csoap-config
+  /usr/include/libcsoap-1.1/libcsoap/soap-admin.h
+  /usr/include/libcsoap-1.1/libcsoap/soap-client.h
+  /usr/include/libcsoap-1.1/libcsoap/soap-ctx.h
+  /usr/include/libcsoap-1.1/libcsoap/soap-env.h
+  /usr/include/libcsoap-1.1/libcsoap/soap-fault.h
+  /usr/include/libcsoap-1.1/libcsoap/soap-router.h
+  /usr/include/libcsoap-1.1/libcsoap/soap-server.h
+  /usr/include/libcsoap-1.1/libcsoap/soap-service.h
+  /usr/include/libcsoap-1.1/libcsoap/soap-xml.h
+  /usr/include/nanohttp-1.1/nanohttp/nanohttp-base64.h
+  /usr/include/nanohttp-1.1/nanohttp/nanohttp-client.h
+  /usr/include/nanohttp-1.1/nanohttp/nanohttp-common.h
+  /usr/include/nanohttp-1.1/nanohttp/nanohttp-logging.h
+  /usr/include/nanohttp-1.1/nanohttp/nanohttp-mime.h
+  /usr/include/nanohttp-1.1/nanohttp/nanohttp-request.h
+  /usr/include/nanohttp-1.1/nanohttp/nanohttp-response.h
+  /usr/include/nanohttp-1.1/nanohttp/nanohttp-server.h
+  /usr/include/nanohttp-1.1/nanohttp/nanohttp-socket.h
+  /usr/include/nanohttp-1.1/nanohttp/nanohttp-ssl.h
+  /usr/include/nanohttp-1.1/nanohttp/nanohttp-stream.h
+  /usr/lib/libcsoap.dll.a
+  /usr/lib/libnanohttp.dll.a
+  /usr/lib/pkgconfig/libcsoap.pc
+  /usr/share/aclocal/libcsoap.m4
+
+------------------
+
+Port Notes:
+
+----- version 1.1.0-1bl3 -----
+Rebuild for libssl
+
+----- version 1.1.0-1bl2 -----
+Rebuild on x86_64
+
+----- version 1.1.0-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

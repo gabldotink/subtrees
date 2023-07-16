@@ -1,0 +1,215 @@
+--- origsrc/libslax-0.22.1/extensions/bit/Makefile.am	2019-09-12 02:13:33.000000000 +0900
++++ src/libslax-0.22.1/extensions/bit/Makefile.am	2021-10-30 20:09:44.368621200 +0900
+@@ -40,7 +40,8 @@ LIBS = \
+     ${LIBXML_LIBS} \
+     -L${top_builddir}/libslax -lslax
+ 
+-LDADD = ${top_builddir}/libslax/libslax.la
++libext_bit_la_LIBADD = ${top_builddir}/libslax/libslax.la
++libext_bit_la_LDFLAGS = -no-undefined -module -avoid-version
+ 
+ if HAVE_READLINE
+ LIBS += -L/opt/local/lib -lreadline
+@@ -61,7 +62,7 @@ install-exec-hook:
+ 		if [ x"$$DLNAME" = x ]; \
+                     then DLNAME=${LIBNAME}.${SLAX_LIBEXT}; fi ; \
+ 		if [ "$(build_os)" = "cygwin" ]; \
+-		    then DLNAME="../bin/$$DLNAME"; fi ; \
++		    then DLNAME="$$DLNAME"; fi ; \
+ 		echo Install link $$DLNAME "->" ${UGLY_NAME} "..." ; \
+ 		mkdir -p ${DESTDIR}${SLAX_EXTDIR} ; \
+ 		cd ${DESTDIR}${SLAX_EXTDIR} \
+--- origsrc/libslax-0.22.1/extensions/curl/Makefile.am	2019-09-12 02:13:33.000000000 +0900
++++ src/libslax-0.22.1/extensions/curl/Makefile.am	2021-10-30 20:09:44.376679800 +0900
+@@ -44,7 +44,8 @@ LIBS = \
+     ${LIBCURL_LIBS} \
+     -L${top_builddir}/libslax -lslax
+ 
+-LDADD = ${top_builddir}/libslax/libslax.la
++libext_curl_la_LIBADD = ${top_builddir}/libslax/libslax.la
++libext_curl_la_LDFLAGS = -no-undefined -module -avoid-version
+ 
+ if HAVE_READLINE
+ LIBS += -L/opt/local/lib -lreadline
+@@ -69,7 +70,7 @@ install-exec-hook:
+ 		if [ x"$$DLNAME" = x ]; \
+                     then DLNAME=${LIBNAME}.${SLAX_LIBEXT}; fi ; \
+ 		if [ "$(build_os)" = "cygwin" ]; \
+-		    then DLNAME="../bin/$$DLNAME"; fi ; \
++		    then DLNAME="$$DLNAME"; fi ; \
+ 		echo Install link $$DLNAME "->" ${UGLY_NAME} "..." ; \
+ 		mkdir -p ${DESTDIR}${SLAX_EXTDIR} ; \
+ 		cd ${DESTDIR}${SLAX_EXTDIR} \
+--- origsrc/libslax-0.22.1/extensions/db/Makefile.am	2019-09-12 02:13:33.000000000 +0900
++++ src/libslax-0.22.1/extensions/db/Makefile.am	2021-10-30 20:09:44.383690300 +0900
+@@ -49,7 +49,8 @@ LIBS = \
+     ${LIBDB_LIBS} \
+     -L${top_builddir}/libslax -lslax
+ 
+-LDADD = ${top_builddir}/libslax/libslax.la
++libext_db_la_LIBADD = ${top_builddir}/libslax/libslax.la
++libext_db_la_LDFLAGS = -no-undefined -module -avoid-version
+ 
+ if HAVE_READLINE
+ LIBS += -L/opt/local/lib -lreadline
+@@ -74,7 +75,7 @@ install-exec-hook:
+ 		if [ x"$$DLNAME" = x ]; \
+                     then DLNAME=${LIBNAME}.${SLAX_LIBEXT}; fi ; \
+ 		if [ "$(build_os)" = "cygwin" ]; \
+-		    then DLNAME="../bin/$$DLNAME"; fi ; \
++		    then DLNAME="$$DLNAME"; fi ; \
+ 		echo Install link $$DLNAME "->" ${UGLY_NAME} "..." ; \
+ 		mkdir -p ${DESTDIR}${SLAX_EXTDIR} ; \
+ 		cd ${DESTDIR}${SLAX_EXTDIR} \
+--- origsrc/libslax-0.22.1/extensions/db/sqlite/Makefile.am	2019-09-12 02:13:33.000000000 +0900
++++ src/libslax-0.22.1/extensions/db/sqlite/Makefile.am	2021-10-30 20:09:44.387680200 +0900
+@@ -63,7 +63,8 @@ else
+     LIBS += ${SQLITE3_LIBS} -lsqlite3
+ endif
+ 
+-LDADD = ${top_builddir}/libslax/libslax.la
++libext_db_sqlite_la_LIBADD = ${top_builddir}/libslax/libslax.la ../libext_db.la
++libext_db_sqlite_la_LDFLAGS = -no-undefined -module -avoid-version
+ 
+ AM_LDFLAGS = \
+     -Wl, --whole-archive, \
+@@ -88,7 +89,7 @@ install-exec-hook:
+ 		if [ x"$$DLNAME" = x ]; \
+                     then DLNAME=${LIBNAME}.${SLAX_LIBEXT}; fi ; \
+ 		if [ "$(build_os)" = "cygwin" ]; \
+-		    then DLNAME="../bin/$$DLNAME"; fi ; \
++		    then DLNAME="$$DLNAME"; fi ; \
+ 		echo Install link $$DLNAME "->" ${UGLY_NAME} "..." ; \
+ 		mkdir -p ${DESTDIR}${SLAX_EXTDIR}/db ; \
+ 		cd ${DESTDIR}${SLAX_EXTDIR}/db \
+--- origsrc/libslax-0.22.1/extensions/exslt/Makefile.am	2019-09-12 02:13:33.000000000 +0900
++++ src/libslax-0.22.1/extensions/exslt/Makefile.am	2021-10-30 20:09:44.391663700 +0900
+@@ -38,7 +38,8 @@ LIBS = \
+     ${LIBXML_LIBS} \
+     -L${top_builddir}/libslax -lslax
+ 
+-LDADD = ${top_builddir}/libslax/libslax.la
++libext_exslt_la_LIBADD = ${top_builddir}/libslax/libslax.la
++libext_exslt_la_LDFLAGS = -no-undefined -module -avoid-version
+ 
+ if HAVE_READLINE
+ LIBS += -L/opt/local/lib -lreadline
+@@ -68,7 +69,7 @@ install-exec-hook:
+ 		if [ x"$$DLNAME" = x ]; \
+                     then DLNAME=${LIBNAME}.${SLAX_LIBEXT}; fi ; \
+ 		if [ "$(build_os)" = "cygwin" ]; \
+-		    then DLNAME="../bin/$$DLNAME"; fi ; \
++		    then DLNAME="$$DLNAME"; fi ; \
+ 		echo Install link $$DLNAME "->" ${UGLY_NAME} "..." ; \
+ 		mkdir -p ${DESTDIR}${SLAX_EXTDIR} ; \
+ 		cd ${DESTDIR}${SLAX_EXTDIR} \
+--- origsrc/libslax-0.22.1/extensions/os/Makefile.am	2019-09-12 02:13:33.000000000 +0900
++++ src/libslax-0.22.1/extensions/os/Makefile.am	2021-10-30 20:09:44.402010400 +0900
+@@ -38,7 +38,8 @@ LIBS = \
+     ${LIBXML_LIBS} \
+     -L${top_builddir}/libslax -lslax
+ 
+-LDADD = ${top_builddir}/libslax/libslax.la
++libext_os_la_LIBADD = ${top_builddir}/libslax/libslax.la
++libext_os_la_LDFLAGS = -no-undefined -module -avoid-version
+ 
+ if HAVE_READLINE
+ LIBS += -L/opt/local/lib -lreadline
+@@ -62,7 +63,7 @@ install-exec-hook:
+ 		if [ x"$$DLNAME" = x ]; \
+                     then DLNAME=${LIBNAME}.${SLAX_LIBEXT}; fi ; \
+ 		if [ "$(build_os)" = "cygwin" ]; \
+-		    then DLNAME="../bin/$$DLNAME"; fi ; \
++		    then DLNAME="$$DLNAME"; fi ; \
+ 		echo Install link $$DLNAME "->" ${UGLY_NAME} "..." ; \
+ 		mkdir -p ${DESTDIR}${SLAX_EXTDIR} ; \
+ 		cd ${DESTDIR}${SLAX_EXTDIR} \
+--- origsrc/libslax-0.22.1/extensions/os/ext_os.c	2019-09-12 02:13:33.000000000 +0900
++++ src/libslax-0.22.1/extensions/os/ext_os.c	2021-10-30 20:09:44.433653000 +0900
+@@ -40,6 +40,11 @@
+ #include <libpsu/psucommon.h>
+ #include <libpsu/psulog.h>
+ 
++#if defined(__CYGWIN__)
++#define GLOB_BRACE      0x0080  /* Expand braces ala csh. */
++#define GLOB_TILDE      0x0800  /* Expand tilde names from the passwd file. */
++#endif
++
+ #define XML_FULL_NS "http://xml.libslax.org/os"
+ 
+ typedef struct statOptions_s {
+--- origsrc/libslax-0.22.1/extensions/xutil/Makefile.am	2019-09-12 02:13:33.000000000 +0900
++++ src/libslax-0.22.1/extensions/xutil/Makefile.am	2021-10-30 20:09:44.438671500 +0900
+@@ -39,7 +39,8 @@ LIBS = \
+     ${LIBXML_LIBS} \
+     -L${top_builddir}/libslax -lslax
+ 
+-LDADD = ${top_builddir}/libslax/libslax.la
++libext_xutil_la_LIBADD = ${top_builddir}/libslax/libslax.la
++libext_xutil_la_LDFLAGS = -no-undefined -module -avoid-version
+ 
+ if HAVE_READLINE
+ LIBS += -L/opt/local/lib -lreadline
+@@ -60,7 +61,7 @@ install-exec-hook:
+ 		if [ x"$$DLNAME" = x ]; \
+                     then DLNAME=${LIBNAME}.${SLAX_LIBEXT}; fi ; \
+ 		if [ "$(build_os)" = "cygwin" ]; \
+-		    then DLNAME="../bin/$$DLNAME"; fi ; \
++		    then DLNAME="$$DLNAME"; fi ; \
+ 		echo Install link $$DLNAME "->" ${UGLY_NAME} "..." ; \
+ 		mkdir -p ${DESTDIR}${SLAX_EXTDIR} ; \
+  		cd ${DESTDIR}${SLAX_EXTDIR} \
+--- origsrc/libslax-0.22.1/libslax/Makefile.am	2019-09-12 02:13:33.000000000 +0900
++++ src/libslax-0.22.1/libslax/Makefile.am	2021-10-30 20:40:05.911467700 +0900
+@@ -34,7 +34,8 @@ AM_CFLAGS += \
+     -DSLAX_EXTDIR=\"${SLAX_EXTDIR}\"
+ 
+ lib_LTLIBRARIES = libslax.la
+-libslax_la_LIBADD = ${LIBXSLT_LIBS} -lexslt ${LIBXML_LIBS}
++libslax_la_LIBADD = ${LIBXSLT_LIBS} -lexslt ${LIBXML_LIBS} $(top_builddir)/libpsu/libpsu.la
++libslax_la_LDFLAGS = -no-undefined
+ 
+ slaxinc_HEADERS = \
+      slax.h \
+--- origsrc/libslax-0.22.1/libslax/slaxparser-tail.y	2019-09-12 02:13:33.000000000 +0900
++++ src/libslax-0.22.1/libslax/slaxparser-tail.y	2021-10-30 20:38:27.498053700 +0900
+@@ -30,6 +30,10 @@ slaxTokenTranslate (int ttype)
+     return YYTRANSLATE(ttype);
+ }
+ 
++#ifndef YYTERROR
++#define YYTERROR YYSYMBOL_YYerror /* the new enum */
++#endif /* YYTERROR */
++
+ /*
+  * Return a better class of error message
+  */
+File origsrc/libslax-0.22.1/libslax/slaxversion.h is a regular file while file src/libslax-0.22.1/libslax/slaxversion.h is a symbolic link
+--- origsrc/libslax-0.22.1/libxi/Makefile.am	2019-09-12 02:13:33.000000000 +0900
++++ src/libslax-0.22.1/libxi/Makefile.am	2021-10-30 21:03:27.177980300 +0900
+@@ -19,7 +19,7 @@ AM_CFLAGS = \
+     -I${top_srcdir} \
+     ${WARNINGS}
+ 
+-lib_LTLIBRARIES = libxi.la
++lib_LTLIBRARIES = libslax-xi.la
+ 
+ libxiincdir = ${includedir}/libxi
+ 
+@@ -34,7 +34,7 @@ libxiinc_HEADERS = \
+     xiworkspace.h \
+     xixpath.h
+ 
+-libxi_la_SOURCES = \
++libslax_xi_la_SOURCES = \
+     xisource.c
+ 
+ XXXX=\
+--- origsrc/libslax-0.22.1/parrotdb/Makefile.am	2019-09-12 02:13:33.000000000 +0900
++++ src/libslax-0.22.1/parrotdb/Makefile.am	2021-10-30 20:33:29.478595500 +0900
+@@ -42,3 +42,5 @@ libparrotdb_la_SOURCES = \
+     paistr.c \
+     pammap.c \
+     papat.c
++
++libparrotdb_la_LIBADD = $(top_builddir)/libpsu/libpsu.la

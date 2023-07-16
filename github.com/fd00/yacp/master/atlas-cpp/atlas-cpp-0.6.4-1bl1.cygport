@@ -1,0 +1,33 @@
+HOMEPAGE="https://github.com/worldforge/${PN}"
+SRC_URI="https://github.com/worldforge/${PN}/archive/${PV}.tar.gz"
+
+CATEGORY="Games"
+SUMMARY="WorldForge message protocol library"
+DESCRIPTION="Atlas-C++ is the perhaps the most important library in the entire WorldForge
+project, since nearly every other module requires it. Atlas-C++ provides a
+native implementation of the entire Atlas specification including negotiation,
+message encode and decode and the overlying Objects layer."
+
+DIFF_EXCLUDES="
+	Doxyfile
+"
+
+PKG_NAMES="
+	${PN}
+	libAtlas0.6_3
+	libAtlas0.6-devel
+"
+atlas_cpp_CONTENTS="
+	usr/share/doc
+"
+libAtlas0_6_3_CONTENTS="
+	usr/bin/*.dll
+"
+libAtlas0_6_devel_CONTENTS="
+	usr/bin/*.exe
+	usr/include
+	usr/lib
+"
+atlas_cpp_SUMMARY="${SUMMARY} (licensing & readmes)"
+libAtlas0_6_3_SUMMARY="${SUMMARY} (runtime)"
+libAtlas0_6_devel_SUMMARY="${SUMMARY} (development)"

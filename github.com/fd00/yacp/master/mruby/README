@@ -1,0 +1,102 @@
+mruby
+------------------------------------------
+mruby is the lightweight implementation of the Ruby language complying to (part
+of) the ISO standard. mruby can be linked and embedded within your application.
+We provide the interpreter program 'mruby' and the interactive mruby shell
+'mirb' as examples. You can also compile Ruby programs into compiled byte code
+using the mruby compiler 'mrbc'. All those tools reside in 'bin' directory. The
+'mrbc' is also able to generate compiled byte code in a C source file. You can
+check the 'mrbtest' program under the 'test' directory.
+
+Runtime requirements:
+  cygwin-3.3.5-1
+  libreadline7-8.1-2
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.38-1
+  bison-3.8.2-1
+  cygport-0.35.1-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libprotobuf-devel-3.19.3-1
+  libreadline-devel-8.1-2
+  make-4.3-1
+
+Canonical website:
+  https://github.com/mruby/mruby
+
+Canonical download:
+  https://github.com/mruby/mruby/archive/refs/tags/3.1.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack mruby-3.1.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./mruby-3.1.0-X.cygport all
+
+This will create:
+  /usr/src/mruby-3.1.0-X-src.tar.xz
+  /usr/src/mruby-3.1.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(mruby)
+  /usr/bin/mirb.exe
+  /usr/bin/mrbc.exe
+  /usr/bin/mrbtest.exe
+  /usr/bin/mruby-strip.exe
+  /usr/bin/mruby.exe
+  /usr/share/doc/Cygwin/mruby.README
+  /usr/share/doc/mruby/AUTHORS
+  /usr/share/doc/mruby/LEGAL
+  /usr/share/doc/mruby/LICENSE
+  /usr/share/doc/mruby/NEWS
+  /usr/share/doc/mruby/README.md
+  /usr/share/doc/mruby/TODO.md
+  /usr/share/doc/mruby/compile.md
+  /usr/share/doc/mruby/debugger.md
+  /usr/share/doc/mruby/gc-arena-howto.md
+  /usr/share/doc/mruby/limitations.md
+  /usr/share/doc/mruby/link.md
+  /usr/share/doc/mruby/mrbconf.md
+  /usr/share/doc/mruby/mrbgems.md
+  /usr/share/doc/mruby/mruby3.0.md
+  /usr/share/doc/mruby/mruby3.1.md
+  /usr/share/doc/mruby/symbol.md
+
+------------------
+
+Port Notes:
+
+----- version 3.1.0-1bl1 -----
+Version bump.
+
+----- version 3.0.0-1bl1 -----
+Version bump.
+
+----- version 2.1.2-1bl1 -----
+Version bump.
+
+----- version 1.4.1-1bl1 -----
+Version bump.
+
+----- version 1.4.0-1bl1 -----
+Version bump.
+
+----- version 1.3.0-1bl1 -----
+Version bump.
+
+----- version 1.2.0-1bl1 -----
+Version bump.
+
+----- version 1.1.0-1bl1 -----
+Version bump.
+
+----- version 1.0.0-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

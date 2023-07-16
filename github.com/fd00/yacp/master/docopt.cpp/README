@@ -1,0 +1,80 @@
+docopt.cpp
+------------------------------------------
+docopt creates beautiful command-line interfaces
+
+Runtime requirements:
+  cygwin-3.1.6-1
+  libboost_regex1.66-1.66.0-1
+  libdocopt-devel-0.6.3-1bl1
+  libdocopt0-0.6.3-1bl1
+  libgcc1-9.3.0-2
+  libstdc++6-9.3.0-2
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.34+1git.de9c1b7cfe-1
+  cmake-3.14.5-1
+  cygport-0.34.0-1
+  gcc-core-9.3.0-2
+  gcc-g++-9.3.0-2
+  ninja-1.10.0-2
+
+Canonical website:
+  https://github.com/docopt/docopt.cpp
+
+Canonical download:
+  https://github.com/docopt/docopt.cpp/archive/v0.6.3.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack docopt.cpp-0.6.3-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./docopt.cpp-0.6.3-X.cygport all
+
+This will create:
+  /usr/src/docopt.cpp-0.6.3-X-src.tar.xz
+  /usr/src/docopt.cpp-0.6.3-X.tar.xz
+  /usr/src/libdocopt0-0.6.3-X.tar.xz
+  /usr/src/libdocopt-devel-0.6.3-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(docopt.cpp)
+  /usr/share/doc/Cygwin/docopt.cpp.README
+  /usr/share/doc/docopt.cpp/LICENSE-Boost-1.0
+  /usr/share/doc/docopt.cpp/LICENSE-MIT
+  /usr/share/doc/docopt.cpp/README.rst
+
+(libdocopt0)
+  /usr/bin/cygdocopt-0.dll
+
+(libdocopt-devel)
+  /usr/include/docopt/docopt.h
+  /usr/include/docopt/docopt_private.h
+  /usr/include/docopt/docopt_util.h
+  /usr/include/docopt/docopt_value.h
+  /usr/lib/cmake/docopt/docopt-config-version.cmake
+  /usr/lib/cmake/docopt/docopt-config.cmake
+  /usr/lib/cmake/docopt/docopt-targets-release.cmake
+  /usr/lib/cmake/docopt/docopt-targets.cmake
+  /usr/lib/libdocopt.dll.a
+  /usr/lib/pkgconfig/docopt.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.6.3-1bl1 -----
+Version bump.
+
+----- version 0.6.2-1bl1 -----
+Version bump.
+
+----- version 0.6.1+git20150812-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

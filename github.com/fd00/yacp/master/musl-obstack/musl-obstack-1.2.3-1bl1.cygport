@@ -1,0 +1,30 @@
+HOMEPAGE="https://github.com/void-linux/${PN}"
+SRC_URI="https://github.com/void-linux/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="standalone library to implement GNU libc's obstack"
+DESCRIPTION="The musl-obstack package is a copy + paste of the obstack functions and macros
+found in GNU gcc libiberty library for use with musl libc."
+
+LICENSE="GPL-2.0-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: GPL-2.0-or-later"
+LICENSE_URI="COPYING"
+
+PKG_NAMES="
+	${PN}
+	libobstack1
+	libobstack-devel
+"
+musl_obstack_CONTENTS="
+	usr/share
+"
+libobstack1_CONTENTS="
+	usr/bin
+"
+libobstack_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+musl_obstack_SUMMARY="${SUMMARY} (licensing & readmes)"
+libobstack1_SUMMARY="${SUMMARY} (runtime)"
+libobstack_devel_SUMMARY="${SUMMARY} (development)"

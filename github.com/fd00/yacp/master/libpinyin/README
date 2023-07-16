@@ -1,0 +1,191 @@
+libpinyin
+------------------------------------------
+The libpinyin project aims to provide the algorithms core for intelligent
+sentence-based Chinese pinyin input methods.
+
+Runtime requirements:
+  cygwin-3.4.5-1
+  libdb5.3-5.3.28-2
+  libgcc1-11.3.0-1
+  libglib2.0-devel-2.54.3-1
+  libglib2.0_0-2.54.3-1
+  libpinyin-devel-2.8.1-1bl1
+  libpinyin15-2.8.1-1bl1
+  libstdc++6-11.3.0-1
+  libzhuyin-devel-2.8.1-1bl1
+  libzhuyin15-2.8.1-1bl1
+  pkg-config-1.9.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.39-1
+  cygport-0.35.5-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libdb-devel-5.3.28-2
+  libglib2.0-devel-2.54.3-1
+  libtool-2.4.7-1
+  make-4.4-1
+
+Canonical website:
+  https://github.com/libpinyin/libpinyin
+
+Canonical download:
+  https://github.com/libpinyin/libpinyin/archive/refs/tags/2.8.1.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libpinyin-2.8.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libpinyin-2.8.1-X.cygport all
+
+This will create:
+  /usr/src/libpinyin-2.8.1-X-src.tar.xz
+  /usr/src/libpinyin-2.8.1-X.tar.xz
+  /usr/src/libpinyin15-2.8.1-X.tar.xz
+  /usr/src/libpinyin-devel-2.8.1-X.tar.xz
+  /usr/src/libzhuyin15-2.8.1-X.tar.xz
+  /usr/src/libzhuyin-devel-2.8.1-X.tar.xz
+  /usr/src/libpinyin-data-2.8.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libpinyin)
+  /usr/bin/gen_binary_files.exe
+  /usr/bin/gen_unigram.exe
+  /usr/bin/import_interpolation.exe
+  /usr/share/doc/Cygwin/libpinyin.README
+  /usr/share/doc/libpinyin/AUTHORS
+  /usr/share/doc/libpinyin/COPYING
+  /usr/share/doc/libpinyin/NEWS
+  /usr/share/doc/libpinyin/README
+  /usr/share/man/man1/libpinyin.1.gz
+
+(libpinyin15)
+  /usr/bin/cygpinyin-15.dll
+
+(libpinyin-devel)
+  /usr/include/libpinyin-2.8.1/novel_types.h
+  /usr/include/libpinyin-2.8.1/pinyin.h
+  /usr/include/libpinyin-2.8.1/pinyin_custom2.h
+  /usr/lib/libpinyin.dll.a
+  /usr/lib/pkgconfig/libpinyin.pc
+
+(libzhuyin15)
+  /usr/bin/cygzhuyin-15.dll
+
+(libzhuyin-devel)
+  /usr/include/libpinyin-2.8.1/zhuyin.h
+  /usr/include/libpinyin-2.8.1/zhuyin_custom2.h
+  /usr/lib/libzhuyin.dll.a
+  /usr/lib/pkgconfig/libzhuyin.pc
+
+(libpinyin-data)
+  /usr/lib/libpinyin/data/addon_phrase_index.bin
+  /usr/lib/libpinyin/data/addon_pinyin_index.bin
+  /usr/lib/libpinyin/data/art.bin
+  /usr/lib/libpinyin/data/bigram.db
+  /usr/lib/libpinyin/data/culture.bin
+  /usr/lib/libpinyin/data/economy.bin
+  /usr/lib/libpinyin/data/gb_char.bin
+  /usr/lib/libpinyin/data/gbk_char.bin
+  /usr/lib/libpinyin/data/geology.bin
+  /usr/lib/libpinyin/data/history.bin
+  /usr/lib/libpinyin/data/life.bin
+  /usr/lib/libpinyin/data/merged.bin
+  /usr/lib/libpinyin/data/nature.bin
+  /usr/lib/libpinyin/data/opengram.bin
+  /usr/lib/libpinyin/data/people.bin
+  /usr/lib/libpinyin/data/phrase_index.bin
+  /usr/lib/libpinyin/data/pinyin_index.bin
+  /usr/lib/libpinyin/data/science.bin
+  /usr/lib/libpinyin/data/society.bin
+  /usr/lib/libpinyin/data/sport.bin
+  /usr/lib/libpinyin/data/table.conf
+  /usr/lib/libpinyin/data/technology.bin
+
+------------------
+
+Port Notes:
+
+----- version 2.8.1-1bl1 -----
+Version bump.
+
+----- version 2.7.92-1bl1 -----
+Version bump.
+
+----- version 2.6.2-1bl1 -----
+Version bump.
+
+----- version 2.6.1-1bl1 -----
+Version bump.
+
+----- version 2.6.0-1bl1 -----
+Version bump.
+
+----- version 2.4.92-1bl1 -----
+Version bump.
+
+----- version 2.4.91-1bl1 -----
+Version bump.
+
+----- version 2.3.0-1bl1 -----
+Version bump.
+
+----- version 2.2.2-1bl1 -----
+Version bump.
+
+----- version 2.2.1-1bl1 -----
+Version bump.
+
+----- version 2.2.0-1bl1 -----
+Version bump.
+
+----- version 2.1.91-1bl1 -----
+Version bump.
+
+----- version 2.1.0-1bl1 -----
+Version bump.
+
+----- version 1.7.0-1bl1 -----
+Version bump.
+
+----- version 1.1.0-1bl1 -----
+Version bump.
+
+----- version 1.0.99.20150212-1bl1 -----
+Version bump.
+
+----- version 1.0.0-1bl2 -----
+Rebuild with x86_64
+
+----- version 1.0.0-1bl1 -----
+Version bump.
+
+----- version 0.9.94-1bl1 -----
+Version bump.
+
+----- version 0.9.93-1bl1 -----
+Version bump.
+
+----- version 0.9.92-1bl1 -----
+Version bump.
+
+----- version 0.8.0-1bl1 -----
+Version bump.
+
+----- version 0.7.91-1bl1 -----
+Version bump.
+
+----- version 0.5.92-1bl1 -----
+Version bump.
+
+----- version 0.5.91-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

@@ -1,0 +1,33 @@
+HOMEPAGE="https://github.com/mruby/${PN}"
+SRC_URI="https://github.com/mruby/${PN}/archive/refs/tags/${PV}.tar.gz"
+
+CATEGORY="Ruby"
+SUMMARY="Lightweight Ruby"
+DESCRIPTION="mruby is the lightweight implementation of the Ruby language complying to
+(part of) the ISO standard. mruby can be linked and embedded within your
+application. We provide the interpreter program 'mruby' and the interactive
+mruby shell 'mirb' as examples. You can also compile Ruby programs into
+compiled byte code using the mruby compiler 'mrbc'. All those tools reside in
+'bin' directory. The 'mrbc' is also able to generate compiled byte code in a C
+source file. You can check the 'mrbtest' program under the 'test' directory."
+
+BUILD_REQUIRES="libreadline-devel"
+
+src_compile()
+{
+	cd ${B}
+	lndirs
+	cygmake
+}
+
+DOCS="
+	MITL
+	doc/*.md
+	doc/guides/*.md
+"
+
+src_install()
+{
+	cd ${B}
+	dobin bin/*.exe
+}

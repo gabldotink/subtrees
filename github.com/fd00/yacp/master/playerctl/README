@@ -1,0 +1,107 @@
+playerctl
+------------------------------------------
+Playerctl is a command-line utility and library for controlling media players
+that implement the MPRIS D-Bus Interface Specification. Playerctl makes it easy
+to bind player actions, such as play and pause, to media keys.
+
+Runtime requirements:
+  cygwin-3.2.0-1
+  girepository-GLib2.0-1.54.1-3
+  libglib2.0-devel-2.54.3-1
+  libglib2.0_0-2.54.3-1
+  libplayerctl-devel-2.4.1-1bl1
+  libplayerctl2-2.4.1-1bl1
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.37-1
+  cygport-0.34.0-1
+  gcc-core-11.2.0-1
+  gobject-introspection-1.54.1-3
+  libglib2.0-devel-2.54.3-1
+  meson-0.58.2-1
+  ninja-1.10.2-1
+
+Canonical website:
+  https://github.com/altdesktop/playerctl
+
+Canonical download:
+  https://github.com/altdesktop/playerctl/archive/refs/tags/v2.4.1.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack playerctl-2.4.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./playerctl-2.4.1-X.cygport all
+
+This will create:
+  /usr/src/playerctl-2.4.1-X-src.tar.xz
+  /usr/src/playerctl-2.4.1-X.tar.xz
+  /usr/src/libplayerctl2-2.4.1-X.tar.xz
+  /usr/src/libplayerctl-devel-2.4.1-X.tar.xz
+  /usr/src/girepository-Playerctl2.0-2.4.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(playerctl)
+  /usr/bin/playerctl.exe
+  /usr/bin/playerctld.exe
+  /usr/share/bash-completion/completions/playerctl.bash
+  /usr/share/dbus-1/services/org.mpris.MediaPlayer2.playerctld.service
+  /usr/share/doc/Cygwin/playerctl.README
+  /usr/share/doc/playerctl/CHANGELOG.md
+  /usr/share/doc/playerctl/CONTRIBUTORS
+  /usr/share/doc/playerctl/COPYING
+  /usr/share/doc/playerctl/README.md
+  /usr/share/man/man1/playerctl.1.gz
+
+(libplayerctl2)
+  /usr/bin/cygplayerctl-2.dll
+
+(libplayerctl-devel)
+  /usr/include/playerctl/playerctl-enum-types.h
+  /usr/include/playerctl/playerctl-player-manager.h
+  /usr/include/playerctl/playerctl-player-name.h
+  /usr/include/playerctl/playerctl-player.h
+  /usr/include/playerctl/playerctl-version.h
+  /usr/include/playerctl/playerctl.h
+  /usr/lib/libplayerctl.dll.a
+  /usr/lib/pkgconfig/playerctl.pc
+
+(girepository-Playerctl2.0)
+  /usr/lib/girepository-1.0/Playerctl-2.0.typelib
+  /usr/share/gir-1.0/Playerctl-2.0.gir
+
+------------------
+
+Port Notes:
+
+----- version 2.4.1-1bl1 -----
+Version bump.
+
+----- version 2.3.1-1bl1 -----
+Version bump.
+
+----- version 2.2.1-1bl1 -----
+Version bump.
+
+----- version 2.1.1-1bl1 -----
+Version bump.
+
+----- version 2.0.2-1bl1 -----
+Version bump.
+
+----- version 2.0.1-1bl1 -----
+Version bump.
+
+----- version 0.5.0-1bl1 -----
+Version bump.
+
+----- version 0.4.2-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

@@ -1,0 +1,50 @@
+HOMEPAGE="https://gitlab.com/accounts-sso/${PN}"
+SRC_URI="https://gitlab.com/accounts-sso/${PN}/-/archive/VERSION_${PV}/${PN}-VERSION_${PV}.tar.bz2"
+SRC_DIR="${PN}-VERSION_${PV}"
+
+CATEGORY="Utils"
+SUMMARY="SignOn Daemon (Qt)"
+DESCRIPTION="The SignOn daemon is a D-Bus service which performs user authentication on
+behalf of its clients. There are currently authentication plugins for OAuth
+1.0 and 2.0, SASL, Digest-MD5, and plain username/password combination."
+
+BUILD_REQUIRES="libQt5Gui-devel libQt5Sql-devel"
+
+inherit qt5-qmake
+
+CYGQMAKE5_ARGS="
+	LIBDIR=/usr/lib
+"
+
+src_test()
+{
+	cd ${B}
+	PATH=${B}/lib/SignOn:${B}/lib/plugins/signon-plugins-common:${B}/lib/signond/SignOn:${PATH} cygtest
+}
+
+PKG_NAMES="
+	${PN}
+	lib${PN}1
+	lib${PN}-devel
+"
+signond_CONTENTS="
+	etc
+	usr/bin/*.exe
+	usr/lib/signon
+	usr/share/dbus*
+	usr/share/doc/Cygwin
+	usr/share/doc/${PN}
+"
+libsignond1_CONTENTS="
+	usr/bin/*.dll
+"
+libsignond_devel_CONTENTS="
+	usr/include
+	usr/lib/cmake
+	usr/lib/libsignon*
+	usr/lib/pkgconfig
+	usr/share/doc/signon-plugins-dev
+"
+signond_SUMMARY="${SUMMARY} (utilities)"
+libsignond1_SUMMARY="${SUMMARY} (runtime)"
+libsignond_devel_SUMMARY="${SUMMARY} (development)"

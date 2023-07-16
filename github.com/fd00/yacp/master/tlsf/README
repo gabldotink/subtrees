@@ -1,0 +1,69 @@
+tlsf
+------------------------------------------
+TLSF (two level segregated fit) is a relatively new memory allocator designed
+for embedded systems. It boasts constant time O(1) malloc/free response time
+and a 4-byte block overhead. Though it typically is slightly slower than other
+allocators such as dlmalloc, it has no worst-case behavior.
+
+Runtime requirements:
+  cygwin-2.2.1-1
+  libtlsf-devel-3.0-1bl1
+  libtlsf0-3.0-1bl1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-9-1
+  binutils-2.25-2
+  cygport-0.20.2-1
+  gcc-core-4.9.3-1
+  libtool-2.4.6-2
+  make-4.1-1
+
+Canonical website:
+  http://tlsf.baisoku.org/
+
+Canonical download:
+  http://tlsf.baisoku.org/tlsf-3.0.zip
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack tlsf-3.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./tlsf-3.0-X.cygport all
+
+This will create:
+  /usr/src/tlsf-3.0-X-src.tar.xz
+  /usr/src/tlsf-3.0-X.tar.xz
+  /usr/src/libtlsf0-3.0-X.tar.xz
+  /usr/src/libtlsf-devel-3.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(tlsf)
+  /usr/share/doc/Cygwin/tlsf.README
+  /usr/share/doc/tlsf/Readme.txt
+
+(libtlsf0)
+  /usr/bin/cygtlsf-0.dll
+
+(libtlsf-devel)
+  /usr/include/tlsf.h
+  /usr/include/tlsfbits.h
+  /usr/lib/libtlsf.dll.a
+  /usr/lib/pkgconfig/tlsf.pc
+
+------------------
+
+Port Notes:
+
+----- version 3.0-1bl1 -----
+Version bump.
+
+----- version 2.0-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://fd0.hatenablog.jp/>

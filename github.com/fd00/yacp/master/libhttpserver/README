@@ -1,0 +1,116 @@
+libhttpserver
+------------------------------------------
+libhttpserver is a small C++ library for embedding RESTful HTTP server
+functionality into applications.
+
+Runtime requirements:
+  cygwin-3.1.7-1
+  libgcc1-10.2.0-1
+  libhttpserver-devel-0.18.2-1bl1
+  libhttpserver0-0.18.2-1bl1
+  libmicrohttpd-devel-0.9.71-1bl1
+  libmicrohttpd12-0.9.71-1bl1
+  libstdc++6-10.2.0-1
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.34+1git.de9c1b7cfe-1
+  cygport-0.34.0-1
+  gcc-core-10.2.0-1
+  gcc-g++-10.2.0-1
+  libtool-2.4.6-7
+  make-4.3-1
+
+Canonical website:
+  https://github.com/etr/libhttpserver
+
+Canonical download:
+  https://github.com/etr/libhttpserver/archive/0.18.2.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libhttpserver-0.18.2-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libhttpserver-0.18.2-X.cygport all
+
+This will create:
+  /usr/src/libhttpserver-0.18.2-X-src.tar.xz
+  /usr/src/libhttpserver-0.18.2-X.tar.xz
+  /usr/src/libhttpserver0-0.18.2-X.tar.xz
+  /usr/src/libhttpserver-devel-0.18.2-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libhttpserver)
+  /usr/share/doc/Cygwin/libhttpserver.README
+  /usr/share/doc/libhttpserver/AUTHORS
+  /usr/share/doc/libhttpserver/CODE_OF_CONDUCT.md
+  /usr/share/doc/libhttpserver/CONTRIBUTING.md
+  /usr/share/doc/libhttpserver/ChangeLog
+  /usr/share/doc/libhttpserver/LICENSE
+  /usr/share/doc/libhttpserver/PULL_REQUEST_TEMPLATE.md
+  /usr/share/doc/libhttpserver/README.md
+
+(libhttpserver0)
+  /usr/bin/cyghttpserver-0.dll
+
+(libhttpserver-devel)
+  /usr/include/httpserver.hpp
+  /usr/include/httpserver/basic_auth_fail_response.hpp
+  /usr/include/httpserver/create_webserver.hpp
+  /usr/include/httpserver/deferred_response.hpp
+  /usr/include/httpserver/details/http_endpoint.hpp
+  /usr/include/httpserver/digest_auth_fail_response.hpp
+  /usr/include/httpserver/file_response.hpp
+  /usr/include/httpserver/http_request.hpp
+  /usr/include/httpserver/http_resource.hpp
+  /usr/include/httpserver/http_response.hpp
+  /usr/include/httpserver/http_utils.hpp
+  /usr/include/httpserver/string_response.hpp
+  /usr/include/httpserver/webserver.hpp
+  /usr/include/httpserverpp
+  /usr/lib/cmake/libhttpserver/FindLibHttpServer.cmake
+  /usr/lib/libhttpserver.dll.a
+  /usr/lib/pkgconfig/libhttpserver.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.18.2-1bl1 -----
+Version bump.
+
+----- version 0.18.1-1bl1 -----
+Version bump.
+
+----- version 0.18.0-1bl1 -----
+Version bump.
+
+----- version 0.17.5-1bl1 -----
+Version bump.
+
+----- version 0.17.0-1bl1 -----
+Version bump.
+
+----- version 0.13.0-1bl1 -----
+Version bump.
+
+----- version 0.11.0-1bl1 -----
+Version bump.
+
+----- version 0.9.0-1bl3 -----
+Rebuild for libmicrohttpd
+
+----- version 0.9.0-1bl2 -----
+Rebuild on x86_64
+
+----- version 0.9.0-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

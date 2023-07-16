@@ -1,0 +1,93 @@
+hstr
+------------------------------------------
+Are you looking for a command that you used recently? Do you want to avoid the
+need to write long commands over and over again despite you used them recently?
+Are you looking for a tool that is able to manage your favorite commands?
+
+Runtime requirements:
+  cygwin-3.4.5-1
+  libncursesw10-6.3-1.20220416
+  libreadline7-8.2-2
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.39-1
+  cygport-0.35.5-1
+  gcc-core-11.3.0-1
+  libncurses-devel-6.3-1.20220416
+  libreadline-devel-8.2-2
+  make-4.4-1
+
+Canonical website:
+  https://github.com/dvorka/hstr
+
+Canonical download:
+  https://github.com/dvorka/hstr/archive/refs/tags/2.6.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack hstr-2.6-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./hstr-2.6-X.cygport all
+
+This will create:
+  /usr/src/hstr-2.6-X-src.tar.xz
+  /usr/src/hstr-2.6-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(hstr)
+  /usr/bin/hh.exe
+  /usr/bin/hstr.exe
+  /usr/share/bash-completion/completions/hstr
+  /usr/share/doc/Cygwin/hstr.README
+  /usr/share/doc/hstr/CONFIGURATION.md
+  /usr/share/doc/hstr/Changelog
+  /usr/share/doc/hstr/DEVELOPER-DOCUMENTATION.md
+  /usr/share/doc/hstr/LICENSE
+  /usr/share/doc/hstr/README.md
+  /usr/share/doc/hstr/SECURITY.md
+  /usr/share/doc/hstr/USER-DOCUMENTATION.md
+  /usr/share/doc/hstr/hstr-v2.gif
+  /usr/share/man/man1/hstr.1.gz
+
+------------------
+
+Port Notes:
+
+----- version 2.6-1bl1 -----
+Version bump.
+
+----- version 2.5-1bl1 -----
+Version bump.
+
+----- version 2.3-1bl1 -----
+Version bump.
+
+----- version 2.2-1bl1 -----
+Version bump.
+
+----- version 2.0-1bl1 -----
+Version bump.
+
+----- version 1.25-1bl1 -----
+Version bump.
+
+----- version 1.24-1bl1 -----
+Version bump.
+
+----- version 1.23-1bl1 -----
+Version bump.
+
+----- version 1.19-1bl1 -----
+Version bump.
+
+----- version 1.16-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

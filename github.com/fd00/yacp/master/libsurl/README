@@ -1,0 +1,88 @@
+libsurl
+------------------------------------------
+libsurl is a library for generating short urls (using various online services
+like tinyurl.com and bit.ly) suited to use where space is limited, such as in
+status messages.
+
+Runtime requirements:
+  cygwin-1.7.34-6
+  libcurl4-7.40.0-1
+  libsurl-devel-0.7.2-1bl2
+  libsurl0-0.7.2-1bl2
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-9-1
+  binutils-2.25-1
+  cygport-0.17.1-1
+  gcc-core-4.9.2-2
+  libtool-2.4.5-1
+  make-4.1-1
+
+Canonical website:
+  http://libsurl.sf.net/
+
+Canonical download:
+  http://launchpad.net/libsurl/trunk/0.7/+download/libsurl-0.7.2.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libsurl-0.7.2-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libsurl-0.7.2-X.cygport all
+
+This will create:
+  /usr/src/libsurl-0.7.2-X-src.tar.xz
+  /usr/src/libsurl-0.7.2-X.tar.xz
+  /usr/src/libsurl0-0.7.2-X.tar.xz
+  /usr/src/libsurl-devel-0.7.2-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libsurl)
+  /usr/share/doc/Cygwin/libsurl.README
+  /usr/share/doc/libsurl/AUTHORS
+  /usr/share/doc/libsurl/COPYING
+  /usr/share/doc/libsurl/ChangeLog
+  /usr/share/doc/libsurl/NEWS
+  /usr/share/doc/libsurl/README
+
+(libsurl0)
+  /usr/bin/cygsurl-0.dll
+
+(libsurl-devel)
+  /usr/include/libsurl-fe.h
+  /usr/lib/libsurl.dll.a
+  /usr/lib/pkgconfig/libsurl.pc
+  /usr/share/man/man3/surl_cleanup.3.gz
+  /usr/share/man/man3/surl_debug.3.gz
+  /usr/share/man/man3/surl_debug_off.3.gz
+  /usr/share/man/man3/surl_debug_on.3.gz
+  /usr/share/man/man3/surl_get_engine.3.gz
+  /usr/share/man/man3/surl_get_error.3.gz
+  /usr/share/man/man3/surl_getopt.3.gz
+  /usr/share/man/man3/surl_init.3.gz
+  /usr/share/man/man3/surl_register_engine.3.gz
+  /usr/share/man/man3/surl_reset_error.3.gz
+  /usr/share/man/man3/surl_setopt.3.gz
+  /usr/share/man/man3/surl_shorten.3.gz
+
+------------------
+
+Port Notes:
+
+----- version 0.7.2-1bl2 -----
+Rebuild on x86_64
+
+----- version 0.7.2-1bl1 -----
+Version bump.
+
+----- version 0.7.1-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>
+

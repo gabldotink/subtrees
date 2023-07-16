@@ -1,0 +1,102 @@
+bcunit
+------------------------------------------
+This is BCUnit, a fork of the defunct project CUnit, with several fixes and
+patches applied.
+
+Runtime requirements:
+  cygwin-3.4.3-1
+  libbcunit-devel-5.2.0-1bl1
+  libbcunit1-5.2.0-1bl1
+  libncursesw10-6.3-1.20220416
+  pkg-config-1.9.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.39-1
+  cmake-3.23.2-1
+  cygport-0.35.5-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libncurses-devel-6.3-1.20220416
+  ninja-1.11.1-1
+
+Canonical website:
+  https://gitlab.linphone.org/BC/public/bcunit
+
+Canonical download:
+  https://gitlab.linphone.org/BC/public/bcunit/-/archive/5.2.0/bcunit-5.2.0.tar.bz2
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack bcunit-5.2.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./bcunit-5.2.0-X.cygport all
+
+This will create:
+  /usr/src/bcunit-5.2.0-X-src.tar.xz
+  /usr/src/bcunit-5.2.0-X.tar.xz
+  /usr/src/libbcunit1-5.2.0-X.tar.xz
+  /usr/src/libbcunit-devel-5.2.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(bcunit)
+  /usr/share/BCUnit/BCUnit-List.dtd
+  /usr/share/BCUnit/BCUnit-List.xsl
+  /usr/share/BCUnit/BCUnit-Run.dtd
+  /usr/share/BCUnit/BCUnit-Run.xsl
+  /usr/share/BCUnit/Memory-Dump.dtd
+  /usr/share/BCUnit/Memory-Dump.xsl
+  /usr/share/doc/Cygwin/bcunit.README
+  /usr/share/doc/bcunit/AUTHORS
+  /usr/share/doc/bcunit/COPYING
+  /usr/share/doc/bcunit/ChangeLog
+  /usr/share/doc/bcunit/NEWS
+  /usr/share/doc/bcunit/README.md
+  /usr/share/doc/bcunit/TODO
+
+(libbcunit1)
+  /usr/bin/cygbcunit-1.dll
+
+(libbcunit-devel)
+  /usr/include/BCUnit/Automated.h
+  /usr/include/BCUnit/BCUnit.h
+  /usr/include/BCUnit/BCUnit_intl.h
+  /usr/include/BCUnit/Basic.h
+  /usr/include/BCUnit/CUCurses.h
+  /usr/include/BCUnit/CUError.h
+  /usr/include/BCUnit/Console.h
+  /usr/include/BCUnit/MyMem.h
+  /usr/include/BCUnit/TestDB.h
+  /usr/include/BCUnit/TestRun.h
+  /usr/include/BCUnit/Util.h
+  /usr/lib/cmake/bcunit/BcUnitConfig.cmake
+  /usr/lib/cmake/bcunit/BcUnitConfigVersion.cmake
+  /usr/lib/cmake/bcunit/BcUnitTargets-release.cmake
+  /usr/lib/cmake/bcunit/BcUnitTargets.cmake
+  /usr/lib/libbcunit.dll.a
+  /usr/lib/pkgconfig/bcunit.pc
+
+------------------
+
+Port Notes:
+
+----- version 5.2.0-1bl1 -----
+Version bump.
+
+----- version 3.0.2+git20210211-1bl1 -----
+Version bump.
+
+----- version 3.0.2+git20200821-1bl1 -----
+Version bump.
+
+----- version 3.0.2+git20191119-1bl1 -----
+Version bump.
+
+----- version 3.0.2-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

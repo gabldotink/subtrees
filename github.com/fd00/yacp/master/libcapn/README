@@ -1,0 +1,81 @@
+libcapn
+------------------------------------------
+libcapn is a C Library to interact with the Apple Push Notification Service
+using simple and intuitive API. With the library you can easily send push
+notifications to iOS and OS X (>= 10.8) devices.
+
+Runtime requirements:
+  cygwin-3.1.2-1
+  libcapn2-2.0.0-1bl2
+  libjansson4-2.12-1
+  libssl1.0-1.0.2t-1
+  pkg-config-1.6.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.29-1
+  cmake-3.14.5-1
+  cygport-0.33.1-1
+  gcc-core-7.4.0-1
+  ninja-1.9.0-1
+
+Canonical website:
+  https://github.com/adobkin/libcapn
+
+Canonical download:
+  https://github.com/adobkin/libcapn/archive/2.0.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libcapn-2.0.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libcapn-2.0.0-X.cygport all
+
+This will create:
+  /usr/src/libcapn-2.0.0-X-src.tar.xz
+  /usr/src/libcapn-2.0.0-X.tar.xz
+  /usr/src/libcapn2-2.0.0-X.tar.xz
+  /usr/src/libcapn-devel-2.0.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libcapn)
+  /usr/bin/apn-pusher.exe
+  /usr/share/doc/Cygwin/libcapn.README
+  /usr/share/doc/libcapn/LICENSE
+  /usr/share/doc/libcapn/README.md
+
+(libcapn2)
+  /usr/bin/cygcapn-2.dll
+
+(libcapn-devel)
+  /usr/bin/libcapn-config.exe
+  /usr/include/capn/apn.h
+  /usr/include/capn/apn_array.h
+  /usr/include/capn/apn_binary_message.h
+  /usr/include/capn/apn_payload.h
+  /usr/include/capn/apn_platform.h
+  /usr/include/capn/apn_version.h
+  /usr/lib/capn/libcapn.dll.a
+  /usr/lib/pkgconfig/libcapn.pc
+
+------------------
+
+Port Notes:
+
+----- version 2.0.0-1bl2 -----
+Rebuold for libssl
+
+----- version 2.0.0-1bl1 -----
+Version bump.
+
+----- version 1.1.0-1bl1 -----
+Version bump.
+
+----- version 1.0.0-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

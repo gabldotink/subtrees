@@ -1,0 +1,72 @@
+stagit
+------------------------------------------
+stagit is a static page generator for git.
+
+Runtime requirements:
+  cygwin-3.4.6-1
+  libgit2_25-0.25.1-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.40-1
+  cygport-0.36.1-1
+  gcc-core-11.3.0-1
+  libgit2-devel-0.25.1-1
+  make-4.4.1-1
+
+Canonical website:
+  https://codemadness.org/stagit.html
+
+Canonical download:
+  https://codemadness.org/releases/stagit/stagit-1.2.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack stagit-1.2-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./stagit-1.2-X.cygport all
+
+This will create:
+  /usr/src/stagit-1.2-X-src.tar.xz
+  /usr/src/stagit-1.2-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(stagit)
+  /usr/bin/stagit.exe
+  /usr/share/doc/Cygwin/stagit.README
+  /usr/share/doc/stagit/LICENSE
+  /usr/share/doc/stagit/README
+  /usr/share/doc/stagit/example_create.sh
+  /usr/share/doc/stagit/example_post-receive.sh
+  /usr/share/doc/stagit/favicon.png
+  /usr/share/doc/stagit/logo.png
+  /usr/share/doc/stagit/style.css
+  /usr/share/man/man1/stagit.1.gz
+
+------------------
+
+Port Notes:
+
+----- version 1.2-1bl1 -----
+Version bump.
+
+----- version 1.1-1bl1 -----
+Version bump.
+
+----- version 0.9.6-1bl1 -----
+Version bump.
+
+----- version 0.9.5-1bl1 -----
+Version bump.
+
+----- version 0.9.4-1bl1 -----
+Version bump.
+
+----- version 0.9.3-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

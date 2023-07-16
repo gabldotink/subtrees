@@ -1,0 +1,97 @@
+libaerial
+------------------------------------------
+libaerial is a library for sending audio data over Apple AirPlay protocol,
+to be played on a remote device. It solves a longstanding problem of there
+being no good, UDP, audio AirPlay client code suitable for use in languages
+commonly used for audio manipulation (such as C).
+
+Runtime requirements:
+  cygwin-2.8.2-1
+  girepository-GLib2.0-1.50.0-1
+  libaerial-devel-0.1.0-1bl2
+  libaerial0-0.1.0-1bl2
+  libalac0-0+git20160511-1bl1
+  libgcc1-5.4.0-1
+  libglib2.0-devel-2.50.3-1
+  libglib2.0_0-2.50.3-1
+  libgstinterfaces1.0_0-1.10.5-1
+  libgstreamer1.0_0-1.10.5-1
+  libnettle-devel-3.3-1
+  libnettle6-3.3-1
+  libstdc++6-5.4.0-1
+  pkg-config-0.29.1-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-9-1
+  binutils-2.25-4
+  cygport-0.24.1-1
+  gcc-core-5.4.0-1
+  gcc-g++-5.4.0-1
+  gobject-introspection-1.50.0-1
+  libtool-2.4.6-4
+  make-4.2.1-2
+  python-2.7.13-1
+
+Canonical website:
+  https://github.com/agrif/libaerial
+
+Canonical download:
+  https://github.com/agrif/libaerial/archive/v0.1.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libaerial-0.1.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libaerial-0.1.0-X.cygport all
+
+This will create:
+  /usr/src/libaerial-0.1.0-X-src.tar.xz
+  /usr/src/libaerial-0.1.0-X.tar.xz
+  /usr/src/libaerial0-0.1.0-X.tar.xz
+  /usr/src/libaerial-devel-0.1.0-X.tar.xz
+  /usr/src/girepository-Aerial1.0-0.1.0-X.tar.xz
+  /usr/src/vala-libaerial-0.1.0-X.tar.xz
+  /usr/src/gstreamer1.0-plugins-libaerial-0.1.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libaerial)
+  /usr/bin/aerial-test.exe
+  /usr/share/doc/Cygwin/libaerial.README
+  /usr/share/doc/libaerial/COPYING
+  /usr/share/doc/libaerial/README.md
+
+(libaerial0)
+  /usr/bin/cygaerial-0.dll
+
+(libaerial-devel)
+  /usr/include/libaerial/aerial.h
+  /usr/lib/libaerial.dll.a
+  /usr/lib/pkgconfig/aerial.pc
+
+(girepository-Aerial1.0)
+  /usr/lib/girepository-1.0/Aerial-1.0.typelib
+  /usr/share/gir-1.0/Aerial-1.0.gir
+
+(vala-libaerial)
+  /usr/share/vala/vapi/aerial.vapi
+
+(gstreamer1.0-plugins-libaerial)
+  /usr/lib/gstreamer-1.0/cyggstaerial.dll
+
+------------------
+
+Port Notes:
+
+----- version 0.1.0-1bl2 -----
+Rebuild for libnettle
+
+----- version 0.1.0-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

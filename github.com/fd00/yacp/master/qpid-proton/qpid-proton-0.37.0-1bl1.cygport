@@ -1,0 +1,114 @@
+HOMEPAGE="https://github.com/apache/${PN}/"
+SRC_URI="https://github.com/apache/${PN}/archive/refs/tags/${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="High-performance, lightweight messaging library"
+DESCRIPTION="Qpid Proton is a high-performance, lightweight messaging library. It can be
+used in the widest range of messaging applications, including brokers, client
+libraries, routers, bridges, proxies, and more. Proton makes it trivial to
+integrate with the AMQP 1.0 ecosystem from any platform, environment, or
+language."
+
+LICENSE="Apache-2.0"
+LICENSE_SPDX="SPDX-License-Identifier: Apache-2.0"
+LICENSE_URI="LICENSE.txt"
+
+BUILD_REQUIRES="libjsoncpp-devel libsasl2-devel libssl-devel libuv-devel python39-devel ruby-devel"
+
+export CPPFLAGS="${CPPFLAGS} -D_GNU_SOURCE"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DENABLE_WARNING_ERROR:BOOL=OFF
+	-DLIB_SUFFIX:STRING=''
+"
+
+src_test()
+{
+	cd ${B}
+	PATH=${B}/c:${PATH} ninja_test
+}
+
+PKG_IGNORE="
+	usr/share/proton/CMakeLists.txt
+	usr/share/proton/LICENSE.txt
+	usr/share/proton/README.md
+"
+
+PKG_NAMES="
+	qpid-proton
+	libqpid-proton11
+	libqpid-proton-devel
+	libqpid-proton-core10
+	libqpid-proton-core-devel
+	libqpid-proton-cpp12
+	libqpid-proton-cpp-devel
+	libqpid-proton-proactor1
+	libqpid-proton-proactor-devel
+	python39-qpid-proton
+	ruby-qpid-proton
+"
+qpid_proton_CONTENTS="
+	usr/share/doc
+"
+libqpid_proton11_CONTENTS="
+	usr/bin/cygqpid-proton-11.dll
+"
+libqpid_proton_devel_CONTENTS="
+	usr/include/proton/*.[hi]
+	usr/lib/cmake/Proton/*
+	usr/lib/libqpid-proton.dll.a
+	usr/lib/pkgconfig/libqpid-proton.pc
+	usr/share/proton/examples/README.md
+	usr/share/proton/examples/c
+	usr/share/proton/tests/examples/CMakeLists.txt
+	usr/share/proton/tests/*.cmake
+	usr/share/proton/tests/*.sh
+	usr/share/proton/tests/[iltuv]*
+"
+libqpid_proton_core10_CONTENTS="
+	usr/bin/cygqpid-proton-core-*.dll
+"
+libqpid_proton_core_devel_CONTENTS="
+	usr/lib/libqpid-proton-core.dll.a
+	usr/lib/pkgconfig/libqpid-proton-core.pc
+"
+libqpid_proton_cpp12_CONTENTS="
+	usr/bin/cygqpid-proton-cpp-*.dll
+"
+libqpid_proton_cpp_devel_CONTENTS="
+	usr/include/proton/*.hpp
+	usr/include/proton/*/*.hpp
+	usr/lib/cmake/ProtonCpp/*
+	usr/lib/libqpid-proton-cpp.dll.a
+	usr/lib/pkgconfig/libqpid-proton-cpp.pc
+	usr/share/proton/examples/cpp
+"
+libqpid_proton_proactor1_CONTENTS="
+	usr/bin/cygqpid-proton-proactor-*.dll
+"
+libqpid_proton_proactor_devel_CONTENTS="
+	usr/lib/libqpid-proton-proactor.dll.a
+	usr/lib/pkgconfig/libqpid-proton-proactor.pc
+"
+python39_qpid_proton_CONTENTS="
+	usr/lib/proton/bindings/python
+	usr/share/proton/examples/python
+	usr/share/proton/tests/py
+"
+ruby_qpid_proton_CONTENTS="
+	usr/lib/proton/bindings/ruby
+	usr/share/proton/examples/ruby
+"
+qpid_proton_SUMMARY="${SUMMARY} (licensing & readmes)"
+libqpid_proton11_SUMMARY="${SUMMARY} (runtime)"
+libqpid_proton_devel_SUMMARY="${SUMMARY} (development)"
+libqpid_proton_core10_SUMMARY="${SUMMARY} (runtime / core)"
+libqpid_proton_core_devel_SUMMARY="${SUMMARY} (development / core)"
+libqpid_proton_cpp12_SUMMARY="${SUMMARY} (runtime / c++)"
+libqpid_proton_cpp_devel_SUMMARY="${SUMMARY} (development / c++)"
+libqpid_proton_proactor1_SUMMARY="${SUMMARY} (runtime / proactor)"
+libqpid_proton_proactor_devel_SUMMARY="${SUMMARY} (development / proactor)"
+python39_qpid_proton_SUMMARY="${SUMMARY} (python39 bindings)"
+ruby_qpid_proton_SUMMARY="${SUMMARY} (ruby bindings)"

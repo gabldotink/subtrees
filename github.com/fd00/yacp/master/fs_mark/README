@@ -1,0 +1,53 @@
+fs_mark
+------------------------------------------
+The fs_mark program is meant to give a low level bashing to file systems. The
+write pattern that we concentrate on is heavily synchronous IO across mutiple
+directories, drives, etc.
+
+Runtime requirements:
+  cygwin-2.2.1-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.25-2
+  cygport-0.20.2-1
+  gcc-core-4.9.3-1
+  make-4.1-1
+
+Canonical website:
+  http://fsmark.sf.net/
+
+Canonical download:
+  mirror://sourceforge/fsmark/fs_mark-3.3.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack fs_mark-3.3-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./fs_mark-3.3-X.cygport all
+
+This will create:
+  /usr/src/fs_mark-3.3-X-src.tar.xz
+  /usr/src/fs_mark-3.3-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(fs_mark)
+  /usr/bin/fs_mark.exe
+  /usr/share/doc/Cygwin/fs_mark.README
+  /usr/share/doc/fs_mark/README
+
+------------------
+
+Port Notes:
+
+----- version 3.3-1bl2 -----
+Rebuild on x86_64
+
+----- version 3.3-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

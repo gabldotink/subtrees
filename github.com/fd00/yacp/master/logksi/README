@@ -1,0 +1,66 @@
+logksi
+------------------------------------------
+Log signature command-line tool logksi provides the functions for signing
+recovery; extension of KSI signatures in the log signature file; verification
+of logs; extraction of record-level signatures; integration of log signature
+files.
+
+Runtime requirements:
+  cygwin-2.11.2-1
+  libgtrfc3161_1-1.0.0+git20180924-1bl1
+  libksi11-3.18.2836-1bl1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-10-1
+  binutils-2.29-1
+  cygport-0.31.1-1
+  gcc-core-7.4.0-1
+
+Canonical website:
+  https://github.com/guardtime/logksi
+
+Canonical download:
+  https://github.com/guardtime/logksi/archive/v1.3.396.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack logksi-1.3.396-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./logksi-1.3.396-X.cygport all
+
+This will create:
+  /usr/src/logksi-1.3.396-X-src.tar.xz
+  /usr/src/logksi-1.3.396-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(logksi)
+  /usr/bin/logksi.exe
+  /usr/share/doc/Cygwin/logksi.README
+  /usr/share/doc/logksi/ChangeLog
+  /usr/share/doc/logksi/LICENSE
+  /usr/share/doc/logksi/README.md
+  /usr/share/man/man1/logksi-extend.1.gz
+  /usr/share/man/man1/logksi-extract.1.gz
+  /usr/share/man/man1/logksi-integrate.1.gz
+  /usr/share/man/man1/logksi-sign.1.gz
+  /usr/share/man/man1/logksi-verify.1.gz
+  /usr/share/man/man1/logksi.1.gz
+  /usr/share/man/man5/logksi-conf.5.gz
+
+------------------
+
+Port Notes:
+
+----- version 1.3.396-1bl1 -----
+Version bump.
+
+----- version 1.1.249-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

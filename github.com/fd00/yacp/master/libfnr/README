@@ -1,0 +1,78 @@
+libfnr
+------------------------------------------
+libFNR - A reference implementation library for FNR encryption scheme.
+
+Runtime requirements:
+  cygwin-3.1.2-1
+  libfnr-devel-1.0.0+git20160123-1bl2
+  libfnr1-1.0.0+git20160123-1bl2
+  libssl-devel-1.1.1d-1
+  libssl1.1-1.1.1d-1
+  pkg-config-1.6.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.29-1
+  cygport-0.33.1-1
+  gcc-core-7.4.0-1
+  libtool-2.4.6-7
+  make-4.2.1-2
+
+Canonical website:
+  https://github.com/cisco/libfnr
+
+Canonical download:
+  https://github.com/cisco/libfnr.git
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libfnr-1.0.0+git20160123-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libfnr-1.0.0+git20160123-X.cygport all
+
+This will create:
+  /usr/src/libfnr-1.0.0+git20160123-X-src.tar.xz
+  /usr/src/libfnr-1.0.0+git20160123-X.tar.xz
+  /usr/src/libfnr1-1.0.0+git20160123-X.tar.xz
+  /usr/src/libfnr-devel-1.0.0+git20160123-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libfnr)
+  /usr/bin/libfnr-bench.exe
+  /usr/bin/libfnr-ipv4test.exe
+  /usr/bin/libfnr-timestamptest.exe
+  /usr/share/doc/Cygwin/libfnr.README
+  /usr/share/doc/libfnr/CONTRIBUTIONS
+  /usr/share/doc/libfnr/HOWTO.txt
+  /usr/share/doc/libfnr/LICENSE
+  /usr/share/doc/libfnr/README.md
+  /usr/share/doc/libfnr/TODO.txt
+
+(libfnr1)
+  /usr/bin/cygfnr-1.dll
+
+(libfnr-devel)
+  /usr/include/fnr.h
+  /usr/lib/libfnr.dll.a
+  /usr/lib/pkgconfig/libfnr.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.0.0+git20160123-1bl2 -----
+Rebuild for libssl
+
+----- version 1.0.0+git20160123-1bl1 -----
+Version bump.
+
+----- version 1.0.0+git20141124-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

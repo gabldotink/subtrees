@@ -1,0 +1,43 @@
+HOMEPAGE="https://inai.de/projects/libhx/"
+SRC_URI="https://inai.de/files/libhx/${P}.tar.xz"
+
+CATEGORY="Libs"
+SUMMARY="General-purpose library for typical low-level operations"
+DESCRIPTION="libHX is a C library (with some C++ bindings available) that provides data
+structures and functions commonly needed, such as maps, deques, linked lists,
+string formatting and autoresizing, option and config file parsing, type
+checking casts and more."
+
+LICENSE="LGPL-2.1-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: LGPL-2.1-or-later"
+LICENSE_URI="COPYING"
+
+export CPPFLAGS="${CPPFLAGS} -D_GNU_SOURCE"
+
+DOCS="
+	LICENSE*
+	doc/*
+"
+
+PKG_NAMES="
+	${PN}
+	${PN}32
+	${PN}-devel
+"
+libHX_CONTENTS="
+	usr/share/doc/Cygwin
+	usr/share/doc/${PN}/[CLR]*
+"
+libHX32_CONTENTS="
+	usr/bin/*-32.dll
+	usr/lib/*.dll
+"
+libHX_devel_CONTENTS="
+	usr/include
+	usr/lib/libHX.*
+	usr/lib/pkgconfig
+	usr/share/doc/${PN}/[a-z]*
+"
+libHX_SUMMARY="${SUMMARY} (licensing & readmes)"
+libHX32_SUMMARY="${SUMMARY} (runtime)"
+libHX_devel_SUMMARY="${SUMMARY} (development)"

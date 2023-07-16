@@ -1,0 +1,40 @@
+HOMEPAGE="https://github.com/arrayfire/${PN}"
+SRC_URI="https://github.com/arrayfire/${PN}/archive/v${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="High Performance Visualization"
+DESCRIPTION="An OpenGL interop library that can be used with ArrayFire or any other
+application using CUDA or OpenCL compute backend. The goal of Forge is to
+provide high performance OpenGL visualizations for C/C++ applications that use
+CUDA/OpenCL. Forge uses OpenGL >=3.3 forward compatible contexts, so please
+make sure you have capable hardware before trying it out."
+
+BUILD_REQUIRES="libboost-devel libfontconfig-devel libfreetype-devel libGL-devel libglfw-devel"
+
+CYGCMAKE_ARGS="
+	-DFG_BUILD_DOCS:BOOL=OFF
+	-DFG_INSTALL_BIN_DIR:STRING=/usr/bin
+	-DFG_INSTALL_CMAKE_DIR:STRING=/usr/lib/cmake/${PN}
+"
+
+inherit cmake
+
+PKG_NAMES="
+	${PN}
+	lib${PN}1
+	lib${PN}-devel
+"
+forge_CONTENTS="
+	usr/share/doc
+"
+libforge1_CONTENTS="
+	usr/bin
+"
+libforge_devel_CONTENTS="
+	usr/include
+	usr/lib
+	usr/share/Forge
+"
+forge_SUMMARY="${SUMMARY} (licensing & readmes)"
+libforge1_SUMMARY="${SUMMARY} (runtime)"
+libforge_devel_SUMMARY="${SUMMARY} (development)"

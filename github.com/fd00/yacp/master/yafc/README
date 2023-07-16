@@ -1,0 +1,78 @@
+yafc
+------------------------------------------
+Yafc is a command-line Linux FTP client, with a bunch of useful features which
+make it easier to use than ftp or sftp. While it's mostly developed on Linux,
+it's been known to work on similar platforms (FreeBSD, OSX), and some
+not-so-similar platforms (Windows), with a bit of effort.
+
+Runtime requirements:
+  cygwin-2.10.0-1
+  libgssapi_krb5_2-1.15.2-2
+  libintl8-0.19.8.1-2
+  libopenssl100-1.0.2o-1
+  libreadline7-7.0.3-3
+  libssh4-0.7.5-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-10-1
+  binutils-2.29-1
+  cygport-0.31.0-1
+  gcc-core-6.4.0-5
+  make-4.2.1-2
+
+Canonical website:
+  http://www.yafc-ftp.com/
+
+Canonical download:
+  http://www.yafc-ftp.com/downloads/yafc-1.3.7.tar.xz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack yafc-1.3.7-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./yafc-1.3.7-X.cygport all
+
+This will create:
+  /usr/src/yafc-1.3.7-X-src.tar.xz
+  /usr/src/yafc-1.3.7-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(yafc)
+  /etc/bash_completion.d/yafc
+  /usr/bin/yafc.exe
+  /usr/share/doc/Cygwin/yafc.README
+  /usr/share/doc/yafc/BUGS
+  /usr/share/doc/yafc/COPYING
+  /usr/share/doc/yafc/COPYRIGHT
+  /usr/share/doc/yafc/NEWS
+  /usr/share/doc/yafc/README.md
+  /usr/share/doc/yafc/THANKS
+  /usr/share/doc/yafc/TODO
+  /usr/share/info/yafc.info.gz
+  /usr/share/locale/de/LC_MESSAGES/yafc.mo
+  /usr/share/locale/sv/LC_MESSAGES/yafc.mo
+  /usr/share/man/man1/yafc.1.gz
+
+------------------
+
+Port Notes:
+
+----- version 1.3.7-1bl1 -----
+Version bump.
+
+----- version 1.3.6-1bl1 -----
+Version bump.
+
+----- version 1.2.5-1bl1 -----
+Version bump.
+
+----- version 1.2.2-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://fd0.hatenablog.jp/>

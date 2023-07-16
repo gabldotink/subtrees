@@ -1,0 +1,89 @@
+liblogcpp
+------------------------------------------
+This library aims to be simple, but highly usable and customizable without
+having a bunch of other unused dependencies, libraries or code. It is a simple
+and intuitive frontend to libstdc++ turning it into a fully featured and easy
+to use general purpose logger.
+
+Runtime requirements:
+  cygwin-3.3.2-1
+  libgcc1-11.2.0-1
+  liblogcpp-devel-1.10.1-1bl1
+  liblogcpp1-1.10.1-1bl1
+  libstdc++6-11.2.0-1
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.37-2
+  cmake-3.20.0-1
+  cygport-0.34.0-1
+  gcc-core-11.2.0-1
+  gcc-g++-11.2.0-1
+  ninja-1.10.2-1
+
+Canonical website:
+  https://github.com/nullptrT/liblogcpp
+
+Canonical download:
+  https://github.com/nullptrT/liblogcpp/archive/refs/tags/v1.10.1.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack liblogcpp-1.10.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./liblogcpp-1.10.1-X.cygport all
+
+This will create:
+  /usr/src/liblogcpp-1.10.1-X-src.tar.xz
+  /usr/src/liblogcpp-1.10.1-X.tar.xz
+  /usr/src/liblogcpp1-1.10.1-X.tar.xz
+  /usr/src/liblogcpp-devel-1.10.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(liblogcpp)
+  /usr/share/doc/Cygwin/liblogcpp.README
+  /usr/share/doc/liblogcpp/LICENSE
+  /usr/share/doc/liblogcpp/README.md
+
+(liblogcpp1)
+  /usr/bin/cyglogcpp-1.dll
+
+(liblogcpp-devel)
+  /usr/include/liblogcpp/assert.hpp
+  /usr/include/liblogcpp/basic_log.hpp
+  /usr/include/liblogcpp/basic_log_input.hpp
+  /usr/include/liblogcpp/channel_log.hpp
+  /usr/include/liblogcpp/color_feature.hpp
+  /usr/include/liblogcpp/config.hpp
+  /usr/include/liblogcpp/log.hpp
+  /usr/include/liblogcpp/log_exception.hpp
+  /usr/include/liblogcpp/logcpp-qt.hpp
+  /usr/include/liblogcpp/logcpp.hpp
+  /usr/include/liblogcpp/logcppversion.hpp
+  /usr/include/liblogcpp/logmanip.hpp
+  /usr/include/liblogcpp/logstream.hpp
+  /usr/include/liblogcpp/severity.hpp
+  /usr/include/liblogcpp/severity_default.hpp
+  /usr/include/liblogcpp/severity_feature.hpp
+  /usr/include/liblogcpp/severity_log.hpp
+  /usr/include/liblogcpp/severity_logger.hpp
+  /usr/lib/cmake/LibLogCPP/LibLogCPPConfig.cmake
+  /usr/lib/liblogcpp.dll.a
+  /usr/lib/pkgconfig/liblogcpp.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.10.1-1bl1 -----
+Version bump.
+
+----- version 1.9.3-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

@@ -1,0 +1,81 @@
+HOMEPAGE="https://github.com/eclipse/${PN}/"
+SRC_URI="https://github.com/eclipse/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Net"
+SUMMARY="Open source MQTT broker"
+DESCRIPTION="Eclipse Mosquitto is an open source (EPL/EDL licensed) message broker that
+implements the MQTT protocol versions 5.0, 3.1.1 and 3.1. Mosquitto is
+lightweight and is suitable for use on all devices from low power single
+board computers to full servers."
+
+LICENSE="EPL-2.0"
+LICENSE_SPDX="SPDX-License-Identifier: EPL-2.0"
+LICENSE_URI="LICENSE.txt"
+
+BUILD_REQUIRES="libcares-devel libcjson-devel libssl-devel libwebsockets-devel libwrap-devel"
+
+CYGCMAKE_ARGS="
+	-DCMAKE_INSTALL_SYSCONFDIR:STRING=/etc
+	-DDOCUMENTATION:BOOL=OFF
+	-DUSE_LIBWRAP:BOOL=ON
+	-DWITH_BUNDLED_DEPS:BOOL=ON
+	-DWITH_PLUGINS:BOOL=OFF
+	-DWITH_SRV:BOOL=ON
+	-DWITH_WEBSOCKETS:BOOL=ON
+"
+
+inherit cmake
+
+src_test()
+{
+	cd ${B}
+	ninja_test
+}
+
+DOCS="
+	CONTRIBUTING.md
+	ChangeLog.txt
+	SECURITY.md
+	edl-v10
+	epl-v20
+"
+HTMLDOCS="
+	about.html
+"
+
+PKG_NAMES="
+	${PN}
+	lib${PN}1
+	lib${PN}-devel
+	lib${PN}pp1
+	lib${PN}pp-devel
+"
+mosquitto_CONTENTS="
+	etc
+	usr/bin/*.exe
+	usr/sbin
+	usr/share/doc
+"
+libmosquitto1_CONTENTS="
+	usr/bin/cyg${PN}-1.dll
+"
+libmosquitto_devel_CONTENTS="
+	usr/include/${PN}.h
+	usr/include/${PN}_*.h
+	usr/include/mqtt*.h
+	usr/lib/lib${PN}.dll.a
+	usr/lib/pkgconfig/lib${PN}.pc
+"
+libmosquittopp1_CONTENTS="
+	usr/bin/cyg${PN}pp-1.dll
+"
+libmosquittopp_devel_CONTENTS="
+	usr/include/${PN}pp.h
+	usr/lib/lib${PN}pp.dll.a
+	usr/lib/pkgconfig/lib${PN}pp.pc
+"
+mosquitto_SUMMARY="${SUMMARY} (utilities)"
+libmosquitto1_SUMMARY="${SUMMARY} (runtime)"
+libmosquitto_devel_SUMMARY="${SUMMARY} (development)"
+libmosquittopp1_SUMMARY="${SUMMARY} (runtime / c++)"
+libmosquittopp_devel_SUMMARY="${SUMMARY} (development / c++)"

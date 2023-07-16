@@ -1,0 +1,55 @@
+HOMEPAGE="https://github.com/miniupnp/miniupnp"
+SRC_URI="https://github.com/miniupnp/miniupnp/archive/refs/tags/${PN}_${PV//./_}.tar.gz"
+SRC_DIR="miniupnp-${PN}_${PV//./_}"
+
+CATEGORY="Libs"
+SUMMARY="UPnP IGD control point"
+DESCRIPTION="${SUMMARY}"
+
+LICENSE="BSD-3-Clause"
+LICENSE_SPDX="SPDX-License-Identifier: BSD-3-Clause"
+LICENSE_URI="LICENSE"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DUPNPC_BUILD_STATIC:BOOL=OFF
+"
+
+src_compile()
+{
+	CYGCMAKE_SOURCE="${S}/${PN}"
+	cd ${B}
+	: ${CYGCMAKE_GENERATOR=Ninja}
+	cygcmake
+	cygninja
+}
+
+src_test()
+{
+	cd ${B}
+	ninja_test
+}
+
+DOCS="
+	${PN}/Changelog.txt
+"
+
+PKG_NAMES="
+	miniupnpc
+	libminiupnpc17
+	libminiupnpc-devel
+"
+miniupnpc_CONTENTS="
+	usr/share
+"
+libminiupnpc17_CONTENTS="
+	usr/bin
+"
+libminiupnpc_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+miniupnpc_SUMMARY="${SUMMARY} (licensing & readmes)"
+libminiupnpc17_SUMMARY="${SUMMARY} (runtime)"
+libminiupnpc_devel_SUMMARY="${SUMMARY} (development)"

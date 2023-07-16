@@ -1,0 +1,27 @@
+HOMEPAGE="https://www.floodgap.com/retrotech/${PN}/"
+SRC_URI="https://www.floodgap.com/retrotech/${PN}/dists/${P}.tar.gz"
+
+CATEGORY="Devel"
+SUMMARY="6502/65816 cross-assembler"
+DESCRIPTION="xa is a high-speed, two-pass portable cross-assembler. It understands
+mnemonics and generates code for NMOS 6502s (such as 6502A, 6504, 6507, 6510,
+7501, 8500, 8501, 8502 ...), CMOS 6502s (65C02 and Rockwell R65C02) and the
+65816."
+
+src_compile()
+{
+	declare -x LD=gcc
+	cd ${B}
+	lndirs
+	cygmake
+}
+
+src_test()
+{
+	cd ${B}
+	./${PN}.exe --version
+}
+
+DOCS="
+	doc/*
+"

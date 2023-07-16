@@ -1,0 +1,34 @@
+HOMEPAGE="https://github.com/tiagosh/${PN}"
+GIT_URI="https://github.com/tiagosh/${PN}.git"
+
+CATEGORY="Libs"
+SUMMARY="Hangouts qt library based on Hangish"
+DESCRIPTION="${SUMMARY}"
+
+LICENSE="GPL-3.0-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: GPL-3.0-or-later"
+LICENSE_URI="LICENSE"
+
+BUILD_REQUIRES="libQt5Core-devel libQt5Script-devel libprotobuf-devel"
+
+inherit cmake
+inherit git
+
+PKG_NAMES="
+	libhangish
+	libhangish0.1
+	libhangish-devel
+"
+libhangish_CONTENTS="
+	usr/share
+"
+libhangish0_1_CONTENTS="
+	usr/bin
+"
+libhangish_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+libhangish_SUMMARY="${SUMMARY} (licensing & readmes)"
+libhangish0_1_SUMMARY="${SUMMARY} (runtime)"
+libhangish_devel_SUMMARY="${SUMMARY} (development)"

@@ -1,0 +1,138 @@
+libhocr
+------------------------------------------
+LibHocr is a GNU Hebrew optical character recognition library. It scans
+document images, improve the image, analyzes the page layout, recognizes the
+characters and outputs the text. The output texts are now editable text, ready
+for your blog, word processor or any other use.
+
+Runtime requirements:
+  cygwin-2.0.0-1
+  cygwin-devel-2.0.0-1
+  libfftw3_3-3.3.4-1
+  libgdk_pixbuf2.0_0-2.31.1-1
+  libglib2.0_0-2.42.2-1
+  libgtk2.0-devel-2.24.27-1
+  libgtk2.0_0-2.24.27-1
+  libhocr-devel-0.10.18-1bl1
+  libhocr0-0.10.18-1bl1
+  libtiff-devel-4.0.3-2
+  libtiff6-4.0.3-2
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-9-1
+  binutils-2.25-1
+  cygport-0.18.1-1
+  gcc-core-4.9.2-3
+  gcc-g++-4.9.2-3
+  libtool-2.4.6-1
+  make-4.1-1
+
+Canonical website:
+  http://sf.net/projects/hocr.berlios/
+
+Canonical download:
+  mirror://sourceforge/hocr.berlios/libhocr-0.10.18.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libhocr-0.10.18-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libhocr-0.10.18-X.cygport all
+
+This will create:
+  /usr/src/libhocr-0.10.18-X-src.tar.xz
+  /usr/src/libhocr-0.10.18-X.tar.xz
+  /usr/src/libhocr0-0.10.18-X.tar.xz
+  /usr/src/libhocr-devel-0.10.18-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libhocr)
+  /usr/bin/hocr.exe
+  /usr/share/doc/Cygwin/libhocr.README
+  /usr/share/doc/libhocr/AUTHORS
+  /usr/share/doc/libhocr/COPYING
+  /usr/share/doc/libhocr/ChangeLog
+  /usr/share/doc/libhocr/HACKING
+  /usr/share/doc/libhocr/INSTALL
+  /usr/share/doc/libhocr/NEWS
+  /usr/share/doc/libhocr/README
+  /usr/share/man/man1/hocr.1.gz
+
+(libhocr0)
+  /usr/bin/cyghocr-0.dll
+  /usr/bin/cyghocrgtk-0.dll
+
+(libhocr-devel)
+  /usr/include/libhocr/ho_array.h
+  /usr/include/libhocr/ho_array_hist.h
+  /usr/include/libhocr/ho_array_stat.h
+  /usr/include/libhocr/ho_bitmap.h
+  /usr/include/libhocr/ho_bitmap_hist.h
+  /usr/include/libhocr/ho_dimentions.h
+  /usr/include/libhocr/ho_font.h
+  /usr/include/libhocr/ho_gtk.h
+  /usr/include/libhocr/ho_layout.h
+  /usr/include/libhocr/ho_linguistics.h
+  /usr/include/libhocr/ho_objmap.h
+  /usr/include/libhocr/ho_pixbuf.h
+  /usr/include/libhocr/ho_recognize.h
+  /usr/include/libhocr/ho_recognize_font_1.h
+  /usr/include/libhocr/ho_recognize_font_2.h
+  /usr/include/libhocr/ho_recognize_font_3.h
+  /usr/include/libhocr/ho_recognize_font_4.h
+  /usr/include/libhocr/ho_recognize_font_5.h
+  /usr/include/libhocr/ho_recognize_font_6.h
+  /usr/include/libhocr/ho_recognize_nikud.h
+  /usr/include/libhocr/ho_segment.h
+  /usr/include/libhocr/ho_string.h
+  /usr/include/libhocr/hocr.h
+  /usr/include/libhocr/hocrpp.h
+  /usr/lib/libhocr.dll.a
+  /usr/lib/libhocrgtk.dll.a
+  /usr/lib/pkgconfig/libhocr-gtk.pc
+  /usr/lib/pkgconfig/libhocr.pc
+  /usr/share/doc/libhocr/examples/bindings/hocr_c.c
+  /usr/share/doc/libhocr/examples/bindings/hocr_cpp.cpp
+  /usr/share/doc/libhocr/examples/bindings/hocr_python.py
+  /usr/share/man/man3/ho_array.3.gz
+  /usr/share/man/man3/ho_array.h.3.gz
+  /usr/share/man/man3/ho_bitmap.3.gz
+  /usr/share/man/man3/ho_bitmap.h.3.gz
+  /usr/share/man/man3/ho_dimentions.h.3.gz
+  /usr/share/man/man3/ho_font.h.3.gz
+  /usr/share/man/man3/ho_gtk.h.3.gz
+  /usr/share/man/man3/ho_layout.3.gz
+  /usr/share/man/man3/ho_layout.h.3.gz
+  /usr/share/man/man3/ho_obj.3.gz
+  /usr/share/man/man3/ho_objlist.3.gz
+  /usr/share/man/man3/ho_objmap.3.gz
+  /usr/share/man/man3/ho_objmap.h.3.gz
+  /usr/share/man/man3/ho_pixbuf.3.gz
+  /usr/share/man/man3/ho_pixbuf.h.3.gz
+  /usr/share/man/man3/ho_recognize.h.3.gz
+  /usr/share/man/man3/ho_segment.h.3.gz
+  /usr/share/man/man3/ho_string.3.gz
+  /usr/share/man/man3/ho_string.h.3.gz
+  /usr/share/man/man3/hocr.3.gz
+  /usr/share/man/man3/hocr.h.3.gz
+  /usr/share/man/man3/hocr_Hocr.3.gz
+  /usr/share/man/man3/hocrpp.h.3.gz
+
+------------------
+
+Port Notes:
+
+----- version 0.10.18-1bl1 -----
+Version bump.
+
+----- version 0.10.17-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>
+

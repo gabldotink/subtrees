@@ -1,0 +1,50 @@
+HOMEPAGE="https://www.fastjet.fr/"
+SRC_URI="https://www.fastjet.fr/repo/${P}.tar.gz"
+
+CATEGORY="Science"
+SUMMARY="Fast implementation of several recombination jet algorithms"
+DESCRIPTION="A software package for jet finding in pp and e+e- collisions. It includes fast
+native implementations of many sequential recombination clustering algorithms,
+plugins for access to a range of cone jet finders and tools for advanced jet
+manipulation."
+
+BUILD_REQUIRES="libgmp-devel libsiscone-devel python39-devel"
+
+CYGCONF_ARGS="
+	--disable-debug
+	--enable-allplugins
+	--enable-allcxxplugins
+	--enable-pxcone
+	--enable-d0runiicone
+	--enable-trackjet
+	--enable-atlascone
+	--enable-cmsiterativecone
+	--enable-d0runicone
+	--enable-pyext
+"
+
+PKG_NAMES="
+	${PN}
+	lib${PN}0
+	lib${PN}-devel
+	python39-${PN}
+"
+fastjet_CONTENTS="
+	usr/share/doc
+"
+libfastjet0_CONTENTS="
+	usr/bin/*.dll
+"
+libfastjet_devel_CONTENTS="
+	usr/bin/${PN}-config
+	usr/include
+	usr/lib/lib${PN}*
+	usr/share/${PN}
+"
+python39_fastjet_CONTENTS="
+	usr/lib/python3*
+"
+fastjet_SUMMARY="${SUMMARY} (licensing & readmes)"
+libfastjet0_SUMMARY="${SUMMARY} (runtime)"
+libfastjet_devel_SUMMARY="${SUMMARY} (development)"
+python39_fastjet_SUMMARY="${SUMMARY} (python39 bindings)"

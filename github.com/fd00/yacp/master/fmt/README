@@ -1,0 +1,114 @@
+fmt
+------------------------------------------
+fmt is an open-source formatting library for C++. It can be used as a safe and
+fast alternative to (s)printf and iostreams.
+
+Runtime requirements:
+  cygwin-3.3.6-1
+  libfmt-devel-9.1.0-1bl1
+  libfmt9-9.1.0-1bl1
+  libgcc1-11.3.0-1
+  libstdc++6-11.3.0-1
+  pkg-config-1.9.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.39-1
+  cmake-3.23.2-1
+  cygport-0.35.2-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  ninja-1.11.0-1
+
+Canonical website:
+  https://github.com/fmtlib/fmt
+
+Canonical download:
+  https://github.com/fmtlib/fmt/archive/refs/tags/9.1.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack fmt-9.1.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./fmt-9.1.0-X.cygport all
+
+This will create:
+  /usr/src/fmt-9.1.0-X-src.tar.xz
+  /usr/src/fmt-9.1.0-X.tar.xz
+  /usr/src/libfmt9-9.1.0-X.tar.xz
+  /usr/src/libfmt-devel-9.1.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(fmt)
+  /usr/share/doc/Cygwin/fmt.README
+  /usr/share/doc/fmt/CONTRIBUTING.md
+  /usr/share/doc/fmt/ChangeLog.rst
+  /usr/share/doc/fmt/LICENSE.rst
+  /usr/share/doc/fmt/README.rst
+
+(libfmt9)
+  /usr/bin/cygfmt-9.dll
+
+(libfmt-devel)
+  /usr/include/fmt/args.h
+  /usr/include/fmt/chrono.h
+  /usr/include/fmt/color.h
+  /usr/include/fmt/compile.h
+  /usr/include/fmt/core.h
+  /usr/include/fmt/format-inl.h
+  /usr/include/fmt/format.h
+  /usr/include/fmt/os.h
+  /usr/include/fmt/ostream.h
+  /usr/include/fmt/printf.h
+  /usr/include/fmt/ranges.h
+  /usr/include/fmt/std.h
+  /usr/include/fmt/xchar.h
+  /usr/lib/cmake/fmt/fmt-config-version.cmake
+  /usr/lib/cmake/fmt/fmt-config.cmake
+  /usr/lib/cmake/fmt/fmt-targets-release.cmake
+  /usr/lib/cmake/fmt/fmt-targets.cmake
+  /usr/lib/libfmt.dll.a
+  /usr/lib/pkgconfig/fmt.pc
+
+------------------
+
+Port Notes:
+
+----- version 9.1.0-1bl1 -----
+Version bump.
+
+----- version 9.0.0-1bl1 -----
+Version bump.
+
+----- version 8.1.1-1bl1 -----
+Version bump.
+
+----- version 8.0.1-1bl1 -----
+Version bump.
+
+----- version 8.0.0-1bl1 -----
+Version bump.
+
+----- version 7.1.3-1bl1 -----
+Version bump.
+
+----- version 7.1.2-1bl1 -----
+Version bump.
+
+----- version 7.1.0-1bl1 -----
+Version bump.
+
+----- version 7.0.3-1bl1 -----
+Version bump.
+
+----- version 7.0.0-1bl1 -----
+Version bump.
+
+----- version 6.1.2-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

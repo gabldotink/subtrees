@@ -1,0 +1,31 @@
+HOMEPAGE="https://github.com/${PN}/${PN}"
+GIT_URI="https://github.com/${PN}/${PN}.git"
+GIT_BRANCH="develop"
+
+CATEGORY="Devel"
+SUMMARY="New, scripting language, based primarily on Python, PHP, and Ruby"
+DESCRIPTION="${SUMMARY}"
+
+BUILD_REQUIRES="CUnit libbz2-devel libedit-devel libfcgi-devel libicu-devel libpcre-devel libxml2-devel python27"
+
+export LDFLAGS="${LDFLAGS} -Wl,--allow-multiple-definition"
+
+inherit cmake
+inherit git
+
+src_test()
+{
+	cd ${B}
+	./bin/utmain.exe
+}
+
+DOCS="
+	documentation/*.md
+"
+
+DIFF_EXCLUDES="
+	_generated_vm_opcodes.c
+	compiler
+	*.inc
+	*.h
+"

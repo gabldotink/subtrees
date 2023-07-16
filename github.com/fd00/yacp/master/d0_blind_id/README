@@ -1,0 +1,86 @@
+d0_blind_id
+------------------------------------------
+Cryptographic library to perform identification using Schnorr Identification
+scheme and Blind RSA Signatures
+
+Runtime requirements:
+  cygwin-2.10.0-1
+  libd0_blind_id-devel-1.0-1bl2
+  libd0_blind_id0-1.0-1bl2
+  libd0_rijndael-devel-1.0-1bl2
+  libd0_rijndael0-1.0-1bl2
+  libgmp10-6.1.2-1
+  pkg-config-0.29.1-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-10-1
+  binutils-2.29-1
+  cygport-0.31.0-1
+  gcc-core-6.4.0-5
+  libtool-2.4.6-5
+  make-4.2.1-2
+
+Canonical website:
+  https://github.com/divVerent/d0_blind_id
+
+Canonical download:
+  https://github.com/divVerent/d0_blind_id/archive/v1.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack d0_blind_id-1.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./d0_blind_id-1.0-X.cygport all
+
+This will create:
+  /usr/src/d0_blind_id-1.0-X-src.tar.xz
+  /usr/src/d0_blind_id-1.0-X.tar.xz
+  /usr/src/libd0_blind_id0-1.0-X.tar.xz
+  /usr/src/libd0_blind_id-devel-1.0-X.tar.xz
+  /usr/src/libd0_rijndael0-1.0-X.tar.xz
+  /usr/src/libd0_rijndael-devel-1.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(d0_blind_id)
+  /usr/bin/blind_id.exe
+  /usr/share/doc/Cygwin/d0_blind_id.README
+  /usr/share/doc/d0_blind_id/COPYING
+  /usr/share/doc/d0_blind_id/d0_blind_id.txt
+
+(libd0_blind_id0)
+  /usr/bin/cygd0_blind_id-0.dll
+
+(libd0_blind_id-devel)
+  /usr/include/d0_blind_id/d0.h
+  /usr/include/d0_blind_id/d0_blind_id.h
+  /usr/lib/libd0_blind_id.dll.a
+  /usr/lib/pkgconfig/d0_blind_id.pc
+
+(libd0_rijndael0)
+  /usr/bin/cygd0_rijndael-0.dll
+
+(libd0_rijndael-devel)
+  /usr/include/d0_blind_id/d0_rijndael.h
+  /usr/lib/libd0_rijndael.dll.a
+  /usr/lib/pkgconfig/d0_rijndael.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.0-1bl2 -----
+Rebuild with gcc-6.4.0
+
+----- version 1.0-1bl1 -----
+Version bump.
+
+----- version 0.5-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

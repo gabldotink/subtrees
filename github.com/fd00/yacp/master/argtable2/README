@@ -1,0 +1,118 @@
+argtable2
+------------------------------------------
+Argtable is an ANSI C library for parsing GNU style command line options with a
+minimum of fuss. It enables a program's command line syntax to be defined in
+the source code as an array of argtable structs. The command line is then
+parsed according to that specification and the resulting values are returned in
+those same structs where they are accessible to the main program. Both tagged
+(-v, --verbose, --foo=bar) and untagged arguments are supported, as are
+multiple instances of each argument. Syntax error handling is automatic and the
+library also provides the means for generating a textual description of the
+command line syntax.
+
+Runtime requirements:
+  cygwin-3.0.6-1
+  libargtable2-devel-13-1bl4
+  libargtable2_0-13-1bl4
+  pkg-config-1.6.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-10-1
+  binutils-2.29-1
+  cmake-3.6.2-1
+  cygport-0.33.0-1
+  gcc-core-7.4.0-1
+  libtool-2.4.6-6
+  make-4.2.1-2
+
+Canonical website:
+  http://argtable.sf.net/
+
+Canonical download:
+  mirror://sourceforge/argtable/argtable2-13.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack argtable2-13-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./argtable2-13-X.cygport all
+
+This will create:
+  /usr/src/argtable2-13-X-src.tar.xz
+  /usr/src/argtable2-13-X.tar.xz
+  /usr/src/libargtable2_0-13-X.tar.xz
+  /usr/src/libargtable2-devel-13-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(argtable2)
+  /usr/share/doc/Cygwin/argtable2.README
+  /usr/share/doc/argtable2/AUTHORS
+  /usr/share/doc/argtable2/COPYING
+  /usr/share/doc/argtable2/ChangeLog
+  /usr/share/doc/argtable2/README
+  /usr/share/doc/argtable2/arg_int.gif
+  /usr/share/doc/argtable2/argtable2-advanced.html
+  /usr/share/doc/argtable2/argtable2-advanced.pdf
+  /usr/share/doc/argtable2/argtable2-advanced.ps
+  /usr/share/doc/argtable2/argtable2-intro.html
+  /usr/share/doc/argtable2/argtable2-intro.pdf
+  /usr/share/doc/argtable2/argtable2-intro.ps
+  /usr/share/doc/argtable2/argtable2.html
+  /usr/share/doc/argtable2/argtable2.pdf
+  /usr/share/doc/argtable2/argtable2.ps
+  /usr/share/doc/argtable2/argxxx.gif
+
+(libargtable2_0)
+  /usr/bin/cygargtable2-0.dll
+
+(libargtable2-devel)
+  /usr/include/argtable2.h
+  /usr/lib/libargtable2.dll.a
+  /usr/lib/pkgconfig/argtable2.pc
+  /usr/share/doc/argtable2/example/Makefile
+  /usr/share/doc/argtable2/example/README.txt
+  /usr/share/doc/argtable2/example/argcustom.c
+  /usr/share/doc/argtable2/example/argxxx.c
+  /usr/share/doc/argtable2/example/argxxx.h
+  /usr/share/doc/argtable2/example/callbacks.c
+  /usr/share/doc/argtable2/example/echo.c
+  /usr/share/doc/argtable2/example/hasoptvalue.c
+  /usr/share/doc/argtable2/example/ls.c
+  /usr/share/doc/argtable2/example/multisyntax.c
+  /usr/share/doc/argtable2/example/mv.c
+  /usr/share/doc/argtable2/example/myprog.c
+  /usr/share/doc/argtable2/example/myprog_C89.c
+  /usr/share/doc/argtable2/example/rm.c
+  /usr/share/doc/argtable2/example/uname.c
+  /usr/share/man/man3/argtable.3.gz
+  /usr/share/man/man3/argtable2.3.gz
+
+------------------
+
+Port Notes:
+
+----- version 13-1bl4 -----
+Rebuild with gcc-7.4.0
+
+----- version 13-1bl3 -----
+Rebuild with gcc-5.4.0
+
+----- version 13-1bl2 -----
+Rebuild on x86_64
+
+----- version 13-1bl1 -----
+Version bump.
+
+----- version 12-1bl1 -----
+Version bump.
+
+----- version 11-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

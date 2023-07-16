@@ -1,0 +1,110 @@
+ortp
+------------------------------------------
+oRTP is a GPLv2 licensed C library implementing the RTP protocol (rfc3550).
+
+Runtime requirements:
+  cygwin-3.1.7-1
+  libbctoolbox1-4.4.0-1bl1
+  libgcc1-10.2.0-1
+  libortp-devel-4.4.6-1bl1
+  libortp15-4.4.6-1bl1
+  libstdc++6-10.2.0-1
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.34+1git.de9c1b7cfe-1
+  cmake-3.17.3-2
+  cygport-0.34.0-1
+  gcc-core-10.2.0-1
+  gcc-g++-10.2.0-1
+  ninja-1.10.1-1
+
+Canonical website:
+  https://gitlab.linphone.org/BC/public/ortp
+
+Canonical download:
+  https://gitlab.linphone.org/BC/public/ortp/-/archive/4.4.6/ortp-4.4.6.tar.bz2
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack ortp-4.4.6-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./ortp-4.4.6-X.cygport all
+
+This will create:
+  /usr/src/ortp-4.4.6-X-src.tar.xz
+  /usr/src/ortp-4.4.6-X.tar.xz
+  /usr/src/libortp15-4.4.6-X.tar.xz
+  /usr/src/libortp-devel-4.4.6-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(ortp)
+  /usr/share/doc/Cygwin/ortp.README
+  /usr/share/doc/ortp/AUTHORS.md
+  /usr/share/doc/ortp/CHANGELOG.md
+  /usr/share/doc/ortp/LICENSE.txt
+  /usr/share/doc/ortp/README.md
+
+(libortp15)
+  /usr/bin/cygortp-15.dll
+
+(libortp-devel)
+  /usr/include/ortp/b64.h
+  /usr/include/ortp/event.h
+  /usr/include/ortp/logging.h
+  /usr/include/ortp/nack.h
+  /usr/include/ortp/ortp.h
+  /usr/include/ortp/payloadtype.h
+  /usr/include/ortp/port.h
+  /usr/include/ortp/rtcp.h
+  /usr/include/ortp/rtp.h
+  /usr/include/ortp/rtpprofile.h
+  /usr/include/ortp/rtpsession.h
+  /usr/include/ortp/rtpsignaltable.h
+  /usr/include/ortp/sessionset.h
+  /usr/include/ortp/str_utils.h
+  /usr/include/ortp/telephonyevents.h
+  /usr/include/ortp/utils.h
+  /usr/lib/cmake/ortp/ortpConfig.cmake
+  /usr/lib/cmake/ortp/ortpConfigVersion.cmake
+  /usr/lib/cmake/ortp/ortpTargets-release.cmake
+  /usr/lib/cmake/ortp/ortpTargets.cmake
+  /usr/lib/libortp.dll.a
+  /usr/lib/pkgconfig/ortp.pc
+
+------------------
+
+Port Notes:
+
+----- version 4.4.6-1bl1 -----
+Version bump.
+
+----- version 4.3.3-1bl1 -----
+Version bump.
+
+----- version 4.3.2-1bl1 -----
+Version bump.
+
+----- version 4.3.1-1bl1 -----
+Version bump.
+
+----- version 4.3.0-1bl1 -----
+Version bump.
+
+----- version 1.0.2-1bl1 -----
+Version bump.
+
+----- version 0.25.0-1bl1 -----
+Version bump.
+
+----- version 0.24.1-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

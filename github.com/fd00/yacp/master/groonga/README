@@ -1,0 +1,1263 @@
+groonga
+------------------------------------------
+Groonga is a fast and accurate full text search engine based on inverted index.
+One of the characteristics of groonga is that a newly registered document
+instantly appears in search results. Also, groonga allows updates without read
+locks. These characteristics result in superior performance on real-time
+applications.
+
+Runtime requirements:
+  bash-4.4.12-3
+  cygwin-3.4.5-1
+  libevent2.1_7-2.1.12-1
+  libgcc1-11.3.0-1
+  libgroonga-devel-13.0.0-1bl1
+  libgroonga0-13.0.0-1bl1
+  libkytea0-0.4.7-1bl3
+  liblz4_1-1.9.4-1
+  libmecab2-0.996-1bl4
+  libmsgpackc2-5.0.0-1bl1
+  libonigmo6-6.2.0-1bl1
+  libstdc++6-11.3.0-1
+  libzmq5-4.3.4-1
+  libzstd1-1.5.4-1
+  luajit-2.0.4-1
+  pkg-config-1.9.4-1
+  ruby-2.6.4-1
+  rubygems-3.0.3-1
+  zlib0-1.2.13-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.40-1
+  bison-3.8.2-1
+  cygport-0.36.0-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libevent-devel-2.1.12-1
+  libkytea-devel-0.4.7-1bl3
+  liblz4-devel-1.9.4-1
+  libmecab-devel-0.996-1bl4
+  libmsgpackc-devel-5.0.0-1bl1
+  libonigmo-devel-6.2.0-1bl1
+  libprotobuf-devel-21.9-1
+  libtool-2.4.7-1
+  libzmq-devel-4.3.4-1
+  libzstd-devel-1.5.4-1
+  luajit-devel-2.0.4-1
+  make-4.4-1
+  rubygems-3.0.3-1
+  zlib-devel-1.2.13-1
+
+Canonical website:
+  https://groonga.org/
+
+Canonical download:
+  https://packages.groonga.org/source/groonga/groonga-13.0.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack groonga-13.0.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./groonga-13.0.0-X.cygport all
+
+This will create:
+  /usr/src/groonga-13.0.0-X-src.tar.xz
+  /usr/src/groonga-13.0.0-X.tar.xz
+  /usr/src/libgroonga0-13.0.0-X.tar.xz
+  /usr/src/libgroonga-devel-13.0.0-X.tar.xz
+  /usr/src/groonga-plugin-ruby-13.0.0-X.tar.xz
+  /usr/src/groonga-plugin-suggest-13.0.0-X.tar.xz
+  /usr/src/groonga-plugin-token-filters-13.0.0-X.tar.xz
+  /usr/src/groonga-tokenizer-mecab-13.0.0-X.tar.xz
+  /usr/src/groonga-tokenizer-kytea-13.0.0-X.tar.xz
+  /usr/src/groonga-munin-plugins-13.0.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(groonga)
+  /etc/groonga/groonga.conf
+  /etc/groonga/httpd/groonga-httpd.conf
+  /etc/groonga/synonyms.tsv
+  /etc/logrotate.d/groonga-httpd
+  /etc/logrotate.d/groonga-server-gqtp
+  /etc/logrotate.d/groonga-server-http
+  /etc/sysconfig/groonga-httpd
+  /etc/sysconfig/groonga-server-gqtp
+  /etc/sysconfig/groonga-server-http
+  /etc/tmpfiles.d/groonga.conf
+  /usr/bin/grndb.exe
+  /usr/bin/groonga-suggest-create-dataset.exe
+  /usr/bin/groonga-suggest-httpd.exe
+  /usr/bin/groonga-suggest-learner.exe
+  /usr/bin/groonga.exe
+  /usr/lib/groonga/scripts/ruby/accessor.rb
+  /usr/lib/groonga/scripts/ruby/backtrace_entry.rb
+  /usr/lib/groonga/scripts/ruby/command.rb
+  /usr/lib/groonga/scripts/ruby/command_input.rb
+  /usr/lib/groonga/scripts/ruby/command_line/grndb.rb
+  /usr/lib/groonga/scripts/ruby/command_line_parser.rb
+  /usr/lib/groonga/scripts/ruby/context.rb
+  /usr/lib/groonga/scripts/ruby/context/error_level.rb
+  /usr/lib/groonga/scripts/ruby/context/rc.rb
+  /usr/lib/groonga/scripts/ruby/database.rb
+  /usr/lib/groonga/scripts/ruby/error.rb
+  /usr/lib/groonga/scripts/ruby/eval_context.rb
+  /usr/lib/groonga/scripts/ruby/expression.rb
+  /usr/lib/groonga/scripts/ruby/expression_rewriter.rb
+  /usr/lib/groonga/scripts/ruby/expression_rewriters.rb
+  /usr/lib/groonga/scripts/ruby/expression_rewriters/optimizer.rb
+  /usr/lib/groonga/scripts/ruby/expression_size_estimator.rb
+  /usr/lib/groonga/scripts/ruby/expression_tree.rb
+  /usr/lib/groonga/scripts/ruby/expression_tree/accessor.rb
+  /usr/lib/groonga/scripts/ruby/expression_tree/assign.rb
+  /usr/lib/groonga/scripts/ruby/expression_tree/assign_binary_operation.rb
+  /usr/lib/groonga/scripts/ruby/expression_tree/binary_operation.rb
+  /usr/lib/groonga/scripts/ruby/expression_tree/constant.rb
+  /usr/lib/groonga/scripts/ruby/expression_tree/function_call.rb
+  /usr/lib/groonga/scripts/ruby/expression_tree/index_column.rb
+  /usr/lib/groonga/scripts/ruby/expression_tree/logical_operation.rb
+  /usr/lib/groonga/scripts/ruby/expression_tree/member.rb
+  /usr/lib/groonga/scripts/ruby/expression_tree/null.rb
+  /usr/lib/groonga/scripts/ruby/expression_tree/procedure.rb
+  /usr/lib/groonga/scripts/ruby/expression_tree/reference.rb
+  /usr/lib/groonga/scripts/ruby/expression_tree/table.rb
+  /usr/lib/groonga/scripts/ruby/expression_tree/unary_operation.rb
+  /usr/lib/groonga/scripts/ruby/expression_tree/variable.rb
+  /usr/lib/groonga/scripts/ruby/expression_tree_builder.rb
+  /usr/lib/groonga/scripts/ruby/fixed_size_column.rb
+  /usr/lib/groonga/scripts/ruby/groonga-log.rb
+  /usr/lib/groonga/scripts/ruby/groonga-log/parser.rb
+  /usr/lib/groonga/scripts/ruby/groonga-log/statistic.rb
+  /usr/lib/groonga/scripts/ruby/groonga-log/version.rb
+  /usr/lib/groonga/scripts/ruby/id.rb
+  /usr/lib/groonga/scripts/ruby/index_column.rb
+  /usr/lib/groonga/scripts/ruby/index_cursor.rb
+  /usr/lib/groonga/scripts/ruby/index_info.rb
+  /usr/lib/groonga/scripts/ruby/initialize/post.rb
+  /usr/lib/groonga/scripts/ruby/initialize/pre.rb
+  /usr/lib/groonga/scripts/ruby/labeled_arguments.rb
+  /usr/lib/groonga/scripts/ruby/locale_output.rb
+  /usr/lib/groonga/scripts/ruby/loggable.rb
+  /usr/lib/groonga/scripts/ruby/logger.rb
+  /usr/lib/groonga/scripts/ruby/logger/flags.rb
+  /usr/lib/groonga/scripts/ruby/logger/level.rb
+  /usr/lib/groonga/scripts/ruby/object.rb
+  /usr/lib/groonga/scripts/ruby/operator.rb
+  /usr/lib/groonga/scripts/ruby/plugin_loader.rb
+  /usr/lib/groonga/scripts/ruby/query_loggable.rb
+  /usr/lib/groonga/scripts/ruby/query_logger.rb
+  /usr/lib/groonga/scripts/ruby/query_logger/flag.rb
+  /usr/lib/groonga/scripts/ruby/record.rb
+  /usr/lib/groonga/scripts/ruby/require.rb
+  /usr/lib/groonga/scripts/ruby/scan_info.rb
+  /usr/lib/groonga/scripts/ruby/scan_info_builder.rb
+  /usr/lib/groonga/scripts/ruby/scan_info_data.rb
+  /usr/lib/groonga/scripts/ruby/scan_info_data_size_estimator.rb
+  /usr/lib/groonga/scripts/ruby/scan_info_search_index.rb
+  /usr/lib/groonga/scripts/ruby/table.rb
+  /usr/lib/groonga/scripts/ruby/table_cursor.rb
+  /usr/lib/groonga/scripts/ruby/time.rb
+  /usr/lib/groonga/scripts/ruby/variable_size_column.rb
+  /usr/lib/groonga/scripts/ruby/writer.rb
+  /usr/lib/systemd/system/groonga-httpd.service
+  /usr/lib/systemd/system/groonga-server-gqtp.service
+  /usr/lib/systemd/system/groonga-server-http.service
+  /usr/share/doc/Cygwin/groonga.README
+  /usr/share/doc/groonga/COPYING
+  /usr/share/doc/groonga/README.md
+  /usr/share/doc/groonga/en/html/_images/geo-points.png
+  /usr/share/doc/groonga/en/html/_images/used-when-indexing.png
+  /usr/share/doc/groonga/en/html/_images/used-when-searching.png
+  /usr/share/doc/groonga/en/html/_static/_sphinx_javascript_frameworks_compat.js
+  /usr/share/doc/groonga/en/html/_static/basic.css
+  /usr/share/doc/groonga/en/html/_static/doctools.js
+  /usr/share/doc/groonga/en/html/_static/documentation_options.js
+  /usr/share/doc/groonga/en/html/_static/favicon.ico
+  /usr/share/doc/groonga/en/html/_static/file.png
+  /usr/share/doc/groonga/en/html/_static/groonga.png
+  /usr/share/doc/groonga/en/html/_static/jquery-3.6.0.js
+  /usr/share/doc/groonga/en/html/_static/jquery.js
+  /usr/share/doc/groonga/en/html/_static/language_data.js
+  /usr/share/doc/groonga/en/html/_static/minus.png
+  /usr/share/doc/groonga/en/html/_static/plus.png
+  /usr/share/doc/groonga/en/html/_static/pygments.css
+  /usr/share/doc/groonga/en/html/_static/scripts/bootstrap.js
+  /usr/share/doc/groonga/en/html/_static/scripts/pydata-sphinx-theme.js
+  /usr/share/doc/groonga/en/html/_static/searchtools.js
+  /usr/share/doc/groonga/en/html/_static/sphinx_highlight.js
+  /usr/share/doc/groonga/en/html/_static/styles/bootstrap.css
+  /usr/share/doc/groonga/en/html/_static/styles/pydata-sphinx-theme.css
+  /usr/share/doc/groonga/en/html/_static/styles/theme.css
+  /usr/share/doc/groonga/en/html/_static/switcher.json
+  /usr/share/doc/groonga/en/html/_static/underscore-1.13.1.js
+  /usr/share/doc/groonga/en/html/_static/underscore.js
+  /usr/share/doc/groonga/en/html/_static/vendor/fontawesome/6.1.2/LICENSE.txt
+  /usr/share/doc/groonga/en/html/_static/vendor/fontawesome/6.1.2/css/all.min.css
+  /usr/share/doc/groonga/en/html/_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.ttf
+  /usr/share/doc/groonga/en/html/_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2
+  /usr/share/doc/groonga/en/html/_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.ttf
+  /usr/share/doc/groonga/en/html/_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2
+  /usr/share/doc/groonga/en/html/_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.ttf
+  /usr/share/doc/groonga/en/html/_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2
+  /usr/share/doc/groonga/en/html/_static/vendor/fontawesome/6.1.2/webfonts/fa-v4compatibility.ttf
+  /usr/share/doc/groonga/en/html/_static/vendor/fontawesome/6.1.2/webfonts/fa-v4compatibility.woff2
+  /usr/share/doc/groonga/en/html/_static/webpack-macros.html
+  /usr/share/doc/groonga/en/html/characteristic.html
+  /usr/share/doc/groonga/en/html/client.html
+  /usr/share/doc/groonga/en/html/community.html
+  /usr/share/doc/groonga/en/html/contribution.html
+  /usr/share/doc/groonga/en/html/contribution/development.html
+  /usr/share/doc/groonga/en/html/contribution/development/build.html
+  /usr/share/doc/groonga/en/html/contribution/development/build/unix_autotools.html
+  /usr/share/doc/groonga/en/html/contribution/development/build/unix_cmake.html
+  /usr/share/doc/groonga/en/html/contribution/development/build/windows_cmake.html
+  /usr/share/doc/groonga/en/html/contribution/development/com.html
+  /usr/share/doc/groonga/en/html/contribution/development/cooperation.html
+  /usr/share/doc/groonga/en/html/contribution/development/query.html
+  /usr/share/doc/groonga/en/html/contribution/development/release.html
+  /usr/share/doc/groonga/en/html/contribution/development/repository.html
+  /usr/share/doc/groonga/en/html/contribution/development/test.html
+  /usr/share/doc/groonga/en/html/contribution/documentation.html
+  /usr/share/doc/groonga/en/html/contribution/documentation/c-api.html
+  /usr/share/doc/groonga/en/html/contribution/documentation/i18n.html
+  /usr/share/doc/groonga/en/html/contribution/documentation/introduction.html
+  /usr/share/doc/groonga/en/html/contribution/report.html
+  /usr/share/doc/groonga/en/html/development.html
+  /usr/share/doc/groonga/en/html/development/travis-ci.html
+  /usr/share/doc/groonga/en/html/genindex.html
+  /usr/share/doc/groonga/en/html/index.html
+  /usr/share/doc/groonga/en/html/install.html
+  /usr/share/doc/groonga/en/html/install/almalinux.html
+  /usr/share/doc/groonga/en/html/install/amazon_linux.html
+  /usr/share/doc/groonga/en/html/install/centos.html
+  /usr/share/doc/groonga/en/html/install/cmake.html
+  /usr/share/doc/groonga/en/html/install/debian.html
+  /usr/share/doc/groonga/en/html/install/docker.html
+  /usr/share/doc/groonga/en/html/install/fedora.html
+  /usr/share/doc/groonga/en/html/install/mac_os_x.html
+  /usr/share/doc/groonga/en/html/install/oracle-linux.html
+  /usr/share/doc/groonga/en/html/install/others.html
+  /usr/share/doc/groonga/en/html/install/solaris.html
+  /usr/share/doc/groonga/en/html/install/ubuntu.html
+  /usr/share/doc/groonga/en/html/install/windows.html
+  /usr/share/doc/groonga/en/html/limitations.html
+  /usr/share/doc/groonga/en/html/news.html
+  /usr/share/doc/groonga/en/html/news/0.x.html
+  /usr/share/doc/groonga/en/html/news/1.0.x.html
+  /usr/share/doc/groonga/en/html/news/1.1.x.html
+  /usr/share/doc/groonga/en/html/news/1.2.x.html
+  /usr/share/doc/groonga/en/html/news/1.3.x.html
+  /usr/share/doc/groonga/en/html/news/2.x.html
+  /usr/share/doc/groonga/en/html/news/3.x.html
+  /usr/share/doc/groonga/en/html/news/4.x.html
+  /usr/share/doc/groonga/en/html/news/5.x.html
+  /usr/share/doc/groonga/en/html/news/6.x.html
+  /usr/share/doc/groonga/en/html/news/senna.html
+  /usr/share/doc/groonga/en/html/objects.inv
+  /usr/share/doc/groonga/en/html/reference.html
+  /usr/share/doc/groonga/en/html/reference/alias.html
+  /usr/share/doc/groonga/en/html/reference/api.html
+  /usr/share/doc/groonga/en/html/reference/api/global_configurations.html
+  /usr/share/doc/groonga/en/html/reference/api/grn_cache.html
+  /usr/share/doc/groonga/en/html/reference/api/grn_column.html
+  /usr/share/doc/groonga/en/html/reference/api/grn_command_version.html
+  /usr/share/doc/groonga/en/html/reference/api/grn_content_type.html
+  /usr/share/doc/groonga/en/html/reference/api/grn_ctx.html
+  /usr/share/doc/groonga/en/html/reference/api/grn_db.html
+  /usr/share/doc/groonga/en/html/reference/api/grn_encoding.html
+  /usr/share/doc/groonga/en/html/reference/api/grn_expr.html
+  /usr/share/doc/groonga/en/html/reference/api/grn_geo.html
+  /usr/share/doc/groonga/en/html/reference/api/grn_hook.html
+  /usr/share/doc/groonga/en/html/reference/api/grn_ii.html
+  /usr/share/doc/groonga/en/html/reference/api/grn_index_cursor.html
+  /usr/share/doc/groonga/en/html/reference/api/grn_info.html
+  /usr/share/doc/groonga/en/html/reference/api/grn_inspect.html
+  /usr/share/doc/groonga/en/html/reference/api/grn_match_escalation.html
+  /usr/share/doc/groonga/en/html/reference/api/grn_obj.html
+  /usr/share/doc/groonga/en/html/reference/api/grn_proc.html
+  /usr/share/doc/groonga/en/html/reference/api/grn_search.html
+  /usr/share/doc/groonga/en/html/reference/api/grn_table.html
+  /usr/share/doc/groonga/en/html/reference/api/grn_table_cursor.html
+  /usr/share/doc/groonga/en/html/reference/api/grn_thread.html
+  /usr/share/doc/groonga/en/html/reference/api/grn_type.html
+  /usr/share/doc/groonga/en/html/reference/api/grn_user_data.html
+  /usr/share/doc/groonga/en/html/reference/api/overview.html
+  /usr/share/doc/groonga/en/html/reference/api/plugin.html
+  /usr/share/doc/groonga/en/html/reference/cast.html
+  /usr/share/doc/groonga/en/html/reference/column.html
+  /usr/share/doc/groonga/en/html/reference/columns/index.html
+  /usr/share/doc/groonga/en/html/reference/columns/pseudo.html
+  /usr/share/doc/groonga/en/html/reference/columns/scalar.html
+  /usr/share/doc/groonga/en/html/reference/columns/vector.html
+  /usr/share/doc/groonga/en/html/reference/command.html
+  /usr/share/doc/groonga/en/html/reference/command/command_version.html
+  /usr/share/doc/groonga/en/html/reference/command/output_format.html
+  /usr/share/doc/groonga/en/html/reference/command/pretty_print.html
+  /usr/share/doc/groonga/en/html/reference/command/request_id.html
+  /usr/share/doc/groonga/en/html/reference/command/request_timeout.html
+  /usr/share/doc/groonga/en/html/reference/command/return_code.html
+  /usr/share/doc/groonga/en/html/reference/command/return_codes/grn_input_output_error.html
+  /usr/share/doc/groonga/en/html/reference/command/return_codes/grn_invalid_argument.html
+  /usr/share/doc/groonga/en/html/reference/command/return_codes/grn_no_such_file_or_directory.html
+  /usr/share/doc/groonga/en/html/reference/command/return_codes/grn_not_enough_space.html
+  /usr/share/doc/groonga/en/html/reference/command/return_codes/grn_operation_not_permitted.html
+  /usr/share/doc/groonga/en/html/reference/command/return_codes/grn_resource_deadlock_avoided.html
+  /usr/share/doc/groonga/en/html/reference/commands/cache_limit.html
+  /usr/share/doc/groonga/en/html/reference/commands/check.html
+  /usr/share/doc/groonga/en/html/reference/commands/clearlock.html
+  /usr/share/doc/groonga/en/html/reference/commands/column_copy.html
+  /usr/share/doc/groonga/en/html/reference/commands/column_create.html
+  /usr/share/doc/groonga/en/html/reference/commands/column_list.html
+  /usr/share/doc/groonga/en/html/reference/commands/column_remove.html
+  /usr/share/doc/groonga/en/html/reference/commands/column_rename.html
+  /usr/share/doc/groonga/en/html/reference/commands/config_delete.html
+  /usr/share/doc/groonga/en/html/reference/commands/config_get.html
+  /usr/share/doc/groonga/en/html/reference/commands/config_set.html
+  /usr/share/doc/groonga/en/html/reference/commands/database_unmap.html
+  /usr/share/doc/groonga/en/html/reference/commands/define_selector.html
+  /usr/share/doc/groonga/en/html/reference/commands/defrag.html
+  /usr/share/doc/groonga/en/html/reference/commands/delete.html
+  /usr/share/doc/groonga/en/html/reference/commands/dump.html
+  /usr/share/doc/groonga/en/html/reference/commands/index_column_diff.html
+  /usr/share/doc/groonga/en/html/reference/commands/io_flush.html
+  /usr/share/doc/groonga/en/html/reference/commands/load.html
+  /usr/share/doc/groonga/en/html/reference/commands/lock_acquire.html
+  /usr/share/doc/groonga/en/html/reference/commands/lock_clear.html
+  /usr/share/doc/groonga/en/html/reference/commands/lock_release.html
+  /usr/share/doc/groonga/en/html/reference/commands/log_level.html
+  /usr/share/doc/groonga/en/html/reference/commands/log_put.html
+  /usr/share/doc/groonga/en/html/reference/commands/log_reopen.html
+  /usr/share/doc/groonga/en/html/reference/commands/logical_count.html
+  /usr/share/doc/groonga/en/html/reference/commands/logical_parameters.html
+  /usr/share/doc/groonga/en/html/reference/commands/logical_range_filter.html
+  /usr/share/doc/groonga/en/html/reference/commands/logical_select.html
+  /usr/share/doc/groonga/en/html/reference/commands/logical_shard_list.html
+  /usr/share/doc/groonga/en/html/reference/commands/logical_table_remove.html
+  /usr/share/doc/groonga/en/html/reference/commands/normalize.html
+  /usr/share/doc/groonga/en/html/reference/commands/normalizer_list.html
+  /usr/share/doc/groonga/en/html/reference/commands/object_exist.html
+  /usr/share/doc/groonga/en/html/reference/commands/object_inspect.html
+  /usr/share/doc/groonga/en/html/reference/commands/object_list.html
+  /usr/share/doc/groonga/en/html/reference/commands/object_remove.html
+  /usr/share/doc/groonga/en/html/reference/commands/plugin_register.html
+  /usr/share/doc/groonga/en/html/reference/commands/plugin_unregister.html
+  /usr/share/doc/groonga/en/html/reference/commands/query_expand.html
+  /usr/share/doc/groonga/en/html/reference/commands/quit.html
+  /usr/share/doc/groonga/en/html/reference/commands/range_filter.html
+  /usr/share/doc/groonga/en/html/reference/commands/reference_acquire.html
+  /usr/share/doc/groonga/en/html/reference/commands/reference_release.html
+  /usr/share/doc/groonga/en/html/reference/commands/register.html
+  /usr/share/doc/groonga/en/html/reference/commands/reindex.html
+  /usr/share/doc/groonga/en/html/reference/commands/request_cancel.html
+  /usr/share/doc/groonga/en/html/reference/commands/ruby_eval.html
+  /usr/share/doc/groonga/en/html/reference/commands/schema.html
+  /usr/share/doc/groonga/en/html/reference/commands/select.html
+  /usr/share/doc/groonga/en/html/reference/commands/shutdown.html
+  /usr/share/doc/groonga/en/html/reference/commands/status.html
+  /usr/share/doc/groonga/en/html/reference/commands/suggest.html
+  /usr/share/doc/groonga/en/html/reference/commands/table_copy.html
+  /usr/share/doc/groonga/en/html/reference/commands/table_create.html
+  /usr/share/doc/groonga/en/html/reference/commands/table_list.html
+  /usr/share/doc/groonga/en/html/reference/commands/table_remove.html
+  /usr/share/doc/groonga/en/html/reference/commands/table_rename.html
+  /usr/share/doc/groonga/en/html/reference/commands/table_tokenize.html
+  /usr/share/doc/groonga/en/html/reference/commands/thread_dump.html
+  /usr/share/doc/groonga/en/html/reference/commands/thread_limit.html
+  /usr/share/doc/groonga/en/html/reference/commands/tokenize.html
+  /usr/share/doc/groonga/en/html/reference/commands/tokenizer_list.html
+  /usr/share/doc/groonga/en/html/reference/commands/truncate.html
+  /usr/share/doc/groonga/en/html/reference/configuration.html
+  /usr/share/doc/groonga/en/html/reference/executables.html
+  /usr/share/doc/groonga/en/html/reference/executables/grndb.html
+  /usr/share/doc/groonga/en/html/reference/executables/grnslap.html
+  /usr/share/doc/groonga/en/html/reference/executables/groonga-benchmark.html
+  /usr/share/doc/groonga/en/html/reference/executables/groonga-httpd.html
+  /usr/share/doc/groonga/en/html/reference/executables/groonga-server-http.html
+  /usr/share/doc/groonga/en/html/reference/executables/groonga-suggest-create-dataset.html
+  /usr/share/doc/groonga/en/html/reference/executables/groonga-suggest-httpd.html
+  /usr/share/doc/groonga/en/html/reference/executables/groonga-suggest-learner.html
+  /usr/share/doc/groonga/en/html/reference/executables/groonga.html
+  /usr/share/doc/groonga/en/html/reference/function.html
+  /usr/share/doc/groonga/en/html/reference/functions/between.html
+  /usr/share/doc/groonga/en/html/reference/functions/cast_loose.html
+  /usr/share/doc/groonga/en/html/reference/functions/edit_distance.html
+  /usr/share/doc/groonga/en/html/reference/functions/escalate.html
+  /usr/share/doc/groonga/en/html/reference/functions/fuzzy_search.html
+  /usr/share/doc/groonga/en/html/reference/functions/geo_distance.html
+  /usr/share/doc/groonga/en/html/reference/functions/geo_in_circle.html
+  /usr/share/doc/groonga/en/html/reference/functions/geo_in_rectangle.html
+  /usr/share/doc/groonga/en/html/reference/functions/highlight_full.html
+  /usr/share/doc/groonga/en/html/reference/functions/highlight_html.html
+  /usr/share/doc/groonga/en/html/reference/functions/html_untag.html
+  /usr/share/doc/groonga/en/html/reference/functions/in_records.html
+  /usr/share/doc/groonga/en/html/reference/functions/in_values.html
+  /usr/share/doc/groonga/en/html/reference/functions/math_abs.html
+  /usr/share/doc/groonga/en/html/reference/functions/now.html
+  /usr/share/doc/groonga/en/html/reference/functions/number_classify.html
+  /usr/share/doc/groonga/en/html/reference/functions/prefix_rk_search.html
+  /usr/share/doc/groonga/en/html/reference/functions/query.html
+  /usr/share/doc/groonga/en/html/reference/functions/query_parallel_or.html
+  /usr/share/doc/groonga/en/html/reference/functions/rand.html
+  /usr/share/doc/groonga/en/html/reference/functions/snippet.html
+  /usr/share/doc/groonga/en/html/reference/functions/snippet_html.html
+  /usr/share/doc/groonga/en/html/reference/functions/string_length.html
+  /usr/share/doc/groonga/en/html/reference/functions/string_slice.html
+  /usr/share/doc/groonga/en/html/reference/functions/string_substring.html
+  /usr/share/doc/groonga/en/html/reference/functions/sub_filter.html
+  /usr/share/doc/groonga/en/html/reference/functions/time_classify_day.html
+  /usr/share/doc/groonga/en/html/reference/functions/time_classify_day_of_week.html
+  /usr/share/doc/groonga/en/html/reference/functions/time_classify_hour.html
+  /usr/share/doc/groonga/en/html/reference/functions/time_classify_minute.html
+  /usr/share/doc/groonga/en/html/reference/functions/time_classify_month.html
+  /usr/share/doc/groonga/en/html/reference/functions/time_classify_second.html
+  /usr/share/doc/groonga/en/html/reference/functions/time_classify_week.html
+  /usr/share/doc/groonga/en/html/reference/functions/time_classify_year.html
+  /usr/share/doc/groonga/en/html/reference/functions/vector_find.html
+  /usr/share/doc/groonga/en/html/reference/functions/vector_new.html
+  /usr/share/doc/groonga/en/html/reference/functions/vector_size.html
+  /usr/share/doc/groonga/en/html/reference/functions/vector_slice.html
+  /usr/share/doc/groonga/en/html/reference/grn_expr.html
+  /usr/share/doc/groonga/en/html/reference/grn_expr/query_syntax.html
+  /usr/share/doc/groonga/en/html/reference/grn_expr/script_syntax.html
+  /usr/share/doc/groonga/en/html/reference/indexing.html
+  /usr/share/doc/groonga/en/html/reference/log.html
+  /usr/share/doc/groonga/en/html/reference/normalizers.html
+  /usr/share/doc/groonga/en/html/reference/normalizers/normalizer_auto.html
+  /usr/share/doc/groonga/en/html/reference/normalizers/normalizer_nfkc100.html
+  /usr/share/doc/groonga/en/html/reference/normalizers/normalizer_nfkc121.html
+  /usr/share/doc/groonga/en/html/reference/normalizers/normalizer_nfkc130.html
+  /usr/share/doc/groonga/en/html/reference/normalizers/normalizer_nfkc150.html
+  /usr/share/doc/groonga/en/html/reference/normalizers/normalizer_nfkc51.html
+  /usr/share/doc/groonga/en/html/reference/normalizers/normalizer_table.html
+  /usr/share/doc/groonga/en/html/reference/operations.html
+  /usr/share/doc/groonga/en/html/reference/operations/geolocation_search.html
+  /usr/share/doc/groonga/en/html/reference/operations/prefix_rk_search.html
+  /usr/share/doc/groonga/en/html/reference/output.html
+  /usr/share/doc/groonga/en/html/reference/query_expanders.html
+  /usr/share/doc/groonga/en/html/reference/query_expanders/tsv.html
+  /usr/share/doc/groonga/en/html/reference/regular_expression.html
+  /usr/share/doc/groonga/en/html/reference/scorer.html
+  /usr/share/doc/groonga/en/html/reference/scorers/scorer_tf_at_most.html
+  /usr/share/doc/groonga/en/html/reference/scorers/scorer_tf_idf.html
+  /usr/share/doc/groonga/en/html/reference/sharding.html
+  /usr/share/doc/groonga/en/html/reference/suggest.html
+  /usr/share/doc/groonga/en/html/reference/suggest/completion.html
+  /usr/share/doc/groonga/en/html/reference/suggest/correction.html
+  /usr/share/doc/groonga/en/html/reference/suggest/introduction.html
+  /usr/share/doc/groonga/en/html/reference/suggest/suggestion.html
+  /usr/share/doc/groonga/en/html/reference/tables.html
+  /usr/share/doc/groonga/en/html/reference/token_filter/summary.html
+  /usr/share/doc/groonga/en/html/reference/token_filters.html
+  /usr/share/doc/groonga/en/html/reference/token_filters/token_filter_nfkc100.html
+  /usr/share/doc/groonga/en/html/reference/token_filters/token_filter_nfkc150.html
+  /usr/share/doc/groonga/en/html/reference/token_filters/token_filter_stem.html
+  /usr/share/doc/groonga/en/html/reference/token_filters/token_filter_stop_word.html
+  /usr/share/doc/groonga/en/html/reference/tokenizer/summary.html
+  /usr/share/doc/groonga/en/html/reference/tokenizers.html
+  /usr/share/doc/groonga/en/html/reference/tokenizers/token_bigram.html
+  /usr/share/doc/groonga/en/html/reference/tokenizers/token_bigram_ignore_blank.html
+  /usr/share/doc/groonga/en/html/reference/tokenizers/token_bigram_ignore_blank_split_symbol.html
+  /usr/share/doc/groonga/en/html/reference/tokenizers/token_bigram_ignore_blank_split_symbol_alpha.html
+  /usr/share/doc/groonga/en/html/reference/tokenizers/token_bigram_ignore_blank_split_symbol_alpha_digit.html
+  /usr/share/doc/groonga/en/html/reference/tokenizers/token_bigram_split_symbol.html
+  /usr/share/doc/groonga/en/html/reference/tokenizers/token_bigram_split_symbol_alpha.html
+  /usr/share/doc/groonga/en/html/reference/tokenizers/token_bigram_split_symbol_alpha_digit.html
+  /usr/share/doc/groonga/en/html/reference/tokenizers/token_delimit.html
+  /usr/share/doc/groonga/en/html/reference/tokenizers/token_delimit_null.html
+  /usr/share/doc/groonga/en/html/reference/tokenizers/token_mecab.html
+  /usr/share/doc/groonga/en/html/reference/tokenizers/token_ngram.html
+  /usr/share/doc/groonga/en/html/reference/tokenizers/token_pattern.html
+  /usr/share/doc/groonga/en/html/reference/tokenizers/token_regexp.html
+  /usr/share/doc/groonga/en/html/reference/tokenizers/token_table.html
+  /usr/share/doc/groonga/en/html/reference/tokenizers/token_trigram.html
+  /usr/share/doc/groonga/en/html/reference/tokenizers/token_unigram.html
+  /usr/share/doc/groonga/en/html/reference/tuning.html
+  /usr/share/doc/groonga/en/html/reference/types.html
+  /usr/share/doc/groonga/en/html/reference/window_function.html
+  /usr/share/doc/groonga/en/html/reference/window_functions/record_number.html
+  /usr/share/doc/groonga/en/html/reference/window_functions/window_count.html
+  /usr/share/doc/groonga/en/html/reference/window_functions/window_rank.html
+  /usr/share/doc/groonga/en/html/reference/window_functions/window_record_number.html
+  /usr/share/doc/groonga/en/html/reference/window_functions/window_sum.html
+  /usr/share/doc/groonga/en/html/search.html
+  /usr/share/doc/groonga/en/html/searchindex.js
+  /usr/share/doc/groonga/en/html/server.html
+  /usr/share/doc/groonga/en/html/server/gqtp.html
+  /usr/share/doc/groonga/en/html/server/http.html
+  /usr/share/doc/groonga/en/html/server/http/comparison.html
+  /usr/share/doc/groonga/en/html/server/http/groonga-httpd.html
+  /usr/share/doc/groonga/en/html/server/http/groonga.html
+  /usr/share/doc/groonga/en/html/server/memcached.html
+  /usr/share/doc/groonga/en/html/server/package.html
+  /usr/share/doc/groonga/en/html/spec.html
+  /usr/share/doc/groonga/en/html/spec/gqtp.html
+  /usr/share/doc/groonga/en/html/spec/search.html
+  /usr/share/doc/groonga/en/html/troubleshooting.html
+  /usr/share/doc/groonga/en/html/troubleshooting/different_results_with_the_same_keyword.html
+  /usr/share/doc/groonga/en/html/troubleshooting/how_to_analyze_error_message.html
+  /usr/share/doc/groonga/en/html/troubleshooting/mmap_cannot_allocate_memory.html
+  /usr/share/doc/groonga/en/html/tutorial.html
+  /usr/share/doc/groonga/en/html/tutorial/data.html
+  /usr/share/doc/groonga/en/html/tutorial/drilldown.html
+  /usr/share/doc/groonga/en/html/tutorial/index.html
+  /usr/share/doc/groonga/en/html/tutorial/introduction.html
+  /usr/share/doc/groonga/en/html/tutorial/lexicon.html
+  /usr/share/doc/groonga/en/html/tutorial/match_columns.html
+  /usr/share/doc/groonga/en/html/tutorial/micro_blog.html
+  /usr/share/doc/groonga/en/html/tutorial/network.html
+  /usr/share/doc/groonga/en/html/tutorial/patricia_trie.html
+  /usr/share/doc/groonga/en/html/tutorial/query_expansion.html
+  /usr/share/doc/groonga/en/html/tutorial/search.html
+  /usr/share/doc/groonga/ja/html/_images/geo-points.png
+  /usr/share/doc/groonga/ja/html/_images/used-when-indexing.png
+  /usr/share/doc/groonga/ja/html/_images/used-when-searching.png
+  /usr/share/doc/groonga/ja/html/_static/_sphinx_javascript_frameworks_compat.js
+  /usr/share/doc/groonga/ja/html/_static/basic.css
+  /usr/share/doc/groonga/ja/html/_static/doctools.js
+  /usr/share/doc/groonga/ja/html/_static/documentation_options.js
+  /usr/share/doc/groonga/ja/html/_static/favicon.ico
+  /usr/share/doc/groonga/ja/html/_static/file.png
+  /usr/share/doc/groonga/ja/html/_static/groonga.png
+  /usr/share/doc/groonga/ja/html/_static/jquery-3.6.0.js
+  /usr/share/doc/groonga/ja/html/_static/jquery.js
+  /usr/share/doc/groonga/ja/html/_static/language_data.js
+  /usr/share/doc/groonga/ja/html/_static/minus.png
+  /usr/share/doc/groonga/ja/html/_static/plus.png
+  /usr/share/doc/groonga/ja/html/_static/pygments.css
+  /usr/share/doc/groonga/ja/html/_static/scripts/bootstrap.js
+  /usr/share/doc/groonga/ja/html/_static/scripts/pydata-sphinx-theme.js
+  /usr/share/doc/groonga/ja/html/_static/searchtools.js
+  /usr/share/doc/groonga/ja/html/_static/sphinx_highlight.js
+  /usr/share/doc/groonga/ja/html/_static/styles/bootstrap.css
+  /usr/share/doc/groonga/ja/html/_static/styles/pydata-sphinx-theme.css
+  /usr/share/doc/groonga/ja/html/_static/styles/theme.css
+  /usr/share/doc/groonga/ja/html/_static/switcher.json
+  /usr/share/doc/groonga/ja/html/_static/translations.js
+  /usr/share/doc/groonga/ja/html/_static/underscore-1.13.1.js
+  /usr/share/doc/groonga/ja/html/_static/underscore.js
+  /usr/share/doc/groonga/ja/html/_static/vendor/fontawesome/6.1.2/LICENSE.txt
+  /usr/share/doc/groonga/ja/html/_static/vendor/fontawesome/6.1.2/css/all.min.css
+  /usr/share/doc/groonga/ja/html/_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.ttf
+  /usr/share/doc/groonga/ja/html/_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2
+  /usr/share/doc/groonga/ja/html/_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.ttf
+  /usr/share/doc/groonga/ja/html/_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2
+  /usr/share/doc/groonga/ja/html/_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.ttf
+  /usr/share/doc/groonga/ja/html/_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2
+  /usr/share/doc/groonga/ja/html/_static/vendor/fontawesome/6.1.2/webfonts/fa-v4compatibility.ttf
+  /usr/share/doc/groonga/ja/html/_static/vendor/fontawesome/6.1.2/webfonts/fa-v4compatibility.woff2
+  /usr/share/doc/groonga/ja/html/_static/webpack-macros.html
+  /usr/share/doc/groonga/ja/html/characteristic.html
+  /usr/share/doc/groonga/ja/html/client.html
+  /usr/share/doc/groonga/ja/html/community.html
+  /usr/share/doc/groonga/ja/html/contribution.html
+  /usr/share/doc/groonga/ja/html/contribution/development.html
+  /usr/share/doc/groonga/ja/html/contribution/development/build.html
+  /usr/share/doc/groonga/ja/html/contribution/development/build/unix_autotools.html
+  /usr/share/doc/groonga/ja/html/contribution/development/build/unix_cmake.html
+  /usr/share/doc/groonga/ja/html/contribution/development/build/windows_cmake.html
+  /usr/share/doc/groonga/ja/html/contribution/development/com.html
+  /usr/share/doc/groonga/ja/html/contribution/development/cooperation.html
+  /usr/share/doc/groonga/ja/html/contribution/development/query.html
+  /usr/share/doc/groonga/ja/html/contribution/development/release.html
+  /usr/share/doc/groonga/ja/html/contribution/development/repository.html
+  /usr/share/doc/groonga/ja/html/contribution/development/test.html
+  /usr/share/doc/groonga/ja/html/contribution/documentation.html
+  /usr/share/doc/groonga/ja/html/contribution/documentation/c-api.html
+  /usr/share/doc/groonga/ja/html/contribution/documentation/i18n.html
+  /usr/share/doc/groonga/ja/html/contribution/documentation/introduction.html
+  /usr/share/doc/groonga/ja/html/contribution/report.html
+  /usr/share/doc/groonga/ja/html/development.html
+  /usr/share/doc/groonga/ja/html/development/travis-ci.html
+  /usr/share/doc/groonga/ja/html/genindex.html
+  /usr/share/doc/groonga/ja/html/index.html
+  /usr/share/doc/groonga/ja/html/install.html
+  /usr/share/doc/groonga/ja/html/install/almalinux.html
+  /usr/share/doc/groonga/ja/html/install/amazon_linux.html
+  /usr/share/doc/groonga/ja/html/install/centos.html
+  /usr/share/doc/groonga/ja/html/install/cmake.html
+  /usr/share/doc/groonga/ja/html/install/debian.html
+  /usr/share/doc/groonga/ja/html/install/docker.html
+  /usr/share/doc/groonga/ja/html/install/fedora.html
+  /usr/share/doc/groonga/ja/html/install/mac_os_x.html
+  /usr/share/doc/groonga/ja/html/install/oracle-linux.html
+  /usr/share/doc/groonga/ja/html/install/others.html
+  /usr/share/doc/groonga/ja/html/install/solaris.html
+  /usr/share/doc/groonga/ja/html/install/ubuntu.html
+  /usr/share/doc/groonga/ja/html/install/windows.html
+  /usr/share/doc/groonga/ja/html/limitations.html
+  /usr/share/doc/groonga/ja/html/news.html
+  /usr/share/doc/groonga/ja/html/news/0.x.html
+  /usr/share/doc/groonga/ja/html/news/1.0.x.html
+  /usr/share/doc/groonga/ja/html/news/1.1.x.html
+  /usr/share/doc/groonga/ja/html/news/1.2.x.html
+  /usr/share/doc/groonga/ja/html/news/1.3.x.html
+  /usr/share/doc/groonga/ja/html/news/2.x.html
+  /usr/share/doc/groonga/ja/html/news/3.x.html
+  /usr/share/doc/groonga/ja/html/news/4.x.html
+  /usr/share/doc/groonga/ja/html/news/5.x.html
+  /usr/share/doc/groonga/ja/html/news/6.x.html
+  /usr/share/doc/groonga/ja/html/news/senna.html
+  /usr/share/doc/groonga/ja/html/objects.inv
+  /usr/share/doc/groonga/ja/html/reference.html
+  /usr/share/doc/groonga/ja/html/reference/alias.html
+  /usr/share/doc/groonga/ja/html/reference/api.html
+  /usr/share/doc/groonga/ja/html/reference/api/global_configurations.html
+  /usr/share/doc/groonga/ja/html/reference/api/grn_cache.html
+  /usr/share/doc/groonga/ja/html/reference/api/grn_column.html
+  /usr/share/doc/groonga/ja/html/reference/api/grn_command_version.html
+  /usr/share/doc/groonga/ja/html/reference/api/grn_content_type.html
+  /usr/share/doc/groonga/ja/html/reference/api/grn_ctx.html
+  /usr/share/doc/groonga/ja/html/reference/api/grn_db.html
+  /usr/share/doc/groonga/ja/html/reference/api/grn_encoding.html
+  /usr/share/doc/groonga/ja/html/reference/api/grn_expr.html
+  /usr/share/doc/groonga/ja/html/reference/api/grn_geo.html
+  /usr/share/doc/groonga/ja/html/reference/api/grn_hook.html
+  /usr/share/doc/groonga/ja/html/reference/api/grn_ii.html
+  /usr/share/doc/groonga/ja/html/reference/api/grn_index_cursor.html
+  /usr/share/doc/groonga/ja/html/reference/api/grn_info.html
+  /usr/share/doc/groonga/ja/html/reference/api/grn_inspect.html
+  /usr/share/doc/groonga/ja/html/reference/api/grn_match_escalation.html
+  /usr/share/doc/groonga/ja/html/reference/api/grn_obj.html
+  /usr/share/doc/groonga/ja/html/reference/api/grn_proc.html
+  /usr/share/doc/groonga/ja/html/reference/api/grn_search.html
+  /usr/share/doc/groonga/ja/html/reference/api/grn_table.html
+  /usr/share/doc/groonga/ja/html/reference/api/grn_table_cursor.html
+  /usr/share/doc/groonga/ja/html/reference/api/grn_thread.html
+  /usr/share/doc/groonga/ja/html/reference/api/grn_type.html
+  /usr/share/doc/groonga/ja/html/reference/api/grn_user_data.html
+  /usr/share/doc/groonga/ja/html/reference/api/overview.html
+  /usr/share/doc/groonga/ja/html/reference/api/plugin.html
+  /usr/share/doc/groonga/ja/html/reference/cast.html
+  /usr/share/doc/groonga/ja/html/reference/column.html
+  /usr/share/doc/groonga/ja/html/reference/columns/index.html
+  /usr/share/doc/groonga/ja/html/reference/columns/pseudo.html
+  /usr/share/doc/groonga/ja/html/reference/columns/scalar.html
+  /usr/share/doc/groonga/ja/html/reference/columns/vector.html
+  /usr/share/doc/groonga/ja/html/reference/command.html
+  /usr/share/doc/groonga/ja/html/reference/command/command_version.html
+  /usr/share/doc/groonga/ja/html/reference/command/output_format.html
+  /usr/share/doc/groonga/ja/html/reference/command/pretty_print.html
+  /usr/share/doc/groonga/ja/html/reference/command/request_id.html
+  /usr/share/doc/groonga/ja/html/reference/command/request_timeout.html
+  /usr/share/doc/groonga/ja/html/reference/command/return_code.html
+  /usr/share/doc/groonga/ja/html/reference/command/return_codes/grn_input_output_error.html
+  /usr/share/doc/groonga/ja/html/reference/command/return_codes/grn_invalid_argument.html
+  /usr/share/doc/groonga/ja/html/reference/command/return_codes/grn_no_such_file_or_directory.html
+  /usr/share/doc/groonga/ja/html/reference/command/return_codes/grn_not_enough_space.html
+  /usr/share/doc/groonga/ja/html/reference/command/return_codes/grn_operation_not_permitted.html
+  /usr/share/doc/groonga/ja/html/reference/command/return_codes/grn_resource_deadlock_avoided.html
+  /usr/share/doc/groonga/ja/html/reference/commands/cache_limit.html
+  /usr/share/doc/groonga/ja/html/reference/commands/check.html
+  /usr/share/doc/groonga/ja/html/reference/commands/clearlock.html
+  /usr/share/doc/groonga/ja/html/reference/commands/column_copy.html
+  /usr/share/doc/groonga/ja/html/reference/commands/column_create.html
+  /usr/share/doc/groonga/ja/html/reference/commands/column_list.html
+  /usr/share/doc/groonga/ja/html/reference/commands/column_remove.html
+  /usr/share/doc/groonga/ja/html/reference/commands/column_rename.html
+  /usr/share/doc/groonga/ja/html/reference/commands/config_delete.html
+  /usr/share/doc/groonga/ja/html/reference/commands/config_get.html
+  /usr/share/doc/groonga/ja/html/reference/commands/config_set.html
+  /usr/share/doc/groonga/ja/html/reference/commands/database_unmap.html
+  /usr/share/doc/groonga/ja/html/reference/commands/define_selector.html
+  /usr/share/doc/groonga/ja/html/reference/commands/defrag.html
+  /usr/share/doc/groonga/ja/html/reference/commands/delete.html
+  /usr/share/doc/groonga/ja/html/reference/commands/dump.html
+  /usr/share/doc/groonga/ja/html/reference/commands/index_column_diff.html
+  /usr/share/doc/groonga/ja/html/reference/commands/io_flush.html
+  /usr/share/doc/groonga/ja/html/reference/commands/load.html
+  /usr/share/doc/groonga/ja/html/reference/commands/lock_acquire.html
+  /usr/share/doc/groonga/ja/html/reference/commands/lock_clear.html
+  /usr/share/doc/groonga/ja/html/reference/commands/lock_release.html
+  /usr/share/doc/groonga/ja/html/reference/commands/log_level.html
+  /usr/share/doc/groonga/ja/html/reference/commands/log_put.html
+  /usr/share/doc/groonga/ja/html/reference/commands/log_reopen.html
+  /usr/share/doc/groonga/ja/html/reference/commands/logical_count.html
+  /usr/share/doc/groonga/ja/html/reference/commands/logical_parameters.html
+  /usr/share/doc/groonga/ja/html/reference/commands/logical_range_filter.html
+  /usr/share/doc/groonga/ja/html/reference/commands/logical_select.html
+  /usr/share/doc/groonga/ja/html/reference/commands/logical_shard_list.html
+  /usr/share/doc/groonga/ja/html/reference/commands/logical_table_remove.html
+  /usr/share/doc/groonga/ja/html/reference/commands/normalize.html
+  /usr/share/doc/groonga/ja/html/reference/commands/normalizer_list.html
+  /usr/share/doc/groonga/ja/html/reference/commands/object_exist.html
+  /usr/share/doc/groonga/ja/html/reference/commands/object_inspect.html
+  /usr/share/doc/groonga/ja/html/reference/commands/object_list.html
+  /usr/share/doc/groonga/ja/html/reference/commands/object_remove.html
+  /usr/share/doc/groonga/ja/html/reference/commands/plugin_register.html
+  /usr/share/doc/groonga/ja/html/reference/commands/plugin_unregister.html
+  /usr/share/doc/groonga/ja/html/reference/commands/query_expand.html
+  /usr/share/doc/groonga/ja/html/reference/commands/quit.html
+  /usr/share/doc/groonga/ja/html/reference/commands/range_filter.html
+  /usr/share/doc/groonga/ja/html/reference/commands/reference_acquire.html
+  /usr/share/doc/groonga/ja/html/reference/commands/reference_release.html
+  /usr/share/doc/groonga/ja/html/reference/commands/register.html
+  /usr/share/doc/groonga/ja/html/reference/commands/reindex.html
+  /usr/share/doc/groonga/ja/html/reference/commands/request_cancel.html
+  /usr/share/doc/groonga/ja/html/reference/commands/ruby_eval.html
+  /usr/share/doc/groonga/ja/html/reference/commands/schema.html
+  /usr/share/doc/groonga/ja/html/reference/commands/select.html
+  /usr/share/doc/groonga/ja/html/reference/commands/shutdown.html
+  /usr/share/doc/groonga/ja/html/reference/commands/status.html
+  /usr/share/doc/groonga/ja/html/reference/commands/suggest.html
+  /usr/share/doc/groonga/ja/html/reference/commands/table_copy.html
+  /usr/share/doc/groonga/ja/html/reference/commands/table_create.html
+  /usr/share/doc/groonga/ja/html/reference/commands/table_list.html
+  /usr/share/doc/groonga/ja/html/reference/commands/table_remove.html
+  /usr/share/doc/groonga/ja/html/reference/commands/table_rename.html
+  /usr/share/doc/groonga/ja/html/reference/commands/table_tokenize.html
+  /usr/share/doc/groonga/ja/html/reference/commands/thread_dump.html
+  /usr/share/doc/groonga/ja/html/reference/commands/thread_limit.html
+  /usr/share/doc/groonga/ja/html/reference/commands/tokenize.html
+  /usr/share/doc/groonga/ja/html/reference/commands/tokenizer_list.html
+  /usr/share/doc/groonga/ja/html/reference/commands/truncate.html
+  /usr/share/doc/groonga/ja/html/reference/configuration.html
+  /usr/share/doc/groonga/ja/html/reference/executables.html
+  /usr/share/doc/groonga/ja/html/reference/executables/grndb.html
+  /usr/share/doc/groonga/ja/html/reference/executables/grnslap.html
+  /usr/share/doc/groonga/ja/html/reference/executables/groonga-benchmark.html
+  /usr/share/doc/groonga/ja/html/reference/executables/groonga-httpd.html
+  /usr/share/doc/groonga/ja/html/reference/executables/groonga-server-http.html
+  /usr/share/doc/groonga/ja/html/reference/executables/groonga-suggest-create-dataset.html
+  /usr/share/doc/groonga/ja/html/reference/executables/groonga-suggest-httpd.html
+  /usr/share/doc/groonga/ja/html/reference/executables/groonga-suggest-learner.html
+  /usr/share/doc/groonga/ja/html/reference/executables/groonga.html
+  /usr/share/doc/groonga/ja/html/reference/function.html
+  /usr/share/doc/groonga/ja/html/reference/functions/between.html
+  /usr/share/doc/groonga/ja/html/reference/functions/cast_loose.html
+  /usr/share/doc/groonga/ja/html/reference/functions/edit_distance.html
+  /usr/share/doc/groonga/ja/html/reference/functions/escalate.html
+  /usr/share/doc/groonga/ja/html/reference/functions/fuzzy_search.html
+  /usr/share/doc/groonga/ja/html/reference/functions/geo_distance.html
+  /usr/share/doc/groonga/ja/html/reference/functions/geo_in_circle.html
+  /usr/share/doc/groonga/ja/html/reference/functions/geo_in_rectangle.html
+  /usr/share/doc/groonga/ja/html/reference/functions/highlight_full.html
+  /usr/share/doc/groonga/ja/html/reference/functions/highlight_html.html
+  /usr/share/doc/groonga/ja/html/reference/functions/html_untag.html
+  /usr/share/doc/groonga/ja/html/reference/functions/in_records.html
+  /usr/share/doc/groonga/ja/html/reference/functions/in_values.html
+  /usr/share/doc/groonga/ja/html/reference/functions/math_abs.html
+  /usr/share/doc/groonga/ja/html/reference/functions/now.html
+  /usr/share/doc/groonga/ja/html/reference/functions/number_classify.html
+  /usr/share/doc/groonga/ja/html/reference/functions/prefix_rk_search.html
+  /usr/share/doc/groonga/ja/html/reference/functions/query.html
+  /usr/share/doc/groonga/ja/html/reference/functions/query_parallel_or.html
+  /usr/share/doc/groonga/ja/html/reference/functions/rand.html
+  /usr/share/doc/groonga/ja/html/reference/functions/snippet.html
+  /usr/share/doc/groonga/ja/html/reference/functions/snippet_html.html
+  /usr/share/doc/groonga/ja/html/reference/functions/string_length.html
+  /usr/share/doc/groonga/ja/html/reference/functions/string_slice.html
+  /usr/share/doc/groonga/ja/html/reference/functions/string_substring.html
+  /usr/share/doc/groonga/ja/html/reference/functions/sub_filter.html
+  /usr/share/doc/groonga/ja/html/reference/functions/time_classify_day.html
+  /usr/share/doc/groonga/ja/html/reference/functions/time_classify_day_of_week.html
+  /usr/share/doc/groonga/ja/html/reference/functions/time_classify_hour.html
+  /usr/share/doc/groonga/ja/html/reference/functions/time_classify_minute.html
+  /usr/share/doc/groonga/ja/html/reference/functions/time_classify_month.html
+  /usr/share/doc/groonga/ja/html/reference/functions/time_classify_second.html
+  /usr/share/doc/groonga/ja/html/reference/functions/time_classify_week.html
+  /usr/share/doc/groonga/ja/html/reference/functions/time_classify_year.html
+  /usr/share/doc/groonga/ja/html/reference/functions/vector_find.html
+  /usr/share/doc/groonga/ja/html/reference/functions/vector_new.html
+  /usr/share/doc/groonga/ja/html/reference/functions/vector_size.html
+  /usr/share/doc/groonga/ja/html/reference/functions/vector_slice.html
+  /usr/share/doc/groonga/ja/html/reference/grn_expr.html
+  /usr/share/doc/groonga/ja/html/reference/grn_expr/query_syntax.html
+  /usr/share/doc/groonga/ja/html/reference/grn_expr/script_syntax.html
+  /usr/share/doc/groonga/ja/html/reference/indexing.html
+  /usr/share/doc/groonga/ja/html/reference/log.html
+  /usr/share/doc/groonga/ja/html/reference/normalizers.html
+  /usr/share/doc/groonga/ja/html/reference/normalizers/normalizer_auto.html
+  /usr/share/doc/groonga/ja/html/reference/normalizers/normalizer_nfkc100.html
+  /usr/share/doc/groonga/ja/html/reference/normalizers/normalizer_nfkc121.html
+  /usr/share/doc/groonga/ja/html/reference/normalizers/normalizer_nfkc130.html
+  /usr/share/doc/groonga/ja/html/reference/normalizers/normalizer_nfkc150.html
+  /usr/share/doc/groonga/ja/html/reference/normalizers/normalizer_nfkc51.html
+  /usr/share/doc/groonga/ja/html/reference/normalizers/normalizer_table.html
+  /usr/share/doc/groonga/ja/html/reference/operations.html
+  /usr/share/doc/groonga/ja/html/reference/operations/geolocation_search.html
+  /usr/share/doc/groonga/ja/html/reference/operations/prefix_rk_search.html
+  /usr/share/doc/groonga/ja/html/reference/output.html
+  /usr/share/doc/groonga/ja/html/reference/query_expanders.html
+  /usr/share/doc/groonga/ja/html/reference/query_expanders/tsv.html
+  /usr/share/doc/groonga/ja/html/reference/regular_expression.html
+  /usr/share/doc/groonga/ja/html/reference/scorer.html
+  /usr/share/doc/groonga/ja/html/reference/scorers/scorer_tf_at_most.html
+  /usr/share/doc/groonga/ja/html/reference/scorers/scorer_tf_idf.html
+  /usr/share/doc/groonga/ja/html/reference/sharding.html
+  /usr/share/doc/groonga/ja/html/reference/suggest.html
+  /usr/share/doc/groonga/ja/html/reference/suggest/completion.html
+  /usr/share/doc/groonga/ja/html/reference/suggest/correction.html
+  /usr/share/doc/groonga/ja/html/reference/suggest/introduction.html
+  /usr/share/doc/groonga/ja/html/reference/suggest/suggestion.html
+  /usr/share/doc/groonga/ja/html/reference/tables.html
+  /usr/share/doc/groonga/ja/html/reference/token_filter/summary.html
+  /usr/share/doc/groonga/ja/html/reference/token_filters.html
+  /usr/share/doc/groonga/ja/html/reference/token_filters/token_filter_nfkc100.html
+  /usr/share/doc/groonga/ja/html/reference/token_filters/token_filter_nfkc150.html
+  /usr/share/doc/groonga/ja/html/reference/token_filters/token_filter_stem.html
+  /usr/share/doc/groonga/ja/html/reference/token_filters/token_filter_stop_word.html
+  /usr/share/doc/groonga/ja/html/reference/tokenizer/summary.html
+  /usr/share/doc/groonga/ja/html/reference/tokenizers.html
+  /usr/share/doc/groonga/ja/html/reference/tokenizers/token_bigram.html
+  /usr/share/doc/groonga/ja/html/reference/tokenizers/token_bigram_ignore_blank.html
+  /usr/share/doc/groonga/ja/html/reference/tokenizers/token_bigram_ignore_blank_split_symbol.html
+  /usr/share/doc/groonga/ja/html/reference/tokenizers/token_bigram_ignore_blank_split_symbol_alpha.html
+  /usr/share/doc/groonga/ja/html/reference/tokenizers/token_bigram_ignore_blank_split_symbol_alpha_digit.html
+  /usr/share/doc/groonga/ja/html/reference/tokenizers/token_bigram_split_symbol.html
+  /usr/share/doc/groonga/ja/html/reference/tokenizers/token_bigram_split_symbol_alpha.html
+  /usr/share/doc/groonga/ja/html/reference/tokenizers/token_bigram_split_symbol_alpha_digit.html
+  /usr/share/doc/groonga/ja/html/reference/tokenizers/token_delimit.html
+  /usr/share/doc/groonga/ja/html/reference/tokenizers/token_delimit_null.html
+  /usr/share/doc/groonga/ja/html/reference/tokenizers/token_mecab.html
+  /usr/share/doc/groonga/ja/html/reference/tokenizers/token_ngram.html
+  /usr/share/doc/groonga/ja/html/reference/tokenizers/token_pattern.html
+  /usr/share/doc/groonga/ja/html/reference/tokenizers/token_regexp.html
+  /usr/share/doc/groonga/ja/html/reference/tokenizers/token_table.html
+  /usr/share/doc/groonga/ja/html/reference/tokenizers/token_trigram.html
+  /usr/share/doc/groonga/ja/html/reference/tokenizers/token_unigram.html
+  /usr/share/doc/groonga/ja/html/reference/tuning.html
+  /usr/share/doc/groonga/ja/html/reference/types.html
+  /usr/share/doc/groonga/ja/html/reference/window_function.html
+  /usr/share/doc/groonga/ja/html/reference/window_functions/record_number.html
+  /usr/share/doc/groonga/ja/html/reference/window_functions/window_count.html
+  /usr/share/doc/groonga/ja/html/reference/window_functions/window_rank.html
+  /usr/share/doc/groonga/ja/html/reference/window_functions/window_record_number.html
+  /usr/share/doc/groonga/ja/html/reference/window_functions/window_sum.html
+  /usr/share/doc/groonga/ja/html/search.html
+  /usr/share/doc/groonga/ja/html/searchindex.js
+  /usr/share/doc/groonga/ja/html/server.html
+  /usr/share/doc/groonga/ja/html/server/gqtp.html
+  /usr/share/doc/groonga/ja/html/server/http.html
+  /usr/share/doc/groonga/ja/html/server/http/comparison.html
+  /usr/share/doc/groonga/ja/html/server/http/groonga-httpd.html
+  /usr/share/doc/groonga/ja/html/server/http/groonga.html
+  /usr/share/doc/groonga/ja/html/server/memcached.html
+  /usr/share/doc/groonga/ja/html/server/package.html
+  /usr/share/doc/groonga/ja/html/spec.html
+  /usr/share/doc/groonga/ja/html/spec/gqtp.html
+  /usr/share/doc/groonga/ja/html/spec/search.html
+  /usr/share/doc/groonga/ja/html/troubleshooting.html
+  /usr/share/doc/groonga/ja/html/troubleshooting/different_results_with_the_same_keyword.html
+  /usr/share/doc/groonga/ja/html/troubleshooting/how_to_analyze_error_message.html
+  /usr/share/doc/groonga/ja/html/troubleshooting/mmap_cannot_allocate_memory.html
+  /usr/share/doc/groonga/ja/html/tutorial.html
+  /usr/share/doc/groonga/ja/html/tutorial/data.html
+  /usr/share/doc/groonga/ja/html/tutorial/drilldown.html
+  /usr/share/doc/groonga/ja/html/tutorial/index.html
+  /usr/share/doc/groonga/ja/html/tutorial/introduction.html
+  /usr/share/doc/groonga/ja/html/tutorial/lexicon.html
+  /usr/share/doc/groonga/ja/html/tutorial/match_columns.html
+  /usr/share/doc/groonga/ja/html/tutorial/micro_blog.html
+  /usr/share/doc/groonga/ja/html/tutorial/network.html
+  /usr/share/doc/groonga/ja/html/tutorial/patricia_trie.html
+  /usr/share/doc/groonga/ja/html/tutorial/query_expansion.html
+  /usr/share/doc/groonga/ja/html/tutorial/search.html
+  /usr/share/groonga/examples/dictionary/edict/edict-import.sh
+  /usr/share/groonga/examples/dictionary/edict/edict2grn.rb
+  /usr/share/groonga/examples/dictionary/eijiro/eijiro-import.sh
+  /usr/share/groonga/examples/dictionary/eijiro/eijiro2grn.rb
+  /usr/share/groonga/examples/dictionary/gene95/gene-import.sh
+  /usr/share/groonga/examples/dictionary/gene95/gene2grn.rb
+  /usr/share/groonga/examples/dictionary/html/css/dictionary.css
+  /usr/share/groonga/examples/dictionary/html/css/smoothness/images/ui-bg_flat_0_aaaaaa_40x100.png
+  /usr/share/groonga/examples/dictionary/html/css/smoothness/images/ui-bg_flat_75_ffffff_40x100.png
+  /usr/share/groonga/examples/dictionary/html/css/smoothness/images/ui-bg_glass_55_fbf9ee_1x400.png
+  /usr/share/groonga/examples/dictionary/html/css/smoothness/images/ui-bg_glass_65_ffffff_1x400.png
+  /usr/share/groonga/examples/dictionary/html/css/smoothness/images/ui-bg_glass_75_dadada_1x400.png
+  /usr/share/groonga/examples/dictionary/html/css/smoothness/images/ui-bg_glass_75_e6e6e6_1x400.png
+  /usr/share/groonga/examples/dictionary/html/css/smoothness/images/ui-bg_glass_95_fef1ec_1x400.png
+  /usr/share/groonga/examples/dictionary/html/css/smoothness/images/ui-bg_highlight-soft_75_cccccc_1x100.png
+  /usr/share/groonga/examples/dictionary/html/css/smoothness/images/ui-icons_222222_256x240.png
+  /usr/share/groonga/examples/dictionary/html/css/smoothness/images/ui-icons_2e83ff_256x240.png
+  /usr/share/groonga/examples/dictionary/html/css/smoothness/images/ui-icons_454545_256x240.png
+  /usr/share/groonga/examples/dictionary/html/css/smoothness/images/ui-icons_888888_256x240.png
+  /usr/share/groonga/examples/dictionary/html/css/smoothness/images/ui-icons_cd0a0a_256x240.png
+  /usr/share/groonga/examples/dictionary/html/css/smoothness/jquery-ui-1.8.12.custom.css
+  /usr/share/groonga/examples/dictionary/html/index.html
+  /usr/share/groonga/examples/dictionary/html/js/dictionary.js
+  /usr/share/groonga/examples/dictionary/html/js/jquery-1.7.2.js
+  /usr/share/groonga/examples/dictionary/html/js/jquery-ui-1.8.18.custom.js
+  /usr/share/groonga/examples/dictionary/init-db.sh
+  /usr/share/groonga/examples/dictionary/jmdict/jmdict.rb
+  /usr/share/groonga/examples/dictionary/readme.txt
+  /usr/share/groonga/groonga-log/README.md
+  /usr/share/groonga/groonga-log/lgpl-2.1.txt
+  /usr/share/groonga/html/admin/assets/flot-4.2.1/CHANGELOG.md
+  /usr/share/groonga/html/admin/assets/flot-4.2.1/LICENSE.txt
+  /usr/share/groonga/html/admin/assets/flot-4.2.1/README.md
+  /usr/share/groonga/html/admin/assets/flot-4.2.1/source/jquery.canvaswrapper.js
+  /usr/share/groonga/html/admin/assets/flot-4.2.1/source/jquery.colorhelpers.js
+  /usr/share/groonga/html/admin/assets/flot-4.2.1/source/jquery.flot.axislabels.js
+  /usr/share/groonga/html/admin/assets/flot-4.2.1/source/jquery.flot.browser.js
+  /usr/share/groonga/html/admin/assets/flot-4.2.1/source/jquery.flot.categories.js
+  /usr/share/groonga/html/admin/assets/flot-4.2.1/source/jquery.flot.composeImages.js
+  /usr/share/groonga/html/admin/assets/flot-4.2.1/source/jquery.flot.crosshair.js
+  /usr/share/groonga/html/admin/assets/flot-4.2.1/source/jquery.flot.drawSeries.js
+  /usr/share/groonga/html/admin/assets/flot-4.2.1/source/jquery.flot.errorbars.js
+  /usr/share/groonga/html/admin/assets/flot-4.2.1/source/jquery.flot.fillbetween.js
+  /usr/share/groonga/html/admin/assets/flot-4.2.1/source/jquery.flot.flatdata.js
+  /usr/share/groonga/html/admin/assets/flot-4.2.1/source/jquery.flot.hover.js
+  /usr/share/groonga/html/admin/assets/flot-4.2.1/source/jquery.flot.image.js
+  /usr/share/groonga/html/admin/assets/flot-4.2.1/source/jquery.flot.js
+  /usr/share/groonga/html/admin/assets/flot-4.2.1/source/jquery.flot.legend.js
+  /usr/share/groonga/html/admin/assets/flot-4.2.1/source/jquery.flot.logaxis.js
+  /usr/share/groonga/html/admin/assets/flot-4.2.1/source/jquery.flot.navigate.js
+  /usr/share/groonga/html/admin/assets/flot-4.2.1/source/jquery.flot.pie.js
+  /usr/share/groonga/html/admin/assets/flot-4.2.1/source/jquery.flot.resize.js
+  /usr/share/groonga/html/admin/assets/flot-4.2.1/source/jquery.flot.saturated.js
+  /usr/share/groonga/html/admin/assets/flot-4.2.1/source/jquery.flot.selection.js
+  /usr/share/groonga/html/admin/assets/flot-4.2.1/source/jquery.flot.stack.js
+  /usr/share/groonga/html/admin/assets/flot-4.2.1/source/jquery.flot.symbol.js
+  /usr/share/groonga/html/admin/assets/flot-4.2.1/source/jquery.flot.threshold.js
+  /usr/share/groonga/html/admin/assets/flot-4.2.1/source/jquery.flot.time.js
+  /usr/share/groonga/html/admin/assets/flot-4.2.1/source/jquery.flot.touch.js
+  /usr/share/groonga/html/admin/assets/flot-4.2.1/source/jquery.flot.touchNavigate.js
+  /usr/share/groonga/html/admin/assets/flot-4.2.1/source/jquery.flot.uiConstants.js
+  /usr/share/groonga/html/admin/assets/flot-4.2.1/source/jquery.js
+  /usr/share/groonga/html/admin/assets/groonga-admin.css
+  /usr/share/groonga/html/admin/assets/groonga-admin.ja.js
+  /usr/share/groonga/html/admin/assets/groonga-admin.js
+  /usr/share/groonga/html/admin/assets/groonga.png
+  /usr/share/groonga/html/admin/assets/groonga.svg
+  /usr/share/groonga/html/admin/assets/jquery-3.5.1.js
+  /usr/share/groonga/html/admin/assets/jquery-ui-1.12.1/AUTHORS.txt
+  /usr/share/groonga/html/admin/assets/jquery-ui-1.12.1/LICENSE.txt
+  /usr/share/groonga/html/admin/assets/jquery-ui-1.12.1/images/ui-icons_444444_256x240.png
+  /usr/share/groonga/html/admin/assets/jquery-ui-1.12.1/images/ui-icons_555555_256x240.png
+  /usr/share/groonga/html/admin/assets/jquery-ui-1.12.1/images/ui-icons_777620_256x240.png
+  /usr/share/groonga/html/admin/assets/jquery-ui-1.12.1/images/ui-icons_777777_256x240.png
+  /usr/share/groonga/html/admin/assets/jquery-ui-1.12.1/images/ui-icons_cc0000_256x240.png
+  /usr/share/groonga/html/admin/assets/jquery-ui-1.12.1/images/ui-icons_ffffff_256x240.png
+  /usr/share/groonga/html/admin/assets/jquery-ui-1.12.1/jquery-ui.css
+  /usr/share/groonga/html/admin/assets/jquery-ui-1.12.1/jquery-ui.js
+  /usr/share/groonga/html/admin/assets/jquery-ui-1.12.1/jquery-ui.structure.css
+  /usr/share/groonga/html/admin/assets/jquery-ui-1.12.1/jquery-ui.theme.css
+  /usr/share/groonga/html/admin/assets/jquery-ui-1.12.1/package.json
+  /usr/share/groonga/html/admin/assets/loading.gif
+  /usr/share/groonga/html/admin/favicon.ico
+  /usr/share/groonga/html/admin/favicon.png
+  /usr/share/groonga/html/admin/favicon.svg
+  /usr/share/groonga/html/admin/index.html
+  /usr/share/groonga/html/admin/index.ja.html
+  /usr/share/groonga/mruby/LEGAL
+  /usr/share/groonga/tools/check-index-merge-source-dump.rb
+  /usr/share/groonga/tools/check-small-index-limit.rb
+  /usr/share/groonga/tools/copy-related-files.rb
+  /usr/share/groonga/tools/extract-index-source-from-dump.rb
+  /usr/share/groonga/tools/generate-long-posting-list-data.rb
+  /usr/share/groonga/tools/generate-many-segment-data.rb
+  /usr/share/groonga/tools/groonga-benchmark-indexing.rb
+  /usr/share/groonga/tools/groonga-memory-leak-checker.rb
+  /usr/share/groonga/tools/groonga-memory-usage-analyzer.rb
+  /usr/share/groonga/tools/groonga-object-list-checker.rb
+  /usr/share/groonga/tools/index-column-diff-all.sh
+  /usr/share/groonga/tools/object-inspect-all.sh
+  /usr/share/groonga/tools/ucd-symbol-list.rb
+
+(libgroonga0)
+  /usr/bin/cyggroonga-0.dll
+  /usr/lib/groonga/plugins/functions/index_column.dll
+  /usr/lib/groonga/plugins/functions/math.dll
+  /usr/lib/groonga/plugins/functions/number.dll
+  /usr/lib/groonga/plugins/functions/string.dll
+  /usr/lib/groonga/plugins/functions/time.dll
+  /usr/lib/groonga/plugins/functions/vector.dll
+  /usr/lib/groonga/plugins/query_expanders/tsv.dll
+
+(libgroonga-devel)
+  /usr/include/groonga/groonga.h
+  /usr/include/groonga/groonga.hpp
+  /usr/include/groonga/groonga/accessor.h
+  /usr/include/groonga/groonga/aggregator.h
+  /usr/include/groonga/groonga/array.h
+  /usr/include/groonga/groonga/arrow.h
+  /usr/include/groonga/groonga/arrow.hpp
+  /usr/include/groonga/groonga/bulk.hpp
+  /usr/include/groonga/groonga/cache.h
+  /usr/include/groonga/groonga/cast.h
+  /usr/include/groonga/groonga/column.h
+  /usr/include/groonga/groonga/command.h
+  /usr/include/groonga/groonga/command_arguments.hpp
+  /usr/include/groonga/groonga/config.h
+  /usr/include/groonga/groonga/dat.h
+  /usr/include/groonga/groonga/db.h
+  /usr/include/groonga/groonga/dump.h
+  /usr/include/groonga/groonga/error.h
+  /usr/include/groonga/groonga/expr.h
+  /usr/include/groonga/groonga/file_reader.h
+  /usr/include/groonga/groonga/geo.h
+  /usr/include/groonga/groonga/groonga.h
+  /usr/include/groonga/groonga/hash.h
+  /usr/include/groonga/groonga/highlighter.h
+  /usr/include/groonga/groonga/id.h
+  /usr/include/groonga/groonga/ii.h
+  /usr/include/groonga/groonga/index_column.h
+  /usr/include/groonga/groonga/memory.h
+  /usr/include/groonga/groonga/msgpack.h
+  /usr/include/groonga/groonga/nfkc.h
+  /usr/include/groonga/groonga/normalizer.h
+  /usr/include/groonga/groonga/obj.h
+  /usr/include/groonga/groonga/operator.h
+  /usr/include/groonga/groonga/option.h
+  /usr/include/groonga/groonga/output.h
+  /usr/include/groonga/groonga/output_columns.h
+  /usr/include/groonga/groonga/pat.h
+  /usr/include/groonga/groonga/plugin.h
+  /usr/include/groonga/groonga/portability.h
+  /usr/include/groonga/groonga/posting.h
+  /usr/include/groonga/groonga/proc.h
+  /usr/include/groonga/groonga/progress.h
+  /usr/include/groonga/groonga/raw_string.h
+  /usr/include/groonga/groonga/request_canceler.h
+  /usr/include/groonga/groonga/request_timer.h
+  /usr/include/groonga/groonga/result_set.h
+  /usr/include/groonga/groonga/scorer.h
+  /usr/include/groonga/groonga/selector.h
+  /usr/include/groonga/groonga/smart_obj.hpp
+  /usr/include/groonga/groonga/string.h
+  /usr/include/groonga/groonga/table.h
+  /usr/include/groonga/groonga/table_module.h
+  /usr/include/groonga/groonga/thread.h
+  /usr/include/groonga/groonga/time.h
+  /usr/include/groonga/groonga/token.h
+  /usr/include/groonga/groonga/token_cursor.h
+  /usr/include/groonga/groonga/token_filter.h
+  /usr/include/groonga/groonga/token_metadata.h
+  /usr/include/groonga/groonga/tokenizer.h
+  /usr/include/groonga/groonga/tokenizer_query_deprecated.h
+  /usr/include/groonga/groonga/type.h
+  /usr/include/groonga/groonga/util.h
+  /usr/include/groonga/groonga/vector.h
+  /usr/include/groonga/groonga/version.h
+  /usr/include/groonga/groonga/wal.h
+  /usr/include/groonga/groonga/window_function.h
+  /usr/include/groonga/groonga/window_function_executor.h
+  /usr/include/groonga/groonga/windows.h
+  /usr/include/groonga/groonga/windows_event_logger.h
+  /usr/lib/libgroonga.dll.a
+  /usr/lib/pkgconfig/groonga.pc
+
+(groonga-plugin-ruby)
+  /usr/lib/groonga/plugins/ruby/eval.rb
+  /usr/lib/groonga/plugins/sharding.rb
+  /usr/lib/groonga/plugins/sharding/dynamic_columns.rb
+  /usr/lib/groonga/plugins/sharding/keys_parsable.rb
+  /usr/lib/groonga/plugins/sharding/logical_count.rb
+  /usr/lib/groonga/plugins/sharding/logical_enumerator.rb
+  /usr/lib/groonga/plugins/sharding/logical_parameters.rb
+  /usr/lib/groonga/plugins/sharding/logical_range_filter.rb
+  /usr/lib/groonga/plugins/sharding/logical_select.rb
+  /usr/lib/groonga/plugins/sharding/logical_shard_list.rb
+  /usr/lib/groonga/plugins/sharding/logical_table_remove.rb
+  /usr/lib/groonga/plugins/sharding/parameters.rb
+  /usr/lib/groonga/plugins/sharding/range_expression_builder.rb
+  /usr/lib/groonga/plugins/sharding/stream_execute_context.rb
+  /usr/lib/groonga/plugins/sharding/stream_executor.rb
+  /usr/lib/groonga/plugins/sharding/stream_shard_executor.rb
+  /usr/lib/groonga/plugins/sharding/window.rb
+
+(groonga-plugin-suggest)
+  /usr/lib/groonga/plugins/suggest/suggest.dll
+
+(groonga-plugin-token-filters)
+  /usr/lib/groonga/plugins/token_filters/stop_word.dll
+
+(groonga-tokenizer-mecab)
+  /usr/lib/groonga/plugins/tokenizers/mecab.dll
+
+(groonga-tokenizer-kytea)
+  /usr/lib/groonga/plugins/tokenizers/kytea.dll
+
+(groonga-munin-plugins)
+  /usr/share/groonga/munin/plugins/groonga_cpu_load_
+  /usr/share/groonga/munin/plugins/groonga_cpu_time_
+  /usr/share/groonga/munin/plugins/groonga_delta_
+  /usr/share/groonga/munin/plugins/groonga_disk_
+  /usr/share/groonga/munin/plugins/groonga_memory_
+  /usr/share/groonga/munin/plugins/groonga_n_records_
+  /usr/share/groonga/munin/plugins/groonga_query_performance_
+  /usr/share/groonga/munin/plugins/groonga_status_
+  /usr/share/groonga/munin/plugins/groonga_throughput_
+
+------------------
+
+Port Notes:
+
+----- version 13.0.0-1bl1 -----
+Version bump.
+
+----- version 12.1.0-1bl1 -----
+Version bump.
+
+----- version 12.0.6-1bl1 -----
+Version bump.
+
+----- version 12.0.3-1bl1 -----
+Version bump.
+
+----- version 12.0.2-1bl1 -----
+Version bump.
+
+----- version 11.1.1-1bl1 -----
+Version bump.
+
+----- version 11.0.9-1bl1 -----
+Version bump.
+
+----- version 11.0.7-1bl1 -----
+Version bump.
+
+----- version 11.0.6-1bl1 -----
+Version bump.
+
+----- version 11.0.5-1bl1 -----
+Version bump.
+
+----- version 11.0.3-1bl1 -----
+Version bump.
+
+----- version 11.0.0-1bl1 -----
+Version bump.
+
+----- version 10.1.1-1bl1 -----
+Version bump.
+
+----- version 10.1.0-1bl1 -----
+Version bump.
+
+----- version 10.0.9-1bl1 -----
+Version bump.
+
+----- version 10.0.7-1bl1 -----
+Version bump.
+
+----- version 10.0.6-1bl1 -----
+Version bump.
+
+----- version 10.0.5-1bl1 -----
+Version bump.
+
+----- version 10.0.4-1bl1 -----
+Version bump.
+
+----- version 9.1.2-1bl1 -----
+Version bump.
+
+----- version 9.1.1-1bl1 -----
+Version bump.
+
+----- version 9.1.0-1bl1 -----
+Version bump.
+
+----- version 9.0.8-1bl1 -----
+Version bump.
+
+----- version 9.0.6-1bl1 -----
+Version bump.
+
+----- version 9.0.4-1bl1 -----
+Version bump.
+
+----- version 9.0.3-1bl1 -----
+Version bump.
+
+----- version 9.0.2-1bl1 -----
+Version bump.
+
+----- version 9.0.1-1bl1 -----
+Version bump.
+
+----- version 9.0.0-1bl1 -----
+Version bump.
+
+----- version 8.1.0-1bl1 -----
+Version bump.
+
+----- version 8.0.8-1bl1 -----
+Version bump.
+
+----- version 8.0.5-1bl1 -----
+Version bump.
+
+----- version 8.0.2-1bl1 -----
+Version bump.
+
+----- version 8.0.0-1bl1 -----
+Version bump.
+
+----- version 7.0.9-1bl1 -----
+Version bump.
+
+----- version 7.0.8-1bl1 -----
+Version bump.
+
+----- version 4.1.1-1bl1 -----
+Version bump.
+
+----- version 4.0.8-1bl1 -----
+Version bump.
+
+----- version 4.0.5-1bl1 -----
+Version bump.
+
+----- version 4.0.3-1bl1 -----
+Version bump.
+
+----- version 4.0.2-1bl1 -----
+Version bump.
+
+----- version 3.1.0-1bl1 -----
+Version bump.
+
+----- version 3.0.8-1bl1 -----
+Version bump.
+
+----- version 3.0.7-1bl1 -----
+Version bump.
+
+----- version 3.0.5-1bl1 -----
+Version bump.
+
+----- version 2.0.7-1bl1 -----
+Version bump.
+
+----- version 2.0.1-1bl1 -----
+Version bump.
+
+----- version 2.0.0-1bl1 -----
+Version bump.
+
+----- version 1.3.0-1bl1 -----
+Version bump.
+
+----- version 1.2.9-1bl1 -----
+Version bump.
+
+----- version 1.2.7-1bl1 -----
+Version bump.
+
+----- version 1.2.4-1bl1 -----
+Version bump.
+
+----- version 1.2.3-1bl1 -----
+Version bump.
+
+----- version 1.2.0-1bl1 -----
+Version bump.
+
+----- version 1.1.0-1bl1 -----
+Version bump.
+
+----- version 1.0.4-1bl1 -----
+Version bump.
+
+----- version 1.0.3-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

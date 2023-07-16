@@ -1,0 +1,50 @@
+HOMEPAGE="https://github.com/raysan5/${PN}"
+SRC_URI="https://github.com/raysan5/${PN}/archive/refs/tags/${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Simple and easy-to-use library to learn videogames programming"
+DESCRIPTION="raylib is highly inspired by Borland BGI graphics lib and by XNA framework and
+it's specially well suited for prototyping, tooling, graphical applications,
+embedded systems and education."
+
+LICENSE="Zlib"
+LICENSE_SPDX="SPDX-License-Identifier: Zlib"
+LICENSE_URI="LICENSE"
+
+# Not defined in glfw-3.3.8
+export CPPFLAGS="${CPPFLAGS} -DGLFW_MOUSE_PASSTHROUGH=0x0002000D"
+
+BUILD_REQUIRES="libglfw-devel"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DBUILD_EXAMPLES=OFF
+	-DBUILD_SHARED_LIBS:BOOL=ON
+	-DUSE_AUDIO:BOOL=OFF
+	-DUSE_EXTERNAL_GLFW:BOOL=ON
+"
+
+DOCS="
+	CHANGELOG
+	*.md
+"
+
+PKG_NAMES="
+	raylib
+	libraylib${PV//./}
+	libraylib-devel
+"
+raylib_CONTENTS="
+	usr/share
+"
+libraylib420_CONTENTS="
+	usr/bin
+"
+libraylib_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+raylib_SUMMARY="${SUMMARY} (licensing & readmes)"
+libraylib420_SUMMARY="${SUMMARY} (runtime)"
+libraylib_devel_SUMMARY="${SUMMARY} (development)"

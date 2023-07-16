@@ -1,0 +1,88 @@
+tinyxml
+------------------------------------------
+TinyXML is a simple, small, C++ XML parser that can be easily integrating into
+other programs.
+
+I found myself writing a text file parser every time I needed to save human
+readable data or serialize objects; I created TinyXML to solve the text I/O
+file once and for all. (Or, as a friend said, end the Just Another Text File
+Parser problem.)
+
+Runtime requirements:
+  cygwin-2.8.2-1
+  libgcc1-5.4.0-1
+  libstdc++6-5.4.0-1
+  libtinyxml-devel-2.6.2-1bl3
+  libtinyxml0-2.6.2-1bl3
+  pkg-config-0.29.1-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-9-1
+  binutils-2.25-4
+  cygport-0.24.1-1
+  gcc-core-5.4.0-1
+  gcc-g++-5.4.0-1
+  libtool-2.4.6-4
+  make-4.2.1-2
+
+Canonical website:
+  http://www.grinninglizard.com/tinyxml/
+
+Canonical download:
+  mirror://sourceforge/tinyxml/tinyxml_2_6_2.zip
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack tinyxml-2.6.2-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./tinyxml-2.6.2-X.cygport all
+
+This will create:
+  /usr/src/tinyxml-2.6.2-X-src.tar.xz
+  /usr/src/tinyxml-2.6.2-X.tar.xz
+  /usr/src/libtinyxml0-2.6.2-X.tar.xz
+  /usr/src/libtinyxml-devel-2.6.2-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(tinyxml)
+  /usr/share/doc/Cygwin/tinyxml.README
+  /usr/share/doc/tinyxml/CHANGES.txt
+  /usr/share/doc/tinyxml/README.txt
+
+(libtinyxml0)
+  /usr/bin/cygtinyxml-0.dll
+
+(libtinyxml-devel)
+  /usr/include/tinyxml.h
+  /usr/lib/libtinyxml.dll.a
+  /usr/lib/pkgconfig/tinyxml.pc
+
+------------------
+
+Port Notes:
+
+----- version 2.6.2-1bl3 -----
+Rebuild with gcc-5.4.0
+
+----- version 2.6.2-1bl2 -----
+Rebuild on x86_64
+
+----- version 2.6.2-1bl1 -----
+Version bump.
+
+----- version 2.6.1-1bl2 -----
+Repackage for licensing & readmes
+
+----- version 2.6.1-1bl1 -----
+Version bump.
+
+----- version 2.5.3-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

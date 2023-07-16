@@ -1,0 +1,42 @@
+HOMEPAGE="https://github.com/bakulf/${PN}"
+SRC_URI="https://www.autistici.org/bakunin/${PN}/${P}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="C library for RSS/ATOM"
+DESCRIPTION="mRss is a C library for parsing, writing and creating RSS/ATOM files or
+streams."
+
+BUILD_REQUIRES="libcurl-devel libnxml-devel"
+
+CYGCONF_ARGS="
+	--enable-maintainer-mode
+"
+
+src_test()
+{
+	cd ${B}/test
+	./new.exe > new.rss
+	./parser.exe new.rss
+	./search.exe new.rss
+	./write.exe new.rss write.rss
+	rm -f new.rss write.rss
+}
+
+PKG_NAMES="
+	${PN}
+	${PN}0
+	${PN}-devel
+"
+libmrss_CONTENTS="
+	usr/share
+"
+libmrss0_CONTENTS="
+	usr/bin
+"
+libmrss_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+libmrss_SUMMARY="${SUMMARY} (licensing & readmes)"
+libmrss0_SUMMARY="${SUMMARY} (runtime)"
+libmrss_devel_SUMMARY="${SUMMARY} (development)"

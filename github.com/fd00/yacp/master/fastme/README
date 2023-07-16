@@ -1,0 +1,65 @@
+fastme
+------------------------------------------
+FastME provides distance algorithms to infer phylogenies. FastME is based on
+balanced minimum evolution, which is the very principle of NJ. FastME improves
+over NJ by performing topological moves using fast, sophisticated algorithms.
+The first version of FastME only included Nearest Neighbor Interchange (NNI).
+The new 2.0 version also includes Subtree Pruning and Regrafting (SPR), while
+remaining as fast as NJ and providing a number of facilities: distance
+estimation for DNA and proteins with various models and options, bootstrapping,
+and parallel computations.
+
+Runtime requirements:
+  cygwin-3.3.4-2
+  libgomp1-11.2.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.37-2
+  cygport-0.34.2-1
+  gcc-core-11.2.0-1
+  make-4.3-1
+
+Canonical website:
+  http://www.atgc-montpellier.fr/fastme/
+
+Canonical download:
+  https://gite.lirmm.fr/atgc/FastME/raw/v2.1.6.3/tarball/fastme-2.1.6.3.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack fastme-2.1.6.3-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./fastme-2.1.6.3-X.cygport all
+
+This will create:
+  /usr/src/fastme-2.1.6.3-X-src.tar.xz
+  /usr/src/fastme-2.1.6.3-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(fastme)
+  /usr/bin/fastme.exe
+  /usr/share/doc/Cygwin/fastme.README
+  /usr/share/doc/fastme/AUTHORS
+  /usr/share/doc/fastme/COPYING
+  /usr/share/doc/fastme/ChangeLog
+  /usr/share/doc/fastme/README
+  /usr/share/doc/fastme/manual-June-2016.pdf
+
+------------------
+
+Port Notes:
+
+----- version 2.1.6.3-1bl1 -----
+Version bump.
+
+----- version 2.1.6.1-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

@@ -1,0 +1,222 @@
+SFCGAL
+------------------------------------------
+SFCGAL is a C++ wrapper library around CGAL with the aim of supporting ISO
+19107:2013 and OGC Simple Features Access 1.2 for 3D operations.
+
+Runtime requirements:
+  bash-4.4.12-3
+  cygwin-3.2.0-1
+  libSFCGAL-devel-1.3.10-1bl1
+  libSFCGAL1-1.3.10-1bl1
+  libboost_chrono1.66-1.66.0-1
+  libboost_filesystem1.66-1.66.0-1
+  libboost_program_options1.66-1.66.0-1
+  libboost_serialization1.66-1.66.0-1
+  libboost_system1.66-1.66.0-1
+  libboost_test1.66-1.66.0-1
+  libgcc1-10.2.0-1
+  libgmp10-6.2.1-1
+  libgmpxx4-6.2.1-1
+  libmpfr6-4.1.0-1
+  libstdc++6-10.2.0-1
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.36.1-2
+  cmake-3.20.0-1
+  cygport-0.34.0-1
+  gcc-core-10.2.0-1
+  gcc-g++-10.2.0-1
+  libboost-devel-1.66.0-1
+  libgmp-devel-6.2.1-1
+  libmpfr-devel-4.1.0-1
+  ninja-1.10.2-1
+
+Canonical website:
+  https://github.com/Oslandia/SFCGAL_CI
+
+Canonical download:
+  https://github.com/Oslandia/SFCGAL_CI/archive/refs/tags/v1.3.10.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack SFCGAL-1.3.10-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./SFCGAL-1.3.10-X.cygport all
+
+This will create:
+  /usr/src/SFCGAL-1.3.10-X-src.tar.xz
+  /usr/src/SFCGAL-1.3.10-X.tar.xz
+  /usr/src/libSFCGAL1-1.3.10-X.tar.xz
+  /usr/src/libSFCGAL-devel-1.3.10-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(SFCGAL)
+  /usr/bin/example-CGAL-basic_manip.exe
+  /usr/bin/example-CGAL-cartesian_kernel.exe
+  /usr/bin/example-CGAL-point_generator.exe
+  /usr/bin/example-CGAL-polygon_triangulation2.exe
+  /usr/bin/example-CGAL-triangulation2.exe
+  /usr/bin/example-SFCGAL-offset.exe
+  /usr/bin/garden-test-SFCGAL.exe
+  /usr/bin/standalone-regress-test-SFCGAL.exe
+  /usr/bin/test-regress-convex_hull.exe
+  /usr/bin/test-regress-polygon_triangulator.exe
+  /usr/bin/unit-test-SFCGAL.exe
+  /usr/share/doc/Cygwin/SFCGAL.README
+  /usr/share/doc/SFCGAL/AUTHORS
+  /usr/share/doc/SFCGAL/LICENSE
+  /usr/share/doc/SFCGAL/NEWS
+  /usr/share/doc/SFCGAL/README.md
+
+(libSFCGAL1)
+  /usr/bin/cygSFCGAL-1.dll
+
+(libSFCGAL-devel)
+  /usr/bin/sfcgal-config
+  /usr/include/SFCGAL/Coordinate.h
+  /usr/include/SFCGAL/Envelope.h
+  /usr/include/SFCGAL/Exception.h
+  /usr/include/SFCGAL/Geometry.h
+  /usr/include/SFCGAL/GeometryCollection.h
+  /usr/include/SFCGAL/GeometryVisitor.h
+  /usr/include/SFCGAL/Kernel.h
+  /usr/include/SFCGAL/LineString.h
+  /usr/include/SFCGAL/MultiLineString.h
+  /usr/include/SFCGAL/MultiPoint.h
+  /usr/include/SFCGAL/MultiPolygon.h
+  /usr/include/SFCGAL/MultiSolid.h
+  /usr/include/SFCGAL/Point.h
+  /usr/include/SFCGAL/Polygon.h
+  /usr/include/SFCGAL/PolyhedralSurface.h
+  /usr/include/SFCGAL/PreparedGeometry.h
+  /usr/include/SFCGAL/Solid.h
+  /usr/include/SFCGAL/Surface.h
+  /usr/include/SFCGAL/Transform.h
+  /usr/include/SFCGAL/Triangle.h
+  /usr/include/SFCGAL/TriangulatedSurface.h
+  /usr/include/SFCGAL/Validity.h
+  /usr/include/SFCGAL/algorithm/BoundaryVisitor.h
+  /usr/include/SFCGAL/algorithm/ConsistentOrientationBuilder.h
+  /usr/include/SFCGAL/algorithm/area.h
+  /usr/include/SFCGAL/algorithm/collect.h
+  /usr/include/SFCGAL/algorithm/collectionExtract.h
+  /usr/include/SFCGAL/algorithm/collectionHomogenize.h
+  /usr/include/SFCGAL/algorithm/collectionToMulti.h
+  /usr/include/SFCGAL/algorithm/connection.h
+  /usr/include/SFCGAL/algorithm/convexHull.h
+  /usr/include/SFCGAL/algorithm/covers.h
+  /usr/include/SFCGAL/algorithm/difference.h
+  /usr/include/SFCGAL/algorithm/differencePrimitives.h
+  /usr/include/SFCGAL/algorithm/distance.h
+  /usr/include/SFCGAL/algorithm/distance3d.h
+  /usr/include/SFCGAL/algorithm/extrude.h
+  /usr/include/SFCGAL/algorithm/force2D.h
+  /usr/include/SFCGAL/algorithm/force3D.h
+  /usr/include/SFCGAL/algorithm/intersection.h
+  /usr/include/SFCGAL/algorithm/intersects.h
+  /usr/include/SFCGAL/algorithm/isValid.h
+  /usr/include/SFCGAL/algorithm/length.h
+  /usr/include/SFCGAL/algorithm/lineSubstring.h
+  /usr/include/SFCGAL/algorithm/minkowskiSum.h
+  /usr/include/SFCGAL/algorithm/normal.h
+  /usr/include/SFCGAL/algorithm/offset.h
+  /usr/include/SFCGAL/algorithm/orientation.h
+  /usr/include/SFCGAL/algorithm/plane.h
+  /usr/include/SFCGAL/algorithm/straightSkeleton.h
+  /usr/include/SFCGAL/algorithm/tesselate.h
+  /usr/include/SFCGAL/algorithm/translate.h
+  /usr/include/SFCGAL/algorithm/union.h
+  /usr/include/SFCGAL/algorithm/volume.h
+  /usr/include/SFCGAL/capi/sfcgal_c.h
+  /usr/include/SFCGAL/config.h
+  /usr/include/SFCGAL/detail/ComplexComparator.h
+  /usr/include/SFCGAL/detail/EnvelopeVisitor.h
+  /usr/include/SFCGAL/detail/ForceValidityVisitor.h
+  /usr/include/SFCGAL/detail/GeometrySet.h
+  /usr/include/SFCGAL/detail/GetPointsVisitor.h
+  /usr/include/SFCGAL/detail/Interval.h
+  /usr/include/SFCGAL/detail/Point_inside_polyhedron.h
+  /usr/include/SFCGAL/detail/TestGeometry.h
+  /usr/include/SFCGAL/detail/TypeForDimension.h
+  /usr/include/SFCGAL/detail/algorithm/coversPoints.h
+  /usr/include/SFCGAL/detail/generator/building.h
+  /usr/include/SFCGAL/detail/generator/disc.h
+  /usr/include/SFCGAL/detail/generator/hoch.h
+  /usr/include/SFCGAL/detail/generator/sierpinski.h
+  /usr/include/SFCGAL/detail/graph/Edge.h
+  /usr/include/SFCGAL/detail/graph/GeometryGraph.h
+  /usr/include/SFCGAL/detail/graph/GeometryGraphBuilder.h
+  /usr/include/SFCGAL/detail/graph/Vertex.h
+  /usr/include/SFCGAL/detail/graph/algorithm/isHalfEdge.h
+  /usr/include/SFCGAL/detail/graph/algorithm/orientation.h
+  /usr/include/SFCGAL/detail/io/OsgFactory.h
+  /usr/include/SFCGAL/detail/io/Serialization.h
+  /usr/include/SFCGAL/detail/io/WktReader.h
+  /usr/include/SFCGAL/detail/io/WktWriter.h
+  /usr/include/SFCGAL/detail/polygonSetToMultiPolygon.h
+  /usr/include/SFCGAL/detail/tools/CharArrayBuffer.h
+  /usr/include/SFCGAL/detail/tools/InputStreamReader.h
+  /usr/include/SFCGAL/detail/tools/Log.h
+  /usr/include/SFCGAL/detail/tools/Registry.h
+  /usr/include/SFCGAL/detail/transform/AffineTransform2.h
+  /usr/include/SFCGAL/detail/transform/AffineTransform3.h
+  /usr/include/SFCGAL/detail/transform/Force2D.h
+  /usr/include/SFCGAL/detail/transform/ForceOrderPoints.h
+  /usr/include/SFCGAL/detail/transform/ForceZ.h
+  /usr/include/SFCGAL/detail/transform/ForceZOrderPoints.h
+  /usr/include/SFCGAL/detail/transform/RoundTransform.h
+  /usr/include/SFCGAL/detail/triangulate/ConstraintDelaunayTriangulation.h
+  /usr/include/SFCGAL/detail/triangulate/markDomains.h
+  /usr/include/SFCGAL/detail/triangulate/triangulateInGeometrySet.h
+  /usr/include/SFCGAL/detail/ublas.h
+  /usr/include/SFCGAL/export.h
+  /usr/include/SFCGAL/io/GeometryStreams.h
+  /usr/include/SFCGAL/io/ewkt.h
+  /usr/include/SFCGAL/io/osg.h
+  /usr/include/SFCGAL/io/vtk.h
+  /usr/include/SFCGAL/io/wkt.h
+  /usr/include/SFCGAL/numeric.h
+  /usr/include/SFCGAL/triangulate/triangulate2DZ.h
+  /usr/include/SFCGAL/triangulate/triangulatePolygon.h
+  /usr/include/SFCGAL/version.h
+  /usr/lib/libSFCGAL.dll.a
+  /usr/lib/pkgconfig/sfcgal.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.3.10-1bl1 -----
+Version bump.
+
+----- version 1.3.7-1bl1 -----
+Version bump.
+
+----- version 1.3.6-1bl1 -----
+Version bump.
+
+----- version 1.3.5-1bl1 -----
+Version bump.
+
+----- version 1.3.2-1bl1 -----
+Version bump.
+
+----- version 1.2.2-1bl1 -----
+Version bump.
+
+----- version 1.1.0-1bl1 -----
+Version bump.
+
+----- version 1.0.5-1bl1 -----
+Version bump.
+
+----- version 1.0.4-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

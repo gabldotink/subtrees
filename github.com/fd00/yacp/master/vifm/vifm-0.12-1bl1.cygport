@@ -1,0 +1,15 @@
+HOMEPAGE="https://${PN}.info/"
+SRC_URI="mirror://sourceforge/${PN}/${P}.tar.bz2"
+
+CATEGORY="Utils"
+SUMMARY="Ncurses based file manager with vi like keybindings"
+DESCRIPTION="Vifm is a ncurses based file manager with vi like keybindings, which also
+borrows some useful ideas from mutt. If you use vi, vifm gives you complete
+keyboard control over your files without having to learn a new set of
+commands."
+
+BUILD_REQUIRES="file libglib2.0-devel libgtk2.0-devel libncurses-devel"
+
+DIFF_EXCLUDES="
+	tags
+"

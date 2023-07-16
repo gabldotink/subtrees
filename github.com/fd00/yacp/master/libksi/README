@@ -1,0 +1,125 @@
+libksi
+------------------------------------------
+Guardtime Keyless Signature Infrastructure (KSI) is an industrial scale
+blockchain platform that cryptographically ensures data integrity and proves
+time of existence. Its keyless signatures, based on hash chains, link data to
+global calendar blockchain. The checkpoints of the blockchain, published in
+newspapers and electronic media, enable long term integrity of any digital
+asset without the need to trust any system. There are many applications for
+KSI, a classical example is signing of any type of logs - system logs,
+financial transactions, call records, etc. For more, see https://guardtime.com.
+
+Runtime requirements:
+  cygwin-3.3.6-1
+  cygwin-devel-3.3.6-1
+  libcurl-devel-7.86.0-2
+  libcurl4-7.86.0-2
+  libksi-devel-3.21.3075-1bl1
+  libksi13-3.21.3075-1bl1
+  libssl-devel-1.1.1s-1
+  libssl1.1-1.1.1s-1
+  pkg-config-1.9.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.39-1
+  cygport-0.35.4-1
+  gcc-core-11.3.0-1
+  libcurl-devel-7.86.0-2
+  libssl-devel-1.1.1s-1
+  libtool-2.4.7-1
+
+Canonical website:
+  https://github.com/guardtime/libksi
+
+Canonical download:
+  https://github.com/guardtime/libksi/archive/refs/tags/v3.21.3075.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libksi-3.21.3075-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libksi-3.21.3075-X.cygport all
+
+This will create:
+  /usr/src/libksi-3.21.3075-X-src.tar.xz
+  /usr/src/libksi-3.21.3075-X.tar.xz
+  /usr/src/libksi13-3.21.3075-X.tar.xz
+  /usr/src/libksi-devel-3.21.3075-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libksi)
+  /usr/share/doc/Cygwin/libksi.README
+  /usr/share/doc/libksi/README.md
+  /usr/share/doc/libksi/changelog
+  /usr/share/doc/libksi/license.txt
+
+(libksi13)
+  /usr/bin/cygksi-13.dll
+
+(libksi-devel)
+  /usr/include/ksi/base32.h
+  /usr/include/ksi/blocksigner.h
+  /usr/include/ksi/common.h
+  /usr/include/ksi/compatibility.h
+  /usr/include/ksi/crc32.h
+  /usr/include/ksi/err.h
+  /usr/include/ksi/fast_tlv.h
+  /usr/include/ksi/hash.h
+  /usr/include/ksi/hashchain.h
+  /usr/include/ksi/hmac.h
+  /usr/include/ksi/io.h
+  /usr/include/ksi/ksi.h
+  /usr/include/ksi/list.h
+  /usr/include/ksi/log.h
+  /usr/include/ksi/net.h
+  /usr/include/ksi/net_async.h
+  /usr/include/ksi/net_file.h
+  /usr/include/ksi/net_ha.h
+  /usr/include/ksi/net_http.h
+  /usr/include/ksi/net_tcp.h
+  /usr/include/ksi/net_uri.h
+  /usr/include/ksi/pkitruststore.h
+  /usr/include/ksi/policy.h
+  /usr/include/ksi/publicationsfile.h
+  /usr/include/ksi/signature.h
+  /usr/include/ksi/signature_builder.h
+  /usr/include/ksi/signature_helper.h
+  /usr/include/ksi/tlv.h
+  /usr/include/ksi/tlv_element.h
+  /usr/include/ksi/tlv_template.h
+  /usr/include/ksi/tree_builder.h
+  /usr/include/ksi/types.h
+  /usr/include/ksi/types_base.h
+  /usr/include/ksi/verification.h
+  /usr/include/ksi/verification_rule.h
+  /usr/include/ksi/version.h
+  /usr/lib/libksi.dll.a
+  /usr/lib/pkgconfig/libksi.pc
+
+------------------
+
+Port Notes:
+
+----- version 3.21.3075-1bl1 -----
+Version bump.
+
+----- version 3.20.3025-1bl1 -----
+Version bump.
+
+----- version 3.19.2939-1bl1 -----
+Version bump.
+
+----- version 3.18.2836-1bl1 -----
+Version bump.
+
+----- version 3.14.2207-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

@@ -1,0 +1,49 @@
+if test -e ${top}/${P}.sha1; then
+	HASH=`cat ${top}/${P}.sha1`
+else
+	HASH=`curl --silent https://api.bitbucket.org/2.0/repositories/genomicepidemiology/${PN}/refs/tags | jq ".values[] | select(.name == \"${PV}\") | .target.hash" | cut -b 2-13`
+	echo "${HASH}" > ${top}/${P}.sha1
+fi
+
+HOMEPAGE="https://bitbucket.org/genomicepidemiology/${PN}"
+SRC_URI="https://bitbucket.org/genomicepidemiology/${PN}/get/${PV}.tar.bz2"
+SRC_DIR="genomicepidemiology-${PN}-${HASH}"
+
+CATEGORY="Science"
+SUMMARY="Align long and short reads to redundant sequence databases"
+DESCRIPTION="KMA is a mapping method designed to map raw reads directly against redundant
+databases, in an ultra-fast manner using seed and extend. KMA is particulary
+good at aligning high quality reads against highly redundant databases, where
+unique matches often does not exist. It works for long low quality reads as
+well, such as those from Nanopore. Non-unique matches are resolved using the
+ConClave sorting scheme, and a consensus sequence are outputtet in addition to
+other common attributes, based on our users demands."
+
+# LICENSE=""
+# LICENSE_SPDX="SPDX-License-Identifier: "
+# LICENSE_URI=""
+
+BUILD_REQUIRES="zlib-devel"
+
+src_compile()
+{
+	cd ${B}
+	lndirs
+	cygmake
+}
+
+src_install()
+{
+	cd ${B}
+	dobin *.exe
+}
+
+DOCS="
+	*.pdf
+"
+
+src_test()
+{
+	cd ${B}
+	./${PN}.exe -v
+}

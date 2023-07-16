@@ -1,0 +1,41 @@
+HOMEPAGE="https://github.com/${PN}/${PN}"
+SRC_URI="https://github.com/${PN}/${PN}/archive/refs/tags/${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="File format designed for highly efficient deltas while maintaining good compression"
+DESCRIPTION="zchunk is a compressed file format that splits the file into independent
+chunks. This allows you to only download changed chunks when downloading a new
+version of the file, and also makes zchunk files efficient over rsync."
+
+LICENSE="BSD-2-Clause"
+LICENSE_SPDX="SPDX-License-Identifier: BSD-2-Clause"
+LICENSE_URI="LICENSE"
+
+BUILD_REQUIRES="libargp-devel libcurl-devel libssl-devel libzstd-devel"
+
+inherit meson
+
+DOCS="
+	DOCKER_TESTING.md
+	zchunk_format.txt
+"
+
+PKG_NAMES="
+	zchunk
+	libzck1
+	libzck-devel
+"
+zchunk_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+libzck1_CONTENTS="
+	usr/bin/*.dll
+"
+libzck_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+zchunk_SUMMARY="${SUMMARY} (utilities)"
+libzck1_SUMMARY="${SUMMARY} (runtime)"
+libzck_devel_SUMMARY="${SUMMARY} (development)"

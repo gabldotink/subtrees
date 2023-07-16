@@ -1,0 +1,11 @@
+HOMEPAGE="https://github.com/cusae/${PN}"
+SRC_URI="https://github.com/cusae/${PN}/archive/refs/tags/${PN}-${PV//./-}-rel.tar.gz"
+SRC_DIR="${PN}-${PN}-${PV//./-}-rel"
+
+CATEGORY="Security"
+SUMMARY="High Level Firewall Language"
+DESCRIPTION="HLFL stands for High Level Firewall Language. It translates your high level
+language firewalling rules into usable rules for IPChains, NetFilter,
+IPFilter, Cisco, and many others."
+
+export CFLAGS="`echo ${CFLAGS} | sed -e 's/-Werror=format-security//g'`"

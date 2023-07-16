@@ -1,0 +1,109 @@
+nuspell
+------------------------------------------
+Nuspell is a spell checker library and command-line program designed for
+languages with rich morphology and complex word compounding. Nuspell is a pure
+C++ re-implementation of Hunspell.
+
+Runtime requirements:
+  cygwin-3.3.6-1
+  libgcc1-11.3.0-1
+  libicu-devel-70.1-1
+  libicu70-70.1-1
+  libnuspell-devel-5.1.2-1bl1
+  libnuspell5-5.1.2-1bl1
+  libstdc++6-11.3.0-1
+  pkg-config-1.9.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.39-1
+  cmake-3.23.2-1
+  cygport-0.35.3-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libicu-devel-70.1-1
+  ninja-1.11.0-1
+
+Canonical website:
+  https://github.com/nuspell/nuspell
+
+Canonical download:
+  https://github.com/nuspell/nuspell.git
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack nuspell-5.1.2-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./nuspell-5.1.2-X.cygport all
+
+This will create:
+  /usr/src/nuspell-5.1.2-X-src.tar.xz
+  /usr/src/nuspell-5.1.2-X.tar.xz
+  /usr/src/libnuspell5-5.1.2-X.tar.xz
+  /usr/src/libnuspell-devel-5.1.2-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(nuspell)
+  /usr/bin/nuspell.exe
+  /usr/share/doc/Cygwin/nuspell.README
+  /usr/share/doc/nuspell/AUTHORS
+  /usr/share/doc/nuspell/CHANGELOG.md
+  /usr/share/doc/nuspell/COPYING
+  /usr/share/doc/nuspell/COPYING.LESSER
+  /usr/share/doc/nuspell/README.md
+
+(libnuspell5)
+  /usr/bin/cygnuspell-5.dll
+
+(libnuspell-devel)
+  /usr/include/nuspell/aff_data.hxx
+  /usr/include/nuspell/checker.hxx
+  /usr/include/nuspell/dictionary.hxx
+  /usr/include/nuspell/finder.hxx
+  /usr/include/nuspell/nuspell_export.h
+  /usr/include/nuspell/structures.hxx
+  /usr/include/nuspell/suggester.hxx
+  /usr/include/nuspell/unicode.hxx
+  /usr/lib/cmake/nuspell/NuspellConfig.cmake
+  /usr/lib/cmake/nuspell/NuspellConfigVersion.cmake
+  /usr/lib/cmake/nuspell/NuspellTargets-release.cmake
+  /usr/lib/cmake/nuspell/NuspellTargets.cmake
+  /usr/lib/libnuspell.dll.a
+  /usr/lib/pkgconfig/nuspell.pc
+
+------------------
+
+Port Notes:
+
+----- version 5.1.2-1bl1 -----
+Version bump.
+
+----- version 5.1.0-1bl1 -----
+Version bump.
+
+----- version 5.0.0-1bl1 -----
+Version bump.
+
+----- version 4.2.0-1bl1 -----
+Version bump.
+
+----- version 4.1.0-1bl1 -----
+Version bump.
+
+----- version 4.0.0-1bl1 -----
+Version bump.
+
+----- version 3.1.2-1bl1 -----
+Version bump.
+
+----- version 3.1.1-1bl1 -----
+Version bump.
+
+----- version 3.0.0-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

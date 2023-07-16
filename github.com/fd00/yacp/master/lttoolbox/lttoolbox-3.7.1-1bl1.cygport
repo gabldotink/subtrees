@@ -1,0 +1,48 @@
+HOMEPAGE="https://github.com/apertium/${PN}"
+SRC_URI="https://github.com/apertium/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Text"
+SUMMARY="Finite state compiler, processor and helper tools used by apertium"
+DESCRIPTION="lttoolbox contains finite state tools for lexical processing, morphological
+analysis and generation of words. Analysis is the process of splitting a word
+like cats into its lemma cat and the grammatical information <n><pl>.
+Generation is the opposite process."
+
+LICENSE="GPL-3.0-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: GPL-3.0-or-later"
+LICENSE_URI="COPYING"
+
+BUILD_REQUIRES="libicu-devel libxml2-devel python39-devel"
+
+export CPPFLAGS="${CPPFLAGS} -D_GNU_SOURCE"
+export PYTHON=python3
+
+CYGCONF_ARGS="
+	--enable-python-bindings
+"
+
+PKG_NAMES="
+	${PN}
+	lib${PN}3
+	lib${PN}-devel
+	python39-lttoolbox
+"
+lttoolbox_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+liblttoolbox3_CONTENTS="
+	usr/bin/*.dll
+"
+liblttoolbox_devel_CONTENTS="
+	usr/include
+	usr/lib/lib*.dll.a
+	usr/lib/pkgconfig
+"
+python39_lttoolbox_CONTENTS="
+	usr/lib/python3*
+"
+lttoolbox_SUMMARY="${SUMMARY} (utilities)"
+liblttoolbox3_SUMMARY="${SUMMARY} (runtime)"
+liblttoolbox_devel_SUMMARY="${SUMMARY} (development)"
+python39_lttoolbox_SUMMARY="${SUMMARY} (python39 bindings)"

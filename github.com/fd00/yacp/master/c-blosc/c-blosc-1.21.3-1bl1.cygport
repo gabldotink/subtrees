@@ -1,0 +1,57 @@
+HOMEPAGE="https://www.blosc.org/"
+SRC_URI="https://github.com/Blosc/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Archive"
+SUMMARY="High performance compressor optimized for binary data"
+DESCRIPTION="Blosc is a compression library designed to transmit data to the processor
+cache faster than the traditional non-compressed memory fetch.
+Compression ratios are not very high, but the decompression is very fast.
+Blosc is meant not only to reduce the size of large datasets on-disk or
+in-memory, but also to accelerate memory-bound computations."
+
+LICENSE="BSD-3-Clause"
+LICENSE_SPDX="SPDX-License-Identifier: BSD-3-Clause"
+LICENSE_URI="LICENSES/BLOSC.txt"
+
+BUILD_REQUIRES="liblz4-devel libsnappy-devel libzstd-devel zlib-devel"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DBUILD_STATIC:BOOL=OFF
+	-DDEACTIVATE_SNAPPY:BOOL=OFF
+	-DPREFER_EXTERNAL_LZ4:BOOL=ON
+	-DPREFER_EXTERNAL_ZLIB:BOOL=ON
+	-DPREFER_EXTERNAL_ZSTD:BOOL=ON
+"
+
+src_test()
+{
+	cd ${B}
+	PATH=${B}/blosc:${PATH} ninja_test
+}
+
+DOCS="
+	*.rst
+	THOUGHTS_FOR_2.0.txt
+	LICENSES/*.txt
+"
+
+PKG_NAMES="
+	${PN}
+	libblosc1
+	libblosc-devel
+"
+c_blosc_CONTENTS="
+	usr/share
+"
+libblosc1_CONTENTS="
+	usr/bin
+"
+libblosc_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+c_blosc_SUMMARY="${SUMMARY} (licensing & readmes)"
+libblosc1_SUMMARY="${SUMMARY} (runtime)"
+libblosc_devel_SUMMARY="${SUMMARY} (development)"

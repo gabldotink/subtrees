@@ -1,0 +1,34 @@
+HOMEPAGE="https://github.com/recp/${PN}"
+SRC_URI="https://github.com/recp/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Optimized OpenGL/Graphics Math (glm) for C"
+DESCRIPTION="cglm is an optimized 3D math library written in C99 (compatible with C89). It
+is similar to the original glm library, except cglm is mainly for C."
+
+LICENSE="MIT"
+LICENSE_SPDX="SPDX-License-Identifier: MIT"
+LICENSE_URI="LICENSE"
+
+DOCS="
+	CONTRIBUTING.md
+"
+
+PKG_NAMES="
+	cglm
+	libcglm0
+	libcglm-devel
+"
+cglm_CONTENTS="
+	usr/share
+"
+libcglm0_CONTENTS="
+	usr/bin/*-0.dll
+"
+libcglm_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+cglm_SUMMARY="${SUMMARY} (licensing & readmes)"
+libcglm0_SUMMARY="${SUMMARY} (runtime)"
+libcglm_devel_SUMMARY="${SUMMARY} (development)"

@@ -1,0 +1,70 @@
+samurai
+------------------------------------------
+samurai is a ninja-compatible build tool written in C99 with a focus on
+simplicity, speed, and portability.
+
+Runtime requirements:
+  cygwin-3.2.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.36.1-2
+  cygport-0.34.0-1
+  gcc-core-10.2.0-1
+  make-4.3-1
+  ninja-1.10.2-1
+
+Canonical website:
+  https://github.com/michaelforney/samurai
+
+Canonical download:
+  https://github.com/michaelforney/samurai/archive/1.2.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack samurai-1.2-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./samurai-1.2-X.cygport all
+
+This will create:
+  /usr/src/samurai-1.2-X-src.tar.xz
+  /usr/src/samurai-1.2-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(samurai)
+  /usr/bin/samu.exe
+  /usr/share/doc/Cygwin/samurai.README
+  /usr/share/doc/samurai/LICENSE
+  /usr/share/doc/samurai/README.md
+  /usr/share/man/man1/samu.1.gz
+
+------------------
+
+Port Notes:
+
+----- version 1.2-1bl1 -----
+Version bump.
+
+----- version 1.1-1bl1 -----
+Version bump.
+
+----- version 1.0-1bl1 -----
+Version bump.
+
+----- version 0.7-1bl1 -----
+Version bump.
+
+----- version 0.6-1bl1 -----
+Version bump.
+
+----- version 0.4-1bl1 -----
+Version bump.
+
+----- version 0.3-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

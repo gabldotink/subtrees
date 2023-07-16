@@ -1,0 +1,76 @@
+libcsptr
+------------------------------------------
+This project is a tentative attempt to bring smart pointer constructs to the
+(GNU) C programming language.
+
+ * unique_ptr, shared_ptr macros, and smart type attribute
+ * Destructor support for cleanup
+ * Custom variable metadata on allocation
+
+Runtime requirements:
+  cygwin-2.5.1-1
+  libcsptr-devel-2.0.4-1bl1
+  libcsptr0-2.0.4-1bl1
+  pkg-config-0.29-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.25-4
+  cmake-3.3.2-1
+  cygport-0.21.1-1
+  gcc-core-5.3.0-5
+  make-4.1-1
+
+Canonical website:
+  https://snai.pe/c/c-smart-pointers/
+
+Canonical download:
+  https://github.com/Snaipe/libcsptr/archive/v2.0.4.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libcsptr-2.0.4-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libcsptr-2.0.4-X.cygport all
+
+This will create:
+  /usr/src/libcsptr-2.0.4-X-src.tar.xz
+  /usr/src/libcsptr-2.0.4-X.tar.xz
+  /usr/src/libcsptr0-2.0.4-X.tar.xz
+  /usr/src/libcsptr-devel-2.0.4-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libcsptr)
+  /usr/share/doc/Cygwin/libcsptr.README
+  /usr/share/doc/libcsptr/ChangeLog
+  /usr/share/doc/libcsptr/LICENSE
+  /usr/share/doc/libcsptr/README.md
+
+(libcsptr0)
+  /usr/bin/cygcsptr-0.dll
+
+(libcsptr-devel)
+  /usr/include/csptr/array.h
+  /usr/include/csptr/common.h
+  /usr/include/csptr/config.h
+  /usr/include/csptr/smalloc.h
+  /usr/include/csptr/smart_ptr.h
+  /usr/lib/libcsptr.dll.a
+  /usr/lib/pkgconfig/libcsptr.pc
+  /usr/share/man/man3/csptr.3.gz
+
+------------------
+
+Port Notes:
+
+----- version 2.0.4-1bl1 -----
+Version bump.
+
+----- version 1.0-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

@@ -1,0 +1,84 @@
+forestdb
+------------------------------------------
+ForestDB is a key-value storage engine that is developed by Couchbase Caching
+and Storage Team, and its main index structure is built from Hierarchical
+B+-Tree based Trie, called HB+-Trie. HB+-Trie was originally presented at ACM
+SIGMOD 2011 Programming Contest, by Jung-Sang Ahn who works at Couchbase
+Caching and Storage Team.
+
+Runtime requirements:
+  cygwin-3.1.2-1
+  libforestdb-devel-1.2-1bl4
+  libforestdb0-1.2-1bl4
+  libsnappy1-1.1.7-1
+  libssl1.1-1.1.1d-1
+  pkg-config-1.6.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.29-1
+  cmake-3.14.5-1
+  cygport-0.33.1-1
+  gcc-core-7.4.0-1
+  gcc-g++-7.4.0-1
+  ninja-1.9.0-1
+
+Canonical website:
+  https://github.com/couchbase/forestdb
+
+Canonical download:
+  https://github.com/couchbase/forestdb/archive/v1.2.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack forestdb-1.2-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./forestdb-1.2-X.cygport all
+
+This will create:
+  /usr/src/forestdb-1.2-X-src.tar.xz
+  /usr/src/forestdb-1.2-X.tar.xz
+  /usr/src/libforestdb0-1.2-X.tar.xz
+  /usr/src/libforestdb-devel-1.2-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(forestdb)
+  /usr/bin/forestdb_dump.exe
+  /usr/share/doc/Cygwin/forestdb.README
+  /usr/share/doc/forestdb/LICENSE
+  /usr/share/doc/forestdb/README.md
+
+(libforestdb0)
+  /usr/bin/cygforestdb-0.dll
+
+(libforestdb-devel)
+  /usr/include/libforestdb/fdb_errors.h
+  /usr/include/libforestdb/fdb_types.h
+  /usr/include/libforestdb/forestdb.h
+  /usr/lib/libforestdb.dll.a
+  /usr/lib/pkgconfig/forestdb.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.2-1bl4 -----
+Rebuild for libssl
+
+----- version 1.2-1bl3 -----
+Rebuild for libsnappy
+
+----- version 1.2-1bl2 -----
+Rebuild for libsnappy
+
+----- version 1.2-1bl1 -----
+Version bump.
+
+----- version 1.1-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

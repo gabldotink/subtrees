@@ -1,0 +1,40 @@
+HOMEPAGE="https://gitlab.com/ixion/ixion"
+SRC_URI="https://gitlab.com/ixion/ixion/repository/archive.zip?ref=${PV}"
+SRC_DIR="ixion-${PV}-789a08ebc3e7fc2a3914fc34b2497bf476952bfc"
+
+CATEGORY="Libs"
+SUMMARY="General purpose formula parser & interpreter"
+DESCRIPTION="Ixion is a general purpose formula parser & interpreter that can calculate
+multiple named targets, or cells."
+
+src_test()
+{
+	cd ${B}
+	cygmake check
+}
+
+PKG_NAMES="
+	${PN}
+	${PN}0.13_0
+	${PN}0.13-devel
+	python3-${PN}
+"
+libixion_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+libixion0_13_0_CONTENTS="
+	usr/bin/*.dll
+"
+libixion0_13_devel_CONTENTS="
+	usr/include
+	usr/lib/${PN}*
+	usr/lib/pkgconfig
+"
+python3_libixion_CONTENTS="
+	usr/lib/python*
+"
+libixion_SUMMARY="${SUMMARY} (utilities)"
+libixion0_13_0_SUMMARY="${SUMMARY} (runtime)"
+libixion0_13_devel_SUMMARY="${SUMMARY} (development)"
+python3_libixion_SUMMARY="${SUMMARY} (python bindings)"

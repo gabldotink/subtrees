@@ -1,0 +1,92 @@
+yubico-piv-tool
+------------------------------------------
+The Yubico PIV tool is used for interacting with the Privilege and
+Identification Card (PIV) application on a YubiKey.
+
+Runtime requirements:
+  cygwin-3.3.5-1
+  libpcsclite1-1.9.8-1bl1
+  libssl-devel-1.1.1o-1
+  libssl1.1-1.1.1o-1
+  libykpiv-devel-2.3.0-1bl1
+  libykpiv2-2.3.0-1bl1
+  pkg-config-1.8.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.38-1
+  cmake-3.20.0-1
+  cygport-0.35.1-1
+  gcc-core-11.3.0-1
+  gengetopt-2.23-1bl1
+  help2man-1.49.2-1
+  libpcsclite-devel-1.9.8-1bl1
+  libssl-devel-1.1.1o-1
+  ninja-1.11.0-1
+
+Canonical website:
+  https://github.com/Yubico/yubico-piv-tool
+
+Canonical download:
+  https://github.com/Yubico/yubico-piv-tool/archive/refs/tags/yubico-piv-tool-2.3.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack yubico-piv-tool-2.3.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./yubico-piv-tool-2.3.0-X.cygport all
+
+This will create:
+  /usr/src/yubico-piv-tool-2.3.0-X-src.tar.xz
+  /usr/src/yubico-piv-tool-2.3.0-X.tar.xz
+  /usr/src/libykpiv2-2.3.0-X.tar.xz
+  /usr/src/libykpiv-devel-2.3.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(yubico-piv-tool)
+  /usr/bin/yubico-piv-tool.exe
+  /usr/share/doc/Cygwin/yubico-piv-tool.README
+  /usr/share/doc/yubico-piv-tool/COPYING
+  /usr/share/doc/yubico-piv-tool/NEWS
+  /usr/share/doc/yubico-piv-tool/README
+  /usr/share/man/man1/yubico-piv-tool.1.gz
+
+(libykpiv2)
+  /usr/bin/cygykcs11-2.dll
+  /usr/bin/cygykpiv-2.dll
+
+(libykpiv-devel)
+  /usr/include/ykpiv/ykpiv-config.h
+  /usr/include/ykpiv/ykpiv.h
+  /usr/lib/libykcs11.dll.a
+  /usr/lib/libykpiv.dll.a
+  /usr/lib/pkgconfig/ykcs11.pc
+  /usr/lib/pkgconfig/ykpiv.pc
+
+------------------
+
+Port Notes:
+
+----- version 2.3.0-1bl1 -----
+Version bump.
+
+----- version 2.2.1-1bl1 -----
+Version bump.
+
+----- version 2.2.0-1bl1 -----
+Version bump.
+
+----- version 2.1.1-1bl1 -----
+Version bump.
+
+----- version 2.0.0-1bl1 -----
+Version bump.
+
+----- version 1.7.0-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

@@ -1,0 +1,42 @@
+HOMEPAGE="https://github.com/${PN}/${PN}"
+SRC_URI="https://github.com/${PN}/${PN}/archive/refs/tags/${P}.tar.gz"
+SRC_DIR="${PN}-${P}"
+
+CATEGORY="Devel"
+SUMMARY="Fast, multi-threaded malloc() and nifty performance analysis tools"
+DESCRIPTION="These tools are for use by developers so that they can create more robust
+applications. Especially of use to those developing multi-threaded
+applications in C++ with templates. Includes TCMalloc, heap-checker,
+heap-profiler and cpu-profiler."
+
+export CXXFLAGS="${CXXFLAGS} -std=gnu++1y"
+
+CYGCONF_ARGS="
+	--disable-debugalloc
+	--enable-maintainer-mode
+	--enable-frame-pointers
+"
+
+MAKEOPTS="
+	-j1
+"
+
+PKG_NAMES="
+	${PN}
+	libtcmalloc4
+	libtcmalloc-devel
+"
+gperftools_CONTENTS="
+	usr/bin/pprof*
+	usr/share
+"
+libtcmalloc4_CONTENTS="
+	usr/bin/*.dll
+"
+libtcmalloc_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+gperftools_SUMMARY="${SUMMARY} (utilities)"
+libtcmalloc4_SUMMARY="${SUMMARY} (runtime)"
+libtcmalloc_devel_SUMMARY="${SUMMARY} (development)"

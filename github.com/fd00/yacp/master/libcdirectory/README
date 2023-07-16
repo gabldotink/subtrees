@@ -1,0 +1,92 @@
+libcdirectory
+------------------------------------------
+libcdirectory is a library for cross-platform C directory functions.
+
+Runtime requirements:
+  cygwin-3.3.4-2
+  libcdirectory-devel-20220105-1bl1
+  libcdirectory1-20220105-1bl1
+  libcerror1-20220101-1bl1
+  libclocale1-20220107-1bl2
+  libuna1-20201204-1bl1
+  pkg-config-1.8.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.37-2
+  cygport-0.34.2-1
+  gcc-core-11.2.0-1
+  libcerror-devel-20220101-1bl1
+  libclocale-devel-20220107-1bl2
+  libtool-2.4.6-8
+  libuna-devel-20201204-1bl1
+  make-4.3-1
+
+Canonical website:
+  https://github.com/libyal/libcdirectory
+
+Canonical download:
+  https://github.com/libyal/libcdirectory/archive/refs/tags/20220105.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libcdirectory-20220105-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libcdirectory-20220105-X.cygport all
+
+This will create:
+  /usr/src/libcdirectory-20220105-X-src.tar.xz
+  /usr/src/libcdirectory-20220105-X.tar.xz
+  /usr/src/libcdirectory1-20220105-X.tar.xz
+  /usr/src/libcdirectory-devel-20220105-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libcdirectory)
+  /usr/share/doc/Cygwin/libcdirectory.README
+  /usr/share/doc/libcdirectory/AUTHORS
+  /usr/share/doc/libcdirectory/COPYING
+  /usr/share/doc/libcdirectory/COPYING.LESSER
+  /usr/share/doc/libcdirectory/ChangeLog
+  /usr/share/doc/libcdirectory/README
+
+(libcdirectory1)
+  /usr/bin/cygcdirectory-1.dll
+
+(libcdirectory-devel)
+  /usr/include/libcdirectory.h
+  /usr/include/libcdirectory/codepage.h
+  /usr/include/libcdirectory/definitions.h
+  /usr/include/libcdirectory/error.h
+  /usr/include/libcdirectory/extern.h
+  /usr/include/libcdirectory/features.h
+  /usr/include/libcdirectory/types.h
+  /usr/lib/libcdirectory.dll.a
+  /usr/lib/pkgconfig/libcdirectory.pc
+  /usr/share/man/man3/libcdirectory.3.gz
+
+------------------
+
+Port Notes:
+
+----- version 20220105-1bl1 -----
+Version bump.
+
+----- version 20200702-1bl1 -----
+Version bump.
+
+----- version 20170104-1bl1 -----
+Version bump.
+
+----- version 20150101-1bl2 -----
+Rebuild with gcc-5.3.0
+
+----- version 20150101-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

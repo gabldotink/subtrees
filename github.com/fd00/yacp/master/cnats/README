@@ -1,0 +1,109 @@
+cnats
+------------------------------------------
+A C client for the NATS messaging system.
+
+Runtime requirements:
+  cygwin-3.4.6-1
+  libnats-devel-3.6.1-1bl1
+  libnats3.6-3.6.1-1bl1
+  libprotobuf-c1-1.4.1-1bl1
+  libsodium23-1.0.18-1
+  libssl1.1-1.1.1t-1
+  pkg-config-1.9.4-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.40-1
+  cmake-3.23.2-1
+  cygport-0.36.1-1
+  gcc-core-11.3.0-1
+  libprotobuf-c-devel-1.4.1-1bl1
+  libsodium-devel-1.0.18-1
+  libssl-devel-1.1.1t-1
+  ninja-1.11.1-1
+
+Canonical website:
+  https://github.com/nats-io/nats.c
+
+Canonical download:
+  https://github.com/nats-io/nats.c/archive/refs/tags/v3.6.1.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack cnats-3.6.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./cnats-3.6.1-X.cygport all
+
+This will create:
+  /usr/src/cnats-3.6.1-X-src.tar.xz
+  /usr/src/cnats-3.6.1-X.tar.xz
+  /usr/src/libnats3.6-3.6.1-X.tar.xz
+  /usr/src/libnats-devel-3.6.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(cnats)
+  /usr/share/doc/Cygwin/cnats.README
+  /usr/share/doc/cnats/CODE-OF-CONDUCT.md
+  /usr/share/doc/cnats/GOVERNANCE.md
+  /usr/share/doc/cnats/LICENSE
+  /usr/share/doc/cnats/MAINTAINERS.md
+  /usr/share/doc/cnats/README.md
+  /usr/share/doc/cnats/dependencies.md
+
+(libnats3.6)
+  /usr/bin/cygnats-3.6.dll
+
+(libnats-devel)
+  /usr/include/nats.h
+  /usr/include/nats/adapters/libevent.h
+  /usr/include/nats/adapters/libuv.h
+  /usr/include/nats/nats.h
+  /usr/include/nats/status.h
+  /usr/include/nats/version.h
+  /usr/lib/cmake/cnats/cnats-config-release.cmake
+  /usr/lib/cmake/cnats/cnats-config.cmake
+  /usr/lib/libnats.dll.a
+  /usr/lib/pkgconfig/libnats.pc
+
+------------------
+
+Port Notes:
+
+----- version 3.6.1-1bl1 -----
+Version bump.
+
+----- version 3.5.0-1bl1 -----
+Version bump.
+
+----- version 3.4.0-1bl1 -----
+Version bump.
+
+----- version 3.3.0-1bl1 -----
+Version bump.
+
+----- version 3.2.0-1bl1 -----
+Version bump.
+
+----- version 3.1.1-1bl1 -----
+Version bump.
+
+----- version 3.1.0-1bl1 -----
+Version bump.
+
+----- version 2.3.0-1bl1 -----
+Version bump.
+
+----- version 2.2.0-1bl1 -----
+Version bump.
+
+----- version 2.1.0-1bl1 -----
+Version bump.
+
+----- version 1.8.0-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

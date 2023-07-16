@@ -1,0 +1,59 @@
+HOMEPAGE="https://github.com/GrammarSoft/${PN}"
+SRC_URI="https://github.com/GrammarSoft/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Science"
+SUMMARY="Tools for the 3rd edition of the Constraint Grammar formalism"
+DESCRIPTION="${SUMMARY}"
+
+LICENSE="GPL-3.0-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: GPL-3.0-or-later"
+LICENSE_URI="COPYING"
+
+BUILD_REQUIRES="libicu-devel libtcmalloc-devel python39-devel"
+
+export CPPFLAGS="${CPPFLAGS} -D_GNU_SOURCE"
+export LDFLAGS="${LDFLAGS} -Wl,--allow-multiple-definition"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DENABLE_PYTHON_BINDINGS:BOOL=ON
+"
+
+src_test()
+{
+	cd ${B}
+	ninja_test
+}
+
+DOCS="
+	CONTRIBUTING.md
+	license.icu.txt
+"
+
+PKG_NAMES="
+	cg3
+	libcg3_1
+	libcg3-devel
+	python39-cg3
+"
+cg3_CONTENTS="
+	usr/bin/cg*
+	usr/bin/vislcg3.exe
+	usr/share
+"
+libcg3_1_CONTENTS="
+	usr/bin/*.dll
+"
+libcg3_devel_CONTENTS="
+	usr/include
+	usr/lib/*.dll.a
+	usr/lib/pkgconfig
+"
+python39_cg3_CONTENTS="
+	usr/lib/python*
+"
+cg3_SUMMARY="${SUMMARY} (utilities)"
+libcg3_1_SUMMARY="${SUMMARY} (runtime)"
+libcg3_devel_SUMMARY="${SUMMARY} (development)"
+python39_cg3_SUMMARY="${SUMMARY} (python39 bindings)"

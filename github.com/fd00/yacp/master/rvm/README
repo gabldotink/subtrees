@@ -1,0 +1,113 @@
+rvm
+------------------------------------------
+RVM, a Recoverable Virtual Memory system, is a mechanism to support persistent
+virtual memory in the face of system crashes. The current state of affairs is
+that software rather than hardware is limiting factor is systems reliability,
+and so RVM is intended to assist in building more robust software. RVMs
+principal reliability criterion is to provide permanence of committed changes
+and integrity of data over operating system crashes. The fatal nature of these
+all-too-frequent events often leaves data structures in a shambles. But the
+all-or-none property of atomic transactions can insure consistency of data
+structures over crashes and makes the application significantly more robust
+with small cost. Using simple, non-nested local transactions, it provides a
+way to automatically checkpoint the state of memory before an operation and
+restore that state in the event of a crash.
+
+Runtime requirements:
+  cygwin-2.8.2-1
+  liblwp-devel-2.8-1bl1
+  liblwp2-2.8-1bl1
+  librvm-devel-1.20-1bl1
+  librvm1-1.20-1bl1
+  pkg-config-0.29.1-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-9-1
+  binutils-2.25-4
+  cygport-0.24.1-1
+  gcc-core-5.4.0-1
+  libtool-2.4.6-4
+  make-4.2.1-2
+
+Canonical website:
+  http://www.coda.cs.cmu.edu/
+
+Canonical download:
+  http://www.coda.cs.cmu.edu/pub/rvm/src/rvm-1.20.tar.xz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack rvm-1.20-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./rvm-1.20-X.cygport all
+
+This will create:
+  /usr/src/rvm-1.20-X-src.tar.xz
+  /usr/src/rvm-1.20-X.tar.xz
+  /usr/src/librvm1-1.20-X.tar.xz
+  /usr/src/librvm-devel-1.20-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(rvm)
+  /usr/sbin/rdsinit.exe
+  /usr/sbin/rvmutl.exe
+  /usr/share/doc/Cygwin/rvm.README
+  /usr/share/doc/rvm/COPYING
+  /usr/share/doc/rvm/NEWS
+  /usr/share/man/man1/rdsinit.1.gz
+  /usr/share/man/man1/rvmutl.1.gz
+
+(librvm1)
+  /usr/bin/cygrds-1.dll
+  /usr/bin/cygrdslwp-1.dll
+  /usr/bin/cygrdspt-1.dll
+  /usr/bin/cygrvm-1.dll
+  /usr/bin/cygrvmlwp-1.dll
+  /usr/bin/cygrvmpt-1.dll
+  /usr/bin/cygseg-1.dll
+  /usr/bin/cygseglwp-1.dll
+  /usr/bin/cygsegpt-1.dll
+
+(librvm-devel)
+  /usr/include/rvm/rds.h
+  /usr/include/rvm/rvm.h
+  /usr/include/rvm/rvm_segment.h
+  /usr/include/rvm/rvm_statistics.h
+  /usr/lib/librds.dll.a
+  /usr/lib/librdslwp.dll.a
+  /usr/lib/librdspt.dll.a
+  /usr/lib/librvm.dll.a
+  /usr/lib/librvmlwp.dll.a
+  /usr/lib/librvmpt.dll.a
+  /usr/lib/libseg.dll.a
+  /usr/lib/libseglwp.dll.a
+  /usr/lib/libsegpt.dll.a
+  /usr/lib/pkgconfig/rvm.pc
+  /usr/lib/pkgconfig/rvmlwp.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.20-1bl1 -----
+Version bump.
+
+----- version 1.17-1bl2 -----
+Rebuild with gcc-4.5.3
+
+----- version 1.17-1bl1 -----
+Version bump.
+
+----- version 1.16-1bl2 -----
+Rebuild with gcc-4 by fd0 <http://d.hatena.ne.jp/fd0/>
+
+----- version 1.16-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

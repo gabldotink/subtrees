@@ -1,0 +1,61 @@
+HOMEPAGE="https://sites.google.com/site/openimageio/home"
+SRC_URI="https://github.com/${PN}/oiio/archive/refs/tags/v${PV}.tar.gz"
+SRC_DIR="oiio-${PV}"
+
+CATEGORY="Graphics"
+SUMMARY="Library for reading and writing images"
+DESCRIPTION="OpenImageIO is a library for reading and writing images, and a bunch of
+related classes, utilities, and applications."
+
+BUILD_REQUIRES="libboost-devel libcineon-devel libdcmtk-devel libdpx-devel libfreetype-devel libgif-devel libGL-devel libheif-devel libilmbase-devel libIlmImf-devel libjpeg-devel libopencv-devel libopenjp2-devel libpng-devel libPtex-devel libpugixml-devel libQt5Core-devel libQt5Gui-devel libraw-devel libsquish-devel libtiff-devel libwebp-devel zlib-devel"
+
+export CPPFLAGS="${CPPFLAGS} -D_GNU_SOURCE"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DCMAKE_CXX_EXTENSIONS:BOOL=ON
+	-DUSE_EXTERNAL_PUGIXML:BOOL=ON
+	-DUSE_TBB:BOOL=OFF
+	-DUSE_PYTHON:BOOL=OFF
+	-DINSTALL_DOCS:BOOL=OFF
+	-DINSTALL_FONTS:BOOL=OFF
+	-DSTOP_ON_WARNING:BOOL=OFF
+	-DVERBOSE:BOOL=ON
+"
+
+DOCS="
+	*.md
+"
+
+DIFF_EXCLUDES="
+	ext
+"
+
+src_test()
+{
+	cd ${B}
+	ninja_test
+}
+
+PKG_NAMES="
+	${PN}
+	lib${PN}${PV[1]}.${PV[2]}
+	lib${PN}-devel
+"
+OpenImageIO_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+libOpenImageIO2_3_CONTENTS="
+	usr/bin/*.dll
+"
+libOpenImageIO_devel_CONTENTS="
+	usr/include
+	usr/lib/cmake
+	usr/lib/lib${PN}*
+	usr/lib/pkgconfig
+"
+OpenImageIO_SUMMARY="${SUMMARY} (utilities)"
+libOpenImageIO2_3_SUMMARY="${SUMMARY} (runtime)"
+libOpenImageIO_devel_SUMMARY="${SUMMARY} (development)"

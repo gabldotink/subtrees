@@ -1,0 +1,11 @@
+--- origsrc/libconfini-1.16.4/configure.ac	2022-07-21 13:14:03.000000000 +0900
++++ src/libconfini-1.16.4/configure.ac	2022-08-16 05:52:05.034751500 +0900
+@@ -611,7 +611,7 @@ AM_COND_IF([PLATFORM_MSWIN], [
+ 
+ # `LT_INIT([win32-dll])` should set the `${DLLTOOL}` variable
+ AM_CONDITIONAL([HAVE_DLLTOOL],
+-	[test "x${DLLTOOL}" != xfalse -a "x${DLLTOOL}" != x])
++	[test "x${DLLTOOL}" != xfalse -a "x${DLLTOOL}" != x -a "$host_os" != "cygwin"])
+ 
+ # `LT_PROG_RC` should set the `${RC}` variable
+ AM_CONDITIONAL([HAVE_RC],

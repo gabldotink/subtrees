@@ -1,0 +1,72 @@
+python-fypp
+------------------------------------------
+Fypp is a Python powered preprocessor. It can be used for any programming
+languages but its primary aim is to offer a Fortran preprocessor, which helps
+to extend Fortran with condititional compiling and template metaprogramming
+capabilities. Instead of introducing its own expression syntax, it uses Python
+expressions in its preprocessor directives, offering the consistency and
+versatility of Python when formulating metaprogramming tasks. It puts strong
+emphasis on robustness and on neat integration into developing toolchains.
+
+Runtime requirements:
+  python39-3.9.10-1
+  python39-fypp-3.1-1bl2
+
+Build requirements:
+(besides corresponding -devel packages)
+  cygport-0.35.3-1
+  python39-3.9.10-1
+
+Canonical website:
+  https://github.com/aradi/fypp
+
+Canonical download:
+  https://files.pythonhosted.org/packages/source/f/fypp/fypp-3.1.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack python-fypp-3.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./python-fypp-3.1-X.cygport all
+
+This will create:
+  /usr/src/python-fypp-3.1-X-src.tar.xz
+  /usr/src/python39-fypp-3.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(python39-fypp)
+  /usr/bin/fypp
+  /usr/lib/python3.9/site-packages/__pycache__/fypp.cpython-39.opt-1.pyc
+  /usr/lib/python3.9/site-packages/__pycache__/fypp.cpython-39.opt-2.pyc
+  /usr/lib/python3.9/site-packages/__pycache__/fypp.cpython-39.pyc
+  /usr/lib/python3.9/site-packages/fypp-3.1.dist-info/INSTALLER
+  /usr/lib/python3.9/site-packages/fypp-3.1.dist-info/LICENSE.txt
+  /usr/lib/python3.9/site-packages/fypp-3.1.dist-info/METADATA
+  /usr/lib/python3.9/site-packages/fypp-3.1.dist-info/RECORD
+  /usr/lib/python3.9/site-packages/fypp-3.1.dist-info/REQUESTED
+  /usr/lib/python3.9/site-packages/fypp-3.1.dist-info/WHEEL
+  /usr/lib/python3.9/site-packages/fypp-3.1.dist-info/direct_url.json
+  /usr/lib/python3.9/site-packages/fypp-3.1.dist-info/entry_points.txt
+  /usr/lib/python3.9/site-packages/fypp-3.1.dist-info/top_level.txt
+  /usr/lib/python3.9/site-packages/fypp.py
+  /usr/share/doc/python39-fypp/LICENSE.txt
+  /usr/share/doc/python39-fypp/README.rst
+
+------------------
+
+Port Notes:
+
+----- version 3.1-1bl2 -----
+Version bump.
+
+----- version 3.1-1bl1 -----
+Version bump.
+
+----- version 3.0-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

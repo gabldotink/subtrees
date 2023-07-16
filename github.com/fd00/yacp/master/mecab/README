@@ -1,0 +1,98 @@
+mecab
+------------------------------------------
+MeCab is a open source morphological analyzer which uses CRF (Conditional
+Random Fields) as the estimation of parameters.
+
+Runtime requirements:
+  bash-4.4.12-3
+  cygwin-3.1.1-1
+  libgcc1-7.4.0-1
+  libiconv2-1.14-3
+  libmecab-devel-0.996-1bl4
+  libmecab2-0.996-1bl4
+  libstdc++6-7.4.0-1
+  pkg-config-1.6.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.29-1
+  cygport-0.33.1-1
+  gcc-core-7.4.0-1
+  gcc-g++-7.4.0-1
+  libtool-2.4.6-7
+  make-4.2.1-2
+
+Canonical website:
+  http://taku910.github.io/mecab/
+
+Canonical download:
+  http://distfiles.gentoo.org/distfiles/mecab-0.996.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack mecab-0.996-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./mecab-0.996-X.cygport all
+
+This will create:
+  /usr/src/mecab-0.996-X-src.tar.xz
+  /usr/src/mecab-0.996-X.tar.xz
+  /usr/src/libmecab2-0.996-X.tar.xz
+  /usr/src/libmecab-devel-0.996-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(mecab)
+  /etc/mecabrc
+  /usr/bin/mecab.exe
+  /usr/libexec/mecab/mecab-cost-train.exe
+  /usr/libexec/mecab/mecab-dict-gen.exe
+  /usr/libexec/mecab/mecab-dict-index.exe
+  /usr/libexec/mecab/mecab-system-eval.exe
+  /usr/libexec/mecab/mecab-test-gen.exe
+  /usr/share/doc/Cygwin/mecab.README
+  /usr/share/doc/mecab/AUTHORS
+  /usr/share/doc/mecab/BSD
+  /usr/share/doc/mecab/COPYING
+  /usr/share/doc/mecab/GPL
+  /usr/share/doc/mecab/LGPL
+  /usr/share/doc/mecab/README
+  /usr/share/man/man1/mecab.1.gz
+
+(libmecab2)
+  /usr/bin/cygmecab-2.dll
+
+(libmecab-devel)
+  /usr/bin/mecab-config
+  /usr/include/mecab.h
+  /usr/lib/libmecab.dll.a
+  /usr/lib/pkgconfig/mecab.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.996-1bl4 -----
+Rebuild with gcc-7.4.0
+
+----- version 0.996-1bl3 -----
+Rebuild with gcc-5.4.0
+
+----- version 0.996-1bl2 -----
+Rebuild with x86_64
+
+----- version 0.996-1bl1 -----
+Version bump.
+
+----- version 0.994-1bl1 -----
+Version bump.
+
+----- version 0.98-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

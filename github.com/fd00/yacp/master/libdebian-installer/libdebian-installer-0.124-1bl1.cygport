@@ -1,0 +1,34 @@
+HOMEPAGE="https://launchpad.net/${PN}"
+SRC_URI="mirror://debian/pool/main/${PN:0:4}/${PN}/${PN}_${PV}.tar.xz"
+SRC_DIR="${PN}"
+
+CATEGORY="Libs"
+SUMMARY="Library of common debian-installer functions"
+DESCRIPTION="Library of common debian-installer functions."
+
+LICENSE="GPL-2.0-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: GPL-2.0-or-later"
+LICENSE_URI="debian/copyright"
+
+CYGCONF_ARGS="
+	--enable-maintainer-mode
+"
+
+PKG_NAMES="
+	${PN}
+	${PN}4
+	${PN}-devel
+"
+libdebian_installer_CONTENTS="
+	usr/share
+"
+libdebian_installer4_CONTENTS="
+	usr/bin
+"
+libdebian_installer_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+libdebian_installer_SUMMARY="${SUMMARY} (licensing & readmes)"
+libdebian_installer4_SUMMARY="${SUMMARY} (runtime)"
+libdebian_installer_devel_SUMMARY="${SUMMARY} (development)"

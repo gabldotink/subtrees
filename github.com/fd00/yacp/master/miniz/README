@@ -1,0 +1,95 @@
+miniz
+------------------------------------------
+Miniz is a lossless, high performance data compression library in a single
+source file that implements the zlib (RFC 1950) and Deflate (RFC 1951)
+compressed data format specification standards. It supports the most commonly
+used functions exported by the zlib library, but is a completely independent
+implementation so zlib's licensing requirements do not apply. Miniz also
+contains simple to use functions for writing .PNG format image files and
+reading/writing/appending .ZIP format archives. Miniz's compression speed has
+been tuned to be comparable to zlib's, and it also has a specialized real-time
+compressor function designed to compare well against fastlz/minilzo.
+
+Runtime requirements:
+  cygwin-3.3.6-1
+  libminiz-devel-3.0.1-1bl1
+  libminiz3-3.0.1-1bl1
+  pkg-config-1.9.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.39-1
+  cmake-3.23.2-1
+  cygport-0.35.4-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  ninja-1.11.1-1
+
+Canonical website:
+  https://github.com/richgel999/miniz
+
+Canonical download:
+  https://github.com/richgel999/miniz/archive/refs/tags/3.0.1.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack miniz-3.0.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./miniz-3.0.1-X.cygport all
+
+This will create:
+  /usr/src/miniz-3.0.1-X-src.tar.xz
+  /usr/src/miniz-3.0.1-X.tar.xz
+  /usr/src/libminiz3-3.0.1-X.tar.xz
+  /usr/src/libminiz-devel-3.0.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(miniz)
+  /usr/share/doc/Cygwin/miniz.README
+  /usr/share/doc/miniz/LICENSE
+  /usr/share/doc/miniz/README.md
+
+(libminiz3)
+  /usr/bin/cygminiz-3.dll
+
+(libminiz-devel)
+  /usr/include/miniz/miniz.h
+  /usr/include/miniz/miniz_common.h
+  /usr/include/miniz/miniz_export.h
+  /usr/include/miniz/miniz_tdef.h
+  /usr/include/miniz/miniz_tinfl.h
+  /usr/include/miniz/miniz_zip.h
+  /usr/lib/cmake/miniz/minizConfig.cmake
+  /usr/lib/cmake/miniz/minizConfigVersion.cmake
+  /usr/lib/cmake/miniz/minizTargets-release.cmake
+  /usr/lib/cmake/miniz/minizTargets.cmake
+  /usr/lib/libminiz.dll.a
+  /usr/lib/pkgconfig/miniz.pc
+
+------------------
+
+Port Notes:
+
+----- version 3.0.1-1bl1 -----
+Version bump.
+
+----- version 2.2.0-1bl1 -----
+Version bump.
+
+----- version 2.1.0-1bl1 -----
+Version bump.
+
+----- version 2.0.8-1bl1 -----
+Version bump.
+
+----- version 2.0.7-1bl1 -----
+Version bump.
+
+----- version 2.0.6-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

@@ -1,0 +1,129 @@
+libminc
+------------------------------------------
+The MINC file format is a highly flexible medical image file format built on
+the HDF5 generalized data format. The format is simple, self-describing,
+extensible, portable and N-dimensional, with programming interfaces for both
+low-level data access and high-level volume manipulation. On top of the
+libraries is a suite of generic image-file manipulation tools. The format,
+libraries and tools are designed for use in a medical-imaging research
+environment : they are simple and powerful and make no attempt to provide a
+pretty interface to users.
+
+Runtime requirements:
+  cygwin-3.3.6-1
+  libgcc1-11.3.0-1
+  libhdf5_200-1.12.2-1
+  libminc5.3.0-2.4.05-1bl1
+  libnetcdf19-4.8.1-1
+  libstdc++6-11.3.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.39-1
+  cmake-3.23.2-1
+  cygport-0.35.4-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libhdf5-devel-1.12.2-1
+  libnetcdf-devel-4.8.1-1
+  ninja-1.11.1-1
+
+Canonical website:
+  https://github.com/BIC-MNI/libminc
+
+Canonical download:
+  https://github.com/BIC-MNI/libminc/archive/refs/tags/release-2.4.05.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libminc-2.4.05-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libminc-2.4.05-X.cygport all
+
+This will create:
+  /usr/src/libminc-2.4.05-X-src.tar.xz
+  /usr/src/libminc-2.4.05-X.tar.xz
+  /usr/src/libminc5.3.0-2.4.05-X.tar.xz
+  /usr/src/libminc-devel-2.4.05-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libminc)
+  /usr/share/doc/Cygwin/libminc.README
+  /usr/share/doc/libminc/AUTHORS
+  /usr/share/doc/libminc/COPYING
+  /usr/share/doc/libminc/ChangeLog
+  /usr/share/doc/libminc/NEWS
+  /usr/share/doc/libminc/README
+
+(libminc5.3.0)
+  /usr/bin/cygminc2-5.3.0.dll
+  /usr/bin/cygminc_io-5.3.0.dll
+
+(libminc-devel)
+  /usr/include/libminc/ParseArgv.h
+  /usr/include/libminc/minc.h
+  /usr/include/libminc/minc2.h
+  /usr/include/libminc/minc2_api.h
+  /usr/include/libminc/minc2_defs.h
+  /usr/include/libminc/minc2_error.h
+  /usr/include/libminc/minc2_structs.h
+  /usr/include/libminc/minc_1_rw.h
+  /usr/include/libminc/minc_1_simple.h
+  /usr/include/libminc/minc_1_simple_rw.h
+  /usr/include/libminc/minc_common_defs.h
+  /usr/include/libminc/minc_compat.h
+  /usr/include/libminc/minc_config.h
+  /usr/include/libminc/minc_error.h
+  /usr/include/libminc/minc_format_convert.h
+  /usr/include/libminc/minc_io_4d_volume.h
+  /usr/include/libminc/minc_io_exceptions.h
+  /usr/include/libminc/minc_io_fixed_vector.h
+  /usr/include/libminc/minc_io_simple_volume.h
+  /usr/include/libminc/minc_simple.h
+  /usr/include/libminc/nd_loop.h
+  /usr/include/libminc/read_file_names.h
+  /usr/include/libminc/restructure.h
+  /usr/include/libminc/time_stamp.h
+  /usr/include/libminc/volume_io.h
+  /usr/include/libminc/volume_io/alloc.h
+  /usr/include/libminc/volume_io/arrays.h
+  /usr/include/libminc/volume_io/basic.h
+  /usr/include/libminc/volume_io/def_math.h
+  /usr/include/libminc/volume_io/files.h
+  /usr/include/libminc/volume_io/geom_structs.h
+  /usr/include/libminc/volume_io/geometry.h
+  /usr/include/libminc/volume_io/multidim.h
+  /usr/include/libminc/volume_io/progress.h
+  /usr/include/libminc/volume_io/string_funcs.h
+  /usr/include/libminc/volume_io/system_dependent.h
+  /usr/include/libminc/volume_io/transforms.h
+  /usr/include/libminc/volume_io/vol_io_prototypes.h
+  /usr/include/libminc/volume_io/volume.h
+  /usr/include/libminc/volume_io/volume_cache.h
+  /usr/include/libminc/voxel_loop.h
+  /usr/lib/cmake/libminc/LIBMINCConfig.cmake
+  /usr/lib/cmake/libminc/UseLIBMINC.cmake
+  /usr/lib/libminc2.dll.a
+  /usr/lib/libminc_io.dll.a
+
+------------------
+
+Port Notes:
+
+----- version 2.4.05-1bl1 -----
+Version bump.
+
+----- version 2.4.03-1bl1 -----
+Version bump.
+
+----- version 2.3.00-1bl1 -----
+Version bump.
+
+----- version 2.2.00-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

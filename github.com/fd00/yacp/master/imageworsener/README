@@ -1,0 +1,109 @@
+imageworsener
+------------------------------------------
+ImageWorsener is a cross-platform command-line utility and library for image
+scaling and other image processing. It has full support for PNG, JPEG, BMP
+formats, experimental support for WebP, read-only support for GIF, and limited
+support for some other image formats. It's not as fast or memory-efficient as
+some utilities, but it's very accurate.
+
+Runtime requirements:
+  cygwin-3.4.5-1
+  libimageworsener-devel-1.3.5-1bl1
+  libimageworsener3-1.3.5-1bl1
+  libjpeg8-2.1.4-1
+  libpng16-1.6.37-1
+  libwebp7-1.3.0-1
+  pkg-config-1.9.4-1
+  zlib0-1.2.13-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.39-1
+  cygport-0.36.0-1
+  gcc-core-11.3.0-1
+  libjpeg-devel-2.1.4-1
+  libpng-devel-1.6.37-1
+  libtool-2.4.7-1
+  libwebp-devel-1.3.0-1
+  make-4.4-1
+  zlib-devel-1.2.13-1
+
+Canonical website:
+  https://github.com/jsummers/imageworsener
+
+Canonical download:
+  https://github.com/jsummers/imageworsener/archive/refs/tags/1.3.5.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack imageworsener-1.3.5-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./imageworsener-1.3.5-X.cygport all
+
+This will create:
+  /usr/src/imageworsener-1.3.5-X-src.tar.xz
+  /usr/src/imageworsener-1.3.5-X.tar.xz
+  /usr/src/libimageworsener3-1.3.5-X.tar.xz
+  /usr/src/libimageworsener-devel-1.3.5-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(imageworsener)
+  /usr/bin/imagew.exe
+  /usr/share/doc/Cygwin/imageworsener.README
+  /usr/share/doc/imageworsener/COPYING.txt
+  /usr/share/doc/imageworsener/ChangeLog.txt
+  /usr/share/doc/imageworsener/README.txt
+  /usr/share/doc/imageworsener/technical.txt
+
+(libimageworsener3)
+  /usr/bin/cygimageworsener-3.dll
+
+(libimageworsener-devel)
+  /usr/include/imagew.h
+  /usr/lib/libimageworsener.dll.a
+  /usr/lib/pkgconfig/imageworsener.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.3.5-1bl1 -----
+Version bump.
+
+----- version 1.3.4-1bl1 -----
+Version bump.
+
+----- version 1.3.3-1bl1 -----
+Version bump.
+
+----- version 1.3.2-1bl1 -----
+Version bump.
+
+----- version 1.3.0-1bl1 -----
+Version bump.
+
+----- version 1.2.0-1bl1 -----
+Version bump.
+
+----- version 1.1.0-1bl1 -----
+Version bump.
+
+----- version 0.9.10-1bl2 -----
+Rebuild for libpng, libwebp
+
+----- version 0.9.10-1bl1 -----
+Version bump.
+
+----- version 0.9.9-1bl1 -----
+Version bump.
+
+----- version 0.9.1-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

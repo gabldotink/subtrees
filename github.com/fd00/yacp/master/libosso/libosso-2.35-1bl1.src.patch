@@ -1,0 +1,173 @@
+--- origsrc/libosso-2.35/src/Makefile.am	2019-03-04 19:59:14.000000000 +0900
++++ src/libosso-2.35/src/Makefile.am	2019-04-25 10:10:00.689610200 +0900
+@@ -9,7 +9,7 @@ lib_LTLIBRARIES = libosso.la
+ 
+ libosso_la_LIBADD = -ldl -lc $(MCE_LIBS) $(GTHREAD_LIBS) $(GLIB_LIBS) \
+ 		    $(DBUS_LIBS)
+-libosso_la_LDFLAGS = -version-info 4:0:3
++libosso_la_LDFLAGS = -no-undefined -version-info 4:0:3
+ 
+ ossoincludedir=$(includedir)
+ ossoinclude_HEADERS = libosso.h osso-log.h log-functions.h osso-mem.h muali.h osso-fpu.h
+--- origsrc/libosso-2.35/src/osso-cp-plugin.c	2019-03-04 19:59:14.000000000 +0900
++++ src/libosso-2.35/src/osso-cp-plugin.c	2019-04-25 10:18:59.245959000 +0900
+@@ -5,7 +5,7 @@
+  *
+  * Copyright (C) 2005-2006 Nokia Corporation. All rights reserved.
+  *
+- * Contact: Kimmo Hämäläinen <kimmo.hamalainen@nokia.com>
++ * Contact: Kimmo Hï¿½mï¿½lï¿½inen <kimmo.hamalainen@nokia.com>
+  *
+  * This library is free software; you can redistribute it and/or
+  * modify it under the terms of the GNU Lesser General Public License
+@@ -25,7 +25,9 @@
+ #include "osso-internal.h"
+ #include "osso-cp-plugin.h"
+ #include "osso-log.h"
++#if defined(__linux__)
+ #include <linux/limits.h>
++#endif
+ #include <errno.h>
+ 
+ /* hildon-control-panel RPC */
+--- origsrc/libosso-2.35/src/osso-mem.c	2019-03-04 19:59:14.000000000 +0900
++++ src/libosso-2.35/src/osso-mem.c	2019-04-25 10:22:13.338722100 +0900
+@@ -55,6 +55,9 @@
+ 
+ typedef void* (*malloc_hook_t)(size_t, const void*);
+ 
++#if defined(__CYGWIN__)
++static malloc_hook_t __malloc_hook = NULL;
++#endif
+ 
+ /* ========================================================================= *
+  * Meminfo related strings.
+--- origsrc/libosso-2.35/ut/osso-application-autosave/Makefile.am	2019-03-04 19:59:14.000000000 +0900
++++ src/libosso-2.35/ut/osso-application-autosave/Makefile.am	2019-04-25 10:11:40.503898400 +0900
+@@ -4,7 +4,7 @@ AM_CPPFLAGS = $(OSSO_CFLAGS) -I$(top_src
+ 	   $(GLIB_CFLAGS) $(OUTO_CFLAGS) -DPREFIX='"$(prefix)"' \
+ 	   $(DBUS_CFLAGS)
+ 
+-AM_LDFLAGS = -module -avoid-version
++AM_LDFLAGS = -no-undefined -module -avoid-version
+ 
+ libossoautosave_la_LIBADD = -L../../src -lc -losso
+ libossoautosave_la_SOURCES = test-osso-application-autosave.c
+--- origsrc/libosso-2.35/ut/osso-application-top/Makefile.am	2019-03-04 19:59:14.000000000 +0900
++++ src/libosso-2.35/ut/osso-application-top/Makefile.am	2019-04-25 10:11:55.374532500 +0900
+@@ -4,7 +4,7 @@ AM_CPPFLAGS = $(OSSO_CFLAGS) -I$(top_src
+ 	   $(GLIB_CFLAGS) $(OUTO_CFLAGS) -DPREFIX='"$(prefix)"' \
+ 	   $(DBUS_CFLAGS)
+ 
+-AM_LDFLAGS = -module -avoid-version
++AM_LDFLAGS = -no-undefined -module -avoid-version
+ 
+ libossotop_la_LIBADD = -L../../src -lc -losso
+ libossotop_la_SOURCES = test-osso-application-top.c
+--- origsrc/libosso-2.35/ut/osso-cp-plugin/Makefile.am	2019-03-04 19:59:14.000000000 +0900
++++ src/libosso-2.35/ut/osso-cp-plugin/Makefile.am	2019-04-25 10:12:06.796497200 +0900
+@@ -4,7 +4,7 @@ AM_CPPFLAGS = $(OSSO_CFLAGS) -I$(top_src
+ 	   $(GLIB_CFLAGS) $(OUTO_CFLAGS) -DPREFIX='"$(prefix)"' \
+ 	   $(DBUS_CFLAGS)
+ 
+-AM_LDFLAGS = -module -avoid-version
++AM_LDFLAGS = -no-undefined -module -avoid-version
+ 
+ libossocppanel_la_LIBADD = -L../../src -lc -losso
+ libossocppanel_la_SOURCES = test-osso-cp.c
+--- origsrc/libosso-2.35/ut/osso-hw/Makefile.am	2019-03-04 19:59:14.000000000 +0900
++++ src/libosso-2.35/ut/osso-hw/Makefile.am	2019-04-25 10:12:15.297560900 +0900
+@@ -4,7 +4,7 @@ AM_CPPFLAGS = $(OSSO_CFLAGS) -I$(top_src
+ 	   $(GLIB_CFLAGS) $(OUTO_CFLAGS) -DPREFIX='"$(prefix)"' \
+ 	   $(DBUS_CFLAGS)
+ 
+-AM_LDFLAGS = -module -avoid-version
++AM_LDFLAGS = -no-undefined -module -avoid-version
+ 
+ libossohw_la_LIBADD = -L../../src -lc -losso
+ libossohw_la_SOURCES = test-osso-hw.c
+--- origsrc/libosso-2.35/ut/osso-init/Makefile.am	2019-03-04 19:59:14.000000000 +0900
++++ src/libosso-2.35/ut/osso-init/Makefile.am	2019-04-25 10:12:24.027162200 +0900
+@@ -4,7 +4,7 @@ AM_CPPFLAGS = $(OSSO_CFLAGS) -I$(top_src
+ 	   $(GLIB_CFLAGS) $(OUTO_CFLAGS) -DPREFIX='"$(prefix)"' \
+ 	   $(DBUS_CFLAGS)
+ 
+-AM_LDFLAGS = -module -avoid-version
++AM_LDFLAGS = -no-undefined -module -avoid-version
+ 
+ libossoinit_la_LIBADD = -L../../src/ -lc -losso
+ libossoinit_la_SOURCES = test-osso-init.c
+--- origsrc/libosso-2.35/ut/osso-mime/Makefile.am	2019-03-04 19:59:14.000000000 +0900
++++ src/libosso-2.35/ut/osso-mime/Makefile.am	2019-04-25 10:12:31.580457200 +0900
+@@ -6,7 +6,7 @@ AM_CPPFLAGS = $(CFLAGS) $(OSSO_CFLAGS) -
+ 
+ EXTRA_DIST = mimedummy.doc
+ 
+-AM_LDFLAGS = -module -avoid-version
++AM_LDFLAGS = -no-undefined -module -avoid-version
+ 
+ libossomime_la_LIBADD = -L../../src -lc -losso
+ libossomime_la_SOURCES = test-osso-mime.c
+--- origsrc/libosso-2.35/ut/osso-rpc/Makefile.am	2019-03-04 19:59:14.000000000 +0900
++++ src/libosso-2.35/ut/osso-rpc/Makefile.am	2019-04-25 10:12:39.689146300 +0900
+@@ -4,7 +4,7 @@ AM_CPPFLAGS = $(OSSO_CFLAGS) -I$(top_src
+ 	   $(GLIB_CFLAGS) $(OUTO_CFLAGS) -DPREFIX='"$(prefix)"' \
+ 	   $(DBUS_CFLAGS)
+ 
+-AM_LDFLAGS = -module -avoid-version
++AM_LDFLAGS = -no-undefined -module -avoid-version
+ 
+ libossorpc_la_LIBADD = -L../../src -lc -losso
+ libossorpc_la_SOURCES = test-osso-rpc.c
+--- origsrc/libosso-2.35/ut/osso-state/Makefile.am	2019-03-04 19:59:14.000000000 +0900
++++ src/libosso-2.35/ut/osso-state/Makefile.am	2019-04-25 10:12:49.498002400 +0900
+@@ -4,7 +4,7 @@ AM_CPPFLAGS = $(OSSO_CFLAGS) -I$(top_src
+ 	   $(GLIB_CFLAGS) $(OUTO_CFLAGS) -DPREFIX='"$(prefix)"' \
+ 	   $(DBUS_CFLAGS)
+ 
+-AM_LDFLAGS = -module -avoid-version
++AM_LDFLAGS = -no-undefined -module -avoid-version
+ 
+ libossostate_la_LIBADD = -L../../src -lc -losso
+ libossostate_la_SOURCES = test-osso-state.c
+--- origsrc/libosso-2.35/ut/osso-statusbar/Makefile.am	2019-03-04 19:59:14.000000000 +0900
++++ src/libosso-2.35/ut/osso-statusbar/Makefile.am	2019-04-25 11:07:27.324629200 +0900
+@@ -4,14 +4,14 @@ AM_CPPFLAGS = $(OSSO_CFLAGS) -I$(top_src
+ 	   $(GLIB_CFLAGS) $(OUTO_CFLAGS) -DPREFIX='"$(prefix)"' \
+ 	   $(DBUS_CFLAGS)
+ 
+-AM_LDFLAGS = -module -avoid-version
++AM_LDFLAGS = -no-undefined -module -avoid-version
+ 
+ libossosbevent_la_LIBADD = -L../../src -lc -losso
+ libossosbevent_la_SOURCES = test-osso-sbevent.c
+ 
+ outomodule_PROGRAMS = ossosbeventbin
+ 
+-ossosbeventbin_LDADD = -L$(top_srcdir)/src -lc -losso
++ossosbeventbin_LDADD = -L$(top_builddir)/src -lc -losso
+ ossosbeventbin_SOURCES = test-osso-sbevent-prog.c
+ 
+ servicefiledir=$(DBUS_SVC_DIR)
+--- origsrc/libosso-2.35/ut/osso-system-note/Makefile.am	2019-03-04 19:59:14.000000000 +0900
++++ src/libosso-2.35/ut/osso-system-note/Makefile.am	2019-04-25 10:13:06.390240300 +0900
+@@ -4,7 +4,7 @@ AM_CPPFLAGS = $(OSSO_CFLAGS) -I$(top_src
+ 	   $(GLIB_CFLAGS) $(OUTO_CFLAGS) -DPREFIX='"$(prefix)"' \
+ 	   $(DBUS_CFLAGS)
+ 
+-AM_LDFLAGS = -module -avoid-version
++AM_LDFLAGS = -no-undefined -module -avoid-version
+ 
+ libossosystemnote_la_LIBADD = -L../../src -lc -losso
+ libossosystemnote_la_SOURCES = test-system-note.c
+--- origsrc/libosso-2.35/ut/osso-time/Makefile.am	2019-03-04 19:59:14.000000000 +0900
++++ src/libosso-2.35/ut/osso-time/Makefile.am	2019-04-25 10:13:14.115776400 +0900
+@@ -4,7 +4,7 @@ AM_CPPFLAGS = $(OSSO_CFLAGS) -I$(top_src
+ 	   $(GLIB_CFLAGS) $(OUTO_CFLAGS) -DPREFIX='"$(prefix)"' \
+ 	   $(DBUS_CFLAGS)
+ 
+-AM_LDFLAGS = -module -avoid-version
++AM_LDFLAGS = -no-undefined -module -avoid-version
+ 
+ libossotime_la_LIBADD = -L../../src -lc -losso
+ libossotime_la_SOURCES = test-osso-time.c

@@ -1,0 +1,51 @@
+HOMEPAGE="https://github.com/${PN}/${PN}"
+SRC_URI="https://github.com/${PN}/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Core ALPS libraries"
+DESCRIPTION="The ALPSCore project, based on the ALPS (Algorithms and Libraries for Physics
+Simulations) project, provides generic algorithms and utilities for physics
+problems. It strives to increase software reuse in the physics community."
+
+BUILD_REQUIRES="libhdf5-devel libopenmpi-devel"
+
+export CPPFLAGS="${CPPFLAGS} -D_GNU_SOURCE -DALPS_UTILITY_NO_STACKTRACE"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DDocumentation:BOOL=OFF
+	-DENABLE_MPI:BOOL=ON
+	-DSOVERSION:STRING=${PV[1]}
+	-DTesting:BOOL=ON
+"
+
+src_test()
+{
+	cd ${B}
+	ninja_test
+}
+
+DOCS="
+	ACKNOWLEDGE.TXT
+	CONTRIBUTING.md
+"
+
+PKG_NAMES="
+	ALPSCore
+	libalps${PV[1]}
+	libalps-devel
+"
+ALPSCore_CONTENTS="
+	usr/share
+"
+libalps2_CONTENTS="
+	usr/bin
+"
+libalps_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+ALPSCore_SUMMARY="${SUMMARY} (licensing & readmes)"
+libalps2_SUMMARY="${SUMMARY} (runtime)"
+libalps_devel_SUMMARY="${SUMMARY} (development)"

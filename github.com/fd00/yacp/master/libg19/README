@@ -1,0 +1,74 @@
+libg19
+------------------------------------------
+Library that handles the USB interfacing with the G19
+
+Runtime requirements:
+  cygwin-3.1.6-1
+  libg19-devel-1.1.1-1bl3
+  libg19_1-1.1.1-1bl3
+  libusb1.0-1.0.21-1
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.34+1git.de9c1b7cfe-1
+  cygport-0.34.0-1
+  gcc-core-9.3.0-2
+  libtool-2.4.6-7
+  make-4.3-1
+
+Canonical website:
+  http://g19linux.sf.net/
+
+Canonical download:
+  mirror://sourceforge/g19linux/libg19-1.1.1.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libg19-1.1.1-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libg19-1.1.1-X.cygport all
+
+This will create:
+  /usr/src/libg19-1.1.1-X-src.tar.xz
+  /usr/src/libg19-1.1.1-X.tar.xz
+  /usr/src/libg19_1-1.1.1-X.tar.xz
+  /usr/src/libg19-devel-1.1.1-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libg19)
+  /usr/share/doc/Cygwin/libg19.README
+  /usr/share/doc/libg19/AUTHORS
+  /usr/share/doc/libg19/COPYING
+  /usr/share/doc/libg19/ChangeLog
+  /usr/share/doc/libg19/NEWS
+  /usr/share/doc/libg19/README
+
+(libg19_1)
+  /usr/bin/cygg19-1.dll
+
+(libg19-devel)
+  /usr/include/libg19.h
+  /usr/lib/libg19.dll.a
+  /usr/lib/pkgconfig/libg19.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.1.1-1bl3 -----
+Rebuild with gcc-9.3.0
+
+----- version 1.1.1-1bl2 -----
+Rebuild on x86_64
+
+----- version 1.1.1-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

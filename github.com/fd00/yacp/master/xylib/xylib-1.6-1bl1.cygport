@@ -1,0 +1,46 @@
+HOMEPAGE="https://github.com/wojdyr/${PN}"
+SRC_URI="https://github.com/wojdyr/${PN}/releases/download/v${PV}/${P}.tar.bz2"
+
+CATEGORY="Libs"
+SUMMARY="Library for reading x-y data"
+DESCRIPTION="xylib is a portable library for reading files that contain x-y data from
+powder diffraction, spectroscopy and other experimental methods."
+
+CYGCONF_ARGS="
+	--with-zlib=yes
+	--with-bzlib=yes
+	--with-gui=no
+"
+
+DOCS="
+	README.*
+"
+
+src_test()
+{
+	cd ${B}
+	test `./xyconv --version` = ${PV}.0 || error "src_test failed"
+	echo '20.0 490.5' > /tmp/$$.txt
+	./xyconv -g /tmp/$$.txt
+	rm /tmp/$$.txt
+}
+
+PKG_NAMES="
+	${PN}
+	libxy3
+	libxy-devel
+"
+xylib_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+libxy3_CONTENTS="
+	usr/bin/*.dll
+"
+libxy_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+xylib_SUMMARY="${SUMMARY} (utilities)"
+libxy3_SUMMARY="${SUMMARY} (runtime)"
+libxy_devel_SUMMARY="${SUMMARY} (development)"

@@ -1,0 +1,47 @@
+HOMEPAGE="https://gitlab.linphone.org/BC/public/${PN}"
+SRC_URI="https://gitlab.linphone.org/BC/public/${PN}/-/archive/${PV}/${P}.tar.bz2"
+
+CATEGORY="Libs"
+SUMMARY="Belledonne Communications' language recognition library"
+DESCRIPTION="Belr is Belledonne Communications' language recognition library, written in
+C++11."
+
+BUILD_REQUIRES="libbctoolbox-devel"
+
+export CPPFLAGS="${CPPFLAGS} -D_GNU_SOURCE"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DENABLE_STATIC:BOOL=OFF
+"
+
+src_test()
+{
+	cd ${B}
+	PATH=${B}/src:${PATH} ./tester/belr_tester.exe
+}
+
+DOCS="
+	CHANGELOG.md
+"
+
+PKG_NAMES="
+	belr
+	libbelr1
+	libbelr-devel
+"
+belr_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+libbelr1_CONTENTS="
+	usr/bin/*.dll
+"
+libbelr_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+belr_SUMMARY="${SUMMARY} (utilities)"
+libbelr1_SUMMARY="${SUMMARY} (runtime)"
+libbelr_devel_SUMMARY="${SUMMARY} (development)"

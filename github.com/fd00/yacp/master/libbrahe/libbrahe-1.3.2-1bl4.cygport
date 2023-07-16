@@ -1,0 +1,42 @@
+HOMEPAGE="http://coyotegulch.scottrobertladd.net/products/brahe/"
+SRC_URI="mirror://debian/pool/main/${PN:0:4}/${PN}/${PN}_${PV}.orig.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Heterogeneous C library of numeric functions"
+DESCRIPTION="Brahe is where I put all sorts of useful mathematic functions that don't seem
+to fit anywhere else."
+
+src_test()
+{
+	cd ${B}/test
+	./brahe_test_fft.exe
+	./brahe_test_gcflcm.exe
+	./brahe_test_pretty.exe
+	./brahe_test_prng.exe
+	./brahe_test_rounding.exe
+	./brahe_test_trig.exe
+}
+
+DOCS="
+	License*Source.txt
+"
+
+PKG_NAMES="
+	${PN}
+	${PN}1.3_3
+	${PN}-devel
+"
+libbrahe_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+libbrahe1_3_3_CONTENTS="
+	usr/bin/*.dll
+"
+libbrahe_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+libbrahe_SUMMARY="${SUMMARY} (utilities)"
+libbrahe1_3_3_SUMMARY="${SUMMARY} (runtime)"
+libbrahe_devel_SUMMARY="${SUMMARY} (development)"

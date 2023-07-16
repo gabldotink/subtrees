@@ -1,0 +1,106 @@
+libemu
+------------------------------------------
+X86 emulation and shellcode detection
+
+Runtime requirements:
+  cygwin-3.2.0-1
+  libemu-devel-1.0.4-1bl1
+  libemu2-1.0.4-1bl1
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.37-1
+  cygport-0.34.0-1
+  gcc-core-11.2.0-1
+  libtool-2.4.6-7
+  make-4.3-1
+
+Canonical website:
+  https://github.com/buffer/libemu
+
+Canonical download:
+  https://github.com/buffer/libemu/archive/refs/tags/v1.0.4.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libemu-1.0.4-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libemu-1.0.4-X.cygport all
+
+This will create:
+  /usr/src/libemu-1.0.4-X-src.tar.xz
+  /usr/src/libemu-1.0.4-X.tar.xz
+  /usr/src/libemu2-1.0.4-X.tar.xz
+  /usr/src/libemu-devel-1.0.4-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libemu)
+  /usr/bin/scprofiler.exe
+  /usr/share/doc/Cygwin/libemu.README
+  /usr/share/doc/libemu/AUTHORS
+  /usr/share/doc/libemu/CHANGES
+  /usr/share/doc/libemu/README
+
+(libemu2)
+  /usr/bin/cygemu-2.dll
+
+(libemu-devel)
+  /usr/include/emu/emu.h
+  /usr/include/emu/emu_breakpoint.h
+  /usr/include/emu/emu_cpu.h
+  /usr/include/emu/emu_cpu_data.h
+  /usr/include/emu/emu_cpu_functions.h
+  /usr/include/emu/emu_cpu_instruction.h
+  /usr/include/emu/emu_cpu_itables.h
+  /usr/include/emu/emu_cpu_stack.h
+  /usr/include/emu/emu_fpu_instruction.h
+  /usr/include/emu/emu_getpc.h
+  /usr/include/emu/emu_graph.h
+  /usr/include/emu/emu_hashtable.h
+  /usr/include/emu/emu_instruction.h
+  /usr/include/emu/emu_list.h
+  /usr/include/emu/emu_log.h
+  /usr/include/emu/emu_memory.h
+  /usr/include/emu/emu_queue.h
+  /usr/include/emu/emu_shellcode.h
+  /usr/include/emu/emu_source.h
+  /usr/include/emu/emu_stack.h
+  /usr/include/emu/emu_string.h
+  /usr/include/emu/emu_track.h
+  /usr/include/emu/environment/emu_env.h
+  /usr/include/emu/environment/emu_profile.h
+  /usr/include/emu/environment/linux/emu_env_linux.h
+  /usr/include/emu/environment/linux/env_linux_syscall_hooks.h
+  /usr/include/emu/environment/linux/env_linux_syscalls.h
+  /usr/include/emu/environment/win32/emu_env_w32.h
+  /usr/include/emu/environment/win32/emu_env_w32_dll.h
+  /usr/include/emu/environment/win32/emu_env_w32_dll_export.h
+  /usr/include/emu/environment/win32/env_w32_dll_export_hooks.h
+  /usr/include/emu/environment/win32/env_w32_dll_export_kernel32_hooks.h
+  /usr/include/emu/environment/win32/env_w32_dll_export_msvcrt_hooks.h
+  /usr/include/emu/environment/win32/env_w32_dll_export_shdocvw_hooks.h
+  /usr/include/emu/environment/win32/env_w32_dll_export_shell32_hooks.h
+  /usr/include/emu/environment/win32/env_w32_dll_export_urlmon_hooks.h
+  /usr/include/emu/environment/win32/env_w32_dll_export_ws2_32_hooks.h
+  /usr/lib/libemu.dll.a
+  /usr/lib/pkgconfig/libemu.pc
+  /usr/share/man/man3/libemu.3.gz
+
+------------------
+
+Port Notes:
+
+----- version 1.0.4-1bl1 -----
+Version bump.
+
+----- version 0.2.0-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://fd0.hatenablog.jp/>

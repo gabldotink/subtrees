@@ -1,0 +1,89 @@
+editorconfig-core-c
+------------------------------------------
+EditorConfig makes it easy to maintain the correct coding style when switching
+between different text editors and between different projects. The EditorConfig
+project maintains a file format and plugins for various text editors which
+allow this file format to be read and used by those editors. For information on
+the file format and supported text editors, see the EditorConfig website.
+
+Runtime requirements:
+  cygwin-3.2.0-1
+  libeditorconfig-devel-0.12.5-1bl1
+  libeditorconfig0-0.12.5-1bl1
+  libpcre2_8_0-10.37-1
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.36.1-2
+  cmake-3.20.0-1
+  cygport-0.34.0-1
+  gcc-core-10.2.0-1
+  ninja-1.10.2-1
+
+Canonical website:
+  https://github.com/editorconfig/editorconfig-core-c
+
+Canonical download:
+  https://github.com/editorconfig/editorconfig-core-c/archive/v0.12.5.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack editorconfig-core-c-0.12.5-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./editorconfig-core-c-0.12.5-X.cygport all
+
+This will create:
+  /usr/src/editorconfig-core-c-0.12.5-X-src.tar.xz
+  /usr/src/editorconfig-core-c-0.12.5-X.tar.xz
+  /usr/src/libeditorconfig0-0.12.5-X.tar.xz
+  /usr/src/libeditorconfig-devel-0.12.5-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(editorconfig-core-c)
+  /usr/bin/editorconfig
+  /usr/bin/editorconfig-0.12.5.exe
+  /usr/share/doc/Cygwin/editorconfig-core-c.README
+  /usr/share/doc/editorconfig-core-c/CHANGELOG
+  /usr/share/doc/editorconfig-core-c/CONTRIBUTING
+  /usr/share/doc/editorconfig-core-c/CONTRIBUTORS
+  /usr/share/doc/editorconfig-core-c/LICENSE
+  /usr/share/doc/editorconfig-core-c/README.md
+
+(libeditorconfig0)
+  /usr/bin/cygeditorconfig-0.dll
+
+(libeditorconfig-devel)
+  /usr/include/editorconfig/editorconfig.h
+  /usr/include/editorconfig/editorconfig_handle.h
+  /usr/lib/cmake/EditorConfig/EditorConfigConfig.cmake
+  /usr/lib/cmake/EditorConfig/EditorConfigConfigVersion.cmake
+  /usr/lib/cmake/EditorConfig/EditorConfigTargets-release.cmake
+  /usr/lib/cmake/EditorConfig/EditorConfigTargets.cmake
+  /usr/lib/libeditorconfig.dll.a
+  /usr/lib/pkgconfig/editorconfig.pc
+
+------------------
+
+Port Notes:
+
+----- version 0.12.5-1bl1 -----
+Version bump.
+
+----- version 0.12.4-1bl1 -----
+Version bump.
+
+----- version 0.12.3-1bl1 -----
+Version bump.
+
+----- version 0.12.2-1bl1 -----
+Version bump.
+
+----- version 0.12.1-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

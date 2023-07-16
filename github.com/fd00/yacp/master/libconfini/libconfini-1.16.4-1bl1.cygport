@@ -1,0 +1,42 @@
+HOMEPAGE="https://github.com/madmurphy/${PN}/"
+SRC_URI="https://github.com/madmurphy/${PN}/archive/refs/tags/${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Yet another INI parser"
+DESCRIPTION="The motivation behind this library comes from the observation that many system
+applications in GNU/Linux rely on INI-like files (systemd, pacman,
+networkmanager, etc.), and for many users who approach GNU/Linux for the first
+time it can be frustrating not to have a GUI for configuring their system. So,
+I thought, a general .conf/.ini editor for GNOME in dconf-style had to be
+done."
+
+LICENSE="GPL-3.0-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: GPL-3.0-or-later"
+LICENSE_URI="COPYING"
+
+DIFF_EXCLUDES="
+	install.md
+"
+
+PKG_NAMES="
+	${PN}
+	${PN}0
+	${PN}-devel
+"
+libconfini_CONTENTS="
+	usr/share/doc/Cygwin
+	usr/share/doc/${PN}/[ACMNR]*
+"
+libconfini0_CONTENTS="
+	usr/bin/*.dll
+"
+libconfini_devel_CONTENTS="
+	usr/include
+	usr/lib
+	usr/share/doc/${PN}/manual.html
+	usr/share/doc/${PN}/examples
+	usr/share/man
+"
+libconfini_SUMMARY="${SUMMARY} (licensing & readmes)"
+libconfini0_SUMMARY="${SUMMARY} (runtime)"
+libconfini_devel_SUMMARY="${SUMMARY} (development)"

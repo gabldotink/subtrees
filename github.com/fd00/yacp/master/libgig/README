@@ -1,0 +1,142 @@
+libgig
+------------------------------------------
+libgig is a C++ library for loading, modifying existing and creating new
+Gigasampler files and DLS (Downloadable Sounds) Level 1/2 files. The source
+code package includes a couple of command line tools based on the library.
+
+Runtime requirements:
+  cygwin-3.3.5-1
+  libakai-devel-4.3.0-1bl2
+  libakai0-4.3.0-1bl2
+  libgcc1-11.3.0-1
+  libgig-devel-4.3.0-1bl2
+  libgig10-4.3.0-1bl2
+  libsndfile1-1.0.28-2
+  libstdc++6-11.3.0-1
+  libuuid1-2.33.1-2
+  pkg-config-1.8.0-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.38-1
+  cmake-3.20.0-1
+  cygport-0.35.1-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  libsndfile-devel-1.0.28-2
+  libtool-2.4.7-1
+  libuuid-devel-2.33.1-2
+  make-4.3-1
+
+Canonical website:
+  https://www.linuxsampler.org/libgig/
+
+Canonical download:
+  https://download.linuxsampler.org/packages/libgig-4.3.0.tar.bz2
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack libgig-4.3.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./libgig-4.3.0-X.cygport all
+
+This will create:
+  /usr/src/libgig-4.3.0-X-src.tar.xz
+  /usr/src/libgig-4.3.0-X.tar.xz
+  /usr/src/libgig10-4.3.0-X.tar.xz
+  /usr/src/libgig-devel-4.3.0-X.tar.xz
+  /usr/src/libakai0-4.3.0-X.tar.xz
+  /usr/src/libakai-devel-4.3.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(libgig)
+  /usr/bin/akaidump.exe
+  /usr/bin/akaiextract.exe
+  /usr/bin/dlsdump.exe
+  /usr/bin/gig2mono.exe
+  /usr/bin/gig2stereo.exe
+  /usr/bin/gigdump.exe
+  /usr/bin/gigextract.exe
+  /usr/bin/gigmerge.exe
+  /usr/bin/korg2gig.exe
+  /usr/bin/korgdump.exe
+  /usr/bin/rifftree.exe
+  /usr/bin/sf2dump.exe
+  /usr/bin/sf2extract.exe
+  /usr/share/doc/Cygwin/libgig.README
+  /usr/share/doc/libgig/AUTHORS
+  /usr/share/doc/libgig/COPYING
+  /usr/share/doc/libgig/ChangeLog
+  /usr/share/doc/libgig/NEWS
+  /usr/share/doc/libgig/README
+  /usr/share/doc/libgig/TODO
+  /usr/share/man/man1/akaidump.1.gz
+  /usr/share/man/man1/akaiextract.1.gz
+  /usr/share/man/man1/dlsdump.1.gz
+  /usr/share/man/man1/gig2mono.1.gz
+  /usr/share/man/man1/gig2stereo.1.gz
+  /usr/share/man/man1/gigdump.1.gz
+  /usr/share/man/man1/gigextract.1.gz
+  /usr/share/man/man1/gigmerge.1.gz
+  /usr/share/man/man1/korg2gig.1.gz
+  /usr/share/man/man1/korgdump.1.gz
+  /usr/share/man/man1/rifftree.1.gz
+  /usr/share/man/man1/sf2dump.1.gz
+  /usr/share/man/man1/sf2extract.1.gz
+
+(libgig10)
+  /usr/bin/cyggig-10.dll
+
+(libgig-devel)
+  /usr/include/libgig/DLS.h
+  /usr/include/libgig/Korg.h
+  /usr/include/libgig/RIFF.h
+  /usr/include/libgig/SF.h
+  /usr/include/libgig/Serialization.h
+  /usr/include/libgig/gig.h
+  /usr/lib/libgig.dll.a
+  /usr/lib/pkgconfig/gig.pc
+
+(libakai0)
+  /usr/bin/cygakai-0.dll
+
+(libakai-devel)
+  /usr/include/libgig/Akai.h
+  /usr/lib/libakai.dll.a
+  /usr/lib/pkgconfig/akai.pc
+
+------------------
+
+Port Notes:
+
+----- version 4.3.0-1bl2 -----
+Rebuild with gcc-11.3.0
+
+----- version 4.3.0-1bl1 -----
+Version bump.
+
+----- version 4.2.0-1bl1 -----
+Version bump.
+
+----- version 4.1.0-1bl1 -----
+Version bump.
+
+----- version 4.0.0-1bl1 -----
+Version bump.
+
+----- version 3.3.0-1bl3 -----
+Rebuild on x86_64
+
+----- version 3.3.0-1bl2 -----
+Rebuild with gcc-4.5.3
+
+----- version 3.3.0-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

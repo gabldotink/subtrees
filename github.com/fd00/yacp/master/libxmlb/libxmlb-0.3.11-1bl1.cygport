@@ -1,0 +1,48 @@
+HOMEPAGE="https://github.com/hughsie/${PN}"
+SRC_URI="https://github.com/hughsie/${PN}/archive/refs/tags/${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Library to help create and query binary XML blobs"
+DESCRIPTION="${SUMMARY}"
+
+LICENSE="LGPL-2.1-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: LGPL-2.1-or-later"
+LICENSE_URI="LICENSE"
+
+BUILD_REQUIRES="libglib2.0-devel liblzma-devel libzstd-devel"
+
+CYGMESON_ARGS="
+	-Dgtkdoc=false
+"
+
+inherit meson
+
+PKG_NAMES="
+	libxmlb
+	libxmlb2
+	libxmlb-devel
+	girepository-Xmlb2.0
+"
+libxmlb_CONTENTS="
+	usr/bin/*.exe
+	usr/share/doc
+	usr/share/man
+"
+libxmlb2_CONTENTS="
+	usr/bin/*.dll
+"
+libxmlb_devel_CONTENTS="
+	usr/include
+	usr/libexec/installed-tests
+	usr/lib/libxmlb.dll.a
+	usr/lib/pkgconfig
+	usr/share/installed-tests
+"
+girepository_Xmlb2_0_CONTENTS="
+	usr/lib/girepository*
+	usr/share/gir*
+"
+libxmlb_SUMMARY="${SUMMARY} (utilities)"
+libxmlb2_SUMMARY="${SUMMARY} (runtime)"
+libxmlb_devel_SUMMARY="${SUMMARY} (development)"
+girepository_Xmlb2_0_SUMMARY="${SUMMARY} (GObject Introspection data)"

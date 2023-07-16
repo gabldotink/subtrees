@@ -1,0 +1,27 @@
+HOMEPAGE="https://bitbucket.org/vbraun/${PN}"
+SRC_URI="http://files.sagemath.org/spkg/upstream/${PN}/${P}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="C library version of the GAP kernel"
+DESCRIPTION="LibGAP is essentially a fork of the upstream GAP kernel. It is developed in
+its own repository at https://bitbucket.org/vbraun/libgap. This is also where
+the spkg metadata is tracked."
+
+PKG_NAMES="
+	${PN}
+	${PN}4
+	${PN}-devel
+"
+libgap_CONTENTS="
+	usr/share
+"
+libgap4_CONTENTS="
+	usr/bin
+"
+libgap_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+libgap_SUMMARY="${SUMMARY} (licensing & readmes)"
+libgap4_SUMMARY="${SUMMARY} (runtime)"
+libgap_devel_SUMMARY="${SUMMARY} (development)"

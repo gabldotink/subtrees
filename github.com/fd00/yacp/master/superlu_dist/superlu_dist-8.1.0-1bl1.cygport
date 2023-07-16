@@ -1,0 +1,75 @@
+HOMEPAGE="https://github.com/xiaoyeli/${PN}"
+SRC_URI="https://github.com/xiaoyeli/${PN}/archive/refs/tags/v${PV}.tar.gz"
+
+CATEGORY="Libs"
+SUMMARY="Distributed memory, MPI based SuperLU"
+DESCRIPTION="SuperLU_DIST contains a set of subroutines to solve a sparse linear system
+A*X=B. It uses Gaussian elimination with static pivoting (GESP). Static
+pivoting is a technique that combines the numerical stability of partial
+pivoting with the scalability of Cholesky (no pivoting), to run accurately and
+efficiently on large numbers of processors."
+
+LICENSE="BSD-3-Clause"
+LICENSE_SPDX="SPDX-License-Identifier: BSD-3-Clause"
+LICENSE_URI="License.txt"
+
+BUILD_REQUIRES="liblapack-devel libmetis-devel libopenmpi-devel libparmetis-devel"
+
+inherit cmake
+
+CYGCMAKE_ARGS="
+	-DBUILD_SHARED_LIBS:BOOL=ON
+	-DBUILD_STATIC_LIBS:BOOL=OFF
+	-DCMAKE_INSTALL_INCLUDEDIR:STRING=include/${PN}
+	-DTPL_PARMETIS_INCLUDE_DIRS:STRING=/usr/include
+	-DTPL_PARMETIS_LIBRARIES:STRING=parmetis;metis
+	-DXSDK_ENABLE_Fortran:BOOL=ON
+"
+
+# ninja: build stopped: multiple rules generate FORTRAN/superlupara_mod.mod.
+CYGCMAKE_GENERATOR="Unix Makefiles"
+
+src_test()
+{
+	cd ${B}
+	PATH=${B}/SRC:${PATH} cygtest
+}
+
+src_install()
+{
+	cd ${B}
+	cyginstall
+
+	cd ${D}
+	mv usr/lib/EXAMPLE/*.exe usr/bin/
+}
+
+DOCS="
+	DOC/ug.pdf
+"
+
+DIFF_EXCLUDES="
+	*.h
+	make.inc
+	superlu_dist_config.fh
+"
+
+PKG_NAMES="
+	superlu_dist
+	libsuperlu_dist8
+	libsuperlu_dist-devel
+"
+superlu_dist_CONTENTS="
+	usr/bin/*.exe
+	usr/share
+"
+libsuperlu_dist8_CONTENTS="
+	usr/bin/*.dll
+"
+libsuperlu_dist_devel_CONTENTS="
+	usr/include
+	usr/lib
+"
+superlu_dist_SUMMARY="${SUMMARY} (utilities)"
+libsuperlu_dist8_SUMMARY="${SUMMARY} (runtime)"
+libsuperlu_dist_devel_SUMMARY="${SUMMARY} (development)"

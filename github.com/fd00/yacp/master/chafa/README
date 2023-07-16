@@ -1,0 +1,130 @@
+chafa
+------------------------------------------
+The premier UX of the 21st century just got a little better: With chafa, you
+can now view very, very reasonable approximations of pictures and animations
+without leaving the comfort of your favorite terminal emulator. The power of
+ANSI X3.64 compels you!
+
+Runtime requirements:
+  cygwin-3.4.2-1
+  libMagickWand7_7-7.0.10.27-2
+  libcairo2-1.17.4-1
+  libchafa-devel-1.12.4-1bl1
+  libchafa0-1.12.4-1bl1
+  libfreetype6-2.12.1-1
+  libglib2.0-devel-2.54.3-1
+  libglib2.0_0-2.54.3-1
+  libjpeg8-2.1.4-1
+  librsvg2_2-2.40.20-1
+  libtiff6-4.4.0-1
+  libwebp7-1.2.4-1
+  libwebpdemux2-1.2.4-1
+  pkg-config-1.9.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-15-1
+  automake-11-1
+  binutils-2.39-1
+  cygport-0.35.5-1
+  gcc-core-11.3.0-1
+  libMagick-devel-7.0.10.27-2
+  libcairo-devel-1.17.4-1
+  libfreetype-devel-2.12.1-1
+  libglib2.0-devel-2.54.3-1
+  libjpeg-devel-2.1.4-1
+  librsvg2-devel-2.40.20-1
+  libtiff-devel-4.4.0-1
+  libtool-2.4.7-1
+  libwebp-devel-1.2.4-1
+  make-4.4-1
+
+Canonical website:
+  https://hpjansson.org/chafa/
+
+Canonical download:
+  https://hpjansson.org/chafa/releases/chafa-1.12.4.tar.xz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack chafa-1.12.4-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./chafa-1.12.4-X.cygport all
+
+This will create:
+  /usr/src/chafa-1.12.4-X-src.tar.xz
+  /usr/src/chafa-1.12.4-X.tar.xz
+  /usr/src/libchafa0-1.12.4-X.tar.xz
+  /usr/src/libchafa-devel-1.12.4-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(chafa)
+  /usr/bin/chafa.exe
+  /usr/share/doc/Cygwin/chafa.README
+  /usr/share/doc/chafa/AUTHORS
+  /usr/share/doc/chafa/COPYING
+  /usr/share/doc/chafa/HACKING
+  /usr/share/doc/chafa/NEWS
+  /usr/share/doc/chafa/README
+  /usr/share/doc/chafa/TODO
+  /usr/share/doc/chafa/readme.md
+  /usr/share/man/man1/chafa.1.gz
+
+(libchafa0)
+  /usr/bin/cygchafa-0.dll
+
+(libchafa-devel)
+  /usr/include/chafa/chafa-canvas-config.h
+  /usr/include/chafa/chafa-canvas.h
+  /usr/include/chafa/chafa-common.h
+  /usr/include/chafa/chafa-features.h
+  /usr/include/chafa/chafa-symbol-map.h
+  /usr/include/chafa/chafa-term-db.h
+  /usr/include/chafa/chafa-term-info.h
+  /usr/include/chafa/chafa-term-seq-def.h
+  /usr/include/chafa/chafa-util.h
+  /usr/include/chafa/chafa-version-macros.h
+  /usr/include/chafa/chafa.h
+  /usr/lib/chafa/include/chafaconfig.h
+  /usr/lib/libchafa.dll.a
+  /usr/lib/pkgconfig/chafa.pc
+
+------------------
+
+Port Notes:
+
+----- version 1.12.4-1bl1 -----
+Version bump.
+
+----- version 1.12.3-1bl1 -----
+Version bump.
+
+----- version 1.12.1-1bl1 -----
+Version bump.
+
+----- version 1.10.1-1bl1 -----
+Version bump.
+
+----- version 1.8.0-1bl1 -----
+Version bump.
+
+----- version 1.6.0-1bl1 -----
+Version bump.
+
+----- version 1.4.1-1bl1 -----
+Version bump.
+
+----- version 1.2.1-1bl1 -----
+Version bump.
+
+----- version 1.2.0-1bl1 -----
+Version bump.
+
+----- version 1.0.1-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>

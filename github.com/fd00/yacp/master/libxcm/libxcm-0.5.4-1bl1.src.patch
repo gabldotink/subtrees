@@ -1,0 +1,14 @@
+--- origsrc/libxcm-0.5.4/src/Makefile.am	2016-12-10 07:32:10.000000000 +0900
++++ src/libxcm-0.5.4/src/Makefile.am	2017-01-07 14:24:04.139975700 +0900
+@@ -26,7 +26,7 @@ libXcm_la_LIBADD  = \
+ 			libXcmEDID.la \
+ 			libXcmDDC.la
+ # NOT supposed to be the same as ${PACKAGE_VERSION}
+-libXcmX11_la_LDFLAGS = -lm ${libX11_LIBS} ${libXfixes_LIBS} ${libXmu_LIBS} -version-info ${LIBTOOL_VERSION}
+-libXcmEDID_la_LDFLAGS = -version-info ${LIBTOOL_VERSION}
+-libXcmDDC_la_LDFLAGS = -version-info ${LIBTOOL_VERSION}
+-libXcm_la_LDFLAGS = -L. -version-info ${LIBTOOL_VERSION}
++libXcmX11_la_LDFLAGS = -lm ${libX11_LIBS} ${libXfixes_LIBS} ${libXmu_LIBS} -no-undefined -version-info ${LIBTOOL_VERSION}
++libXcmEDID_la_LDFLAGS = -no-undefined -version-info ${LIBTOOL_VERSION}
++libXcmDDC_la_LDFLAGS = -no-undefined -version-info ${LIBTOOL_VERSION}
++libXcm_la_LDFLAGS = -L. -no-undefined -version-info ${LIBTOOL_VERSION}

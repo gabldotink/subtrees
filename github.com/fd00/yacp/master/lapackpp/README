@@ -1,0 +1,91 @@
+lapackpp
+------------------------------------------
+C++ API for the Linear Algebra PACKage
+
+Runtime requirements:
+  cygwin-3.4.3-1
+  libgcc1-11.3.0-1
+  liblapack0-3.10.1-1
+  liblapackpp-devel-2022.07.00-1bl1
+  liblapackpp0-2022.07.00-1bl1
+  libstdc++6-11.3.0-1
+  pkg-config-1.9.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  binutils-2.39-1
+  cmake-3.23.2-1
+  cygport-0.35.5-1
+  gcc-core-11.3.0-1
+  gcc-g++-11.3.0-1
+  liblapack-devel-3.10.1-1
+  ninja-1.11.1-1
+
+Canonical website:
+  https://bitbucket.org/icl/lapackpp/src/master/
+
+Canonical download:
+  https://bitbucket.org/icl/lapackpp/downloads/lapackpp-2022.07.00.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack lapackpp-2022.07.00-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./lapackpp-2022.07.00-X.cygport all
+
+This will create:
+  /usr/src/lapackpp-2022.07.00-X-src.tar.xz
+  /usr/src/lapackpp-2022.07.00-X.tar.xz
+  /usr/src/liblapackpp0-2022.07.00-X.tar.xz
+  /usr/src/liblapackpp-devel-2022.07.00-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(lapackpp)
+  /usr/share/doc/Cygwin/lapackpp.README
+  /usr/share/doc/lapackpp/LICENSE
+  /usr/share/doc/lapackpp/README.md
+
+(liblapackpp0)
+  /usr/bin/cyglapackpp-0.dll
+
+(liblapackpp-devel)
+  /usr/include/lapack.hh
+  /usr/include/lapack/config.h
+  /usr/include/lapack/defines.h
+  /usr/include/lapack/device.hh
+  /usr/include/lapack/flops.hh
+  /usr/include/lapack/fortran.h
+  /usr/include/lapack/mangling.h
+  /usr/include/lapack/util.hh
+  /usr/include/lapack/wrappers.hh
+  /usr/lib/cmake/lapackpp/lapackppConfig.cmake
+  /usr/lib/cmake/lapackpp/lapackppConfigVersion.cmake
+  /usr/lib/cmake/lapackpp/lapackppTargets-release.cmake
+  /usr/lib/cmake/lapackpp/lapackppTargets.cmake
+  /usr/lib/liblapackpp.dll.a
+  /usr/lib/pkgconfig/lapackpp.pc
+
+------------------
+
+Port Notes:
+
+----- version 2022.07.00-1bl1 -----
+Version bump.
+
+----- version 2022.05.00-1bl1 -----
+Version bump.
+
+----- version 2.5.4-1bl3 -----
+Rebuild with gcc-10.2.0
+
+----- version 2.5.4-1bl2 -----
+Rebuild on x86_64
+
+----- version 2.5.4-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://fd0.hatenablog.jp/>

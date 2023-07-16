@@ -1,0 +1,97 @@
+zile
+------------------------------------------
+GNU Zile is a text editor development kit, so that you can (relatively) quickly
+develop your own ideal text editor without reinventing the wheel for many of
+the common algorithms and data-structures needed to do so.
+
+Runtime requirements:
+  cygwin-3.2.0-1
+  libgee0.8_2-0.20.1-1
+  libglib2.0_0-2.54.3-1
+  libncursesw10-6.1-1.20190727
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.37-1
+  cygport-0.34.0-1
+  gcc-core-11.2.0-1
+  libgee0.8-devel-0.20.1-1
+  libglib2.0-devel-2.54.3-1
+  libncurses-devel-6.1-1.20190727
+  make-4.3-1
+  vala-0.38.8-1
+
+Canonical website:
+  https://www.gnu.org/software/zile/
+
+Canonical download:
+  mirror://gnu/zile/zile-2.6.2.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack zile-2.6.2-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./zile-2.6.2-X.cygport all
+
+This will create:
+  /usr/src/zile-2.6.2-X-src.tar.xz
+  /usr/src/zile-2.6.2-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(zile)
+  /usr/bin/zile.exe
+  /usr/share/doc/Cygwin/zile.README
+  /usr/share/doc/zile/AUTHORS
+  /usr/share/doc/zile/COPYING
+  /usr/share/doc/zile/ChangeLog
+  /usr/share/doc/zile/FAQ
+  /usr/share/doc/zile/NEWS
+  /usr/share/doc/zile/README
+  /usr/share/doc/zile/THANKS
+  /usr/share/doc/zile/dotzile.sample
+  /usr/share/man/man1/zile.1.gz
+
+------------------
+
+Port Notes:
+
+----- version 2.6.2-1bl1 -----
+Version bump.
+
+----- version 2.4.15-1bl1 -----
+Version bump.
+
+----- version 2.4.14-1bl1 -----
+Version bump.
+
+----- version 2.4.11-1bl1 -----
+Version bump.
+
+----- version 2.4.9-1bl1 -----
+Version bump.
+
+----- version 2.4.7-1bl1 -----
+Version bump.
+
+----- version 2.4.6-1bl1 -----
+Version bump.
+
+----- version 2.4.5-1bl1 -----
+Version bump.
+
+----- version 2.3.24-1bl1 -----
+Version bump.
+
+----- version 2.3.21-1bl1 -----
+Version bump.
+
+----- version 2.3.14-1bl1 -----
+Initial release for Cygwin-1.7 by fd0 <http://d.hatena.ne.jp/fd0>

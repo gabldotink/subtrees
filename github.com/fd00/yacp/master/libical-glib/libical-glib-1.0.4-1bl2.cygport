@@ -1,0 +1,45 @@
+inherit gnome2
+
+HOMEPAGE="https://wiki.gnome.org/Projects/${PN}"
+
+CATEGORY="Gnome"
+SUMMARY="Wrapper of libical with support of GObject Introspection"
+DESCRIPTION="libical-glib is an iCalendar library based on libical and introspectable by
+GObject Introspection."
+
+CYGPORT_USE_UNSTABLE_API=1
+src_patch_hook()
+{
+	cd ${origsrcdir}/${SRC_DIR}
+	rm -rf m4
+}
+
+CYGCONF_ARGS="
+	--disable-gtk-doc
+"
+
+PKG_NAMES="
+	${PN}
+	${PN}1.0_0
+	${PN}1.0-devel
+	girepository-ICalGLib1.0
+"
+libical_glib_CONTENTS="
+	usr/share/doc
+"
+libical_glib1_0_0_CONTENTS="
+	usr/bin
+"
+libical_glib1_0_devel_CONTENTS="
+	usr/include
+	usr/lib/${PN}*
+	usr/lib/pkgconfig
+"
+girepository_ICalGLib1_0_CONTENTS="
+	usr/lib/girepository*
+	usr/share/gir*
+"
+libical_glib_SUMMARY="${SUMMARY} (licensing & readmes)"
+libical_glib1_0_0_SUMMARY="${SUMMARY} (runtime)"
+libical_glib1_0_devel_SUMMARY="${SUMMARY} (development)"
+girepository_ICalGLib1_0_SUMMARY="${SUMMARY} (GObject Introspection data)"

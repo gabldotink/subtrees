@@ -1,0 +1,41 @@
+--- origsrc/libBERT/CMakeLists.txt	2019-06-04 16:26:49.000000000 +0900
++++ src/libBERT/CMakeLists.txt	2019-06-04 16:26:54.185668800 +0900
+@@ -36,13 +36,6 @@ set_target_properties(
+ 	SOVERSION ${LIBRARY_SOVERSION}
+ )
+ 
+-add_library(BERT-static STATIC ${BERT_FILES})
+-set_target_properties(
+-	BERT-static PROPERTIES
+-	VERSION ${LIBRARY_VERSION}
+-	SOVERSION ${LIBRARY_SOVERSION}
+-)
+-
+ add_executable(bert_dump src/programs/dump.c)
+ target_link_libraries(bert_dump BERT)
+ 
+@@ -54,13 +47,10 @@ install(FILES include/bert.h DESTINATION
+ install(DIRECTORY include/bert DESTINATION ${INCLUDE_INSTALL_DIR})
+ install(
+ 	TARGETS BERT
++	RUNTIME DESTINATION ${BIN_INSTALL_DIR}
+ 	LIBRARY DESTINATION ${LIB_INSTALL_DIR}
+ )
+ install(
+-	TARGETS BERT-static
+-	ARCHIVE DESTINATION ${LIB_INSTALL_DIR}
+-)
+-install(
+ 	TARGETS bert_dump
+ 	RUNTIME DESTINATION ${BIN_INSTALL_DIR}
+ )
+--- origsrc/libBERT/test/CMakeLists.txt	2019-06-04 16:26:49.000000000 +0900
++++ src/libBERT/test/CMakeLists.txt	2019-06-04 16:26:54.196643800 +0900
+@@ -1,6 +1,6 @@
+ enable_testing()
+ 
+-add_library(test STATIC test.c)
++add_library(test test.c)
+ 
+ add_executable(test_list_append test_list_append.c)
+ target_link_libraries(test_list_append test BERT)

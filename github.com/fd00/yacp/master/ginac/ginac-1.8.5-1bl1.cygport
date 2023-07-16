@@ -1,0 +1,50 @@
+HOMEPAGE="https://www.${PN}.de/"
+SRC_URI="https://www.${PN}.de/${P}.tar.bz2"
+
+CATEGORY="Libs"
+SUMMARY="C++ library for symbolic calculations"
+DESCRIPTION="GiNaC is a C++ library. It is designed to allow the creation of integrated
+systems that embed symbolic manipulations together with more established areas
+of computer science (like computation- intense numeric applications, graphical
+interfaces, etc.) under one roof. It is distributed under the terms and
+conditions of the GNU general public license (GPL). GiNaC is an iterated and
+recursive acronym for GiNaC is Not a CAS, where CAS stands for Computer
+Algebra System."
+
+LICENSE="GPL-2.0-or-later"
+LICENSE_SPDX="SPDX-License-Identifier: GPL-2.0-or-later"
+LICENSE_URI="COPYING"
+
+BUILD_REQUIRES="libcln-devel libreadline-devel"
+
+export LDFLAGS="-Wl,--allow-multiple-definition"
+
+DIFF_EXCLUDES="
+	${PN}.info
+	${PN}.pc
+	stamp-vti
+	version.texi
+"
+
+PKG_NAMES="
+	${PN}
+	lib${PN}11
+	lib${PN}-devel
+"
+ginac_CONTENTS="
+	usr/bin/*.exe
+	usr/libexec
+	usr/share/doc
+	usr/share/man
+"
+libginac11_CONTENTS="
+	usr/bin/*.dll
+"
+libginac_devel_CONTENTS="
+	usr/include
+	usr/lib
+	usr/share/info
+"
+ginac_SUMMARY="${SUMMARY} (utilities)"
+libginac11_SUMMARY="${SUMMARY} (runtime)"
+libginac_devel_SUMMARY="${SUMMARY} (development)"

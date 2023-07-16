@@ -1,0 +1,68 @@
+liba53
+------------------------------------------
+A5/3 Call Encryption Library
+
+Runtime requirements:
+  cygwin-3.1.7-1
+  liba53-devel-4.0.0-1bl2
+  liba53_1-4.0.0-1bl2
+  pkg-config-1.6.3-1
+
+Build requirements:
+(besides corresponding -devel packages)
+  autoconf-13-1
+  automake-11-1
+  binutils-2.34+1git.de9c1b7cfe-1
+  cygport-0.34.0-1
+  gcc-core-10.2.0-1
+  gcc-g++-10.2.0-1
+  libtool-2.4.6-7
+  make-4.3-1
+
+Canonical website:
+  https://github.com/RangeNetworks/liba53
+
+Canonical download:
+  https://github.com/RangeNetworks/liba53/archive/v4.0.0.tar.gz
+
+-------------------------------------------
+
+Build instructions:
+  1. unpack liba53-4.0.0-X-src.tar.xz
+  2. if you use setup to install this src package,
+     it will be unpacked under /usr/src automatically
+        % cd /usr/src
+        % cygport ./liba53-4.0.0-X.cygport all
+
+This will create:
+  /usr/src/liba53-4.0.0-X-src.tar.xz
+  /usr/src/liba53-4.0.0-X.tar.xz
+  /usr/src/liba53_1-4.0.0-X.tar.xz
+  /usr/src/liba53-devel-4.0.0-X.tar.xz
+
+-------------------------------------------
+
+Files included in the binary package:
+
+(liba53)
+  /usr/share/doc/Cygwin/liba53.README
+  /usr/share/doc/liba53/COPYING
+  /usr/share/doc/liba53/README
+
+(liba53_1)
+  /usr/bin/cyga53-1.dll
+
+(liba53-devel)
+  /usr/include/a53.h
+  /usr/lib/liba53.dll.a
+  /usr/lib/pkgconfig/liba53.pc
+
+------------------
+
+Port Notes:
+
+----- version 4.0.0-1bl2 -----
+Rebuild with gcc-10.2.0
+
+----- version 4.0.0-1bl1 -----
+Initial release by fd0 <https://github.com/fd00/>
