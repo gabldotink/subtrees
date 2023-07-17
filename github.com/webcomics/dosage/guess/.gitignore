@@ -1,0 +1,16 @@
+*.orig
+*.pyc
+*.pyo
+/.cache
+/.coverage
+/.eggs
+/.tox
+/AUTHORS
+/ChangeLog
+/Comics
+/build
+/dist
+/dosage.egg-info
+/dosage.prof
+/scripts/*.json
+/testresults.txt

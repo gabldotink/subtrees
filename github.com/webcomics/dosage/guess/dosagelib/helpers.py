@@ -1,0 +1,60 @@
+# -*- coding: utf-8 -*-
+# Copyright (C) 2004-2008 Tristan Seligmann and Jonathan Jacobs
+# Copyright (C) 2012-2014 Bastian Kleineidam
+# Copyright (C) 2015-2017 Tobias Gruetzmacher
+
+from __future__ import absolute_import, division, print_function
+
+from .util import getQueryParams
+
+
+def queryNamer(param, use_page_url=False):
+    """Get name from URL query part."""
+    def _namer(self, image_url, page_url):
+        """Get URL query part."""
+        url = page_url if use_page_url else image_url
+        return getQueryParams(url)[param][0]
+    return _namer
+
+
+def regexNamer(regex, use_page_url=False):
+    """Get name from regular expression."""
+    def _namer(self, image_url, page_url):
+        """Get first regular expression group."""
+        url = page_url if use_page_url else image_url
+        mo = regex.search(url)
+        if mo:
+            return mo.group(1)
+    return _namer
+
+
+def bounceStarter(self):
+    """Get start URL by "bouncing" back and forth one time.
+
+    This needs the url and nextSearch properties be defined on the class.
+    """
+    data = self.getPage(self.url)
+    prevurl = self.fetchUrl(self.url, data, self.prevSearch)
+    prevurl = self.link_modifier(self.url, prevurl)
+    data = self.getPage(prevurl)
+    nexturl = self.fetchUrl(prevurl, data, self.nextSearch)
+    return self.link_modifier(prevurl, nexturl)
+
+
+def indirectStarter(self):
+    """Get start URL by indirection.
+
+    This is useful for comics where the latest comic can't be reached at a
+    stable URL. If the class has an attribute 'startUrl', this page is fetched
+    first, otherwise the page at 'url' is fetched. After that, the attribute
+    'latestSearch' is used on the page content to find the latest strip."""
+    url = self.startUrl if hasattr(self, "startUrl") else self.url
+    data = self.getPage(url)
+    newurl = self.fetchUrl(url, data, self.latestSearch)
+    return self.link_modifier(url, newurl)
+
+
+def xpath_class(name):
+    """Returns an XPath expressions which finds a tag which has a specified
+    class."""
+    return 'contains(concat(" ", @class, " "), " %s ")' % name
