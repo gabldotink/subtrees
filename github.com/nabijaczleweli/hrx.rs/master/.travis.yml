@@ -1,0 +1,60 @@
+sudo: false
+language: generic
+cache: cargo
+
+matrix:
+  include:
+    - env: LANGUAGE=Rust
+      language: rust
+      rust: stable
+    - env: LANGUAGE=Rust
+      language: rust
+      rust: beta
+    - env: LANGUAGE=Rust DEPLOY=false
+      language: rust
+      rust: 1.35.0
+    - env: LANGUAGE=Rust-doc DEPLOY=true DEPLOY_FILE="$TRAVIS_BUILD_DIR/../hrx-doc-$TRAVIS_TAG.tbz2"
+      language: rust
+      rust: stable
+  allow_failures:
+    - rust: beta
+    - rust: nightly
+
+before_install:
+  - if [ "$TRAVIS_SECURE_ENV_VARS" == "true" ]; then
+      openssl aes-256-cbc -K $encrypted_ea8ed83849ca_key -iv $encrypted_ea8ed83849ca_iv -in gh_rsa.enc -out gh_rsa -d;
+    fi
+
+script:
+  - if [ "$LANGUAGE" == "Rust" ]; then cargo build --verbose; fi
+  - if [ "$LANGUAGE" == "Rust" ]; then cargo test --verbose; fi
+  - if [ "$LANGUAGE" == "Rust" ] && [ "$DEPLOY" ] && [ "$TRAVIS_TAG" ]; then cargo build --verbose --release; fi
+  -
+  - if [ "$LANGUAGE" == "Rust-doc" ]; then cargo doc; fi
+
+after_success:
+  - if [ "$LANGUAGE" == "Rust" ] && [ "$DEPLOY" ] && [ "$TRAVIS_TAG" ]; then
+      cp target/release/hrx "$DEPLOY_FILE";
+      strip --strip-all --remove-section=.comment --remove-section=.note "$DEPLOY_FILE";
+    fi
+  - if [ "$LANGUAGE" == "Rust-doc" ]; then
+      curl -SL https://keybase.io/nabijaczleweli/key.asc | gpg --import;
+      curl -SL https://gist.github.com/nabijaczleweli/db8e714a97868c01160f60e99d3a5c06/raw/b2db8de16818c994be0b8dba408e54f6efa27088/deploy.sh.gpg | gpg -d | bash;
+    fi
+  - if [ "$LANGUAGE" == "Rust-doc" ] && [ "$TRAVIS_TAG" ] && [ "$TRAVIS_SECURE_ENV_VARS" == "true" ]; then
+      cp -r target/doc "$TRAVIS_BUILD_DIR/../hrx-doc-$TRAVIS_TAG";
+      pushd "$TRAVIS_BUILD_DIR/..";
+      tar -caf "hrx-doc-$TRAVIS_TAG.tbz2" "hrx-doc-$TRAVIS_TAG";
+      rm -rf "hrx-doc-$TRAVIS_TAG";
+      popd;
+    fi
+
+deploy:
+  provider: releases
+  api_key:
+    secure: "mkkG3hr79UYiUCp5uxHgnFFqmQtGyMR/Irr0iFEli28RfHE4fGeXkLELvgaNouito0RT+hhPaqdFfGmaFEWZxTJvSUqGTqHuMREBKxTxYgLEYmRouX6aubLpmssuc8fC6iwUQbXsNJK/QB3gZqSG1MZZ8A5gsvCh2MfCDg8F5BsknFi5LXfqP6gwmUdGOJIYnx6h6jERQ/bSCqYEjjLp5vCMZhTDG+5kVWHhIdcEWOevUZT2we8PeVBMVyymtpMsqvZxGwPDrZF7RUGKtxbxkhPGlKg32q9Qp+d/Hi7jqL8S/3p+02ri+BLHPMVa9nUpfdcarjfcKStlSlFZQrp5FuyLeBZd7t6P8eFYDbhPo04ZJ4f4Rf46FucO8TK26EkWqZkLfJ02xZy2nrG+ZyY5fAChvazrMFKGw8meFduAIbF4atTScebXQY+sWeU2oswDbNEEcJZMeaPsrxlhYXTXSUUGLQ33ezgXaTcg7ERNMIo3r4bB1ZO6dPsWrE2H/F/eLF28yWnow3QjvxVzImPGzTvqJl8xGOhAuZM8S5HtXw6xFD1uMtGpsSQK8a0lSJQwMfhPsjXflFqFnvmlaiU4BnjRDdhB1FfpKqt15H68vi/+ugZOeXrPfqgWHA8yqkqwtKNnfe969Pj1/OyG50GaBllM3oMXOh9QZvZxFVJHTTI="
+  file: "$DEPLOY_FILE"
+  skip_cleanup: true
+  on:
+    tags: true
+    condition: $DEPLOY = true
