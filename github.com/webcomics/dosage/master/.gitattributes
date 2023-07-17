@@ -1,0 +1,4 @@
+.git_archival.txt export-subst
+.gitattributes export-ignore
+.github export-ignore
+.gitignore export-ignore
