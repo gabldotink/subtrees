@@ -1,0 +1,18 @@
+<===> index.html
+<!doctype html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+<title>HRX Web Server Test</title>
+</head>
+<body>
+<div class="header">It works!</div>
+<div>An interesting format.</div>
+</body>
+</html>
+
+
+<===> mystyle.css
+.header{
+  font-size: 300px;
+}
