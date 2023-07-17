@@ -1,0 +1,36 @@
+plugins {
+    id 'io.franzbecker.gradle-lombok' version '4.0.0' apply false
+}
+
+wrapper {
+    gradleVersion = '6.5.1'
+}
+
+allprojects {
+    group = pGroup
+    version = pVersion
+}
+
+subprojects {
+    apply plugin: 'java'
+    apply plugin: 'io.franzbecker.gradle-lombok'
+    apply plugin: 'eclipse'
+    apply plugin: 'maven-publish'
+
+    repositories {
+        maven {
+            url 'https://mvn.topobyte.de'
+        }
+        maven {
+            url 'https://mvn.slimjars.com'
+        }
+        mavenCentral()
+    }
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    java {
+        withSourcesJar()
+    }
+}

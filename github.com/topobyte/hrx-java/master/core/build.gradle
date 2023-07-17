@@ -1,0 +1,32 @@
+if (project.hasProperty("topobyte")) {
+    apply from: 'file:///' + System.getProperty("user.home") \
+        + '/.gradle/topobyte.gradle'
+}
+
+dependencies {
+    testImplementation 'de.topobyte:melon-resources:0.0.1'
+    testImplementation 'de.topobyte:system-utils:0.0.1'
+    testImplementation 'junit:junit:4.13'
+}
+
+def pomInfo = new XmlSlurper().parse(file('info.pom'));
+
+publishing {
+    publications {
+        maven(MavenPublication) {
+            from components.java
+            pom {
+                name = "$pomInfo.name"
+                description = "$pomInfo.description"
+                url = "$pomInfo.url"
+                licenses {
+                    license {
+                        name = "$pomInfo.licenseName"
+                        url = "$pomInfo.licenseUrl"
+                        distribution = "$pomInfo.licenseDistribution"
+                    }
+                }
+            }
+        }
+    }
+}
