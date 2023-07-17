@@ -1,0 +1,934 @@
+diff --git a/Makefile b/Makefile
+index 3e17365b8..5b3e54e7f 100644
+--- a/Makefile
++++ b/Makefile
+@@ -9,7 +9,7 @@ PREFIX ?= /usr/local
+ BINDIR ?= $(PREFIX)/bin
+ MANDIR ?= $(PREFIX)/man
+ SHAREDIR ?= $(PREFIX)/share
+-PYTHON ?= /usr/bin/env python
++PYTHON ?= /usr/bin/env python3
+ 
+ # set SYSCONFDIR to /etc if PREFIX=/usr or PREFIX=/usr/local
+ SYSCONFDIR = $(shell if [ $(PREFIX) = /usr -o $(PREFIX) = /usr/local ]; then echo /etc; else echo $(PREFIX)/etc; fi)
+diff --git a/youtube_dl/YoutubeDL.py b/youtube_dl/YoutubeDL.py
+index 19370f62b..f712de4f6 100755
+--- a/youtube_dl/YoutubeDL.py
++++ b/youtube_dl/YoutubeDL.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python3
+ # coding: utf-8
+ 
+ from __future__ import absolute_import, unicode_literals
+@@ -562,7 +562,8 @@ class YoutubeDL(object):
+     def __exit__(self, *args):
+         self.restore_console_title()
+ 
+-        if self.params.get('cookiefile') is not None:
++        opts_cookiefile = self.params.get('cookiefile')
++        if opts_cookiefile is not None and os.path.exists(opts_cookiefile):
+             self.cookiejar.save(ignore_discard=True, ignore_expires=True)
+ 
+     def trouble(self, message=None, tb=None):
+@@ -848,7 +849,7 @@ class YoutubeDL(object):
+         """
+         result_type = ie_result.get('_type', 'video')
+ 
+-        if result_type in ('url', 'url_transparent'):
++        if result_type in ('url', 'url_transparent', 'url_transparent_id'):
+             ie_result['url'] = sanitize_url(ie_result['url'])
+             extract_flat = self.params.get('extract_flat', False)
+             if ((extract_flat == 'in_playlist' and 'playlist' in extra_info)
+@@ -868,7 +869,7 @@ class YoutubeDL(object):
+                                      download,
+                                      ie_key=ie_result.get('ie_key'),
+                                      extra_info=extra_info)
+-        elif result_type == 'url_transparent':
++        elif result_type in ('url_transparent', 'url_transparent_id'):
+             # Use the information from the embedding page
+             info = self.extract_info(
+                 ie_result['url'], ie_key=ie_result.get('ie_key'),
+@@ -882,7 +883,11 @@ class YoutubeDL(object):
+ 
+             force_properties = dict(
+                 (k, v) for k, v in ie_result.items() if v is not None)
+-            for f in ('_type', 'url', 'id', 'extractor', 'extractor_key', 'ie_key'):
++            if result_type == 'url_transparent':
++                rmprops = ('_type', 'url', 'id', 'extractor', 'extractor_key', 'ie_key')
++            else:
++                rmprops = ('_type', 'url', 'extractor', 'extractor_key', 'ie_key')
++            for f in rmprops:
+                 if f in force_properties:
+                     del force_properties[f]
+             new_result = info.copy()
+@@ -1882,8 +1887,7 @@ class YoutubeDL(object):
+                         video_ext, audio_ext = video.get('ext'), audio.get('ext')
+                         if video_ext and audio_ext:
+                             COMPATIBLE_EXTS = (
+-                                ('mp3', 'mp4', 'm4a', 'm4p', 'm4b', 'm4r', 'm4v', 'ismv', 'isma'),
+-                                ('webm')
++                                ('mp3', 'mp4', 'm4a', 'm4p', 'm4b', 'm4r', 'm4v', 'ismv', 'isma')
+                             )
+                             for exts in COMPATIBLE_EXTS:
+                                 if video_ext in exts and audio_ext in exts:
+@@ -2325,8 +2329,11 @@ class YoutubeDL(object):
+         else:
+             opts_cookiefile = expand_path(opts_cookiefile)
+             self.cookiejar = YoutubeDLCookieJar(opts_cookiefile)
+-            if os.access(opts_cookiefile, os.R_OK):
+-                self.cookiejar.load(ignore_discard=True, ignore_expires=True)
++            if os.access(opts_cookiefile, os.R_OK) or os.path.exists(opts_cookiefile):
++                try:
++                    self.cookiejar.load(ignore_discard=True, ignore_expires=True)
++                except:
++                    pass
+ 
+         cookie_processor = YoutubeDLCookieProcessor(self.cookiejar)
+         if opts_proxy is not None:
+diff --git a/youtube_dl/__init__.py b/youtube_dl/__init__.py
+index 9a659fc65..6bc41020c 100644
+--- a/youtube_dl/__init__.py
++++ b/youtube_dl/__init__.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python3
+ # coding: utf-8
+ 
+ from __future__ import unicode_literals
+diff --git a/youtube_dl/__main__.py b/youtube_dl/__main__.py
+index 138f5fbec..6b473177e 100755
+--- a/youtube_dl/__main__.py
++++ b/youtube_dl/__main__.py
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env python
++#!/usr/bin/env python3
+ from __future__ import unicode_literals
+ 
+ # Execute with
+diff --git a/youtube_dl/downloader/common.py b/youtube_dl/downloader/common.py
+index 1cdba89cd..e951e4828 100644
+--- a/youtube_dl/downloader/common.py
++++ b/youtube_dl/downloader/common.py
+@@ -257,6 +257,8 @@ class FileDownloader(object):
+                 if s.get('elapsed') is not None:
+                     s['_elapsed_str'] = self.format_seconds(s['elapsed'])
+                     msg_template += ' in %(_elapsed_str)s'
++                if s.get('fragment_count') is not None:
++                    msg_template += ' (%(fragment_count)s fragments)'
+                 self._report_progress_status(
+                     msg_template % s, is_last_line=True)
+ 
+@@ -302,6 +304,8 @@ class FileDownloader(object):
+                     msg_template = '%(_downloaded_bytes_str)s at %(_speed_str)s'
+             else:
+                 msg_template = '%(_percent_str)s % at %(_speed_str)s ETA %(_eta_str)s'
++        if s.get('fragment_count') is not None and s.get('fragment_index') is not None:
++            msg_template += ' (%(fragment_index)d fragments of %(fragment_count)d)'
+ 
+         self._report_progress_status(msg_template % s)
+ 
+diff --git a/youtube_dl/downloader/fragment.py b/youtube_dl/downloader/fragment.py
+index 02f35459e..eb10f423e 100644
+--- a/youtube_dl/downloader/fragment.py
++++ b/youtube_dl/downloader/fragment.py
+@@ -266,4 +266,5 @@ class FragmentFD(FileDownloader):
+             'filename': ctx['filename'],
+             'status': 'finished',
+             'elapsed': elapsed,
++            'fragment_count': ctx['total_frags'],
+         })
+diff --git a/youtube_dl/extractor/common.py b/youtube_dl/extractor/common.py
+index a61753b17..dddd3c9e1 100644
+--- a/youtube_dl/extractor/common.py
++++ b/youtube_dl/extractor/common.py
+@@ -963,6 +963,9 @@ class InfoExtractor(object):
+     @staticmethod
+     def playlist_result(entries, playlist_id=None, playlist_title=None, playlist_description=None):
+         """Returns a playlist"""
++        if isinstance(entries, list) and len(entries) == 1:
++            return entries[0]
++
+         video_info = {'_type': 'playlist',
+                       'entries': entries}
+         if playlist_id:
+@@ -1401,6 +1404,24 @@ class InfoExtractor(object):
+                     ext_preference = -1
+                 audio_ext_preference = 0
+ 
++            fmt_id = f.get('format_id') or 'none'
++            if fmt_id.startswith('hls-'):
++                _fmt_id = fmt_id.split('-')[1]
++                try:
++                    hls_preference = int(_fmt_id)
++                except:
++                    if _fmt_id[-1:] == 'p':
++                        hls_preference = int(_fmt_id[:-1])
++                    else:
++                        hls_preference = 0
++            else:
++                hls_preference = -100
++
++            if fmt_id.upper() == 'HD':
++                id_preference = 1
++            else:
++                id_preference = 0
++
+             return (
+                 preference,
+                 f.get('language_preference') if f.get('language_preference') is not None else -1,
+@@ -1417,7 +1438,9 @@ class InfoExtractor(object):
+                 f.get('fps') if f.get('fps') is not None else -1,
+                 f.get('filesize_approx') if f.get('filesize_approx') is not None else -1,
+                 f.get('source_preference') if f.get('source_preference') is not None else -1,
+-                f.get('format_id') if f.get('format_id') is not None else '',
++                hls_preference,
++                id_preference,
++                fmt_id,
+             )
+         formats.sort(key=_formats_key)
+ 
+diff --git a/youtube_dl/extractor/extractors.py b/youtube_dl/extractor/extractors.py
+index 4b3092028..4cf53d948 100644
+--- a/youtube_dl/extractor/extractors.py
++++ b/youtube_dl/extractor/extractors.py
+@@ -332,6 +332,7 @@ from .expotv import ExpoTVIE
+ from .expressen import ExpressenIE
+ from .extremetube import ExtremeTubeIE
+ from .eyedotv import EyedoTVIE
++from .eyny import EynyIE
+ from .facebook import (
+     FacebookIE,
+     FacebookPluginsVideoIE,
+@@ -1159,6 +1160,13 @@ from .tnaflix import (
+     MovieFapIE,
+ )
+ from .toggle import ToggleIE
++from .tokyomotion import (
++    TokyoMotionIE,
++    TokyoMotionUserIE,
++    TokyoMotionUserFavsIE,
++    TokyoMotionSearchesIE,
++    TokyoMotionScannerIE,
++)
+ from .tonline import TOnlineIE
+ from .toongoggles import ToonGogglesIE
+ from .toutv import TouTvIE
+@@ -1301,6 +1309,7 @@ from .vice import (
+ from .vidbit import VidbitIE
+ from .viddler import ViddlerIE
+ from .videa import VideaIE
++from .videobin import VideobinIE
+ from .videodetective import VideoDetectiveIE
+ from .videofyme import VideofyMeIE
+ from .videomore import (
+@@ -1322,6 +1331,7 @@ from .viewlift import (
+     ViewLiftIE,
+     ViewLiftEmbedIE,
+ )
++from .viewsource import ViewSourceIE
+ from .viidea import ViideaIE
+ from .vimeo import (
+     VimeoIE,
+@@ -1411,6 +1421,7 @@ from .weibo import (
+ )
+ from .weiqitv import WeiqiTVIE
+ from .wistia import WistiaIE
++from .wix import WixIE
+ from .worldstarhiphop import WorldStarHipHopIE
+ from .wsj import (
+     WSJIE,
+diff --git a/youtube_dl/extractor/eyny.py b/youtube_dl/extractor/eyny.py
+new file mode 100644
+index 000000000..2be9f39f3
+--- /dev/null
++++ b/youtube_dl/extractor/eyny.py
+@@ -0,0 +1,45 @@
++# coding: utf-8
++from __future__ import unicode_literals
++
++import re
++
++from .common import InfoExtractor
++from ..utils import (
++    sanitized_Request,
++    ExtractorError,
++)
++from ..compat import (
++    compat_str,
++)
++
++try:
++    from urllib import quote
++except ImportError:
++    from urllib.parse import quote
++
++class EynyBaseIE(InfoExtractor):
++    IE_DESC = False  # Do not list
++
++class EynyIE(EynyBaseIE):
++    IE_NAME = 'eyny'
++    _VALID_URL = r'https?:\/\/(?:www\.)?eyny\.com\/\d+\/watch\?v=(?P<id>[^#?&]+)(?:&[^&]+)*'
++    _TEST = {}
++    _TITLE_REGEX = re.compile(r'(?ms)<title>(.+) -  Free Videos \& Sex Movies - XXX Tube - EYNY<\/title>')
++
++    def _real_extract(self, url):
++        video_id = self._match_id(url)
++        webpage = self._download_webpage(url, video_id)
++
++        title = self._TITLE_REGEX.search(webpage).group(1)
++
++        entries = self._parse_html5_media_entries(url, webpage, video_id, m3u8_id='hls')
++        if not entries:
++            raise ExtractorError('Private video', expected=True)
++        entry = entries[0]
++        self._sort_formats(entry['formats'])
++        entry.update({
++            'id': video_id,
++            'title': title,
++            'age_limit': 18,
++        })
++        return entry
+diff --git a/youtube_dl/extractor/fc2.py b/youtube_dl/extractor/fc2.py
+index 435561147..2e0706cd3 100644
+--- a/youtube_dl/extractor/fc2.py
++++ b/youtube_dl/extractor/fc2.py
+@@ -63,12 +63,12 @@ class FC2IE(InfoExtractor):
+             'https://secure.id.fc2.com/index.php?mode=login&switch_language=en', login_data)
+ 
+         login_results = self._download_webpage(request, None, note='Logging in', errnote='Unable to log in')
+-        if 'mode=redirect&login=done' not in login_results:
++        if 'login=done' not in login_results:
+             self.report_warning('unable to log in: bad username or password')
+             return False
+ 
+         # this is also needed
+-        login_redir = sanitized_Request('http://id.fc2.com/?mode=redirect&login=done')
++        login_redir = sanitized_Request('http://secure.id.fc2.com/?login=done')
+         self._download_webpage(
+             login_redir, None, note='Login redirect', errnote='Login redirect failed')
+ 
+@@ -86,7 +86,8 @@ class FC2IE(InfoExtractor):
+         title = 'FC2 video %s' % video_id
+         thumbnail = None
+         if webpage is not None:
+-            title = self._og_search_title(webpage)
++            title = self._og_search_title(webpage, fatal=False) or self._search_regex(
++                r'<h2\s+(?:[a-zA-Z_-]+="[^"]+"\s+)*class="videoCnt_title"(?:[a-zA-Z_-]+="[^"]+"\s+)*>([^<]+)</h2>', webpage, 'Extracting title', video_id)
+             thumbnail = self._og_search_thumbnail(webpage)
+         refer = url.replace('/content/', '/a/content/') if '/a/content/' not in url else url
+ 
+diff --git a/youtube_dl/extractor/generic.py b/youtube_dl/extractor/generic.py
+index 355067a50..0e1422e28 100644
+--- a/youtube_dl/extractor/generic.py
++++ b/youtube_dl/extractor/generic.py
+@@ -2280,6 +2280,14 @@ class GenericIE(InfoExtractor):
+                     default_search += ':'
+                 return self.url_result(default_search + url)
+ 
++        host = parsed_url.netloc
++        if ':' in host:
++            host = host[:host.index(':')]
++        if host[:4] == 'www.':
++            host = host[4:]
++        if host == 'pinktower.com' or host == 'jump.5ch.net':
++            return self.url_result(parsed_url.query)
++
+         url, smuggled_data = unsmuggle_url(url)
+         force_videoid = None
+         is_intentional = smuggled_data and smuggled_data.get('to_generic')
+diff --git a/youtube_dl/extractor/instagram.py b/youtube_dl/extractor/instagram.py
+index b061850a1..f035cecdf 100644
+--- a/youtube_dl/extractor/instagram.py
++++ b/youtube_dl/extractor/instagram.py
+@@ -126,16 +126,23 @@ class InstagramIE(InfoExtractor):
+          uploader_id, like_count, comment_count, comments, height,
+          width) = [None] * 11
+ 
+-        shared_data = self._parse_json(
+-            self._search_regex(
+-                r'window\._sharedData\s*=\s*({.+?});',
+-                webpage, 'shared data', default='{}'),
+-            video_id, fatal=False)
++        shared_data = try_get(webpage,
++            (lambda x: self._parse_json(
++                self._search_regex(
++                    r'window\.__additionalDataLoaded\(\'/(?:p|tv)/(?:[^/?#&]+)/\',({.+?})\);',
++                    x, 'additional data', default='{}'),
++                video_id, fatal=False),
++             lambda x: self._parse_json(
++                self._search_regex(
++                    r'window\._sharedData\s*=\s*({.+?});',
++                    x, 'shared data', default='{}'),
++                video_id, fatal=False)['entry_data']['PostPage'][0]),
++             None)
+         if shared_data:
+             media = try_get(
+                 shared_data,
+-                (lambda x: x['entry_data']['PostPage'][0]['graphql']['shortcode_media'],
+-                 lambda x: x['entry_data']['PostPage'][0]['media']),
++                (lambda x: x['graphql']['shortcode_media'],
++                 lambda x: x['media']),
+                 dict)
+             if media:
+                 video_url = media.get('video_url')
+diff --git a/youtube_dl/extractor/tokyomotion.py b/youtube_dl/extractor/tokyomotion.py
+new file mode 100644
+index 000000000..e71f2fb3e
+--- /dev/null
++++ b/youtube_dl/extractor/tokyomotion.py
+@@ -0,0 +1,136 @@
++# coding: utf-8
++from __future__ import unicode_literals
++
++import re
++
++from .common import InfoExtractor
++from ..utils import (
++    sanitized_Request,
++    ExtractorError,
++)
++from ..compat import (
++    compat_str,
++)
++
++try:
++    from urllib import quote
++except ImportError:
++    from urllib.parse import quote
++
++class TokyoMotionBaseIE(InfoExtractor):
++    IE_DESC = False  # Do not list
++    def _download_page(self, url, video_id, note=None):
++        # This fails
++        # return self._download_webpage(url, video_id)
++        # Use ones in generic extractor
++        request = sanitized_Request(url)
++        request.add_header('Accept-Encoding', '*')
++        full_response = self._request_webpage(request, video_id, note=note)
++        return self._webpage_read_content(full_response, url, video_id)
++
++    def _int_id(self, url):
++        if '_VALID_URL_RE' not in TokyoMotionIE.__dict__:
++            TokyoMotionIE._VALID_URL_RE = re.compile(TokyoMotionIE._VALID_URL)
++        m = TokyoMotionIE._VALID_URL_RE.match(url)
++        return int(compat_str(m.group('id')))
++
++    def _extract_video_urls(self, variant, webpage):
++        return ('https://www.%smotion.net%s' % (variant, quote(frg.group()))
++            for frg in re.finditer(r'/video/(?P<id>\d+)/[^#?&"\']+', webpage))
++
++    def _do_paging(self, template, variant, user_id):
++        index = 1
++        all_matches = []
++        while True:
++            newurl = self.USER_VIDEOS_FULL_URL % (variant, user_id, index)
++            webpage = self._download_page(newurl, user_id, note='Downloading page %d' % index)
++            all_matches.extend(self._extract_video_urls(variant, webpage))
++            index = index + 1
++            if ('videos?page=%d"' % index) not in webpage and ('&page=%d"' % index) not in webpage:
++                break
++        return (self.url_result(url) for url in sorted(set(all_matches), key=self._int_id))
++
++class TokyoMotionPlaylistBaseIE(TokyoMotionBaseIE):
++    IE_DESC = False  # Do not list
++    def _real_extract(self, url):
++        user_id = self._match_id(url)
++        variant = self._VALID_URL_RE.match(url).group('variant')
++        matches = self._do_paging(self.USER_VIDEOS_FULL_URL, variant, user_id)
++        return self.playlist_result(matches, user_id, self.TITLE % user_id)
++
++class TokyoMotionIE(TokyoMotionBaseIE):
++    IE_NAME = 'tokyomotion'
++    _VALID_URL = r'(?P<url>https?://(?:www\.)?(?P<variant>tokyo|osaka)motion\.net/video/(?P<id>\d+)/[^#?&]*)(?:#.*)?'
++    _TEST = {
++        'url': 'https://www.tokyomotion.net/video/915034/%E9%80%86%E3%81%95',
++        'info_dict': {
++            'id': '915034',
++            'ext': 'mp4',
++            'title': '逆さ',
++        }
++    }
++
++    def _real_extract(self, url):
++        video_id = self._match_id(url)
++        url = self._VALID_URL_RE.match(url).group('url')
++        variant = self._VALID_URL_RE.match(url).group('variant')
++        webpage = self._download_page(url, video_id)
++
++        title = self._og_search_title(webpage, default=None)
++
++        entries = self._parse_html5_media_entries(url, webpage, video_id, m3u8_id='hls')
++        variant_name = 'TokyoMotion' if variant == 'tokyo' else 'OsakaMotion'
++        if not entries:
++            raise ExtractorError('Private video', expected=True)
++        entry = entries[0]
++        self._sort_formats(entry['formats'])
++        entry.update({
++            'id': video_id,
++            'title': title,
++            'age_limit': 18,
++            'series': variant_name,
++        })
++        return entry
++
++#class TokyoMotionCorruptedUrlIE(TokyoMotionBaseIE):
++#    IE_NAME = 'tokyomotion:corrupted'
++#    _VALID_URL = r'https?://(?:www\.)?(?:tokyo|osaka)motion\.net/video/(?P<id>\d+)/?(?:#.*)?'
++#    def _real_extract(self, url):
++#        video_id = self._match_id(url)
++#        self.to_screen('Given URL looks corrupted, trying to repair')
++#        repaired = url.split('#')[0] + 'a'
++#        return self.url_result(repaired)
++
++class TokyoMotionUserIE(TokyoMotionPlaylistBaseIE):
++    IE_NAME = 'tokyomotion:user'
++    _VALID_URL = r'https?://(?:www\.)?(?P<variant>tokyo|osaka)motion\.net/user/(?P<id>[^/]+)(?:/videos)?'
++    _TEST = {}
++    USER_VIDEOS_FULL_URL = 'https://www.%smotion.net/user/%s/videos?page=%d'
++    TITLE = 'Uploads from %s'
++
++class TokyoMotionUserFavsIE(TokyoMotionPlaylistBaseIE):
++    IE_NAME = 'tokyomotion:user:favs'
++    _VALID_URL = r'https?://(?:www\.)?(?P<variant>tokyo|osaka)motion\.net/user/(?P<id>[^/]+)/favorite/videos'
++    _TEST = {}
++    USER_VIDEOS_FULL_URL = 'https://www.%smotion.net/user/%s/favorite/videos?page=%d'
++    TITLE = 'Favorites from %s'
++
++class TokyoMotionSearchesIE(TokyoMotionPlaylistBaseIE):
++    IE_NAME = 'tokyomotion:searches'
++    _VALID_URL = r'https?://(?:www\.)?(?P<variant>tokyo|osaka)motion\.net/search\?search_query=(?P<id>[^/&]+)(?:&search_type=videos)?(?:&page=\d+)?'
++    _TEST = {}
++    USER_VIDEOS_FULL_URL = 'https://www.%smotion.net/search?search_query=%s&search_type=videos&page=%d'
++    TITLE = 'Search results for %s'
++
++class TokyoMotionScannerIE(TokyoMotionBaseIE):
++    IE_DESC = False  # Do not list
++    IE_NAME = 'tokyomotion:scanner'
++    _VALID_URL = r'tmscan:https?://(?:www\.)?(?P<variant>tokyo|osaka)motion\.net/(?P<id>.*)'
++    _TEST = {}
++    def _real_extract(self, url):
++        user_id = self._match_id(url) or ''
++        variant = self._VALID_URL_RE.match(url).group('variant')
++        webpage = self._download_page(url[7:], user_id)
++        matches = self._extract_video_urls(variant, webpage)
++        playlist = (self.url_result(url) for url in sorted(set(matches), key=self._int_id))
++        return self.playlist_result(playlist, user_id, 'Scanned results for %s' % url)
+diff --git a/youtube_dl/extractor/twitcasting.py b/youtube_dl/extractor/twitcasting.py
+index 2dbe89f5b..bbc8b24b9 100644
+--- a/youtube_dl/extractor/twitcasting.py
++++ b/youtube_dl/extractor/twitcasting.py
+@@ -2,13 +2,17 @@
+ from __future__ import unicode_literals
+ 
+ from .common import InfoExtractor
+-from ..utils import urlencode_postdata
++from ..utils import (
++    urlencode_postdata,
++    random_user_agent,
++    ExtractorError,
++)
+ 
+ import re
+ 
+ 
+ class TwitCastingIE(InfoExtractor):
+-    _VALID_URL = r'https?://(?:[^/]+\.)?twitcasting\.tv/(?P<uploader_id>[^/]+)/movie/(?P<id>\d+)'
++    _VALID_URL = r'https?://(?:[^/]+\.)?twitcasting\.tv/(?P<uploader_id>[^/]+)/(?:movie|twplayer)/(?P<id>\d+)'
+     _TESTS = [{
+         'url': 'https://twitcasting.tv/ivetesangalo/movie/2357609',
+         'md5': '745243cad58c4681dc752490f7540d7f',
+@@ -50,26 +54,61 @@ class TwitCastingIE(InfoExtractor):
+             request_data = urlencode_postdata({
+                 'password': video_password,
+             })
+-        webpage = self._download_webpage(url, video_id, data=request_data)
+ 
+-        title = self._html_search_regex(
+-            r'(?s)<[^>]+id=["\']movietitle[^>]+>(.+?)</',
+-            webpage, 'title', default=None) or self._html_search_meta(
+-            'twitter:title', webpage, fatal=True)
++        def download_pages():
++            actual_url = 'https://twitcasting.tv/%s/movie/%s' % (uploader_id, video_id)
++            for lang in (
++                ('JPN1', 'ja-JP,ja;q=0.8,en-US;q=0.5,en;q=0.3'),
++                ('JPN2', 'ja-JP,ja;q=0.9,en-US;q=0.8,en;q=0.7'),
++                ('ENG1', 'en-US,en;q=0.5'),):
++                for ua in (
++                    ('default', random_user_agent()),
++                    ('mobile chrome', 'Mozilla/5.0 (Linux; Android 5.1; N) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/79.0.3945.136 Mobile Safari/537.36'),
++                    ('mobile firefox', 'Mozilla/5.0 (Android 5.1; Mobile; rv:68.0) Gecko/68.0 Firefox/68.0'),):
++                    headers = {
++                        'Accept-Language': lang[1],
++                        'User-Agent': ua[1]
++                    }
++                    yield self._download_webpage(
++                        actual_url, video_id, data=request_data, headers=headers,
++                        note='Downloading page: %s %s' % (lang[0], ua[0]))
+ 
+-        m3u8_url = self._search_regex(
+-            (r'data-movie-url=(["\'])(?P<url>(?:(?!\1).)+)\1',
+-             r'(["\'])(?P<url>http.+?\.m3u8.*?)\1'),
+-            webpage, 'm3u8 url', group='url')
++        title, m3u8_url, thumbnail, description = [None]*4
+ 
+-        formats = self._extract_m3u8_formats(
+-            m3u8_url, video_id, ext='mp4', entry_protocol='m3u8_native',
+-            m3u8_id='hls')
++        for webpage in download_pages():
++            title = title or self._html_search_regex(
++                (r'(?s)<[^>]+id=["\']movietitle[^>]+>(.+?)</',
++                 r'(?sm)<[^>]+id=["\']movietitle[^>]+>.*<a[^>]+>(.+?)</'),
++                webpage, 'title', default=None) or self._html_search_meta(
++                'twitter:title', webpage)
++
++            m3u8_url = m3u8_url or self._search_regex(
++                (r'data-movie-url=(["\'])(?P<url>(?:(?!\1).)+)\1',
++                 r'(["\'])(?P<url>http.+?\.m3u8.*?)\1',
++                 r'(["\'])(?P<url>/.+?\.m3u8.*?)\1'),
++                webpage, 'm3u8 url', group='url', fatal=False)
++
++            if m3u8_url and m3u8_url[0] == '/':
++                m3u8_url = 'https://twitcasting.tv%s' % m3u8_url
++
++            thumbnail = thumbnail or self._og_search_thumbnail(webpage)
++            description = description or self._og_search_description(
++                webpage, default=None) or self._html_search_meta(
++                'twitter:description', webpage)
+ 
+-        thumbnail = self._og_search_thumbnail(webpage)
+-        description = self._og_search_description(
+-            webpage, default=None) or self._html_search_meta(
+-            'twitter:description', webpage)
++            if title and m3u8_url and thumbnail and description:
++                break
++
++        if not title:
++            raise ExtractorError('Failed to extract title', expected=False)
++        if not m3u8_url:
++            raise ExtractorError('Failed to extract m3u8 url', expected=False)
++
++        m3u8_url = m3u8_url.replace('\/', '/')
++        formats = self._extract_m3u8_formats(
++             m3u8_url, video_id, ext='mp4', entry_protocol='m3u8_native',
++             m3u8_id='hls')
++        self._sort_formats(formats)
+ 
+         return {
+             'id': video_id,
+@@ -78,4 +117,5 @@ class TwitCastingIE(InfoExtractor):
+             'thumbnail': thumbnail,
+             'uploader_id': uploader_id,
+             'formats': formats,
++            'is_live': True,
+         }
+diff --git a/youtube_dl/extractor/videobin.py b/youtube_dl/extractor/videobin.py
+new file mode 100644
+index 000000000..88724d365
+--- /dev/null
++++ b/youtube_dl/extractor/videobin.py
+@@ -0,0 +1,64 @@
++# coding: utf-8
++from __future__ import unicode_literals
++
++import re
++
++from .common import InfoExtractor
++from ..utils import (
++    sanitized_Request,
++    ExtractorError,
++    determine_ext,
++)
++from ..compat import (
++    compat_str,
++)
++
++try:
++    from urllib import quote
++except ImportError:
++    from urllib.parse import quote
++
++class VideobinBaseIE(InfoExtractor):
++    IE_DESC = False  # Do not list
++
++class VideobinIE(VideobinBaseIE):
++    IE_NAME = 'videobin'
++    _VALID_URL = r'https?:\/\/(?:www\.)?videobin\.co/(?P<id>[a-z0-9]{10,})'
++    _TEST = {}
++    _URL_REGEX = re.compile(r'(?ms)sources:\s*(\[\s*"[^"]+"\s*(?:,\s*"[^"]*"\s*)*])\s*,')
++
++    def _real_extract(self, url):
++        video_id = self._match_id(url)
++        webpage = self._download_webpage(url, video_id)
++
++        title = 'Watch mp4'
++
++        entries = self._parse_json(self._URL_REGEX.search(webpage).group(1), video_id)
++        if not entries:
++            raise ExtractorError('Video is unavailable for some reasons', expected=True)
++        entry = {
++            'formats': []
++        }
++        for url in entries:
++            entry['formats'] += self._media_formats(url, 'video', video_id)
++        self._sort_formats(entry['formats'])
++        entry.update({
++            'id': video_id,
++            'title': title,
++        })
++        return entry
++
++    def _media_formats(self, full_url, cur_media_type, video_id):
++        ext = determine_ext(full_url)
++        if ext == 'm3u8':
++            formats = self._extract_m3u8_formats(
++                full_url, video_id, ext='mp4', fatal=False)
++        elif ext == 'mpd':
++            formats = self._extract_mpd_formats(
++                full_url, video_id, fatal=False)
++        else:
++            formats = [{
++                'url': full_url,
++                'vcodec': 'none' if cur_media_type == 'audio' else None,
++            }]
++        return formats
+diff --git a/youtube_dl/extractor/viewsource.py b/youtube_dl/extractor/viewsource.py
+new file mode 100644
+index 000000000..0c8ff6153
+--- /dev/null
++++ b/youtube_dl/extractor/viewsource.py
+@@ -0,0 +1,25 @@
++# coding: utf-8
++from __future__ import unicode_literals
++
++import re
++
++from .common import InfoExtractor
++from ..utils import (
++    sanitized_Request,
++    ExtractorError,
++)
++from ..compat import (
++    compat_str,
++)
++
++class ViewSourceIE(InfoExtractor):
++    IE_DESC = False  # Do not list
++    IE_NAME = 'tokyomotion:scanner'
++    _VALID_URL = r'view-source:.*'
++    _TEST = {}
++    def _real_extract(self, url):
++        if url.startswith('view-source:'):
++            # remove "view-source:"
++            return self.url_result(url[:url.index(':')])
++        else:
++            raise ExtractorError('Not a view-source: URL', expected=True)
+diff --git a/youtube_dl/extractor/wix.py b/youtube_dl/extractor/wix.py
+new file mode 100644
+index 000000000..cba2d8d10
+--- /dev/null
++++ b/youtube_dl/extractor/wix.py
+@@ -0,0 +1,62 @@
++from __future__ import unicode_literals
++
++import re
++
++from .common import InfoExtractor
++from ..utils import (
++    ExtractorError,
++    int_or_none,
++    float_or_none,
++    unescapeHTML,
++)
++
++
++class WixIE(InfoExtractor):
++    _VALID_URL = r'https?://(?P<user>[a-z0-9]+)\.wixsite\.com/(?P<id>[a-zA-Z0-9/-]+)'
++    _TEST = {}
++
++    def _real_extract(self, url):
++        video_id = self._match_id(url)
++        webpage = self._download_webpage(url, video_id)
++        video_tags = self._parse_html5_media_entries(url, webpage, video_id, m3u8_id='hls')
++        wix_video_tags = self._parse_wix_video_entries(webpage, video_id)
++        result = []
++        result.extend(video_tags)
++        result.extend(wix_video_tags)
++        return self.playlist_result(result)
++
++    def _parse_wix_video_entries(self, webpage, video_id):
++        result = []
++        for tag in re.compile(r'<wix-video\s+(?:\s*[a-zA-Z-]="[^"]*")*data-video-info="([^"]*)"(?:\s*[a-zA-Z-]="[^"]*")*').finditer(webpage):
++            json = self._parse_json(unescapeHTML(tag.group(1)), video_id)
++            # staticVU + videoId + "/" + quality + "/" + videoFormat + "/file." + videoFormat
++            staticVU = json.get('staticVideoUrl')
++            videoId = json.get('videoId')
++            videoFormat = json.get('videoFormat')
++            qualities = json.get('qualities')
++            videoWidth = int_or_none(json.get('videoWidth'))
++            videoHeight = int_or_none(json.get('videoHeight'))
++            formats = []
++            for quality in qualities:
++                fmt_name = quality.get('quality')
++                height = None
++                width = None
++                if fmt_name:
++                    height = int_or_none(fmt_name[:-1])
++                if height:
++                    width = height * videoWidth / videoHeight
++                formats.append({
++                    'url': '%s%s/%s/%s/file.%s' % (staticVU, videoId, quality, videoFormat, videoFormat),
++                    'ext': videoFormat,
++                    'format_id': fmt_name,
++                    'filesize': int_or_none(quality.get('size')),
++                    'height': int_or_none(quality.get('quality')[:-1]),
++                    'height': height or 0,
++                    'width': width or 0,
++                })
++            result.append({
++                'id': videoId,
++                'title': videoId,
++                'formats': formats
++            })
++        return result
+\ No newline at end of file
+diff --git a/youtube_dl/extractor/youtube.py b/youtube_dl/extractor/youtube.py
+index b35bf03aa..015a174d9 100644
+--- a/youtube_dl/extractor/youtube.py
++++ b/youtube_dl/extractor/youtube.py
+@@ -426,6 +426,7 @@ class YoutubeIE(YoutubeBaseInfoExtractor):
+                             youtu\.be|                                        # just youtu.be/xxxx
+                             vid\.plus|                                        # or vid.plus/xxxx
+                             zwearz\.com/watch|                                # or zwearz.com/watch/xxxx
++                            i\.ytimg\.com/vi|                                   # or i.ytimg.com/vi/xxx
+                          )/
+                          |(?:www\.)?cleanvideosearch\.com/media/action/yt/watch\?videoId=
+                          )
+@@ -1825,7 +1826,7 @@ class YoutubeIE(YoutubeBaseInfoExtractor):
+         # Get video info
+         video_info = {}
+         embed_webpage = None
+-        if re.search(r'player-age-gate-content">', video_webpage) is not None:
++        if re.search(r'player-age-gate-content">|"playabilityStatus":{"status":"LOGIN_REQUIRED","reason":"', video_webpage) is not None:
+             age_gate = True
+             # We simulate the access to the video from www.youtube.com/v/{video_id}
+             # this can be viewed without login into Youtube
+@@ -2493,6 +2494,7 @@ class YoutubeIE(YoutubeBaseInfoExtractor):
+                 raise ExtractorError(
+                     'YouTube said: %s' % reason,
+                     expected=True, video_id=video_id)
++            self.to_screen(player_response['streamingData']['licenseInfos'])
+             if video_info.get('license_info') or try_get(player_response, lambda x: x['streamingData']['licenseInfos']):
+                 raise ExtractorError('This video is DRM protected.', expected=True)
+ 
+diff --git a/youtube_dl/options.py b/youtube_dl/options.py
+index 6d5ac62b3..900845013 100644
+--- a/youtube_dl/options.py
++++ b/youtube_dl/options.py
+@@ -134,7 +134,7 @@ def parseOpts(overrideArguments=None):
+         action='help',
+         help='Print this help text and exit')
+     general.add_option(
+-        '--version',
++        '-V', '--version',
+         action='version',
+         help='Print program version and exit')
+     general.add_option(
+diff --git a/youtube_dl/postprocessor/ffmpeg.py b/youtube_dl/postprocessor/ffmpeg.py
+index 5f7298345..f94c0e0d0 100644
+--- a/youtube_dl/postprocessor/ffmpeg.py
++++ b/youtube_dl/postprocessor/ffmpeg.py
+@@ -220,7 +220,7 @@ class FFmpegPostProcessor(PostProcessor):
+         cmd = [encodeFilename(self.executable, True), encodeArgument('-y')]
+         # avconv does not have repeat option
+         if self.basename == 'ffmpeg':
+-            cmd += [encodeArgument('-loglevel'), encodeArgument('repeat+info')]
++            cmd += [encodeArgument('-loglevel'), encodeArgument('repeat+info'), encodeArgument('-hide_banner')]
+         cmd += (files_cmd
+                 + [encodeArgument(o) for o in opts]
+                 + [encodeFilename(self._ffmpeg_filename_argument(out_path), True)])
+@@ -362,6 +362,8 @@ class FFmpegVideoConvertorPP(FFmpegPostProcessor):
+         options = []
+         if self._preferedformat == 'avi':
+             options.extend(['-c:v', 'libxvid', '-vtag', 'XVID'])
++        if self._preferedformat == 'mkv':
++            options.extend(['-c:v', 'copy', '-c:a', 'copy'])
+         prefix, sep, ext = path.rpartition('.')
+         outpath = prefix + sep + self._preferedformat
+         self._downloader.to_screen('[' + 'ffmpeg' + '] Converting video from %s to %s, Destination: ' % (information['ext'], self._preferedformat) + outpath)
+diff --git a/youtube_dl/update.py b/youtube_dl/update.py
+index 84c964617..b75140305 100644
+--- a/youtube_dl/update.py
++++ b/youtube_dl/update.py
+@@ -7,6 +7,7 @@ import hashlib
+ import os
+ import subprocess
+ import sys
++import time
+ from zipimport import zipimporter
+ 
+ from .compat import compat_realpath
+@@ -32,10 +33,9 @@ def rsa_verify(message, signature, key):
+ def update_self(to_screen, verbose, opener):
+     """Update the program file with the latest version from the repository"""
+ 
+-    UPDATE_URL = 'https://yt-dl.org/update/'
++    UPDATE_URL = 'https://nao20010128nao.github.io/ytdl-patched/'
+     VERSION_URL = UPDATE_URL + 'LATEST_VERSION'
+     JSON_URL = UPDATE_URL + 'versions.json'
+-    UPDATES_RSA_KEY = (0x9d60ee4d8f805312fdb15a62f87b95bd66177b91df176765d13514a0f1754bcd2057295c5b6f1d35daa6742c3ffc9a82d3e118861c207995a8031e151d863c9927e304576bc80692bc8e094896fcf11b66f3e29e04e3a71e9a11558558acea1840aec37fc396fb6b65dc81a1c4144e03bd1c011de62e3f1357b327d08426fe93, 65537)
+ 
+     if not isinstance(globals().get('__loader__'), zipimporter) and not hasattr(sys, 'frozen'):
+         to_screen('It looks like you installed youtube-dl with a package manager, pip, setup.py or a tarball. Please use that to update.')
+@@ -62,19 +62,14 @@ def update_self(to_screen, verbose, opener):
+             to_screen(encode_compat_str(traceback.format_exc()))
+         to_screen('ERROR: can\'t obtain versions info. Please try again later.')
+         return
+-    if 'signature' not in versions_info:
+-        to_screen('ERROR: the versions file is not signed or corrupted. Aborting.')
+-        return
+-    signature = versions_info['signature']
+-    del versions_info['signature']
+-    if not rsa_verify(json.dumps(versions_info, sort_keys=True).encode('utf-8'), signature, UPDATES_RSA_KEY):
+-        to_screen('ERROR: the versions file signature is invalid. Aborting.')
+-        return
++
++    # Don't test signatures for now
+ 
+     version_id = versions_info['latest']
+ 
+     def version_tuple(version_str):
+-        return tuple(map(int, version_str.split('.')))
++        # This assumes timestamp is in UTC
++        return time.strptime(version_str, '%a %b %d %H:%M:%S UTC %Y')
+     if version_tuple(__version__) >= version_tuple(version_id):
+         to_screen('youtube-dl is up to date (%s)' % __version__)
+         return
+diff --git a/youtube_dl/utils.py b/youtube_dl/utils.py
+index d1eca3760..33971063b 100644
+--- a/youtube_dl/utils.py
++++ b/youtube_dl/utils.py
+@@ -86,7 +86,13 @@ compiled_regex_type = type(re.compile(''))
+ 
+ 
+ def random_user_agent():
+-    _USER_AGENT_TPL = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/%s Safari/537.36'
++    _USER_AGENT_TPL = 'Mozilla/5.0 (Windows NT %s; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/%s Safari/537.36'
++    _WINDOWS_VERSIONS = (
++        '6.1', # 7
++        '6.2', # 8
++        '6.3', # 8.1
++        '10.0',
++    )
+     _CHROME_VERSIONS = (
+         '74.0.3729.129',
+         '76.0.3780.3',
+@@ -1665,7 +1671,7 @@ def random_user_agent():
+         '70.0.3513.0',
+         '69.0.3497.28',
+     )
+-    return _USER_AGENT_TPL % random.choice(_CHROME_VERSIONS)
++    return _USER_AGENT_TPL % (random.choice(_WINDOWS_VERSIONS), random.choice(_CHROME_VERSIONS))
+ 
+ 
+ std_headers = {

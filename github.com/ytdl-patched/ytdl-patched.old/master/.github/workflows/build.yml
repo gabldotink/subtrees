@@ -1,0 +1,51 @@
+name: Patched YTDL
+
+on: 
+ push:
+   branches:
+     - master
+ schedule:
+   - cron:  "0 */12 * * *"
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up Python 3.7
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.7
+    - name: Install deps
+      run: |
+        sudo ln -fs /usr/share/zoneinfo/Etc/UTC /etc/localtime
+        sudo apt update
+        sudo env DEBIAN_FRONTEND=noninteractive apt install -y curl zip make git gawk jq pandoc python python3 tzdata
+    - name: Build patched YTDL
+      run: |
+        ./build.sh
+    - name: Upload to gh-pages
+      run: |
+        git config --global user.name nao20010128nao
+        git config --global user.email nao20010128@gmail.com
+        git clone https://nao20010128nao:${{ secrets.GITHUB_PAT }}@github.com/nao20010128nao/ytdl-patched.git -b gh-pages gh-pages
+        cd gh-pages
+        cp ../artifacts/* .
+        git add .
+        git commit -m "$(date)"
+        git push
+    - name: Upload to my homebrew repository
+      run: |
+        git clone https://nao20010128nao:${{ secrets.GITHUB_PAT }}@github.com/nao20010128nao/homebrew-my.git
+        cd homebrew-my
+        export FILEHASH_TAR="$(sha256sum ../artifacts/youtube-dl.tar.gz | awk '{print $1}')"
+        export VERSION="$(date --date="$(cat ../artifacts/LATEST_VERSION)" +'%s')"
+        echo $FILEHASH_TAR $VERSION
+        sed -E -i "s/sha256 \"[0-9a-f]*\"/sha256 \"$FILEHASH_TAR\"/g" Formula/ytdl-patched.rb
+        sed -E -i "s/version \".+\"/version \"$VERSION\"/g" Formula/ytdl-patched.rb
+        git add .
+        git commit -m "ytdl-patched: $VERSION"
+        git push
+    - name: Trigger ytdl-info redeploy
+      run: |
+        curl -X POST https://api.zeit.co/v1/integrations/deploy/QmNcQeQdC5ZPYA7K1ChCsU6byzyBnnmnJK7ZGsfJ6Qiqpf/GlxyCqSWgk
