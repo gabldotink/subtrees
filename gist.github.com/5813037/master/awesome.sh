@@ -1,0 +1,1 @@
+n=$(cat /usr/share/dict/words | wc -l); while true; do cat -n /usr/share/dict/words | grep -w $(jot -r 1 1 $n) | cut -f2 | say; done;
