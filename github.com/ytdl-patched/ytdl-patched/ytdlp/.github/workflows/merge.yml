@@ -1,0 +1,43 @@
+name: Merge upstream
+
+on:
+  schedule:
+    - cron: "0 */6 * * *"
+  workflow_dispatch:
+    inputs:
+
+jobs:
+  merge:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: ytdlp
+        fetch-depth: 0
+    - name: Configure git
+      run: |
+        set +e -x
+        git config --global pull.rebase false
+        git config --global core.editor "$(realpath ./devscripts/remove_ci_skip.py)"
+        git config --global user.name Lesmiscore
+        git config --global user.email nao20010128@gmail.com
+        git config --unset  http.https://github.com/.extraheader
+        git config --unset  credential.helper
+        git remote add self https://Lesmiscore:${{ secrets.GH_PAT }}@github.com/ytdl-patched/ytdl-patched.git
+        git remote add upstream https://github.com/yt-dlp/yt-dlp.git
+    - name: Pull from yt-dlp/yt-dlp
+      run: git pull upstream master --log
+    - name: Regenerate docs/supportedsites.md
+      continue-on-error: true
+      run: |
+        python ./devscripts/make_supportedsites.py ./supportedsites.md 
+        git commit -m"automatic: regenerate supportedsites.md @ $(date +'%Y%m%d')" ./supportedsites.md
+    - name: Push to here
+      run: git push self HEAD:ytdlp
+    - name: Create tag
+      continue-on-error: true
+      run: |
+        # git push self :refs/tags/yt-dlp || true
+        git tag -d yt-dlp || true
+        git tag -f yt-dlp upstream/master || true
+        git push self -f --tags || true

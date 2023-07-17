@@ -1,0 +1,59 @@
+name: Run tests
+
+on:
+  push:
+    paths:
+      - yt_dlp/**
+      - test/**
+      - .github/workflows/tests.yml
+      - devscripts/**
+    branches-ignore:
+      - gh-pages
+  workflow_dispatch:
+    inputs: {}
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    continue-on-error: ${{ matrix.ytdl_test_set.may_fail || matrix.python.may_fail }}
+    strategy:
+      matrix:
+        python: [
+          { name: '3.11', may_fail: true, major: 3, special: '' },
+          { name: '3.10', may_fail: false, major: 3, special: '' },
+          { name: '3.9', may_fail: false, major: 3, special: '' },
+          { name: '3.8', may_fail: false, major: 3, special: '' },
+          { name: 'pypy-3.8', may_fail: false, major: 3, special: '' },
+          { name: 'pypy-3.7', may_fail: false, major: 3, special: '' },
+        ]
+        ytdl_test_set: [
+          # { name: 'download', may_fail: true },
+          { name: 'core', may_fail: false },
+        ]
+    env:
+      YTDL_TEST_SET: ${{ matrix.ytdl_test_set.name }}
+    steps:
+      - uses: actions/checkout@v2
+      # standard CPython provided by GitHub Actions
+      - name: Set up Python ${{ matrix.python.name }}
+        uses: actions/setup-python@v2
+        if: ${{ !matrix.python.special }}
+        with:
+          python-version: ${{ matrix.python.name }}
+      - name: Install deps
+        if: ${{ !matrix.python.special }}
+        run: pip install -U pip pytest streamlink
+      # main script
+      - name: Run test
+        continue-on-error: ${{ matrix.ytdl_test_set.may_fail || matrix.python.may_fail }}
+        run: ./devscripts/run_tests.sh ${{ matrix.ytdl_test_set.name }}
+  flake8:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python
+        uses: actions/setup-python@v4
+      - name: Install deps
+        run: pip install -U pip flake8
+      - name: Run flake8 .
+        run: flake8 .

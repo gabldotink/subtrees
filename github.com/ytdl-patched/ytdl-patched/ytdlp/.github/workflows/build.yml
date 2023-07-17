@@ -1,0 +1,519 @@
+name: Build Patched YTDL
+
+on:
+  push:
+    paths:
+      - yt_dlp/**
+      - test/**
+      - docker/**
+      - .github/workflows/build.yml
+      - Makefile
+      - setup.py
+    branches-ignore:
+      - gh-pages
+  pull_request:
+    types: [ opened, synchronize, ready_for_review ]
+  workflow_dispatch:
+    inputs:
+
+env:
+  python_version: 3.9
+  python_version_pyinst: 3.7
+  windows_icon: red
+  ZOPFLI_ITERATIONS: 40
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    outputs:
+      latest_version: ${{ steps.prepare.outputs.latest_version }}
+      latest_version_normalized: ${{ steps.prepare.outputs.latest_version_normalized }}
+      latest_version_numeric: ${{ steps.prepare.outputs.latest_version_numeric }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Python ${{ env.python_version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ env.python_version }}
+      - name: Install deps
+        run: |
+          sudo ln -fs /usr/share/zoneinfo/Etc/UTC /etc/localtime
+          sudo apt update
+          sudo env DEBIAN_FRONTEND=noninteractive apt install -y tzdata
+          mkdir artifacts/
+          touch artifacts/.keep
+      - name: Prepare files
+        id: prepare
+        run: python3 devscripts/update-version.py -c stable
+      - name: Upload artifacts for the next steps
+        uses: actions/upload-artifact@v2
+        with:
+          name: ytdl-artifacts
+          path: |
+            yt_dlp/version.py
+            yt_dlp/build_config.py
+            artifacts/
+  build-linux:
+    runs-on: ubuntu-latest
+    needs: prepare
+    outputs:
+      filehash_bin: ${{ steps.build.outputs.filehash_bin }}
+      filehash_tar: ${{ steps.build.outputs.filehash_tar }}
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Download base
+        uses: actions/download-artifact@v2
+        with:
+          name: ytdl-artifacts
+      # https://github.com/actions/runner-images/issues/6283
+      - name: Add Homebrew to PATH
+        run: echo "/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin" >> $GITHUB_PATH
+      - name: Create buildconfig.py
+        run: python ./devscripts/make_buildconfig.py
+      - name: Set up Python ${{ env.python_version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ env.python_version }}
+      - name: Install deps
+        run: |
+          sudo ln -fs /usr/share/zoneinfo/Etc/UTC /etc/localtime
+          sudo apt update
+          sudo env DEBIAN_FRONTEND=noninteractive apt install -y curl zip make git gawk pandoc tzdata p7zip-full
+          brew install advancecomp
+      - name: Build patched YTDL for Linux
+        run: |
+          make ytdl-patched ytdl-patched.tar.gz
+          mv ytdl-patched artifacts/
+          mv ytdl-patched.tar.gz artifacts/
+          echo "filehash_bin=$(sha256sum artifacts/ytdl-patched | awk '{print $1}')" >> "$GITHUB_OUTPUT"
+          echo "filehash_tar=$(sha256sum artifacts/ytdl-patched.tar.gz | awk '{print $1}')" >> "$GITHUB_OUTPUT"
+      - name: Upload artifacts for the next steps
+        uses: actions/upload-artifact@v2
+        with:
+          name: ytdl-artifacts
+          # README.md (or any other files in the repo) is required
+          # to prevent upload-artifacts to find LCA
+          path: |
+            artifacts/
+            README.md
+  build-wheel:
+    runs-on: ubuntu-latest
+    needs: prepare
+    outputs:
+      filehash_wheel: ${{ steps.hash.outputs.filehash_wheel }}
+      filehash_wheel_tar: ${{ steps.hash.outputs.filehash_wheel_tar }}
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Download base
+        uses: actions/download-artifact@v2
+        with:
+          name: ytdl-artifacts
+      - name: Set up Python ${{ env.python_version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ env.python_version }}
+      - name: Create buildconfig.py
+        run: python ./devscripts/make_buildconfig.py
+      - name: Install deps
+        run: pip3 install -U pip build wheel setuptools
+      - name: Build wheel
+        run: python3 -m build
+      - name: Calculate hashes
+        id: hash
+        run: |
+          echo "filehash_wheel=$(sha256sum dist/ytdl_patched-${{ needs.prepare.outputs.latest_version_normalized }}-py2.py3-none-any.whl | awk '{print $1}')" >> "$GITHUB_OUTPUT"
+          echo "filehash_wheel_tar=$(sha256sum dist/ytdl-patched-${{ needs.prepare.outputs.latest_version_normalized }}.tar.gz | awk '{print $1}')" >> "$GITHUB_OUTPUT"
+      - name: Upload artifacts for the next steps
+        uses: actions/upload-artifact@v2
+        with:
+          name: ytdl-artifacts
+          # README.md (or any other files in the repo) is required
+          # to prevent upload-artifacts to find LCA
+          path: |
+            dist/
+            README.md
+      - name: Show contents of dist/
+        continue-on-error: true
+        run: ls dist/
+
+  build-windows:
+    runs-on: windows-latest
+    needs: prepare
+    outputs:
+      filehash_exe_red: ${{ steps.hash.outputs.filehash_exe_red }}
+      filehash_exe_white: ${{ steps.hash.outputs.filehash_exe_white }}
+    strategy:
+      fail-fast: false
+      matrix:
+        icon: [red, white]
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Download base
+        uses: actions/download-artifact@v2
+        with:
+          name: ytdl-artifacts
+      - name: Create buildconfig.py
+        run: python ./devscripts/make_buildconfig.py variant=${{ matrix.icon }}
+      - name: Set up Python ${{ env.python_version_pyinst }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ env.python_version_pyinst }}
+      - name: Upgrade pip and enable wheel support
+        run: python -m pip install --upgrade pip setuptools wheel
+      - name: Install deps
+        run: pip install -U "https://yt-dlp.github.io/Pyinstaller-Builds/x86_64/pyinstaller-5.3-py3-none-any.whl" zopflipy websockets python-dateutil mutagen pycryptodomex
+      - name: Install UPX
+        shell: pwsh
+        run: pwsh ./devscripts/install_upx.ps1
+      - name: Build patched YTDL for Windows
+        shell: pwsh
+        run: pwsh ./devscripts/build_windows_exe.ps1 PyInstaller ${{ matrix.icon }}
+      - name: Compress generated EXE
+        run: upx --lzma --best artifacts/ytdl-patched.exe
+        continue-on-error: true
+      - name: Calculate hash
+        id: hash
+        run: echo "filehash_exe_${{ matrix.icon }}=$((Get-FileHash artifacts/ytdl-patched.exe -Algorithm SHA256).Hash.ToLower())" >> "$GITHUB_OUTPUT"
+      - name: Rename file
+        run: mv artifacts/ytdl-patched.exe artifacts/ytdl-patched-${{ matrix.icon }}.exe
+      - name: Upload artifacts for the next steps
+        uses: actions/upload-artifact@v2
+        with:
+          name: ytdl-artifacts
+          # README.md (or any other files in the repo) is required
+          # to prevent upload-artifacts to find LCA
+          path: |
+            artifacts/
+            README.md
+
+  upload-releases:
+    needs: [prepare, build-linux, build-windows, build-wheel]
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name != 'pull_request' && github.ref == 'refs/heads/ytdlp' }}
+    steps:
+      - name: Download artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: ytdl-artifacts
+
+      - name: Create release (for master)
+        id: create_release
+        uses: actions/create-release@v1
+        if: ${{ github.ref == 'refs/heads/ytdlp' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ needs.prepare.outputs.latest_version }}
+          release_name: ${{ needs.prepare.outputs.latest_version }}
+          draft: false
+          prerelease: false
+          body: |
+            What to download?
+            - for Linux/macOS - `ytdl-patched` (requires Python 3.x installed)
+            - for Windows (no Python 3.x required)
+                - red icon - `...-red.exe` (**default** in -U)
+                - white icon - `...-white.exe`
+            - for pip - `ytdl_patched-wheel.tar.gz`
+
+            This release is built from commit ${{ github.sha }}
+
+            **ytdl-patched is now yt-dlp-based version**
+      - name: Create release
+        if: ${{ github.ref == 'refs/heads/ytdlp' }}
+        run: echo "upload_url=${{ steps.create_release.outputs.upload_url }}" >> $GITHUB_ENV
+
+      - name: Create release (for non-master)
+        id: create_release_nm
+        uses: actions/create-release@v1
+        if: ${{ github.ref != 'refs/heads/ytdlp' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: ${{ needs.prepare.outputs.latest_version }}
+          release_name: ${{ needs.prepare.outputs.latest_version }}
+          draft: false
+          prerelease: true
+          body: |
+            - **NOTICE: THIS IS FOR DEVEOPMENT PURPOSES**
+            - **注意: 開発者向けビルドです。**
+            - `github.ref`: ${{ github.ref }}
+            - `github.sha`: ${{ github.sha }}
+            - expected version: ${{ needs.prepare.outputs.latest_version }}
+      - name: Create release (for non-master)
+        if: ${{ github.ref != 'refs/heads/ytdlp' }}
+        run: echo "upload_url=${{ steps.create_release_nm.outputs.upload_url }}" >> $GITHUB_ENV
+
+      - name: Upload bin (Releases)
+        id: upload-1
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ env.upload_url }} 
+          asset_path: ./artifacts/ytdl-patched
+          asset_name: ytdl-patched
+          asset_content_type: application/zip
+      - name: Upload source tar (Releases)
+        id: upload-2
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ env.upload_url }} 
+          asset_path: ./artifacts/ytdl-patched.tar.gz
+          asset_name: ytdl-patched.tar.gz
+          asset_content_type: application/gzip
+
+
+      - name: Upload red exe (Releases)
+        id: upload-3
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ env.upload_url }} 
+          asset_path: ./artifacts/ytdl-patched-red.exe
+          asset_name: ytdl-patched-red.exe
+          asset_content_type: application/vnd.microsoft.portable-executable
+      - name: Upload white exe (Releases)
+        id: upload-4
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ env.upload_url }} 
+          asset_path: ./artifacts/ytdl-patched-white.exe
+          asset_name: ytdl-patched-white.exe
+          asset_content_type: application/vnd.microsoft.portable-executable
+
+
+      - name: Upload wheel (Releases)
+        id: upload-5
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ env.upload_url }} 
+          asset_path: ./dist/ytdl_patched-${{ needs.prepare.outputs.latest_version_normalized }}-py2.py3-none-any.whl
+          asset_name: ytdl_patched-py2.py3-none-any.whl
+          asset_content_type: application/zip
+      - name: Upload wheel tar (Releases)
+        id: upload-6
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ env.upload_url }} 
+          asset_path: ./dist/ytdl-patched-${{ needs.prepare.outputs.latest_version_normalized }}.tar.gz
+          asset_name: ytdl_patched-wheel.tar.gz
+          asset_content_type: application/gzip
+
+
+  upload-homebrew:
+    needs: [prepare, build-wheel, upload-releases]
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name != 'pull_request' && github.ref == 'refs/heads/ytdlp' }}
+    env:
+      FILEHASH_TAR: ${{ needs.build-wheel.outputs.filehash_wheel_tar }}
+      VERSION: ${{ needs.prepare.outputs.latest_version }}
+      VERSION_NAME: ${{ needs.prepare.outputs.latest_version }}
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Upload to my homebrew repository
+        run: |
+          git config --global user.name lesmiscore
+          git config --global user.email 10355528+Lesmiscore@users.noreply.github.com
+          git clone https://lesmiscore:${{ secrets.GH_PAT }}@github.com/lesmiscore/homebrew-my.git
+          cd homebrew-my
+          echo $FILEHASH_TAR $VERSION
+          python3 ../devscripts/update-formulae.py Formula/ytdl-patched.rb "$FILEHASH_TAR" "$VERSION" "https://github.com/ytdl-patched/ytdl-patched/releases/download/$VERSION/ytdl_patched-wheel.tar.gz"
+          git add .
+          git commit -m "ytdl-patched: $VERSION"
+          git push
+
+
+  upload-internetarchive:
+    needs: [prepare, build-linux, build-windows, build-wheel]
+    runs-on: ubuntu-latest
+    if: ${{ github.event_name != 'pull_request' && github.ref == 'refs/heads/ytdlp' }}
+    steps:
+      # https://github.com/actions/runner-images/issues/6283
+      - name: Add Homebrew to PATH
+        run: echo "/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin" >> $GITHUB_PATH
+      - name: Install ia command and configure
+        run: |
+          sudo apt update
+          sudo apt install -y squashfs-tools
+          brew install rclone
+
+      - name: Download artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: ytdl-artifacts
+
+      - name: Rename files
+        run: |
+          mv dist/ytdl_patched-${{ needs.prepare.outputs.latest_version_normalized }}-py2.py3-none-any.whl artifacts/ytdl_patched-py2.py3-none-any.whl
+          mv dist/ytdl-patched-${{ needs.prepare.outputs.latest_version_normalized }}.tar.gz               artifacts/ytdl_patched-wheel.tar.gz
+
+      - name: Compress exe files
+        run: |
+          mkdir exe_files/
+          mv ./artifacts/ytdl-patched-red.exe ./artifacts/ytdl-patched-white.exe exe_files/
+          mksquashfs exe_files/ artifacts/win_exe.sqfs \
+            -comp xz -progress -b 1M -Xdict-size 50% \
+            -no-xattrs -force-uid 1000 -force-gid 1000
+
+      - name: Upload files
+        run: |
+          rm -f artifacts/.keep
+          rclone copy --progress --retries=9999 \
+            --internetarchive-access-key-id="${{ secrets.IA_ACCESS }}" \
+            --internetarchive-secret-access-key="${{ secrets.IA_SECRET }}" \
+            artifacts/ :internetarchive:ytdl-patched-binaries/"${{ needs.prepare.outputs.latest_version }}/"
+
+  binary-test:
+    needs: [build-linux, build-windows]
+    runs-on: ${{ matrix.environ.os }}
+    continue-on-error: true
+    strategy:
+      fail-fast: false
+      matrix:
+        environ: [
+          { os: "ubuntu-22.04" },
+          { os: "ubuntu-20.04" },
+
+          # { os: "macos-11.0" },
+          # { os: "macos-10.15" },
+
+          { os: "windows-2022" },
+          { os: "windows-2019" },
+        ]
+        python_version: ["3.10", "3.9", "3.8", "3.7"]
+    steps:
+      - name: Download artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: ytdl-artifacts
+      - name: Set up Python ${{ matrix.python_version }}
+        uses: actions/setup-python@v1
+        if: ${{ runner.os == 'Linux' || runner.os == 'macOS' }}
+        with:
+          python-version: ${{ matrix.python_version }}
+      - name: Move executable file
+        if: ${{ runner.os == 'windows' }}
+        run: |
+          mv ./artifacts/ytdl-patched-white.exe ./artifacts/ytdl-patched.exe
+      - name: ytdl-patched --help and --version
+        shell: bash
+        run: |
+          chmod a+x ./artifacts/ytdl-patched || true
+          ./artifacts/ytdl-patched --help
+          ./artifacts/ytdl-patched --version
+      - name: Download some videos
+        shell: bash
+        continue-on-error: true
+        run: |
+          ./artifacts/ytdl-patched \
+              https://www.youtube.com/watch?v=XEY7UQJxw-o \
+              https://twitter.com/twetchapp/status/1311686520793829376
+  docker-linux:
+    runs-on: ubuntu-latest
+    needs: [prepare, build-linux]
+    continue-on-error: true
+    if: ${{ 1 == 0 && github.event_name != 'pull_request' && github.ref == 'refs/heads/ytdlp' }}
+    steps:
+      - uses: actions/checkout@v2
+      - name: Download artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: ytdl-artifacts
+      - run: ls artifacts/
+      - name: Login
+        uses: docker/login-action@v1
+        with:
+          username: nao20010128nao
+          password: ${{ secrets.DHUB_TOKEN }}
+      - name: Set up QEMU
+        uses: docker/setup-qemu-action@v1
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v1
+      - name: Build and Push (alpine)
+        uses: docker/build-push-action@v2
+        with:
+          push: true
+          platforms: linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/i386,linux/ppc64le
+          file: ./docker/linux.Dockerfile
+          context: .
+          build-args: |
+            base_tag=3-alpine
+          tags: |
+            nao20010128nao/ytdl-patched:latest
+            nao20010128nao/ytdl-patched:alpine
+            nao20010128nao/ytdl-patched:${{ needs.prepare.outputs.latest_version_numeric }}
+            nao20010128nao/ytdl-patched:${{ needs.prepare.outputs.latest_version_numeric }}-alpine
+      - name: Build and Push (slim)
+        uses: docker/build-push-action@v2
+        with:
+          push: true
+          platforms: linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64,linux/i386,linux/ppc64le
+          file: ./docker/linux.Dockerfile
+          context: .
+          build-args: |
+            base_tag=3-slim
+          tags: |
+            nao20010128nao/ytdl-patched:slim
+            nao20010128nao/ytdl-patched:${{ needs.prepare.outputs.latest_version_numeric }}-slim
+  docker-windows:
+    runs-on: ${{ matrix.windows.os }}
+    needs: [prepare, build-windows]
+    continue-on-error: true
+    if: ${{ 1 == 0 && github.event_name != 'pull_request' && github.ref == 'refs/heads/ytdlp' }}
+    strategy:
+      matrix:
+        windows: [
+          {os: windows-2019, tag: '1809'},
+          {os: windows-2016, tag: ltsc2016},
+        ]
+    steps:
+      - uses: actions/checkout@v2
+      - name: Download artifacts
+        uses: actions/download-artifact@v2
+        with:
+          name: ytdl-artifacts
+      - run: mv artifacts/ytdl-patched-${{ env.windows_icon }}.exe artifacts/ytdl-patched.exe
+      - run: ls artifacts/
+      - name: Login
+        run: docker login --username nao20010128nao --password ${{ secrets.DHUB_TOKEN }}
+      - name: Build and Push (1809)
+        if: ${{ matrix.windows.tag == '1809' }}
+        run: |
+          docker build --build-arg base_tag=3-windowsservercore-1809 `
+              -f ./docker/windows.Dockerfile `
+              -t nao20010128nao/ytdl-patched:latest `
+              -t nao20010128nao/ytdl-patched:windowsservercore-1809 `
+              -t nao20010128nao/ytdl-patched:${{ needs.prepare.outputs.latest_version_numeric }} `
+              -t nao20010128nao/ytdl-patched:${{ needs.prepare.outputs.latest_version_numeric }}-windowsservercore-1809 `
+              .
+          docker push nao20010128nao/ytdl-patched:latest
+          docker push nao20010128nao/ytdl-patched:windowsservercore-1809
+          docker push nao20010128nao/ytdl-patched:${{ needs.prepare.outputs.latest_version_numeric }}
+          docker push nao20010128nao/ytdl-patched:${{ needs.prepare.outputs.latest_version_numeric }}-windowsservercore-1809
+      - name: Build and Push (ltsc2016)
+        if: ${{ matrix.windows.tag == 'ltsc2016' }}
+        run: |
+          docker build --build-arg base_tag=3-windowsservercore-ltsc2016 `
+              -f ./docker/windows.Dockerfile `
+              -t nao20010128nao/ytdl-patched:windowsservercore-ltsc2016 `
+              -t nao20010128nao/ytdl-patched:${{ needs.prepare.outputs.latest_version_numeric }}-windowsservercore-ltsc2016 `
+              .
+          docker push nao20010128nao/ytdl-patched:windowsservercore-ltsc2016
+          docker push nao20010128nao/ytdl-patched:${{ needs.prepare.outputs.latest_version_numeric }}-windowsservercore-ltsc2016
