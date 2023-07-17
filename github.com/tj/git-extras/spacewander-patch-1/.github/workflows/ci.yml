@@ -1,0 +1,50 @@
+name: ci
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+jobs:
+  lint:
+    runs-on: 'ubuntu-22.04'
+    steps:
+      - name: 'Get Changed Files'
+        id: 'files'
+        uses: 'masesgroup/retrieve-changed-files@v2'
+        with:
+          format: 'json'
+      - name: Check out code.
+        uses: actions/checkout@v2
+      - name: 'Check EditorConfig Lint'
+        run: |
+          sudo apt install -y jq golang
+          go install 'github.com/editorconfig-checker/editorconfig-checker/cmd/editorconfig-checker@latest'
+
+          readarray -t changed_files <<<"$(jq -r '.[]' <<<'${{ steps.files.outputs.added_modified }}')"
+          ~/go/bin/editorconfig-checker ${changed_files[@]}
+
+  build:
+    strategy:
+      fail-fast: false
+      matrix:
+        platform:
+          - ubuntu-22.04
+          - macos-latest
+    runs-on: ${{ matrix.platform }}
+    steps:
+      - name: Check out code.
+        uses: actions/checkout@v2
+      - name: Linux Install
+        if: matrix.platform == 'ubuntu-22.04'
+        run: |
+          sudo apt-get install -y bsdmainutils
+      - name: Script
+        run: |
+          ./check_integrity.sh $(find bin | cut -b 5- | xargs)
+      - name: Brew release
+        if: matrix.platform == 'macos-latest'
+        run: |
+          mkdir ../release && git archive --format=tar.gz HEAD > ../release/git-extras-release.tar.gz
+          cd ../release
+          tar -xzf git-extras-release.tar.gz && make PREFIX=$(pwd) INSTALL_VIA=brew
+          ./bin/git-extras update | grep "brew upgrade git-extras"

@@ -1,0 +1,267 @@
+git-extras is written and maintained by TJ Holowaychuk and
+various contributors:
+
+Development Lead
+````````````````
+- TJ Holowaychuk <tj@vision-media.ca>
+
+Maintainers
+```````````
+- Hemanth.HM <hemanth.hm@gmail.com>
+- Nimit Kalra <me@nimit.io>
+- Nicolai Skogheim <nicolai.skogheim@gmail.com>
+- spacewander <spacewanderlzx@gmail.com>
+
+Patches and Suggestions
+```````````````````````
+- Jonhnny Weslley
+- Tobias Fendin
+- LeeW
+- timfeirg
+- Niklas Schlimm
+- nickl-
+- CJ
+- Paul Wise
+- Damien Tardy-Panis
+- Yuriy VG
+- Mark Eissler
+- Richard Fearn
+- Leila Muhtasib
+- Jesús Espino
+- go2null
+- Bill Wood
+- Rémy HUBSCHER
+- Andrew Janke
+- Peter Benjamin
+- Edwin Kofler
+- Jan Schulz
+- David Baumgold
+- Mark Pitman
+- Kenneth Reitz
+- Luke Childs
+- Sasha Khamkov
+- Günther Grill
+- equt
+- vyas
+- Robin Winslow
+- grindhold
+- Don Harper
+- Yi EungJun
+- Carlos Prado
+- vanpipy
+- Chris Hall
+- NANRI
+- Camille Reynders
+- Damian Krzeminski
+- Aggelos Orfanakos
+- thomas menzel
+- vr8ce
+- Alexander Krasnukhin
+- Rico Sta. Cruz
+- Phally
+- Takuma Yamaguchi
+- gisphm
+- jacobherrington
+- Justin Dugger
+- Hogan Long
+- Jonathan "Duke" Leto
+- Richard Russon
+- overengineer
+- phigoro
+- Julio Napurí
+- Sam Bostock
+- Nils Winkler
+- Philipp Klose
+- wooorm
+- Brian J Brennan
+- Ivan Malopinsky
+- Dominik Gedon
+- Vladimir Jimenez
+- Guillaume Seren
+- Florian H
+- Beth Skurrie
+- Evan Grim
+- Tjaart van der Walt
+- Justin Guenther
+- Marc Harter
+- Tom Vincent
+- Allan Odgaard
+- Matiss
+- Wil Moore III
+- William Montgomery
+- Hozefa
+- Ye Lin Aung
+- Alexis GRIMALDI
+- Brice Dutheil
+- Andre Cerqueira
+- Domenico Rotiroti
+- Nate Jones
+- Joshua Li
+- Newell Zhu
+- luozexuan
+- roxchgt
+- David Rogers
+- soffolk
+- Richard Littauer
+- Jean Jordaan
+- Devin Withers
+- Patryk Małek
+- Paul Schreiber
+- Kylie McClain
+- Curtis McEnroe
+- Gert Van Gool
+- Riceball LEE
+- Rob Kennedy
+- Robin von Bülow
+- Ryan Bohn
+- Sachin Gupta
+- Sam Thursfield
+- Sandro
+- Sascha Andres
+- Sean Molenaar
+- Sebastian Gniazdowski
+- Sebastián Mancilla
+- Simon Tate
+- Stefan VanBuren
+- Stephen Mathieson
+- Steve Mao
+- Stu Feldt
+- SukkaW
+- Tim Preston
+- Timothy Hwang
+- Tin Lai
+- Todd Wolfson
+- Tom Andrade
+- Tom Ashworth
+- Tony
+- TweeKane
+- Valérian Galliat
+- Vitaly Chikunov
+- Wei Lee
+- Xavier Krantz
+- Xiaopei Li
+- Zeeshan Ahmed
+- ax1036
+- brian murrell
+- creynders
+- dead-horse
+- eszabpt
+- fengkx
+- jykntr
+- meza
+- neydroid
+- nulltask
+- sgleizes
+- tfendin
+- tiemonl
+- zentarul
+- zeroDivisible
+- zhiyanfoo
+- Áron Hoffmann
+- Étienne BERSAC
+- ☃ pitr
+- 单元源
+- Przemek Kitszel
+- Abdullah
+- Adam Parkin
+- Adriaan Zonnenberg
+- Akim Demaille
+- Alessandro Pagiaro
+- Alex McHale
+- Aloxaf
+- Amir Tocker
+- Ammar Najjar
+- Amory Meltzer
+- Andreas Duering
+- Andrei Petcu
+- Andrew Griffiths
+- Andrew Marcinkevičius
+- Andrew Starr-Bochicchio
+- Andrey Elizarov
+- Angel Aguilera
+- Antoine Beaupré
+- Aurélien Scoubeau
+- Balazs Nadasdi
+- Ben Parnell
+- Beni Ben Zikry
+- Brandon Zylstra
+- Brian Goad
+- Bruno Sutic
+- Caleb Maclennan
+- Carl Casbolt
+- Carlos Rodríguez
+- Christophe Badoit
+- Ciro Nunes
+- CleanMachine1
+- Craig MacGregor
+- Dan Jackson
+- Dan Kilman
+- Daniel Bruder
+- Daniel Lublin
+- Daniel Schildt
+- Dave James Miller
+- David Hartmann
+- Dominic Barnes
+- Dung Quang
+- Edward Betts
+- Eli Schwartz
+- Emil Kjelsrud
+- François M
+- George Crabtree
+- Greg Allen
+- Guillermo Rauch
+- Gunnlaugur Thor Briem
+- Hasse Ramlev Hansen
+- Heiko Becker
+- Isaac Mungai
+- J.C. Yamokoski
+- Jack O. Wasey
+- James Manning
+- James Zhu
+- Jan Krueger
+- Jarod Stewart
+- Jason Young
+- Jens K. Mueller
+- Jeremy Lin
+- Jesse Sipprell
+- Jianjin Fan
+- Johannes Ewald
+- John Evans
+- John Hoffmann
+- Jon Ander Peñalba
+- Joshua Appelman
+- José María Gutiérrez @TheTechOddBug
+- Katrin Leinweber
+- Kevin Woo
+- Konstantin Schukraft
+- Kurban Mallachiev
+- Leandro López
+- Lone
+- Luis Miguel Hernanz
+- Maarten Winter
+- Marco Glasbergen
+- Matan Rosenberg
+- Mathieu D. (MatToufoutu)
+- Matt
+- Matt Colyer
+- Matthew Avant
+- Michael Komitee
+- Michael Matuzak
+- Michele Bologna
+- Montak Oleg
+- Moritz Grauel
+- Nate Fischer
+- Nathan Rajlich
+- Nick Campbell
+- Nick Payne
+- Nicolas Kosinski
+- Niklas Fiekas
+- Oliver Kopp
+- Orestis
+- Peter Bittner
+- Piotr Górski
+- Prayag Verma
+- 0xflotus
+- R. Martinho Fernandes
+- Raphael Fleischlin
+- Rasmus Wriedt Larsen
