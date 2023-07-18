@@ -1,0 +1,14 @@
+<Project>
+  <PropertyGroup>
+    <VersionBase>0.7.0.0</VersionBase>
+    <FrameworkLTS>net6.0</FrameworkLTS>
+    <FrameworkLatest>net7.0</FrameworkLatest>
+    <LangVersion>preview</LangVersion>
+    <VersionPrefix>$(VersionBase)</VersionPrefix>
+  </PropertyGroup>
+
+  <PropertyGroup Label="Package Information">
+    <Authors>InfinityGhost</Authors>
+    <PackageLicenseExpression>LGPL-3.0-or-later</PackageLicenseExpression>
+  </PropertyGroup>
+</Project>
