@@ -1,0 +1,19 @@
+{
+  "name": "zi-ng4-twitter-timeline",
+  "version": "1.0.0",
+  "description": "ng4-twitter-timeline",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zip/zi-twitter-timeline.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/zip/zi-twitter-timeline/issues"
+  },
+  "homepage": "https://github.com/zip/zi-twitter-timeline#readme"
+}
