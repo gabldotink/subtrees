@@ -1,0 +1,21 @@
+ifdef::env-github[]
+:tip-caption: :bulb:
+:note-caption: :information_source:
+:important-caption: :heavy_exclamation_mark:
+:caution-caption: :fire:
+:warning-caption: :warning:
+endif::[]
+:hide-uri-scheme:
+:figure-caption!:
+
+Welcome to the Infinispan GitHub Organization! 
+
+++++
+<p align="center">
+  <img src="https://design.jboss.org/infinispan/logo/final/PNG/infinispan_logotype_rgb_lightblue_450px.png">
+</p>
+++++
+
+In here you can find our https://github.com/infinispan/infinispan[main repository].
+
+If you are looking to get started with Infinispan check out our https://infinispan.org/get-started/[5 minutes get started] and the main https://infinispan.org/tutorials/[documentation tutorials].
