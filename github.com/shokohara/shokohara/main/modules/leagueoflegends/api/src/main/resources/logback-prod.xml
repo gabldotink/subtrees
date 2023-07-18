@@ -1,0 +1,26 @@
+<configuration>
+
+  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+    <withJansi>true</withJansi>
+    <encoder>
+      <pattern>[%thread] %-5level %logger{15} [%file:%line] - %msg%n%xException{full}</pattern>
+    </encoder>
+  </appender>
+
+  <logger name="akka.serialization.jackson.JacksonObjectMapperProvider" level="INFO" />
+  <logger name="akka.actor.CoordinatedShutdown" level="INFO" />
+  <logger name="akka.event.EventStream" level="INFO" />
+
+  <logger name="com.gargoylesoftware.htmlunit.javascript" level="OFF" />
+  <logger name="org.http4s.blaze.channel.NIO1HeadStage" level="WARN" />
+  <logger name="org.http4s.blaze.channel.nio1.NIO1HeadStage" level="WARN" />
+  <logger name="org.http4s.blazecore.IdleTimeoutStage" level="WARN" />
+  <logger name="org.http4s.server.blaze.Http1ServerStage" level="WARN" />
+  <logger name="org.http4s.server.blaze.BlazeServerBuilder" level="WARN" />
+  <logger name="org.http4s.blaze.channel.nio1.SelectorLoop" level="WARN" />
+
+  <root level="DEBUG">
+    <appender-ref ref="STDOUT" />
+  </root>
+
+</configuration>
