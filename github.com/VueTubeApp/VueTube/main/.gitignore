@@ -1,0 +1,13 @@
+.DS_Store
+node_modules
+nuxt/dist
+dist
+package-lock.json
+temp.js
+temp.json
+.vscode/settings.json
+.idea
+
+# Capacitor Splash Screens
+resources/android
+resources/ios
