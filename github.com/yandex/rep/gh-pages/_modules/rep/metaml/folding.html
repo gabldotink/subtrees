@@ -1,0 +1,527 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>rep.metaml.folding &mdash; REP (Reproducible Experiment Platform) 0.6.7 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="REP (Reproducible Experiment Platform) 0.6.7 documentation" href="../../../index.html"/>
+        <link rel="up" title="Module code" href="../../index.html"/> 
+
+  
+  <script src="../../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../../index.html" class="icon icon-home"> REP (Reproducible Experiment Platform)
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.6.7
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../estimators.html">Estimators (classification and regression)</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../metaml.html">Meta Machine Learning</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../report.html">Report for models</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../metrics.html">Metrics</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../plotting.html">Plotting</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../parallel.html">Parallel computing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../utils.html">Utilities</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../reproducibility.html">REProducibility</a></li>
+<li class="toctree-l1"><a class="reference external" href="http://nbviewer.ipython.org/github/yandex/rep/tree/master/howto/">Howto notebooks</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../../index.html">REP (Reproducible Experiment Platform)</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../../index.html">Docs</a> &raquo;</li>
+      
+          <li><a href="../../index.html">Module code</a> &raquo;</li>
+      
+    <li>rep.metaml.folding</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <h1>Source code for rep.metaml.folding</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">:class:`FoldingClassifier` and :class:`FoldingRegressor` provide an easy way</span>
+<span class="sd">to run k-Folding cross-validation. Also it is a nice way to combine predictions of trained classifiers.</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span><span class="p">,</span> <span class="n">print_function</span><span class="p">,</span> <span class="n">absolute_import</span>
+
+<span class="kn">import</span> <span class="nn">numpy</span>
+<span class="kn">import</span> <span class="nn">pandas</span>
+<span class="kn">from</span> <span class="nn">six.moves</span> <span class="kn">import</span> <span class="nb">zip</span>
+
+<span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">clone</span>
+<span class="kn">from</span> <span class="nn">sklearn.cross_validation</span> <span class="kn">import</span> <span class="n">KFold</span>
+<span class="kn">from</span> <span class="nn">sklearn.utils</span> <span class="kn">import</span> <span class="n">check_random_state</span>
+<span class="kn">from</span> <span class="nn">.</span> <span class="kn">import</span> <span class="n">utils</span>
+<span class="kn">from</span> <span class="nn">.factory</span> <span class="kn">import</span> <span class="n">train_estimator</span>
+<span class="kn">from</span> <span class="nn">..estimators.interface</span> <span class="kn">import</span> <span class="n">Classifier</span><span class="p">,</span> <span class="n">Regressor</span>
+<span class="kn">from</span> <span class="nn">..estimators.utils</span> <span class="kn">import</span> <span class="n">check_inputs</span>
+
+<span class="n">__author__</span> <span class="o">=</span> <span class="s1">&#39;Tatiana Likhomanenko, Alex Rogozhnikov&#39;</span>
+<span class="n">__all__</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;FoldingClassifier&#39;</span><span class="p">,</span> <span class="s1">&#39;FoldingRegressor&#39;</span><span class="p">]</span>
+
+<span class="kn">from</span> <span class="nn">.utils</span> <span class="kn">import</span> <span class="n">get_classifier_probabilities</span><span class="p">,</span> <span class="n">get_classifier_staged_proba</span><span class="p">,</span> <span class="n">get_regressor_prediction</span><span class="p">,</span> \
+    <span class="n">get_regressor_staged_predict</span>
+
+
+<span class="k">class</span> <span class="nc">FoldingBase</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This meta-{estimator} implements folding algorithm:</span>
+
+<span class="sd">    * split training data into n equal parts;</span>
+<span class="sd">    * train n {estimator}s, each one is trained using n-1 folds</span>
+
+<span class="sd">    To get unbiased predictions for data, pass the **same** dataset (with same order of events)</span>
+<span class="sd">    as in training to prediction methods,</span>
+<span class="sd">    in which case each event is predicted with base {estimator} which didn&#39;t use that event during training.</span>
+
+<span class="sd">    To use information from not one, but several estimators during predictions,</span>
+<span class="sd">    provide appropriate voting function. Examples of voting function:</span>
+
+<span class="sd">    &gt;&gt;&gt; voting = lambda x: numpy.mean(x, axis=0)</span>
+<span class="sd">    &gt;&gt;&gt; voting = lambda x: numpy.median(x, axis=0)</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span>
+                 <span class="n">base_estimator</span><span class="p">,</span>
+                 <span class="n">n_folds</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
+                 <span class="n">random_state</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                 <span class="n">features</span><span class="o">=</span><span class="bp">None</span><span class="p">,</span>
+                 <span class="n">parallel_profile</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+
+<span class="sd">        :param sklearn.BaseEstimator base_estimator: base classifier, which will be used for training</span>
+<span class="sd">        :param int n_folds: count of folds</span>
+<span class="sd">        :param features: features used in training</span>
+<span class="sd">        :type features: None or list[str]</span>
+<span class="sd">        :param parallel_profile: profile for IPython cluster, None to compute locally.</span>
+<span class="sd">        :type parallel_profile: None or str</span>
+<span class="sd">        :param random_state: random state for reproducibility</span>
+<span class="sd">        :type random_state: None or int or RandomState</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">estimators</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">parallel_profile</span> <span class="o">=</span> <span class="n">parallel_profile</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">n_folds</span> <span class="o">=</span> <span class="n">n_folds</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">base_estimator</span> <span class="o">=</span> <span class="n">base_estimator</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_folds_indices</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">random_state</span> <span class="o">=</span> <span class="n">random_state</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_random_number</span> <span class="o">=</span> <span class="bp">None</span>
+        <span class="c1"># setting features directly</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">features</span> <span class="o">=</span> <span class="n">features</span>
+
+    <span class="k">def</span> <span class="nf">_get_folds_column</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">length</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Return special column with indices of folds for all events.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_random_number</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">_random_number</span> <span class="o">=</span> <span class="n">check_random_state</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">random_state</span><span class="p">)</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">100000</span><span class="p">)</span>
+        <span class="n">folds_column</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">length</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">fold_number</span><span class="p">,</span> <span class="p">(</span><span class="n">_</span><span class="p">,</span> <span class="n">folds_indices</span><span class="p">)</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span>
+                <span class="n">KFold</span><span class="p">(</span><span class="n">length</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_folds</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">_random_number</span><span class="p">)):</span>
+            <span class="n">folds_column</span><span class="p">[</span><span class="n">folds_indices</span><span class="p">]</span> <span class="o">=</span> <span class="n">fold_number</span>
+        <span class="k">return</span> <span class="n">folds_column</span>
+
+    <span class="k">def</span> <span class="nf">_prepare_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sample_weight</span><span class="p">):</span>
+        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s1">&#39;To be implemented in descendant&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sample_weight</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Train the model, will train several base {estimator}s on overlapping</span>
+<span class="sd">        subsets of training dataset.</span>
+
+<span class="sd">        :param X: pandas.DataFrame of shape [n_samples, n_features]</span>
+<span class="sd">        :param y: labels of events - array-like of shape [n_samples]</span>
+<span class="sd">        :param sample_weight: weight of events,</span>
+<span class="sd">               array-like of shape [n_samples] or None if all weights are equal</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="nb">hasattr</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">base_estimator</span><span class="p">,</span> <span class="s1">&#39;features&#39;</span><span class="p">):</span>
+            <span class="k">assert</span> <span class="bp">self</span><span class="o">.</span><span class="n">base_estimator</span><span class="o">.</span><span class="n">features</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">,</span> \
+                <span class="s1">&#39;Base estimator must have None features! Use features parameter in Folding instead&#39;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">train_length</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+        <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sample_weight</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_prepare_data</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sample_weight</span><span class="p">)</span>
+
+        <span class="n">folds_column</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_folds_column</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">))</span>
+
+        <span class="k">for</span> <span class="n">_</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n_folds</span><span class="p">):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">estimators</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">clone</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">base_estimator</span><span class="p">))</span>
+
+        <span class="k">if</span> <span class="n">sample_weight</span> <span class="ow">is</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="n">weights_iterator</span> <span class="o">=</span> <span class="p">[</span><span class="bp">None</span><span class="p">]</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">n_folds</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">weights_iterator</span> <span class="o">=</span> <span class="p">(</span><span class="n">sample_weight</span><span class="p">[</span><span class="n">folds_column</span> <span class="o">!=</span> <span class="n">index</span><span class="p">]</span> <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n_folds</span><span class="p">))</span>
+
+        <span class="n">result</span> <span class="o">=</span> <span class="n">utils</span><span class="o">.</span><span class="n">map_on_cluster</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">parallel_profile</span><span class="p">,</span> <span class="n">train_estimator</span><span class="p">,</span>
+                                      <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">estimators</span><span class="p">)),</span>
+                                      <span class="bp">self</span><span class="o">.</span><span class="n">estimators</span><span class="p">,</span>
+                                      <span class="p">(</span><span class="n">X</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">folds_column</span> <span class="o">!=</span> <span class="n">index</span><span class="p">,</span> <span class="p">:]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span> <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n_folds</span><span class="p">)),</span>
+                                      <span class="p">(</span><span class="n">y</span><span class="p">[</span><span class="n">folds_column</span> <span class="o">!=</span> <span class="n">index</span><span class="p">]</span> <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n_folds</span><span class="p">)),</span>
+                                      <span class="n">weights_iterator</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">status</span><span class="p">,</span> <span class="n">data</span> <span class="ow">in</span> <span class="n">result</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">status</span> <span class="o">==</span> <span class="s1">&#39;success&#39;</span><span class="p">:</span>
+                <span class="n">name</span><span class="p">,</span> <span class="n">classifier</span><span class="p">,</span> <span class="n">spent_time</span> <span class="o">=</span> <span class="n">data</span>
+                <span class="bp">self</span><span class="o">.</span><span class="n">estimators</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">classifier</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Problem while training on the node, report:</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">data</span><span class="p">)</span>
+        <span class="k">return</span> <span class="bp">self</span>
+
+    <span class="k">def</span> <span class="nf">_folding_prediction</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">prediction_function</span><span class="p">,</span> <span class="n">vote_function</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Supplementary function to predict (labels, probabilities, values)</span>
+<span class="sd">        :param X: dataset to predict</span>
+<span class="sd">        :param prediction_function: function(classifier, X) -&gt; prediction</span>
+<span class="sd">        :param vote_function: if using averaging over predictions of folds, this function shall be passed.</span>
+<span class="sd">            For instance: lambda x: numpy.mean(x, axis=0), which means averaging result over all folds.</span>
+<span class="sd">            Another useful option is lambda x: numpy.median(x, axis=0)</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">X</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_features</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">vote_function</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s1">&#39;KFold prediction with voting function&#39;</span><span class="p">)</span>
+            <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">estimator</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">estimators</span><span class="p">:</span>
+                <span class="n">results</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">prediction_function</span><span class="p">(</span><span class="n">estimator</span><span class="p">,</span> <span class="n">X</span><span class="p">))</span>
+            <span class="c1"># results: [n_classifiers, n_samples, n_dimensions], reduction over 0th axis</span>
+            <span class="n">results</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+            <span class="k">return</span> <span class="n">vote_function</span><span class="p">(</span><span class="n">results</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">train_length</span><span class="p">:</span>
+                <span class="k">print</span><span class="p">(</span><span class="s1">&#39;KFold prediction using random classifier (length of data passed not equal to length of train)&#39;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">print</span><span class="p">(</span><span class="s1">&#39;KFold prediction using folds column&#39;</span><span class="p">)</span>
+            <span class="n">folds_column</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_folds_column</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">))</span>
+            <span class="n">parts</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">fold</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n_folds</span><span class="p">):</span>
+                <span class="n">parts</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">prediction_function</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">estimators</span><span class="p">[</span><span class="n">fold</span><span class="p">],</span> <span class="n">X</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">folds_column</span> <span class="o">==</span> <span class="n">fold</span><span class="p">,</span> <span class="p">:]))</span>
+
+            <span class="n">result_shape</span> <span class="o">=</span> <span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">)]</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">parts</span><span class="p">[</span><span class="mi">0</span><span class="p">])[</span><span class="mi">1</span><span class="p">:])</span>
+            <span class="n">results</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">shape</span><span class="o">=</span><span class="n">result_shape</span><span class="p">)</span>
+            <span class="n">folds_indices</span> <span class="o">=</span> <span class="p">[</span><span class="n">numpy</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">folds_column</span> <span class="o">==</span> <span class="n">fold</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">fold</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n_folds</span><span class="p">)]</span>
+            <span class="k">for</span> <span class="n">fold</span><span class="p">,</span> <span class="n">part</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">parts</span><span class="p">):</span>
+                <span class="n">results</span><span class="p">[</span><span class="n">folds_indices</span><span class="p">[</span><span class="n">fold</span><span class="p">]]</span> <span class="o">=</span> <span class="n">part</span>
+            <span class="k">return</span> <span class="n">results</span>
+
+    <span class="k">def</span> <span class="nf">_staged_folding_prediction</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">prediction_function</span><span class="p">,</span> <span class="n">vote_function</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="n">X</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_features</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">vote_function</span> <span class="ow">is</span> <span class="ow">not</span> <span class="bp">None</span><span class="p">:</span>
+            <span class="k">print</span><span class="p">(</span><span class="s1">&#39;Using voting KFold prediction&#39;</span><span class="p">)</span>
+            <span class="n">iterators</span> <span class="o">=</span> <span class="p">[</span><span class="n">prediction_function</span><span class="p">(</span><span class="n">estimator</span><span class="p">,</span> <span class="n">X</span><span class="p">)</span> <span class="k">for</span> <span class="n">estimator</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">estimators</span><span class="p">]</span>
+            <span class="k">for</span> <span class="n">fold_prob</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">iterators</span><span class="p">):</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">fold_prob</span><span class="p">)</span>
+                <span class="k">yield</span> <span class="n">vote_function</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">)</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">train_length</span><span class="p">:</span>
+                <span class="k">print</span><span class="p">(</span><span class="s1">&#39;KFold prediction using random classifier (length of data passed not equal to length of train)&#39;</span><span class="p">)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">print</span><span class="p">(</span><span class="s1">&#39;KFold prediction using folds column&#39;</span><span class="p">)</span>
+            <span class="n">folds_column</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_folds_column</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">))</span>
+            <span class="n">iterators</span> <span class="o">=</span> <span class="p">[</span><span class="n">prediction_function</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">estimators</span><span class="p">[</span><span class="n">fold</span><span class="p">],</span> <span class="n">X</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="n">folds_column</span> <span class="o">==</span> <span class="n">fold</span><span class="p">,</span> <span class="p">:])</span>
+                         <span class="k">for</span> <span class="n">fold</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n_folds</span><span class="p">)]</span>
+            <span class="n">folds_indices</span> <span class="o">=</span> <span class="p">[</span><span class="n">numpy</span><span class="o">.</span><span class="n">where</span><span class="p">(</span><span class="n">folds_column</span> <span class="o">==</span> <span class="n">fold</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="k">for</span> <span class="n">fold</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n_folds</span><span class="p">)]</span>
+            <span class="k">for</span> <span class="n">stage_results</span> <span class="ow">in</span> <span class="nb">zip</span><span class="p">(</span><span class="o">*</span><span class="n">iterators</span><span class="p">):</span>
+                <span class="n">result_shape</span> <span class="o">=</span> <span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">X</span><span class="p">)]</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="n">numpy</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">stage_results</span><span class="p">[</span><span class="mi">0</span><span class="p">])[</span><span class="mi">1</span><span class="p">:])</span>
+                <span class="n">result</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span><span class="n">result_shape</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">fold</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">n_folds</span><span class="p">):</span>
+                    <span class="n">result</span><span class="p">[</span><span class="n">folds_indices</span><span class="p">[</span><span class="n">fold</span><span class="p">]]</span> <span class="o">=</span> <span class="n">stage_results</span><span class="p">[</span><span class="n">fold</span><span class="p">]</span>
+                <span class="k">yield</span> <span class="n">result</span>
+
+    <span class="k">def</span> <span class="nf">_get_feature_importances</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get features importance</span>
+
+<span class="sd">        :return: pandas.DataFrame with column effect and `index=features`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">importances</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sum</span><span class="p">([</span><span class="n">est</span><span class="o">.</span><span class="n">feature_importances_</span> <span class="k">for</span> <span class="n">est</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">estimators</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+        <span class="c1"># to get train_features, not features</span>
+        <span class="n">one_importances</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">estimators</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">get_feature_importances</span><span class="p">()</span>
+        <span class="k">return</span> <span class="n">pandas</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s1">&#39;effect&#39;</span><span class="p">:</span> <span class="n">importances</span> <span class="o">/</span> <span class="n">numpy</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">importances</span><span class="p">)},</span> <span class="n">index</span><span class="o">=</span><span class="n">one_importances</span><span class="o">.</span><span class="n">index</span><span class="p">)</span>
+
+
+<div class="viewcode-block" id="FoldingRegressor"><a class="viewcode-back" href="../../../metaml.html#rep.metaml.folding.FoldingRegressor">[docs]</a><span class="k">class</span> <span class="nc">FoldingRegressor</span><span class="p">(</span><span class="n">FoldingBase</span><span class="p">,</span> <span class="n">Regressor</span><span class="p">):</span></div>
+    <span class="c1"># inherit documentation</span>
+    <span class="n">__doc__</span> <span class="o">=</span> <span class="n">FoldingBase</span><span class="o">.</span><span class="n">__doc__</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">estimator</span><span class="o">=</span><span class="s1">&#39;regressor&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sample_weight</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">FoldingBase</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sample_weight</span><span class="o">=</span><span class="n">sample_weight</span><span class="p">)</span>
+
+    <span class="n">fit</span><span class="o">.</span><span class="n">__doc__</span> <span class="o">=</span> <span class="n">FoldingBase</span><span class="o">.</span><span class="n">fit</span><span class="o">.</span><span class="n">__doc__</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">estimator</span><span class="o">=</span><span class="s1">&#39;regressor&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_prepare_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sample_weight</span><span class="p">):</span>
+        <span class="n">X</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_features</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+        <span class="n">y_shape</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">shape</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">n_outputs_</span> <span class="o">=</span> <span class="mi">1</span> <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">y_shape</span><span class="p">)</span> <span class="o">&lt;</span> <span class="mi">2</span> <span class="k">else</span> <span class="n">y_shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+        <span class="k">return</span> <span class="n">check_inputs</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sample_weight</span><span class="o">=</span><span class="n">sample_weight</span><span class="p">,</span> <span class="n">allow_multiple_targets</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">vote_function</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get predictions. To get unbiased predictions on training dataset, pass training data</span>
+<span class="sd">        (with same order of events) and vote_function=None.</span>
+
+<span class="sd">        :param X: pandas.DataFrame of shape [n_samples, n_features]</span>
+<span class="sd">        :param vote_function: function to combine prediction of folds&#39; estimators.</span>
+<span class="sd">            If None then folding scheme is used. Parameters: numpy.ndarray [n_classifiers, n_samples]</span>
+<span class="sd">        :type vote_function: None or function</span>
+<span class="sd">        :rtype: numpy.array of shape [n_samples, n_outputs]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_folding_prediction</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">prediction_function</span><span class="o">=</span><span class="n">get_regressor_prediction</span><span class="p">,</span>
+                                        <span class="n">vote_function</span><span class="o">=</span><span class="n">vote_function</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">staged_predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">vote_function</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get predictions after each iteration of base estimator.</span>
+<span class="sd">        To get unbiased predictions on training dataset, pass training data</span>
+<span class="sd">        (with same order of events) and vote_function=None.</span>
+
+<span class="sd">        :param X: pandas.DataFrame of shape [n_samples, n_features]</span>
+<span class="sd">        :param vote_function: function to combine prediction of folds&#39; estimators.</span>
+<span class="sd">            If None then folding scheme is used. Parameters: numpy.ndarray [n_classifiers, n_samples]</span>
+<span class="sd">        :type vote_function: None or function</span>
+<span class="sd">        :rtype: sequence of numpy.array of shape [n_samples, n_outputs]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_staged_folding_prediction</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">prediction_function</span><span class="o">=</span><span class="n">get_regressor_staged_predict</span><span class="p">,</span>
+                                               <span class="n">vote_function</span><span class="o">=</span><span class="n">vote_function</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">get_feature_importances</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get features importance</span>
+
+<span class="sd">        :rtype: pandas.DataFrame with column effect and `index=features`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_feature_importances</span><span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">feature_importances_</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Sklearn-way of returning feature importance.</span>
+<span class="sd">        This returned as numpy.array, assuming that initially passed train_features=None &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_feature_importances</span><span class="p">()</span><span class="o">.</span><span class="n">ix</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">features</span><span class="p">,</span> <span class="s1">&#39;effect&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+
+
+<div class="viewcode-block" id="FoldingClassifier"><a class="viewcode-back" href="../../../metaml.html#rep.metaml.folding.FoldingClassifier">[docs]</a><span class="k">class</span> <span class="nc">FoldingClassifier</span><span class="p">(</span><span class="n">FoldingBase</span><span class="p">,</span> <span class="n">Classifier</span><span class="p">):</span></div>
+    <span class="c1"># inherit documentation</span>
+    <span class="n">__doc__</span> <span class="o">=</span> <span class="n">FoldingBase</span><span class="o">.</span><span class="n">__doc__</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">estimator</span><span class="o">=</span><span class="s1">&#39;classifier&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sample_weight</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">FoldingBase</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sample_weight</span><span class="o">=</span><span class="n">sample_weight</span><span class="p">)</span>
+
+    <span class="n">fit</span><span class="o">.</span><span class="n">__doc__</span> <span class="o">=</span> <span class="n">FoldingBase</span><span class="o">.</span><span class="n">fit</span><span class="o">.</span><span class="n">__doc__</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">estimator</span><span class="o">=</span><span class="s1">&#39;classifier&#39;</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_prepare_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sample_weight</span><span class="p">):</span>
+        <span class="n">X</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_features</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_set_classes</span><span class="p">(</span><span class="n">y</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">check_inputs</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">sample_weight</span><span class="o">=</span><span class="n">sample_weight</span><span class="p">,</span> <span class="n">allow_multiple_targets</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">predict</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">vote_function</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Predict labels. To get unbiased predictions on training dataset, pass training data</span>
+<span class="sd">        (with same order of events) and vote_function=None.</span>
+
+<span class="sd">        :param X: pandas.DataFrame of shape [n_samples, n_features]</span>
+<span class="sd">        :param vote_function: function to combine prediction of folds&#39; estimators.</span>
+<span class="sd">            If None then folding scheme is used.</span>
+<span class="sd">        :type vote_function: None or function</span>
+<span class="sd">        :rtype: numpy.array of shape [n_samples]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="n">numpy</span><span class="o">.</span><span class="n">argmax</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">vote_function</span><span class="o">=</span><span class="n">vote_function</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">predict_proba</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">vote_function</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Predict probabilities. To get unbiased predictions on training dataset, pass training data</span>
+<span class="sd">        (with same order of events) and vote_function=None.</span>
+
+<span class="sd">        :param X: pandas.DataFrame of shape [n_samples, n_features]</span>
+<span class="sd">        :param vote_function: function to combine prediction of folds&#39; estimators.</span>
+<span class="sd">            If None then folding scheme is used.</span>
+<span class="sd">        :type vote_function: None or function</span>
+<span class="sd">        :rtype: numpy.array of shape [n_samples, n_classes]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">result</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_folding_prediction</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">prediction_function</span><span class="o">=</span><span class="n">get_classifier_probabilities</span><span class="p">,</span>
+                                          <span class="n">vote_function</span><span class="o">=</span><span class="n">vote_function</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">result</span> <span class="o">/</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">staged_predict_proba</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">X</span><span class="p">,</span> <span class="n">vote_function</span><span class="o">=</span><span class="bp">None</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Predict probabilities after each stage of base_estimator.</span>
+<span class="sd">        To get unbiased predictions on training dataset, pass training data</span>
+<span class="sd">        (with same order of events) and vote_function=None.</span>
+
+<span class="sd">        :param X: pandas.DataFrame of shape [n_samples, n_features]</span>
+<span class="sd">        :param vote_function: function to combine prediction of folds&#39; estimators.</span>
+<span class="sd">            If None then folding scheme is used.</span>
+<span class="sd">        :type vote_function: None or function</span>
+<span class="sd">        :rtype: sequence of numpy.arrays of shape [n_samples, n_classes]</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">for</span> <span class="n">proba</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_staged_folding_prediction</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">prediction_function</span><span class="o">=</span><span class="n">get_classifier_staged_proba</span><span class="p">,</span>
+                                                     <span class="n">vote_function</span><span class="o">=</span><span class="n">vote_function</span><span class="p">):</span>
+            <span class="k">yield</span> <span class="n">proba</span> <span class="o">/</span> <span class="n">numpy</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">proba</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">keepdims</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">get_feature_importances</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get features importance</span>
+
+<span class="sd">        :rtype: pandas.DataFrame with column effect and `index=features`</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_feature_importances</span><span class="p">()</span>
+
+    <span class="nd">@property</span>
+    <span class="k">def</span> <span class="nf">feature_importances_</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Sklearn-way of returning feature importance.</span>
+<span class="sd">        This returned as numpy.array, assuming that initially passed train_features=None &quot;&quot;&quot;</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_feature_importances</span><span class="p">()</span><span class="o">.</span><span class="n">ix</span><span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">features</span><span class="p">,</span> <span class="s1">&#39;effect&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
+</pre></div>
+
+           </div>
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2014-2015, Yandex.
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../../',
+            VERSION:'0.6.7',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+   
+
+</body>
+</html>
