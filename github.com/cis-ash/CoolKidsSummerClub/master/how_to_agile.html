@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>How to Agile</title>
+  <link rel="stylesheet" href="https://stackedit.io/style.css" />
+</head>
+
+<body class="stackedit">
+  <div class="stackedit__left">
+    <div class="stackedit__toc">
+      
+<ul>
+<li><a href="#how-to-scrum">How to SCRUM</a></li>
+<li><a href="#goals">Goals</a></li>
+<li><a href="#terminology">Terminology</a></li>
+<li><a href="#week-structure">Week Structure</a>
+<ul>
+<li><a href="#filling-up-the-sprint-backlog">Filling up the sprint backlog</a></li>
+<li><a href="#planning-poker">Planning poker</a></li>
+<li><a href="#daily-standup">Daily standup</a></li>
+<li><a href="#sprint-review">Sprint review</a></li>
+<li><a href="#sprint-retrospective">Sprint retrospective</a></li>
+</ul>
+</li>
+</ul>
+
+    </div>
+  </div>
+  <div class="stackedit__right">
+    <div class="stackedit__html">
+      <p><a href="index.html">Return to Menu</a></p>
+<p><a href="https://cdn.discordapp.com/attachments/610526036479705103/814531372290932736/How_to_Agile_v1.2.pdf">Download this page as PDF</a></p>
+<h1 id="how-to-scrum">How to SCRUM</h1>
+<h1 id="goals">Goals</h1>
+<ul>
+<li>Create value for the player early</li>
+<li>Don’t be afraid to change project direction</li>
+<li>Deliver a near shippable game every week and as soon in development as possible</li>
+<li>Only do what is necessary to accomplish our goal</li>
+<li>Own your work and features, be responsible for them</li>
+<li>Analyze our approach to work and improve it often</li>
+</ul>
+<h1 id="terminology">Terminology</h1>
+<p><strong>Story</strong> — kind of like a feature but from the side of the user. Is not bound to one discipline. Can be split into multiple smaller stories if its too big to fit in one sprint. Every story has an owner that is responsible for its quality upon completion.</p>
+<p><em>Examples:</em></p>
+<ul>
+<li>As a player i want to control a character that moves around the environment.</li>
+<li>As a writer i want the dialogue editor to allow me to create quests and item checks quickly.</li>
+</ul>
+<p><strong>Task</strong> — things that have to be done to execute a story. Can be bound to a discipline. Are always bound to and make up a story.</p>
+<p><em>Examples:</em></p>
+<ul>
+<li>Write code that makes the player move when a key is pressed</li>
+<li>Draw the animation of player movement</li>
+</ul>
+<p><strong>Backlog</strong> — an ordered list of stories that make up the game. It is regularly sorted so that stories that have the biggest bang for their buck(least effort to develop and high value to the player) are at the top. When you have an idea for a thing that would be cool to add to the game it goes into the backlog.</p>
+<p><strong>Sprint</strong> — a weekly TO DO list. Sprint contains stories that have to be done this week by the team. With rare exceptions all stories within a sprint must be complete by the time it ends.</p>
+<p><strong>Epic</strong> — a way to group sprints by themes. Independent of sprints and releases.</p>
+<p><strong>Release</strong> — a way to group sprints by deadlines. Independent of sprints and epics. Releases happen once every few sprints and are the deadlines for having the game look and feel complete (not all features are there but the ones that are there are finished with no placeholders).</p>
+<p><strong>Story points</strong> — an abstract measure of story/task complexity. The values of tasks and stories are estimated by the team before sprints. Are used to determine when the sprint backlog is full (the sum of story points of all stories and tasks must not exceed what is doable by the team)</p>
+<h1 id="week-structure">Week Structure</h1>
+<p><strong>Start of week</strong>:<br>
+<a href="#planning-poker">Evaluate upcoming tasks using planning poker</a><br>
+<a href="#filling-up-the-sprint-backlog">Fill up sprint backlog</a></p>
+<p><strong>Every day</strong>:<br>
+<a href="#daily-standup">Do daily standups</a></p>
+<p><strong>End of the week</strong>:<br>
+<a href="#sprint-review">Do sprint review at the end of week</a><br>
+<a href="#sprint-retrospective">Do sprint retrospective</a></p>
+<h2 id="filling-up-the-sprint-backlog">Filling up the sprint backlog</h2>
+<p><img src="https://cdn.discordapp.com/attachments/610526036479705103/814229397643984906/Untitled_Diagram_5.png" alt="enter image description here"><br>
+After reaching the end you can stop worrying about planning and get to work! Repeat at the beginning of each weekly sprint.</p>
+<h2 id="planning-poker">Planning poker</h2>
+<p>This is done to evaluate the complexity of tasks when filling up the backlog. This helps ensure the team does not bite off more than what they can chew when planning a new weekly sprint.</p>
+<h3 id="story-points">Story points</h3>
+<p>Before you understand planning poker you have to understand story points. They are an abstract and relative measure of task complexity.</p>
+<p><strong>Why we use them?</strong><br>
+Its easy to estimate how <em>complex</em> or <em>difficult</em> something is <em>relative</em> to something else. However, we usually have trouble when trying to estimate how <em>long</em> something will take in <em>hours of work</em>.<br>
+We don’t have perfect days/weeks of work, we get distracted, we encounter bugs, we have to iterate, multiple people can work on one thing, and also everyone takes different amounts of time to accomplish things. Story points try to eliminate the hour counting by being one step removed from them and only count the amount of work relative to a real task people know.</p>
+<p><strong>Baseline task</strong><br>
+As a baseline we use a task that everyone has experience completing from start to finish. Assign it a static number of story points that the team can agree on. The baseline task must not change throughout the project to ensure the size of a story point remains constant.</p>
+<p>Example:<br>
+Team decides the baseline task is worth 5 story points.<br>
+That means that when the team decides a task in a story is worth 3 story points it will  be approximately 60% as hard to finish and be 60% as complex as the baseline task.</p>
+<h3 id="planning-poker-itself">Planning poker itself</h3>
+<ol start="0">
+<li>The person in charge of evaluation posts a task/story in the chat and prompts everyone to respond to it.</li>
+<li>Everyone comes up with a relative point value for the item being evaluated. You can only choose numbers from the fibonacci sequence (reference and explanation below).</li>
+<li>Everyone posts their value prediction in the planning poker discord chat with ||spoiler tags||</li>
+<li>When everyone has posted their prediction look at what other people posted. Discuss why you chose the value.</li>
+<li>Go to step 1. and repeat it until a consensus is reached</li>
+<li>Write down the agreed upon value in the backlog item card. Go to step 0. and repeat until items that will be picked up in the next few sprints are all evaluated.</li>
+</ol>
+<p>remember to reevaluate the point value of a story when it gets broken down into tasks/smaller stories</p>
+<blockquote>
+<p>The fibonacci sequence numbers are:<br>
+0, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233</p>
+</blockquote>
+<p>we use them because people are bad at accurately estimating bigger numbers and there is no point in arguing over small details (there is significant difference between 1 and 2, but almost no difference between 34 and 35), we use a sequence that separates the numbers more and more as it goes up.<br>
+most other sequences either grow too fast, too slow, are obscure or produce awkward non integer values.</p>
+<h2 id="daily-standup">Daily standup</h2>
+<p>Happens every working day, a bot will ping you when its time to do the standup.</p>
+<p>Write the following in the appropriate discord channel:</p>
+<ol>
+<li>What you did on the project yesterday</li>
+<li>What are you gonna be doing today</li>
+<li>What is standing in your way (things from teammates/life events)</li>
+</ol>
+<h2 id="sprint-review">Sprint review</h2>
+<ul>
+<li>Everyone plays the game in its current state, says what they think about its current state and if the stories in the sprint were successfully executed.</li>
+<li>Showcase you features to the rest of the team</li>
+<li>Discuss what is the next direction the development should take.</li>
+<li>Reorganize items in backlog, add new ones.</li>
+</ul>
+<h2 id="sprint-retrospective">Sprint retrospective</h2>
+<ul>
+<li>Examine the work process that took place during the sprint.</li>
+<li>What could be done better?</li>
+<li>What should we stop doing?</li>
+<li>What should we continue doing?</li>
+<li>What should we start doing?</li>
+<li>How can we improve the way we work together during a sprint.</li>
+<li>Write down a few things to do next time that result from the discussion above.</li>
+<li>Do them during the next sprint.</li>
+</ul>
+
+    </div>
+  </div>
+</body>
+
+</html>
