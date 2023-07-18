@@ -1,0 +1,30 @@
+Source: yamllint
+Maintainer: Python Applications Packaging Team <python-apps-team@lists.alioth.debian.org>
+Uploaders: Adrien Vergé <adrienverge@gmail.com>, Philipp Huebner <debalance@debian.org>
+Section: devel
+Priority: optional
+Build-Depends: debhelper,
+               debhelper-compat (= 12),
+               dh-python,
+               python3-all,
+               python3-nose,
+               python3-pathspec,
+               python3-setuptools,
+               python3-sphinx,
+               python3-yaml
+Standards-Version: 4.5.0
+Rules-Requires-Root: no
+Vcs-Browser: https://salsa.debian.org/python-team/applications/yamllint
+Vcs-Git: https://salsa.debian.org/python-team/applications/yamllint.git
+Homepage: https://github.com/adrienverge/yamllint
+
+Package: yamllint
+Architecture: all
+Depends: ${misc:Depends},
+         ${python3:Depends},
+         ${shlibs:Depends},
+         python3-pkg-resources
+Description: Linter for YAML files
+ yamllint does not only check for syntax validity, but for weirdnesses like key
+ repetition and cosmetic problems such as lines length, trailing spaces,
+ indentation, etc.

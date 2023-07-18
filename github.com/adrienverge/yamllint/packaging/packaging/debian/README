@@ -1,0 +1,59 @@
+Release new version for Debian
+==============================
+
+VERSION=1.5.0
+WD=/tmp/pkg
+TARGET=vm-debian8
+
+# Build source archive
+python3 setup.py sdist
+
+# Copy files on a Debian system
+ssh $TARGET mkdir $WD
+rsync -av dist/yamllint-$VERSION.tar.gz $TARGET:$WD/yamllint_$VERSION.orig.tar.gz
+ssh $TARGET tar -C $WD -xf $WD/yamllint_$VERSION.orig.tar.gz
+if false; then
+  rsync -av packaging/debian/debian $TARGET:$WD/yamllint-$VERSION
+else
+  ssh $TARGET "cd $WD && sudo apt-get update"
+  ssh $TARGET "cd $WD && apt-get source yamllint"
+  ssh $TARGET mv $WD'/yamllint-*/debian' $WD/yamllint-$VERSION # old version
+fi
+
+ssh $TARGET
+cd $WD/yamllint-$VERSION/debian
+
+# Add a new changelog entry:
+dch -v $VERSION-1
+
+# Build packages and sign dsc
+debuild -S -sa
+
+# Test if it builds
+sudo pbuilder --create
+sudo pbuilder --build ../../yamllint_$VERSION-1.dsc
+
+# Run lintian to detect problems
+lintian -i -I --show-overrides ../../yamllint_$VERSION-1_source.changes
+
+# Retrieve modified files
+rsync -av $TARGET:$WD/yamllint-$VERSION/debian packaging/debian
+
+# Upload to mentors FTP (needed even for updates)
+cat >>~/.dput.cf << EOF
+[mentors]
+fqdn = mentors.debian.net
+incoming = /upload
+method = http
+allow_unsigned_uploads = 0
+progress_indicator = 2
+# Allow uploads for UNRELEASED packages
+allowed_distributions = .*
+EOF
+
+dput mentors ../../yamllint_$VERSION-1_source.changes
+
+# Do no upload to Debian FTP: the sponsor will do it
+
+# File a new RFS bug by sending an email
+See https://mentors.debian.net/sponsors/rfs-howto/yamllint
