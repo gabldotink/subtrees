@@ -1,0 +1,20 @@
+{
+  "name": "boxwich",
+  "version": "0.0.1",
+  "description": "sudo make me a sandwich",
+  "main": "app.js",
+  "dependencies": {
+    "config": "1.6.0",
+    "request": "2.46.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jonjonsonjr/boxwich.git"
+  },
+  "author": "Jon Johnson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jonjonsonjr/boxwich/issues"
+  },
+  "homepage": "https://github.com/jonjonsonjr/boxwich"
+}
