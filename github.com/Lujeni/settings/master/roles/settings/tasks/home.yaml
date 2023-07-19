@@ -1,0 +1,138 @@
+- name: Home | dot file
+  template:
+    src: "{{ item.src }}"
+    dest: "{{ home }}/{{ item.dest }}"
+    owner: "{{ user }}"
+    group: "{{ group }}"
+    mode: "0644"
+  loop:
+    - {"src": "dotfile/Xresources.j2", "dest": ".Xresources"}
+    - {"src": "dotfile/bash_aliases.j2", "dest": ".bash_aliases"}
+    - {"src": "dotfile/bash_profile.j2", "dest": ".bash_profile"}
+    - {"src": "dotfile/bashrc.j2", "dest": ".bashrc"}
+    - {"src": "dotfile/dockerfunc.j2", "dest": ".dockerfunc"}
+    - {"src": "dotfile/exports.j2", "dest": ".exports"}
+    - {"src": "dotfile/func.j2", "dest": ".func"}
+    - {"src": "dotfile/gitconfig.j2", "dest": ".gitconfig"}
+    - {"src": "dotfile/gitignore_global.j2", "dest": ".gitignore_global"}
+    - {"src": "dotfile/ssh_config.j2", "dest": ".ssh/config"}
+
+- name: Home | create default directory
+  ansible.builtin.file:
+    path: "{{ item }}"
+    state: directory
+    mode: "0755"
+    owner: "{{ user }}"
+    group: "{{ group }}"
+  loop:
+    - "{{ home }}/.aws/"
+    - "{{ home }}/works/"
+    - "{{ home }}/works/gitlab"
+    - "{{ home }}/works/github"
+    - "{{ home }}/works/github/lujeni"
+    - "{{ home }}/works/issues"
+    - "{{ home }}/works/structure"
+    - "{{ home }}/works/certificates"
+    - "{{ home }}/works/certificates/keytabs/"
+
+- name: Home | aliases for everyone
+  ansible.builtin.file:
+    src: "{{ home }}/.bash_aliases"
+    dest: "/etc/profile.d/00-aliases.sh"
+    state: link
+
+- name: Home | git prompt
+  shell: "git clone https://github.com/magicmonty/bash-git-prompt.git {{ home }}/.bash-git-prompt --depth=1"
+  failed_when: false # dirty, maybe check if the file exists
+  changed_when: false
+
+- name: Home | nerd-fonts
+  shell: "git clone https://github.com/ryanoasis/nerd-fonts.git {{ home }}/nerd-fonts --depth=1"
+  failed_when: false # dirty, maybe check if the file exists
+  changed_when: false
+
+- name: Home | nerf-fonts install
+  ansible.builtin.shell: "{{ home }}/nerd-fonts/install.sh"
+
+- name: Home | kubectx clone
+  git:
+    repo: https://github.com/ahmetb/kubectx
+    dest: /opt/kubectx
+    update: yes
+
+- name: Home | kubectx binary
+  file:
+    src: "/opt/kubectx/{{ item }}"
+    dest: "/usr/local/bin/{{ item }}"
+    owner: root
+    group: "{{ group }}"
+    state: link
+  loop:
+    - kubens
+    - kubectx
+
+- name: Home | kubectx completion
+  file:
+    src: "/opt/kubectx/completion/{{ item }}.bash"
+    dest: "{{ home }}/.completion_{{ item }}"
+    owner: "{{ user }}"
+    group: "{{ group }}"
+    state: link
+  loop:
+    - kubens
+    - kubectx
+
+- name: Home | kubectl aliases based on ahmetb
+  get_url:
+    url: https://rawgit.com/ahmetb/kubectl-alias/master/.kubectl_aliases
+    dest: "{{ home }}/.kubectl_aliases"
+    owner: "{{ user }}"
+    group: "{{ group }}"
+    mode: "0400"
+
+- name: Home | krew deploy
+  template:
+    src: "opt/krew.sh.j2"
+    dest: "/opt/krew.sh"
+    owner: "{{ user }}"
+    group: "{{ group }}"
+    mode: "0755"
+
+- name: Home | krew install
+  ansible.builtin.shell: /opt/krew.sh
+  become: yes
+  become_user: "{{ user }}"
+
+- name: Home | helm plugin install
+  shell: "helm plugin install {{ item }}"
+  loop:
+    - https://github.com/jkroepke/helm-secrets --version v3.15.0
+  failed_when: false
+
+- name: Home | venv install
+  ansible.builtin.pip:
+    name: "{{ item  }}"
+    virtualenv: "{{ home }}/venv/{{ item }}"
+  loop:
+    - ansible
+    - awscli
+    - commitizen
+    - cruft
+
+- name: Home | AWS gsts config
+  template:
+    src: "aws/config.j2"
+    dest: "/{{ home }}/.aws/config"
+    owner: "{{ user }}"
+    group: "{{ group }}"
+    mode: "0755"
+
+- name: Home | pyenv install python major version
+  ansible.builtin.command: "pyenv install {{ item }}"
+  loop:
+    - 3.7.16
+    - 3.8.16
+    - 3.9.16
+    - 3.10.10
+    - 3.11.2
+

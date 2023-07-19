@@ -1,0 +1,172 @@
+#!/bin/bash
+# {{ ansible_managed }}
+# Bash wrappers for docker run commands
+# based on https://github.com/jessfraz/dotfiles
+
+export DOCKER_REPO_PREFIX="{{ docker_repo_prefix }}"
+
+dcleanup(){
+	local containers
+	mapfile -t containers < <(docker ps -aq 2>/dev/null)
+	docker rm "${containers[@]}" 2>/dev/null
+	local volumes
+	mapfile -t volumes < <(docker ps --filter status=exited -q 2>/dev/null)
+	docker rm -v "${volumes[@]}" 2>/dev/null
+	local images
+	mapfile -t images < <(docker images --filter dangling=true -q 2>/dev/null)
+	docker rmi "${images[@]}" 2>/dev/null
+}
+
+del_stopped(){
+	local name=$1
+	local state
+	state=$(docker inspect --format {% raw %}"{{.State.Running}}"{% endraw %} "$name" 2>/dev/null)
+
+	if [[ "$state" == "false" ]]; then
+		docker rm "$name"
+	fi
+}
+
+chrome(){
+    del_stopped chrome
+    docker run -d \
+        --name chrome \
+        --device /dev/dri \
+        --device /dev/dri \
+        --device /dev/snd \
+        --device /dev/snd \
+        --device /dev/video0 \
+        --group-add audio \
+        --group-add video \
+        --memory 2gb \
+        --name chrome \
+        --security-opt seccomp:/etc/docker/seccomp-chrome.json \
+        -e "DISPLAY=unix${DISPLAY}" \
+        -v "${HOME}/docker/data/chrome/data:/home/chrome/data" \
+        -v "${HOME}/docker/data/chrome/downloads:/home/chrome/Downloads" \
+        -v "${HOME}/.aws:/home/chrome/.aws" \
+        -v /dev/shm:/dev/shm \
+        -v /etc/hosts:/etc/hosts \
+        -v /etc/localtime:/etc/localtime:ro \
+        -v /tmp/.X11-unix:/tmp/.X11-unix \
+        ${DOCKER_REPO_PREFIX}/chrome:{{ docker_images_version }} --user-data-dir=/home/chrome/data
+}
+
+
+remmina(){
+    del_stopped remmina
+    docker run -d \
+        --name remmina \
+        --net host \
+        -e "DISPLAY=unix${DISPLAY}" \
+        -e GDK_DPI_SCALE \
+        -e GDK_SCALE \
+        -v "${HOME}/docker/data/remmina:/root/.remmina" \
+        -v /etc/localtime:/etc/localtime:ro \
+        -v /tmp/.X11-unix:/tmp/.X11-unix \
+        ${DOCKER_REPO_PREFIX}/remmina:{{ docker_images_version }}
+}
+
+commitizen(){
+    del_stopped commitizen
+    docker run -it --rm \
+        --name commitizen \
+        -v "$(pwd):/tmp/repository" \
+        -v "${HOME}/.gitconfig:/root/.gitconfig" \
+        --workdir /tmp/repository \
+        ${DOCKER_REPO_PREFIX}/commitizen:{{ docker_images_version}} "$@"
+}
+
+compass(){
+    del_stopped compass
+    docker run -d \
+            --name compass \
+            --net host \
+            -e "DISPLAY=unix${DISPLAY}" \
+            -e GDK_DPI_SCALE \
+            -e GDK_SCALE \
+            -v "${HOME}/docker/data/compass:/home/{{ user }}/.config/" \
+            -v /etc/localtime:/etc/localtime:ro \
+            -v /tmp/.X11-unix:/tmp/.X11-unix \
+            ${DOCKER_REPO_PREFIX}/compass:1.0.0
+}
+
+robomongo(){
+    del_stopped robomongo
+    docker run -d \
+            --name robomongo \
+            --net host \
+            -e "DISPLAY=unix${DISPLAY}" \
+            -e GDK_DPI_SCALE \
+            -e GDK_SCALE \
+            -v "${HOME}/works/certificates/:/home/{{ user }}/certificates/" \
+	    -v "${HOME}/docker/data/robomongo:/home/{{ user }}/.3T" \
+            -v "${HOME}/docker/data/robomongo/config:/home/{{ user }}/.config/3T" \
+            -v /etc/localtime:/etc/localtime:ro \
+            -v /tmp/.X11-unix:/tmp/.X11-unix \
+            ${DOCKER_REPO_PREFIX}/robomongo:1.0.0
+}
+
+k9s(){
+    docker run -it --rm \
+        -v "${HOME}/.kube/config:/root/.kube/config" \
+        quay.io/derailed/k9s "$@"
+}
+
+vault(){
+    del_stopped vault
+    docker run -it --rm \
+        -v "${HOME}/.vault-token:/root/.vault-token" \
+        --name vault \
+        --cap-add=CAP_IPC_LOCK \
+        ${DOCKER_REPO_PREFIX}/vault:1.0.0 "$@"
+}
+
+dmongo(){
+    docker run -it \
+        -p 27017:27017 \
+        --net host \
+        mongo
+}
+
+dmemcached(){
+    docker run -it \
+        -p 11211:11211 \
+        --net host \
+        memcached
+}
+
+terraform(){
+    del_stopped terraform
+
+    docker run -it --rm \
+        --name terraform \
+        --net host \
+        -v "${HOME}/.aws:/root/.aws:ro" \
+        -v "$(pwd):/usr/src/repo" \
+        -v "/sys/bus/usb/:/sys/bus/usb/" \
+        -v "/dev/bus/usb:/dev/bus/usb" \
+        -v "/sys/devices/:/sys/devices/" \
+        -v "/dev/hidraw12/:/dev/hidraw12/" \
+        -v "${HOME}/.aws:/home/chrome/.aws" \
+        --privileged \
+        --workdir /usr/src/repo \
+        --log-driver none \
+        -e SSH_AUTH_SOCK \
+        ${DOCKER_REPO_PREFIX}/terraform:{{ docker_images_version }} "$@"
+}
+
+dmssql(){
+    del_stopped python_mssql
+
+    docker run -it --rm \
+        --name python_mssql \
+        --net host \
+        -v "$(pwd):/usr/src/repo" \
+        -v "/etc/odbc.ini:/etc/odbc.ini" \
+        -v "/etc/krb5.conf:/etc/krb5.conf" \
+        -v "/tmp/krb5_cache:/tmp/krb5cc_0" \
+        --workdir /usr/src/repo \
+        --log-driver none \
+        ${DOCKER_REPO_PREFIX}/python-mssql:{{ docker_images_version }} bash
+}

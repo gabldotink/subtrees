@@ -1,0 +1,44 @@
+#!/bin/bash
+# {{ ansible_managed }}
+
+gt() {
+    if [ "$#" -eq  "0" ]
+    then
+        cd "{{ home }}/works/gitlab/"
+    else
+        cd "{{ home }}/works/gitlab/team-$1"
+    fi
+}
+
+
+repo_check(){
+    if [ ! -d "$@" ]; then
+        echo "directory $@ doesn't exist"
+        return 1
+    fi
+    cd $@
+    for repo in *;
+    do
+        pushd $repo;
+        git status;
+        popd;
+    done
+    return 0
+}
+
+repo_update(){
+    if [ ! -d "$@" ]; then
+        echo "directory $@ doesn't exist"
+        return 1
+    fi
+    cd $@
+    for repo in *;
+    do
+        pushd $repo;
+        git stash;
+        git checkout master;
+        git pull origin master --rebase;
+        popd;
+    done
+    return 0
+}

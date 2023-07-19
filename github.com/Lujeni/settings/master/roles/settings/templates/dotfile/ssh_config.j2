@@ -1,0 +1,24 @@
+# {{ ansible_managed }}
+Host github.com
+    User git
+
+Host gitlab.1000mercis.com
+    User git
+
+Host gitlab.numberly.in
+    User git
+
+Host *
+    User julien.thebault
+
+Host bastion1-node1.pr.uaenorth.numberly.net
+ HostName 40.119.166.232
+ ControlMaster   auto
+ ControlPath     ~/.ssh/mux-%r@%h:%p
+ ControlPersist  15m
+ ServerAliveInterval 60
+ ServerAliveCountMax 2
+
+Host 10.13.* *.pr.uaenorth.numberly.net !bastion1-node1.pr.uaenorth.numberly.net
+  ProxyJump bastion1-node1.pr.uaenorth.numberly.net
+

@@ -1,0 +1,98 @@
+---
+home: /home/jthe
+
+user: jthe
+
+group: jthe
+
+uuid: 1000
+
+guid: 1000
+
+system_apt_key:
+  - "https://packages.cloud.google.com/apt/doc/apt-key.gpg"
+  - "https://baltocdn.com/helm/signing.asc"
+  - "https://download.docker.com/linux/ubuntu/gpg"
+
+system_apt_repository:
+  - "deb https://apt.kubernetes.io/ kubernetes-xenial main"
+  - "deb https://baltocdn.com/helm/stable/debian/ all main"
+  - "deb [arch=amd64] https://download.docker.com/linux/ubuntu focal stable"
+
+system_package:
+  - ansible
+  - ansible-lint
+  - apt-transport-https
+  - bat
+  - build-essential
+  - ca-certificates
+  - curl
+  - exa
+  - feh
+  - ripgrep
+  - gcc
+  - git
+  - gnupg
+  - golang
+  - helm
+  - htop
+  - iotop
+  - jq
+  - keychain
+  - libbz2-dev # pyenv
+  - libffi-dev # pyenv
+  - libncurses-dev # pyenv
+  - libreadline-dev # pyenv
+  - libsqlite3-dev # pyenv
+  - lsb-release
+  - lzma-dev # pyenv
+  - liblzma-dev # pyenv
+  - python-tk # pyenv
+  - python3-tk # pyenv
+  - tk-dev # pyenv
+  - make
+  - nodejs
+  - npm
+  - openvpn
+  - pip
+  - pnmixer
+  - python-is-python3
+  - python3.10-venv # nvim mason
+  - scrot
+  - ssh
+  - tig
+  - tree
+  - unp
+  - virtualenv
+  - xclip
+
+system_snap_package:
+  - mattermost-desktop
+
+docker_repo_prefix: lujeni
+
+docker_images:
+  - yubikey
+    #  - chrome
+  - commitizen
+  - compass
+  - python-mssql
+  - remmina
+  - terraform
+  - vault
+
+docker_images_version: 1.0.0
+
+system_sources_files:
+  - bash-git-prompt/gitprompt.sh
+  - bash_aliases
+  - completion_kubectx
+  - completion_kubens
+  - dockerfunc
+  - exports
+  - func
+  - kubectl_aliases
+
+system_pip_package:
+  - django-stubs
+  - pylint-django
