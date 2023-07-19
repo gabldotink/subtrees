@@ -1,0 +1,91 @@
+---
+home: /home/julien/
+
+user: julien
+
+group: julien
+
+groups: root,wheel,audio,vboxuser,games
+
+settings_packages:
+  - app-admin/ansible
+  - app-admin/keepassx
+  - app-arch/unp
+  - app-editors/vim
+  - app-emulation/virtualbox
+  - app-emulation/virtualbox-guest-additions
+  - app-emulation/virtualbox-modules
+  - app-misc/tmux
+  - app-text/mupdf
+  - app-vim/youcompleteme
+  - dev-java/icedtea-bin
+  - dev-python/ipython
+  - dev-python/pip
+  - dev-vcs/tig
+  - app-text/tree
+  - media-gfx/feh
+  - media-gfx/scrot
+  - media-gfx/viewnior
+  - media-sound/pnmixer
+  - media-video/vlc
+  - net-dns/bind-tools
+  - net-irc/hexchat
+  - net-misc/keychain
+  - net-misc/remmina
+  - sys-process/htop
+  - sys-process/iotop
+  - www-client/chromium
+  - www-client/firefox-bin
+  - www-plugins/adobe-flash
+  - x11-apps/xclock
+  - x11-apps/xrandr
+  - x11-misc/dmenu
+  - x11-misc/i3lock
+  - x11-misc/i3status
+  - x11-misc/py3status
+  - x11-misc/xautolock
+  - x11-misc/xclip
+  - x11-terms/xterm
+  - x11-wm/twm
+  - xfce-base/thunar
+
+settings_keywords:
+  - app-admin/ansible
+  - app-admin/keepassx
+  - app-editors/vim
+  - app-editors/vim-core
+  - app-emulation/virtualbox
+  - app-emulation/virtualbox-guest-additions
+  - app-emulation/virtualbox-modules
+  - app-vim/youcompleteme
+  - dev-libs/libtermkey
+  - dev-libs/libvterm
+  - dev-libs/msgpack
+  - dev-libs/unibilium
+  - dev-lua/messagepack
+  - dev-python/packaging
+  - dev-python/pip
+  - dev-python/virtualenvwrapper
+  - dev-python/yenc
+  - x11-drivers/xf86-video-virtualbox
+  - x11-misc/py3status
+
+settings_use:
+  - app-editors/vim python
+  - dev-java/icedtea-bin webstart -cups
+  - dev-lang/python sqlite
+  - net-misc/remmina freerdp
+  - sys-devel/llvm clang
+  - sys-fs/udev gudev
+  - sys-libs/zlib minizip
+  - x11-plugins/pigdin-sipe kerberos openssl
+
+settings_license:
+  - www-plugins/adobe-flash AdobeFlash-11.x
+
+settings_packages_pip:
+  - ipdb
+  - pew
+  - pylint
+  - pymongo
+  - requests
